@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" href="http://fonts.useso.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <title>fabric一些简单用法总结  &middot; lbbniu</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="这里是lbbniu的个人博客" />
+
+<meta name="keywords" content="">
+
+
+<meta property="og:title" content="fabric一些简单用法总结  &middot; lbbniu ">
+<meta property="og:site_name" content="lbbniu"/>
+<meta property="og:url" content="https://blog.lbbniu.com/2021/11/20/fabric%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/" />
+<meta property="og:locale" content="en-us">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content=""/>
+<meta property="og:article:published_time" content="2021-11-20T17:18:16&#43;08:00" />
+<meta property="og:article:modified_time" content="2021-11-20T17:18:16&#43;08:00" />
+
+  
+
+  
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "fabric一些简单用法总结",
+    "author": {
+      "@type": "Person",
+      "name": "lbbniu"
+    },
+    "datePublished": "2021-11-20",
+    "description": "",
+    "wordCount":  234 
+  }
+</script>
+
+
+
+<link rel="canonical" href="https://blog.lbbniu.com/2021/11/20/fabric%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/" />
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://blog.lbbniu.com/touch-icon-144-precomposed.png">
+<link href="https://blog.lbbniu.com/favicon.png" rel="icon">
+
+<meta name="generator" content="Hugo 0.89.4" />
+
+  <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link href='https://fonts.googleapis.com/css?family=Merriweather:300%7CRaleway%7COpen+Sans' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/highlight/default.css">
+
+  
+  
+</head>
+<body>
+  <main id="main-wrapper" class="container main_wrapper has-sidebar">
+    <header id="main-header" class="container main_header">
+  <div class="container brand">
+  <div class="container title h1-like">
+  <a class="baselink" href="https://blog.lbbniu.com/">
+  lbbniu
+
+</a>
+
+</div>
+
+  
+<div class="container topline">
+  
+  学无止境
+
+
+</div>
+
+
+</div>
+
+  <nav class="container nav primary no-print">
+  
+
+<a class="homelink" href="https://blog.lbbniu.com/">首页</a>
+
+
+  
+<a href="https://blog.lbbniu.com/post" title="Show list of posts">列表</a>
+
+<a href="https://blog.lbbniu.com/golang" title="Show list of tags">Golang</a>
+
+<a href="https://blog.lbbniu.com/k8s" title="Show list of tags">Kubernetes</a>
+
+<a href="https://blog.lbbniu.com/tags" title="Show list of tags">标签</a>
+
+<a href="https://blog.lbbniu.com/about">关于</a>
+
+
+</nav>
+
+<div class="container nav secondary no-print">
+  
+<a id="contact-link-email" class="contact_link" rel="me" aria-label="Email" href="mailto:lbbniu@gmail.com">
+  <span class="fa fa-envelope-square"></span></a>
+
+
+
+<a id="contact-link-github" class="contact_link" rel="me" aria-label="Github" href="https://github.com/lbbniu">
+  <span class="fa fa-github-square"></span></a>
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+  
+
+</header>
+
+
+<article id="main-content" class="container main_content single">
+  <header class="container hat">
+  <h1>fabric一些简单用法总结
+</h1>
+
+  <div class="metas">
+<time datetime="2021-11-20">20 Nov, 2021</time>
+
+
+  
+  &middot; Read in about 2 min
+  &middot; (234 Words)
+  <br>
+  
+
+
+</div>
+
+</header>
+
+  <div class="container content">
+  <p><strong>1.支持中文</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#!/usr/bin/python env</span>
+<span style="color:#75715e"># -*- coding: utf-8 -*-</span>
+</code></pre></div><p><strong>2.支持颜色</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> fabric.colors <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+print(red(<span style="color:#e6db74">&#34;红色&#34;</span>) <span style="color:#f92672">+</span> green(<span style="color:#e6db74">&#34;绿色&#34;</span><span style="color:#960050;background-color:#1e0010">，</span>bold<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>) <span style="color:#f92672">+</span> blue(<span style="color:#e6db74">&#34;蓝色&#34;</span>,bold<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>) <span style="color:#f92672">+</span> white(<span style="color:#e6db74">&#34;白色&#34;</span>) <span style="color:#f92672">+</span> yellow(<span style="color:#e6db74">&#34;黄色&#34;</span>) <span style="color:#f92672">+</span> cyan(<span style="color:#e6db74">&#34;蓝绿色&#34;</span>) <span style="color:#f92672">+</span> magenta(<span style="color:#e6db74">&#34;品红色&#34;</span>))
+</code></pre></div><p><strong>3.设置主机组及账号密码</strong></p>
+<p>主机密码不同时：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">env<span style="color:#f92672">.</span>hosts <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;tomcat@192.168.244.128&#39;</span>,<span style="color:#e6db74">&#39;tomcat@192.168.244.129&#39;</span>]
+env<span style="color:#f92672">.</span>passwords <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;tomcat@192.168.244.128:22&#39;</span>:<span style="color:#e6db74">&#39;111111&#39;</span>,<span style="color:#e6db74">&#39;tomcat@192.168.244.129:22&#39;</span>:<span style="color:#e6db74">&#39;111111&#39;</span>}
+</code></pre></div><p>主机密码相同时:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">env<span style="color:#f92672">.</span>hosts<span style="color:#f92672">=</span>[ 
+<span style="color:#e6db74">&#39;tomcat@192.168.244.128:22&#39;</span>, 
+<span style="color:#e6db74">&#39;tomcat@192.168.244.129:22&#39;</span>, 
+] 
+env<span style="color:#f92672">.</span>password <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;1111&#39;</span>
+</code></pre></div><p>使用ssh keyfile:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">env<span style="color:#f92672">.</span>key_filename <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;/opt/fab/server_key&#39;</span>]
+env<span style="color:#f92672">.</span>user <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;tomcat&#39;</span>
+env<span style="color:#f92672">.</span>password <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;111111&#39;</span>
+env<span style="color:#f92672">.</span>port <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;2862&#39;</span>
+</code></pre></div><p><strong>4.运行shell命令</strong></p>
+<p>在本地运行命令:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">local(<span style="color:#e6db74">&#39;pwd&#39;</span>)
+local(<span style="color:#e6db74">&#39;set -m ; /etc/init.d/tomcat restart&#39;</span>) 
+<span style="color:#75715e"># 如果是脚本，要加set -m 支持后台执行并返回状态，否则会报错</span>
+</code></pre></div><p>在服务器上运行命令:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">run(<span style="color:#e6db74">&#39;uname -a&#39;</span>)
+</code></pre></div><p><strong>5.切换目录执行</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">with</span> cd(<span style="color:#e6db74">&#39;/opt/tomcat&#39;</span>)
+    run(<span style="color:#e6db74">&#39;set -m ;  ./bin/startup.sh&#39;</span>)
+<span style="color:#66d9ef">with</span> lcd(<span style="color:#e6db74">&#39;/opt/tomcat&#39;</span>)
+    run(<span style="color:#e6db74">&#39;pwd&#39;</span>)
+</code></pre></div><p>cd 是在远程服务器上执行，lcd是在本地执行</p>
+<p><strong>6.上传下载文件</strong>
+从远端服务器下载:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">get(<span style="color:#e6db74">&#39;/remote/path/&#39;</span>,<span style="color:#e6db74">&#39;/local/path/&#39;</span>)
+</code></pre></div><p>上传文件到远端服务器:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"> put(<span style="color:#e6db74">&#39;/local/path/&#39;</span>,<span style="color:#e6db74">&#39;/remote/path&#39;</span>)
+</code></pre></div><p>这两种方式使用的是sftp协议</p>
+<p><strong>7.判断文件或目录是否存在</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> fabric.contrib.files <span style="color:#f92672">import</span> exists
+    <span style="color:#66d9ef">if</span> exists(<span style="color:#e6db74">&#39;/opt/tomcat/logs/catalina.out&#39;</span>):
+        print <span style="color:#e6db74">&#39;catalina.out exist&#39;</span>    
+    <span style="color:#66d9ef">else</span>:
+        print <span style="color:#e6db74">&#39;catalina.out not exist&#39;</span>
+</code></pre></div><p><strong>8.判断远程主机的文件中是否存在文本</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> fabric.contrib.files <span style="color:#f92672">import</span> contains
+    <span style="color:#66d9ef">if</span> contains(<span style="color:#e6db74">&#39;/opt/tomcat/catalina.out&#39;</span>,<span style="color:#e6db74">&#39;username1&#39;</span>):
+        print <span style="color:#e6db74">&#34;contains text&#34;</span>
+    <span style="color:#66d9ef">else</span><span style="color:#960050;background-color:#1e0010">：</span>
+        print <span style="color:#e6db74">&#34;no contains&#34;</span>
+</code></pre></div><p><strong>9.以sudo权限运行</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">sudo(<span style="color:#e6db74">&#39;whoami&#39;</span>,user<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;tomcat&#39;</span>)
+</code></pre></div><p>用户须在/etc/sudoers里配置sudo权限</p>
+<p><strong>10.命令嵌套</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">with</span> prefix(<span style="color:#e6db74">&#39;cd /opt/fab&#39;</span>):
+    run(<span style="color:#e6db74">&#39;pwd&#39;</span>)
+    <span style="color:#66d9ef">with</span> prefix(<span style="color:#e6db74">&#39;cd fabfiles&#39;</span>):
+        run(<span style="color:#e6db74">&#39;pwd&#39;</span>)
+        run(<span style="color:#e6db74">&#39;ls&#39;</span>)
+</code></pre></div><p>上面的代码等同于:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd /opt/fab <span style="color:#f92672">&amp;&amp;</span> pwd
+cd /var/fab <span style="color:#f92672">&amp;&amp;</span> cd fabfiles <span style="color:#f92672">&amp;&amp;</span> pwd <span style="color:#f92672">&amp;&amp;</span> ls
+</code></pre></div><p><strong>11.从键盘接收输入</strong></p>
+<p>使用python的函数， 接收一行：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">text <span style="color:#f92672">=</span> raw_input() 
+print text
+</code></pre></div><p>接收一段：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> sys
+update_log <span style="color:#f92672">=</span> sys<span style="color:#f92672">.</span>stdin<span style="color:#f92672">.</span>read()
+print update_log
+</code></pre></div><p><strong>12.只运行一次函数</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@runs_once</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">local_file_backup</span>
+    print <span style="color:#960050;background-color:#1e0010">‘</span>我只运行一次<span style="color:#960050;background-color:#1e0010">’</span>
+</code></pre></div><p>fabric执行时都会在每台主机上执行所有函数，如果有函数只需执行一次，可以用这个参数</p>
+<p><strong>13.用roles定义分组</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">env<span style="color:#f92672">.</span>roledefs <span style="color:#f92672">=</span> {
+    <span style="color:#e6db74">&#39;ftp&#39;</span>: [<span style="color:#e6db74">&#39;192.168.1.100&#39;</span>],
+    <span style="color:#e6db74">&#39;web&#39;</span>: [<span style="color:#e6db74">&#39;192.168.1.101&#39;</span>, <span style="color:#e6db74">&#39;192.168.1.102&#39;</span>, <span style="color:#e6db74">&#39;192.168.1.103&#39;</span>],
+}
+</code></pre></div><p>定义分组的好处是可以指定某一分组主机，执行某一任务
+例如：从ftp主机下载代码，传到web上</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@runs_once</span>
+<span style="color:#960050;background-color:#1e0010">＠</span>roles(<span style="color:#e6db74">&#39;ftp&#39;</span>)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">download</span>():
+    print <span style="color:#e6db74">&#39;donwload files&#39;</span>
+
+<span style="color:#a6e22e">@roles</span>(<span style="color:#e6db74">&#39;web&#39;</span>)
+    put(<span style="color:#e6db74">&#39;local/files&#39;</span>,<span style="color:#e6db74">&#39;remote/files&#39;</span>)
+</code></pre></div><p><strong>14.使用rsync传输</strong>
+put/get/project.upload_project 都是使用sftp方式，比较慢，fabric提供了rsync方式</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> fabric.contrib <span style="color:#f92672">import</span> project, console
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">syncfile</span>():
+    project<span style="color:#f92672">.</span>rsync_project(
+        remote_dir<span style="color:#f92672">=</span>online_dir,
+        local_dir<span style="color:#f92672">=/</span>tmp<span style="color:#f92672">/</span>upload<span style="color:#f92672">/</span>,
+        default_opts<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;-avczp&#39;</span>,
+                    delete<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>
+    )
+</code></pre></div><p><strong>15.任务增加说明</strong>
+用def一个函数后，在<code>fab -f fabfile.py -l</code>中只能看到函数名，没有说明，例如上面的rsync例子的结果：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@localhost tmp<span style="color:#f92672">]</span><span style="color:#75715e"># fab -f rsync.py -l</span>
+Available commands:
+syncfile
+</code></pre></div><p>添加函数说明可以在def下用三个引号来写说明。格式：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">rsyncfile</span>():
+    <span style="color:#e6db74">&#34;&#34;&#34;使用rsync同步文件&#34;&#34;&#34;</span>
+</code></pre></div><p>在执行一下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@localhost tmp<span style="color:#f92672">]</span><span style="color:#75715e"># fab -f rsync.py -l</span>
+Available commands:
+syncfile
+</code></pre></div>
+</div>
+
+
+  <footer class="container">
+  <div class="container navigation no-print">
+  <h2>Navigation</h2>
+  
+  
+
+    
+    <a class="prev" href="https://blog.lbbniu.com/2021/11/20/nginx-lua%E7%9B%B4%E6%8E%A5%E9%98%B6%E6%AE%B5/" title="nginx lua直接阶段">
+      Previous
+    </a>
+    
+
+    
+    <a class="next" href="https://blog.lbbniu.com/2021/11/20/docker%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E7%BD%91%E6%AE%B5/" title="Docker修改默认网段">
+      Next
+    </a>
+    
+
+  
+
+
+</div>
+
+  
+
+</footer>
+
+</article>
+      <footer id="main-footer" class="container main_footer">
+  
+
+  <div class="container nav foot no-print">
+  
+<a href="https://blog.lbbniu.com/license">license</a>
+
+
+  <a class="toplink" href="#">back to top</a>
+
+</div>
+
+  <div class="container credits">
+  
+<div class="container footline">
+  
+  code with <!-- raw HTML omitted --><!-- raw HTML omitted -->
+
+
+</div>
+
+
+  
+<div class="container copyright">
+  
+  (c) 2021 lbbniu.
+
+
+</div>
+
+
+</div>
+
+</footer>
+
+    </main>
+    
+
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+  </body>
+</html>
+

@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" href="http://fonts.useso.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <title>LeetCode  &middot; lbbniu</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="这里是lbbniu的个人博客" />
+
+<meta name="keywords" content="">
+
+
+<meta property="og:title" content="LeetCode  &middot; lbbniu ">
+<meta property="og:site_name" content="lbbniu"/>
+<meta property="og:url" content="https://blog.lbbniu.com/study/leetcode/leetcode/" />
+<meta property="og:locale" content="en-us">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content=""/>
+<meta property="og:article:published_time" content="2021-11-20T17:18:16&#43;08:00" />
+<meta property="og:article:modified_time" content="2021-11-20T17:18:16&#43;08:00" />
+
+  
+
+  
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "LeetCode",
+    "author": {
+      "@type": "Person",
+      "name": "lbbniu"
+    },
+    "datePublished": "2021-11-20",
+    "description": "",
+    "wordCount":  1175 
+  }
+</script>
+
+
+
+<link rel="canonical" href="https://blog.lbbniu.com/study/leetcode/leetcode/" />
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://blog.lbbniu.com/touch-icon-144-precomposed.png">
+<link href="https://blog.lbbniu.com/favicon.png" rel="icon">
+
+<meta name="generator" content="Hugo 0.89.4" />
+
+  <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link href='https://fonts.googleapis.com/css?family=Merriweather:300%7CRaleway%7COpen+Sans' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/highlight/default.css">
+
+  
+  
+</head>
+<body>
+  <main id="main-wrapper" class="container main_wrapper has-sidebar">
+    <header id="main-header" class="container main_header">
+  <div class="container brand">
+  <div class="container title h1-like">
+  <a class="baselink" href="https://blog.lbbniu.com/">
+  lbbniu
+
+</a>
+
+</div>
+
+  
+<div class="container topline">
+  
+  学无止境
+
+
+</div>
+
+
+</div>
+
+  <nav class="container nav primary no-print">
+  
+
+<a class="homelink" href="https://blog.lbbniu.com/">首页</a>
+
+
+  
+<a href="https://blog.lbbniu.com/post" title="Show list of posts">列表</a>
+
+<a href="https://blog.lbbniu.com/golang" title="Show list of tags">Golang</a>
+
+<a href="https://blog.lbbniu.com/k8s" title="Show list of tags">Kubernetes</a>
+
+<a href="https://blog.lbbniu.com/tags" title="Show list of tags">标签</a>
+
+<a href="https://blog.lbbniu.com/about">关于</a>
+
+
+</nav>
+
+<div class="container nav secondary no-print">
+  
+<a id="contact-link-email" class="contact_link" rel="me" aria-label="Email" href="mailto:lbbniu@gmail.com">
+  <span class="fa fa-envelope-square"></span></a>
+
+
+
+<a id="contact-link-github" class="contact_link" rel="me" aria-label="Github" href="https://github.com/lbbniu">
+  <span class="fa fa-github-square"></span></a>
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+  
+
+</header>
+
+
+<article id="main-content" class="container main_content single">
+  <header class="container hat">
+  <h1>LeetCode
+</h1>
+
+</header>
+
+  <div class="container content">
+  <h3 id="数组和链表">数组和链表</h3>
+<h4 id="206-反转链表httpsleetcode-cncomproblemsreverse-linked-list"><a href="https://leetcode-cn.com/problems/reverse-linked-list/">206. 反转链表</a></h4>
+<h4 id="24-两两交换链表中的节点httpsleetcode-cncomproblemsswap-nodes-in-pairs"><a href="https://leetcode-cn.com/problems/swap-nodes-in-pairs/">24. 两两交换链表中的节点</a></h4>
+<h4 id="141-环形链表httpsleetcode-cncomproblemslinked-list-cycle"><a href="https://leetcode-cn.com/problems/linked-list-cycle/">141. 环形链表</a></h4>
+<h4 id="142-环形链表-iihttpsleetcode-cncomproblemslinked-list-cycle-ii"><a href="https://leetcode-cn.com/problems/linked-list-cycle-ii/">142. 环形链表 II</a></h4>
+<h4 id="24-两两交换链表中的节点httpsleetcode-cncomproblemsswap-nodes-in-pairs-1"><a href="https://leetcode-cn.com/problems/swap-nodes-in-pairs/">24. 两两交换链表中的节点</a></h4>
+<hr>
+<h4 id="21-合并两个有序链表httpsleetcode-cncomproblemsmerge-two-sorted-lists"><a href="https://leetcode-cn.com/problems/merge-two-sorted-lists/">21. 合并两个有序链表</a></h4>
+<h4 id="25k-个一组翻转链表httpsleetcode-cncomproblemsreverse-nodes-in-k-group"><a href="https://leetcode-cn.com/problems/reverse-nodes-in-k-group/">25.K 个一组翻转链表</a></h4>
+<h4 id="86分隔链表httpsleetcode-cncomproblemspartition-list"><a href="https://leetcode-cn.com/problems/partition-list/">86.分隔链表</a></h4>
+<h4 id="92反转链表-iihttpsleetcode-cncomproblemsreverse-linked-list-ii"><a href="https://leetcode-cn.com/problems/reverse-linked-list-ii/">92.反转链表 II</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Definition for singly-linked list.
+</span><span style="color:#75715e"> * struct ListNode {
+</span><span style="color:#75715e"> *     int val;
+</span><span style="color:#75715e"> *     ListNode *next;
+</span><span style="color:#75715e"> *     ListNode(int x) : val(x), next(NULL) {}
+</span><span style="color:#75715e"> * };
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+<span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+    ListNode<span style="color:#f92672">*</span> reverseBetween(ListNode<span style="color:#f92672">*</span> head, <span style="color:#66d9ef">int</span> m, <span style="color:#66d9ef">int</span> n) {
+        <span style="color:#66d9ef">int</span> change_len <span style="color:#f92672">=</span> n <span style="color:#f92672">-</span> m <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+        ListNode <span style="color:#f92672">*</span>pre_head <span style="color:#f92672">=</span> NULL;
+        ListNode <span style="color:#f92672">*</span>result <span style="color:#f92672">=</span> head;
+        <span style="color:#66d9ef">while</span> (head <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">--</span>m) {
+            pre_head <span style="color:#f92672">=</span> head;
+            head <span style="color:#f92672">=</span> head<span style="color:#f92672">-&gt;</span>next;
+        }
+        ListNode <span style="color:#f92672">*</span>modify_list_tail <span style="color:#f92672">=</span> head;
+        ListNode <span style="color:#f92672">*</span>new_head <span style="color:#f92672">=</span> NULL;
+        <span style="color:#66d9ef">while</span> (head <span style="color:#f92672">&amp;&amp;</span> change_len<span style="color:#f92672">--</span>) {
+            ListNode <span style="color:#f92672">*</span>next <span style="color:#f92672">=</span> head<span style="color:#f92672">-&gt;</span>next;
+            head<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> new_head;
+            new_head <span style="color:#f92672">=</span> head;
+            head <span style="color:#f92672">=</span> next;
+        }
+        <span style="color:#75715e">//连接为翻转部分
+</span><span style="color:#75715e"></span>        modify_list_tail<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> head;
+        <span style="color:#66d9ef">if</span> (pre_head) {
+            pre_head<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> new_head;
+        } <span style="color:#66d9ef">else</span> {
+            result <span style="color:#f92672">=</span> new_head;
+        }
+        <span style="color:#66d9ef">return</span> result;
+    }
+};
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#e6db74">/**
+</span><span style="color:#e6db74"> * Definition for a singly-linked list.
+</span><span style="color:#e6db74"> * class ListNode {
+</span><span style="color:#e6db74"> *     public $val = 0;
+</span><span style="color:#e6db74"> *     public $next = null;
+</span><span style="color:#e6db74"> *     function __construct($val) { $this-&gt;val = $val; }
+</span><span style="color:#e6db74"> * }
+</span><span style="color:#e6db74"> */</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+
+    <span style="color:#e6db74">/**
+</span><span style="color:#e6db74">     * @param ListNode $head
+</span><span style="color:#e6db74">     * @param Integer $m
+</span><span style="color:#e6db74">     * @param Integer $n
+</span><span style="color:#e6db74">     * @return ListNode
+</span><span style="color:#e6db74">     */</span>
+    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">reverseBetween</span>($head, $m, $n) {
+        <span style="color:#75715e">//计算翻转部分的长度
+</span><span style="color:#75715e"></span>        $change_len <span style="color:#f92672">=</span> $n <span style="color:#f92672">-</span> $m <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+        $pre_head <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>; <span style="color:#75715e">//记录翻转区间的前驱节点
+</span><span style="color:#75715e"></span>        $result <span style="color:#f92672">=</span> $head;
+        <span style="color:#66d9ef">while</span> ($head <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">--</span>$m) {
+            $pre_head <span style="color:#f92672">=</span> $head;
+            $head <span style="color:#f92672">=</span> $head<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">next</span>;
+        }
+        <span style="color:#75715e">//开始翻转
+</span><span style="color:#75715e"></span>        $change_tail <span style="color:#f92672">=</span> $head;<span style="color:#75715e">//记录翻转后的尾节点
+</span><span style="color:#75715e"></span>        $new_head <span style="color:#f92672">=</span><span style="color:#66d9ef">null</span>; <span style="color:#75715e">//翻转后新的头节点
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">while</span> ($head <span style="color:#f92672">&amp;&amp;</span> $change_len<span style="color:#f92672">--</span>) {
+            $next <span style="color:#f92672">=</span> $head<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">next</span>;
+            $head<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">next</span> <span style="color:#f92672">=</span> $new_head;
+            $new_head <span style="color:#f92672">=</span> $head;
+            $head <span style="color:#f92672">=</span> $next;
+        }
+        <span style="color:#75715e">//连接未翻转部分
+</span><span style="color:#75715e"></span>        $change_tail<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">next</span> <span style="color:#f92672">=</span> $head;
+        <span style="color:#66d9ef">if</span> ($pre_head) {
+            $pre_head<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">next</span> <span style="color:#f92672">=</span> $new_head;
+        } <span style="color:#66d9ef">else</span> {
+            <span style="color:#75715e">//如果m为0，新的头结点
+</span><span style="color:#75715e"></span>            $result <span style="color:#f92672">=</span> $new_head; 
+        }
+        <span style="color:#66d9ef">return</span> $result;
+    }
+}
+</code></pre></div><h4 id="-160相交链表httpsleetcode-cncomproblemsintersection-of-two-linked-lists"><a href="https://leetcode-cn.com/problems/intersection-of-two-linked-lists/"> 160.相交链表</a></h4>
+<h4 id="35复杂链表的复制httpsleetcode-cncomproblemsfu-za-lian-biao-de-fu-zhi-lcof"><a href="https://leetcode-cn.com/problems/fu-za-lian-biao-de-fu-zhi-lcof/">35.复杂链表的复制</a></h4>
+<h4 id="面试题52-两个链表的第一个公共节点httpsleetcode-cncomproblemsliang-ge-lian-biao-de-di-yi-ge-gong-gong-jie-dian-lcof"><a href="https://leetcode-cn.com/problems/liang-ge-lian-biao-de-di-yi-ge-gong-gong-jie-dian-lcof/">面试题52. 两个链表的第一个公共节点</a></h4>
+<h4 id="面试题-0204-分割链表httpsleetcode-cncomproblemspartition-list-lcci"><a href="https://leetcode-cn.com/problems/partition-list-lcci/">面试题 02.04. 分割链表</a></h4>
+<h3 id="栈队列">栈&amp;队列</h3>
+<h4 id="20-有效的括号httpsleetcode-cncomproblemsvalid-parentheses"><a href="https://leetcode-cn.com/problems/valid-parentheses/">20. 有效的括号</a></h4>
+<h4 id="232-用栈实现队列httpsleetcode-cncomproblemsimplement-queue-using-stacks"><a href="https://leetcode-cn.com/problems/implement-queue-using-stacks/">232. 用栈实现队列</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">//方法一
+</span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stack&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyQueue</span>{
+  <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+  	MyQueue(){}
+  	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">push</span>(<span style="color:#66d9ef">int</span> x){
+      std<span style="color:#f92672">::</span>stack<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> temp_stack; 
+      <span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span>_data.empty()) {
+        temp_stack.push(_data.top());
+        _data.pop();
+      }
+      temp_stack.push(x);
+      <span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span>temp_stack.empty()) {
+        _data.push(temp_stack.top());
+        temp_stack.pop();
+      }
+    }
+  	<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">pop</span>(){
+      <span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> _data.top();
+      _data.pop();
+      <span style="color:#66d9ef">return</span> x;
+    }
+  	<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">peek</span>(){
+      <span style="color:#66d9ef">return</span> _data.top();
+    }
+  	<span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">empty</span>(){
+      <span style="color:#66d9ef">return</span> _data.empty();
+    }
+  <span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
+  	std<span style="color:#f92672">::</span>stack<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> _data;
+};
+
+<span style="color:#75715e">//方法二
+</span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stack&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyQueue</span>{
+  <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+  	MyQueue(){}
+  	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">push</span>(<span style="color:#66d9ef">int</span> x) {
+      _input.push(x);
+    }
+  	<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">pop</span>() {
+      adjust();
+      <span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> _output.top();
+      _output.pop();
+      <span style="color:#66d9ef">return</span> x;
+    }
+  	<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">peek</span>() {
+      adjust();
+      <span style="color:#66d9ef">return</span> _output.top();
+    }
+  	<span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">empty</span>() {
+      <span style="color:#66d9ef">return</span> _input.empty() <span style="color:#f92672">&amp;&amp;</span> _output.empty();
+    }
+  <span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
+  	<span style="color:#66d9ef">void</span> adjust() {
+      <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>_output.empty()) {
+        <span style="color:#66d9ef">return</span>;
+      }
+      <span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span>_input.empty()) {
+        _output.push(_input.top());
+        _input.pop();
+      }
+    }
+  	std<span style="color:#f92672">::</span>stack<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> _input;
+  	std<span style="color:#f92672">::</span>stack<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> _output;
+};
+</code></pre></div><h4 id="225-用队列实现栈httpsleetcode-cncomproblemsimplement-stack-using-queues"><a href="https://leetcode-cn.com/problems/implement-stack-using-queues/">225. 用队列实现栈</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;queue&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyStack</span> {
+  <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+  	MyStack(){}
+  	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">push</span>(<span style="color:#66d9ef">int</span> x) {
+      std<span style="color:#f92672">::</span>queue<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> temp_queue;
+      temp_queue.push(x);
+      <span style="color:#66d9ef">while</span>(<span style="color:#f92672">!</span>_data.empty()){
+        temp_queue.push(_data.front());
+        _data.pop();
+      }
+      <span style="color:#66d9ef">while</span>(<span style="color:#f92672">!</span>temp_queue.empty()){
+        _data.push(temp_queue.front());
+        temp_queue.pop();
+      }
+    }
+    <span style="color:#75715e">/*void push(int x) {
+</span><span style="color:#75715e">        _data.push(x);
+</span><span style="color:#75715e">        for (int i=1; i&lt;_data.size(); i++) {
+</span><span style="color:#75715e">            _data.push(_data.front());
+</span><span style="color:#75715e">            _data.pop();
+</span><span style="color:#75715e">        }
+</span><span style="color:#75715e">    }*/</span>
+  	<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">pop</span>() {
+      <span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> _data.front();
+      _data.pop();
+      <span style="color:#66d9ef">return</span> x;
+    }
+  	<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">top</span>() {
+      <span style="color:#66d9ef">return</span> _data.front();
+    }
+  	<span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">empty</span>() {
+      <span style="color:#66d9ef">return</span> _data.empty();
+    }
+  <span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
+  	std<span style="color:#f92672">::</span>queue<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> _data;
+  
+};
+</code></pre></div><h4 id="155-最小栈httpsleetcode-cncomproblemsmin-stack"><a href="https://leetcode-cn.com/problems/min-stack/">155. 最小栈</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MinStack</span> {
+<span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+    <span style="color:#75715e">/** initialize your data structure here. */</span>
+    MinStack() {}
+    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">push</span>(<span style="color:#66d9ef">int</span> x) {
+			_data.push(x);<span style="color:#75715e">//将数据压入数据栈
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">if</span> (_min.empty()) {
+        <span style="color:#75715e">//如果最小值栈空，直接将数据压入栈
+</span><span style="color:#75715e"></span>        _min.push(x);
+      } <span style="color:#66d9ef">else</span> {
+        <span style="color:#75715e">//比较当前数据与最小值栈顶数据大小，选择较小的压入最小值栈
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (x <span style="color:#f92672">&gt;</span> _min.top()){
+          x <span style="color:#f92672">=</span> _min.top();
+        }
+        _min.push(x);
+      }
+    }
+    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">pop</span>() {
+      <span style="color:#75715e">//数据栈和最小值栈同时出栈
+</span><span style="color:#75715e"></span>			_data.pop();
+      _min.pop();
+    }
+    <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">top</span>() {
+      <span style="color:#75715e">//获取数据栈栈顶
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">return</span> _data.top();
+    }
+    <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getMin</span>() {
+      <span style="color:#75715e">//获取最小值栈栈顶
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">return</span> _min.top();
+    }
+  <span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
+  	std<span style="color:#f92672">::</span>stack<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> _data;<span style="color:#75715e">//数据栈
+</span><span style="color:#75715e"></span>  	std<span style="color:#f92672">::</span>stack<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> _min;<span style="color:#75715e">//最小值栈
+</span><span style="color:#75715e"></span>};
+</code></pre></div><h4 id="poj-1363-合法的出栈序列">poj 1363 合法的出栈序列</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stack&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;queue&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">//检测序列存储在队列中
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">check_is_valid_order</span>(std<span style="color:#f92672">::</span>queue<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">&amp;</span>order) {
+	std<span style="color:#f92672">::</span>stack<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> S;<span style="color:#75715e">//S为模拟栈
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">int</span> n <span style="color:#f92672">=</span> queue.size();<span style="color:#75715e">//n 为序列长度， 讲1-n按顺序入栈
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;=</span> n; i<span style="color:#f92672">++</span>) {
+    S.push(i);<span style="color:#75715e">//将元素i压入栈
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//如果栈不为空，栈顶和队列头部元素相等，即弹出元素
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span>S.empty() <span style="color:#f92672">&amp;&amp;</span> S.top() <span style="color:#f92672">==</span> order.front()) {
+      S.pop();
+      order.pop();
+    }
+  }
+  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>s.empty()) {
+    <span style="color:#66d9ef">return</span> false;
+  }
+  <span style="color:#66d9ef">return</span> true;
+} 
+</code></pre></div><h3 id="优先级队列堆">优先级队列（堆）</h3>
+<h4 id="703-数据流中的第k大元素httpsleetcode-cncomproblemskth-largest-element-in-a-stream"><a href="https://leetcode-cn.com/problems/kth-largest-element-in-a-stream/">703. 数据流中的第K大元素</a></h4>
+<h4 id="239-滑动窗口最大值httpsleetcode-cncomproblemssliding-window-maximum"><a href="https://leetcode-cn.com/problems/sliding-window-maximum/">239. 滑动窗口最大值</a></h4>
+<h4 id="215-数组中的第k个最大元素httpsleetcode-cncomproblemskth-largest-element-in-an-array"><a href="https://leetcode-cn.com/problems/kth-largest-element-in-an-array/">215. 数组中的第K个最大元素</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;queue&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+<span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+    <span style="color:#66d9ef">int</span> findKthLargest(vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&amp;</span> nums, <span style="color:#66d9ef">int</span> k) {
+      <span style="color:#75715e">//最小堆
+</span><span style="color:#75715e"></span>      std<span style="color:#f92672">::</span>priority_queue<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span>, std<span style="color:#f92672">::</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span>, std<span style="color:#f92672">::</span>greater<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;</span> Q;
+      <span style="color:#75715e">//遍历nums数组
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> nums.size(); i<span style="color:#f92672">++</span>){
+        <span style="color:#66d9ef">if</span> (Q.size() <span style="color:#f92672">&lt;</span> k) {
+          Q.push(nums[i]);
+        } <span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span> (nums[i] <span style="color:#f92672">&gt;</span> Q.top()) {
+          Q.pop();
+          Q.push(nums[i]);
+        }
+      }
+      <span style="color:#66d9ef">return</span> Q.top();<span style="color:#75715e">//返回堆顶
+</span><span style="color:#75715e"></span>    }
+};
+</code></pre></div><h4 id="295-数据流的中位数httpsleetcode-cncomproblemsfind-median-from-data-stream"><a href="https://leetcode-cn.com/problems/find-median-from-data-stream/">295. 数据流的中位数</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MedianFinder</span> {
+<span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+    <span style="color:#75715e">/** initialize your data structure here. */</span>
+    MedianFinder() {
+    } 
+    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">addNum</span>(<span style="color:#66d9ef">int</span> num) {
+      <span style="color:#66d9ef">if</span> (big_queue.empty()) {
+        big_queue.push(num);
+        <span style="color:#66d9ef">return</span>;
+      }
+			<span style="color:#66d9ef">if</span> (big_queue.size() <span style="color:#f92672">==</span> small_queue.size()) {
+        <span style="color:#66d9ef">if</span> (num <span style="color:#f92672">&lt;</span> big_queue.top()) {
+          big_queue.push(num);
+        } <span style="color:#66d9ef">else</span> {
+          small_queue.push(num);
+        }
+      }  <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (big_queue.size() <span style="color:#f92672">&gt;</span> small_queue.size()){
+        <span style="color:#66d9ef">if</span> (num <span style="color:#f92672">&gt;</span> big_queue.top()) {
+          small_queue.push(num); 
+        } <span style="color:#66d9ef">else</span> {
+          small_queue.push(big_queue.top());
+          big_queue.pop();
+          big_queue.push(num);
+        }
+      } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (big_queue.size() <span style="color:#f92672">&lt;</span> small_queue.size()) {
+       	<span style="color:#66d9ef">if</span> (num <span style="color:#f92672">&lt;</span> small_queue.top()) {
+          big_queue.push(num);
+        } <span style="color:#66d9ef">else</span> {
+          big_queue.push(small_queue.top());
+          small_queue.pop();
+          small_queue.push(num);
+        }
+      }
+    }
+    <span style="color:#66d9ef">double</span> <span style="color:#a6e22e">findMedian</span>() {
+			<span style="color:#66d9ef">if</span> (big_queue.size() <span style="color:#f92672">==</span> small_queue.size()) {
+        <span style="color:#66d9ef">return</span> (big_queue.top() <span style="color:#f92672">+</span> small_queue.top()) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>;
+      } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (big_queue.size() <span style="color:#f92672">&lt;</span> small_queue.size()) {
+        <span style="color:#66d9ef">return</span> small_queue.top();
+      } <span style="color:#66d9ef">else</span> {
+        <span style="color:#66d9ef">return</span> big_queue.top();
+      }
+    }
+<span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
+  std<span style="color:#f92672">::</span>priority_queue<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">double</span><span style="color:#f92672">&gt;</span> big_queue;<span style="color:#75715e">//最大堆
+</span><span style="color:#75715e"></span>  std<span style="color:#f92672">::</span>priority_queue<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">double</span>, std<span style="color:#f92672">::</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">double</span><span style="color:#f92672">&gt;</span>, std<span style="color:#f92672">::</span>greater<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">double</span><span style="color:#f92672">&gt;&gt;</span> small_queue;<span style="color:#75715e">//最小堆
+</span><span style="color:#75715e"></span>};
+</code></pre></div><h3 id="哈希表">哈希表</h3>
+<h4 id="1-两数之和httpsleetcode-cncomproblemstwo-sum"><a href="https://leetcode-cn.com/problems/two-sum/">1. 两数之和</a></h4>
+<h4 id="15-三数之和httpsleetcode-cncomproblems3sum"><a href="https://leetcode-cn.com/problems/3sum/">15. 三数之和</a></h4>
+<h3 id="树二叉树二叉搜索树">树&amp;二叉树&amp;二叉搜索树</h3>
+<h4 id="98-验证二叉搜索树httpsleetcode-cncomproblemsvalidate-binary-search-tree"><a href="https://leetcode-cn.com/problems/validate-binary-search-tree/">98. 验证二叉搜索树</a></h4>
+<h4 id="236-二叉树的最近公共祖先httpsleetcode-cncomproblemslowest-common-ancestor-of-a-binary-tree"><a href="https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/">236. 二叉树的最近公共祖先</a></h4>
+<h4 id="235-二叉搜索树的最近公共祖先httpsleetcode-cncomproblemslowest-common-ancestor-of-a-binary-search-tree"><a href="https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/">235. 二叉搜索树的最近公共祖先</a></h4>
+<h4 id="543-二叉树的直径httpsleetcode-cncomproblemsdiameter-of-binary-tree"><a href="https://leetcode-cn.com/problems/diameter-of-binary-tree/">543. 二叉树的直径</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Definition for a binary tree node.
+</span><span style="color:#75715e"> * struct TreeNode {
+</span><span style="color:#75715e"> *     int val;
+</span><span style="color:#75715e"> *     TreeNode *left;
+</span><span style="color:#75715e"> *     TreeNode *right;
+</span><span style="color:#75715e"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+</span><span style="color:#75715e"> * };
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+<span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+    <span style="color:#66d9ef">int</span> diameterOfBinaryTree(TreeNode<span style="color:#f92672">*</span> root) {
+        dept(root);
+        <span style="color:#66d9ef">return</span> ans;
+    }
+<span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
+    <span style="color:#66d9ef">int</span> ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">dept</span>(TreeNode<span style="color:#f92672">*</span> root) {
+        <span style="color:#66d9ef">if</span> (root <span style="color:#f92672">==</span> NULL) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">int</span> l <span style="color:#f92672">=</span> dept(root<span style="color:#f92672">-&gt;</span>left);
+        <span style="color:#66d9ef">int</span> r <span style="color:#f92672">=</span> dept(root<span style="color:#f92672">-&gt;</span>right);
+        ans <span style="color:#f92672">=</span> max(ans, l <span style="color:#f92672">+</span> r);
+      	<span style="color:#66d9ef">return</span> max(l, r) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+    }
+};
+</code></pre></div><hr>
+<h4 id="695-岛屿的最大面积-03-15httpsleetcode-cncomproblemsmax-area-of-island"><a href="https://leetcode-cn.com/problems/max-area-of-island/">695. 岛屿的最大面积 03-15</a></h4>
+<h4 id="365-水壶问题httpsleetcode-cncomproblemswater-and-jug-problem"><a href="https://leetcode-cn.com/problems/water-and-jug-problem/">365. 水壶问题</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+
+    <span style="color:#e6db74">/**
+</span><span style="color:#e6db74">     * @param Integer $x
+</span><span style="color:#e6db74">     * @param Integer $y
+</span><span style="color:#e6db74">     * @param Integer $z
+</span><span style="color:#e6db74">     * @return Boolean
+</span><span style="color:#e6db74">     */</span>
+    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">canMeasureWater</span>($x, $y, $z) {
+        <span style="color:#66d9ef">return</span> $z <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> $z <span style="color:#f92672">&lt;=</span> $x <span style="color:#f92672">+</span> $y <span style="color:#f92672">&amp;&amp;</span> $z <span style="color:#f92672">%</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">gcd</span>($x, $y) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>;
+    }
+    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">gcd</span>($x, $y) {
+        <span style="color:#66d9ef">return</span> $y <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">?</span> $x <span style="color:#f92672">:</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">gcd</span>($y, $x <span style="color:#f92672">%</span> $y);
+    }
+}
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> collections
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span>(object):
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">canMeasureWater1</span>(self, x, y, z):
+        <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">        :type x: int
+</span><span style="color:#e6db74">        :type y: int
+</span><span style="color:#e6db74">        :type z: int
+</span><span style="color:#e6db74">        :rtype: bool
+</span><span style="color:#e6db74">        &#34;&#34;&#34;</span>
+        <span style="color:#66d9ef">if</span> x <span style="color:#f92672">+</span> y <span style="color:#f92672">&lt;</span> z:
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
+        <span style="color:#66d9ef">if</span> x <span style="color:#f92672">==</span><span style="color:#ae81ff">0</span> <span style="color:#f92672">or</span> y <span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>:
+            <span style="color:#66d9ef">return</span> z <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">or</span> x <span style="color:#f92672">+</span> y <span style="color:#f92672">==</span>z
+        <span style="color:#66d9ef">return</span> z <span style="color:#f92672">%</span> math<span style="color:#f92672">.</span>gcd(x, y) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">canMeasureWater2</span>(self, x, y, z):
+        <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">        :type x: int
+</span><span style="color:#e6db74">        :type y: int
+</span><span style="color:#e6db74">        :type z: int
+</span><span style="color:#e6db74">        :rtype: bool
+</span><span style="color:#e6db74">        &#34;&#34;&#34;</span>
+        <span style="color:#66d9ef">if</span> z <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">or</span> x <span style="color:#f92672">+</span> y <span style="color:#f92672">&lt;</span> z: <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
+        q <span style="color:#f92672">=</span> collections<span style="color:#f92672">.</span>deque([(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>)])
+        visited <span style="color:#f92672">=</span> {(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>)}
+        <span style="color:#66d9ef">while</span> len(q):
+            a, b <span style="color:#f92672">=</span> q<span style="color:#f92672">.</span>popleft()
+            <span style="color:#66d9ef">if</span> a <span style="color:#f92672">==</span> z <span style="color:#f92672">or</span> b <span style="color:#f92672">==</span> z <span style="color:#f92672">or</span> a <span style="color:#f92672">+</span> b <span style="color:#f92672">==</span> z:
+                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">True</span>
+            states <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>_gen_states(a, b, x ,y)
+            <span style="color:#66d9ef">for</span> state <span style="color:#f92672">in</span> states:
+                <span style="color:#66d9ef">if</span> state <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> visited:
+                    q<span style="color:#f92672">.</span>append(state)
+                    visited<span style="color:#f92672">.</span>add(state)
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">_gen_states</span>(self, a, b, x, y):
+        states <span style="color:#f92672">=</span> []
+        <span style="color:#75715e"># 清空</span>
+        states<span style="color:#f92672">.</span>append((<span style="color:#ae81ff">0</span>, b))
+        states<span style="color:#f92672">.</span>append((a, <span style="color:#ae81ff">0</span>))
+        <span style="color:#75715e">#填满水</span>
+        states<span style="color:#f92672">.</span>append((x, b))
+        states<span style="color:#f92672">.</span>append((a, y))
+        
+        <span style="color:#75715e"># a -&gt; b </span>
+        <span style="color:#66d9ef">if</span> a <span style="color:#f92672">+</span> b <span style="color:#f92672">&lt;</span> y:
+            states<span style="color:#f92672">.</span>append((<span style="color:#ae81ff">0</span>, a <span style="color:#f92672">+</span> b))
+        <span style="color:#66d9ef">else</span>:
+            states<span style="color:#f92672">.</span>append((a <span style="color:#f92672">+</span> b <span style="color:#f92672">-</span> y, y))
+		<span style="color:#75715e"># b -&gt; a</span>
+        <span style="color:#66d9ef">if</span> a <span style="color:#f92672">+</span> b <span style="color:#f92672">&lt;</span> x:
+            states<span style="color:#f92672">.</span>append((a <span style="color:#f92672">+</span> b, <span style="color:#ae81ff">0</span>))
+		<span style="color:#66d9ef">else</span>:
+            states<span style="color:#f92672">.</span>append((x, a <span style="color:#f92672">+</span> b <span style="color:#f92672">-</span>y))
+        <span style="color:#66d9ef">return</span> states
+     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">canMeasureWater3</span>(self, x, y, z):
+        <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">        :type x: int
+</span><span style="color:#e6db74">        :type y: int
+</span><span style="color:#e6db74">        :type z: int
+</span><span style="color:#e6db74">        :rtype: bool
+</span><span style="color:#e6db74">        &#34;&#34;&#34;</span>
+        <span style="color:#66d9ef">if</span> z <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">or</span> x <span style="color:#f92672">+</span> y <span style="color:#f92672">&lt;</span> z: <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
+        q <span style="color:#f92672">=</span> collections<span style="color:#f92672">.</span>deque(<span style="color:#ae81ff">0</span>)
+        visited <span style="color:#f92672">=</span> {<span style="color:#ae81ff">0</span>}
+        <span style="color:#66d9ef">while</span> len(q):
+            sum <span style="color:#f92672">=</span> q<span style="color:#f92672">.</span>pop()
+            <span style="color:#66d9ef">if</span> sum <span style="color:#f92672">==</span> z:
+                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">True</span>
+            states <span style="color:#f92672">=</span> [
+                sum <span style="color:#f92672">+</span> x ,
+                sum <span style="color:#f92672">+</span> y ,
+                sum <span style="color:#f92672">-</span> x ,
+                sum <span style="color:#f92672">-</span> y ,
+            ]
+            <span style="color:#66d9ef">for</span> state <span style="color:#f92672">in</span> states:
+                <span style="color:#66d9ef">if</span> state <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> visited:
+                    q<span style="color:#f92672">.</span>append(state)
+                    visited<span style="color:#f92672">.</span>add(state)
+        <span style="color:#66d9ef">return</span> false
+</code></pre></div>
+</div>
+
+
+  
+</article>
+      <footer id="main-footer" class="container main_footer">
+  
+
+  <div class="container nav foot no-print">
+  
+<a href="https://blog.lbbniu.com/license">license</a>
+
+
+  <a class="toplink" href="#">back to top</a>
+
+</div>
+
+  <div class="container credits">
+  
+<div class="container footline">
+  
+  code with <!-- raw HTML omitted --><!-- raw HTML omitted -->
+
+
+</div>
+
+
+  
+<div class="container copyright">
+  
+  (c) 2021 lbbniu.
+
+
+</div>
+
+
+</div>
+
+</footer>
+
+    </main>
+    
+
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+  </body>
+</html>
+

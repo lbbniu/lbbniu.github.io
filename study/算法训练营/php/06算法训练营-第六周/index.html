@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" href="http://fonts.useso.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <title>  &middot; lbbniu</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="这里是lbbniu的个人博客" />
+
+<meta name="keywords" content="">
+
+
+<meta property="og:title" content="  &middot; lbbniu ">
+<meta property="og:site_name" content="lbbniu"/>
+<meta property="og:url" content="https://blog.lbbniu.com/study/%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5/php/06%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E5%85%AD%E5%91%A8/" />
+<meta property="og:locale" content="en-us">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content=""/>
+<meta property="og:article:published_time" content="0001-01-01T00:00:00Z" />
+<meta property="og:article:modified_time" content="0001-01-01T00:00:00Z" />
+
+  
+
+  
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "",
+    "author": {
+      "@type": "Person",
+      "name": "lbbniu"
+    },
+    "datePublished": "0001-01-01",
+    "description": "",
+    "wordCount":  3555 
+  }
+</script>
+
+
+
+<link rel="canonical" href="https://blog.lbbniu.com/study/%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5/php/06%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E5%85%AD%E5%91%A8/" />
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://blog.lbbniu.com/touch-icon-144-precomposed.png">
+<link href="https://blog.lbbniu.com/favicon.png" rel="icon">
+
+<meta name="generator" content="Hugo 0.89.4" />
+
+  <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link href='https://fonts.googleapis.com/css?family=Merriweather:300%7CRaleway%7COpen+Sans' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/highlight/default.css">
+
+  
+  
+</head>
+<body>
+  <main id="main-wrapper" class="container main_wrapper has-sidebar">
+    <header id="main-header" class="container main_header">
+  <div class="container brand">
+  <div class="container title h1-like">
+  <a class="baselink" href="https://blog.lbbniu.com/">
+  lbbniu
+
+</a>
+
+</div>
+
+  
+<div class="container topline">
+  
+  学无止境
+
+
+</div>
+
+
+</div>
+
+  <nav class="container nav primary no-print">
+  
+
+<a class="homelink" href="https://blog.lbbniu.com/">首页</a>
+
+
+  
+<a href="https://blog.lbbniu.com/post" title="Show list of posts">列表</a>
+
+<a href="https://blog.lbbniu.com/golang" title="Show list of tags">Golang</a>
+
+<a href="https://blog.lbbniu.com/k8s" title="Show list of tags">Kubernetes</a>
+
+<a href="https://blog.lbbniu.com/tags" title="Show list of tags">标签</a>
+
+<a href="https://blog.lbbniu.com/about">关于</a>
+
+
+</nav>
+
+<div class="container nav secondary no-print">
+  
+<a id="contact-link-email" class="contact_link" rel="me" aria-label="Email" href="mailto:lbbniu@gmail.com">
+  <span class="fa fa-envelope-square"></span></a>
+
+
+
+<a id="contact-link-github" class="contact_link" rel="me" aria-label="Github" href="https://github.com/lbbniu">
+  <span class="fa fa-github-square"></span></a>
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+  
+
+</header>
+
+
+<article id="main-content" class="container main_content single">
+  <header class="container hat">
+  <h1>
+</h1>
+
+</header>
+
+  <div class="container content">
+  <h1 id="第12课--动态规划">第12课 | 动态规划</h1>
+<h2 id="1-动态规划的实现及关键点">1. 动态规划的实现及关键点</h2>
+<h3 id="参考链接">参考链接</h3>
+<ul>
+<li>
+<p><a href="http://shimo.im/docs/DjqqGCT3xqDYwPyY/">递归代码模板</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Python 代码模板</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">recursion</span>(level, param1, param2, <span style="color:#f92672">...</span>): 
+    <span style="color:#75715e"># recursion terminator </span>
+    <span style="color:#66d9ef">if</span> level <span style="color:#f92672">&gt;</span> MAX_LEVEL: 
+	   process_result 
+	   <span style="color:#66d9ef">return</span> 
+    <span style="color:#75715e"># process logic in current level </span>
+    process(level, data<span style="color:#f92672">...</span>) 
+    <span style="color:#75715e"># drill down </span>
+    self<span style="color:#f92672">.</span>recursion(level <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, p1, <span style="color:#f92672">...</span>) 
+    <span style="color:#75715e"># reverse the current level status if needed</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">//Java 代码模板
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">recur</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> level<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> param<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> 
+  <span style="color:#75715e">// terminator 
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>level <span style="color:#f92672">&gt;</span> MAX_LEVEL<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> 
+    <span style="color:#75715e">// process result 
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span><span style="color:#f92672">;</span> 
+
+  <span style="color:#75715e">// process current logic 
+</span><span style="color:#75715e"></span>  process<span style="color:#f92672">(</span>level<span style="color:#f92672">,</span> param<span style="color:#f92672">);</span> 
+  <span style="color:#75715e">// drill down 
+</span><span style="color:#75715e"></span>  recur<span style="color:#f92672">(</span> level<span style="color:#f92672">:</span> level <span style="color:#f92672">+</span> 1<span style="color:#f92672">,</span> newParam<span style="color:#f92672">);</span>
+  <span style="color:#75715e">// restore current status 
+</span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
+</code></pre></div></li>
+<li>
+<p><a href="http://shimo.im/docs/3xvghYh3JJPKwdvt/">分治代码模板</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">divide_conquer</span>(problem, param1, param2, <span style="color:#f92672">...</span>): 
+  <span style="color:#75715e"># recursion terminator </span>
+  <span style="color:#66d9ef">if</span> problem <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span>: 
+	print_result 
+	<span style="color:#66d9ef">return</span> 
+
+  <span style="color:#75715e"># prepare data </span>
+  data <span style="color:#f92672">=</span> prepare_data(problem) 
+  subproblems <span style="color:#f92672">=</span> split_problem(problem, data) 
+
+  <span style="color:#75715e"># conquer subproblems </span>
+  subresult1 <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>divide_conquer(subproblems[<span style="color:#ae81ff">0</span>], p1, <span style="color:#f92672">...</span>) 
+  subresult2 <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>divide_conquer(subproblems[<span style="color:#ae81ff">1</span>], p1, <span style="color:#f92672">...</span>) 
+  subresult3 <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>divide_conquer(subproblems[<span style="color:#ae81ff">2</span>], p1, <span style="color:#f92672">...</span>) 
+  <span style="color:#960050;background-color:#1e0010">…</span>
+
+  <span style="color:#75715e"># process and generate the final result </span>
+  result <span style="color:#f92672">=</span> process_result(subresult1, subresult2, subresult3, <span style="color:#960050;background-color:#1e0010">…</span>)
+
+  <span style="color:#75715e"># revert the current level states</span>
+</code></pre></div></li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Dynamic_programming">动态规划定义</a></p>
+</li>
+</ul>
+<h2 id="2-dp例题解析fibonacci数列路径计数">2. DP例题解析：Fibonacci数列、路径计数</h2>
+<h4 id="509-斐波那契数httpsleetcode-cncomproblemsfibonacci-number"><a href="https://leetcode-cn.com/problems/fibonacci-number/">509. 斐波那契数</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+
+    <span style="color:#e6db74">/**
+</span><span style="color:#e6db74">     * 方法一：迭代（动态规划）
+</span><span style="color:#e6db74">     * @param Integer $N
+</span><span style="color:#e6db74">     * @return Integer
+</span><span style="color:#e6db74">     */</span>
+    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">fib</span>($N) {
+        <span style="color:#66d9ef">if</span> ($N <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">return</span> $N;
+        $first <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        $second <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+        <span style="color:#66d9ef">for</span> ($i <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>; $i <span style="color:#f92672">&lt;=</span> $N; $i<span style="color:#f92672">++</span>) {
+            $tmp <span style="color:#f92672">=</span> $first <span style="color:#f92672">+</span> $second;
+            $first <span style="color:#f92672">=</span> $second;
+            $second <span style="color:#f92672">=</span> $tmp;
+        }
+        <span style="color:#66d9ef">return</span> $second;
+    }
+    <span style="color:#75715e">//方法二：记忆化递归
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">fib</span>($n) {
+        <span style="color:#66d9ef">if</span> ($n <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">return</span> $n;
+        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">isset</span>($this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">map</span>[$n])) {
+            $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">map</span>[$n] <span style="color:#f92672">=</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">fib</span>($n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">fib</span>($n <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>);
+        }
+        <span style="color:#66d9ef">return</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">map</span>[$n];
+    }
+    <span style="color:#75715e">//方法三：公式法
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">fib</span>($N) {
+        $goldenRatio <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">sqrt</span>(<span style="color:#ae81ff">5</span>)) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>;
+        <span style="color:#66d9ef">return</span> (<span style="color:#a6e22e">int</span>)<span style="color:#a6e22e">round</span>(<span style="color:#a6e22e">pow</span>($goldenRatio, $N)<span style="color:#f92672">/</span> <span style="color:#a6e22e">sqrt</span>(<span style="color:#ae81ff">5</span>));
+    }
+    <span style="color:#75715e">//方法四：矩阵求幂
+</span><span style="color:#75715e"></span>}
+</code></pre></div><h2 id="3-dp例题解析最长公共子序列">3. DP例题解析：最长公共子序列</h2>
+<h3 id="参考链接-1">参考链接</h3>
+<h4 id="62-不同路径httpsleetcode-cncomproblemsunique-paths"><a href="https://leetcode-cn.com/problems/unique-paths/">62. 不同路径</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">uniquePaths</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> m<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> n<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">int</span><span style="color:#f92672">[][]</span> dp <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[</span>m<span style="color:#f92672">][</span>n<span style="color:#f92672">];</span>
+        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> n<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> dp<span style="color:#f92672">[</span>0<span style="color:#f92672">][</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> 1<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> m<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> dp<span style="color:#f92672">[</span>i<span style="color:#f92672">][</span>0<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> 1<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 1<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> m<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> 1<span style="color:#f92672">;</span> j <span style="color:#f92672">&lt;</span> n<span style="color:#f92672">;</span> j<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+                dp<span style="color:#f92672">[</span>i<span style="color:#f92672">][</span>j<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> dp<span style="color:#f92672">[</span>i <span style="color:#f92672">-</span> 1<span style="color:#f92672">][</span>j<span style="color:#f92672">]</span> <span style="color:#f92672">+</span> dp<span style="color:#f92672">[</span>i<span style="color:#f92672">][</span>j <span style="color:#f92672">-</span> 1<span style="color:#f92672">];</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">return</span> dp<span style="color:#f92672">[</span>m <span style="color:#f92672">-</span> 1<span style="color:#f92672">][</span>n <span style="color:#f92672">-</span> 1<span style="color:#f92672">];</span>
+    <span style="color:#f92672">}</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">uniquePaths1</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> m<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> n<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> cur_row <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[</span>n<span style="color:#f92672">];</span>
+        Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">fill</span><span style="color:#f92672">(</span>cur_row<span style="color:#f92672">,</span> 1<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 1<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> m<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> 1<span style="color:#f92672">;</span> j <span style="color:#f92672">&lt;</span> n<span style="color:#f92672">;</span> j<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+                cur_row<span style="color:#f92672">[</span>j<span style="color:#f92672">]</span> <span style="color:#f92672">+=</span> cur_row<span style="color:#f92672">[</span>j <span style="color:#f92672">-</span> 1<span style="color:#f92672">];</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">return</span> cur_row<span style="color:#f92672">[</span>n <span style="color:#f92672">-</span> 1<span style="color:#f92672">];</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+
+    <span style="color:#e6db74">/**
+</span><span style="color:#e6db74">     * 方法一：自底向上，动态规划
+</span><span style="color:#e6db74">     * @param Integer $m
+</span><span style="color:#e6db74">     * @param Integer $n
+</span><span style="color:#e6db74">     * @return Integer
+</span><span style="color:#e6db74">     */</span>
+    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">uniquePaths</span>($m, $n) {
+        $dp <span style="color:#f92672">=</span> [];
+        <span style="color:#75715e">//最后一列
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> ($i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $i <span style="color:#f92672">&lt;</span> $n; $i<span style="color:#f92672">++</span>) $dp[$m <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][$i] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+        <span style="color:#75715e">//最后一行
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> ($i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $i <span style="color:#f92672">&lt;</span> $m; $i<span style="color:#f92672">++</span>) $dp[$i][$n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+        <span style="color:#66d9ef">for</span> ($i <span style="color:#f92672">=</span> $m <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>; $i <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; $i<span style="color:#f92672">--</span>) {
+            <span style="color:#66d9ef">for</span> ($j <span style="color:#f92672">=</span> $n <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>; $j <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; $j<span style="color:#f92672">--</span>) {
+                $dp[$i][$j] <span style="color:#f92672">=</span> $dp[$i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>][$j] <span style="color:#f92672">+</span> $dp[$i][$j <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>];
+            }
+        } 
+        <span style="color:#66d9ef">return</span> $dp[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>];
+    }
+    <span style="color:#75715e">//方法二：自顶向下，动态规划
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">uniquePaths</span>($m, $n) {
+        $dp <span style="color:#f92672">=</span> [];
+        <span style="color:#66d9ef">for</span> ($i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $i <span style="color:#f92672">&lt;</span> $m; $i<span style="color:#f92672">++</span>) {
+            <span style="color:#66d9ef">for</span> ($j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $j <span style="color:#f92672">&lt;</span> $n; $j<span style="color:#f92672">++</span>) {
+                <span style="color:#66d9ef">if</span> ($i <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> $j <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) {
+                    $dp[$i][$j] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+                } <span style="color:#66d9ef">else</span> {
+                	$dp[$i][$j] <span style="color:#f92672">=</span> $dp[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][$j] <span style="color:#f92672">+</span> $dp[$i][$j <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>];
+                }
+            }
+        } 
+        <span style="color:#66d9ef">return</span> $dp[$m <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][$n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>];
+    }
+}
+</code></pre></div><h4 id="63-不同路径-iihttpsleetcode-cncomproblemsunique-paths-ii"><a href="https://leetcode-cn.com/problems/unique-paths-ii/">63. 不同路径 II</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+
+    <span style="color:#e6db74">/**
+</span><span style="color:#e6db74">     * 动态规划，自顶向下
+</span><span style="color:#e6db74">     * @param Integer[][] $obstacleGrid
+</span><span style="color:#e6db74">     * @return Integer
+</span><span style="color:#e6db74">     */</span>
+    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">uniquePathsWithObstacles</span>($obstacleGrid) {
+        $m <span style="color:#f92672">=</span> <span style="color:#a6e22e">count</span>($obstacleGrid);
+        $n <span style="color:#f92672">=</span> <span style="color:#a6e22e">count</span>($obstacleGrid[<span style="color:#ae81ff">0</span>]);
+        <span style="color:#66d9ef">if</span> ($obstacleGrid[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+        $dp <span style="color:#f92672">=</span> [];
+        <span style="color:#66d9ef">for</span> ($i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $i <span style="color:#f92672">&lt;</span> $m; $i<span style="color:#f92672">++</span>) {
+            <span style="color:#66d9ef">for</span> ($j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $j <span style="color:#f92672">&lt;</span> $n; $j<span style="color:#f92672">++</span>) {
+                <span style="color:#66d9ef">if</span> ($obstacleGrid[$i][$j] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) {
+                    $dp[$i][$j] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+                } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ($i <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> $j <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) {
+                    $dp[$i][$j] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+                } <span style="color:#66d9ef">else</span> {
+                    $dp[$i][$j] <span style="color:#f92672">=</span> $dp[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][$j] <span style="color:#f92672">+</span> $dp[$i][$j <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>];
+                }
+            }
+        }
+        <span style="color:#66d9ef">return</span> $dp[$m <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][$n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>];
+    }
+    <span style="color:#75715e">//标准写法
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">uniquePathsWithObstacles</span>($obstacleGrid) {
+        $m <span style="color:#f92672">=</span> <span style="color:#a6e22e">count</span>($obstacleGrid);
+        $n <span style="color:#f92672">=</span> <span style="color:#a6e22e">count</span>($obstacleGrid[<span style="color:#ae81ff">0</span>]);
+        <span style="color:#66d9ef">if</span> ($obstacleGrid[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+        $dp <span style="color:#f92672">=</span> [[<span style="color:#ae81ff">1</span>]];
+        <span style="color:#75715e">//初始化第一行
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span>($i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; $i <span style="color:#f92672">&lt;</span> $n; $i<span style="color:#f92672">++</span>) {
+            $dp[<span style="color:#ae81ff">0</span>][$i] <span style="color:#f92672">=</span> $obstacleGrid[<span style="color:#ae81ff">0</span>][$i] <span style="color:#f92672">?</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">:</span> $dp[<span style="color:#ae81ff">0</span>][$i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>];
+        }
+        <span style="color:#75715e">//初始化第一列
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> ($i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; $i <span style="color:#f92672">&lt;</span> $m; $i<span style="color:#f92672">++</span>) {
+            $dp[$i][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> $obstacleGrid[$i][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">?</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">:</span> $dp[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>];
+        }
+        <span style="color:#66d9ef">for</span> ($i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; $i <span style="color:#f92672">&lt;</span> $m; $i<span style="color:#f92672">++</span>) {
+            <span style="color:#66d9ef">for</span> ($j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; $j <span style="color:#f92672">&lt;</span> $n; $j<span style="color:#f92672">++</span>) {
+                <span style="color:#66d9ef">if</span> ($obstacleGrid[$i][$j] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) {
+                    $dp[$i][$j] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+                } <span style="color:#66d9ef">else</span> {
+                    $dp[$i][$j] <span style="color:#f92672">=</span> $dp[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][$j] <span style="color:#f92672">+</span> $dp[$i][$j <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>];
+                }
+            }
+        }
+        <span style="color:#66d9ef">return</span> $dp[$m <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][$n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>];
+    }
+}
+</code></pre></div><h4 id="1143-最长公共子序列httpsleetcode-cncomproblemslongest-common-subsequence"><a href="https://leetcode-cn.com/problems/longest-common-subsequence/">1143. 最长公共子序列</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span>(object):
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">longestCommonSubsequence</span>(self, text1, text2):
+        <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">        :type text1: str
+</span><span style="color:#e6db74">        :type text2: str
+</span><span style="color:#e6db74">        :rtype: int
+</span><span style="color:#e6db74">        &#34;&#34;&#34;</span>
+        m <span style="color:#f92672">=</span> len(text1)
+        n <span style="color:#f92672">=</span> len(text2)
+        <span style="color:#75715e"># 构建 DP table 和 base case</span>
+        dp <span style="color:#f92672">=</span> [[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">*</span>(n <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(m <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>)] <span style="color:#75715e"># m+1 行 n+1 列</span>
+        <span style="color:#75715e"># 进行状态转移</span>
+        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>, m <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>):
+            <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>, n <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>):
+            	<span style="color:#66d9ef">if</span> text1[i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> text2[j <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>]:
+                    <span style="color:#75715e"># 找到一个 lcs 中的字符</span>
+                    dp[i][j] <span style="color:#f92672">=</span> dp[i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][j <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+                <span style="color:#66d9ef">else</span>:
+                    dp[i][j] <span style="color:#f92672">=</span> max(dp[i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][j], dp[i][j <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>])
+        <span style="color:#66d9ef">return</span> dp[m][n]
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+
+    <span style="color:#e6db74">/**
+</span><span style="color:#e6db74">     * @param String $text1
+</span><span style="color:#e6db74">     * @param String $text2
+</span><span style="color:#e6db74">     * @return Integer
+</span><span style="color:#e6db74">     */</span>
+    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">longestCommonSubsequence</span>($text1, $text2) {
+        $dp <span style="color:#f92672">=</span> [];
+        <span style="color:#75715e">//$dp = array_fill(0,$m+1,array_fill(0,$n+1,0));
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> ($i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $i <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">strlen</span>($text1); $i<span style="color:#f92672">++</span>) {
+            <span style="color:#66d9ef">for</span> ($j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $j <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">strlen</span>($text2); $j<span style="color:#f92672">++</span>) {
+                <span style="color:#66d9ef">if</span> ($text1{$i} <span style="color:#f92672">==</span> $text2{$j}) {
+                    $dp[$i][$j] <span style="color:#f92672">=</span> ($dp[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][$j <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">??</span> <span style="color:#ae81ff">0</span>) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+                } <span style="color:#66d9ef">else</span> {
+                    $dp[$i][$j] <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>($dp[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][$j] <span style="color:#f92672">??</span> <span style="color:#ae81ff">0</span>, $dp[$i][$j <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">??</span> <span style="color:#ae81ff">0</span>);
+                }
+            }
+        }
+        <span style="color:#66d9ef">return</span> $dp[<span style="color:#a6e22e">strlen</span>($text1) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][<span style="color:#a6e22e">strlen</span>($text2) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>];
+    }
+    <span style="color:#75715e">//降维
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">longestCommonSubsequence</span>($text1, $text2) {
+        <span style="color:#75715e">// 动态规划的做法：穷举+剪纸
+</span><span style="color:#75715e"></span>        $dp<span style="color:#f92672">=</span>[<span style="color:#ae81ff">0</span>];
+        <span style="color:#66d9ef">for</span>($i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; $i <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">strlen</span>($text1); $i<span style="color:#f92672">++</span>){
+            $last <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+            <span style="color:#66d9ef">for</span>($j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; $j <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">strlen</span>($text2); $j<span style="color:#f92672">++</span>){
+                $tmp<span style="color:#f92672">=</span>$dp[$j];
+                <span style="color:#66d9ef">if</span>($text1[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> $text2[$j <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>]){
+                    $dp[$j] <span style="color:#f92672">=</span> $last <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+                }<span style="color:#66d9ef">else</span>{
+                    $dp[$j] <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>($dp[$j <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>],$tmp);
+                }
+                $last<span style="color:#f92672">=</span>$tmp;
+            }
+        }
+        <span style="color:#66d9ef">return</span> $dp[<span style="color:#a6e22e">strlen</span>($text2)];
+    }
+}
+</code></pre></div><h4 id="mit-动态规划课程最短路径算法httpswwwbilibilicomvideoav53233912fromsearchseid2847395688604491997"><a href="https://www.bilibili.com/video/av53233912?from=search&amp;seid=2847395688604491997">MIT 动态规划课程最短路径算法</a></h4>
+<h2 id="4-实战题目解析三角形最小路径和">4. 实战题目解析：三角形最小路径和</h2>
+<h2 id="5-实战题目解析最大子序列和">5. 实战题目解析：最大子序列和</h2>
+<h3 id="实战题目">实战题目</h3>
+<h4 id="70-爬楼梯httpsleetcode-cncomproblemsclimbing-stairs"><a href="https://leetcode-cn.com/problems/climbing-stairs/">70. 爬楼梯</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// 1. 可以走1,2,3步（easy）
+</span><span style="color:#75715e">// 2. 相邻两步的部分不能相同（medium）
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+
+    <span style="color:#e6db74">/**
+</span><span style="color:#e6db74">     * 空间优化的dp
+</span><span style="color:#e6db74">     * @param Integer $n
+</span><span style="color:#e6db74">     * @return Integer
+</span><span style="color:#e6db74">     */</span>
+    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">climbStairs</span>($n) {
+ 		<span style="color:#66d9ef">if</span> ($n <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">3</span>) <span style="color:#66d9ef">return</span> $n;
+        $first <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+        $second <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+        <span style="color:#66d9ef">for</span> ($i <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>; $i <span style="color:#f92672">&lt;=</span> $n; $i<span style="color:#f92672">++</span>) {
+            $tmp <span style="color:#f92672">=</span> $first <span style="color:#f92672">+</span> $second;
+            $first <span style="color:#f92672">=</span> $second;
+            $second <span style="color:#f92672">=</span> $tmp;
+        }
+        <span style="color:#66d9ef">return</span> $second;
+    }
+    <span style="color:#75715e">//递归
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">climbStairs</span>($n) {
+        <span style="color:#66d9ef">if</span> ($n <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">2</span>) <span style="color:#66d9ef">return</span> $n;
+        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">isset</span>($this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">map</span>[$n])) {
+            $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">map</span>[$n] <span style="color:#f92672">=</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">climbStairs</span>($n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">climbStairs</span>($n <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>);
+        }
+        <span style="color:#66d9ef">return</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">map</span>[$n];
+    }
+}
+</code></pre></div><h4 id="120-三角形最小路径和httpsleetcode-cncomproblemstriangle参考代码httpsleetcodecomproblemstrianglediscuss38735python-easy-to-understand-solutions-top-down-bottom-up"><a href="https://leetcode-cn.com/problems/triangle/">120. 三角形最小路径和</a>、<a href="https://leetcode.com/problems/triangle/discuss/38735/Python-easy-to-understand-solutions-(top-down-bottom-up)">参考代码</a></h4>
+<p><a href="https://leetcode-cn.com/problems/triangle/solution/di-gui-ji-yi-hua-sou-suo-zai-dao-dp-by-crsm/">递归记忆化搜索</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+
+    <span style="color:#e6db74">/**
+</span><span style="color:#e6db74">     * 动态规划
+</span><span style="color:#e6db74">     * @param Integer[][] $triangle
+</span><span style="color:#e6db74">     * @return Integer
+</span><span style="color:#e6db74">     */</span>
+    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">minimumTotal</span>($triangle) {
+        $dp <span style="color:#f92672">=</span> $triangle;
+        <span style="color:#66d9ef">for</span> ($i <span style="color:#f92672">=</span> <span style="color:#a6e22e">count</span>($triangle) <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>; $i <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; $i<span style="color:#f92672">--</span>) {
+            <span style="color:#66d9ef">for</span> ($j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $j <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">count</span>($triangle[$i]); $j<span style="color:#f92672">++</span>){
+                $dp[$i][$j] <span style="color:#f92672">+=</span> <span style="color:#a6e22e">min</span>($dp[$i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>][$j], $dp[$i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>][$j <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>]);
+            }
+        }
+        <span style="color:#66d9ef">return</span> $dp[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>];
+    }
+    <span style="color:#75715e">//动态规划（降维）
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">minimumTotal</span>($triangle) {
+        $dp <span style="color:#f92672">=</span> <span style="color:#a6e22e">array_fill</span>(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">count</span>($triangle) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>);
+        <span style="color:#66d9ef">for</span> ($i <span style="color:#f92672">=</span> <span style="color:#a6e22e">count</span>($triangle) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; $i <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; $i<span style="color:#f92672">--</span>) {
+            <span style="color:#66d9ef">for</span> ($j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $j <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">count</span>($triangle[$i]); $j<span style="color:#f92672">++</span>){
+                $dp[$j]<span style="color:#f92672">=</span> <span style="color:#a6e22e">min</span>($dp[$j], $dp[$j <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>]) <span style="color:#f92672">+</span> $triangle[$i][$j];
+            }
+        }
+        <span style="color:#66d9ef">return</span> $dp[<span style="color:#ae81ff">0</span>];
+    }
+    <span style="color:#75715e">//递归
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">minimumTotal</span>($triangle) {
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">row</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">count</span>($triangle);
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">memo</span> <span style="color:#f92672">=</span> [];
+        <span style="color:#66d9ef">return</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">helper</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, $triangle);
+    }
+    <span style="color:#66d9ef">private</span> $row;
+    <span style="color:#66d9ef">private</span> $memo;
+    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">helper</span>($row, $col, $triangle) {
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isset</span>($this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">memo</span>[$row][$col])) {
+            <span style="color:#66d9ef">return</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">memo</span>[$row][$col];
+        }
+        <span style="color:#66d9ef">if</span> ($row <span style="color:#f92672">==</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">row</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>) {
+            <span style="color:#66d9ef">return</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">memo</span>[$row][$col] <span style="color:#f92672">=</span> $triangle[$row][$col];
+        }
+        $left <span style="color:#f92672">=</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">helper</span>($row <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, $col, $triangle);
+        $right <span style="color:#f92672">=</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">helper</span>($row <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, $col <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, $triangle);
+        <span style="color:#66d9ef">return</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">memo</span>[$row][$col] <span style="color:#f92672">=</span> <span style="color:#a6e22e">min</span>($left, $right) <span style="color:#f92672">+</span> $triangle[$row][$col];
+    }
+}
+</code></pre></div><h4 id="53-最大子序和httpsleetcode-cncomproblemsmaximum-subarray"><a href="https://leetcode-cn.com/problems/maximum-subarray/">53. 最大子序和</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+
+    <span style="color:#e6db74">/**
+</span><span style="color:#e6db74">     * 方法一：动态规划
+</span><span style="color:#e6db74">     * @param Integer[] $nums
+</span><span style="color:#e6db74">     * @return Integer
+</span><span style="color:#e6db74">     */</span>
+    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">maxSubArray</span>($nums) {
+        $dp <span style="color:#f92672">=</span> [];
+        $dp[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> $nums[<span style="color:#ae81ff">0</span>];
+        $max <span style="color:#f92672">=</span> $nums[<span style="color:#ae81ff">0</span>];
+        <span style="color:#66d9ef">foreach</span> ($nums <span style="color:#66d9ef">as</span> $i<span style="color:#f92672">=&gt;</span>$num) {
+            <span style="color:#66d9ef">if</span> ($i <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) <span style="color:#66d9ef">continue</span>;
+            $dp[$i] <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>(<span style="color:#ae81ff">0</span>, $dp[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>]) <span style="color:#f92672">+</span> $num;
+            $max <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>($dp[$i], $max);
+        }
+        <span style="color:#66d9ef">return</span> $max;
+    }
+    <span style="color:#75715e">//方法二：贪心
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//方法三：分治
+</span><span style="color:#75715e"></span>}
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+<span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+    <span style="color:#66d9ef">int</span> maxSubArray(vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&amp;</span> nums) {
+		std<span style="color:#f92672">::</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> dp(nums.size(), <span style="color:#ae81ff">0</span>);
+        dp[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> nums[<span style="color:#ae81ff">0</span>];
+        <span style="color:#66d9ef">int</span> res_max <span style="color:#f92672">=</span> dp[<span style="color:#ae81ff">0</span>];
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span> nums.size(); i<span style="color:#f92672">++</span>) {
+            dp[i] <span style="color:#f92672">=</span> std<span style="color:#f92672">::</span>max(dp[i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span> nums[i], nums[i]);
+            <span style="color:#66d9ef">if</span> (res_max <span style="color:#f92672">&lt;</span> dp[i]) {
+                res_max <span style="color:#f92672">=</span> dp[i];
+            }
+        }
+        <span style="color:#66d9ef">return</span> res_max;
+    }
+};
+</code></pre></div><h4 id="152-乘积最大子数组httpsleetcode-cncomproblemsmaximum-product-subarray"><a href="https://leetcode-cn.com/problems/maximum-product-subarray/">152. 乘积最大子数组</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+
+    <span style="color:#e6db74">/**
+</span><span style="color:#e6db74">     * 标准dp写法
+</span><span style="color:#e6db74">     * @param Integer[] $nums
+</span><span style="color:#e6db74">     * @return Integer
+</span><span style="color:#e6db74">     */</span>
+    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">maxProduct</span>($nums) {
+        $n <span style="color:#f92672">=</span> <span style="color:#a6e22e">count</span>($nums);
+        $max <span style="color:#f92672">=</span> $min <span style="color:#f92672">=</span> [$nums[<span style="color:#ae81ff">0</span>]];
+        $ans <span style="color:#f92672">=</span> $nums[<span style="color:#ae81ff">0</span>];
+        <span style="color:#66d9ef">for</span> ($i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; $i <span style="color:#f92672">&lt;</span> $n; $i<span style="color:#f92672">++</span>) {
+            <span style="color:#66d9ef">if</span> ($x <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>) {
+                $max[$i] <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>($max[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">*</span> $nums[$i], $nums[$i]);
+                $min[$i] <span style="color:#f92672">=</span> <span style="color:#a6e22e">min</span>($min[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">*</span> $nums[$i], $nums[$i]);
+            } <span style="color:#66d9ef">else</span> {
+                $max[$i] <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>($min[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">*</span> $nums[$i], $nums[$i]);
+                $min[$i] <span style="color:#f92672">=</span> <span style="color:#a6e22e">min</span>($max[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">*</span> $nums[$i], $nums[$i]);
+            }
+            $ans <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>($ans, $max[$i]);
+        }
+		<span style="color:#66d9ef">return</span> $ans;
+    }
+}
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span>(object):
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">maxProduct</span>(self, nums):
+        <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">        :type nums: List[int]
+</span><span style="color:#e6db74">        :rtype: int
+</span><span style="color:#e6db74">        &#34;&#34;&#34;</span>
+        mi <span style="color:#f92672">=</span> ma <span style="color:#f92672">=</span> res <span style="color:#f92672">=</span> nums[<span style="color:#ae81ff">0</span>]
+        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>, len(nums)):
+            <span style="color:#66d9ef">if</span> nums[i] <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>: mi, ma <span style="color:#f92672">=</span> ma, mi
+            ma <span style="color:#f92672">=</span> max(ma <span style="color:#f92672">*</span> nums[i], nums[i]) <span style="color:#75715e"># 正数最大值</span>
+            mi <span style="color:#f92672">=</span> min(mi <span style="color:#f92672">*</span> nums[i], nums[i]) <span style="color:#75715e"># 负数最小值</span>
+            res <span style="color:#f92672">=</span> max(ma, res)
+        <span style="color:#66d9ef">return</span> res
+</code></pre></div><h4 id="322-零钱兑换httpsleetcode-cncomproblemscoin-change"><a href="https://leetcode-cn.com/problems/coin-change/">322. 零钱兑换</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+<span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+    <span style="color:#75715e">//动态规划
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">int</span> <span style="color:#a6e22e">coinChange</span>(<span style="color:#a6e22e">vector</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">int</span><span style="color:#f92672">&gt;&amp;</span> <span style="color:#a6e22e">coins</span>, <span style="color:#a6e22e">int</span> <span style="color:#a6e22e">amount</span>) {
+		<span style="color:#a6e22e">int</span> <span style="color:#a6e22e">Max</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">amount</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+        <span style="color:#a6e22e">vector</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">int</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">dp</span>(<span style="color:#a6e22e">amount</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">Max</span>);
+        <span style="color:#a6e22e">dp</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">int</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">amount</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+            <span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">int</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">coins</span><span style="color:#f92672">.</span><span style="color:#a6e22e">size</span>(); <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span>) {
+                <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">coins</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">i</span>) {
+                    <span style="color:#a6e22e">dp</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">min</span>(<span style="color:#a6e22e">dp</span>[<span style="color:#a6e22e">i</span>], <span style="color:#a6e22e">dp</span>[<span style="color:#a6e22e">i</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">coins</span>[<span style="color:#a6e22e">j</span>]] <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>);
+                }
+            }
+        }
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">dp</span>[<span style="color:#a6e22e">amount</span>] <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">amount</span> <span style="color:#f92672">?</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">dp</span>[<span style="color:#a6e22e">amount</span>];
+    }
+};
+</code></pre></div><h2 id="6-实战题目解析打家劫舍">6. 实战题目解析：打家劫舍</h2>
+<h3 id="实战题目-1">实战题目</h3>
+<h4 id="198-打家劫舍httpsleetcode-cncomproblemshouse-robber"><a href="https://leetcode-cn.com/problems/house-robber/">198. 打家劫舍</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+
+    <span style="color:#e6db74">/**
+</span><span style="color:#e6db74">     * 二维dp
+</span><span style="color:#e6db74">     * dp[i][0] = max(dp[i - 1][0], dp[i - 1][1]) 不偷
+</span><span style="color:#e6db74">     * dp[i][1] = dp[i - 1][0] + nums[i] 偷
+</span><span style="color:#e6db74">     * @param Integer[] $nums
+</span><span style="color:#e6db74">     * @return Integer
+</span><span style="color:#e6db74">     */</span>
+    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">rob1</span>($nums) {
+        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>$nums) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+        $dp <span style="color:#f92672">=</span> [];
+        $dp[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        $dp[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> $nums[<span style="color:#ae81ff">0</span>];
+        $n <span style="color:#f92672">=</span> <span style="color:#a6e22e">count</span>($nums);
+        <span style="color:#66d9ef">for</span> ($i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; $i <span style="color:#f92672">&lt;</span> $n; $i<span style="color:#f92672">++</span>) {
+            $dp[$i][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>($dp[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>], $dp[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">1</span>]);
+            $dp[$i][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> $dp[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">+</span> $nums[$i];
+        }
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">max</span>($dp[$n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>]);
+    }
+    <span style="color:#75715e">//一维dp[i] = max($dp[$i - 1], $dp[$i - 1] + $nums[$i]) 第 i 天偷 的金额
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">rob</span>($nums) {
+        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>$nums) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+        $n <span style="color:#f92672">=</span> <span style="color:#a6e22e">count</span>($nums);
+        <span style="color:#66d9ef">if</span> ($n <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">return</span> $nums[<span style="color:#ae81ff">0</span>];
+        $dp <span style="color:#f92672">=</span> [];
+        $dp[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> $nums[<span style="color:#ae81ff">0</span>];
+        $dp[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>($nums[<span style="color:#ae81ff">0</span>], $nums[<span style="color:#ae81ff">1</span>]);
+        <span style="color:#66d9ef">for</span> ($i <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>; $i <span style="color:#f92672">&lt;</span> $n; $i<span style="color:#f92672">++</span>) {
+            $dp[$i] <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>($dp[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>], $dp[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>] <span style="color:#f92672">+</span> $nums[$i]);
+        }
+        <span style="color:#66d9ef">return</span> $res;
+    }
+    <span style="color:#75715e">//简化的dp
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">rob</span>($nums) {
+        $preMax <span style="color:#f92672">=</span> $curMax <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">foreach</span>($nums <span style="color:#66d9ef">as</span> $num) {
+        	$tmp <span style="color:#f92672">=</span> $curMax;
+            $curMax <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>($preMax <span style="color:#f92672">+</span> $num, $curMax);
+            $preMax <span style="color:#f92672">=</span> $tmp; 
+        }
+        <span style="color:#66d9ef">return</span> $curMax;
+    }
+    <span style="color:#75715e">//递归
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">rob</span> ($nums) {
+        <span style="color:#66d9ef">return</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">helper</span>($nums, <span style="color:#a6e22e">count</span>($nums) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>);
+    }
+    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">helper</span>($nums, $i) {
+        <span style="color:#66d9ef">if</span> ($i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">max</span>($this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">helper</span>($nums, $i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>), $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">hepler</span>($nums, $i <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>) <span style="color:#f92672">+</span> $nums[$i]);
+    }
+}
+</code></pre></div><h4 id="213-打家劫舍-iihttpsleetcode-cncomproblemshouse-robber-ii"><a href="https://leetcode-cn.com/problems/house-robber-ii/">213. 打家劫舍 II</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+
+    <span style="color:#e6db74">/**
+</span><span style="color:#e6db74">     * 动态规划：
+</span><span style="color:#e6db74">     * 1. 包含头，不包含尾
+</span><span style="color:#e6db74">     * 2, 不包含头，包含尾
+</span><span style="color:#e6db74">     * 3，求 1 和 2 最大值
+</span><span style="color:#e6db74">     * @param Integer[] $nums
+</span><span style="color:#e6db74">     * @return Integer
+</span><span style="color:#e6db74">     */</span>
+    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">rob</span>($nums) {
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">count</span>($nums) <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">return</span> $nums[<span style="color:#ae81ff">0</span>];
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">max</span>($this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">robRange</span>($nums, <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">count</span>($nums) <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>), $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">robRange</span>($nums, <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">count</span>($nums) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>));
+    }
+    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">robRange</span>($nums, $start, $end) {
+        $preMax <span style="color:#f92672">=</span> $curMax <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">for</span> ($i <span style="color:#f92672">=</span> $start; $i <span style="color:#f92672">&lt;=</span> $end; $i<span style="color:#f92672">++</span>) {
+            $tmp <span style="color:#f92672">=</span> $curMax;
+            $curMax <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>($preMax <span style="color:#f92672">+</span> $nums[$i], $curMax);
+            $preMax <span style="color:#f92672">=</span> $tmp;
+        }
+        <span style="color:#66d9ef">return</span> $curMax;
+    }
+}
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">rob</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> num<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> lo<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> hi<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">int</span> include <span style="color:#f92672">=</span> 0<span style="color:#f92672">,</span> exclude <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> lo<span style="color:#f92672">;</span> j <span style="color:#f92672">&lt;=</span> hi<span style="color:#f92672">;</span> j<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> include<span style="color:#f92672">,</span> e <span style="color:#f92672">=</span> exclude<span style="color:#f92672">;</span>
+        include <span style="color:#f92672">=</span> e <span style="color:#f92672">+</span> num<span style="color:#f92672">[</span>j<span style="color:#f92672">];</span>
+        exclude <span style="color:#f92672">=</span> Math<span style="color:#f92672">.</span><span style="color:#a6e22e">max</span><span style="color:#f92672">(</span>e<span style="color:#f92672">,</span> i<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+    <span style="color:#66d9ef">return</span> Math<span style="color:#f92672">.</span><span style="color:#a6e22e">max</span><span style="color:#f92672">(</span>include<span style="color:#f92672">,</span> exclude<span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h4 id="121-买卖股票的最佳时机httpsleetcode-cncomproblemsbest-time-to-buy-and-sell-stock"><a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/">121. 买卖股票的最佳时机</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+
+    <span style="color:#e6db74">/**
+</span><span style="color:#e6db74">     * @param Integer[] $prices
+</span><span style="color:#e6db74">     * @return Integer
+</span><span style="color:#e6db74">     */</span>
+    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">maxProfit</span>($prices) {
+    	$cur <span style="color:#f92672">=</span> $res <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">for</span> ($i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; $i <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">count</span>($prices); $i<span style="color:#f92672">++</span>) {
+            $cur <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>(<span style="color:#ae81ff">0</span>, $cur <span style="color:#f92672">+</span> $prices[$i] <span style="color:#f92672">-</span> $prices[<span style="color:#960050;background-color:#1e0010">$</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>]);
+            $res <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>($cur, $res);
+        }
+        <span style="color:#66d9ef">return</span> $res;
+    }
+    <span style="color:#75715e">//标准dp
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">maxProfit</span>($prices) {
+        $n <span style="color:#f92672">=</span> <span style="color:#a6e22e">count</span>($prices);
+    	$dp <span style="color:#f92672">=</span> [];
+        $dp[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        $dp[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>$prices[<span style="color:#ae81ff">0</span>];
+        <span style="color:#66d9ef">for</span> ($i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; $i <span style="color:#f92672">&lt;</span> $n; $i<span style="color:#f92672">++</span>) {
+            <span style="color:#75715e">//不持有股票
+</span><span style="color:#75715e"></span>            $dp[$i][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>($dp[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>], $dp[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span> $prices[$i]);
+            <span style="color:#75715e">//持有股票
+</span><span style="color:#75715e"></span>            $dp[$i][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>($dp[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">1</span>], <span style="color:#f92672">-</span>$prices[$i]);
+        }
+        <span style="color:#66d9ef">return</span> $dp[$n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>];
+    }
+    <span style="color:#75715e">//简化
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">maxProfit</span>($prices) {
+        $n <span style="color:#f92672">=</span> <span style="color:#a6e22e">count</span>($prices);
+    	$dpi0 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $dpi1 <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>$prices[<span style="color:#ae81ff">0</span>];
+        <span style="color:#66d9ef">for</span> ($i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $i <span style="color:#f92672">&lt;</span> $n; $i<span style="color:#f92672">++</span>) {
+            <span style="color:#75715e">//不持有股票
+</span><span style="color:#75715e"></span>            $dpi0 <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>($dpi0, $dpi1 <span style="color:#f92672">+</span> $prices[$i]);
+            <span style="color:#75715e">//持有股票
+</span><span style="color:#75715e"></span>            $dpi1 <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>($dpi1, <span style="color:#f92672">-</span>$prices[$i]);
+        }
+        <span style="color:#66d9ef">return</span> $dpi0;
+    }
+}
+</code></pre></div><h4 id="122-买卖股票的最佳时机-iihttpsleetcode-cncomproblemsbest-time-to-buy-and-sell-stock-ii"><a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/">122. 买卖股票的最佳时机 II</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+    <span style="color:#75715e">//dp
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">maxProfit</span>($prices) {
+       	$n <span style="color:#f92672">=</span> <span style="color:#a6e22e">count</span>($prices);
+    	$dpi0 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $dpi1 <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>$prices[<span style="color:#ae81ff">0</span>];
+        <span style="color:#66d9ef">for</span> ($i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $i <span style="color:#f92672">&lt;</span> $n; $i<span style="color:#f92672">++</span>) {
+            $tmp <span style="color:#f92672">=</span> $dpi0;
+            <span style="color:#75715e">//不持有股票
+</span><span style="color:#75715e"></span>            $dpi0 <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>($dpi0, $dpi1 <span style="color:#f92672">+</span> $prices[$i]);
+            <span style="color:#75715e">//持有股票
+</span><span style="color:#75715e"></span>            $dpi1 <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>($dpi1, $tmp <span style="color:#f92672">-</span> $prices[$i]);
+        }
+        <span style="color:#66d9ef">return</span> $dpi0;
+    }
+}
+</code></pre></div><h4 id="123-买卖股票的最佳时机-iiihttpsleetcode-cncomproblemsbest-time-to-buy-and-sell-stock-iii"><a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii/">123. 买卖股票的最佳时机 III</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+
+    <span style="color:#e6db74">/**
+</span><span style="color:#e6db74">     * @param Integer[] $prices
+</span><span style="color:#e6db74">     * @return Integer
+</span><span style="color:#e6db74">     */</span>
+    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">maxProfit</span>($prices) {
+        $n <span style="color:#f92672">=</span> <span style="color:#a6e22e">count</span>($prices);
+        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>$n) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+        $dp <span style="color:#f92672">=</span> [];
+        <span style="color:#66d9ef">for</span> ($i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $i <span style="color:#f92672">&lt;</span> $n; $i<span style="color:#f92672">++</span>) {
+            <span style="color:#66d9ef">for</span> ($k <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>; $k <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>; $k<span style="color:#f92672">--</span>) {
+                <span style="color:#66d9ef">if</span> ($i <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) {
+                    $dp[$i][$k][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+                    $dp[$i][$k][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>$prices[$i];
+                    <span style="color:#66d9ef">continue</span>;
+                }
+                $dp[$i][$k][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>($dp[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][$k][<span style="color:#ae81ff">0</span>], $dp[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][$k][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span> $prices[$i]);
+                $dp[$i][$k][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>($dp[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][$k][<span style="color:#ae81ff">1</span>], $dp[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][$k <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">-</span> $prices[$i]);
+            }
+        }
+        <span style="color:#66d9ef">return</span> $dp[$n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">2</span>][<span style="color:#ae81ff">0</span>];
+    }
+    <span style="color:#75715e">//简化
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">maxProfit</span>($prices) {
+        $dp_i10 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, $dp_i11 <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>$prices[<span style="color:#ae81ff">0</span>];
+        $dp_i20 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, $dp_i21 <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>$prices[<span style="color:#ae81ff">0</span>];
+        <span style="color:#66d9ef">foreach</span> ($prices <span style="color:#66d9ef">as</span>  $price) {
+            $dp_i20 <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>($dp_i20, $dp_i21 <span style="color:#f92672">+</span> $price);
+            $dp_i21 <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>($dp_i21, $dp_i10 <span style="color:#f92672">-</span> $price);
+            $dp_i10 <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>($dp_i10, $dp_i11 <span style="color:#f92672">+</span> $price);
+            $dp_i11 <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>($dp_i11, <span style="color:#f92672">-</span>$price);
+        }
+        <span style="color:#66d9ef">return</span> $dp_i20;
+    }
+    <span style="color:#75715e">//简化
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">maxProfit</span>($prices) {
+        $cur <span style="color:#f92672">=</span> $res <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        $len <span style="color:#f92672">=</span> <span style="color:#a6e22e">count</span>($prices);
+        $states <span style="color:#f92672">=</span> <span style="color:#a6e22e">array_fill</span>(<span style="color:#ae81ff">0</span>, $len, <span style="color:#ae81ff">0</span>);
+        <span style="color:#66d9ef">for</span> ($i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; $i <span style="color:#f92672">&lt;</span> $len; $i<span style="color:#f92672">++</span>) {
+            $cur <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>(<span style="color:#ae81ff">0</span>, $cur <span style="color:#f92672">+</span> $prices[$i] <span style="color:#f92672">-</span> $prices[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>]);
+            $states[$i] <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>($cur, $states[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>]);
+        }
+        <span style="color:#66d9ef">for</span> ($i <span style="color:#f92672">=</span> $len <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>, $cur <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $i <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; $i<span style="color:#f92672">--</span>) {
+            $cur <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>(<span style="color:#ae81ff">0</span>, $cur <span style="color:#f92672">+</span> $prices[$i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">-</span> $prices[$i]);
+            $res <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>($cur <span style="color:#f92672">+</span> $states[$i], $res);
+        }
+        <span style="color:#66d9ef">return</span> $res;
+    }
+}
+</code></pre></div><h4 id="188-买卖股票的最佳时机-ivhttpsleetcode-cncomproblemsbest-time-to-buy-and-sell-stock-iv"><a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iv/">188. 买卖股票的最佳时机 IV</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+
+    <span style="color:#e6db74">/**
+</span><span style="color:#e6db74">     * @param Integer $k
+</span><span style="color:#e6db74">     * @param Integer[] $prices
+</span><span style="color:#e6db74">     * @return Integer
+</span><span style="color:#e6db74">     */</span>
+    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">maxProfit</span>($k1, $prices) {
+        $n <span style="color:#f92672">=</span> <span style="color:#a6e22e">count</span>($prices);
+        <span style="color:#66d9ef">if</span> ($n <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> $k1 <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">if</span> ($k1 <span style="color:#f92672">&gt;</span> $n <span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>) <span style="color:#66d9ef">return</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">maxProfit1</span>($prices); 
+        $dp <span style="color:#f92672">=</span> [];
+        <span style="color:#66d9ef">for</span> ($i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $i <span style="color:#f92672">&lt;</span> $n; $i<span style="color:#f92672">++</span>) {
+            <span style="color:#66d9ef">for</span> ($k <span style="color:#f92672">=</span> $k1; $k <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>; $k<span style="color:#f92672">--</span>) {
+                <span style="color:#66d9ef">if</span> ($i <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) {
+                    $dp[$i][$k][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+                    $dp[$i][$k][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>$prices[$i];
+                    <span style="color:#66d9ef">continue</span>;
+                }
+                $dp[$i][$k][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>($dp[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][$k][<span style="color:#ae81ff">0</span>], $dp[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][$k][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span> $prices[$i]);
+                $dp[$i][$k][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>($dp[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][$k][<span style="color:#ae81ff">1</span>], $dp[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][$k <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">-</span> $prices[$i]);
+            }
+        }
+        <span style="color:#66d9ef">return</span> $dp[$n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][$k][<span style="color:#ae81ff">0</span>];
+    }
+    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">maxProfit1</span>($prices) {
+       	$n <span style="color:#f92672">=</span> <span style="color:#a6e22e">count</span>($prices);
+    	$dpi0 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $dpi1 <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>$prices[<span style="color:#ae81ff">0</span>];
+        <span style="color:#66d9ef">for</span> ($i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $i <span style="color:#f92672">&lt;</span> $n; $i<span style="color:#f92672">++</span>) {
+            $tmp <span style="color:#f92672">=</span> $dpi0;
+            <span style="color:#75715e">//不持有股票
+</span><span style="color:#75715e"></span>            $dpi0 <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>($dpi0, $dpi1 <span style="color:#f92672">+</span> $prices[$i]);
+            <span style="color:#75715e">//持有股票
+</span><span style="color:#75715e"></span>            $dpi1 <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>($dpi1, $tmp <span style="color:#f92672">-</span> $prices[$i]);
+        }
+        <span style="color:#66d9ef">return</span> $dpi0;
+    }
+    
+    <span style="color:#75715e">//简化
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">maxProfit</span>($k, $prices) {
+        $len <span style="color:#f92672">=</span> <span style="color:#a6e22e">count</span>($prices);
+        <span style="color:#66d9ef">if</span> ($len <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">if</span> ($k <span style="color:#f92672">&gt;</span> $len <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>) {
+            $buy <span style="color:#f92672">=</span> <span style="color:#f92672">-</span> $prices[<span style="color:#ae81ff">0</span>];
+            $sell <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+            $res <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+            <span style="color:#66d9ef">for</span> ($i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, $len <span style="color:#f92672">=</span> <span style="color:#a6e22e">count</span>($prices); $i <span style="color:#f92672">&lt;</span> $len; $i<span style="color:#f92672">++</span>) {
+                $buy <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>($buy, $sell <span style="color:#f92672">-</span> $prices[$i]);
+                $sell <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>($sell, $buy <span style="color:#f92672">+</span> $prices[$i]);
+                $res <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>($sell, $res);
+            }
+            <span style="color:#66d9ef">return</span> $res;
+        }
+        $local <span style="color:#f92672">=</span> <span style="color:#a6e22e">array_fill</span>(<span style="color:#ae81ff">0</span>, $k <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>);
+        $global <span style="color:#f92672">=</span>  <span style="color:#a6e22e">array_fill</span>(<span style="color:#ae81ff">0</span>, $k <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>);
+        <span style="color:#66d9ef">for</span> ($i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; $i <span style="color:#f92672">&lt;</span> $len; $i<span style="color:#f92672">++</span>) {
+            $diff <span style="color:#f92672">=</span> $prices[$i] <span style="color:#f92672">-</span> $prices[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>];
+            $tmp <span style="color:#f92672">=</span> <span style="color:#a6e22e">array_fill</span>(<span style="color:#ae81ff">0</span>, $k <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>);
+            <span style="color:#66d9ef">for</span> ($j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; $j <span style="color:#f92672">&lt;=</span> $k; $j<span style="color:#f92672">++</span>) {
+                $local[$j] <span style="color:#f92672">=</span>  <span style="color:#a6e22e">max</span>($global[$j <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>], $local[$j]) <span style="color:#f92672">+</span> $diff;
+                $tmp[$j] <span style="color:#f92672">=</span>  <span style="color:#a6e22e">max</span>($global[$j], $local[$j]);
+            }
+            $global <span style="color:#f92672">=</span> $tmp;
+        }
+        <span style="color:#66d9ef">return</span> $global[$k];
+    }
+}
+</code></pre></div><h4 id="309-最佳买卖股票时机含冷冻期httpsleetcode-cncomproblemsbest-time-to-buy-and-sell-stock-with-cooldown"><a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/">309. 最佳买卖股票时机含冷冻期</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+    <span style="color:#75715e">//dp
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">maxProfit</span>($prices) {
+       	$n <span style="color:#f92672">=</span> <span style="color:#a6e22e">count</span>($prices);
+    	$dpi0 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $dpi1 <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>$prices[<span style="color:#ae81ff">0</span>];
+        $dppre0 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">for</span> ($i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $i <span style="color:#f92672">&lt;</span> $n; $i<span style="color:#f92672">++</span>) {
+            $tmp <span style="color:#f92672">=</span> $dpi0;
+            <span style="color:#75715e">//不持有股票
+</span><span style="color:#75715e"></span>            $dpi0 <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>($dpi0, $dpi1 <span style="color:#f92672">+</span> $prices[$i]);
+            <span style="color:#75715e">//持有股票
+</span><span style="color:#75715e"></span>            $dpi1 <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>($dpi1, $dppre0 <span style="color:#f92672">-</span> $prices[$i]);
+            $dppre0 <span style="color:#f92672">=</span> $dpi0;
+        }
+        <span style="color:#66d9ef">return</span> $dpi0;
+    }
+}
+</code></pre></div><h4 id="714-买卖股票的最佳时机含手续费httpsleetcode-cncomproblemsbest-time-to-buy-and-sell-stock-with-transaction-fee"><a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/">714. 买卖股票的最佳时机含手续费</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+    <span style="color:#75715e">//dp
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">maxProfit1</span>($prices, $free) {
+       	$n <span style="color:#f92672">=</span> <span style="color:#a6e22e">count</span>($prices);
+    	$dpi0 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $dpi1 <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>$prices[<span style="color:#ae81ff">0</span>];
+        <span style="color:#66d9ef">for</span> ($i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $i <span style="color:#f92672">&lt;</span> $n; $i<span style="color:#f92672">++</span>) {
+            <span style="color:#75715e">//不持有股票
+</span><span style="color:#75715e"></span>            $dpi0 <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>($dpi0, $dpi1 <span style="color:#f92672">+</span> $prices[$i] <span style="color:#f92672">-</span> $free);
+            <span style="color:#75715e">//持有股票
+</span><span style="color:#75715e"></span>            $dpi1 <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>($dpi1, $dpi0 <span style="color:#f92672">-</span> $prices[$i]);
+        }
+        <span style="color:#66d9ef">return</span> $dpi0;
+    }
+    
+    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">maxProfit2</span>($prices, $fee) {
+        $res <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">for</span> ($i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, $len <span style="color:#f92672">=</span> <span style="color:#a6e22e">count</span>($prices); $i <span style="color:#f92672">&lt;</span> $len; $i<span style="color:#f92672">++</span>) {
+            <span style="color:#66d9ef">if</span> ($prices[$i] <span style="color:#f92672">&gt;</span> $prices[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>]) {
+                $res <span style="color:#f92672">+=</span> $prices[$i] <span style="color:#f92672">-</span> $prices[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">-</span> $fee;
+            }
+        }
+        <span style="color:#66d9ef">return</span> $res;
+    }
+     <span style="color:#75715e">//dp
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">maxProfit</span>($prices, $fee) {
+        $buy <span style="color:#f92672">=</span> <span style="color:#f92672">-</span> $prices[<span style="color:#ae81ff">0</span>];
+        $sell <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        $res <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">for</span> ($i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, $len <span style="color:#f92672">=</span> <span style="color:#a6e22e">count</span>($prices); $i <span style="color:#f92672">&lt;</span> $len; $i<span style="color:#f92672">++</span>) {
+            $buy <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>($buy, $sell <span style="color:#f92672">-</span> $prices[$i]);
+            $sell <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>($sell, $buy <span style="color:#f92672">+</span> $prices[$i] <span style="color:#f92672">-</span> $fee);
+            $res <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>($sell, $res);
+        }
+        <span style="color:#66d9ef">return</span> $res;
+    }
+}
+</code></pre></div><h4 id="一个方法团灭-6-道股票问题httpsleetcode-cncomproblemsbest-time-to-buy-and-sell-stocksolutionyi-ge-fang-fa-tuan-mie-6-dao-gu-piao-wen-ti-by-l-3"><a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/solution/yi-ge-fang-fa-tuan-mie-6-dao-gu-piao-wen-ti-by-l-3/">一个方法团灭 6 道股票问题</a></h4>
+<h3 id="高级-dp-实战题目">高级 DP 实战题目</h3>
+<h4 id="279-完全平方数httpsleetcode-cncomproblemsperfect-squares"><a href="https://leetcode-cn.com/problems/perfect-squares/">279. 完全平方数</a></h4>
+<h4 id="72-编辑距离httpsleetcode-cncomproblemsedit-distance-重点"><a href="https://leetcode-cn.com/problems/edit-distance/">72. 编辑距离</a> （重点）</h4>
+<h4 id="55-跳跃游戏httpsleetcode-cncomproblemsjump-game"><a href="https://leetcode-cn.com/problems/jump-game/">55. 跳跃游戏</a></h4>
+<h4 id="45-跳跃游戏-iihttpsleetcode-cncomproblemsjump-game-ii"><a href="https://leetcode-cn.com/problems/jump-game-ii/">45. 跳跃游戏 II</a></h4>
+<h4 id="62-不同路径httpsleetcode-cncomproblemsunique-paths-1"><a href="https://leetcode-cn.com/problems/unique-paths/">62. 不同路径</a></h4>
+<h4 id="63-不同路径-iihttpsleetcode-cncomproblemsunique-paths-ii-1"><a href="https://leetcode-cn.com/problems/unique-paths-ii/">63. 不同路径 II</a></h4>
+<h4 id="980-不同路径-iiihttpsleetcode-cncomproblemsunique-paths-iii"><a href="https://leetcode-cn.com/problems/unique-paths-iii/">980. 不同路径 III</a></h4>
+<h4 id="322-零钱兑换httpsleetcode-cncomproblemscoin-change-1"><a href="https://leetcode-cn.com/problems/coin-change/">322. 零钱兑换</a></h4>
+<h4 id="518-零钱兑换-iihttpsleetcode-cncomproblemscoin-change-2"><a href="https://leetcode-cn.com/problems/coin-change-2/">518. 零钱兑换 II</a></h4>
+<h2 id="本周作业及下周预习">本周作业及下周预习</h2>
+<h3 id="本周作业">本周作业</h3>
+<h4 id="中等">中等</h4>
+<h5 id="64-最小路径和httpsleetcode-cncomproblemsminimum-path-sum"><a href="https://leetcode-cn.com/problems/minimum-path-sum/">64. 最小路径和</a></h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+
+    <span style="color:#e6db74">/**
+</span><span style="color:#e6db74">     * dp(自顶向下)
+</span><span style="color:#e6db74">     * @param Integer[][] $grid
+</span><span style="color:#e6db74">     * @return Integer
+</span><span style="color:#e6db74">     */</span>
+    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">minPathSum</span>($grid) {
+        $m <span style="color:#f92672">=</span> <span style="color:#a6e22e">count</span>($grid);
+        <span style="color:#66d9ef">if</span> ($m <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+        $n <span style="color:#f92672">=</span> <span style="color:#a6e22e">count</span>($grid[<span style="color:#ae81ff">0</span>]);
+        $dp <span style="color:#f92672">=</span> [];
+        $dp[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> $grid[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>];
+        <span style="color:#75715e">//初始化第一行
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span>($i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; $i <span style="color:#f92672">&lt;</span> $n; $i<span style="color:#f92672">++</span>) {
+            $dp[<span style="color:#ae81ff">0</span>][$i] <span style="color:#f92672">=</span> $dp[<span style="color:#ae81ff">0</span>][$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span> $grid[<span style="color:#ae81ff">0</span>][$i];
+        }
+        <span style="color:#66d9ef">for</span> ($i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; $i <span style="color:#f92672">&lt;</span> $m; $i<span style="color:#f92672">++</span>) {
+            $dp[$i][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> $dp[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">+</span> $grid[$i][<span style="color:#ae81ff">0</span>];
+            <span style="color:#66d9ef">for</span> ($j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; $j <span style="color:#f92672">&lt;</span> $n; $j<span style="color:#f92672">++</span>) {
+                $dp[$i][$j] <span style="color:#f92672">=</span> <span style="color:#a6e22e">min</span>($dp[$i][$j <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>], $dp[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][$j]) <span style="color:#f92672">+</span> $grid[$i][$j];
+            }
+        }
+		<span style="color:#66d9ef">return</span> $dp[$m <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][$n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>];
+    }
+    <span style="color:#75715e">//dp 降维
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">minPathSum</span>($grid) {
+        $m <span style="color:#f92672">=</span> <span style="color:#a6e22e">count</span>($grid);
+        <span style="color:#66d9ef">if</span> ($m <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+        $n <span style="color:#f92672">=</span> <span style="color:#a6e22e">count</span>($grid[<span style="color:#ae81ff">0</span>]);
+        $dp <span style="color:#f92672">=</span> [];
+        $dp[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> $grid[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>];
+        <span style="color:#75715e">//初始化第一行
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span>($i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; $i <span style="color:#f92672">&lt;</span> $n; $i<span style="color:#f92672">++</span>) {
+            $dp[$i] <span style="color:#f92672">=</span> $dp[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span> $grid[<span style="color:#ae81ff">0</span>][$i];
+        }
+        <span style="color:#66d9ef">for</span> ($i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; $i <span style="color:#f92672">&lt;</span> $m; $i<span style="color:#f92672">++</span>) {
+            $dp[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> $dp[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">+</span> $grid[$i][<span style="color:#ae81ff">0</span>];
+            <span style="color:#66d9ef">for</span> ($j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; $j <span style="color:#f92672">&lt;</span> $n; $j<span style="color:#f92672">++</span>) {
+                $dp[$j] <span style="color:#f92672">=</span> <span style="color:#a6e22e">min</span>($dp[$j <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>], $dp[$j]) <span style="color:#f92672">+</span> $grid[$i][$j];
+            }
+        }
+		<span style="color:#66d9ef">return</span> $dp[$n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>];
+    }
+}
+</code></pre></div><h5 id="91-解码方法httpsleetcode-cncomproblemsdecode-ways"><a href="https://leetcode-cn.com/problems/decode-ways/">91. 解码方法</a></h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+
+    <span style="color:#e6db74">/**
+</span><span style="color:#e6db74">     * @param String $s
+</span><span style="color:#e6db74">     * @return Integer
+</span><span style="color:#e6db74">     */</span>
+    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">numDecodings</span>($s) {
+        $n <span style="color:#f92672">=</span> <span style="color:#a6e22e">strlen</span>($s);
+        <span style="color:#66d9ef">if</span> ($n <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> $s[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+        $dp <span style="color:#f92672">=</span> [];
+        $dp[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">substr</span>($s, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>) <span style="color:#f92672">&lt;=</span> <span style="color:#e6db74">&#39;26&#39;</span>) $dp[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> $s[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">?</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>;
+        <span style="color:#66d9ef">else</span> $dp[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> $s[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">?</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>;
+        <span style="color:#66d9ef">for</span> ($i <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>; $i <span style="color:#f92672">&lt;</span> $n; $i<span style="color:#f92672">++</span>) {
+            <span style="color:#66d9ef">if</span> ($s[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">!=</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&amp;&amp;</span> $s[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">!=</span> <span style="color:#ae81ff">2</span>) {
+                <span style="color:#66d9ef">if</span> ($s[$i] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;0&#39;</span>) <span style="color:#ae81ff">0</span>;
+                <span style="color:#66d9ef">else</span> $dp[$i] <span style="color:#f92672">=</span> $dp[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>];
+            } <span style="color:#66d9ef">else</span> {
+                $dp[$i] <span style="color:#f92672">=</span> $s[$i] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">?</span> $dp[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>] <span style="color:#f92672">:</span> (<span style="color:#a6e22e">substr</span>($s, $i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>) <span style="color:#f92672">&lt;=</span> <span style="color:#e6db74">&#39;26&#39;</span> <span style="color:#f92672">?</span> $dp[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span> $dp[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>] <span style="color:#f92672">:</span>$dp[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>]);
+            }
+        }
+        <span style="color:#66d9ef">return</span> $dp[$n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>];
+    }
+}
+</code></pre></div><h5 id="221-最大正方形httpsleetcode-cncomproblemsmaximal-square"><a href="https://leetcode-cn.com/problems/maximal-square/">221. 最大正方形</a></h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+
+    <span style="color:#e6db74">/**
+</span><span style="color:#e6db74">     * 动态规划
+</span><span style="color:#e6db74">     * dp(i, j)=min(dp(i−1, j), dp(i−1, j−1), dp(i, j−1))+1
+</span><span style="color:#e6db74">     * @param String[][] $matrix
+</span><span style="color:#e6db74">     * @return Integer
+</span><span style="color:#e6db74">     */</span>
+    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">maximalSquare</span>($matrix) {
+		$m <span style="color:#f92672">=</span> <span style="color:#a6e22e">count</span>($matrix);
+        <span style="color:#66d9ef">if</span> ($m <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+        $n <span style="color:#f92672">=</span> <span style="color:#a6e22e">count</span>($matrix[<span style="color:#ae81ff">0</span>]);
+        $dp  <span style="color:#f92672">=</span> [];
+        $maxsqlen <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">for</span> ($i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $i <span style="color:#f92672">&lt;=</span> $m; $i<span style="color:#f92672">++</span>) $dp[] <span style="color:#f92672">=</span> <span style="color:#a6e22e">array_fill</span>(<span style="color:#ae81ff">0</span>, $n <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>);
+        <span style="color:#66d9ef">for</span> ($i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; $i <span style="color:#f92672">&lt;=</span> $m; $i<span style="color:#f92672">++</span>) {
+            <span style="color:#66d9ef">for</span> ($j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; $j <span style="color:#f92672">&lt;=</span> $n; $j<span style="color:#f92672">++</span>) {
+                <span style="color:#66d9ef">if</span> ($matrix[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][$j <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) {
+                    $dp[$i][$j] <span style="color:#f92672">=</span> <span style="color:#a6e22e">min</span>($dp[$i][$j <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>], $dp[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][$j], $dp[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][$j <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>]) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+                    $maxsqlen <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>($maxsqlen, $dp[$i][$j]);
+                }
+            }
+        }
+        <span style="color:#66d9ef">return</span> $maxsqlen <span style="color:#f92672">*</span> $maxsqlen;
+    }
+    <span style="color:#75715e">//空间优化使用一维dp
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">maximalSquare</span>($matrix) {
+		$m <span style="color:#f92672">=</span> <span style="color:#a6e22e">count</span>($matrix);
+        <span style="color:#66d9ef">if</span> ($m <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+        $n <span style="color:#f92672">=</span> <span style="color:#a6e22e">count</span>($matrix[<span style="color:#ae81ff">0</span>]);
+        $maxsqlen <span style="color:#f92672">=</span> $pre <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        $dp <span style="color:#f92672">=</span> <span style="color:#a6e22e">array_fill</span>(<span style="color:#ae81ff">0</span>, $n <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>);
+        <span style="color:#66d9ef">for</span> ($i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; $i <span style="color:#f92672">&lt;=</span> $m; $i<span style="color:#f92672">++</span>) {
+            <span style="color:#66d9ef">for</span> ($j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; $j <span style="color:#f92672">&lt;=</span> $n; $j<span style="color:#f92672">++</span>) {
+                $tmp <span style="color:#f92672">=</span> $dp[$j];
+                <span style="color:#66d9ef">if</span> ($matrix[$i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][$j <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) {
+                    $dp[$j] <span style="color:#f92672">=</span> <span style="color:#a6e22e">min</span>($dp[$j <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>], $dp[$j], $pre) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+                    $maxsqlen <span style="color:#f92672">=</span> <span style="color:#a6e22e">max</span>($maxsqlen, $dp[$j]);
+                } <span style="color:#66d9ef">else</span> {
+                    $dp[$j] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+                }
+                $pre <span style="color:#f92672">=</span> $tmp;
+            }
+        }
+        <span style="color:#66d9ef">return</span> $maxsqlen <span style="color:#f92672">*</span> $maxsqlen;
+    }
+}
+</code></pre></div><h5 id="621-任务调度器httpsleetcode-cncomproblemstask-scheduler-需要深入研究"><a href="https://leetcode-cn.com/problems/task-scheduler/">621. 任务调度器</a> (需要深入研究)</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+
+    <span style="color:#e6db74">/**
+</span><span style="color:#e6db74">     * @param String[] $tasks
+</span><span style="color:#e6db74">     * @param Integer $n
+</span><span style="color:#e6db74">     * @return Integer
+</span><span style="color:#e6db74">     * https://leetcode-cn.com/problems/task-scheduler/solution/python-xiang-jie-by-jalan/
+</span><span style="color:#e6db74">     */</span>
+    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">leastInterval</span>($tasks, $n) {
+        $len <span style="color:#f92672">=</span> <span style="color:#a6e22e">count</span>($tasks);
+        <span style="color:#66d9ef">if</span> ($len <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">return</span> $len;
+        $counts <span style="color:#f92672">=</span> <span style="color:#a6e22e">array_count_values</span>($tasks);
+        <span style="color:#a6e22e">arsort</span>($counts);
+        $max_task_count <span style="color:#f92672">=</span> <span style="color:#a6e22e">current</span>($counts);
+        $res <span style="color:#f92672">=</span> ($max_task_count <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">*</span> ($n <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>);
+        <span style="color:#66d9ef">foreach</span>($counts <span style="color:#66d9ef">as</span> $task<span style="color:#f92672">=&gt;</span>$count) {
+            <span style="color:#66d9ef">if</span> ($count <span style="color:#f92672">==</span> $max_task_count) {
+                $res<span style="color:#f92672">++</span>;
+            }
+        }
+       <span style="color:#66d9ef">return</span> $res <span style="color:#f92672">&gt;=</span> $len <span style="color:#f92672">?</span> $res <span style="color:#f92672">:</span> $len;
+    }
+}
+</code></pre></div><h5 id="647-回文子串httpsleetcode-cncomproblemspalindromic-substrings继续"><a href="https://leetcode-cn.com/problems/palindromic-substrings/">647. 回文子串</a>(继续)</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+
+    <span style="color:#e6db74">/**
+</span><span style="color:#e6db74">     * @param String $s
+</span><span style="color:#e6db74">     * @return Integer
+</span><span style="color:#e6db74">     */</span>
+    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">countSubstrings</span>($s) {
+        $dp <span style="color:#f92672">=</span> [];
+        $ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        $n <span style="color:#f92672">=</span> <span style="color:#a6e22e">strlen</span>($s);
+        <span style="color:#66d9ef">for</span> ($j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $j <span style="color:#f92672">&lt;</span> $n; $j<span style="color:#f92672">++</span>) {
+            <span style="color:#66d9ef">for</span> ($i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $i <span style="color:#f92672">&lt;=</span> $j; $i<span style="color:#f92672">++</span>) {
+                <span style="color:#66d9ef">if</span> ($s[$i] <span style="color:#f92672">==</span> $s[$j] <span style="color:#f92672">&amp;&amp;</span> ($j <span style="color:#f92672">-</span> $i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">||</span> $dp[$i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>][$j <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>])) {
+                    $dp[$i][$j] <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+                    $ans<span style="color:#f92672">++</span>;
+                }
+            }
+        }
+        <span style="color:#66d9ef">return</span> $ans;
+    }
+    <span style="color:#75715e">//方法一：从中心往两侧延伸【通过】
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">countSubstrings</span>($s) {
+        $ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        $n <span style="color:#f92672">=</span> <span style="color:#a6e22e">strlen</span>($s);
+       	<span style="color:#66d9ef">for</span> ($center <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; $center <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>$n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; <span style="color:#f92672">++</span>$center) {
+            $left <span style="color:#f92672">=</span> <span style="color:#a6e22e">intval</span>($center <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>);
+            $right <span style="color:#f92672">=</span> $left <span style="color:#f92672">+</span> $center <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span>;
+            <span style="color:#66d9ef">while</span> ($left <span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> $right <span style="color:#f92672">&lt;</span> $n <span style="color:#f92672">&amp;&amp;</span> $s[$left] <span style="color:#f92672">==</span> $s[$right]) {
+                $ans<span style="color:#f92672">++</span>;
+                $left<span style="color:#f92672">--</span>;
+                $right<span style="color:#f92672">++</span>;
+            }
+        }
+        <span style="color:#66d9ef">return</span> $ans;
+    } 	
+}
+</code></pre></div><h4 id="困难">困难</h4>
+<h5 id="32-最长有效括号httpsleetcode-cncomproblemslongest-valid-parentheses"><a href="https://leetcode-cn.com/problems/longest-valid-parentheses/">32. 最长有效括号</a></h5>
+<h5 id="72-编辑距离httpsleetcode-cncomproblemsedit-distance"><a href="https://leetcode-cn.com/problems/edit-distance/">72. 编辑距离</a></h5>
+<h5 id="363-矩形区域不超过-k-的最大数值和httpsleetcode-cncomproblemsmax-sum-of-rectangle-no-larger-than-k"><a href="https://leetcode-cn.com/problems/max-sum-of-rectangle-no-larger-than-k/">363. 矩形区域不超过 K 的最大数值和</a></h5>
+<h5 id="403-青蛙过河httpsleetcode-cncomproblemsfrog-jump"><a href="https://leetcode-cn.com/problems/frog-jump/">403. 青蛙过河</a></h5>
+<h5 id="410-分割数组的最大值httpsleetcode-cncomproblemssplit-array-largest-sum"><a href="https://leetcode-cn.com/problems/split-array-largest-sum/">410. 分割数组的最大值</a></h5>
+<h5 id="552-学生出勤记录-iihttpsleetcode-cncomproblemsstudent-attendance-record-ii"><a href="https://leetcode-cn.com/problems/student-attendance-record-ii/">552. 学生出勤记录 II</a></h5>
+<h5 id="76-最小覆盖子串httpsleetcode-cncomproblemsminimum-window-substring"><a href="https://leetcode-cn.com/problems/minimum-window-substring/">76. 最小覆盖子串</a></h5>
+<h5 id="312-戳气球httpsleetcode-cncomproblemsburst-balloons"><a href="https://leetcode-cn.com/problems/burst-balloons/">312. 戳气球</a></h5>
+<p>​</p>
+<h3 id="下周预习">下周预习</h3>
+<h4 id="预习知识点">预习知识点：</h4>
+<ul>
+<li><a href="https://time.geekbang.org/column/article/68638">红黑树（上）：为什么工程中都用红黑树这种二叉树？</a></li>
+<li><a href="https://time.geekbang.org/column/article/68976">红黑树（下）：掌握这些技巧，你也可以实现一个红黑树</a></li>
+<li><a href="https://time.geekbang.org/column/article/78175">搜索：如何用 A* 搜索算法实现游戏中的寻路功能？</a></li>
+<li><a href="https://time.geekbang.org/column/article/72414">Trie 树：如何实现搜索引擎的搜索关键词提示功能？</a></li>
+<li><a href="https://time.geekbang.org/column/article/77830">B+ 树：MySQL 数据库索引是如何实现的？</a></li>
+<li><a href="https://time.geekbang.org/column/article/78175">搜索：如何用 A* 搜索算法实现游戏中的寻路功能？</a></li>
+<li><a href="https://time.geekbang.org/column/article/78449">索引：如何在海量数据中快速查找某个数据？</a></li>
+</ul>
+<p>#s### 预习题目：</p>
+<ul>
+<li><a href="https://leetcode-cn.com/problems/implement-trie-prefix-tree/#/description">实现 Trie (前缀树)</a></li>
+<li><a href="https://leetcode-cn.com/problems/word-search-ii/">单词搜索 II</a></li>
+<li><a href="https://leetcode-cn.com/problems/number-of-islands/">岛屿数量</a></li>
+<li><a href="https://leetcode-cn.com/problems/valid-sudoku/description/">有效的数独</a></li>
+<li><a href="https://leetcode-cn.com/problems/n-queens/">N 皇后</a></li>
+<li><a href="https://leetcode-cn.com/problems/word-ladder/">单词接龙</a></li>
+<li><a href="https://leetcode-cn.com/problems/shortest-path-in-binary-matrix/">二进制矩阵中的最短路径</a></li>
+</ul>
+
+</div>
+
+
+  
+</article>
+      <footer id="main-footer" class="container main_footer">
+  
+
+  <div class="container nav foot no-print">
+  
+<a href="https://blog.lbbniu.com/license">license</a>
+
+
+  <a class="toplink" href="#">back to top</a>
+
+</div>
+
+  <div class="container credits">
+  
+<div class="container footline">
+  
+  code with <!-- raw HTML omitted --><!-- raw HTML omitted -->
+
+
+</div>
+
+
+  
+<div class="container copyright">
+  
+  (c) 2021 lbbniu.
+
+
+</div>
+
+
+</div>
+
+</footer>
+
+    </main>
+    
+
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+  </body>
+</html>
+

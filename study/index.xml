@@ -1,42 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>lbbniu</title>
-    <link>https://blog.lbbniu.com/</link>
-    <description>Recent content on lbbniu</description>
+    <title>Studies on lbbniu</title>
+    <link>https://blog.lbbniu.com/study/</link>
+    <description>Recent content in Studies on lbbniu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor>
     <webMaster>lbbniu@gmail.com (lbbniu)</webMaster>
     <copyright>(c) 2021 lbbniu.</copyright>
-    <lastBuildDate>Sat, 20 Nov 2021 17:18:16 +0800</lastBuildDate><atom:link href="https://blog.lbbniu.com/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Docker修改默认网段</title>
-      <link>https://blog.lbbniu.com/2021/11/20/docker%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E7%BD%91%E6%AE%B5/</link>
-      <pubDate>Sat, 20 Nov 2021 17:18:16 +0800</pubDate>
-      <author>lbbniu@gmail.com (lbbniu)</author>
-      <guid>https://blog.lbbniu.com/2021/11/20/docker%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E7%BD%91%E6%AE%B5/</guid>
-      <description>(03-25) 892. 三维形体的表面积 class Solution { /** * @param Integer[][] $grid * @return Integer */ function surfaceArea($grid) { $n = count($grid); $area = 0; for ($i = 0; $i &amp;lt; $n; $i++) { for ($j = 0; $j &amp;lt; $n; $j++) { $level = $grid[$i][$j]; if ($level &amp;gt; 0) { //贡献的面积 &amp;lt;&amp;lt; 2 相当于 * 4  $area += 2 + ($level &amp;lt;&amp;lt; 2); //减去重合的面积 &amp;lt;&amp;lt; 1 相当于 * 2  $area -= $i &amp;gt; 0 ?</description>
-    </item>
-    
-    <item>
-      <title>fabric一些简单用法总结</title>
-      <link>https://blog.lbbniu.com/2021/11/20/fabric%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/</link>
-      <pubDate>Sat, 20 Nov 2021 17:18:16 +0800</pubDate>
-      <author>lbbniu@gmail.com (lbbniu)</author>
-      <guid>https://blog.lbbniu.com/2021/11/20/fabric%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/</guid>
-      <description>1.支持中文
-#!/usr/bin/python env # -*- coding: utf-8 -*- 2.支持颜色
-from fabric.colors import * print(red(&amp;#34;红色&amp;#34;) + green(&amp;#34;绿色&amp;#34;，bold=False) + blue(&amp;#34;蓝色&amp;#34;,bold=True) + white(&amp;#34;白色&amp;#34;) + yellow(&amp;#34;黄色&amp;#34;) + cyan(&amp;#34;蓝绿色&amp;#34;) + magenta(&amp;#34;品红色&amp;#34;)) 3.设置主机组及账号密码
-主机密码不同时：
-env.hosts = [&amp;#39;tomcat@192.168.244.128&amp;#39;,&amp;#39;tomcat@192.168.244.129&amp;#39;] env.passwords = {&amp;#39;tomcat@192.168.244.128:22&amp;#39;:&amp;#39;111111&amp;#39;,&amp;#39;tomcat@192.168.244.129:22&amp;#39;:&amp;#39;111111&amp;#39;} 主机密码相同时:
-env.hosts=[ &amp;#39;tomcat@192.168.244.128:22&amp;#39;, &amp;#39;tomcat@192.168.244.129:22&amp;#39;, ] env.password = &amp;#39;1111&amp;#39; 使用ssh keyfile:
-env.key_filename = [&amp;#39;/opt/fab/server_key&amp;#39;] env.user = &amp;#39;tomcat&amp;#39; env.password = &amp;#39;111111&amp;#39; env.port = &amp;#39;2862&amp;#39; 4.运行shell命令
-在本地运行命令:
-local(&amp;#39;pwd&amp;#39;) local(&amp;#39;set -m ; /etc/init.d/tomcat restart&amp;#39;) # 如果是脚本，要加set -m 支持后台执行并返回状态，否则会报错 在服务器上运行命令:
-run(&amp;#39;uname -a&amp;#39;) 5.</description>
-    </item>
-    
+    <lastBuildDate>Sat, 20 Nov 2021 17:18:16 +0800</lastBuildDate><atom:link href="https://blog.lbbniu.com/study/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LeetCode</title>
       <link>https://blog.lbbniu.com/study/leetcode/leetcode/</link>
@@ -56,64 +29,12 @@ run(&amp;#39;uname -a&amp;#39;) 5.</description>
     </item>
     
     <item>
-      <title>nginx lua直接阶段</title>
-      <link>https://blog.lbbniu.com/2021/11/20/nginx-lua%E7%9B%B4%E6%8E%A5%E9%98%B6%E6%AE%B5/</link>
-      <pubDate>Sat, 20 Nov 2021 17:18:16 +0800</pubDate>
-      <author>lbbniu@gmail.com (lbbniu)</author>
-      <guid>https://blog.lbbniu.com/2021/11/20/nginx-lua%E7%9B%B4%E6%8E%A5%E9%98%B6%E6%AE%B5/</guid>
-      <description>对刚接触Ngx_lua的读者来说，可能会存在下面两个困惑。
- 1、Lua在Nginx的哪些阶段可以执行代码？ 2、Lua在Nginx的每个阶段可以执行哪些操作？
-只有理解了这两个问题，才能在业务中巧妙地利用Ngx_Lua来完成各项需求。
-Nginx的11个执行阶段，每个阶段都有自己能够执行的指令，并可以实现不同的功能。Ngx_Lua的功能大部分是基于Nginx这11个执行阶段开发和配置的，Lua代码在这些指令块中执行，并依赖于它们的执行顺序。本章将对Ngx_Lua的执行阶段进行一一讲解。
- 一、 init_by_lua_block init_by_lua_block是init_by_lua的替代版本，在OpenResty 1.9.3.1或Lua-Nginx-Modulev 0.9.17之前使用的都是init_by_lua。init_by_lua_block比init_by_lua更灵活，所以建议优先选用init_by_lua_block。 本章中的执行阶段都采用*_block格式的指令，后续不再说明。
-1.1　阶段说明 语法：init_by_lua_block {lua-script-str} 配置环境：http 阶段：loading-config 含义：当Nginx的master进程加载Nginx配置文件（加载或重启Nginx进程）时，会在全局的Lua VM（Virtual Machine，虚拟机）层上运行指定的代码，每次当Nginx获得HUP（即Hangup）重载信号加载进程时，代码都会被重新执行。
-*1.2　初始化配置* 在loading-config阶段一般会执行如下操作。 1．初始化Lua全局变量，特别适合用来处理在启动master进程时就要求存在的数据，对CPU消耗较多的功能也可以在此处处理。 2．预加载模块。 3．初始化lua_shared_dict共享内存的数据（关于共享内存详见第10章）。 示例如下：
-user webuser webuser; worker_processes 1; worker_rlimit_nofile 10240; events { use epoll; worker_connections 10240; } http { include mime.types; default_type application/octet-stream; log_format main &#39;$remote_addr-$remote_user[$time_local] &amp;quot;$request&amp;quot; &#39; &#39;$status $body_bytes_sent &amp;quot;$http_referer&amp;quot; &#39; &#39;&amp;quot;$http_user_agent&amp;quot; &amp;quot;$http_x_forwarded_for&amp;quot; &amp;quot;$request_time&amp;quot; &amp;quot;$upstream_addr $upstream_status $upstream_response_time&amp;quot; &amp;quot;upstream_time_sum:$upstream_time_sum&amp;quot; &amp;quot;jk_uri:$jk_uri&amp;quot;&#39;; access_log logs/access.log main; sendfile on; keepalive_timeout 65; lua_package_path &amp;quot;/usr/local/nginx_1.</description>
-    </item>
-    
-    <item>
-      <title>OpenVpn搭建</title>
-      <link>https://blog.lbbniu.com/2021/11/20/openvpn%E6%90%AD%E5%BB%BA/</link>
-      <pubDate>Sat, 20 Nov 2021 17:18:16 +0800</pubDate>
-      <author>lbbniu@gmail.com (lbbniu)</author>
-      <guid>https://blog.lbbniu.com/2021/11/20/openvpn%E6%90%AD%E5%BB%BA/</guid>
-      <description>初始化 # 证书密码见服务器 mm.md # 创建目录 mkdir -p /data/openvpn/conf # 初始化 openvpn 配置 docker run -v /data/openvpn:/etc/openvpn --rm kylemanna/openvpn ovpn_genconfig -u udp://vpn.lbbniu.com # 初始化证书 根据提示数据证书密码和组织名称 docker run -v /data/openvpn:/etc/openvpn --rm -ti kylemanna/openvpn ovpn_initpki # 增加用户 docker run -v /data/openvpn:/etc/openvpn --rm -ti kylemanna/openvpn easyrsa build-client-full lbbniu nopass # 导出用户配置文件 docker run -v /data/openvpn:/etc/openvpn --rm -ti kylemanna/openvpn ovpn_getclient lbbniu &amp;gt; /data/openvpn/conf/lbbniu.ovpn # 启动服务 docker run --name openvpn -v /data/openvpn:/etc/openvpn -d -p 1194:1194/udp --cap-add=NET_ADMIN kylemanna/openvpn 添加用户脚本 #!</description>
-    </item>
-    
-    <item>
-      <title>微明互动参与项目列表</title>
-      <link>https://blog.lbbniu.com/2021/11/20/%E5%BE%AE%E6%98%8E%E4%BA%92%E5%8A%A8%E5%8F%82%E4%B8%8E%E9%A1%B9%E7%9B%AE%E5%88%97%E8%A1%A8/</link>
-      <pubDate>Sat, 20 Nov 2021 17:18:16 +0800</pubDate>
-      <author>lbbniu@gmail.com (lbbniu)</author>
-      <guid>https://blog.lbbniu.com/2021/11/20/%E5%BE%AE%E6%98%8E%E4%BA%92%E5%8A%A8%E5%8F%82%E4%B8%8E%E9%A1%B9%E7%9B%AE%E5%88%97%E8%A1%A8/</guid>
-      <description>2014-2016项目 云热卖 app38 联联 app45 李宁酷跑 app46 htc新渴望 app47 沃尔玛动态贺卡生成器 app49 联信 app50 第九屏 app52/d9ping htc新渴望8 app53 六推云平台 app54 搜狗极限科考 app55 360安全第一 app57 红旗 app59 海尔智慧答题 app60 多喜爱手机端 app61 联想thinkpad app62 斯巴鲁汽车 app64 联想thinkpad 联想禁止随地办公 app66 苏泊尔厨具 app70 亚马逊2048 app71 王老吉疯狂2048 app73 联想刮刮乐 app74 淘手游网站改版（YII框架） 巴布豆（手机和pc） app75 htc one m8申请 app76 高德地图lbs大赛 app77 htc one预约（手机和pc） app78 华为Meta7手机 app79 51jobs统计数据 app80 海尔口袋体验馆 app81 丰田一期 相信自己 app83 htc五月天 app84 海尔问题查询 app85 丰田二期项目 app86 特百惠 app87 特百惠外带小萌 app89 一汽大众 app90 搜狗手机活动项目 app91 全球购 微信项目（微信支付） app92 thinkphp intel大赛项目 app94 联通邀请函 app95 百佳手机 app96 IBM下载中心 app97 2015.</description>
-    </item>
-    
-    <item>
       <title>第八课动态规划</title>
       <link>https://blog.lbbniu.com/study/batj%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95/8.%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</link>
       <pubDate>Sat, 20 Nov 2021 17:18:16 +0800</pubDate>
       <author>lbbniu@gmail.com (lbbniu)</author>
       <guid>https://blog.lbbniu.com/study/batj%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95/8.%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</guid>
       <description>70. 爬楼梯 class Solution { public: int climbStairs(int n) { std::vector&amp;lt;int&amp;gt; dp(n + 3, 0); dp[1] = 1; dp[2] = 1; for (int i = 3; i &amp;lt;= n; i++) { dp[i] = dp[i - 1] + dp[i - 2]; } return dp[n]; } }; 198. 打家劫舍 class Solution { public: int rob(vector&amp;lt;int&amp;gt;&amp;amp; nums) { if (nums.size() == 0) { return 0; } if (nums.size() == 1) { return nums[0]; } //设第一个房间的最优解dp[i]  std::vector&amp;lt;int&amp;gt; dp(nums.</description>
-    </item>
-    
-    <item>
-      <title>解决k8s rook 安装镜像无法拉去</title>
-      <link>https://blog.lbbniu.com/k8s/k8s/</link>
-      <pubDate>Sat, 20 Nov 2021 17:18:16 +0800</pubDate>
-      <author>lbbniu@gmail.com (lbbniu)</author>
-      <guid>https://blog.lbbniu.com/k8s/k8s/</guid>
-      <description>解决 rook 安装镜像无法拉去 docker pull registry.aliyuncs.com/google_containers/csi-node-driver-registrar:v2.3.0 docker tag registry.aliyuncs.com/google_containers/csi-node-driver-registrar:v2.3.0 k8s.gcr.io/sig-storage/csi-node-driver-registrar:v2.3.0 docker rmi registry.aliyuncs.com/google_containers/csi-node-driver-registrar:v2.3.0 docker pull registry.aliyuncs.com/google_containers/csi-provisioner:v3.0.0 docker tag registry.aliyuncs.com/google_containers/csi-provisioner:v3.0.0 k8s.gcr.io/sig-storage/csi-provisioner:v3.0.0 docker rmi registry.aliyuncs.com/google_containers/csi-provisioner:v3.0.0 docker pull registry.aliyuncs.com/google_containers/csi-resizer:v1.3.0 docker tag registry.aliyuncs.com/google_containers/csi-resizer:v1.3.0 k8s.gcr.io/sig-storage/csi-resizer:v1.3.0 docker rmi registry.aliyuncs.com/google_containers/csi-resizer:v1.3.0 docker pull registry.aliyuncs.com/google_containers/csi-attacher:v3.3.0 docker tag registry.aliyuncs.com/google_containers/csi-attacher:v3.3.0 k8s.gcr.io/sig-storage/csi-attacher:v3.3.0 docker rmi registry.aliyuncs.com/google_containers/csi-attacher:v3.3.0 docker pull registry.aliyuncs.com/google_containers/csi-snapshotter:v4.2.0 docker tag registry.aliyuncs.com/google_containers/csi-snapshotter:v4.2.0 k8s.gcr.io/sig-storage/csi-snapshotter:v4.2.0 docker rmi registry.aliyuncs.com/google_containers/csi-snapshotter:v4.2.0 docker pull registry.aliyuncs.com/google_containers/ docker tag registry.aliyuncs.com/google_containers/ k8s.gcr.io/sig-storage/ docker rmi registry.aliyuncs.com/google_containers/ </description>
-    </item>
-    
-    <item>
-      <title>关于</title>
-      <link>https://blog.lbbniu.com/about/</link>
-      <pubDate>Sat, 20 Nov 2021 15:22:23 +0800</pubDate>
-      <author>lbbniu@gmail.com (lbbniu)</author>
-      <guid>https://blog.lbbniu.com/about/</guid>
-      <description>个人简介  8年互联网行业技术开发经验及3年项目管理经验 熟悉微服务、单体架构开发 具备架构高性能、高并发、大流量的分布式系统架构设计和实现经验。熟悉AI和区块链的相关技术。 专业技术全面，对HTML5、云计算、区块链等前沿技术都有所了解，对业内技术方向能够很好把控。 有互联网、云服务、移动端、微信小程序、系统级大型项目建设等经验。 丰富的项目管理经验：能够负责整个项目从需求到结项各环节的实施。 最高管理过25人的技术团队。  职业技能  3年Go和8年PHP开发 精通TarsGo微服务框架的使用和实现原理 熟悉Docker、K8s和Serverless技术 精通Swoole、Hyperf开发框架 精通亿级爬虫系统的开发和维护部署 掌握常用PHP开发框架的使用 掌握常用分布式锁的解决方案 熟练掌握Android逆向分析工具的使用 熟悉常用算法和数据结构、设计模式、操作系统、并发、事务、多线程、TCP协议 熟练掌握各类Linux命令、自动化运维工具 精通MySQL、MongoDB常用数据库 熟练Redis、Memcached等缓存技术 熟练掌握常用消息队列的使用，如Beanstalkd、Kafka 熟悉前端VueJs、Egret框架的使用 熟悉区块链技术的代币发放、智能合约编写 了解Nodejs、Python、Lua、Java开发语言  工作经历 2020.09—至今 好未来集团中台 PHP/Go高级工程师  负责Tars框架消息服务容器化 负责全局消息ID和敏感词黑名单过滤服务开发 负责消息接入调度服务开发 负责哮天犬告警系统开发  2018.10—2020.09 北京七麦科技股份有限公司 PHP资深工程师  负责iOS和各大安卓应用市场整个数据抓取业务的开发、维护、优化（每日抓取次数高大6亿次） 负责安卓各大应用市场接口签名的逆向分析破解 负责MySQL数据库和Api接口优化 负责服务器的部署和日常运维  2014.03—2018.09 北京微明互动信息技术有限公司 技术主管  负责公司项目整体技术架构选型，包括iOS、Android、PHP、Web、爬虫、微信小程序、H5、小游戏等。 负责公司技术团队管理、研发人员招聘、培训与考核。 负责项目架构、框架设计，技术难点攻关 负责团队技术的前沿技术研究。  项目经验 项目：消息服务  使用Hyperf从0重构消息服务调度系统的控制面和API的功能，实现高性能、高并发、高可用(双活)的调度服务，统一收敛培优、网校等业务平滑迁移至新调度服务。 主导Tars消息服务容器化方案的制定、实施、部署、压测全过程，实现消息服务从ECS平滑迁移至K8s容器环境，节省服务器资源60%以上，参与学而思网校暑期保障工作。 负责服务消息全局ID服务的架构设计和开发，原敏感词黑名单过滤服务进行重构优化，支持特殊字符替换、忽略大小写，并零故障平滑过渡上线。  项目：七麦数据、抖V数据【2018.09-2020.09】  引入Cronsun开源定时任务管理系统方便了现有定时任务，完善现有服务监控机制和自动恢复机制。 完成华为、豌豆荚、Oppo、百度等安卓应用市场接口签名算法的逆向还原，解决原有抓取只能从Web抓取的状态。 优化App关键词历史覆盖和联想词智查历史写入机制，提升3-10倍的速度。 iOS关键词搜索结果抓取一期性能优化采用Swoole协程方案重写，并利用Reids实现代理池策略；二期性能优化使用go-colly重写，提升现有抓取速度、并减少服务资源。 2020年5月作为核心参与人员制定和实施阿里云到腾讯云的整个迁移方案，并在一个月完成所有迁移的任务，其中主要负责MongoDB、Redis、MySQL、Memcached、ES、Beanstalkd、Web服务器等核心系统迁移工作，实现0停机迁移，并未出现数据不一致的情况。 使用Xposed+Sekiro搭建抖音签名服务，逆行分析抖音直播IM消息Protobuf协议，从而完成直播互动数据抓取。  APICloud项目：淘老外、京美考等  负责各个项目后端框架选型、核心模块的编写、制定编码规范，后端采用Laravel框架，App端均采用APICloud实现Adronid和iOS跨平台开发方案。 淘老外中主要负责视频教学核心模块的功能编写和制定腾讯音视频SDK APICloud模块接口，对接Adronid和IOS模块开发人员，最终实现使用模块为App实现在线视频通话功能，并用Swoole搭建WebSocket服务实现IM功能。 京美考中负责CC视频SDK封装为APICloud模块实现视频的在线点播功能，在Laravel中集成ElasticSearch实现全文搜索需求。  微信小程序项目：呵呵Life、矩阵元活动管理 项目中做为开发负责人，主要负责框架搭建和小程序接口开发、小程序对接后端接口、部署、协调资源、技术选型等工作。项目管理后台采用Laravel+VueJs+ElementUI技术方案完成开发，实现前后端分离。</description>
     </item>
     
     <item>

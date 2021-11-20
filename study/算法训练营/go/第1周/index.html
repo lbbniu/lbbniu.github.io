@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" href="http://fonts.useso.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <title>  &middot; lbbniu</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="这里是lbbniu的个人博客" />
+
+<meta name="keywords" content="">
+
+
+<meta property="og:title" content="  &middot; lbbniu ">
+<meta property="og:site_name" content="lbbniu"/>
+<meta property="og:url" content="https://blog.lbbniu.com/study/%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5/go/%E7%AC%AC1%E5%91%A8/" />
+<meta property="og:locale" content="en-us">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content=""/>
+<meta property="og:article:published_time" content="0001-01-01T00:00:00Z" />
+<meta property="og:article:modified_time" content="0001-01-01T00:00:00Z" />
+
+  
+
+  
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "",
+    "author": {
+      "@type": "Person",
+      "name": "lbbniu"
+    },
+    "datePublished": "0001-01-01",
+    "description": "",
+    "wordCount":  103 
+  }
+</script>
+
+
+
+<link rel="canonical" href="https://blog.lbbniu.com/study/%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5/go/%E7%AC%AC1%E5%91%A8/" />
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://blog.lbbniu.com/touch-icon-144-precomposed.png">
+<link href="https://blog.lbbniu.com/favicon.png" rel="icon">
+
+<meta name="generator" content="Hugo 0.89.4" />
+
+  <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link href='https://fonts.googleapis.com/css?family=Merriweather:300%7CRaleway%7COpen+Sans' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/highlight/default.css">
+
+  
+  
+</head>
+<body>
+  <main id="main-wrapper" class="container main_wrapper has-sidebar">
+    <header id="main-header" class="container main_header">
+  <div class="container brand">
+  <div class="container title h1-like">
+  <a class="baselink" href="https://blog.lbbniu.com/">
+  lbbniu
+
+</a>
+
+</div>
+
+  
+<div class="container topline">
+  
+  学无止境
+
+
+</div>
+
+
+</div>
+
+  <nav class="container nav primary no-print">
+  
+
+<a class="homelink" href="https://blog.lbbniu.com/">首页</a>
+
+
+  
+<a href="https://blog.lbbniu.com/post" title="Show list of posts">列表</a>
+
+<a href="https://blog.lbbniu.com/golang" title="Show list of tags">Golang</a>
+
+<a href="https://blog.lbbniu.com/k8s" title="Show list of tags">Kubernetes</a>
+
+<a href="https://blog.lbbniu.com/tags" title="Show list of tags">标签</a>
+
+<a href="https://blog.lbbniu.com/about">关于</a>
+
+
+</nav>
+
+<div class="container nav secondary no-print">
+  
+<a id="contact-link-email" class="contact_link" rel="me" aria-label="Email" href="mailto:lbbniu@gmail.com">
+  <span class="fa fa-envelope-square"></span></a>
+
+
+
+<a id="contact-link-github" class="contact_link" rel="me" aria-label="Github" href="https://github.com/lbbniu">
+  <span class="fa fa-github-square"></span></a>
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+  
+
+</header>
+
+
+<article id="main-content" class="container main_content single">
+  <header class="container hat">
+  <h1>
+</h1>
+
+</header>
+
+  <div class="container content">
+  <h1 id="第三课数组链表跳表">第三课|数组、链表、跳表</h1>
+<h2 id="1-数组链表跳表的基本实现和特性">1. 数组、链表、跳表的基本实现和特性</h2>
+<h3 id="参考链接">参考链接</h3>
+<h4 id="java-源码分析arraylisthttpdeveloperclasspathorgdocjavautilarraylist-sourcehtml"><a href="http://developer.classpath.org/doc/java/util/ArrayList-source.html">Java 源码分析（ArrayList）</a></h4>
+<h4 id="linked-list-的标准实现代码httpwwwgeeksforgeeksorgimplementing-a-linked-list-in-java-using-class"><a href="http://www.geeksforgeeks.org/implementing-a-linked-list-in-java-using-class/">Linked List 的标准实现代码</a></h4>
+<h4 id="linked-list-示例代码httpwwwcscmueduadamchik15-121lectureslinked-listscodelinkedlistjava">[Linked List 示例代码](<a href="http://www.cs.cmu.edu/~adamchik/15-121/lectures/Linked">http://www.cs.cmu.edu/~adamchik/15-121/lectures/Linked</a> Lists/code/LinkedList.java)</h4>
+<h4 id="java-源码分析linkedlisthttpdeveloperclasspathorgdocjavautillinkedlist-sourcehtml"><a href="http://developer.classpath.org/doc/java/util/LinkedList-source.html">Java 源码分析（LinkedList）</a></h4>
+<h4 id="lru-cache---linked-list-lru-缓存机制httpleetcode-cncomproblemslru-cache">LRU Cache - Linked list：<a href="http://leetcode-cn.com/problems/lru-cache"> LRU 缓存机制</a></h4>
+<h4 id="redis---skip-list跳跃表httpredisbookreadthedocsioenlatestinternal-datastructskiplisthtml为啥-redis-使用跳表skip-list而不是使用-red-blackhttpwwwzhihucomquestion20202931">Redis - Skip List：<a href="http://redisbook.readthedocs.io/en/latest/internal-datastruct/skiplist.html">跳跃表</a>、<a href="http://www.zhihu.com/question/20202931">为啥 Redis 使用跳表（Skip List）而不是使用 Red-Black？</a></h4>
+<h2 id="2-实战题目解析移动零">2. 实战题目解析：移动零</h2>
+<h2 id="3-实战题目解析盛水最多的容器爬楼梯">3. 实战题目解析：盛水最多的容器、爬楼梯</h2>
+<h3 id="array-实战题目">Array 实战题目</h3>
+<h4 id="11-盛最多水的容器httpsleetcode-cncomproblemscontainer-with-most-water"><a href="https://leetcode-cn.com/problems/container-with-most-water/">11. 盛最多水的容器</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">
+</code></pre></div><h4 id="283-移动零httpsleetcode-cncomproblemsmove-zeroes"><a href="https://leetcode-cn.com/problems/move-zeroes/">283. 移动零</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">
+</code></pre></div><h4 id="70-爬楼梯httpsleetcode-cncomproblemsclimbing-stairs"><a href="https://leetcode-cn.com/problems/climbing-stairs/">70. 爬楼梯</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">
+</code></pre></div><h4 id="15-三数之和httpsleetcode-cncomproblems3sum高频老题"><a href="https://leetcode-cn.com/problems/3sum/">15. 三数之和</a>(高频老题）</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">
+</code></pre></div><h2 id="4-实战题目解析3数之和环形链表">4. 实战题目解析：3数之和、环形链表</h2>
+<p>两数之和题目：<a href="https://leetcode-cn.com/problems/two-sum/"> https://leetcode-cn.com/problems/two-sum/</a></p>
+<h3 id="linked-list-实战题目">Linked List 实战题目</h3>
+<h4 id="206-反转链表httpsleetcode-cncomproblemsreverse-linked-list"><a href="https://leetcode-cn.com/problems/reverse-linked-list/">206. 反转链表</a></h4>
+<ul>
+<li>使用递归函数，一直递归到链表的最后一个结点，该结点就是反转后的头结点，记作 ret .</li>
+<li>此后，每次函数在返回的过程中，让当前结点的下一个结点的 next 指针指向当前节点。</li>
+<li>同时让当前结点的 next 指针指向 NULL ，从而实现从链表尾部开始的局部反转</li>
+<li>当递归函数全部出栈后，链表反转完成。</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">
+</code></pre></div><h4 id="24-两两交换链表中的节点httpsleetcode-cncomproblemsswap-nodes-in-pairs"><a href="https://leetcode-cn.com/problems/swap-nodes-in-pairs/">24. 两两交换链表中的节点</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">
+</code></pre></div><h4 id="141-环形链表httpsleetcode-cncomproblemslinked-list-cycle"><a href="https://leetcode-cn.com/problems/linked-list-cycle/">141. 环形链表</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">
+</code></pre></div><h4 id="142-环形链表-iihttpsleetcode-cncomproblemslinked-list-cycle-ii"><a href="https://leetcode-cn.com/problems/linked-list-cycle-ii/">142. 环形链表 II</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">
+</code></pre></div><h4 id="25-k-个一组翻转链表httpsleetcode-cncomproblemsreverse-nodes-in-k-group"><a href="https://leetcode-cn.com/problems/reverse-nodes-in-k-group/">25. K 个一组翻转链表</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">
+</code></pre></div><h3 id="课后作业">课后作业</h3>
+<h4 id="26-删除排序数组中的重复项httpsleetcode-cncomproblemsremove-duplicates-from-sorted-array"><a href="https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/">26. 删除排序数组中的重复项</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">
+</code></pre></div><h4 id="189-旋转数组httpsleetcode-cncomproblemsrotate-array"><a href="https://leetcode-cn.com/problems/rotate-array/">189. 旋转数组</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">
+</code></pre></div><h4 id="21-合并两个有序链表httpsleetcode-cncomproblemsmerge-two-sorted-lists"><a href="https://leetcode-cn.com/problems/merge-two-sorted-lists/">21. 合并两个有序链表</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">
+</code></pre></div><h4 id="88-合并两个有序数组httpsleetcode-cncomproblemsmerge-sorted-array"><a href="https://leetcode-cn.com/problems/merge-sorted-array/">88. 合并两个有序数组</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">
+</code></pre></div><h4 id="1-两数之和httpsleetcode-cncomproblemstwo-sum"><a href="https://leetcode-cn.com/problems/two-sum/">1. 两数之和</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">
+</code></pre></div><h4 id="283-移动零httpsleetcode-cncomproblemsmove-zeroes-1"><a href="https://leetcode-cn.com/problems/move-zeroes/">283. 移动零</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">
+</code></pre></div><h4 id="66-加一httpsleetcode-cncomproblemsplus-one"><a href="https://leetcode-cn.com/problems/plus-one/">66. 加一</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">
+</code></pre></div><h2 id="本周作业及下周预习">本周作业及下周预习</h2>
+<h3 id="本周作业同上课后作业相同">本周作业同上课后作业相同</h3>
+<h3 id="下周预习">下周预习</h3>
+<h4 id="预习知识点">预习知识点</h4>
+<h5 id="栈如何实现浏览器的前进和后退功能httptimegeekbangorgcolumnarticle41222"><a href="http://time.geekbang.org/column/article/41222">栈：如何实现浏览器的前进和后退功能？</a></h5>
+<h5 id="队列队列在线程池等有限资源池中的应用httptimegeekbangorgcolumnarticle41330"><a href="http://time.geekbang.org/column/article/41330">队列：队列在线程池等有限资源池中的应用</a></h5>
+<h5 id="散列表上word-文档中的单词拼写检查功能是如何实现的httptimegeekbangorgcolumnarticle64233"><a href="http://time.geekbang.org/column/article/64233">散列表（上）：Word 文档中的单词拼写检查功能是如何实现的？</a></h5>
+<h5 id="散列表中如何打造一个工业级水平的散列表httptimegeekbangorgcolumnarticle64586"><a href="http://time.geekbang.org/column/article/64586">散列表（中）：如何打造一个工业级水平的散列表？</a></h5>
+<h5 id="散列表下为什么散列表和链表经常会一起使用httptimegeekbangorgcolumnarticle64858"><a href="http://time.geekbang.org/column/article/64858">散列表（下）：为什么散列表和链表经常会一起使用？</a></h5>
+<h5 id="哈希算法上如何防止数据库中的用户信息被脱库httptimegeekbangorgcolumnarticle65312"><a href="http://time.geekbang.org/column/article/65312">哈希算法（上）：如何防止数据库中的用户信息被脱库？</a></h5>
+<h5 id="哈希算法下哈希算法在分布式系统中有哪些应用httptimegeekbangorgcolumnarticle67388"><a href="http://time.geekbang.org/column/article/67388">哈希算法（下）：哈希算法在分布式系统中有哪些应用？</a></h5>
+<h4 id="预习题目">预习题目</h4>
+<h5 id="有效的括号httpsleetcode-cncomproblemsvalid-parentheses"><a href="https://leetcode-cn.com/problems/valid-parentheses/">有效的括号</a></h5>
+<h5 id="最小栈httpsleetcode-cncomproblemsmin-stack"><a href="https://leetcode-cn.com/problems/min-stack/">最小栈</a></h5>
+
+</div>
+
+
+  
+</article>
+      <footer id="main-footer" class="container main_footer">
+  
+
+  <div class="container nav foot no-print">
+  
+<a href="https://blog.lbbniu.com/license">license</a>
+
+
+  <a class="toplink" href="#">back to top</a>
+
+</div>
+
+  <div class="container credits">
+  
+<div class="container footline">
+  
+  code with <!-- raw HTML omitted --><!-- raw HTML omitted -->
+
+
+</div>
+
+
+  
+<div class="container copyright">
+  
+  (c) 2021 lbbniu.
+
+
+</div>
+
+
+</div>
+
+</footer>
+
+    </main>
+    
+
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+  </body>
+</html>
+
