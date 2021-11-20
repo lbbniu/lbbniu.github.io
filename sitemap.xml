@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blog.lbbniu.com/2021/11/20/hugo-github-actions-%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/</loc>
+    <lastmod>2021-11-20T20:33:21+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.lbbniu.com/</loc>
+    <lastmod>2021-11-20T20:33:21+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.lbbniu.com/post/</loc>
+    <lastmod>2021-11-20T20:33:21+08:00</lastmod>
+  </url><url>
     <loc>https://blog.lbbniu.com/2021/11/20/docker%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E7%BD%91%E6%AE%B5/</loc>
     <lastmod>2021-11-20T17:18:16+08:00</lastmod>
   </url><url>
@@ -9,9 +18,6 @@
     <lastmod>2021-11-20T17:18:16+08:00</lastmod>
   </url><url>
     <loc>https://blog.lbbniu.com/k8s/</loc>
-    <lastmod>2021-11-20T17:18:16+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.lbbniu.com/</loc>
     <lastmod>2021-11-20T17:18:16+08:00</lastmod>
   </url><url>
     <loc>https://blog.lbbniu.com/study/leetcode/leetcode/</loc>
@@ -24,9 +30,6 @@
     <lastmod>2021-11-20T17:18:16+08:00</lastmod>
   </url><url>
     <loc>https://blog.lbbniu.com/2021/11/20/openvpn%E6%90%AD%E5%BB%BA/</loc>
-    <lastmod>2021-11-20T17:18:16+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.lbbniu.com/post/</loc>
     <lastmod>2021-11-20T17:18:16+08:00</lastmod>
   </url><url>
     <loc>https://blog.lbbniu.com/study/</loc>

@@ -9,7 +9,16 @@
     <managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor>
     <webMaster>lbbniu@gmail.com (lbbniu)</webMaster>
     <copyright>(c) 2021 lbbniu.</copyright>
-    <lastBuildDate>Sat, 20 Nov 2021 17:18:16 +0800</lastBuildDate><atom:link href="https://blog.lbbniu.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 20 Nov 2021 20:33:21 +0800</lastBuildDate><atom:link href="https://blog.lbbniu.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo &#43; Github Actions 实现自动化部署</title>
+      <link>https://blog.lbbniu.com/2021/11/20/hugo-github-actions-%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/</link>
+      <pubDate>Sat, 20 Nov 2021 20:33:21 +0800</pubDate>
+      <author>lbbniu@gmail.com (lbbniu)</author>
+      <guid>https://blog.lbbniu.com/2021/11/20/hugo-github-actions-%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/</guid>
+      <description>参考连接  Hugo + Github Actions 实现自动化部署 GitHub Actions 实战 - 用 Hugo 自动构建 搭建 GitHub Pages HUGO + Github + Github Action持续集成部署个人博客  </description>
+    </item>
+    
     <item>
       <title>Docker修改默认网段</title>
       <link>https://blog.lbbniu.com/2021/11/20/docker%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E7%BD%91%E6%AE%B5/</link>
