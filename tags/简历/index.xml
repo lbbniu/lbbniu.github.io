@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>lbbniu</title>
-    <link>https://blog.lbbniu.com/</link>
-    <description>Recent content on lbbniu</description>
+    <title>简历 on lbbniu</title>
+    <link>https://blog.lbbniu.com/tags/%E7%AE%80%E5%8E%86/</link>
+    <description>Recent content in 简历 on lbbniu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor>
     <webMaster>lbbniu@gmail.com (lbbniu)</webMaster>
     <copyright>(c) 2021 lbbniu.</copyright>
-    <lastBuildDate>Sat, 20 Nov 2021 15:22:23 +0800</lastBuildDate><atom:link href="https://blog.lbbniu.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 20 Nov 2021 15:22:23 +0800</lastBuildDate><atom:link href="https://blog.lbbniu.com/tags/%E7%AE%80%E5%8E%86/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>关于</title>
       <link>https://blog.lbbniu.com/about/</link>
