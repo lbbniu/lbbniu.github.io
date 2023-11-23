@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>栈 on lbbniu</title><link>/tags/%E6%A0%88/</link><description>Recent content in 栈 on lbbniu</description><generator>Hugo -- gohugo.io</generator><language>zh</language><managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor><webMaster>lbbniu@gmail.com (lbbniu)</webMaster><copyright>&amp;copy; 2021 &lt;a href="https://blog.lbbniu.com/">lbbniu&lt;/a></copyright><lastBuildDate>Wed, 30 Nov 2022 00:01:00 +0800</lastBuildDate><atom:link href="/tags/%E6%A0%88/index.xml" rel="self" type="application/rss+xml"/><item><title>第一周 数组、链表、栈、队列</title><link>/study/2021algorithm/week01/</link><pubDate>Thu, 25 Nov 2021 10:30:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/2021algorithm/week01/</guid><description>题目数：19
+本周作业 66.加一 （Easy）半年内出题频次： Facebook 字节跳动 微软 Amazon 快手 美团 Google 腾讯 华为 百度 0 0 3 3 0 0 4 0 0 0 // 写法一，面试推荐写法 func plusOne(digits []int) []int { n := len(digits) for i := n - 1; i &amp;gt;=0; i-- { digits[i] = (digits[i] + 1) % 10 if digits[i] != 0 { return digits } } ans := make([]int, n + 1) ans[0] = 1 return ans } // 写法二： func plusOne(digits []int) []int { for i := len(digits) - 1; i &amp;gt;= 0; i-- { // 统计9的个数 if digits[i] !</description></item><item><title>剑指 Offer 06 从尾到头打印链表</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/cong-wei-dao-tou-da-yin-lian-biao-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/cong-wei-dao-tou-da-yin-lian-biao-lcof/</guid><description>剑指 Offer 06 从尾到头打印链表 输入一个链表的头节点，从尾到头反过来返回每个节点的值（用数组返回）。
+&amp;nbsp;
+示例 1：
+输入：head = [1,3,2] 输出：[2,3,1] &amp;nbsp;
+限制：
+0 &amp;lt;= 链表长度 &amp;lt;= 10000
+/** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func reversePrint(head *ListNode) []int { } LeetCode题库地址 https://leetcode.cn/problems/cong-wei-dao-tou-da-yin-lian-biao-lcof</description></item><item><title>剑指 Offer 09 用两个栈实现队列</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/yong-liang-ge-zhan-shi-xian-dui-lie-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/yong-liang-ge-zhan-shi-xian-dui-lie-lcof/</guid><description>剑指 Offer 09 用两个栈实现队列 用两个栈实现一个队列。队列的声明如下，请实现它的两个函数 appendTail 和 deleteHead ，分别完成在队列尾部插入整数和在队列头部删除整数的功能。(若队列中没有元素，deleteHead&amp;nbsp;操作返回 -1 )
+&amp;nbsp;
+示例 1：
+输入： [&amp;quot;CQueue&amp;quot;,&amp;quot;appendTail&amp;quot;,&amp;quot;deleteHead&amp;quot;,&amp;quot;deleteHead&amp;quot;] [[],[3],[],[]] 输出：[null,null,3,-1] 示例 2：
+输入： [&amp;quot;CQueue&amp;quot;,&amp;quot;deleteHead&amp;quot;,&amp;quot;appendTail&amp;quot;,&amp;quot;appendTail&amp;quot;,&amp;quot;deleteHead&amp;quot;,&amp;quot;deleteHead&amp;quot;] [[],[],[5],[2],[],[]] 输出：[null,-1,null,null,5,2] 提示：
+1 &amp;lt;= values &amp;lt;= 10000 最多会对&amp;nbsp;appendTail、deleteHead 进行&amp;nbsp;10000&amp;nbsp;次调用 type CQueue struct { } func Constructor() CQueue { } func (this *CQueue) AppendTail(value int) { } func (this *CQueue) DeleteHead() int { } /** * Your CQueue object will be instantiated and called as such: * obj := Constructor(); * obj.AppendTail(value); * param_2 := obj.</description></item><item><title>面试题 02.06 回文链表</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/palindrome-linked-list-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/palindrome-linked-list-lcci/</guid><description>面试题 02.06 回文链表 编写一个函数，检查输入的链表是否是回文的。
+&amp;nbsp;
+示例 1：
+输入： 1-&amp;gt;2 输出： false 示例 2：
+输入： 1-&amp;gt;2-&amp;gt;2-&amp;gt;1 输出： true &amp;nbsp;
+进阶：
+你能否用 O(n) 时间复杂度和 O(1) 空间复杂度解决此题？
+/** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func isPalindrome(head *ListNode) bool { } LeetCode题库地址 https://leetcode.cn/problems/palindrome-linked-list-lcci</description></item><item><title>面试题 03.01 三合一</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/three-in-one-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/three-in-one-lcci/</guid><description>面试题 03.01 三合一 三合一。描述如何只用一个数组来实现三个栈。
+你应该实现push(stackNum, value)、pop(stackNum)、isEmpty(stackNum)、peek(stackNum)方法。stackNum表示栈下标，value表示压入的值。
+构造函数会传入一个stackSize参数，代表每个栈的大小。
+示例1:
+输入： ["TripleInOne", "push", "push", "pop", "pop", "pop", "isEmpty"] [[1], [0, 1], [0, 2], [0], [0], [0], [0]] 输出： [null, null, null, 1, -1, -1, true] 说明：当栈为空时`pop, peek`返回-1，当栈满时`push`不压入元素。 示例2:
+输入： ["TripleInOne", "push", "push", "push", "pop", "pop", "pop", "peek"] [[2], [0, 1], [0, 2], [0, 3], [0], [0], [0], [0]] 输出： [null, null, null, null, 2, 1, -1, -1] &amp;nbsp;
+提示：
+0 &amp;lt;= stackNum &amp;lt;= 2 type TripleInOne struct { } func Constructor(stackSize int) TripleInOne { } func (this *TripleInOne) Push(stackNum int, value int) { } func (this *TripleInOne) Pop(stackNum int) int { } func (this *TripleInOne) Peek(stackNum int) int { } func (this *TripleInOne) IsEmpty(stackNum int) bool { } /** * Your TripleInOne object will be instantiated and called as such: * obj := Constructor(stackSize); * obj.</description></item><item><title>面试题 03.02 栈的最小值</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/min-stack-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/min-stack-lcci/</guid><description>面试题 03.02 栈的最小值 请设计一个栈，除了常规栈支持的pop与push函数以外，还支持min函数，该函数返回栈元素中的最小值。执行push、pop和min操作的时间复杂度必须为O(1)。
+示例：MinStack minStack = new MinStack();
+minStack.push(-2);
+minStack.push(0);
+minStack.push(-3);
+minStack.getMin(); --> 返回 -3.
+minStack.pop();
+minStack.top(); --> 返回 0.
+minStack.getMin(); --> 返回 -2.
+type MinStack struct { } /** initialize your data structure here. */ func Constructor() MinStack { } func (this *MinStack) Push(x int) { } func (this *MinStack) Pop() { } func (this *MinStack) Top() int { } func (this *MinStack) GetMin() int { } /** * Your MinStack object will be instantiated and called as such: * obj := Constructor(); * obj.</description></item><item><title>面试题 03.03 堆盘子</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/stack-of-plates-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/stack-of-plates-lcci/</guid><description>面试题 03.03 堆盘子 堆盘子。设想有一堆盘子，堆太高可能会倒下来。因此，在现实生活中，盘子堆到一定高度时，我们就会另外堆一堆盘子。请实现数据结构SetOfStacks，模拟这种行为。SetOfStacks应该由多个栈组成，并且在前一个栈填满时新建一个栈。此外，SetOfStacks.push()和SetOfStacks.pop()应该与普通栈的操作方法相同（也就是说，pop()返回的值，应该跟只有一个栈时的情况一样）。 进阶：实现一个popAt(int index)方法，根据指定的子栈，执行pop操作。
+当某个栈为空时，应当删除该栈。当栈中没有元素或不存在该栈时，pop，popAt&amp;nbsp;应返回 -1.
+示例1:
+输入： [&amp;quot;StackOfPlates&amp;quot;, &amp;quot;push&amp;quot;, &amp;quot;push&amp;quot;, &amp;quot;popAt&amp;quot;, &amp;quot;pop&amp;quot;, &amp;quot;pop&amp;quot;] [[1], [1], [2], [1], [], []] 输出： [null, null, null, 2, 1, -1] 示例2:
+输入： [&amp;quot;StackOfPlates&amp;quot;, &amp;quot;push&amp;quot;, &amp;quot;push&amp;quot;, &amp;quot;push&amp;quot;, &amp;quot;popAt&amp;quot;, &amp;quot;popAt&amp;quot;, &amp;quot;popAt&amp;quot;] [[2], [1], [2], [3], [0], [0], [0]] 输出： [null, null, null, null, 2, 1, 3] type StackOfPlates struct { } func Constructor(cap int) StackOfPlates { } func (this *StackOfPlates) Push(val int) { } func (this *StackOfPlates) Pop() int { } func (this *StackOfPlates) PopAt(index int) int { } /** * Your StackOfPlates object will be instantiated and called as such: * obj := Constructor(cap); * obj.</description></item><item><title>面试题 03.04 化栈为队</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/implement-queue-using-stacks-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/implement-queue-using-stacks-lcci/</guid><description>面试题 03.04 化栈为队 实现一个MyQueue类，该类用两个栈来实现一个队列。
+示例：MyQueue queue = new MyQueue();
+queue.push(1);
+queue.push(2);
+queue.peek(); // 返回 1
+queue.pop(); // 返回 1
+queue.empty(); // 返回 false
+说明：
+你只能使用标准的栈操作 -- 也就是只有 push to top, peek/pop from top, size 和 is empty 操作是合法的。你所使用的语言也许不支持栈。你可以使用 list 或者 deque（双端队列）来模拟一个栈，只要是标准的栈操作即可。假设所有操作都是有效的 （例如，一个空的队列不会调用 pop 或者 peek 操作）。
+type MyQueue struct { } /** Initialize your data structure here. */ func Constructor() MyQueue { } /** Push element x to the back of queue. */ func (this *MyQueue) Push(x int) { } /** Removes the element from in front of queue and returns that element.</description></item><item><title>面试题 03.05 栈排序</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/sort-of-stacks-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/sort-of-stacks-lcci/</guid><description>面试题 03.05 栈排序 栈排序。 编写程序，对栈进行排序使最小元素位于栈顶。最多只能使用一个其他的临时栈存放数据，但不得将元素复制到别的数据结构（如数组）中。该栈支持如下操作：push、pop、peek 和 isEmpty。当栈为空时，peek&amp;nbsp;返回 -1。
+示例1:
+输入： [&amp;quot;SortedStack&amp;quot;, &amp;quot;push&amp;quot;, &amp;quot;push&amp;quot;, &amp;quot;peek&amp;quot;, &amp;quot;pop&amp;quot;, &amp;quot;peek&amp;quot;] [[], [1], [2], [], [], []] 输出： [null,null,null,1,null,2] 示例2:
+输入： [&amp;quot;SortedStack&amp;quot;, &amp;quot;pop&amp;quot;, &amp;quot;pop&amp;quot;, &amp;quot;push&amp;quot;, &amp;quot;pop&amp;quot;, &amp;quot;isEmpty&amp;quot;] [[], [], [], [1], [], []] 输出： [null,null,null,null,null,true] 说明:
+栈中的元素数目在[0, 5000]范围内。 type SortedStack struct { } func Constructor() SortedStack { } func (this *SortedStack) Push(val int) { } func (this *SortedStack) Pop() { } func (this *SortedStack) Peek() int { } func (this *SortedStack) IsEmpty() bool { } /** * Your SortedStack object will be instantiated and called as such: * obj := Constructor(); * obj.</description></item><item><title>剑指 Offer II 025 链表中的两数相加</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/lmsnwu/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/lmsnwu/</guid><description>剑指 Offer II 025 链表中的两数相加 给定两个 非空链表 l1和 l2&amp;nbsp;来代表两个非负整数。数字最高位位于链表开始位置。它们的每个节点只存储一位数字。将这两数相加会返回一个新的链表。
+可以假设除了数字 0 之外，这两个数字都不会以零开头。
+&amp;nbsp;
+示例1：
+输入：l1 = [7,2,4,3], l2 = [5,6,4] 输出：[7,8,0,7] 示例2：
+输入：l1 = [2,4,3], l2 = [5,6,4] 输出：[8,0,7] 示例3：
+输入：l1 = [0], l2 = [0] 输出：[0] &amp;nbsp;
+提示：
+链表的长度范围为 [1, 100] 0 &amp;lt;= node.val &amp;lt;= 9 输入数据保证链表代表的数字无前导 0 &amp;nbsp;
+进阶：如果输入链表不能修改该如何处理？换句话说，不能对列表中的节点进行翻转。
+&amp;nbsp;
+注意：本题与主站 445&amp;nbsp;题相同：https://leetcode-cn.com/problems/add-two-numbers-ii/
+/** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode { } LeetCode题库地址 https://leetcode.</description></item><item><title>剑指 Offer II 026 重排链表</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/lgjmqu/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/lgjmqu/</guid><description>剑指 Offer II 026 重排链表 给定一个单链表 L 的头节点 head ，单链表 L 表示为：
+&amp;nbsp;L0&amp;nbsp;&amp;rarr; L1&amp;nbsp;&amp;rarr; &amp;hellip; &amp;rarr; Ln-1&amp;nbsp;&amp;rarr; Ln&amp;nbsp;
+请将其重新排列后变为：
+L0&amp;nbsp;&amp;rarr;&amp;nbsp;Ln&amp;nbsp;&amp;rarr;&amp;nbsp;L1&amp;nbsp;&amp;rarr;&amp;nbsp;Ln-1&amp;nbsp;&amp;rarr;&amp;nbsp;L2&amp;nbsp;&amp;rarr;&amp;nbsp;Ln-2&amp;nbsp;&amp;rarr; &amp;hellip;
+不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。
+&amp;nbsp;
+示例 1:
+输入: head = [1,2,3,4] 输出: [1,4,2,3] 示例 2:
+输入: head = [1,2,3,4,5] 输出: [1,5,2,4,3] &amp;nbsp;
+提示：
+链表的长度范围为 [1, 5 * 104] 1 &amp;lt;= node.val &amp;lt;= 1000 &amp;nbsp;
+注意：本题与主站 143&amp;nbsp;题相同：https://leetcode-cn.com/problems/reorder-list/&amp;nbsp;
+/** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func reorderList(head *ListNode) { } LeetCode题库地址 https://leetcode.</description></item><item><title>剑指 Offer II 027 回文链表</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/amhzsa/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/amhzsa/</guid><description>剑指 Offer II 027 回文链表 给定一个链表的 头节点&amp;nbsp;head&amp;nbsp;，请判断其是否为回文链表。
+如果一个链表是回文，那么链表节点序列从前往后看和从后往前看是相同的。
+&amp;nbsp;
+示例 1：
+输入: head = [1,2,3,3,2,1] 输出: true 示例 2：
+输入: head = [1,2] 输出: false &amp;nbsp;
+提示：
+链表 L 的长度范围为 [1, 105] 0&amp;nbsp;&amp;lt;= node.val &amp;lt;= 9 &amp;nbsp;
+进阶：能否用&amp;nbsp;O(n) 时间复杂度和 O(1) 空间复杂度解决此题？
+&amp;nbsp;
+注意：本题与主站 234&amp;nbsp;题相同：https://leetcode-cn.com/problems/palindrome-linked-list/
+/** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func isPalindrome(head *ListNode) bool { } LeetCode题库地址 https://leetcode.cn/problems/aMhZSa</description></item><item><title>剑指 Offer 30 包含min函数的栈</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/bao-han-minhan-shu-de-zhan-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/bao-han-minhan-shu-de-zhan-lcof/</guid><description>剑指 Offer 30 包含min函数的栈 定义栈的数据结构，请在该类型中实现一个能够得到栈的最小元素的 min 函数在该栈中，调用 min、push 及 pop 的时间复杂度都是 O(1)。
+&amp;nbsp;
+示例:
+MinStack minStack = new MinStack(); minStack.push(-2); minStack.push(0); minStack.push(-3); minStack.min(); --&amp;gt; 返回 -3. minStack.pop(); minStack.top(); --&amp;gt; 返回 0. minStack.min(); --&amp;gt; 返回 -2. &amp;nbsp;
+提示：
+各函数的调用总次数不超过 20000 次 &amp;nbsp;
+注意：本题与主站 155 题相同：https://leetcode-cn.com/problems/min-stack/
+type MinStack struct { } /** initialize your data structure here. */ func Constructor() MinStack { } func (this *MinStack) Push(x int) { } func (this *MinStack) Pop() { } func (this *MinStack) Top() int { } func (this *MinStack) Min() int { } /** * Your MinStack object will be instantiated and called as such: * obj := Constructor(); * obj.</description></item><item><title>剑指 Offer 31 栈的压入、弹出序列</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/zhan-de-ya-ru-dan-chu-xu-lie-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/zhan-de-ya-ru-dan-chu-xu-lie-lcof/</guid><description>剑指 Offer 31 栈的压入、弹出序列 输入两个整数序列，第一个序列表示栈的压入顺序，请判断第二个序列是否为该栈的弹出顺序。假设压入栈的所有数字均不相等。例如，序列 {1,2,3,4,5} 是某栈的压栈序列，序列 {4,5,3,2,1} 是该压栈序列对应的一个弹出序列，但 {4,3,5,1,2} 就不可能是该压栈序列的弹出序列。
+&amp;nbsp;
+示例 1：
+输入：pushed = [1,2,3,4,5], popped = [4,5,3,2,1] 输出：true 解释：我们可以按以下顺序执行： push(1), push(2), push(3), push(4), pop() -&amp;gt; 4, push(5), pop() -&amp;gt; 5, pop() -&amp;gt; 3, pop() -&amp;gt; 2, pop() -&amp;gt; 1 示例 2：
+输入：pushed = [1,2,3,4,5], popped = [4,3,5,1,2] 输出：false 解释：1 不能在 2 之前弹出。 &amp;nbsp;
+提示：
+0 &amp;lt;= pushed.length == popped.length &amp;lt;= 1000 0 &amp;lt;= pushed[i], popped[i] &amp;lt; 1000 pushed&amp;nbsp;是&amp;nbsp;popped&amp;nbsp;的排列。 注意：本题与主站 946 题相同：https://leetcode-cn.com/problems/validate-stack-sequences/
+func validateStackSequences(pushed []int, popped []int) bool { } LeetCode题库地址 https://leetcode.</description></item><item><title>剑指 Offer 33 二叉搜索树的后序遍历序列</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof/</guid><description>剑指 Offer 33 二叉搜索树的后序遍历序列 输入一个整数数组，判断该数组是不是某二叉搜索树的后序遍历结果。如果是则返回&amp;nbsp;true，否则返回&amp;nbsp;false。假设输入的数组的任意两个数字都互不相同。
+&amp;nbsp;
+参考以下这颗二叉搜索树：
+5 / \ 2 6 / \ 1 3 示例 1：
+输入: [1,6,3,2,5] 输出: false 示例 2：
+输入: [1,3,2,6,5] 输出: true &amp;nbsp;
+提示：
+数组长度 &amp;lt;= 1000 func verifyPostorder(postorder []int) bool { } LeetCode题库地址 https://leetcode.cn/problems/er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof</description></item><item><title>剑指 Offer 36 二叉搜索树与双向链表</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/er-cha-sou-suo-shu-yu-shuang-xiang-lian-biao-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/er-cha-sou-suo-shu-yu-shuang-xiang-lian-biao-lcof/</guid><description>剑指 Offer 36 二叉搜索树与双向链表 输入一棵二叉搜索树，将该二叉搜索树转换成一个排序的循环双向链表。要求不能创建任何新的节点，只能调整树中节点指针的指向。
+&amp;nbsp;
+为了让您更好地理解问题，以下面的二叉搜索树为例：
+&amp;nbsp;
+&amp;nbsp;
+我们希望将这个二叉搜索树转化为双向循环链表。链表中的每个节点都有一个前驱和后继指针。对于双向循环链表，第一个节点的前驱是最后一个节点，最后一个节点的后继是第一个节点。
+下图展示了上面的二叉搜索树转化成的链表。&amp;ldquo;head&amp;rdquo; 表示指向链表中有最小元素的节点。
+&amp;nbsp;
+&amp;nbsp;
+特别地，我们希望可以就地完成转换操作。当转化完成以后，树中节点的左指针需要指向前驱，树中节点的右指针需要指向后继。还需要返回链表中的第一个节点的指针。
+&amp;nbsp;
+注意：本题与主站 426 题相同：https://leetcode-cn.com/problems/convert-binary-search-tree-to-sorted-doubly-linked-list/
+注意：此题对比原题有改动。
+LeetCode题库地址 https://leetcode.cn/problems/er-cha-sou-suo-shu-yu-shuang-xiang-lian-biao-lcof</description></item><item><title>剑指 Offer II 036 后缀表达式</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/8zf90g/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/8zf90g/</guid><description>剑指 Offer II 036 后缀表达式 根据 逆波兰表示法，求该后缀表达式的计算结果。
+有效的算符包括&amp;nbsp;+、-、*、/&amp;nbsp;。每个运算对象可以是整数，也可以是另一个逆波兰表达式。
+&amp;nbsp;
+说明：
+整数除法只保留整数部分。 给定逆波兰表达式总是有效的。换句话说，表达式总会得出有效数值且不存在除数为 0 的情况。 &amp;nbsp;
+示例&amp;nbsp;1：
+输入：tokens = [&amp;quot;2&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;+&amp;quot;,&amp;quot;3&amp;quot;,&amp;quot;*&amp;quot;] 输出：9 解释：该算式转化为常见的中缀算术表达式为：((2 + 1) * 3) = 9 示例&amp;nbsp;2：
+输入：tokens = [&amp;quot;4&amp;quot;,&amp;quot;13&amp;quot;,&amp;quot;5&amp;quot;,&amp;quot;/&amp;quot;,&amp;quot;+&amp;quot;] 输出：6 解释：该算式转化为常见的中缀算术表达式为：(4 + (13 / 5)) = 6 示例&amp;nbsp;3：
+输入：tokens = [&amp;quot;10&amp;quot;,&amp;quot;6&amp;quot;,&amp;quot;9&amp;quot;,&amp;quot;3&amp;quot;,&amp;quot;+&amp;quot;,&amp;quot;-11&amp;quot;,&amp;quot;*&amp;quot;,&amp;quot;/&amp;quot;,&amp;quot;*&amp;quot;,&amp;quot;17&amp;quot;,&amp;quot;+&amp;quot;,&amp;quot;5&amp;quot;,&amp;quot;+&amp;quot;] 输出：22 解释： 该算式转化为常见的中缀算术表达式为： ((10 * (6 / ((9 + 3) * -11))) + 17) + 5 = ((10 * (6 / (12 * -11))) + 17) + 5 = ((10 * (6 / -132)) + 17) + 5 = ((10 * 0) + 17) + 5 = (0 + 17) + 5 = 17 + 5 = 22 &amp;nbsp;</description></item><item><title>剑指 Offer II 037 小行星碰撞</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/xagzni/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/xagzni/</guid><description>剑指 Offer II 037 小行星碰撞 给定一个整数数组 asteroids，表示在同一行的小行星。
+对于数组中的每一个元素，其绝对值表示小行星的大小，正负表示小行星的移动方向（正表示向右移动，负表示向左移动）。每一颗小行星以相同的速度移动。
+找出碰撞后剩下的所有小行星。碰撞规则：两个行星相互碰撞，较小的行星会爆炸。如果两颗行星大小相同，则两颗行星都会爆炸。两颗移动方向相同的行星，永远不会发生碰撞。
+&amp;nbsp;
+示例 1：
+输入：asteroids = [5,10,-5] 输出：[5,10] 解释：10 和 -5 碰撞后只剩下 10 。 5 和 10 永远不会发生碰撞。 示例 2：
+输入：asteroids = [8,-8] 输出：[] 解释：8 和 -8 碰撞后，两者都发生爆炸。 示例 3：
+输入：asteroids = [10,2,-5] 输出：[10] 解释：2 和 -5 发生碰撞后剩下 -5 。10 和 -5 发生碰撞后剩下 10 。 示例 4：
+输入：asteroids = [-2,-1,1,2] 输出：[-2,-1,1,2] 解释：-2 和 -1 向左移动，而 1 和 2 向右移动。 由于移动方向相同的行星不会发生碰撞，所以最终没有行星发生碰撞。 &amp;nbsp;
+提示：
+2 &amp;lt;= asteroids.length&amp;nbsp;&amp;lt;= 104 -1000 &amp;lt;= asteroids[i] &amp;lt;= 1000 asteroids[i] !</description></item><item><title>剑指 Offer II 038 每日温度</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/iiqa4i/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/iiqa4i/</guid><description>剑指 Offer II 038 每日温度 请根据每日 气温 列表 temperatures&amp;nbsp;，重新生成一个列表，要求其对应位置的输出为：要想观测到更高的气温，至少需要等待的天数。如果气温在这之后都不会升高，请在该位置用&amp;nbsp;0 来代替。
+&amp;nbsp;
+示例 1:
+输入: temperatures = [73,74,75,71,69,72,76,73] 输出:&amp;nbsp;[1,1,4,2,1,1,0,0] 示例 2:
+输入: temperatures = [30,40,50,60] 输出:&amp;nbsp;[1,1,1,0] 示例 3:
+输入: temperatures = [30,60,90] 输出: [1,1,0] &amp;nbsp;
+提示：
+1 &amp;lt;=&amp;nbsp;temperatures.length &amp;lt;= 105 30 &amp;lt;=&amp;nbsp;temperatures[i]&amp;nbsp;&amp;lt;= 100 &amp;nbsp;
+注意：本题与主站 739&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/daily-temperatures/
+func dailyTemperatures(temperatures []int) []int { } LeetCode题库地址 https://leetcode.cn/problems/iIQa4I</description></item><item><title>剑指 Offer II 039 直方图最大矩形面积</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/0ynmmm/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/0ynmmm/</guid><description>剑指 Offer II 039 直方图最大矩形面积 给定非负整数数组 heights&amp;nbsp;，数组中的数字用来表示柱状图中各个柱子的高度。每个柱子彼此相邻，且宽度为 1 。
+求在该柱状图中，能够勾勒出来的矩形的最大面积。
+&amp;nbsp;
+示例 1:
+输入：heights = [2,1,5,6,2,3] 输出：10 解释：最大的矩形为图中红色区域，面积为 10 示例 2：
+输入： heights = [2,4] 输出： 4 &amp;nbsp;
+提示：
+1 &amp;lt;= heights.length &amp;lt;=105 0 &amp;lt;= heights[i] &amp;lt;= 104 &amp;nbsp;
+注意：本题与主站 84&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/largest-rectangle-in-histogram/
+func largestRectangleArea(heights []int) int { } LeetCode题库地址 https://leetcode.cn/problems/0ynMMM</description></item><item><title>剑指 Offer II 040 矩阵中最大的矩形</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/plyxkq/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/plyxkq/</guid><description>剑指 Offer II 040 矩阵中最大的矩形 给定一个由&amp;nbsp;0 和 1&amp;nbsp;组成的矩阵 matrix&amp;nbsp;，找出只包含 1 的最大矩形，并返回其面积。
+注意：此题 matrix&amp;nbsp;输入格式为一维 01 字符串数组。
+&amp;nbsp;
+示例 1：
+输入：matrix = ["10100","10111","11111","10010"] 输出：6 解释：最大矩形如上图所示。 示例 2：
+输入：matrix = [] 输出：0 示例 3：
+输入：matrix = ["0"] 输出：0 示例 4：
+输入：matrix = ["1"] 输出：1 示例 5：
+输入：matrix = ["00"] 输出：0 &amp;nbsp;
+提示：
+rows == matrix.length cols == matrix[0].length 0 &amp;lt;= row, cols &amp;lt;= 200 matrix[i][j] 为 '0' 或 '1' &amp;nbsp;
+注意：本题与主站 85 题相同（输入参数格式不同）：&amp;nbsp;https://leetcode-cn.com/problems/maximal-rectangle/
+func maximalRectangle(matrix []string) int { } LeetCode题库地址 https://leetcode.</description></item><item><title>剑指 Offer II 052 展平二叉搜索树</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/nybbnl/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/nybbnl/</guid><description>剑指 Offer II 052 展平二叉搜索树 给你一棵二叉搜索树，请&amp;nbsp;按中序遍历 将其重新排列为一棵递增顺序搜索树，使树中最左边的节点成为树的根节点，并且每个节点没有左子节点，只有一个右子节点。
+&amp;nbsp;
+示例 1：
+输入：root = [5,3,6,2,4,null,8,1,null,null,null,7,9] 输出：[1,null,2,null,3,null,4,null,5,null,6,null,7,null,8,null,9] 示例 2：
+输入：root = [5,1,7] 输出：[1,null,5,null,7] &amp;nbsp;
+提示：
+树中节点数的取值范围是 [1, 100] 0 &amp;lt;= Node.val &amp;lt;= 1000 &amp;nbsp;
+注意：本题与主站 897&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/increasing-order-search-tree/
+/** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ func increasingBST(root *TreeNode) *TreeNode { } LeetCode题库地址 https://leetcode.cn/problems/NYBBNL</description></item><item><title>剑指 Offer II 055 二叉搜索树迭代器</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/ktoapq/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/ktoapq/</guid><description>剑指 Offer II 055 二叉搜索树迭代器 实现一个二叉搜索树迭代器类BSTIterator ，表示一个按中序遍历二叉搜索树（BST）的迭代器：
+BSTIterator(TreeNode root) 初始化 BSTIterator 类的一个对象。BST 的根节点 root 会作为构造函数的一部分给出。指针应初始化为一个不存在于 BST 中的数字，且该数字小于 BST 中的任何元素。 boolean hasNext() 如果向指针右侧遍历存在数字，则返回 true ；否则返回 false 。 int next()将指针向右移动，然后返回指针处的数字。 注意，指针初始化为一个不存在于 BST 中的数字，所以对 next() 的首次调用将返回 BST 中的最小元素。
+可以假设&amp;nbsp;next()&amp;nbsp;调用总是有效的，也就是说，当调用 next()&amp;nbsp;时，BST 的中序遍历中至少存在一个下一个数字。
+&amp;nbsp;
+示例：
+输入 inputs = [&amp;quot;BSTIterator&amp;quot;, &amp;quot;next&amp;quot;, &amp;quot;next&amp;quot;, &amp;quot;hasNext&amp;quot;, &amp;quot;next&amp;quot;, &amp;quot;hasNext&amp;quot;, &amp;quot;next&amp;quot;, &amp;quot;hasNext&amp;quot;, &amp;quot;next&amp;quot;, &amp;quot;hasNext&amp;quot;] inputs = [[[7, 3, 15, null, null, 9, 20]], [], [], [], [], [], [], [], [], []] 输出 [null, 3, 7, true, 9, true, 15, true, 20, false] 解释 BSTIterator bSTIterator = new BSTIterator([7, 3, 15, null, null, 9, 20]); bSTIterator.</description></item><item><title>面试题 16.16 部分排序</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/sub-sort-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/sub-sort-lcci/</guid><description>面试题 16.16 部分排序 给定一个整数数组，编写一个函数，找出索引m和n，只要将索引区间[m,n]的元素排好序，整个数组就是有序的。注意：n-m尽量最小，也就是说，找出符合条件的最短序列。函数返回值为[m,n]，若不存在这样的m和n（例如整个数组是有序的），请返回[-1,-1]。
+示例：
+输入： [1,2,4,7,10,11,7,12,6,7,16,18,19] 输出： [3,9] 提示：
+0 &lt;= len(array) &lt;= 1000000 func subSort(array []int) []int { } LeetCode题库地址 https://leetcode.cn/problems/sub-sort-lcci</description></item><item><title>面试题 16.26 计算器</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/calculator-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/calculator-lcci/</guid><description>面试题 16.26 计算器 给定一个包含正整数、加(+)、减(-)、乘(*)、除(/)的算数表达式(括号除外)，计算其结果。
+表达式仅包含非负整数，+， - ，*，/ 四种运算符和空格&amp;nbsp;&amp;nbsp;。 整数除法仅保留整数部分。
+示例&amp;nbsp;1:
+输入: &amp;quot;3+2*2&amp;quot; 输出: 7 示例 2:
+输入: &amp;quot; 3/2 &amp;quot; 输出: 1 示例 3:
+输入: &amp;quot; 3+5 / 2 &amp;quot; 输出: 5 说明：
+你可以假设所给定的表达式都是有效的。 请不要使用内置的库函数 eval。 func calculate(s string) int { } LeetCode题库地址 https://leetcode.cn/problems/calculator-lcci</description></item><item><title>面试题 17.12 BiNode</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/binode-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/binode-lcci/</guid><description>面试题 17.12 BiNode 二叉树数据结构TreeNode可用来表示单向链表（其中left置空，right为下一个链表节点）。实现一个方法，把二叉搜索树转换为单向链表，要求依然符合二叉搜索树的性质，转换操作应是原址的，也就是在原始的二叉搜索树上直接修改。
+返回转换后的单向链表的头节点。
+注意：本题相对原题稍作改动
+&amp;nbsp;
+示例：
+输入： [4,2,5,1,3,null,6,0] 输出： [0,null,1,null,2,null,3,null,4,null,5,null,6] 提示：
+节点数量不会超过 100000。 /** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ func convertBiNode(root *TreeNode) *TreeNode { } LeetCode题库地址 https://leetcode.cn/problems/binode-lcci</description></item><item><title>面试题 17.21 直方图的水量</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/volume-of-histogram-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/volume-of-histogram-lcci/</guid><description>面试题 17.21 直方图的水量 给定一个直方图(也称柱状图)，假设有人从上面源源不断地倒水，最后直方图能存多少水量?直方图的宽度为 1。
+上面是由数组 [0,1,0,2,1,0,1,3,2,1,2,1] 表示的直方图，在这种情况下，可以接 6 个单位的水（蓝色部分表示水）。&amp;nbsp;感谢 Marcos 贡献此图。
+示例:
+输入: [0,1,0,2,1,0,1,3,2,1,2,1] 输出: 6 func trap(height []int) int { } LeetCode题库地址 https://leetcode.cn/problems/volume-of-histogram-lcci</description></item><item><title>【2022-11-30每日一题】895. 最大频率栈[Hard]</title><link>/study/leetcode/maximum-frequency-stack/</link><pubDate>Wed, 30 Nov 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/maximum-frequency-stack/</guid><description>2022-11-30每日一题：895. 最大频率栈 难度：Hard
+标签：栈 、 设计 、 哈希表 、 有序集合
+设计一个类似堆栈的数据结构，将元素推入堆栈，并从堆栈中弹出出现频率最高的元素。
+实现 FreqStack&amp;nbsp;类:
+FreqStack()&amp;nbsp;构造一个空的堆栈。 void push(int val)&amp;nbsp;将一个整数&amp;nbsp;val&amp;nbsp;压入栈顶。 int pop()&amp;nbsp;删除并返回堆栈中出现频率最高的元素。 如果出现频率最高的元素不只一个，则移除并返回最接近栈顶的元素。 &amp;nbsp;
+示例 1：
+输入： ["FreqStack","push","push","push","push","push","push","pop","pop","pop","pop"], [[],[5],[7],[5],[7],[4],[5],[],[],[],[]] 输出：[null,null,null,null,null,null,null,5,7,5,4] 解释： FreqStack = new FreqStack(); freqStack.push (5);//堆栈为 [5] freqStack.push (7);//堆栈是 [5,7] freqStack.push (5);//堆栈是 [5,7,5] freqStack.push (7);//堆栈是 [5,7,5,7] freqStack.push (4);//堆栈是 [5,7,5,7,4] freqStack.push (5);//堆栈是 [5,7,5,7,4,5] freqStack.pop ();//返回 5 ，因为 5 出现频率最高。堆栈变成 [5,7,5,7,4]。 freqStack.pop ();//返回 7 ，因为 5 和 7 出现频率最高，但7最接近顶部。堆栈变成 [5,7,5,4]。 freqStack.pop ();//返回 5 ，因为 5 出现频率最高。堆栈变成 [5,7,4]。 freqStack.pop ();//返回 4 ，因为 4, 5 和 7 出现频率最高，但 4 是最接近顶部的。堆栈变成 [5,7]。 &amp;nbsp;</description></item><item><title>【2022-11-05每日一题】1106. 解析布尔表达式[Hard]</title><link>/study/leetcode/parsing-a-boolean-expression/</link><pubDate>Sat, 05 Nov 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/parsing-a-boolean-expression/</guid><description>2022-11-05每日一题：1106. 解析布尔表达式 难度：Hard
+标签：栈 、 递归 、 字符串
+给你一个以字符串形式表述的&amp;nbsp;布尔表达式（boolean） expression，返回该式的运算结果。
+有效的表达式需遵循以下约定：
+&amp;quot;t&amp;quot;，运算结果为 True &amp;quot;f&amp;quot;，运算结果为 False &amp;quot;!(expr)&amp;quot;，运算过程为对内部表达式 expr 进行逻辑 非的运算（NOT） &amp;quot;&amp;amp;(expr1,expr2,...)&amp;quot;，运算过程为对 2 个或以上内部表达式 expr1, expr2, ... 进行逻辑 与的运算（AND） &amp;quot;|(expr1,expr2,...)&amp;quot;，运算过程为对 2 个或以上内部表达式 expr1, expr2, ... 进行逻辑 或的运算（OR） &amp;nbsp;
+示例 1：
+输入：expression = &amp;quot;!(f)&amp;quot; 输出：true 示例 2：
+输入：expression = &amp;quot;|(f,t)&amp;quot; 输出：true 示例 3：
+输入：expression = &amp;quot;&amp;amp;(t,f)&amp;quot; 输出：false 示例 4：
+输入：expression = &amp;quot;|(&amp;amp;(t,f,t),!(t))&amp;quot; 输出：false &amp;nbsp;
+提示：
+1 &amp;lt;= expression.length &amp;lt;= 20000 expression[i] 由 {&amp;#39;(&amp;#39;, &amp;#39;)&amp;#39;, &amp;#39;&amp;amp;&amp;#39;, &amp;#39;|&amp;#39;, &amp;#39;!&amp;#39;, &amp;#39;t&amp;#39;, &amp;#39;f&amp;#39;, &amp;#39;,&amp;#39;} 中的字符组成。 expression 是以上述形式给出的有效表达式，表示一个布尔值。 方法一： 详细思路过程见官方题解，这里只做个人刷题记录，方便后续查询阅读</description></item><item><title>【2022-10-28每日一题】907. 子数组的最小值之和[Medium]</title><link>/study/leetcode/sum-of-subarray-minimums/</link><pubDate>Fri, 28 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/sum-of-subarray-minimums/</guid><description>2022-10-28每日一题：907. 子数组的最小值之和 难度：Medium
+标签：栈 、 数组 、 动态规划 、 单调栈
+给定一个整数数组 arr，找到 min(b) 的总和，其中 b 的范围为 arr 的每个（连续）子数组。
+由于答案可能很大，因此 返回答案模 10^9 + 7 。
+示例 1：
+输入：arr = [3,1,2,4] 输出：17 解释： 子数组为 [3]，[1]，[2]，[4]，[3,1]，[1,2]，[2,4]，[3,1,2]，[1,2,4]，[3,1,2,4]。 最小值为 3，1，2，4，1，1，2，1，1，1，和为 17。 示例 2：
+输入：arr = [11,81,94,43,3] 输出：444 提示：
+1 &lt;= arr.length &lt;= 3 * 104 1 &lt;= arr[i] &lt;= 3 * 104 方法一：单调栈 官方优化版 const mod int = 1e9+7 func sumSubarrayMins(arr []int) int { n := len(arr) left, right := make([]int, n), make([]int, n) stack := []int{-1} // -1 为哨兵 for i := 0; i &amp;lt; n; i++ { for len(stack) &amp;gt; 1 &amp;amp;&amp;amp; arr[stack[len(stack)-1]] &amp;gt;= arr[i] { stack = stack[:len(stack)-1] } left[i] = i - stack[len(stack)-1] stack = append(stack, i) } stack = []int{n} for i := n - 1; i &amp;gt;= 0; i-- { for len(stack) &amp;gt; 1 &amp;amp;&amp;amp; arr[stack[len(stack)-1]] &amp;gt; arr[i] { stack = stack[:len(stack)-1] } right[i] = stack[len(stack)-1] - i stack = append(stack, i) } ans := 0 for i, x := range arr { ans = (ans + x * left[i] * right[i]) % mod } return ans } 延迟计算宽度 const mod int = 1e9+7 func sumSubarrayMins(arr []int) int { n := len(arr) left, right := make([]int, n), make([]int, n) stack := []int{-1} // -1 为哨兵 for i := 0; i &amp;lt; n; i++ { for len(stack) &amp;gt; 1 &amp;amp;&amp;amp; arr[stack[len(stack)-1]] &amp;gt;= arr[i] { stack = stack[:len(stack)-1] } left[i] = stack[len(stack)-1] stack = append(stack, i) } stack = []int{n} for i := n - 1; i &amp;gt;= 0; i-- { for len(stack) &amp;gt; 1 &amp;amp;&amp;amp; arr[stack[len(stack)-1]] &amp;gt; arr[i] { stack = stack[:len(stack)-1] } right[i] = stack[len(stack)-1] stack = append(stack, i) } ans := 0 for i, x := range arr { ans = (ans + x * (i - left[i]) * (right[i]-i)) % mod } return ans } 二次遍历变形 func sumSubarrayMins(arr []int) (ans int) { n := len(arr) left := make([]int, n) right := make([]int, n) for i := range right { right[i] = n } st := []int{-1} // -1 为哨兵，方便计算赋值 for i, x := range arr { for len(st) &amp;gt; 1 &amp;amp;&amp;amp; arr[st[len(st)-1]] &amp;gt;= x { right[st[len(st)-1]] = i // i 恰好是栈顶的右边界 st = st[:len(st)-1] } left[i] = st[len(st)-1] // 可以直接计算 i - st[len(st)-1] st = append(st, i) } for i, x := range arr { ans += x * (i - left[i]) * (right[i] - i) // 累加贡献 } return ans % (1e9 + 7) } 优化版本：一次遍历 func sumSubarrayMins(arr []int) (ans int) { arr = append(arr, -1) st := []int{-1} // 哨兵 for r, x := range arr { for len(st) &amp;gt; 1 &amp;amp;&amp;amp; arr[st[len(st)-1]] &amp;gt;= x { i := st[len(st)-1] st = st[:len(st)-1] ans += arr[i] * (i - st[len(st)-1]) * (r - i) // 累加贡献 } st = append(st, r) } return ans % (1e9 + 7) } 复杂度分析 时间复杂度：O(n)。 空间复杂度：O(n)。 方法二：动态规划 const mod int = 1e9 + 7 func sumSubarrayMins(arr []int) (ans int) { n := len(arr) dp := make([]int, n) stack := []int{} // 栈中保持数组索引 for i, x := range arr { // 移除栈顶比当前数大的所有数 for len(stack) &amp;gt; 0 &amp;amp;&amp;amp; arr[stack[len(stack)-1]] &amp;gt; x { stack = stack[:len(stack)-1] } k := i + 1 // 栈为空的k值 if len(stack) &amp;gt; 0 { k = i - stack[len(stack)-1] } dp[i] = k * x if len(stack) &amp;gt; 0 { dp[i] += dp[i-k] } ans = (ans+dp[i]) % mod stack = append(stack, i) } return ans } 复杂度分析 时间复杂度：O(n)。 空间复杂度：O(n)。 LeetCode题库地址 https://leetcode.</description></item><item><title>【2022-10-21每日一题】901. 股票价格跨度[Medium]</title><link>/study/leetcode/online-stock-span/</link><pubDate>Fri, 21 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/online-stock-span/</guid><description>2022-10-21每日一题：901. 股票价格跨度 难度：Medium
+标签：栈 、 设计 、 数据流 、 单调栈
+编写一个 StockSpanner 类，它收集某些股票的每日报价，并返回该股票当日价格的跨度。
+今天股票价格的跨度被定义为股票价格小于或等于今天价格的最大连续日数（从今天开始往回数，包括今天）。
+例如，如果未来7天股票的价格是 [100, 80, 60, 70, 60, 75, 85]，那么股票跨度将是 [1, 1, 1, 2, 1, 4, 6]。
+&amp;nbsp;
+示例：
+输入：[&amp;quot;StockSpanner&amp;quot;,&amp;quot;next&amp;quot;,&amp;quot;next&amp;quot;,&amp;quot;next&amp;quot;,&amp;quot;next&amp;quot;,&amp;quot;next&amp;quot;,&amp;quot;next&amp;quot;,&amp;quot;next&amp;quot;], [[],[100],[80],[60],[70],[60],[75],[85]] 输出：[null,1,1,1,2,1,4,6] 解释： 首先，初始化 S = StockSpanner()，然后： S.next(100) 被调用并返回 1， S.next(80) 被调用并返回 1， S.next(60) 被调用并返回 1， S.next(70) 被调用并返回 2， S.next(60) 被调用并返回 1， S.next(75) 被调用并返回 4， S.next(85) 被调用并返回 6。 注意 (例如) S.next(75) 返回 4，因为截至今天的最后 4 个价格 (包括今天的价格 75) 小于或等于今天的价格。 &amp;nbsp;
+提示：
+调用&amp;nbsp;StockSpanner.next(int price)&amp;nbsp;时，将有&amp;nbsp;1 &amp;lt;= price &amp;lt;= 10^5。 每个测试用例最多可以调用&amp;nbsp; 10000 次 StockSpanner.</description></item><item><title>【2022-10-19每日一题】1700. 无法吃午餐的学生数量[Easy]</title><link>/study/leetcode/number-of-students-unable-to-eat-lunch/</link><pubDate>Wed, 19 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/number-of-students-unable-to-eat-lunch/</guid><description>2022-10-19每日一题：1700. 无法吃午餐的学生数量 难度：Easy
+标签：栈 、 队列 、 数组 、 模拟
+学校的自助午餐提供圆形和方形的三明治，分别用数字 0 和 1 表示。所有学生站在一个队列里，每个学生要么喜欢圆形的要么喜欢方形的。
+餐厅里三明治的数量与学生的数量相同。所有三明治都放在一个 栈 里，每一轮：
+如果队列最前面的学生 喜欢 栈顶的三明治，那么会 拿走它 并离开队列。 否则，这名学生会 放弃这个三明治 并回到队列的尾部。 这个过程会一直持续到队列里所有学生都不喜欢栈顶的三明治为止。
+给你两个整数数组 students 和 sandwiches ，其中 sandwiches[i] 是栈里面第 i​​​​​​ 个三明治的类型（i = 0 是栈的顶部）， students[j] 是初始队列里第 j​​​​​​ 名学生对三明治的喜好（j = 0 是队列的最开始位置）。请你返回无法吃午餐的学生数量。
+示例 1：
+输入：students = [1,1,0,0], sandwiches = [0,1,0,1] 输出：0 解释： - 最前面的学生放弃最顶上的三明治，并回到队列的末尾，学生队列变为 students = [1,0,0,1]。 - 最前面的学生放弃最顶上的三明治，并回到队列的末尾，学生队列变为 students = [0,0,1,1]。 - 最前面的学生拿走最顶上的三明治，剩余学生队列为 students = [0,1,1]，三明治栈为 sandwiches = [1,0,1]。 - 最前面的学生放弃最顶上的三明治，并回到队列的末尾，学生队列变为 students = [1,1,0]。 - 最前面的学生拿走最顶上的三明治，剩余学生队列为 students = [1,0]，三明治栈为 sandwiches = [0,1]。 - 最前面的学生放弃最顶上的三明治，并回到队列的末尾，学生队列变为 students = [0,1]。 - 最前面的学生拿走最顶上的三明治，剩余学生队列为 students = [1]，三明治栈为 sandwiches = [1]。 - 最前面的学生拿走最顶上的三明治，剩余学生队列为 students = []，三明治栈为 sandwiches = []。 所以所有学生都有三明治吃。 示例 2：</description></item><item><title>【2022-10-15每日一题】1441. 用栈操作构建数组[Medium]</title><link>/study/leetcode/build-an-array-with-stack-operations/</link><pubDate>Sat, 15 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/build-an-array-with-stack-operations/</guid><description>2022-10-15每日一题：1441. 用栈操作构建数组 难度：Medium
+标签：栈 、 数组 、 模拟
+给你一个数组 target 和一个整数 n。每次迭代，需要从&amp;nbsp; list = { 1 , 2 , 3 ..., n } 中依次读取一个数字。
+请使用下述操作来构建目标数组 target ：
+"Push"：从 list 中读取一个新元素， 并将其推入数组中。 "Pop"：删除数组中的最后一个元素。 如果目标数组构建完成，就停止读取更多元素。 题目数据保证目标数组严格递增，并且只包含 1 到 n 之间的数字。
+请返回构建目标数组所用的操作序列。如果存在多个可行方案，返回任一即可。
+&amp;nbsp;
+示例 1：
+输入：target = [1,3], n = 3 输出：["Push","Push","Pop","Push"] 解释： 读取 1 并自动推入数组 -&amp;gt; [1] 读取 2 并自动推入数组，然后删除它 -&amp;gt; [1] 读取 3 并自动推入数组 -&amp;gt; [1,3] 示例 2：
+输入：target = [1,2,3], n = 3 输出：["Push","Push","Push"] 示例 3：</description></item><item><title>【2022-10-13每日一题】769. 最多能完成排序的块[Medium]</title><link>/study/leetcode/max-chunks-to-make-sorted/</link><pubDate>Thu, 13 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/max-chunks-to-make-sorted/</guid><description>2022-10-13每日一题：769. 最多能完成排序的块 难度：Medium
+标签：栈 、 贪心 、 数组 、 排序 、 单调栈
+给定一个长度为 n 的整数数组 arr ，它表示在 [0, n - 1] 范围内的整数的排列。
+我们将 arr 分割成若干 块 (即分区)，并对每个块单独排序。将它们连接起来后，使得连接的结果和按升序排序后的原数组相同。
+返回数组能分成的最多块数量。
+&amp;nbsp;
+示例 1:
+输入: arr = [4,3,2,1,0] 输出: 1 解释: 将数组分成2块或者更多块，都无法得到所需的结果。 例如，分成 [4, 3], [2, 1, 0] 的结果是 [3, 4, 0, 1, 2]，这不是有序的数组。 示例 2:
+输入: arr = [1,0,2,3,4] 输出: 4 解释: 我们可以把它分成两块，例如 [1, 0], [2, 3, 4]。 然而，分成 [1, 0], [2], [3], [4] 可以得到最多的块数。 &amp;nbsp;
+提示:</description></item><item><title>【2022-10-09每日一题】856. 括号的分数[Medium]</title><link>/study/leetcode/score-of-parentheses/</link><pubDate>Sun, 09 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/score-of-parentheses/</guid><description>2022-10-09每日一题：856. 括号的分数 难度：Medium
+标签：栈 、 字符串
+给定一个平衡括号字符串&amp;nbsp;S，按下述规则计算该字符串的分数：
+() 得 1 分。 AB 得&amp;nbsp;A + B&amp;nbsp;分，其中 A 和 B 是平衡括号字符串。 (A) 得&amp;nbsp;2 * A&amp;nbsp;分，其中 A 是平衡括号字符串。 &amp;nbsp;
+示例 1：
+输入： &amp;quot;()&amp;quot; 输出： 1 示例 2：
+输入： &amp;quot;(())&amp;quot; 输出： 2 示例&amp;nbsp;3：
+输入： &amp;quot;()()&amp;quot; 输出： 2 示例&amp;nbsp;4：
+输入： &amp;quot;(()(()))&amp;quot; 输出： 6 &amp;nbsp;
+提示：
+S&amp;nbsp;是平衡括号字符串，且只含有&amp;nbsp;(&amp;nbsp;和&amp;nbsp;)&amp;nbsp;。 2 &amp;lt;= S.length &amp;lt;= 50 方法一：栈 核心思想 把平衡字符串 s 看作是一个空字符串加上 s 本身，并且定义空字符串的分数为 0。使用栈 st 记录平衡字符串的分数，在开始之前要压入分数 0，表示空字符串的分数。
+在遍历字符串 s 的过程中：
+遇到左括号，那么我们需要计算该左括号内部的子平衡括号字符串A 的分数，我们也要先压入分数 0，表示 A 前面的空字符串的分数。</description></item><item><title>【2022-10-04每日一题】921. 使括号有效的最少添加[Medium]</title><link>/study/leetcode/minimum-add-to-make-parentheses-valid/</link><pubDate>Tue, 04 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/minimum-add-to-make-parentheses-valid/</guid><description>2022-10-04每日一题：921. 使括号有效的最少添加 难度：Medium
+标签：栈 、 贪心 、 字符串
+只有满足下面几点之一，括号字符串才是有效的：
+它是一个空字符串，或者 它可以被写成&amp;nbsp;AB&amp;nbsp;（A&amp;nbsp;与&amp;nbsp;B&amp;nbsp;连接）, 其中&amp;nbsp;A 和&amp;nbsp;B&amp;nbsp;都是有效字符串，或者 它可以被写作&amp;nbsp;(A)，其中&amp;nbsp;A&amp;nbsp;是有效字符串。 给定一个括号字符串 s ，移动N次，你就可以在字符串的任何位置插入一个括号。
+例如，如果 s = "()))" ，你可以插入一个开始括号为 "(()))" 或结束括号为 "())))" 。 返回 为使结果字符串 s 有效而必须添加的最少括号数。
+&amp;nbsp;
+示例 1：
+输入：s = "())" 输出：1 示例 2：
+输入：s = "(((" 输出：3 &amp;nbsp;
+提示：
+1 &amp;lt;= s.length &amp;lt;= 1000 s 只包含&amp;nbsp;'(' 和&amp;nbsp;')'&amp;nbsp;字符。 方法一： 详细思路过程见官方题解，这里只做个人刷题记录，方便后续查询阅读
+从左到右遍历字符串，在遍历过程中维护左括号的个数以及添加次数。
+如果遇到左括号，则将左括号的个数加 1。
+如果遇到右括号，则需要和前面的左括号进行匹配，具体做法如下：
+如果左括号的个数大于 0，则前面有左括号可以匹配，因此将左括号的个数减 1，表示有一个左括号和当前右括号匹配；
+如果左括号的个数等于 0，则前面没有左括号可以匹配，需要添加一个左括号才能匹配，因此将添加次数加 1。
+遍历结束后，需要检查左括号的个数是否为 0
+func minAddToMakeValid(s string) int { left, ans := 0, 0 for _, ch := range s { if ch == '(' { left++ } else if left &amp;gt; 0 { left-- } else { ans++ } } return left + ans } 复杂度分析 时间复杂度：O(n)，其中 n 是字符串的长度。遍历字符串一次。 空间复杂度：O(1)。只需要维护常量的额外空间。 LeetCode题库地址 https://leetcode.</description></item><item><title>【2022-09-09每日一题】1598. 文件夹操作日志搜集器</title><link>/study/leetcode/crawler-log-folder/</link><pubDate>Fri, 09 Sep 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/crawler-log-folder/</guid><description>2022-09-09每日一题：1598. 文件夹操作日志搜集器 难度：Easy 标签：栈 、 数组 、 字符串 每当用户执行变更文件夹操作时，LeetCode 文件系统都会保存一条日志记录。
+下面给出对变更操作的说明：
+&amp;quot;../&amp;quot; ：移动到当前文件夹的父文件夹。如果已经在主文件夹下，则 继续停留在当前文件夹 。 &amp;quot;./&amp;quot; ：继续停留在当前文件夹。 &amp;quot;x/&amp;quot; ：移动到名为 x 的子文件夹中。题目数据 保证总是存在文件夹 x 。 给你一个字符串列表 logs ，其中 logs[i] 是用户在 ith 步执行的操作。
+文件系统启动时位于主文件夹，然后执行 logs 中的操作。
+执行完所有变更文件夹操作后，请你找出 返回主文件夹所需的最小步数 。
+&amp;nbsp;
+示例 1：
+输入：logs = [&amp;quot;d1/&amp;quot;,&amp;quot;d2/&amp;quot;,&amp;quot;../&amp;quot;,&amp;quot;d21/&amp;quot;,&amp;quot;./&amp;quot;] 输出：2 解释：执行 &amp;quot;../&amp;quot; 操作变更文件夹 2 次，即可回到主文件夹 示例 2：
+输入：logs = [&amp;quot;d1/&amp;quot;,&amp;quot;d2/&amp;quot;,&amp;quot;./&amp;quot;,&amp;quot;d3/&amp;quot;,&amp;quot;../&amp;quot;,&amp;quot;d31/&amp;quot;] 输出：3 示例 3：
+输入：logs = [&amp;quot;d1/&amp;quot;,&amp;quot;../&amp;quot;,&amp;quot;../&amp;quot;,&amp;quot;../&amp;quot;] 输出：0 &amp;nbsp;
+提示：
+1 &amp;lt;= logs.length &amp;lt;= 103 2 &amp;lt;= logs[i].length &amp;lt;= 10 logs[i] 包含小写英文字母，数字，&amp;#39;.&amp;#39; 和 &amp;#39;/&amp;#39; logs[i] 符合语句中描述的格式 文件夹名称由小写英文字母和数字组成 ### 方法一：用栈模拟过程 func minOperations(logs []string) int { stack := []string{} for _, log := range logs { if log == &amp;quot;.</description></item><item><title>【2022-09-01每日一题】1475. 商品折扣后的最终价格</title><link>/study/leetcode/final-prices-with-a-special-discount-in-a-shop/</link><pubDate>Thu, 01 Sep 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/final-prices-with-a-special-discount-in-a-shop/</guid><description>2022-09-01每日一题：1475. 商品折扣后的最终价格 难度：Easy 标签：栈 、 数组 、 单调栈 给你一个数组&amp;nbsp;prices&amp;nbsp;，其中&amp;nbsp;prices[i]&amp;nbsp;是商店里第&amp;nbsp;i&amp;nbsp;件商品的价格。
+商店里正在进行促销活动，如果你要买第&amp;nbsp;i&amp;nbsp;件商品，那么你可以得到与 prices[j] 相等的折扣，其中&amp;nbsp;j&amp;nbsp;是满足&amp;nbsp;j &amp;gt; i&amp;nbsp;且&amp;nbsp;prices[j] &amp;lt;= prices[i]&amp;nbsp;的&amp;nbsp;最小下标&amp;nbsp;，如果没有满足条件的&amp;nbsp;j&amp;nbsp;，你将没有任何折扣。
+请你返回一个数组，数组中第&amp;nbsp;i&amp;nbsp;个元素是折扣后你购买商品 i&amp;nbsp;最终需要支付的价格。
+&amp;nbsp;
+示例 1：
+输入：prices = [8,4,6,2,3] 输出：[4,2,4,2,3] 解释： 商品 0 的价格为 price[0]=8 ，你将得到 prices[1]=4 的折扣，所以最终价格为 8 - 4 = 4 。 商品 1 的价格为 price[1]=4 ，你将得到 prices[3]=2 的折扣，所以最终价格为 4 - 2 = 2 。 商品 2 的价格为 price[2]=6 ，你将得到 prices[3]=2 的折扣，所以最终价格为 6 - 2 = 4 。 商品 3 和 4 都没有折扣。 示例 2：
+输入：prices = [1,2,3,4,5] 输出：[1,2,3,4,5] 解释：在这个例子中，所有商品都没有折扣。 示例 3：</description></item><item><title>【2022-08-31每日一题】946. 验证栈序列</title><link>/study/leetcode/validate-stack-sequences/</link><pubDate>Wed, 31 Aug 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/validate-stack-sequences/</guid><description>2022-08-31每日一题：946. 验证栈序列 难度：Medium 标签：栈 、 数组 、 模拟 给定&amp;nbsp;pushed&amp;nbsp;和&amp;nbsp;popped&amp;nbsp;两个序列，每个序列中的 值都不重复，只有当它们可能是在最初空栈上进行的推入 push 和弹出 pop 操作序列的结果时，返回 true；否则，返回 false&amp;nbsp;。
+&amp;nbsp;
+示例 1：
+输入：pushed = [1,2,3,4,5], popped = [4,5,3,2,1] 输出：true 解释：我们可以按以下顺序执行： push(1), push(2), push(3), push(4), pop() -&amp;gt; 4, push(5), pop() -&amp;gt; 5, pop() -&amp;gt; 3, pop() -&amp;gt; 2, pop() -&amp;gt; 1 示例 2：
+输入：pushed = [1,2,3,4,5], popped = [4,3,5,1,2] 输出：false 解释：1 不能在 2 之前弹出。 &amp;nbsp;
+提示：
+1 &amp;lt;= pushed.length &amp;lt;= 1000 0 &amp;lt;= pushed[i] &amp;lt;= 1000 pushed 的所有元素 互不相同 popped.</description></item><item><title>【2022-08-20每日一题】654. 最大二叉树</title><link>/study/leetcode/maximum-binary-tree/</link><pubDate>Sat, 20 Aug 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/maximum-binary-tree/</guid><description>2022-08-20每日一题：654. 最大二叉树 难度：Medium 标签：栈 、 树 、 数组 、 分治 、 二叉树 、 单调栈 给定一个不重复的整数数组&amp;nbsp;nums 。&amp;nbsp;最大二叉树&amp;nbsp;可以用下面的算法从&amp;nbsp;nums 递归地构建:
+创建一个根节点，其值为&amp;nbsp;nums 中的最大值。 递归地在最大值&amp;nbsp;左边&amp;nbsp;的&amp;nbsp;子数组前缀上&amp;nbsp;构建左子树。 递归地在最大值 右边 的&amp;nbsp;子数组后缀上&amp;nbsp;构建右子树。 返回&amp;nbsp;nums 构建的 最大二叉树 。
+&amp;nbsp;
+示例 1：
+输入：nums = [3,2,1,6,0,5] 输出：[6,3,5,null,2,0,null,null,1] 解释：递归调用如下所示： - [3,2,1,6,0,5] 中的最大值是 6 ，左边部分是 [3,2,1] ，右边部分是 [0,5] 。 - [3,2,1] 中的最大值是 3 ，左边部分是 [] ，右边部分是 [2,1] 。 - 空数组，无子节点。 - [2,1] 中的最大值是 2 ，左边部分是 [] ，右边部分是 [1] 。 - 空数组，无子节点。 - 只有一个元素，所以子节点是一个值为 1 的节点。 - [0,5] 中的最大值是 5 ，左边部分是 [0] ，右边部分是 [] 。 - 只有一个元素，所以子节点是一个值为 0 的节点。 - 空数组，无子节点。 示例 2：</description></item><item><title>【2022-08-13每日一题】768. 最多能完成排序的块 II</title><link>/study/leetcode/max-chunks-to-make-sorted-ii/</link><pubDate>Sat, 13 Aug 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/max-chunks-to-make-sorted-ii/</guid><description>2022-08-13每日一题：768. 最多能完成排序的块 II 难度：Hard 标签：栈 、 贪心 、 数组 、 排序 、 单调栈 这个问题和&amp;ldquo;最多能完成排序的块&amp;rdquo;相似，但给定数组中的元素可以重复，输入数组最大长度为2000，其中的元素最大为10**8。
+arr是一个可能包含重复元素的整数数组，我们将这个数组分割成几个&amp;ldquo;块&amp;rdquo;，并将这些块分别进行排序。之后再连接起来，使得连接的结果和按升序排序后的原数组相同。
+我们最多能将数组分成多少块？
+示例&amp;nbsp;1:
+输入: arr = [5,4,3,2,1] 输出: 1 解释: 将数组分成2块或者更多块，都无法得到所需的结果。 例如，分成 [5, 4], [3, 2, 1] 的结果是 [4, 5, 1, 2, 3]，这不是有序的数组。 示例 2:
+输入: arr = [2,1,3,4,4] 输出: 4 解释: 我们可以把它分成两块，例如 [2, 1], [3, 4, 4]。 然而，分成 [2, 1], [3], [4], [4] 可以得到最多的块数。 注意:
+arr的长度在[1, 2000]之间。 arr[i]的大小在[0, 10**8]之间。 ### 方法一：单调栈 思路 对于已经分好块的数组，若块数大于 1，则可以得到以下结论：右边的块的所有数字均大于或等于左边的块的所有数字。考虑这个问题：对于已经分好块的数组，若在其末尾添加一个数字，如何求得新数组的分块方式？
+新添加的数字可能会改变原数组的分块方式。如果新添加的数字大于或等于原数组最后一个块的最大值，则这个新添加的数字可以自己形成一个块。如果新添加的数字小于原数组最后一个块的最大值，则它必须融入最后一个块。如果它大于或等于原数组倒数第二个块（如果有）的最大值，那么这个过程可以停止，新数组的分块方式已经求得。否则，它将继续融合原数组倒数第二个块，直到遇到一个块，使得该块的最大值小于或等于这个新添加的数，或者这个数字已经融合了所有块。
+上述分析过程中，我们只用到了块的最大值来进行比较，比较过程又是从右到左，符合栈的思想，因此可以用类似单调栈的数据结构来存储块的最大值。
+代码 func maxChunksToSorted(arr []int) int { st := []int{} for _, x := range arr { if len(st) == 0 || x &amp;gt;= st[len(st)-1] { st = append(st, x) } else { mx := st[len(st)-1] st = st[:len(st)-1] for len(st) &amp;gt; 0 &amp;amp;&amp;amp; st[len(st)-1] &amp;gt; x { st = st[:len(st)-1] } st = append(st, mx) } } return len(st) } 复杂度分析 时间复杂度：O(n)，其中 n 是输入数组 arr 的长度。需要遍历一遍数组，入栈的操作最多为 n 次。</description></item><item><title>【2022-08-07每日一题】636. 函数的独占时间</title><link>/study/leetcode/exclusive-time-of-functions/</link><pubDate>Sun, 07 Aug 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/exclusive-time-of-functions/</guid><description>2022-08-07每日一题：636. 函数的独占时间 有一个 单线程 CPU 正在运行一个含有 n 道函数的程序。每道函数都有一个位于 0 和 n-1 之间的唯一标识符。
+函数调用 存储在一个 调用栈 上 ：当一个函数调用开始时，它的标识符将会推入栈中。而当一个函数调用结束时，它的标识符将会从栈中弹出。标识符位于栈顶的函数是 当前正在执行的函数 。每当一个函数开始或者结束时，将会记录一条日志，包括函数标识符、是开始还是结束、以及相应的时间戳。
+给你一个由日志组成的列表 logs ，其中 logs[i] 表示第 i 条日志消息，该消息是一个按 "{function_id}:{"start" | "end"}:{timestamp}" 进行格式化的字符串。例如，"0:start:3" 意味着标识符为 0 的函数调用在时间戳 3 的 起始开始执行 ；而 "1:end:2" 意味着标识符为 1 的函数调用在时间戳 2 的 末尾结束执行。注意，函数可以 调用多次，可能存在递归调用 。
+函数的 独占时间 定义是在这个函数在程序所有函数调用中执行时间的总和，调用其他函数花费的时间不算该函数的独占时间。例如，如果一个函数被调用两次，一次调用执行 2 单位时间，另一次调用执行 1 单位时间，那么该函数的 独占时间 为 2 + 1 = 3 。
+以数组形式返回每个函数的 独占时间 ，其中第 i 个下标对应的值表示标识符 i 的函数的独占时间。
+示例 1：
+输入：n = 2, logs = ["</description></item></channel></rss>

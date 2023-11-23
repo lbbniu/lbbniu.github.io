@@ -1,0 +1,922 @@
+<!doctype html><html lang=zh dir=ltr><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>第6周 | PHP算法练习 | lbbniu</title>
+<meta name=generator content="Hugo Eureka 0.9.3"><link rel=stylesheet href=/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css><script defer src=/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js></script><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" as=style onload='this.onload=null,this.rel="stylesheet"'><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/github.min.css media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/php.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/java.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/go.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/python.min.js crossorigin></script><link rel=stylesheet href=/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css media=print onload='this.media="all",this.onload=null'><script defer type=text/javascript src=/js/fontawesome.min.35973bea57658ef0dd22ad59ea4642b6c8c67af62bed8659ac326d284ef285a6657cdbcf57d3b2910e7e992f2b20426e.js></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css integrity=sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js integrity=sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY crossorigin></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script><script defer src=https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js integrity=sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0 crossorigin></script><link rel=icon type=image/png sizes=32x32 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_32x32_fill_box_center_3.png><link rel=apple-touch-icon sizes=180x180 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_180x180_fill_box_center_3.png><meta name=description content="第12课 | 动态规划 1. 动态规划的实现及关键点 参考链接 递归代码模板 # Python 代码模板 def recursion(level, param1, param2, ...): # recursion terminator if level > MAX_LEVEL: process_result return # process logic in current level process(level, data...) # drill down self.recursion(level + 1, p1, ...) # reverse the current level status if needed //Java 代码模板 public void recur(int level, int param) { // terminator if (level > MAX_LEVEL) { // process result return; // process current logic process(level, param); // drill down recur( level: level + 1, newParam); // restore current status } 分治代码模板 def divide_conquer(problem, param1, param2, ."><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"算法学习","item":"/study/"},{"@type":"ListItem","position":2,"name":"极客时间算法训练营2020版","item":"/study/algorithm/"},{"@type":"ListItem","position":3,"name":"PHP算法练习","item":"/study/algorithm/php/"},{"@type":"ListItem","position":4,"name":"第6周","item":"/study/algorithm/php/06%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E5%85%AD%E5%91%A8/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/study/algorithm/php/06%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E5%85%AD%E5%91%A8/"},"headline":"第6周 | PHP算法练习 | lbbniu","datePublished":"2021-11-20T17:18:16+08:00","dateModified":"2021-11-20T17:18:16+08:00","wordCount":3557,"publisher":{"@type":"Person","name":"lbbniu","logo":{"@type":"ImageObject","url":"/images/icon.gif"}},"description":"第12课 | 动态规划 1. 动态规划的实现及关键点 参考链接 递归代码模板 # Python 代码模板 def recursion(level, param1, param2, ...): # recursion terminator if level \u0026gt; MAX_LEVEL: process_result return # process logic in current level process(level, data...) # drill down self.recursion(level \u002b 1, p1, ...) # reverse the current level status if needed \/\/Java 代码模板 public void recur(int level, int param) { \/\/ terminator if (level \u0026gt; MAX_LEVEL) { \/\/ process result return; \/\/ process current logic process(level, param); \/\/ drill down recur( level: level \u002b 1, newParam); \/\/ restore current status } 分治代码模板 def divide_conquer(problem, param1, param2, ."}</script><meta property="og:title" content="第6周 | PHP算法练习 | lbbniu"><meta property="og:type" content="article"><meta property="og:image" content="/images/icon.png"><meta property="og:url" content="/study/algorithm/php/06%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E5%85%AD%E5%91%A8/"><meta property="og:description" content="第12课 | 动态规划 1. 动态规划的实现及关键点 参考链接 递归代码模板 # Python 代码模板 def recursion(level, param1, param2, ...): # recursion terminator if level > MAX_LEVEL: process_result return # process logic in current level process(level, data...) # drill down self.recursion(level + 1, p1, ...) # reverse the current level status if needed //Java 代码模板 public void recur(int level, int param) { // terminator if (level > MAX_LEVEL) { // process result return; // process current logic process(level, param); // drill down recur( level: level + 1, newParam); // restore current status } 分治代码模板 def divide_conquer(problem, param1, param2, ."><meta property="og:locale" content="zh"><meta property="og:site_name" content="lbbniu"><meta property="article:published_time" content="2021-11-20T17:18:16+08:00"><meta property="article:modified_time" content="2021-11-20T17:18:16+08:00"><meta property="article:section" content="study"><meta property="article:tag" content="算法"><meta property="article:tag" content="leetcode"><meta property="og:see_also" content="/study/leetcode/leetcode/"><meta property="og:see_also" content="/study/algorithm/go/week10/"><meta property="og:see_also" content="/study/algorithm/php/01%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%B8%80%E5%91%A8/"><meta property="og:see_also" content="/study/algorithm/go/week01/"><meta property="og:see_also" content="/study/algorithm/php/02%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%BA%8C%E5%91%A8/"><meta property="og:see_also" content="/study/algorithm/go/week02/"><body class="flex min-h-screen flex-col"><header class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"><div class="mx-auto w-full max-w-screen-xl"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=="Auto"||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName("html")[0].classList.add("dark")</script><nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0"><a href=/ class="me-6 text-primary-text text-xl font-bold">lbbniu</a>
+<button id=navbar-btn class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+<i class="fas fa-bars"></i></button><div id=target class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20"><div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0"><a href=/post/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">文章</a>
+<a href=/cloud-native/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">云原生</a>
+<a href=/study/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 selected-menu-item me-4">算法学习</a>
+<a href=/docs/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">Go学习训练营</a>
+<a href=/tags/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">标签</a></div><div class=flex><div class="relative pt-4 md:pt-0"><div class="cursor-pointer hover:text-eureka" id=lightDarkMode><i class="fas fa-adjust"></i></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id=is-open></div><div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40" id=lightDarkOptions><span class="px-4 py-1 hover:text-eureka" name=Light>浅色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Dark>深色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Auto>自动</span></div></div></div></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id=is-open-mobile></div></nav><script>let element=document.getElementById("lightDarkMode");storageColorScheme==null||storageColorScheme=="Auto"?document.addEventListener("DOMContentLoaded",()=>{window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",switchDarkMode)}):storageColorScheme=="Light"?(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","sun"),element.firstElementChild.classList.add("fa-sun")):storageColorScheme=="Dark"&&(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","moon"),element.firstElementChild.classList.add("fa-moon")),document.addEventListener("DOMContentLoaded",()=>{getcolorscheme(),switchBurger()})</script></div></header><main class="grow pt-16"><div class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8"><div class=lg:pt-12><div class="flex flex-col md:flex-row bg-secondary-bg rounded"><div class="md:w-1/4 lg:w-1/5 border-e"><div class="sticky top-16 pt-6"><div id=sidebar-title class="md:hidden mx-4 px-2 pt-4 pb-2 md:border-b text-tertiary-text md:text-primary-text"><span class=font-semibold>目录</span>
+<i class='fas fa-caret-right ms-1'></i></div><div id=sidebar-toc class="hidden md:block overflow-y-auto mx-6 md:mx-0 pe-6 pt-2 md:max-h-doc-sidebar bg-primary-bg md:bg-transparent"><div class="flex flex-wrap ms-4 -me-2 p-2 bg-secondary-bg md:bg-primary-bg rounded"><a class=hover:text-eureka href=/study/algorithm/php/>PHP算法练习</a></div><ul class=ps-6><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/php/00%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E9%A2%84%E4%B9%A0/>预习</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/php/01%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%B8%80%E5%91%A8/>第1周</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/php/02%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%BA%8C%E5%91%A8/>第2周</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/php/03%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%B8%89%E5%91%A8/>第3周</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/php/04%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E5%9B%9B%E5%91%A8/>第4周</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/php/04%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E5%9B%9B%E5%91%A8%E6%80%BB%E7%BB%93/>第4周总结</a></div></li><li class=py-2><div><a class="text-eureka hover:text-eureka" href=/study/algorithm/php/06%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E5%85%AD%E5%91%A8/>第6周</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/php/07%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%B8%83%E5%91%A8/>第7周</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/php/08%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E5%85%AB%E5%91%A8/>第8周</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/php/09%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%B9%9D%E5%91%A8/>第9周</a></div></li></ul></div></div></div><div class="w-full md:w-3/4 lg:w-4/5 pb-8 pt-2 md:pt-8"><div class=flex><div class="w-full lg:w-3/4 px-6"><article class=prose><h1 class=mb-4>第6周</h1><div class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"><div class="me-6 my-2"><i class="fas fa-calendar me-1"></i>
+<span>2021-11-20</span></div><div class="me-6 my-2"><i class="fas fa-clock me-1"></i>
+<span>17分钟阅读时长</span></div></div><h1 id=第12课--动态规划>第12课 | 动态规划</h1><h2 id=1-动态规划的实现及关键点>1. 动态规划的实现及关键点</h2><h3 id=参考链接>参考链接</h3><ul><li><p><a href=http://shimo.im/docs/DjqqGCT3xqDYwPyY/ target=_blank rel=noopener>递归代码模板</a></p><pre><code class=language-python># Python 代码模板
+def recursion(level, param1, param2, ...): 
+    # recursion terminator 
+    if level &gt; MAX_LEVEL: 
+	   process_result 
+	   return 
+    # process logic in current level 
+    process(level, data...) 
+    # drill down 
+    self.recursion(level + 1, p1, ...) 
+    # reverse the current level status if needed
+</code></pre><pre><code class=language-java>//Java 代码模板
+public void recur(int level, int param) { 
+  // terminator 
+  if (level &gt; MAX_LEVEL) { 
+    // process result 
+    return; 
+
+  // process current logic 
+  process(level, param); 
+  // drill down 
+  recur( level: level + 1, newParam);
+  // restore current status 
+}
+</code></pre></li><li><p><a href=http://shimo.im/docs/3xvghYh3JJPKwdvt/ target=_blank rel=noopener>分治代码模板</a></p><pre><code class=language-python>def divide_conquer(problem, param1, param2, ...): 
+  # recursion terminator 
+  if problem is None: 
+	print_result 
+	return 
+
+  # prepare data 
+  data = prepare_data(problem) 
+  subproblems = split_problem(problem, data) 
+
+  # conquer subproblems 
+  subresult1 = self.divide_conquer(subproblems[0], p1, ...) 
+  subresult2 = self.divide_conquer(subproblems[1], p1, ...) 
+  subresult3 = self.divide_conquer(subproblems[2], p1, ...) 
+  …
+
+  # process and generate the final result 
+  result = process_result(subresult1, subresult2, subresult3, …)
+
+  # revert the current level states
+</code></pre></li><li><p><a href=https://en.wikipedia.org/wiki/Dynamic_programming target=_blank rel=noopener>动态规划定义</a></p></li></ul><h2 id=2-dp例题解析fibonacci数列路径计数>2. DP例题解析：Fibonacci数列、路径计数</h2><h4 id=509-斐波那契数httpsleetcode-cncomproblemsfibonacci-number><a href=https://leetcode-cn.com/problems/fibonacci-number/ target=_blank rel=noopener>509. 斐波那契数</a></h4><pre><code class=language-php>class Solution {
+
+    /**
+     * 方法一：迭代（动态规划）
+     * @param Integer $N
+     * @return Integer
+     */
+    function fib($N) {
+        if ($N &lt;= 1) return $N;
+        $first = 0;
+        $second = 1;
+        for ($i = 2; $i &lt;= $N; $i++) {
+            $tmp = $first + $second;
+            $first = $second;
+            $second = $tmp;
+        }
+        return $second;
+    }
+    //方法二：记忆化递归
+    function fib($n) {
+        if ($n &lt;= 1) return $n;
+        if (!isset($this-&gt;map[$n])) {
+            $this-&gt;map[$n] = $this-&gt;fib($n - 1) + $this-&gt;fib($n - 2);
+        }
+        return $this-&gt;map[$n];
+    }
+    //方法三：公式法
+    function fib($N) {
+        $goldenRatio = (1 + sqrt(5)) / 2;
+        return (int)round(pow($goldenRatio, $N)/ sqrt(5));
+    }
+    //方法四：矩阵求幂
+}
+</code></pre><h2 id=3-dp例题解析最长公共子序列>3. DP例题解析：最长公共子序列</h2><h3 id=参考链接-1>参考链接</h3><h4 id=62-不同路径httpsleetcode-cncomproblemsunique-paths><a href=https://leetcode-cn.com/problems/unique-paths/ target=_blank rel=noopener>62. 不同路径</a></h4><pre><code class=language-java>class Solution {
+    public int uniquePaths(int m, int n) {
+		int[][] dp = new int[m][n];
+        for (int i = 0; i &lt; n; i++) dp[0][i] = 1;
+        for (int i = 0; i &lt; m; i++) dp[i][0] = 1;
+        for (int i = 1; i &lt; m; i++) {
+            for (int j = 1; j &lt; n; j++) {
+                dp[i][j] = dp[i - 1][j] + dp[i][j - 1];
+            }
+        }
+        return dp[m - 1][n - 1];
+    }
+    public int uniquePaths1(int m, int n) {
+		int[] cur_row = new int[n];
+        Arrays.fill(cur_row, 1);
+        for (int i = 1; i &lt; m; i++) {
+            for (int j = 1; j &lt; n; j++) {
+                cur_row[j] += cur_row[j - 1];
+            }
+        }
+        return cur_row[n - 1];
+    }
+}
+</code></pre><pre><code class=language-php>class Solution {
+
+    /**
+     * 方法一：自底向上，动态规划
+     * @param Integer $m
+     * @param Integer $n
+     * @return Integer
+     */
+    function uniquePaths($m, $n) {
+        $dp = [];
+        //最后一列
+        for ($i = 0; $i &lt; $n; $i++) $dp[$m - 1][$i] = 1;
+        //最后一行
+        for ($i = 0; $i &lt; $m; $i++) $dp[$i][$n - 1] = 1;
+        for ($i = $m - 2; $i &gt;= 0; $i--) {
+            for ($j = $n - 2; $j &gt;= 0; $j--) {
+                $dp[$i][$j] = $dp[$i + 1][$j] + $dp[$i][$j + 1];
+            }
+        } 
+        return $dp[0][0];
+    }
+    //方法二：自顶向下，动态规划
+    function uniquePaths($m, $n) {
+        $dp = [];
+        for ($i = 0; $i &lt; $m; $i++) {
+            for ($j = 0; $j &lt; $n; $j++) {
+                if ($i == 0 || $j == 0) {
+                    $dp[$i][$j] = 1;
+                } else {
+                	$dp[$i][$j] = $dp[$i - 1][$j] + $dp[$i][$j - 1];
+                }
+            }
+        } 
+        return $dp[$m - 1][$n - 1];
+    }
+}
+</code></pre><h4 id=63-不同路径-iihttpsleetcode-cncomproblemsunique-paths-ii><a href=https://leetcode-cn.com/problems/unique-paths-ii/ target=_blank rel=noopener>63. 不同路径 II</a></h4><pre><code class=language-php>class Solution {
+
+    /**
+     * 动态规划，自顶向下
+     * @param Integer[][] $obstacleGrid
+     * @return Integer
+     */
+    function uniquePathsWithObstacles($obstacleGrid) {
+        $m = count($obstacleGrid);
+        $n = count($obstacleGrid[0]);
+        if ($obstacleGrid[0][0] == 1) return 0;
+        $dp = [];
+        for ($i = 0; $i &lt; $m; $i++) {
+            for ($j = 0; $j &lt; $n; $j++) {
+                if ($obstacleGrid[$i][$j] == 1) {
+                    $dp[$i][$j] = 0;
+                } else if ($i == 0 &amp;&amp; $j == 0) {
+                    $dp[$i][$j] = 1;
+                } else {
+                    $dp[$i][$j] = $dp[$i - 1][$j] + $dp[$i][$j - 1];
+                }
+            }
+        }
+        return $dp[$m - 1][$n - 1];
+    }
+    //标准写法
+    function uniquePathsWithObstacles($obstacleGrid) {
+        $m = count($obstacleGrid);
+        $n = count($obstacleGrid[0]);
+        if ($obstacleGrid[0][0] == 1) return 0;
+        $dp = [[1]];
+        //初始化第一行
+        for($i = 1; $i &lt; $n; $i++) {
+            $dp[0][$i] = $obstacleGrid[0][$i] ? 0 : $dp[0][$i-1];
+        }
+        //初始化第一列
+        for ($i = 1; $i &lt; $m; $i++) {
+            $dp[$i][0] = $obstacleGrid[$i][0] ? 0 : $dp[$i - 1][0];
+        }
+        for ($i = 1; $i &lt; $m; $i++) {
+            for ($j = 1; $j &lt; $n; $j++) {
+                if ($obstacleGrid[$i][$j] == 1) {
+                    $dp[$i][$j] = 0;
+                } else {
+                    $dp[$i][$j] = $dp[$i - 1][$j] + $dp[$i][$j - 1];
+                }
+            }
+        }
+        return $dp[$m - 1][$n - 1];
+    }
+}
+</code></pre><h4 id=1143-最长公共子序列httpsleetcode-cncomproblemslongest-common-subsequence><a href=https://leetcode-cn.com/problems/longest-common-subsequence/ target=_blank rel=noopener>1143. 最长公共子序列</a></h4><pre><code class=language-python>class Solution(object):
+    def longestCommonSubsequence(self, text1, text2):
+        &quot;&quot;&quot;
+        :type text1: str
+        :type text2: str
+        :rtype: int
+        &quot;&quot;&quot;
+        m = len(text1)
+        n = len(text2)
+        # 构建 DP table 和 base case
+        dp = [[0]*(n + 1) for _ in range(m + 1)] # m+1 行 n+1 列
+        # 进行状态转移
+        for i in range(1, m + 1):
+            for j in range(1, n + 1):
+            	if text1[i - 1] == text2[j - 1]:
+                    # 找到一个 lcs 中的字符
+                    dp[i][j] = dp[i - 1][j - 1] + 1
+                else:
+                    dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])
+        return dp[m][n]
+</code></pre><pre><code class=language-php>class Solution {
+
+    /**
+     * @param String $text1
+     * @param String $text2
+     * @return Integer
+     */
+    function longestCommonSubsequence($text1, $text2) {
+        $dp = [];
+        //$dp = array_fill(0,$m+1,array_fill(0,$n+1,0));
+        for ($i = 0; $i &lt; strlen($text1); $i++) {
+            for ($j = 0; $j &lt; strlen($text2); $j++) {
+                if ($text1{$i} == $text2{$j}) {
+                    $dp[$i][$j] = ($dp[$i - 1][$j - 1] ?? 0) + 1;
+                } else {
+                    $dp[$i][$j] = max($dp[$i - 1][$j] ?? 0, $dp[$i][$j - 1] ?? 0);
+                }
+            }
+        }
+        return $dp[strlen($text1) - 1][strlen($text2) - 1];
+    }
+    //降维
+    function longestCommonSubsequence($text1, $text2) {
+        // 动态规划的做法：穷举+剪纸
+        $dp=[0];
+        for($i = 1; $i &lt;= strlen($text1); $i++){
+            $last = 0;
+            for($j = 1; $j &lt;= strlen($text2); $j++){
+                $tmp=$dp[$j];
+                if($text1[$i - 1] == $text2[$j - 1]){
+                    $dp[$j] = $last + 1;
+                }else{
+                    $dp[$j] = max($dp[$j - 1],$tmp);
+                }
+                $last=$tmp;
+            }
+        }
+        return $dp[strlen($text2)];
+    }
+}
+</code></pre><h4 id=mit-动态规划课程最短路径算法httpswwwbilibilicomvideoav53233912fromsearchseid2847395688604491997><a href="https://www.bilibili.com/video/av53233912?from=search&amp;seid=2847395688604491997" target=_blank rel=noopener>MIT 动态规划课程最短路径算法</a></h4><h2 id=4-实战题目解析三角形最小路径和>4. 实战题目解析：三角形最小路径和</h2><h2 id=5-实战题目解析最大子序列和>5. 实战题目解析：最大子序列和</h2><h3 id=实战题目>实战题目</h3><h4 id=70-爬楼梯httpsleetcode-cncomproblemsclimbing-stairs><a href=https://leetcode-cn.com/problems/climbing-stairs/ target=_blank rel=noopener>70. 爬楼梯</a></h4><pre><code class=language-php>// 1. 可以走1,2,3步（easy）
+// 2. 相邻两步的部分不能相同（medium）
+
+class Solution {
+
+    /**
+     * 空间优化的dp
+     * @param Integer $n
+     * @return Integer
+     */
+    function climbStairs($n) {
+ 		if ($n &lt; 3) return $n;
+        $first = 1;
+        $second = 2;
+        for ($i = 3; $i &lt;= $n; $i++) {
+            $tmp = $first + $second;
+            $first = $second;
+            $second = $tmp;
+        }
+        return $second;
+    }
+    //递归
+    function climbStairs($n) {
+        if ($n &lt;= 2) return $n;
+        if (!isset($this-&gt;map[$n])) {
+            $this-&gt;map[$n] = $this-&gt;climbStairs($n - 1) + $this-&gt;climbStairs($n - 2);
+        }
+        return $this-&gt;map[$n];
+    }
+}
+</code></pre><h4 id=120-三角形最小路径和httpsleetcode-cncomproblemstriangle参考代码httpsleetcodecomproblemstrianglediscuss38735python-easy-to-understand-solutions-top-down-bottom-up><a href=https://leetcode-cn.com/problems/triangle/ target=_blank rel=noopener>120. 三角形最小路径和</a>
+、<a href=https://leetcode.com/problems/triangle/discuss/38735/Python-easy-to-understand-solutions-%28top-down-bottom-up%29 target=_blank rel=noopener>参考代码</a></h4><p><a href=https://leetcode-cn.com/problems/triangle/solution/di-gui-ji-yi-hua-sou-suo-zai-dao-dp-by-crsm/ target=_blank rel=noopener>递归记忆化搜索</a></p><pre><code class=language-php>class Solution {
+
+    /**
+     * 动态规划
+     * @param Integer[][] $triangle
+     * @return Integer
+     */
+    function minimumTotal($triangle) {
+        $dp = $triangle;
+        for ($i = count($triangle) - 2; $i &gt;= 0; $i--) {
+            for ($j = 0; $j &lt; count($triangle[$i]); $j++){
+                $dp[$i][$j] += min($dp[$i + 1][$j], $dp[$i + 1][$j + 1]);
+            }
+        }
+        return $dp[0][0];
+    }
+    //动态规划（降维）
+    function minimumTotal($triangle) {
+        $dp = array_fill(0, count($triangle) + 1, 0);
+        for ($i = count($triangle) - 1; $i &gt;= 0; $i--) {
+            for ($j = 0; $j &lt; count($triangle[$i]); $j++){
+                $dp[$j]= min($dp[$j], $dp[$j + 1]) + $triangle[$i][$j];
+            }
+        }
+        return $dp[0];
+    }
+    //递归
+    function minimumTotal($triangle) {
+        $this-&gt;row = count($triangle);
+        $this-&gt;memo = [];
+        return $this-&gt;helper(0, 0, $triangle);
+    }
+    private $row;
+    private $memo;
+    function helper($row, $col, $triangle) {
+        if (isset($this-&gt;memo[$row][$col])) {
+            return $this-&gt;memo[$row][$col];
+        }
+        if ($row == $this-&gt;row - 1) {
+            return $this-&gt;memo[$row][$col] = $triangle[$row][$col];
+        }
+        $left = $this-&gt;helper($row + 1, $col, $triangle);
+        $right = $this-&gt;helper($row + 1, $col + 1, $triangle);
+        return $this-&gt;memo[$row][$col] = min($left, $right) + $triangle[$row][$col];
+    }
+}
+</code></pre><h4 id=53-最大子序和httpsleetcode-cncomproblemsmaximum-subarray><a href=https://leetcode-cn.com/problems/maximum-subarray/ target=_blank rel=noopener>53. 最大子序和</a></h4><pre><code class=language-php>class Solution {
+
+    /**
+     * 方法一：动态规划
+     * @param Integer[] $nums
+     * @return Integer
+     */
+    function maxSubArray($nums) {
+        $dp = [];
+        $dp[0] = $nums[0];
+        $max = $nums[0];
+        foreach ($nums as $i=&gt;$num) {
+            if ($i == 0) continue;
+            $dp[$i] = max(0, $dp[$i - 1]) + $num;
+            $max = max($dp[$i], $max);
+        }
+        return $max;
+    }
+    //方法二：贪心
+    //方法三：分治
+}
+</code></pre><pre><code class=language-cpp>class Solution {
+public:
+    int maxSubArray(vector&lt;int&gt;&amp; nums) {
+		std::vector&lt;int&gt; dp(nums.size(), 0);
+        dp[0] = nums[0];
+        int res_max = dp[0];
+        for (int i = 1; i &lt; nums.size(); i++) {
+            dp[i] = std::max(dp[i - 1] + nums[i], nums[i]);
+            if (res_max &lt; dp[i]) {
+                res_max = dp[i];
+            }
+        }
+        return res_max;
+    }
+};
+</code></pre><h4 id=152-乘积最大子数组httpsleetcode-cncomproblemsmaximum-product-subarray><a href=https://leetcode-cn.com/problems/maximum-product-subarray/ target=_blank rel=noopener>152. 乘积最大子数组</a></h4><pre><code class=language-php>class Solution {
+
+    /**
+     * 标准dp写法
+     * @param Integer[] $nums
+     * @return Integer
+     */
+    function maxProduct($nums) {
+        $n = count($nums);
+        $max = $min = [$nums[0]];
+        $ans = $nums[0];
+        for ($i = 1; $i &lt; $n; $i++) {
+            if ($x &gt;= 0) {
+                $max[$i] = max($max[$i - 1] * $nums[$i], $nums[$i]);
+                $min[$i] = min($min[$i - 1] * $nums[$i], $nums[$i]);
+            } else {
+                $max[$i] = max($min[$i - 1] * $nums[$i], $nums[$i]);
+                $min[$i] = min($max[$i - 1] * $nums[$i], $nums[$i]);
+            }
+            $ans = max($ans, $max[$i]);
+        }
+		return $ans;
+    }
+}
+</code></pre><pre><code class=language-python>class Solution(object):
+    def maxProduct(self, nums):
+        &quot;&quot;&quot;
+        :type nums: List[int]
+        :rtype: int
+        &quot;&quot;&quot;
+        mi = ma = res = nums[0]
+        for i in range(1, len(nums)):
+            if nums[i] &lt; 0: mi, ma = ma, mi
+            ma = max(ma * nums[i], nums[i]) # 正数最大值
+            mi = min(mi * nums[i], nums[i]) # 负数最小值
+            res = max(ma, res)
+        return res
+</code></pre><h4 id=322-零钱兑换httpsleetcode-cncomproblemscoin-change><a href=https://leetcode-cn.com/problems/coin-change/ target=_blank rel=noopener>322. 零钱兑换</a></h4><pre><code class=language-php>class Solution {
+public:
+    //动态规划
+    int coinChange(vector&lt;int&gt;&amp; coins, int amount) {
+		int Max = amount + 1;
+        vector&lt;int&gt;dp(amount + 1, Max);
+        dp[0] = 0;
+        for (int i = 1; i &lt;= amount; i++) {
+            for (int j = 0; j &lt; coins.size(); j++) {
+                if (coins[j] &lt;= i) {
+                    dp[i] = min(dp[i], dp[i - coins[j]] + 1);
+                }
+            }
+        }
+        return dp[amount] &gt; amount ? -1 : dp[amount];
+    }
+};
+</code></pre><h2 id=6-实战题目解析打家劫舍>6. 实战题目解析：打家劫舍</h2><h3 id=实战题目-1>实战题目</h3><h4 id=198-打家劫舍httpsleetcode-cncomproblemshouse-robber><a href=https://leetcode-cn.com/problems/house-robber/ target=_blank rel=noopener>198. 打家劫舍</a></h4><pre><code class=language-php>class Solution {
+
+    /**
+     * 二维dp
+     * dp[i][0] = max(dp[i - 1][0], dp[i - 1][1]) 不偷
+     * dp[i][1] = dp[i - 1][0] + nums[i] 偷
+     * @param Integer[] $nums
+     * @return Integer
+     */
+    function rob1($nums) {
+        if (!$nums) return 0;
+        $dp = [];
+        $dp[0][0] = 0;
+        $dp[0][1] = $nums[0];
+        $n = count($nums);
+        for ($i = 1; $i &lt; $n; $i++) {
+            $dp[$i][0] = max($dp[$i - 1][0], $dp[$i - 1][1]);
+            $dp[$i][1] = $dp[$i - 1][0] + $nums[$i];
+        }
+        return max($dp[$n - 1]);
+    }
+    //一维dp[i] = max($dp[$i - 1], $dp[$i - 1] + $nums[$i]) 第 i 天偷 的金额
+    function rob($nums) {
+        if (!$nums) return 0;
+        $n = count($nums);
+        if ($n == 1) return $nums[0];
+        $dp = [];
+        $dp[0] = $nums[0];
+        $dp[1] = max($nums[0], $nums[1]);
+        for ($i = 2; $i &lt; $n; $i++) {
+            $dp[$i] = max($dp[$i - 1], $dp[$i - 2] + $nums[$i]);
+        }
+        return $res;
+    }
+    //简化的dp
+    function rob($nums) {
+        $preMax = $curMax = 0;
+        foreach($nums as $num) {
+        	$tmp = $curMax;
+            $curMax = max($preMax + $num, $curMax);
+            $preMax = $tmp; 
+        }
+        return $curMax;
+    }
+    //递归
+    function rob ($nums) {
+        return $this-&gt;helper($nums, count($nums) - 1);
+    }
+    function helper($nums, $i) {
+        if ($i &lt; 0) return 0;
+        return max($this-&gt;helper($nums, $i - 1), $this-&gt;hepler($nums, $i - 2) + $nums[$i]);
+    }
+}
+</code></pre><h4 id=213-打家劫舍-iihttpsleetcode-cncomproblemshouse-robber-ii><a href=https://leetcode-cn.com/problems/house-robber-ii/ target=_blank rel=noopener>213. 打家劫舍 II</a></h4><pre><code class=language-php>class Solution {
+
+    /**
+     * 动态规划：
+     * 1. 包含头，不包含尾
+     * 2, 不包含头，包含尾
+     * 3，求 1 和 2 最大值
+     * @param Integer[] $nums
+     * @return Integer
+     */
+    function rob($nums) {
+        if (count($nums) == 1) return $nums[0];
+        return max($this-&gt;robRange($nums, 0, count($nums) - 2), $this-&gt;robRange($nums, 1, count($nums) - 1));
+    }
+    function robRange($nums, $start, $end) {
+        $preMax = $curMax = 0;
+        for ($i = $start; $i &lt;= $end; $i++) {
+            $tmp = $curMax;
+            $curMax = max($preMax + $nums[$i], $curMax);
+            $preMax = $tmp;
+        }
+        return $curMax;
+    }
+}
+</code></pre><pre><code class=language-java>private int rob(int[] num, int lo, int hi) {
+    int include = 0, exclude = 0;
+    for (int j = lo; j &lt;= hi; j++) {
+        int i = include, e = exclude;
+        include = e + num[j];
+        exclude = Math.max(e, i);
+    }
+    return Math.max(include, exclude);
+}
+</code></pre><h4 id=121-买卖股票的最佳时机httpsleetcode-cncomproblemsbest-time-to-buy-and-sell-stock><a href=https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/ target=_blank rel=noopener>121. 买卖股票的最佳时机</a></h4><pre><code class=language-php>class Solution {
+
+    /**
+     * @param Integer[] $prices
+     * @return Integer
+     */
+    function maxProfit($prices) {
+    	$cur = $res = 0;
+        for ($i = 1; $i &lt; count($prices); $i++) {
+            $cur = max(0, $cur + $prices[$i] - $prices[$ - 1]);
+            $res = max($cur, $res);
+        }
+        return $res;
+    }
+    //标准dp
+    function maxProfit($prices) {
+        $n = count($prices);
+    	$dp = [];
+        $dp[0][0] = 0;
+        $dp[0][1] = -$prices[0];
+        for ($i = 1; $i &lt; $n; $i++) {
+            //不持有股票
+            $dp[$i][0] = max($dp[$i - 1][0], $dp[$i - 1][1] + $prices[$i]);
+            //持有股票
+            $dp[$i][1] = max($dp[$i - 1][1], -$prices[$i]);
+        }
+        return $dp[$n - 1][0];
+    }
+    //简化
+    function maxProfit($prices) {
+        $n = count($prices);
+    	$dpi0 = 0; $dpi1 = -$prices[0];
+        for ($i = 0; $i &lt; $n; $i++) {
+            //不持有股票
+            $dpi0 = max($dpi0, $dpi1 + $prices[$i]);
+            //持有股票
+            $dpi1 = max($dpi1, -$prices[$i]);
+        }
+        return $dpi0;
+    }
+}
+</code></pre><h4 id=122-买卖股票的最佳时机-iihttpsleetcode-cncomproblemsbest-time-to-buy-and-sell-stock-ii><a href=https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/ target=_blank rel=noopener>122. 买卖股票的最佳时机 II</a></h4><pre><code class=language-php>class Solution {
+    //dp
+    function maxProfit($prices) {
+       	$n = count($prices);
+    	$dpi0 = 0; $dpi1 = -$prices[0];
+        for ($i = 0; $i &lt; $n; $i++) {
+            $tmp = $dpi0;
+            //不持有股票
+            $dpi0 = max($dpi0, $dpi1 + $prices[$i]);
+            //持有股票
+            $dpi1 = max($dpi1, $tmp - $prices[$i]);
+        }
+        return $dpi0;
+    }
+}
+</code></pre><h4 id=123-买卖股票的最佳时机-iiihttpsleetcode-cncomproblemsbest-time-to-buy-and-sell-stock-iii><a href=https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii/ target=_blank rel=noopener>123. 买卖股票的最佳时机 III</a></h4><pre><code class=language-php>class Solution {
+
+    /**
+     * @param Integer[] $prices
+     * @return Integer
+     */
+    function maxProfit($prices) {
+        $n = count($prices);
+        if (!$n) return 0;
+        $dp = [];
+        for ($i = 0; $i &lt; $n; $i++) {
+            for ($k = 2; $k &gt; 0; $k--) {
+                if ($i == 0) {
+                    $dp[$i][$k][0] = 0;
+                    $dp[$i][$k][1] = -$prices[$i];
+                    continue;
+                }
+                $dp[$i][$k][0] = max($dp[$i - 1][$k][0], $dp[$i - 1][$k][1] + $prices[$i]);
+                $dp[$i][$k][1] = max($dp[$i - 1][$k][1], $dp[$i - 1][$k - 1][0] - $prices[$i]);
+            }
+        }
+        return $dp[$n - 1][2][0];
+    }
+    //简化
+    function maxProfit($prices) {
+        $dp_i10 = 0, $dp_i11 = -$prices[0];
+        $dp_i20 = 0, $dp_i21 = -$prices[0];
+        foreach ($prices as  $price) {
+            $dp_i20 = max($dp_i20, $dp_i21 + $price);
+            $dp_i21 = max($dp_i21, $dp_i10 - $price);
+            $dp_i10 = max($dp_i10, $dp_i11 + $price);
+            $dp_i11 = max($dp_i11, -$price);
+        }
+        return $dp_i20;
+    }
+    //简化
+    function maxProfit($prices) {
+        $cur = $res = 0;
+        $len = count($prices);
+        $states = array_fill(0, $len, 0);
+        for ($i = 1; $i &lt; $len; $i++) {
+            $cur = max(0, $cur + $prices[$i] - $prices[$i - 1]);
+            $states[$i] = max($cur, $states[$i - 1]);
+        }
+        for ($i = $len - 2, $cur = 0; $i &gt;= 0; $i--) {
+            $cur = max(0, $cur + $prices[$i + 1] - $prices[$i]);
+            $res = max($cur + $states[$i], $res);
+        }
+        return $res;
+    }
+}
+</code></pre><h4 id=188-买卖股票的最佳时机-ivhttpsleetcode-cncomproblemsbest-time-to-buy-and-sell-stock-iv><a href=https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iv/ target=_blank rel=noopener>188. 买卖股票的最佳时机 IV</a></h4><pre><code class=language-php>class Solution {
+
+    /**
+     * @param Integer $k
+     * @param Integer[] $prices
+     * @return Integer
+     */
+    function maxProfit($k1, $prices) {
+        $n = count($prices);
+        if ($n == 0 || $k1 == 0) return 0;
+        if ($k1 &gt; $n /2) return $this-&gt;maxProfit1($prices); 
+        $dp = [];
+        for ($i = 0; $i &lt; $n; $i++) {
+            for ($k = $k1; $k &gt; 0; $k--) {
+                if ($i == 0) {
+                    $dp[$i][$k][0] = 0;
+                    $dp[$i][$k][1] = -$prices[$i];
+                    continue;
+                }
+                $dp[$i][$k][0] = max($dp[$i - 1][$k][0], $dp[$i - 1][$k][1] + $prices[$i]);
+                $dp[$i][$k][1] = max($dp[$i - 1][$k][1], $dp[$i - 1][$k - 1][0] - $prices[$i]);
+            }
+        }
+        return $dp[$n - 1][$k][0];
+    }
+    function maxProfit1($prices) {
+       	$n = count($prices);
+    	$dpi0 = 0; $dpi1 = -$prices[0];
+        for ($i = 0; $i &lt; $n; $i++) {
+            $tmp = $dpi0;
+            //不持有股票
+            $dpi0 = max($dpi0, $dpi1 + $prices[$i]);
+            //持有股票
+            $dpi1 = max($dpi1, $tmp - $prices[$i]);
+        }
+        return $dpi0;
+    }
+    
+    //简化
+    function maxProfit($k, $prices) {
+        $len = count($prices);
+        if ($len == 0) return 0;
+        if ($k &gt; $len / 2) {
+            $buy = - $prices[0];
+            $sell = 0;
+            $res = 0;
+            for ($i = 1, $len = count($prices); $i &lt; $len; $i++) {
+                $buy = max($buy, $sell - $prices[$i]);
+                $sell = max($sell, $buy + $prices[$i]);
+                $res = max($sell, $res);
+            }
+            return $res;
+        }
+        $local = array_fill(0, $k + 1, 0);
+        $global =  array_fill(0, $k + 1, 0);
+        for ($i = 1; $i &lt; $len; $i++) {
+            $diff = $prices[$i] - $prices[$i - 1];
+            $tmp = array_fill(0, $k + 1, 0);
+            for ($j = 1; $j &lt;= $k; $j++) {
+                $local[$j] =  max($global[$j - 1], $local[$j]) + $diff;
+                $tmp[$j] =  max($global[$j], $local[$j]);
+            }
+            $global = $tmp;
+        }
+        return $global[$k];
+    }
+}
+</code></pre><h4 id=309-最佳买卖股票时机含冷冻期httpsleetcode-cncomproblemsbest-time-to-buy-and-sell-stock-with-cooldown><a href=https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/ target=_blank rel=noopener>309. 最佳买卖股票时机含冷冻期</a></h4><pre><code class=language-php>class Solution {
+    //dp
+    function maxProfit($prices) {
+       	$n = count($prices);
+    	$dpi0 = 0; $dpi1 = -$prices[0];
+        $dppre0 = 0;
+        for ($i = 0; $i &lt; $n; $i++) {
+            $tmp = $dpi0;
+            //不持有股票
+            $dpi0 = max($dpi0, $dpi1 + $prices[$i]);
+            //持有股票
+            $dpi1 = max($dpi1, $dppre0 - $prices[$i]);
+            $dppre0 = $dpi0;
+        }
+        return $dpi0;
+    }
+}
+</code></pre><h4 id=714-买卖股票的最佳时机含手续费httpsleetcode-cncomproblemsbest-time-to-buy-and-sell-stock-with-transaction-fee><a href=https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/ target=_blank rel=noopener>714. 买卖股票的最佳时机含手续费</a></h4><pre><code class=language-php>class Solution {
+    //dp
+    function maxProfit1($prices, $free) {
+       	$n = count($prices);
+    	$dpi0 = 0; $dpi1 = -$prices[0];
+        for ($i = 0; $i &lt; $n; $i++) {
+            //不持有股票
+            $dpi0 = max($dpi0, $dpi1 + $prices[$i] - $free);
+            //持有股票
+            $dpi1 = max($dpi1, $dpi0 - $prices[$i]);
+        }
+        return $dpi0;
+    }
+    
+    function maxProfit2($prices, $fee) {
+        $res = 0;
+        for ($i = 1, $len = count($prices); $i &lt; $len; $i++) {
+            if ($prices[$i] &gt; $prices[$i - 1]) {
+                $res += $prices[$i] - $prices[$i - 1] - $fee;
+            }
+        }
+        return $res;
+    }
+     //dp
+    function maxProfit($prices, $fee) {
+        $buy = - $prices[0];
+        $sell = 0;
+        $res = 0;
+        for ($i = 1, $len = count($prices); $i &lt; $len; $i++) {
+            $buy = max($buy, $sell - $prices[$i]);
+            $sell = max($sell, $buy + $prices[$i] - $fee);
+            $res = max($sell, $res);
+        }
+        return $res;
+    }
+}
+</code></pre><h4 id=一个方法团灭-6-道股票问题httpsleetcode-cncomproblemsbest-time-to-buy-and-sell-stocksolutionyi-ge-fang-fa-tuan-mie-6-dao-gu-piao-wen-ti-by-l-3><a href=https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/solution/yi-ge-fang-fa-tuan-mie-6-dao-gu-piao-wen-ti-by-l-3/ target=_blank rel=noopener>一个方法团灭 6 道股票问题</a></h4><h3 id=高级-dp-实战题目>高级 DP 实战题目</h3><h4 id=279-完全平方数httpsleetcode-cncomproblemsperfect-squares><a href=https://leetcode-cn.com/problems/perfect-squares/ target=_blank rel=noopener>279. 完全平方数</a></h4><h4 id=72-编辑距离httpsleetcode-cncomproblemsedit-distance-重点><a href=https://leetcode-cn.com/problems/edit-distance/ target=_blank rel=noopener>72. 编辑距离</a>
+（重点）</h4><h4 id=55-跳跃游戏httpsleetcode-cncomproblemsjump-game><a href=https://leetcode-cn.com/problems/jump-game/ target=_blank rel=noopener>55. 跳跃游戏</a></h4><h4 id=45-跳跃游戏-iihttpsleetcode-cncomproblemsjump-game-ii><a href=https://leetcode-cn.com/problems/jump-game-ii/ target=_blank rel=noopener>45. 跳跃游戏 II</a></h4><h4 id=62-不同路径httpsleetcode-cncomproblemsunique-paths-1><a href=https://leetcode-cn.com/problems/unique-paths/ target=_blank rel=noopener>62. 不同路径</a></h4><h4 id=63-不同路径-iihttpsleetcode-cncomproblemsunique-paths-ii-1><a href=https://leetcode-cn.com/problems/unique-paths-ii/ target=_blank rel=noopener>63. 不同路径 II</a></h4><h4 id=980-不同路径-iiihttpsleetcode-cncomproblemsunique-paths-iii><a href=https://leetcode-cn.com/problems/unique-paths-iii/ target=_blank rel=noopener>980. 不同路径 III</a></h4><h4 id=322-零钱兑换httpsleetcode-cncomproblemscoin-change-1><a href=https://leetcode-cn.com/problems/coin-change/ target=_blank rel=noopener>322. 零钱兑换</a></h4><h4 id=518-零钱兑换-iihttpsleetcode-cncomproblemscoin-change-2><a href=https://leetcode-cn.com/problems/coin-change-2/ target=_blank rel=noopener>518. 零钱兑换 II</a></h4><h2 id=本周作业及下周预习>本周作业及下周预习</h2><h3 id=本周作业>本周作业</h3><h4 id=中等>中等</h4><h5 id=64-最小路径和httpsleetcode-cncomproblemsminimum-path-sum><a href=https://leetcode-cn.com/problems/minimum-path-sum/ target=_blank rel=noopener>64. 最小路径和</a></h5><pre><code class=language-php>class Solution {
+
+    /**
+     * dp(自顶向下)
+     * @param Integer[][] $grid
+     * @return Integer
+     */
+    function minPathSum($grid) {
+        $m = count($grid);
+        if ($m == 0) return 0;
+        $n = count($grid[0]);
+        $dp = [];
+        $dp[0][0] = $grid[0][0];
+        //初始化第一行
+        for($i = 1; $i &lt; $n; $i++) {
+            $dp[0][$i] = $dp[0][$i - 1] + $grid[0][$i];
+        }
+        for ($i = 1; $i &lt; $m; $i++) {
+            $dp[$i][0] = $dp[$i - 1][0] + $grid[$i][0];
+            for ($j = 1; $j &lt; $n; $j++) {
+                $dp[$i][$j] = min($dp[$i][$j - 1], $dp[$i - 1][$j]) + $grid[$i][$j];
+            }
+        }
+		return $dp[$m - 1][$n - 1];
+    }
+    //dp 降维
+    function minPathSum($grid) {
+        $m = count($grid);
+        if ($m == 0) return 0;
+        $n = count($grid[0]);
+        $dp = [];
+        $dp[0] = $grid[0][0];
+        //初始化第一行
+        for($i = 1; $i &lt; $n; $i++) {
+            $dp[$i] = $dp[$i - 1] + $grid[0][$i];
+        }
+        for ($i = 1; $i &lt; $m; $i++) {
+            $dp[0] = $dp[0] + $grid[$i][0];
+            for ($j = 1; $j &lt; $n; $j++) {
+                $dp[$j] = min($dp[$j - 1], $dp[$j]) + $grid[$i][$j];
+            }
+        }
+		return $dp[$n - 1];
+    }
+}
+</code></pre><h5 id=91-解码方法httpsleetcode-cncomproblemsdecode-ways><a href=https://leetcode-cn.com/problems/decode-ways/ target=_blank rel=noopener>91. 解码方法</a></h5><pre><code class=language-php>class Solution {
+
+    /**
+     * @param String $s
+     * @return Integer
+     */
+    function numDecodings($s) {
+        $n = strlen($s);
+        if ($n == 0 || $s[0] == 0) return 0;
+        $dp = [];
+        $dp[0] = 1;
+        if (substr($s, 0, 2) &lt;= '26') $dp[1] = $s[1] == 0 ? 1 : 2;
+        else $dp[1] = $s[1] == 0 ? 0 : 1;
+        for ($i = 2; $i &lt; $n; $i++) {
+            if ($s[$i - 1] != 1 &amp;&amp; $s[$i - 1] != 2) {
+                if ($s[$i] == '0') 0;
+                else $dp[$i] = $dp[$i - 1];
+            } else {
+                $dp[$i] = $s[$i] == 0? $dp[$i - 2] : (substr($s, $i - 1, 2) &lt;= '26' ? $dp[$i - 1] + $dp[$i - 2] :$dp[$i - 1]);
+            }
+        }
+        return $dp[$n - 1];
+    }
+}
+</code></pre><h5 id=221-最大正方形httpsleetcode-cncomproblemsmaximal-square><a href=https://leetcode-cn.com/problems/maximal-square/ target=_blank rel=noopener>221. 最大正方形</a></h5><pre><code class=language-php>class Solution {
+
+    /**
+     * 动态规划
+     * dp(i, j)=min(dp(i−1, j), dp(i−1, j−1), dp(i, j−1))+1
+     * @param String[][] $matrix
+     * @return Integer
+     */
+    function maximalSquare($matrix) {
+		$m = count($matrix);
+        if ($m == 0) return 0;
+        $n = count($matrix[0]);
+        $dp  = [];
+        $maxsqlen = 0;
+        for ($i = 0; $i &lt;= $m; $i++) $dp[] = array_fill(0, $n + 1, 0);
+        for ($i = 1; $i &lt;= $m; $i++) {
+            for ($j = 1; $j &lt;= $n; $j++) {
+                if ($matrix[$i - 1][$j - 1] == 1) {
+                    $dp[$i][$j] = min($dp[$i][$j - 1], $dp[$i - 1][$j], $dp[$i - 1][$j - 1]) + 1;
+                    $maxsqlen = max($maxsqlen, $dp[$i][$j]);
+                }
+            }
+        }
+        return $maxsqlen * $maxsqlen;
+    }
+    //空间优化使用一维dp
+    function maximalSquare($matrix) {
+		$m = count($matrix);
+        if ($m == 0) return 0;
+        $n = count($matrix[0]);
+        $maxsqlen = $pre = 0;
+        $dp = array_fill(0, $n + 1, 0);
+        for ($i = 1; $i &lt;= $m; $i++) {
+            for ($j = 1; $j &lt;= $n; $j++) {
+                $tmp = $dp[$j];
+                if ($matrix[$i - 1][$j - 1] == 1) {
+                    $dp[$j] = min($dp[$j - 1], $dp[$j], $pre) + 1;
+                    $maxsqlen = max($maxsqlen, $dp[$j]);
+                } else {
+                    $dp[$j] = 0;
+                }
+                $pre = $tmp;
+            }
+        }
+        return $maxsqlen * $maxsqlen;
+    }
+}
+</code></pre><h5 id=621-任务调度器httpsleetcode-cncomproblemstask-scheduler-需要深入研究><a href=https://leetcode-cn.com/problems/task-scheduler/ target=_blank rel=noopener>621. 任务调度器</a>
+(需要深入研究)</h5><pre><code class=language-php>class Solution {
+
+    /**
+     * @param String[] $tasks
+     * @param Integer $n
+     * @return Integer
+     * https://leetcode-cn.com/problems/task-scheduler/solution/python-xiang-jie-by-jalan/
+     */
+    function leastInterval($tasks, $n) {
+        $len = count($tasks);
+        if ($len &lt;= 1) return $len;
+        $counts = array_count_values($tasks);
+        arsort($counts);
+        $max_task_count = current($counts);
+        $res = ($max_task_count - 1) * ($n + 1);
+        foreach($counts as $task=&gt;$count) {
+            if ($count == $max_task_count) {
+                $res++;
+            }
+        }
+       return $res &gt;= $len ? $res : $len;
+    }
+}
+</code></pre><h5 id=647-回文子串httpsleetcode-cncomproblemspalindromic-substrings继续><a href=https://leetcode-cn.com/problems/palindromic-substrings/ target=_blank rel=noopener>647. 回文子串</a>
+(继续)</h5><pre><code class=language-php>class Solution {
+
+    /**
+     * @param String $s
+     * @return Integer
+     */
+    function countSubstrings($s) {
+        $dp = [];
+        $ans = 0;
+        $n = strlen($s);
+        for ($j = 0; $j &lt; $n; $j++) {
+            for ($i = 0; $i &lt;= $j; $i++) {
+                if ($s[$i] == $s[$j] &amp;&amp; ($j - $i &lt; 2 || $dp[$i + 1][$j -1])) {
+                    $dp[$i][$j] = true;
+                    $ans++;
+                }
+            }
+        }
+        return $ans;
+    }
+    //方法一：从中心往两侧延伸【通过】
+    function countSubstrings($s) {
+        $ans = 0;
+        $n = strlen($s);
+       	for ($center = 0; $center &lt;= 2*$n-1; ++$center) {
+            $left = intval($center / 2);
+            $right = $left + $center % 2;
+            while ($left &gt;=0 &amp;&amp; $right &lt; $n &amp;&amp; $s[$left] == $s[$right]) {
+                $ans++;
+                $left--;
+                $right++;
+            }
+        }
+        return $ans;
+    } 	
+}
+</code></pre><h4 id=困难>困难</h4><h5 id=32-最长有效括号httpsleetcode-cncomproblemslongest-valid-parentheses><a href=https://leetcode-cn.com/problems/longest-valid-parentheses/ target=_blank rel=noopener>32. 最长有效括号</a></h5><h5 id=72-编辑距离httpsleetcode-cncomproblemsedit-distance><a href=https://leetcode-cn.com/problems/edit-distance/ target=_blank rel=noopener>72. 编辑距离</a></h5><h5 id=363-矩形区域不超过-k-的最大数值和httpsleetcode-cncomproblemsmax-sum-of-rectangle-no-larger-than-k><a href=https://leetcode-cn.com/problems/max-sum-of-rectangle-no-larger-than-k/ target=_blank rel=noopener>363. 矩形区域不超过 K 的最大数值和</a></h5><h5 id=403-青蛙过河httpsleetcode-cncomproblemsfrog-jump><a href=https://leetcode-cn.com/problems/frog-jump/ target=_blank rel=noopener>403. 青蛙过河</a></h5><h5 id=410-分割数组的最大值httpsleetcode-cncomproblemssplit-array-largest-sum><a href=https://leetcode-cn.com/problems/split-array-largest-sum/ target=_blank rel=noopener>410. 分割数组的最大值</a></h5><h5 id=552-学生出勤记录-iihttpsleetcode-cncomproblemsstudent-attendance-record-ii><a href=https://leetcode-cn.com/problems/student-attendance-record-ii/ target=_blank rel=noopener>552. 学生出勤记录 II</a></h5><h5 id=76-最小覆盖子串httpsleetcode-cncomproblemsminimum-window-substring><a href=https://leetcode-cn.com/problems/minimum-window-substring/ target=_blank rel=noopener>76. 最小覆盖子串</a></h5><h5 id=312-戳气球httpsleetcode-cncomproblemsburst-balloons><a href=https://leetcode-cn.com/problems/burst-balloons/ target=_blank rel=noopener>312. 戳气球</a></h5><p>​</p><h3 id=下周预习>下周预习</h3><h4 id=预习知识点>预习知识点：</h4><ul><li><a href=https://time.geekbang.org/column/article/68638 target=_blank rel=noopener>红黑树（上）：为什么工程中都用红黑树这种二叉树？</a></li><li><a href=https://time.geekbang.org/column/article/68976 target=_blank rel=noopener>红黑树（下）：掌握这些技巧，你也可以实现一个红黑树</a></li><li><a href=https://time.geekbang.org/column/article/78175 target=_blank rel=noopener>搜索：如何用 A* 搜索算法实现游戏中的寻路功能？</a></li><li><a href=https://time.geekbang.org/column/article/72414 target=_blank rel=noopener>Trie 树：如何实现搜索引擎的搜索关键词提示功能？</a></li><li><a href=https://time.geekbang.org/column/article/77830 target=_blank rel=noopener>B+ 树：MySQL 数据库索引是如何实现的？</a></li><li><a href=https://time.geekbang.org/column/article/78175 target=_blank rel=noopener>搜索：如何用 A* 搜索算法实现游戏中的寻路功能？</a></li><li><a href=https://time.geekbang.org/column/article/78449 target=_blank rel=noopener>索引：如何在海量数据中快速查找某个数据？</a></li></ul><p>#s### 预习题目：</p><ul><li><a href=https://leetcode-cn.com/problems/implement-trie-prefix-tree/#/description target=_blank rel=noopener>实现 Trie (前缀树)</a></li><li><a href=https://leetcode-cn.com/problems/word-search-ii/ target=_blank rel=noopener>单词搜索 II</a></li><li><a href=https://leetcode-cn.com/problems/number-of-islands/ target=_blank rel=noopener>岛屿数量</a></li><li><a href=https://leetcode-cn.com/problems/valid-sudoku/description/ target=_blank rel=noopener>有效的数独</a></li><li><a href=https://leetcode-cn.com/problems/n-queens/ target=_blank rel=noopener>N 皇后</a></li><li><a href=https://leetcode-cn.com/problems/word-ladder/ target=_blank rel=noopener>单词接龙</a></li><li><a href=https://leetcode-cn.com/problems/shortest-path-in-binary-matrix/ target=_blank rel=noopener>二进制矩阵中的最短路径</a></li></ul></article><div class=my-4><a href=/tags/%E7%AE%97%E6%B3%95/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#算法</a>
+<a href=/tags/leetcode/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#leetcode</a></div><div class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"><div><span class="text-primary-text block font-bold">上一页</span>
+<a href=/study/algorithm/php/04%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E5%9B%9B%E5%91%A8%E6%80%BB%E7%BB%93/ class=block>第4周总结</a></div><div class="mt-4 md:mt-0 md:text-right"><span class="text-primary-text block font-bold">下一页</span>
+<a href=/study/algorithm/php/07%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%B8%83%E5%91%A8/ class=block>第7周</a></div></div></div></div></div></div></div><script>document.addEventListener("DOMContentLoaded",()=>{hljs.highlightAll(),changeSidebarHeight(),switchDocToc()})</script></div></div></main><footer class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b"><p class="text-sm text-tertiary-text">&copy; 2021 <a href=https://blog.lbbniu.com/>lbbniu</a>
+&#183; Powered by the <a href=https://github.com/wangchucheng/hugo-eureka class=hover:text-eureka>Eureka</a> theme for <a href=https://gohugo.io class=hover:text-eureka>Hugo</a></p></div></div></footer></body></html>

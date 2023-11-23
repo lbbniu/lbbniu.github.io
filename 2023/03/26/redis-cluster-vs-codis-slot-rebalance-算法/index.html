@@ -1,0 +1,446 @@
+<!doctype html><html lang=zh dir=ltr><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Redis Cluster vs Codis Slot Rebalance 算法 | lbbniu</title>
+<meta name=generator content="Hugo Eureka 0.9.3"><link rel=stylesheet href=/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css><script defer src=/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js></script><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" as=style onload='this.onload=null,this.rel="stylesheet"'><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/github.min.css media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/php.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/java.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/go.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/python.min.js crossorigin></script><link rel=stylesheet href=/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css media=print onload='this.media="all",this.onload=null'><script defer type=text/javascript src=/js/fontawesome.min.35973bea57658ef0dd22ad59ea4642b6c8c67af62bed8659ac326d284ef285a6657cdbcf57d3b2910e7e992f2b20426e.js></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css integrity=sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js integrity=sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY crossorigin></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script><script defer src=https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js integrity=sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0 crossorigin></script><link rel=icon type=image/png sizes=32x32 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_32x32_fill_box_center_3.png><link rel=apple-touch-icon sizes=180x180 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_180x180_fill_box_center_3.png><meta name=description content="描述"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"文章列表","item":"/post/"},{"@type":"ListItem","position":2,"name":"Redis Cluster vs Codis Slot Rebalance 算法","item":"/2023/03/26/redis-cluster-vs-codis-slot-rebalance-%E7%AE%97%E6%B3%95/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/2023/03/26/redis-cluster-vs-codis-slot-rebalance-%E7%AE%97%E6%B3%95/"},"headline":"Redis Cluster vs Codis Slot Rebalance 算法 | lbbniu","datePublished":"2023-03-26T15:20:00+08:00","dateModified":"2023-11-23T18:27:23+08:00","wordCount":1476,"author":{"@type":"Person","name":["lbbniu"]},"publisher":{"@type":"Person","name":"lbbniu","logo":{"@type":"ImageObject","url":"/images/icon.gif"}},"description":"描述"}</script><meta property="og:title" content="Redis Cluster vs Codis Slot Rebalance 算法 | lbbniu"><meta property="og:type" content="article"><meta property="og:image" content="/images/icon.png"><meta property="og:url" content="/2023/03/26/redis-cluster-vs-codis-slot-rebalance-%E7%AE%97%E6%B3%95/"><meta property="og:description" content="描述"><meta property="og:locale" content="zh"><meta property="og:site_name" content="lbbniu"><meta property="article:published_time" content="2023-03-26T15:20:00+08:00"><meta property="article:modified_time" content="2023-11-23T18:27:23+08:00"><meta property="article:section" content="post"><meta property="article:tag" content="codis"><meta property="article:tag" content="redis"><meta property="article:tag" content="redis cluster"><body class="flex min-h-screen flex-col"><header class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"><div class="mx-auto w-full max-w-screen-xl"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=="Auto"||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName("html")[0].classList.add("dark")</script><nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0"><a href=/ class="me-6 text-primary-text text-xl font-bold">lbbniu</a>
+<button id=navbar-btn class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+<i class="fas fa-bars"></i></button><div id=target class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20"><div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0"><a href=/post/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">文章</a>
+<a href=/cloud-native/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">云原生</a>
+<a href=/study/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">算法学习</a>
+<a href=/docs/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">Go学习训练营</a>
+<a href=/tags/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">标签</a></div><div class=flex><div class="relative pt-4 md:pt-0"><div class="cursor-pointer hover:text-eureka" id=lightDarkMode><i class="fas fa-adjust"></i></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id=is-open></div><div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40" id=lightDarkOptions><span class="px-4 py-1 hover:text-eureka" name=Light>浅色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Dark>深色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Auto>自动</span></div></div></div></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id=is-open-mobile></div></nav><script>let element=document.getElementById("lightDarkMode");storageColorScheme==null||storageColorScheme=="Auto"?document.addEventListener("DOMContentLoaded",()=>{window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",switchDarkMode)}):storageColorScheme=="Light"?(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","sun"),element.firstElementChild.classList.add("fa-sun")):storageColorScheme=="Dark"&&(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","moon"),element.firstElementChild.classList.add("fa-moon")),document.addEventListener("DOMContentLoaded",()=>{getcolorscheme(),switchBurger()})</script></div></header><main class="grow pt-16"><div class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8"><div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12"><div class="bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"><article class=prose><h1 class=mb-4>Redis Cluster vs Codis Slot Rebalance 算法</h1><div class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"><div class="me-6 my-2"><i class="fas fa-calendar me-1"></i>
+<span>2023-03-26</span></div><div class="me-6 my-2"><i class="fas fa-clock me-1"></i>
+<span>7分钟阅读时长</span></div><div class="me-6 my-2"><i class="fas fa-folder me-1"></i>
+<a href=/categories/redis/ class=hover:text-eureka>redis</a></div></div><h2 id=redis-cluster-slot-rebalance算法>Redis Cluster Slot Rebalance算法</h2><h3 id=迁移原则>迁移原则</h3><ul><li>尽可能的均匀分配Slots；</li><li>尽量减少迁移的Slots的数量；</li></ul><h3 id=slots分配方案>Slots分配方案</h3><ul><li>计算集群的总权重，节点数量；</li><li>计算每个集群节点需要移出或移入的槽数，balance 如果为正数代表需要移出的槽数，如果为负数代表需要出入槽数；</li><li>把weightedNodes 根据 balance 排序从小到大；</li><li>执行槽位移动，并更新集群节点 balance；</li></ul><h3 id=代码实现httpsgithubcomredisredisblobaa2403ca98f6a39b6acd8373f8de1a7ba75162d5srcredis-clicl7043><a href=https://github.com/redis/redis/blob/aa2403ca98f6a39b6acd8373f8de1a7ba75162d5/src/redis-cli.c#L7043 target=_blank rel=noopener>代码实现</a></h3><pre><code class=language-c>static int clusterManagerCommandRebalance(int argc, char **argv) {
+    int port = 0;
+    char *ip = NULL;
+    clusterManagerNode **weightedNodes = NULL;
+    list *involved = NULL;
+    if (!getClusterHostFromCmdArgs(argc, argv, &amp;ip, &amp;port)) goto invalid_args;
+    clusterManagerNode *node = clusterManagerNewNode(ip, port, 0);
+    if (!clusterManagerLoadInfoFromNode(node)) return 0;
+    int result = 1, i;
+    if (config.cluster_manager_command.weight != NULL) {
+        for (i = 0; i &lt; config.cluster_manager_command.weight_argc; i++) {
+            char *name = config.cluster_manager_command.weight[i];
+            char *p = strchr(name, '=');
+            if (p == NULL) {
+                clusterManagerLogErr(&quot;*** invalid input %s\n&quot;, name);
+                result = 0;
+                goto cleanup;
+            }
+            *p = '\0';
+            float w = atof(++p);
+            clusterManagerNode *n = clusterManagerNodeByAbbreviatedName(name);
+            if (n == NULL) {
+                clusterManagerLogErr(&quot;*** No such master node %s\n&quot;, name);
+                result = 0;
+                goto cleanup;
+            }
+            n-&gt;weight = w;
+        }
+    }
+    float total_weight = 0;
+    int nodes_involved = 0;
+    int use_empty = config.cluster_manager_command.flags &amp;
+                    CLUSTER_MANAGER_CMD_FLAG_EMPTYMASTER;
+    involved = listCreate();
+    listIter li;
+    listNode *ln;
+    listRewind(cluster_manager.nodes, &amp;li);
+    /* Compute the total cluster weight. */
+    // 计算集群的总权重
+    while ((ln = listNext(&amp;li)) != NULL) {
+        clusterManagerNode *n = ln-&gt;value;
+        if (n-&gt;flags &amp; CLUSTER_MANAGER_FLAG_SLAVE || n-&gt;replicate)
+            continue;
+        if (!use_empty &amp;&amp; n-&gt;slots_count == 0) {
+            n-&gt;weight = 0;
+            continue;
+        }
+        total_weight += n-&gt;weight;
+        nodes_involved++; // 集群节点数量
+        listAddNodeTail(involved, n);
+    }
+    // 分配内存空间
+    weightedNodes = zmalloc(nodes_involved * sizeof(clusterManagerNode *));
+    if (weightedNodes == NULL) goto cleanup;
+    /* Check cluster, only proceed if it looks sane. */
+    // 检查集群，只有在它看起来正常时才继续。
+    clusterManagerCheckCluster(1);
+    if (cluster_manager.errors &amp;&amp; listLength(cluster_manager.errors) &gt; 0) {
+        clusterManagerLogErr(&quot;*** Please fix your cluster problems &quot;
+                             &quot;before rebalancing\n&quot;);
+        result = 0;
+        goto cleanup;
+    }
+    /* Calculate the slots balance for each node. It's the number of
+     * slots the node should lose (if positive) or gain (if negative)
+     * in order to be balanced. */
+    // 计算每个节点的槽位数量。
+    // 它是节点为了平衡而应该移出（如果为正）或移入（如果为负）的槽位数量。
+    int threshold_reached = 0, total_balance = 0;
+    float threshold = config.cluster_manager_command.threshold;
+    i = 0;
+    listRewind(involved, &amp;li);
+    while ((ln = listNext(&amp;li)) != NULL) {
+        clusterManagerNode *n = ln-&gt;value;
+        weightedNodes[i++] = n;
+        // 计算预期槽数
+        int expected = (int) (((float)CLUSTER_MANAGER_SLOTS / total_weight) *
+                        n-&gt;weight);
+        // 均衡前的哈希槽位和均衡后的哈希槽位的差值
+        n-&gt;balance = n-&gt;slots_count - expected;
+        total_balance += n-&gt;balance;
+        /* Compute the percentage of difference between the
+         * expected number of slots and the real one, to see
+         * if it's over the threshold specified by the user. */
+        // 计算期望槽数与实际槽数之间的差异百分比，看它是否超过用户指定的阈值。
+        int over_threshold = 0;
+        if (threshold &gt; 0) {
+            if (n-&gt;slots_count &gt; 0) {
+                float err_perc = fabs((100-(100.0*expected/n-&gt;slots_count)));
+                if (err_perc &gt; threshold) over_threshold = 1;
+            } else if (expected &gt; 1) {
+                over_threshold = 1;
+            }
+        }
+        if (over_threshold) threshold_reached = 1; // 标记需要平衡
+    }
+    if (!threshold_reached) {
+        clusterManagerLogWarn(&quot;*** No rebalancing needed! &quot;
+                             &quot;All nodes are within the %.2f%% threshold.\n&quot;,
+                             config.cluster_manager_command.threshold);
+        goto cleanup;
+    }
+    /* Because of rounding, it is possible that the balance of all nodes
+     * summed does not give 0. Make sure that nodes that have to provide
+     * slots are always matched by nodes receiving slots. */
+    // 由于四舍五入，所有节点的槽数总和可能不为 0。必须确保移出的槽数与移入的槽数匹配。
+    while (total_balance &gt; 0) {
+        listRewind(involved, &amp;li);
+        while ((ln = listNext(&amp;li)) != NULL) {
+            clusterManagerNode *n = ln-&gt;value;
+            // 把多余槽数轮询分发给移入的节点
+            if (n-&gt;balance &lt;= 0 &amp;&amp; total_balance &gt; 0) {
+                n-&gt;balance--;
+                total_balance--;
+            }
+        }
+    }
+    /* Sort nodes by their slots balance. */
+    // 按槽数对节点进行排序。
+    qsort(weightedNodes, nodes_involved, sizeof(clusterManagerNode *),
+          clusterManagerCompareNodeBalance); // 根据 balance 排序从小到大
+    clusterManagerLogInfo(&quot;&gt;&gt;&gt; Rebalancing across %d nodes. &quot;
+                          &quot;Total weight = %.2f\n&quot;,
+                          nodes_involved, total_weight);
+    if (config.verbose) {
+        for (i = 0; i &lt; nodes_involved; i++) {
+            clusterManagerNode *n = weightedNodes[i];
+            printf(&quot;%s:%d balance is %d slots\n&quot;, n-&gt;ip, n-&gt;port, n-&gt;balance);
+        }
+    }
+    /* Now we have at the start of the 'sn' array nodes that should get
+     * slots, at the end nodes that must give slots.
+     * We take two indexes, one at the start, and one at the end,
+     * incrementing or decrementing the indexes accordingly til we
+     * find nodes that need to get/provide slots. */
+    // 现在我们在“sn”数组节点的开始处应该获得槽，在末端节点处必须提供槽。
+    // 我们有两个索引，一个在开始，一个在结束，
+    // 相应地递增或递减索引，直到我们找到需要移出/移入槽的节点。
+    int dst_idx = 0;
+    int src_idx = nodes_involved - 1;
+    int simulate = config.cluster_manager_command.flags &amp;
+                   CLUSTER_MANAGER_CMD_FLAG_SIMULATE;
+    // 例如100个槽位，原来4个节点，现在5个节点。   
+    // 25,25,25,25 -&gt; 20,20,20,20,20  weightedNodes：-20,5,5,5,5
+    while (dst_idx &lt; src_idx) {
+        // balance&lt;0 表示要从集群其它节点的槽位迁移到本节点的槽位，所以此节点是槽位的目的节点
+        clusterManagerNode *dst = weightedNodes[dst_idx];
+        // balance&gt;0 表示要从集群本节点的槽位迁移到其它节点的槽位，所以此节点是槽位的源节点
+        clusterManagerNode *src = weightedNodes[src_idx];
+        int db = abs(dst-&gt;balance);
+        int sb = abs(src-&gt;balance);
+        int numslots = (db &lt; sb ? db : sb);
+        if (numslots &gt; 0) {
+            printf(&quot;Moving %d slots from %s:%d to %s:%d\n&quot;, numslots,
+                                                            src-&gt;ip,
+                                                            src-&gt;port,
+                                                            dst-&gt;ip,
+                                                            dst-&gt;port);
+            /* Actually move the slots. */
+            // 执行实际移动槽位
+            list *lsrc = listCreate(), *table = NULL;
+            listAddNodeTail(lsrc, src);
+            // 获取要迁移的槽，优先获取移动slot编号小的槽
+            table = clusterManagerComputeReshardTable(lsrc, numslots);
+            listRelease(lsrc);
+            int table_len = (int) listLength(table);
+            if (!table || table_len != numslots) {
+                clusterManagerLogErr(&quot;*** Assertion failed: Reshard table &quot;
+                                     &quot;!= number of slots&quot;);
+                result = 0;
+                goto end_move;
+            }
+            if (simulate) {
+                for (i = 0; i &lt; table_len; i++) printf(&quot;#&quot;);
+            } else {
+                int opts = CLUSTER_MANAGER_OPT_QUIET |
+                           CLUSTER_MANAGER_OPT_UPDATE;
+                listRewind(table, &amp;li);
+                while ((ln = listNext(&amp;li)) != NULL) {
+                    clusterManagerReshardTableItem *item = ln-&gt;value;
+                    char *err;
+                    // 迁移槽位
+                    result = clusterManagerMoveSlot(item-&gt;source,
+                                                    dst,
+                                                    item-&gt;slot,
+                                                    opts, &amp;err);
+                    if (!result) {
+                        clusterManagerLogErr(&quot;*** clusterManagerMoveSlot: %s\n&quot;, err);
+                        zfree(err);
+                        goto end_move;
+                    }
+                    printf(&quot;#&quot;);
+                    fflush(stdout);
+                }
+            }
+            printf(&quot;\n&quot;);
+end_move:
+            clusterManagerReleaseReshardTable(table);
+            if (!result) goto cleanup;
+        }
+        /* Update nodes balance. */
+        // 更新节点 balance。
+        dst-&gt;balance += numslots;
+        src-&gt;balance -= numslots;
+        if (dst-&gt;balance == 0) dst_idx++;
+        if (src-&gt;balance == 0) src_idx --;
+    }
+cleanup:
+    if (involved != NULL) listRelease(involved);
+    if (weightedNodes != NULL) zfree(weightedNodes);
+    return result;
+invalid_args:
+    fprintf(stderr, CLUSTER_MANAGER_INVALID_HOST_ARG);
+    return 0;
+}
+</code></pre><h2 id=codis-slot-rebalance算法>Codis Slot Rebalance算法</h2><h3 id=使用场景>使用场景</h3><p><code>Codis</code>的集群初始为<code>2个分片</code>，当业务增长需要扩容到<code>4个分片</code>的时候，我们可以手动指定slots指挥<code>Codis</code>进行数据迁移，也可以使用<code>AutoRebalance</code>让<code>Codis</code>自动的进行Slots数据迁移。</p><h3 id=迁移原则-1>迁移原则</h3><ul><li>尽可能的均匀分配Slots；</li><li>尽量减少迁移的Slots的数量；</li></ul><h3 id=slots分配方案-1>Slots分配方案</h3><ul><li>统计当前迁移中<code>Slots</code>的结果，用于当前迁移方案的基础数据；</li><li>按照每个<code>Group</code>可分配Slots的最大限制，统计Group中需要迁入/出的<code>Slots</code>信息；</li><li>依据现有的<code>Group</code>中<code>Slots</code>的数量构建红黑树，统计分配<code>Slots</code>；</li><li>审核并存储迁移方案；</li></ul><h3 id=代码实现httpsgithubcomcodislabscodisblobde1ad026e329561c22e2a3035fbfe89dc7fef764pkgtopomtopom_slotsgol547><a href=https://github.com/CodisLabs/codis/blob/de1ad026e329561c22e2a3035fbfe89dc7fef764/pkg/topom/topom_slots.go#L547 target=_blank rel=noopener>代码实现</a></h3><pre><code class=language-go>func (s *Topom) SlotsRebalance1(confirm bool) (map[int]int, error) {
+    s.mu.Lock()
+    defer s.mu.Unlock()
+    ctx, err := s.newContext()
+    if err != nil {
+        return nil, err
+    }
+
+    // 获取所有group的id,每一个group必须拥有redis实例，
+    // 依据id从小到大排序group，其中group的id最小值为1
+    var groupIds []int
+    for _, g := range ctx.group {
+        if len(g.Servers) != 0 {
+            groupIds = append(groupIds, g.Id)
+        }
+    }
+    sort.Ints(groupIds) // 按groupId从小到大排序
+
+    if len(groupIds) == 0 { // 如果group为空，返回错误
+        return nil, errors.Errorf(&quot;no valid group could be found&quot;)
+    }
+
+    // 每一个分片(组)都拥有3个属性
+    var (
+        // 需要给当前的group分配的slots的数量
+        assigned = make(map[int]int)
+        // 当前group需要移出的slots信息，其中key为group的id，value为slots的数组
+        pendings = make(map[int][]int)
+        // 当前group需要移出/入(为负数时代表移入)的slots数量，
+        // 其中key为group的id，value为slots的数量
+        moveout  = make(map[int]int)
+        docking  []int // 为需要最终操作的slots的列表
+    )
+    // 获取group的当前的slots的数量
+    var groupSize = func(gid int) int {
+        return assigned[gid] + len(pendings[gid]) - moveout[gid]
+    }
+
+    // don't migrate slot if it's being migrated
+    // 如果正在迁移，请不要迁移插槽
+    // 遍历slots，获取正在迁移中的slots的迁移结果并该结果计入本次的迁移统计
+    for _, m := range ctx.slots {
+        if m.Action.State != models.ActionNothing {
+            assigned[m.Action.TargetId]++ // 累加计算每个groupId已经分配的slot数量
+        }
+    }
+
+    // 按照平均值计算每个group可以分到的slots的数量下限(总量为1024)
+    var lowerBound = MaxSlotNum / len(groupIds)
+
+    // don't migrate slot if groupSize &lt; lowerBound
+    // 如果 groupSize &lt; lowerBound，则不要迁移插槽
+    // 遍历slots，统计需要迁移的slots信息
+    for _, m := range ctx.slots {
+        // 对于处于迁移状态中的slots不执行任何操作
+        if m.Action.State != models.ActionNothing {
+            continue
+        }
+        // 当前的slots属于集群中的一个group
+        if m.GroupId != 0 {
+            // slot所归属group中的slots的数量小于group的平均值，
+            // 则需要往这个group中分配新的slot
+            if groupSize(m.GroupId) &lt; lowerBound {
+                assigned[m.GroupId]++
+            } else {
+                // slot所归属group中的slots的数量大于group的平均值，
+                // 则需要将这个slot移出它所归属的group
+                pendings[m.GroupId] = append(pendings[m.GroupId], m.Id)
+            }
+        }
+    }
+
+    // 创建一个自定义比较器的红黑树，这棵树代表着需要进行slots迁移的所有group
+    // key是group的id，slots最少的在左面，slots最多的在右面，key是group的id
+    var tree = rbtree.NewWith(func(x, y interface{}) int {
+        var gid1 = x.(int)
+        var gid2 = y.(int)
+        if gid1 != gid2 {
+            if d := groupSize(gid1) - groupSize(gid2); d != 0 {
+                return d
+            }
+            return gid1 - gid2
+        }
+        return 0
+    })
+    for _, gid := range groupIds {
+        tree.Put(gid, nil)
+    }
+
+    // assign offline slots to the smallest group
+    // 将离线插槽分配给最小的组
+    for _, m := range ctx.slots { // 遍历所有的slots
+        // 对于处于迁移状态中的slots不执行任何操作
+        if m.Action.State != models.ActionNothing {
+            continue
+        }
+        if m.GroupId != 0 {
+            continue
+        }
+        // 有一些slots不属于任何group，需要将这些slots分配给slots最少的group，
+        // 也就是红黑树左面的最小的group
+        dest := tree.Left().Key.(int)
+        tree.Remove(dest)
+
+        docking = append(docking, m.Id) // 对接，记录slot
+        moveout[dest]-- // 记录最小分组需要move的个数
+
+        tree.Put(dest, nil)
+    }
+
+    // 每一个group能够获取slots的数量的上限，其实约等于 lowerBound + 1
+    var upperBound = (MaxSlotNum + len(groupIds) - 1) / len(groupIds)
+
+    // rebalance between different server groups
+    // 在不同的服务器组之间重新平衡
+    // 树中需要迁移的group大于等于2则需要进行rebalance，只有一个group就不需要了
+    for tree.Size() &gt;= 2 {
+        from := tree.Right().Key.(int)
+        tree.Remove(from)
+
+        // 当前group已经把所有需要移出的slots迁移出完毕
+        if len(pendings[from]) == moveout[from] {
+            continue
+        }
+        dest := tree.Left().Key.(int)
+        tree.Remove(dest)
+
+        var (
+            fromSize = groupSize(from)
+            destSize = groupSize(dest)
+        )
+        // 右面的group中slots的数量小于等于每个group的平均值，
+        // 则表示该group迁移完成，不需要再次加入tree中
+        if fromSize &lt;= lowerBound {
+            break
+        }
+        // 左面的group中slots的数量大于等于每个group的最大值，
+        // 则表示该group也迁移完成，不需要再次加入tree中
+        if destSize &gt;= upperBound {
+            break
+        }
+        // 左右group中的slots的数量相差小于等于1，
+        // 则表示这个两个group也不需要再次加入tree中了
+        if d := fromSize - destSize; d &lt;= 1 {
+            break
+        }
+        // 右面的group移出了一个，左面的group加入了一个
+        moveout[from]++
+        moveout[dest]--
+
+        // 还需要继续迁移，将这两个group继续加入树中
+        tree.Put(from, nil)
+        tree.Put(dest, nil)
+    }
+
+    for gid, n := range moveout {
+        if n &lt; 0 {
+            continue
+        }
+        // 当前group需要移出n个slots
+        if n &gt; 0 {
+            // 倒序遍历需要移出的slots的列表，将需要迁移的slots加入到docking中
+            sids := pendings[gid]
+            sort.Sort(sort.Reverse(sort.IntSlice(sids)))
+
+            docking = append(docking, sids[0:n]...)
+            pendings[gid] = sids[n:]
+        }
+        delete(moveout, gid)
+    }
+    sort.Ints(docking) // 排序需要操作的slots列表
+
+    // 遍历group，获取每一个group需要迁入多少个slots并将docking中的slots分配给对应的group，
+    // plans就是最终的分配方案，将某一个slot分配给某一个group
+    var plans = make(map[int]int)
+    // 构建迁移方案，填充平衡需要移动slot=&gt;gid
+    for _, gid := range groupIds {
+        var in = -moveout[gid]
+        for i := 0; i &lt; in &amp;&amp; len(docking) != 0; i++ {
+            plans[docking[0]] = gid
+            docking = docking[1:]
+        }
+    }
+
+    // 审批该方案
+    if !confirm {
+        return plans, nil
+    }
+
+    // 存储slots与group的分配方案后续执行
+    var slotIds []int
+    for sid, _ := range plans {
+        slotIds = append(slotIds, sid)
+    }
+    sort.Ints(slotIds)
+
+    for _, sid := range slotIds {
+        m, err := ctx.getSlotMapping(sid)
+        if err != nil {
+            return nil, err
+        }
+        defer s.dirtySlotsCache(m.Id)
+
+        m.Action.State = models.ActionPending
+        m.Action.Index = ctx.maxSlotActionIndex() + 1
+        m.Action.TargetId = plans[sid]
+        if err := s.storeUpdateSlotMapping(m); err != nil {
+            return nil, err
+        }
+    }
+    return plans, nil
+}
+</code></pre><h2 id=参考链接>参考链接</h2><ul><li><a href=https://bugwz.com/2020/05/21/codis-slots-rebalance/ target=_blank rel=noopener>Codis的Slots-Rebalance算法</a></li><li><a href=https://blog.csdn.net/xxt99/article/details/124912390 target=_blank rel=noopener>redis-6.0.8-均衡哈希函数</a></li></ul></article><div class=my-4><a href=/tags/codis/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#codis</a>
+<a href=/tags/redis/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#redis</a>
+<a href=/tags/redis-cluster/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#redis cluster</a></div><div class=py-2><div class="my-8 flex flex-col items-center md:flex-row"><a href=/authors/lbbniu/ class="md:me-4 text-primary-text h-24 w-24"><i class="fas fa-user-circle fa-6x"></i></a><div class="mt-4 w-full md:mt-0 md:w-auto"><a href=/authors/lbbniu/ class="mb-2 block border-b pb-1 text-lg font-bold"><h3>lbbniu</h3></a><span class="block pb-2"></span></div></div></div><div class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"><div><span class="text-primary-text block font-bold">上一页</span>
+<a href=/2023/06/18/tarsgo-rpc/ class=block>写给Go开发者的Tars教程-通信模式</a></div><div class="mt-4 md:mt-0 md:text-right"><span class="text-primary-text block font-bold">下一页</span>
+<a href=/2023/02/24/uri-addr/ class=block>Golang语法的25个练习题：21至25题</a></div></div></div><div class=col-span-2><div class="bg-primary-bg
+prose sticky top-16 z-10 hidden px-6 py-4 lg:block"><h3>本页内容</h3></div><div class="sticky-toc hidden px-6 pb-6 lg:block"><nav id=TableOfContents><ul><li><a href=#redis-cluster-slot-rebalance算法>Redis Cluster Slot Rebalance算法</a><ul><li><a href=#迁移原则>迁移原则</a></li><li><a href=#slots分配方案>Slots分配方案</a></li><li><a href=#代码实现httpsgithubcomredisredisblobaa2403ca98f6a39b6acd8373f8de1a7ba75162d5srcredis-clicl7043><a href=https://github.com/redis/redis/blob/aa2403ca98f6a39b6acd8373f8de1a7ba75162d5/src/redis-cli.c#L7043>代码实现</a></a></li></ul></li><li><a href=#codis-slot-rebalance算法>Codis Slot Rebalance算法</a><ul><li><a href=#使用场景>使用场景</a></li><li><a href=#迁移原则-1>迁移原则</a></li><li><a href=#slots分配方案-1>Slots分配方案</a></li><li><a href=#代码实现httpsgithubcomcodislabscodisblobde1ad026e329561c22e2a3035fbfe89dc7fef764pkgtopomtopom_slotsgol547><a href=https://github.com/CodisLabs/codis/blob/de1ad026e329561c22e2a3035fbfe89dc7fef764/pkg/topom/topom_slots.go#L547>代码实现</a></a></li></ul></li><li><a href=#参考链接>参考链接</a></li></ul></nav></div><script>window.addEventListener("DOMContentLoaded",()=>{enableStickyToc()})</script></div></div><script>document.addEventListener("DOMContentLoaded",()=>{hljs.highlightAll()})</script></div></div></main><footer class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b"><p class="text-sm text-tertiary-text">&copy; 2021 <a href=https://blog.lbbniu.com/>lbbniu</a>
+&#183; Powered by the <a href=https://github.com/wangchucheng/hugo-eureka class=hover:text-eureka>Eureka</a> theme for <a href=https://gohugo.io class=hover:text-eureka>Hugo</a></p></div></div></footer></body></html>

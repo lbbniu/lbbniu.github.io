@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>图 on lbbniu</title><link>/tags/%E5%9B%BE/</link><description>Recent content in 图 on lbbniu</description><generator>Hugo -- gohugo.io</generator><language>zh</language><managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor><webMaster>lbbniu@gmail.com (lbbniu)</webMaster><copyright>&amp;copy; 2021 &lt;a href="https://blog.lbbniu.com/">lbbniu&lt;/a></copyright><lastBuildDate>Tue, 10 Jan 2023 00:01:00 +0800</lastBuildDate><atom:link href="/tags/%E5%9B%BE/index.xml" rel="self" type="application/rss+xml"/><item><title>面试题 04.01 节点间通路</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/route-between-nodes-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/route-between-nodes-lcci/</guid><description>面试题 04.01 节点间通路 节点间通路。给定有向图，设计一个算法，找出两个节点之间是否存在一条路径。
+示例1:
+输入：n = 3, graph = [[0, 1], [0, 2], [1, 2], [1, 2]], start = 0, target = 2 输出：true 示例2:
+输入：n = 5, graph = [[0, 1], [0, 2], [0, 4], [0, 4], [0, 1], [1, 3], [1, 4], [1, 3], [2, 3], [3, 4]], start = 0, target = 4 输出 true 提示：
+节点数量n在[0, 1e5]范围内。 节点编号大于等于 0 小于 n。 图中可能存在自环和平行边。 func findWhetherExistsPath(n int, graph [][]int, start int, target int) bool { } LeetCode题库地址 https://leetcode.</description></item><item><title>剑指 Offer II 086 分割回文子字符串</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/m99oja/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/m99oja/</guid><description>剑指 Offer II 086 分割回文子字符串 给定一个字符串 s ，请将 s 分割成一些子串，使每个子串都是 回文串 ，返回 s 所有可能的分割方案。
+回文串&amp;nbsp;是正着读和反着读都一样的字符串。
+&amp;nbsp;
+示例 1：
+输入：s = &amp;quot;google&amp;quot; 输出：[[&amp;quot;g&amp;quot;,&amp;quot;o&amp;quot;,&amp;quot;o&amp;quot;,&amp;quot;g&amp;quot;,&amp;quot;l&amp;quot;,&amp;quot;e&amp;quot;],[&amp;quot;g&amp;quot;,&amp;quot;oo&amp;quot;,&amp;quot;g&amp;quot;,&amp;quot;l&amp;quot;,&amp;quot;e&amp;quot;],[&amp;quot;goog&amp;quot;,&amp;quot;l&amp;quot;,&amp;quot;e&amp;quot;]] 示例 2：
+输入：s = &amp;quot;aab&amp;quot; 输出：[[&amp;quot;a&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;b&amp;quot;],[&amp;quot;aa&amp;quot;,&amp;quot;b&amp;quot;]] 示例 3：
+输入：s = &amp;quot;a&amp;quot; 输出：[[&amp;quot;a&amp;quot;]] &amp;nbsp;
+提示：
+1 &amp;lt;= s.length &amp;lt;= 16 s 仅由小写英文字母组成 &amp;nbsp;
+注意：本题与主站 131&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/palindrome-partitioning/
+func partition(s string) [][]string { } LeetCode题库地址 https://leetcode.cn/problems/M99OJA</description></item><item><title>剑指 Offer II 106 二分图</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/veab3k/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/veab3k/</guid><description>剑指 Offer II 106 二分图 存在一个 无向图 ，图中有 n 个节点。其中每个节点都有一个介于 0 到 n - 1 之间的唯一编号。
+给定一个二维数组 graph&amp;nbsp;，表示图，其中 graph[u] 是一个节点数组，由节点 u 的邻接节点组成。形式上，对于&amp;nbsp;graph[u] 中的每个 v ，都存在一条位于节点 u 和节点 v 之间的无向边。该无向图同时具有以下属性：
+不存在自环（graph[u] 不包含 u）。 不存在平行边（graph[u] 不包含重复值）。 如果 v 在 graph[u] 内，那么 u 也应该在 graph[v] 内（该图是无向图） 这个图可能不是连通图，也就是说两个节点 u 和 v 之间可能不存在一条连通彼此的路径。 二分图 定义：如果能将一个图的节点集合分割成两个独立的子集 A 和 B ，并使图中的每一条边的两个节点一个来自 A 集合，一个来自 B 集合，就将这个图称为 二分图 。
+如果图是二分图，返回 true ；否则，返回 false 。
+&amp;nbsp;
+示例 1：
+输入：graph = [[1,2,3],[0,2],[0,1,3],[0,2]] 输出：false 解释：不能将节点分割成两个独立的子集，以使每条边都连通一个子集中的一个节点与另一个子集中的一个节点。 示例 2：</description></item><item><title>剑指 Offer II 110 所有路径</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/bp4bmd/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/bp4bmd/</guid><description>剑指 Offer II 110 所有路径 给定一个有&amp;nbsp;n&amp;nbsp;个节点的有向无环图，用二维数组&amp;nbsp;graph&amp;nbsp;表示，请找到所有从&amp;nbsp;0&amp;nbsp;到&amp;nbsp;n-1&amp;nbsp;的路径并输出（不要求按顺序）。
+graph&amp;nbsp;的第 i 个数组中的单元都表示有向图中 i&amp;nbsp;号节点所能到达的下一些结点（译者注：有向图是有方向的，即规定了 a&amp;rarr;b 你就不能从 b&amp;rarr;a ），若为空，就是没有下一个节点了。
+&amp;nbsp;
+示例 1：
+输入：graph = [[1,2],[3],[3],[]] 输出：[[0,1,3],[0,2,3]] 解释：有两条路径 0 -&amp;gt; 1 -&amp;gt; 3 和 0 -&amp;gt; 2 -&amp;gt; 3 示例 2：
+输入：graph = [[4,3,1],[3,2,4],[3],[4],[]] 输出：[[0,4],[0,3,4],[0,1,3,4],[0,1,2,3,4],[0,1,4]] 示例 3：
+输入：graph = [[1],[]] 输出：[[0,1]] 示例 4：
+输入：graph = [[1,2,3],[2],[3],[]] 输出：[[0,1,2,3],[0,2,3],[0,3]] 示例 5：
+输入：graph = [[1,3],[2],[3],[]] 输出：[[0,1,2,3],[0,3]] &amp;nbsp;
+提示：
+n == graph.length 2 &amp;lt;= n &amp;lt;= 15 0 &amp;lt;= graph[i][j] &amp;lt; n graph[i][j] != i&amp;nbsp; 保证输入为有向无环图 (GAD) &amp;nbsp;</description></item><item><title>剑指 Offer II 111 计算除法</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/vlzxql/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/vlzxql/</guid><description>剑指 Offer II 111 计算除法 给定一个变量对数组 equations 和一个实数值数组 values 作为已知条件，其中 equations[i] = [Ai, Bi] 和 values[i] 共同表示等式 Ai / Bi = values[i] 。每个 Ai 或 Bi 是一个表示单个变量的字符串。
+另有一些以数组 queries 表示的问题，其中 queries[j] = [Cj, Dj] 表示第 j 个问题，请你根据已知条件找出 Cj / Dj = ? 的结果作为答案。
+返回 所有问题的答案 。如果存在某个无法确定的答案，则用 -1.0 替代这个答案。如果问题中出现了给定的已知条件中没有出现的字符串，也需要用 -1.0 替代这个答案。
+注意：输入总是有效的。可以假设除法运算中不会出现除数为 0 的情况，且不存在任何矛盾的结果。
+&amp;nbsp;
+示例 1：
+输入：equations = [[&amp;quot;a&amp;quot;,&amp;quot;b&amp;quot;],[&amp;quot;b&amp;quot;,&amp;quot;c&amp;quot;]], values = [2.0,3.0], queries = [[&amp;quot;a&amp;quot;,&amp;quot;c&amp;quot;],[&amp;quot;b&amp;quot;,&amp;quot;a&amp;quot;],[&amp;quot;a&amp;quot;,&amp;quot;e&amp;quot;],[&amp;quot;a&amp;quot;,&amp;quot;a&amp;quot;],[&amp;quot;x&amp;quot;,&amp;quot;x&amp;quot;]] 输出：[6.00000,0.50000,-1.00000,1.00000,-1.00000] 解释： 条件：a / b = 2.0, b / c = 3.</description></item><item><title>剑指 Offer II 112 最长递增路径</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/fptfwp/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/fptfwp/</guid><description>剑指 Offer II 112 最长递增路径 给定一个&amp;nbsp;m x n 整数矩阵&amp;nbsp;matrix ，找出其中 最长递增路径 的长度。
+对于每个单元格，你可以往上，下，左，右四个方向移动。 不能 在 对角线 方向上移动或移动到 边界外（即不允许环绕）。
+&amp;nbsp;
+示例 1：
+输入：matrix = [[9,9,4],[6,6,8],[2,1,1]] 输出：4 解释：最长递增路径为&amp;nbsp;[1, 2, 6, 9]。 示例 2：
+输入：matrix = [[3,4,5],[3,2,6],[2,2,1]] 输出：4 解释：最长递增路径是&amp;nbsp;[3, 4, 5, 6]。注意不允许在对角线方向上移动。 示例 3：
+输入：matrix = [[1]] 输出：1 &amp;nbsp;
+提示：
+m == matrix.length n == matrix[i].length 1 &amp;lt;= m, n &amp;lt;= 200 0 &amp;lt;= matrix[i][j] &amp;lt;= 231 - 1 &amp;nbsp;
+注意：本题与主站 329&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/longest-increasing-path-in-a-matrix/
+func longestIncreasingPath(matrix [][]int) int { } LeetCode题库地址 https://leetcode.</description></item><item><title>剑指 Offer II 113 课程顺序</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/qa2igt/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/qa2igt/</guid><description>剑指 Offer II 113 课程顺序 现在总共有 numCourses&amp;nbsp;门课需要选，记为&amp;nbsp;0&amp;nbsp;到&amp;nbsp;numCourses-1。
+给定一个数组&amp;nbsp;prerequisites ，它的每一个元素&amp;nbsp;prerequisites[i]&amp;nbsp;表示两门课程之间的先修顺序。&amp;nbsp;例如&amp;nbsp;prerequisites[i] = [ai, bi]&amp;nbsp;表示想要学习课程 ai&amp;nbsp;，需要先完成课程 bi&amp;nbsp;。
+请根据给出的总课程数 &amp;nbsp;numCourses 和表示先修顺序的&amp;nbsp;prerequisites&amp;nbsp;得出一个可行的修课序列。
+可能会有多个正确的顺序，只要任意返回一种就可以了。如果不可能完成所有课程，返回一个空数组。
+&amp;nbsp;
+示例&amp;nbsp;1:
+输入: numCourses = 2, prerequisites = [[1,0]] 输出: [0,1] 解释:&amp;nbsp;总共有 2 门课程。要学习课程 1，你需要先完成课程 0。因此，正确的课程顺序为 [0,1] 。 示例&amp;nbsp;2:
+输入: numCourses = 4, prerequisites = [[1,0],[2,0],[3,1],[3,2]] 输出: [0,1,2,3] or [0,2,1,3] 解释:&amp;nbsp;总共有 4 门课程。要学习课程 3，你应该先完成课程 1 和课程 2。并且课程 1 和课程 2 都应该排在课程 0 之后。 &amp;nbsp;因此，一个正确的课程顺序是&amp;nbsp;[0,1,2,3] 。另一个正确的排序是&amp;nbsp;[0,2,1,3] 。 示例 3:
+输入: numCourses = 1, prerequisites = [] 输出: [0] 解释:&amp;nbsp;总共 1 门课，直接修第一门课就可。 &amp;nbsp;</description></item><item><title>剑指 Offer II 114 外星文字典</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/jf1jut/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/jf1jut/</guid><description>剑指 Offer II 114 外星文字典 现有一种使用英语字母的外星文语言，这门语言的字母顺序与英语顺序不同。
+给定一个字符串列表 words ，作为这门语言的词典，words 中的字符串已经 按这门新语言的字母顺序进行了排序 。
+请你根据该词典还原出此语言中已知的字母顺序，并 按字母递增顺序 排列。若不存在合法字母顺序，返回 &amp;quot;&amp;quot; 。若存在多种可能的合法字母顺序，返回其中 任意一种 顺序即可。
+字符串 s 字典顺序小于 字符串 t 有两种情况：
+在第一个不同字母处，如果 s 中的字母在这门外星语言的字母顺序中位于 t 中字母之前，那么&amp;nbsp;s 的字典顺序小于 t 。 如果前面 min(s.length, t.length) 字母都相同，那么 s.length &amp;lt; t.length 时，s 的字典顺序也小于 t 。 &amp;nbsp;
+示例 1：
+输入：words = [&amp;quot;wrt&amp;quot;,&amp;quot;wrf&amp;quot;,&amp;quot;er&amp;quot;,&amp;quot;ett&amp;quot;,&amp;quot;rftt&amp;quot;] 输出：&amp;quot;wertf&amp;quot; 示例 2：
+输入：words = [&amp;quot;z&amp;quot;,&amp;quot;x&amp;quot;] 输出：&amp;quot;zx&amp;quot; 示例 3：
+输入：words = [&amp;quot;z&amp;quot;,&amp;quot;x&amp;quot;,&amp;quot;z&amp;quot;] 输出：&amp;quot;&amp;quot; 解释：不存在合法字母顺序，因此返回 &amp;quot;&amp;quot; 。 &amp;nbsp;
+提示：
+1 &amp;lt;= words.length &amp;lt;= 100 1 &amp;lt;= words[i].</description></item><item><title>剑指 Offer II 115 重建序列</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/ur2n8p/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/ur2n8p/</guid><description>剑指 Offer II 115 重建序列 给定一个长度为 n 的整数数组 nums ，其中 nums 是范围为 [1，n] 的整数的排列。还提供了一个 2D 整数数组&amp;nbsp;sequences&amp;nbsp;，其中&amp;nbsp;sequences[i]&amp;nbsp;是&amp;nbsp;nums&amp;nbsp;的子序列。
+检查 nums 是否是唯一的最短&amp;nbsp;超序列 。最短 超序列 是 长度最短 的序列，并且所有序列&amp;nbsp;sequences[i]&amp;nbsp;都是它的子序列。对于给定的数组&amp;nbsp;sequences&amp;nbsp;，可能存在多个有效的 超序列 。
+例如，对于&amp;nbsp;sequences = [[1,2],[1,3]]&amp;nbsp;，有两个最短的 超序列 ，[1,2,3] 和 [1,3,2] 。 而对于&amp;nbsp;sequences = [[1,2],[1,3],[1,2,3]]&amp;nbsp;，唯一可能的最短 超序列 是 [1,2,3] 。[1,2,3,4] 是可能的超序列，但不是最短的。 如果 nums 是序列的唯一最短 超序列 ，则返回 true ，否则返回 false 。
+子序列 是一个可以通过从另一个序列中删除一些元素或不删除任何元素，而不改变其余元素的顺序的序列。
+&amp;nbsp;
+示例 1：
+输入：nums = [1,2,3], sequences = [[1,2],[1,3]] 输出：false 解释：有两种可能的超序列：[1,2,3]和[1,3,2]。 序列 [1,2] 是[1,2,3]和[1,3,2]的子序列。 序列 [1,3] 是[1,2,3]和[1,3,2]的子序列。 因为 nums 不是唯一最短的超序列，所以返回false。 示例 2：</description></item><item><title>剑指 Offer II 116 省份数量</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/blyhh0/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/blyhh0/</guid><description>剑指 Offer II 116 省份数量 有 n 个城市，其中一些彼此相连，另一些没有相连。如果城市 a 与城市 b 直接相连，且城市 b 与城市 c 直接相连，那么城市 a 与城市 c 间接相连。
+省份 是一组直接或间接相连的城市，组内不含其他没有相连的城市。
+给你一个 n x n 的矩阵 isConnected ，其中 isConnected[i][j] = 1 表示第 i 个城市和第 j 个城市直接相连，而 isConnected[i][j] = 0 表示二者不直接相连。
+返回矩阵中 省份 的数量。
+&amp;nbsp;
+示例 1：
+输入：isConnected = [[1,1,0],[1,1,0],[0,0,1]] 输出：2 示例 2：
+输入：isConnected = [[1,0,0],[0,1,0],[0,0,1]] 输出：3 &amp;nbsp;
+提示：
+1 &amp;lt;= n &amp;lt;= 200 n == isConnected.length n == isConnected[i].length isConnected[i][j] 为 1 或 0 isConnected[i][i] == 1 isConnected[i][j] == isConnected[j][i] &amp;nbsp;</description></item><item><title>剑指 Offer II 118 多余的边</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/7lpjuw/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/7lpjuw/</guid><description>剑指 Offer II 118 多余的边 树可以看成是一个连通且 无环&amp;nbsp;的&amp;nbsp;无向&amp;nbsp;图。
+给定往一棵&amp;nbsp;n 个节点 (节点值&amp;nbsp;1～n) 的树中添加一条边后的图。添加的边的两个顶点包含在 1 到 n&amp;nbsp;中间，且这条附加的边不属于树中已存在的边。图的信息记录于长度为 n 的二维数组 edges&amp;nbsp;，edges[i] = [ai, bi]&amp;nbsp;表示图中在 ai 和 bi 之间存在一条边。
+请找出一条可以删去的边，删除后可使得剩余部分是一个有着 n 个节点的树。如果有多个答案，则返回数组&amp;nbsp;edges&amp;nbsp;中最后出现的边。
+&amp;nbsp;
+示例 1：
+输入: edges = [[1,2],[1,3],[2,3]] 输出: [2,3] 示例 2：
+输入: edges = [[1,2],[2,3],[3,4],[1,4],[1,5]] 输出: [1,4] &amp;nbsp;
+提示:
+n == edges.length 3 &amp;lt;= n &amp;lt;= 1000 edges[i].length == 2 1 &amp;lt;= ai&amp;nbsp;&amp;lt; bi&amp;nbsp;&amp;lt;= edges.length ai != bi edges 中无重复元素 给定的图是连通的&amp;nbsp; &amp;nbsp;
+注意：本题与主站 684&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/redundant-connection/
+func findRedundantConnection(edges [][]int) []int { } LeetCode题库地址 https://leetcode.</description></item><item><title>【2023-01-10每日一题】753. 破解保险箱[Hard]</title><link>/study/leetcode/cracking-the-safe/</link><pubDate>Tue, 10 Jan 2023 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/cracking-the-safe/</guid><description>2023-01-10每日一题：753. 破解保险箱 难度：Hard
+标签：深度优先搜索 、 图 、 欧拉回路
+有一个需要密码才能打开的保险箱。密码是&amp;nbsp;n 位数, 密码的每一位是&amp;nbsp;k&amp;nbsp;位序列&amp;nbsp;0, 1, ..., k-1&amp;nbsp;中的一个 。
+你可以随意输入密码，保险箱会自动记住最后&amp;nbsp;n&amp;nbsp;位输入，如果匹配，则能够打开保险箱。
+举个例子，假设密码是&amp;nbsp;&amp;quot;345&amp;quot;，你可以输入&amp;nbsp;&amp;quot;012345&amp;quot;&amp;nbsp;来打开它，只是你输入了 6&amp;nbsp;个字符.
+请返回一个能打开保险箱的最短字符串。
+&amp;nbsp;
+示例1:
+输入: n = 1, k = 2 输出: &amp;quot;01&amp;quot; 说明: &amp;quot;10&amp;quot;也可以打开保险箱。 &amp;nbsp;
+示例2:
+输入: n = 2, k = 2 输出: &amp;quot;00110&amp;quot; 说明: &amp;quot;01100&amp;quot;, &amp;quot;10011&amp;quot;, &amp;quot;11001&amp;quot; 也能打开保险箱。 &amp;nbsp;
+提示：
+n 的范围是&amp;nbsp;[1, 4]。 k 的范围是&amp;nbsp;[1, 10]。 k^n 最大可能为&amp;nbsp;4096。 &amp;nbsp;
+方法一： 详细思路过程见官方题解，这里只做个人刷题记录，方便后续查询阅读
+func crackSafe(n int, k int) string { } 复杂度分析 LeetCode题库地址 https://leetcode.cn/problems/cracking-the-safe</description></item><item><title>【2022-12-19每日一题】1971. 寻找图中是否存在路径[Easy]</title><link>/study/leetcode/find-if-path-exists-in-graph/</link><pubDate>Mon, 19 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/find-if-path-exists-in-graph/</guid><description>2022-12-19每日一题：1971. 寻找图中是否存在路径 难度：Easy
+标签：深度优先搜索 、 广度优先搜索 、 并查集 、 图
+有一个具有 n 个顶点的 双向 图，其中每个顶点标记从 0 到 n - 1（包含 0 和 n - 1）。图中的边用一个二维整数数组 edges 表示，其中 edges[i] = [ui, vi] 表示顶点 ui 和顶点 vi 之间的双向边。 每个顶点对由 最多一条 边连接，并且没有顶点存在与自身相连的边。
+请你确定是否存在从顶点 source 开始，到顶点 destination 结束的 有效路径 。
+给你数组 edges 和整数 n、source 和 destination，如果从 source 到 destination 存在 有效路径 ，则返回 true，否则返回 false 。
+&amp;nbsp;
+示例 1：
+输入：n = 3, edges = [[0,1],[1,2],[2,0]], source = 0, destination = 2 输出：true 解释：存在由顶点 0 到顶点 2 的路径: - 0 → 1 → 2 - 0 → 2 示例 2：</description></item><item><title>【2022-12-14每日一题】1697. 检查边长度限制的路径是否存在[Hard]</title><link>/study/leetcode/checking-existence-of-edge-length-limited-paths/</link><pubDate>Wed, 14 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/checking-existence-of-edge-length-limited-paths/</guid><description>2022-12-14每日一题：1697. 检查边长度限制的路径是否存在 难度：Hard
+标签：并查集 、 图 、 数组 、 排序
+给你一个 n 个点组成的无向图边集 edgeList ，其中 edgeList[i] = [ui, vi, disi] 表示点 ui 和点 vi 之间有一条长度为 disi 的边。请注意，两个点之间可能有 超过一条边 。
+给你一个查询数组queries ，其中 queries[j] = [pj, qj, limitj] ，你的任务是对于每个查询 queries[j] ，判断是否存在从 pj 到 qj 的路径，且这条路径上的每一条边都 严格小于 limitj 。
+请你返回一个 布尔数组 answer ，其中 answer.length == queries.length ，当 queries[j] 的查询结果为 true 时， answer 第 j 个值为 true ，否则为 false 。
+示例 1：
+输入：n = 3, edgeList = [[0,1,2],[1,2,4],[2,0,8],[1,0,16]], queries = [[0,1,2],[0,2,5]] 输出：[false,true] 解释：上图为给定的输入数据。注意到 0 和 1 之间有两条重边，分别为 2 和 16 。 对于第一个查询，0 和 1 之间没有小于 2 的边，所以我们返回 false 。 对于第二个查询，有一条路径（0 -> 1 -> 2）两条边都小于 5 ，所以这个查询我们返回 true 。 示例 2：</description></item><item><title>【2022-11-26每日一题】882. 细分图中的可到达节点[Hard]</title><link>/study/leetcode/reachable-nodes-in-subdivided-graph/</link><pubDate>Sat, 26 Nov 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/reachable-nodes-in-subdivided-graph/</guid><description>2022-11-26每日一题：882. 细分图中的可到达节点 难度：Hard
+标签：图 、 最短路 、 堆（优先队列）
+给你一个无向图（原始图），图中有 n 个节点，编号从 0 到 n - 1 。你决定将图中的每条边 细分 为一条节点链，每条边之间的新节点数各不相同。
+图用由边组成的二维数组 edges 表示，其中&amp;nbsp;edges[i] = [ui, vi, cnti] 表示原始图中节点&amp;nbsp;ui 和&amp;nbsp;vi 之间存在一条边，cnti 是将边 细分 后的新节点总数。注意，cnti == 0 表示边不可细分。
+要 细分 边 [ui, vi] ，需要将其替换为 (cnti + 1) 条新边，和&amp;nbsp;cnti 个新节点。新节点为 x1, x2, ..., xcnti ，新边为 [ui, x1], [x1, x2], [x2, x3], ..., [xcnti+1, xcnti], [xcnti, vi] 。
+现在得到一个&amp;nbsp;新的细分图 ，请你计算从节点 0 出发，可以到达多少个节点？如果节点间距离是 maxMoves 或更少，则视为 可以到达 。
+给你原始图和 maxMoves ，返回 新的细分图中从节点 0 出发 可到达的节点数&amp;nbsp;。</description></item><item><title>【2022-10-16每日一题】886. 可能的二分法[Medium]</title><link>/study/leetcode/possible-bipartition/</link><pubDate>Sun, 16 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/possible-bipartition/</guid><description>2022-10-16每日一题：886. 可能的二分法 难度：Medium
+标签：深度优先搜索 、 广度优先搜索 、 并查集 、 图
+给定一组&amp;nbsp;n&amp;nbsp;人（编号为&amp;nbsp;1, 2, ..., n），&amp;nbsp;我们想把每个人分进任意大小的两组。每个人都可能不喜欢其他人，那么他们不应该属于同一组。
+给定整数 n&amp;nbsp;和数组 dislikes&amp;nbsp;，其中&amp;nbsp;dislikes[i] = [ai, bi]&amp;nbsp;，表示不允许将编号为 ai&amp;nbsp;和&amp;nbsp;&amp;nbsp;bi的人归入同一组。当可以用这种方法将所有人分进两组时，返回 true；否则返回 false。
+&amp;nbsp;
+示例 1：
+输入：n = 4, dislikes = [[1,2],[1,3],[2,4]] 输出：true 解释：group1 [1,4], group2 [2,3] 示例 2：
+输入：n = 3, dislikes = [[1,2],[1,3],[2,3]] 输出：false 示例 3：
+输入：n = 5, dislikes = [[1,2],[2,3],[3,4],[4,5],[1,5]] 输出：false &amp;nbsp;
+提示：
+1 &amp;lt;= n &amp;lt;= 2000 0 &amp;lt;= dislikes.length &amp;lt;= 104 dislikes[i].length == 2 1 &amp;lt;= dislikes[i][j] &amp;lt;= n ai&amp;nbsp;&amp;lt; bi dislikes&amp;nbsp;中每一组都 不同 &amp;nbsp;</description></item></channel></rss>

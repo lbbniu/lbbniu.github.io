@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>广度优先搜索 on lbbniu</title><link>/tags/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/</link><description>Recent content in 广度优先搜索 on lbbniu</description><generator>Hugo -- gohugo.io</generator><language>zh</language><managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor><webMaster>lbbniu@gmail.com (lbbniu)</webMaster><copyright>&amp;copy; 2021 &lt;a href="https://blog.lbbniu.com/">lbbniu&lt;/a></copyright><lastBuildDate>Mon, 19 Dec 2022 00:01:00 +0800</lastBuildDate><atom:link href="/tags/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/index.xml" rel="self" type="application/rss+xml"/><item><title>剑指 Offer 13 机器人的运动范围</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/ji-qi-ren-de-yun-dong-fan-wei-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/ji-qi-ren-de-yun-dong-fan-wei-lcof/</guid><description>剑指 Offer 13 机器人的运动范围 地上有一个m行n列的方格，从坐标 [0,0] 到坐标 [m-1,n-1] 。一个机器人从坐标 [0, 0] 的格子开始移动，它每次可以向左、右、上、下移动一格（不能移动到方格外），也不能进入行坐标和列坐标的数位之和大于k的格子。例如，当k为18时，机器人能够进入方格 [35, 37] ，因为3+5+3+7=18。但它不能进入方格 [35, 38]，因为3+5+3+8=19。请问该机器人能够到达多少个格子？
+&amp;nbsp;
+示例 1：
+输入：m = 2, n = 3, k = 1 输出：3 示例 2：
+输入：m = 3, n = 1, k = 0 输出：1 提示：
+1 &amp;lt;= n,m &amp;lt;= 100 0 &amp;lt;= k&amp;nbsp;&amp;lt;= 20 func movingCount(m int, n int, k int) int { } LeetCode题库地址 https://leetcode.cn/problems/ji-qi-ren-de-yun-dong-fan-wei-lcof</description></item><item><title>面试题13 机器人的运动范围</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/ji-qi-ren-de-yun-dong-fan-wei-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/ji-qi-ren-de-yun-dong-fan-wei-lcof/</guid><description>面试题13 机器人的运动范围 地上有一个m行n列的方格，从坐标 [0,0] 到坐标 [m-1,n-1] 。一个机器人从坐标 [0, 0] 的格子开始移动，它每次可以向左、右、上、下移动一格（不能移动到方格外），也不能进入行坐标和列坐标的数位之和大于k的格子。例如，当k为18时，机器人能够进入方格 [35, 37] ，因为3+5+3+7=18。但它不能进入方格 [35, 38]，因为3+5+3+8=19。请问该机器人能够到达多少个格子？
+&amp;nbsp;
+示例 1：
+输入：m = 2, n = 3, k = 1 输出：3 示例 2：
+输入：m = 3, n = 1, k = 0 输出：1 提示：
+1 &amp;lt;= n,m &amp;lt;= 100 0 &amp;lt;= k&amp;nbsp;&amp;lt;= 20 func movingCount(m int, n int, k int) int { } LeetCode题库地址 https://leetcode.cn/problems/ji-qi-ren-de-yun-dong-fan-wei-lcof</description></item><item><title>面试题 04.01 节点间通路</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/route-between-nodes-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/route-between-nodes-lcci/</guid><description>面试题 04.01 节点间通路 节点间通路。给定有向图，设计一个算法，找出两个节点之间是否存在一条路径。
+示例1:
+输入：n = 3, graph = [[0, 1], [0, 2], [1, 2], [1, 2]], start = 0, target = 2 输出：true 示例2:
+输入：n = 5, graph = [[0, 1], [0, 2], [0, 4], [0, 4], [0, 1], [1, 3], [1, 4], [1, 3], [2, 3], [3, 4]], start = 0, target = 4 输出 true 提示：
+节点数量n在[0, 1e5]范围内。 节点编号大于等于 0 小于 n。 图中可能存在自环和平行边。 func findWhetherExistsPath(n int, graph [][]int, start int, target int) bool { } LeetCode题库地址 https://leetcode.</description></item><item><title>剑指 Offer 27 二叉树的镜像</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/er-cha-shu-de-jing-xiang-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/er-cha-shu-de-jing-xiang-lcof/</guid><description>剑指 Offer 27 二叉树的镜像 请完成一个函数，输入一个二叉树，该函数输出它的镜像。
+例如输入：
+&amp;nbsp; &amp;nbsp; &amp;nbsp;4
+&amp;nbsp; &amp;nbsp;/ &amp;nbsp; \
+&amp;nbsp; 2 &amp;nbsp; &amp;nbsp; 7
+&amp;nbsp;/ \ &amp;nbsp; / \
+1 &amp;nbsp; 3 6 &amp;nbsp; 9
+镜像输出：
+&amp;nbsp; &amp;nbsp; &amp;nbsp;4
+&amp;nbsp; &amp;nbsp;/ &amp;nbsp; \
+&amp;nbsp; 7 &amp;nbsp; &amp;nbsp; 2
+&amp;nbsp;/ \ &amp;nbsp; / \
+9 &amp;nbsp; 6 3&amp;nbsp; &amp;nbsp;1
+&amp;nbsp;
+示例 1：
+输入：root = [4,2,7,1,3,6,9] 输出：[4,7,2,9,6,3,1] &amp;nbsp;
+限制：
+0 &amp;lt;= 节点个数 &amp;lt;= 1000
+注意：本题与主站 226 题相同：https://leetcode-cn.com/problems/invert-binary-tree/
+/** * Definition for a binary tree node.</description></item><item><title>剑指 Offer 28 对称的二叉树</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/dui-cheng-de-er-cha-shu-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/dui-cheng-de-er-cha-shu-lcof/</guid><description>剑指 Offer 28 对称的二叉树 请实现一个函数，用来判断一棵二叉树是不是对称的。如果一棵二叉树和它的镜像一样，那么它是对称的。
+例如，二叉树&amp;nbsp;[1,2,2,3,4,4,3] 是对称的。
+&amp;nbsp; &amp;nbsp; 1
+&amp;nbsp; &amp;nbsp;/ \
+&amp;nbsp; 2 &amp;nbsp; 2
+&amp;nbsp;/ \ / \
+3 &amp;nbsp;4 4 &amp;nbsp;3
+但是下面这个&amp;nbsp;[1,2,2,null,3,null,3] 则不是镜像对称的:
+&amp;nbsp; &amp;nbsp; 1
+&amp;nbsp; &amp;nbsp;/ \
+&amp;nbsp; 2 &amp;nbsp; 2
+&amp;nbsp; &amp;nbsp;\ &amp;nbsp; \
+&amp;nbsp; &amp;nbsp;3 &amp;nbsp; &amp;nbsp;3
+&amp;nbsp;
+示例 1：
+输入：root = [1,2,2,3,4,4,3] 输出：true 示例 2：
+输入：root = [1,2,2,null,3,null,3] 输出：false &amp;nbsp;
+限制：
+0 &amp;lt;= 节点个数 &amp;lt;= 1000
+注意：本题与主站 101 题相同：https://leetcode-cn.com/problems/symmetric-tree/
+/** * Definition for a binary tree node.</description></item><item><title>面试题 04.03 特定深度节点链表</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/list-of-depth-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/list-of-depth-lcci/</guid><description>面试题 04.03 特定深度节点链表 给定一棵二叉树，设计一个算法，创建含有某一深度上所有节点的链表（比如，若一棵树的深度为 D，则会创建出 D 个链表）。返回一个包含所有深度的链表的数组。
+&amp;nbsp;
+示例：
+输入：[1,2,3,4,5,null,7,8] 1 / \ 2 3 / \ \ 4 5 7 / 8 输出：[[1],[2,3],[4,5,7],[8]] /** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ /** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func listOfDepth(tree *TreeNode) []*ListNode { } LeetCode题库地址 https://leetcode.</description></item><item><title>剑指 Offer 32 - I 从上到下打印二叉树</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/cong-shang-dao-xia-da-yin-er-cha-shu-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/cong-shang-dao-xia-da-yin-er-cha-shu-lcof/</guid><description>剑指 Offer 32 - I 从上到下打印二叉树 从上到下打印出二叉树的每个节点，同一层的节点按照从左到右的顺序打印。
+&amp;nbsp;
+例如:
+给定二叉树:&amp;nbsp;[3,9,20,null,null,15,7],
+3 / \ 9 20 / \ 15 7 返回：
+[3,9,20,15,7] &amp;nbsp;
+提示：
+节点总数 &amp;lt;= 1000 /** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ func levelOrder(root *TreeNode) []int { } LeetCode题库地址 https://leetcode.cn/problems/cong-shang-dao-xia-da-yin-er-cha-shu-lcof</description></item><item><title>剑指 Offer 32 - II 从上到下打印二叉树 II</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/cong-shang-dao-xia-da-yin-er-cha-shu-ii-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/cong-shang-dao-xia-da-yin-er-cha-shu-ii-lcof/</guid><description>剑指 Offer 32 - II 从上到下打印二叉树 II 从上到下按层打印二叉树，同一层的节点按从左到右的顺序打印，每一层打印到一行。
+&amp;nbsp;
+例如:
+给定二叉树:&amp;nbsp;[3,9,20,null,null,15,7],
+3 / \ 9 20 / \ 15 7 返回其层次遍历结果：
+[ [3], [9,20], [15,7] ] &amp;nbsp;
+提示：
+节点总数 &amp;lt;= 1000 注意：本题与主站 102 题相同：https://leetcode-cn.com/problems/binary-tree-level-order-traversal/
+/** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ func levelOrder(root *TreeNode) [][]int { } LeetCode题库地址 https://leetcode.cn/problems/cong-shang-dao-xia-da-yin-er-cha-shu-ii-lcof</description></item><item><title>剑指 Offer 32 - III 从上到下打印二叉树 III</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/cong-shang-dao-xia-da-yin-er-cha-shu-iii-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/cong-shang-dao-xia-da-yin-er-cha-shu-iii-lcof/</guid><description>剑指 Offer 32 - III 从上到下打印二叉树 III 请实现一个函数按照之字形顺序打印二叉树，即第一行按照从左到右的顺序打印，第二层按照从右到左的顺序打印，第三行再按照从左到右的顺序打印，其他行以此类推。
+&amp;nbsp;
+例如:
+给定二叉树:&amp;nbsp;[3,9,20,null,null,15,7],
+3 / \ 9 20 / \ 15 7 返回其层次遍历结果：
+[ [3], [20,9], [15,7] ] &amp;nbsp;
+提示：
+节点总数 &amp;lt;= 1000 /** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ func levelOrder(root *TreeNode) [][]int { } LeetCode题库地址 https://leetcode.cn/problems/cong-shang-dao-xia-da-yin-er-cha-shu-iii-lcof</description></item><item><title>剑指 Offer 37 序列化二叉树</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/xu-lie-hua-er-cha-shu-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/xu-lie-hua-er-cha-shu-lcof/</guid><description>剑指 Offer 37 序列化二叉树 请实现两个函数，分别用来序列化和反序列化二叉树。
+你需要设计一个算法来实现二叉树的序列化与反序列化。这里不限定你的序列 / 反序列化算法执行逻辑，你只需要保证一个二叉树可以被序列化为一个字符串并且将这个字符串反序列化为原始的树结构。
+提示：输入输出格式与 LeetCode 目前使用的方式一致，详情请参阅&amp;nbsp;LeetCode 序列化二叉树的格式。你并非必须采取这种方式，你也可以采用其他的方法解决这个问题。
+&amp;nbsp;
+示例：
+输入：root = [1,2,3,null,null,4,5] 输出：[1,2,3,null,null,4,5] &amp;nbsp;
+注意：本题与主站 297 题相同：https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/
+LeetCode题库地址 https://leetcode.cn/problems/xu-lie-hua-er-cha-shu-lcof</description></item><item><title>剑指 Offer II 043 往完全二叉树添加节点</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/naqhdt/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/naqhdt/</guid><description>剑指 Offer II 043 往完全二叉树添加节点 完全二叉树是每一层（除最后一层外）都是完全填充（即，节点数达到最大，第 n 层有 2n-1&amp;nbsp;个节点）的，并且所有的节点都尽可能地集中在左侧。
+设计一个用完全二叉树初始化的数据结构&amp;nbsp;CBTInserter，它支持以下几种操作：
+CBTInserter(TreeNode root)&amp;nbsp;使用根节点为&amp;nbsp;root&amp;nbsp;的给定树初始化该数据结构； CBTInserter.insert(int v)&amp;nbsp; 向树中插入一个新节点，节点类型为 TreeNode，值为 v 。使树保持完全二叉树的状态，并返回插入的新节点的父节点的值； CBTInserter.get_root() 将返回树的根节点。 &amp;nbsp;
+示例 1：
+输入：inputs = [&amp;quot;CBTInserter&amp;quot;,&amp;quot;insert&amp;quot;,&amp;quot;get_root&amp;quot;], inputs = [[[1]],[2],[]] 输出：[null,1,[1,2]] 示例 2：
+输入：inputs = [&amp;quot;CBTInserter&amp;quot;,&amp;quot;insert&amp;quot;,&amp;quot;insert&amp;quot;,&amp;quot;get_root&amp;quot;], inputs = [[[1,2,3,4,5,6]],[7],[8],[]] 输出：[null,3,4,[1,2,3,4,5,6,7,8]] &amp;nbsp;
+提示：
+最初给定的树是完全二叉树，且包含&amp;nbsp;1&amp;nbsp;到&amp;nbsp;1000&amp;nbsp;个节点。 每个测试用例最多调用&amp;nbsp;CBTInserter.insert&amp;nbsp; 操作&amp;nbsp;10000&amp;nbsp;次。 给定节点或插入节点的每个值都在&amp;nbsp;0&amp;nbsp;到&amp;nbsp;5000&amp;nbsp;之间。 &amp;nbsp;
+注意：本题与主站 919&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/complete-binary-tree-inserter/
+/** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ type CBTInserter struct { } func Constructor(root *TreeNode) CBTInserter { } func (this *CBTInserter) Insert(v int) int { } func (this *CBTInserter) Get_root() *TreeNode { } /** * Your CBTInserter object will be instantiated and called as such: * obj := Constructor(root); * param_1 := obj.</description></item><item><title>剑指 Offer II 044 二叉树每层的最大值</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/hpov7l/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/hpov7l/</guid><description>剑指 Offer II 044 二叉树每层的最大值 给定一棵二叉树的根节点&amp;nbsp;root ，请找出该二叉树中每一层的最大值。
+&amp;nbsp;
+示例1：
+输入: root = [1,3,2,5,3,null,9] 输出: [1,3,9] 解释: 1 / \ 3 2 / \ \ 5 3 9 示例2：
+输入: root = [1,2,3] 输出: [1,3] 解释: 1 / \ 2 3 示例3：
+输入: root = [1] 输出: [1] 示例4：
+输入: root = [1,null,2] 输出: [1,2] 解释: &amp;nbsp; 1 &amp;nbsp; \ &amp;nbsp; 2 示例5：
+输入: root = [] 输出: [] &amp;nbsp;
+提示：
+二叉树的节点个数的范围是 [0,104] -231&amp;nbsp;&amp;lt;= Node.val &amp;lt;= 231&amp;nbsp;- 1 &amp;nbsp;</description></item><item><title>剑指 Offer II 045 二叉树最底层最左边的值</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/lwunpt/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/lwunpt/</guid><description>剑指 Offer II 045 二叉树最底层最左边的值 给定一个二叉树的 根节点 root，请找出该二叉树的&amp;nbsp;最底层&amp;nbsp;最左边&amp;nbsp;节点的值。
+假设二叉树中至少有一个节点。
+&amp;nbsp;
+示例 1:
+输入: root = [2,1,3] 输出: 1 示例 2: 输入: [1,2,3,4,null,5,6,null,null,7] 输出: 7 &amp;nbsp;
+提示:
+二叉树的节点个数的范围是 [1,104] -231&amp;nbsp;&amp;lt;= Node.val &amp;lt;= 231&amp;nbsp;- 1&amp;nbsp; &amp;nbsp;
+注意：本题与主站 513&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/find-bottom-left-tree-value/
+/** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ func findBottomLeftValue(root *TreeNode) int { } LeetCode题库地址 https://leetcode.cn/problems/LwUNpT</description></item><item><title>剑指 Offer II 046 二叉树的右侧视图</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/wnc0lk/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/wnc0lk/</guid><description>剑指 Offer II 046 二叉树的右侧视图 给定一个二叉树的 根节点 root，想象自己站在它的右侧，按照从顶部到底部的顺序，返回从右侧所能看到的节点值。
+&amp;nbsp;
+示例 1:
+输入:&amp;nbsp;[1,2,3,null,5,null,4] 输出:&amp;nbsp;[1,3,4] 示例 2:
+输入:&amp;nbsp;[1,null,3] 输出:&amp;nbsp;[1,3] 示例 3:
+输入:&amp;nbsp;[] 输出:&amp;nbsp;[] &amp;nbsp;
+提示:
+二叉树的节点个数的范围是 [0,100] -100&amp;nbsp;&amp;lt;= Node.val &amp;lt;= 100&amp;nbsp; &amp;nbsp;
+注意：本题与主站 199&amp;nbsp;题相同：https://leetcode-cn.com/problems/binary-tree-right-side-view/
+/** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ func rightSideView(root *TreeNode) []int { } LeetCode题库地址 https://leetcode.cn/problems/WNC0Lk</description></item><item><title>剑指 Offer II 048 序列化与反序列化二叉树</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/h54ybf/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/h54ybf/</guid><description>剑指 Offer II 048 序列化与反序列化二叉树 序列化是将一个数据结构或者对象转换为连续的比特位的操作，进而可以将转换后的数据存储在一个文件或者内存中，同时也可以通过网络传输到另一个计算机环境，采取相反方式重构得到原数据。
+请设计一个算法来实现二叉树的序列化与反序列化。这里不限定你的序列 / 反序列化算法执行逻辑，只需要保证一个二叉树可以被序列化为一个字符串并且将这个字符串反序列化为原始的树结构。
+&amp;nbsp;
+示例 1：
+输入：root = [1,2,3,null,null,4,5] 输出：[1,2,3,null,null,4,5] 示例 2：
+输入：root = [] 输出：[] 示例 3：
+输入：root = [1] 输出：[1] 示例 4：
+输入：root = [1,2] 输出：[1,2] &amp;nbsp;
+提示：
+输入输出格式与 LeetCode 目前使用的方式一致，详情请参阅&amp;nbsp;LeetCode 序列化二叉树的格式。你并非必须采取这种方式，也可以采用其他的方法解决这个问题。 树中结点数在范围 [0, 104] 内 -1000 &amp;lt;= Node.val &amp;lt;= 1000 &amp;nbsp;
+注意：本题与主站 297&amp;nbsp;题相同：https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/&amp;nbsp;
+/** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ type Codec struct { } func Constructor() Codec { } // Serializes a tree to a single string.</description></item><item><title>面试题 08.10 颜色填充</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/color-fill-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/color-fill-lcci/</guid><description>面试题 08.10 颜色填充 编写函数，实现许多图片编辑软件都支持的「颜色填充」功能。
+待填充的图像用二维数组 image 表示，元素为初始颜色值。初始坐标点的行坐标为 sr 列坐标为 sc。需要填充的新颜色为 newColor 。
+「周围区域」是指颜色相同且在上、下、左、右四个方向上存在相连情况的若干元素。
+请用新颜色填充初始坐标点的周围区域，并返回填充后的图像。
+示例：
+输入： image = [[1,1,1],[1,1,0],[1,0,1]] sr = 1, sc = 1, newColor = 2 输出：[[2,2,2],[2,2,0],[2,0,1]] 解释: 初始坐标点位于图像的正中间，坐标 (sr,sc)=(1,1) 。 初始坐标点周围区域上所有符合条件的像素点的颜色都被更改成 2 。 注意，右下角的像素没有更改为 2 ，因为它不属于初始坐标点的周围区域。 提示：
+image 和 image[0] 的长度均在范围 [1, 50] 内。 初始坐标点 (sr,sc) 满足 0 &lt;= sr &lt; image.length 和 0 &lt;= sc &lt; image[0].length 。 image[i][j] 和 newColor 表示的颜色值在范围 [0, 65535] 内。 func floodFill(image [][]int, sr int, sc int, newColor int) [][]int { } LeetCode题库地址 https://leetcode.</description></item><item><title>剑指 Offer 55 - I 二叉树的深度</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/er-cha-shu-de-shen-du-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/er-cha-shu-de-shen-du-lcof/</guid><description>剑指 Offer 55 - I 二叉树的深度 输入一棵二叉树的根节点，求该树的深度。从根节点到叶节点依次经过的节点（含根、叶节点）形成树的一条路径，最长路径的长度为树的深度。
+例如：
+给定二叉树 [3,9,20,null,null,15,7]，
+3 / \ 9 20 / \ 15 7 返回它的最大深度&amp;nbsp;3 。
+&amp;nbsp;
+提示：
+节点总数 &amp;lt;= 10000 注意：本题与主站 104&amp;nbsp;题相同：https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/
+/** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ func maxDepth(root *TreeNode) int { } LeetCode题库地址 https://leetcode.cn/problems/er-cha-shu-de-shen-du-lcof</description></item><item><title>剑指 Offer II 056 二叉搜索树中两个节点之和</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/opldqz/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/opldqz/</guid><description>剑指 Offer II 056 二叉搜索树中两个节点之和 给定一个二叉搜索树的 根节点 root&amp;nbsp;和一个整数 k , 请判断该二叉搜索树中是否存在两个节点它们的值之和等于 k 。假设二叉搜索树中节点的值均唯一。
+&amp;nbsp;
+示例 1：
+输入: root = [8,6,10,5,7,9,11], k = 12 输出: true 解释: 节点 5 和节点 7 之和等于 12 示例 2：
+输入: root = [8,6,10,5,7,9,11], k = 22 输出: false 解释: 不存在两个节点值之和为 22 的节点 &amp;nbsp;
+提示：
+二叉树的节点个数的范围是&amp;nbsp;&amp;nbsp;[1, 104]. -104&amp;nbsp;&amp;lt;= Node.val &amp;lt;= 104 root&amp;nbsp;为二叉搜索树 -105&amp;nbsp;&amp;lt;= k &amp;lt;= 105 &amp;nbsp;
+注意：本题与主站 653 题相同：&amp;nbsp;https://leetcode-cn.com/problems/two-sum-iv-input-is-a-bst/
+/** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ func findTarget(root *TreeNode, k int) bool { } LeetCode题库地址 https://leetcode.</description></item><item><title>面试题 16.19 水域大小</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/pond-sizes-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/pond-sizes-lcci/</guid><description>面试题 16.19 水域大小 你有一个用于表示一片土地的整数矩阵land，该矩阵中每个点的值代表对应地点的海拔高度。若值为0则表示水域。由垂直、水平或对角连接的水域为池塘。池塘的大小是指相连接的水域的个数。编写一个方法来计算矩阵中所有池塘的大小，返回值需要从小到大排序。
+示例：
+输入： [ [0,2,1,0], [0,1,0,1], [1,1,0,1], [0,1,0,1] ] 输出： [1,2,4] 提示：
+0 &lt; len(land) &lt;= 1000 0 &lt; len(land[i]) &lt;= 1000 func pondSizes(land [][]int) []int { } LeetCode题库地址 https://leetcode.cn/problems/pond-sizes-lcci</description></item><item><title>剑指 Offer II 086 分割回文子字符串</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/m99oja/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/m99oja/</guid><description>剑指 Offer II 086 分割回文子字符串 给定一个字符串 s ，请将 s 分割成一些子串，使每个子串都是 回文串 ，返回 s 所有可能的分割方案。
+回文串&amp;nbsp;是正着读和反着读都一样的字符串。
+&amp;nbsp;
+示例 1：
+输入：s = &amp;quot;google&amp;quot; 输出：[[&amp;quot;g&amp;quot;,&amp;quot;o&amp;quot;,&amp;quot;o&amp;quot;,&amp;quot;g&amp;quot;,&amp;quot;l&amp;quot;,&amp;quot;e&amp;quot;],[&amp;quot;g&amp;quot;,&amp;quot;oo&amp;quot;,&amp;quot;g&amp;quot;,&amp;quot;l&amp;quot;,&amp;quot;e&amp;quot;],[&amp;quot;goog&amp;quot;,&amp;quot;l&amp;quot;,&amp;quot;e&amp;quot;]] 示例 2：
+输入：s = &amp;quot;aab&amp;quot; 输出：[[&amp;quot;a&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;b&amp;quot;],[&amp;quot;aa&amp;quot;,&amp;quot;b&amp;quot;]] 示例 3：
+输入：s = &amp;quot;a&amp;quot; 输出：[[&amp;quot;a&amp;quot;]] &amp;nbsp;
+提示：
+1 &amp;lt;= s.length &amp;lt;= 16 s 仅由小写英文字母组成 &amp;nbsp;
+注意：本题与主站 131&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/palindrome-partitioning/
+func partition(s string) [][]string { } LeetCode题库地址 https://leetcode.cn/problems/M99OJA</description></item><item><title>面试题 17.07 婴儿名字</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/baby-names-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/baby-names-lcci/</guid><description>面试题 17.07 婴儿名字 每年，政府都会公布一万个最常见的婴儿名字和它们出现的频率，也就是同名婴儿的数量。有些名字有多种拼法，例如，John 和 Jon 本质上是相同的名字，但被当成了两个名字公布出来。给定两个列表，一个是名字及对应的频率，另一个是本质相同的名字对。设计一个算法打印出每个真实名字的实际频率。注意，如果 John 和 Jon 是相同的，并且 Jon 和 Johnny 相同，则 John 与 Johnny 也相同，即它们有传递和对称性。
+在结果列表中，选择 字典序最小 的名字作为真实名字。
+示例：
+输入：names = ["John(15)","Jon(12)","Chris(13)","Kris(4)","Christopher(19)"], synonyms = ["(Jon,John)","(John,Johnny)","(Chris,Kris)","(Chris,Christopher)"] 输出：["John(27)","Chris(36)"] 提示：
+names.length &lt;= 100000 func trulyMostPopular(names []string, synonyms []string) []string { } LeetCode题库地址 https://leetcode.cn/problems/baby-names-lcci</description></item><item><title>剑指 Offer II 103 最少的硬币数目</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/gam7ch/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/gam7ch/</guid><description>剑指 Offer II 103 最少的硬币数目 给定不同面额的硬币 coins 和一个总金额 amount。编写一个函数来计算可以凑成总金额所需的最少的硬币个数。如果没有任何一种硬币组合能组成总金额，返回&amp;nbsp;-1。
+你可以认为每种硬币的数量是无限的。
+&amp;nbsp;
+示例&amp;nbsp;1：
+输入：coins = [1, 2, 5], amount = 11 输出：3 解释：11 = 5 + 5 + 1 示例 2：
+输入：coins = [2], amount = 3 输出：-1 示例 3：
+输入：coins = [1], amount = 0 输出：0 示例 4：
+输入：coins = [1], amount = 1 输出：1 示例 5：
+输入：coins = [1], amount = 2 输出：2 &amp;nbsp;
+提示：
+1 &amp;lt;= coins.length &amp;lt;= 12 1 &amp;lt;= coins[i] &amp;lt;= 231 - 1 0 &amp;lt;= amount &amp;lt;= 104 &amp;nbsp;</description></item><item><title>剑指 Offer II 105 岛屿的最大面积</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/zl6zan/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/zl6zan/</guid><description>剑指 Offer II 105 岛屿的最大面积 给定一个由&amp;nbsp;0 和 1 组成的非空二维数组&amp;nbsp;grid&amp;nbsp;，用来表示海洋岛屿地图。
+一个&amp;nbsp;岛屿&amp;nbsp;是由一些相邻的&amp;nbsp;1&amp;nbsp;(代表土地) 构成的组合，这里的「相邻」要求两个 1 必须在水平或者竖直方向上相邻。你可以假设&amp;nbsp;grid 的四个边缘都被 0（代表水）包围着。
+找到给定的二维数组中最大的岛屿面积。如果没有岛屿，则返回面积为 0 。
+&amp;nbsp;
+示例 1:
+输入: grid = [[0,0,1,0,0,0,0,1,0,0,0,0,0],[0,0,0,0,0,0,0,1,1,1,0,0,0],[0,1,1,0,1,0,0,0,0,0,0,0,0],[0,1,0,0,1,1,0,0,1,0,1,0,0],[0,1,0,0,1,1,0,0,1,1,1,0,0],[0,0,0,0,0,0,0,0,0,0,1,0,0],[0,0,0,0,0,0,0,1,1,1,0,0,0],[0,0,0,0,0,0,0,1,1,0,0,0,0]] 输出: 6 解释: 对于上面这个给定矩阵应返回&amp;nbsp;6。注意答案不应该是 11 ，因为岛屿只能包含水平或垂直的四个方向的 1 。 示例 2:
+输入: grid = [[0,0,0,0,0,0,0,0]] 输出: 0 &amp;nbsp;
+提示：
+m == grid.length n == grid[i].length 1 &amp;lt;= m, n &amp;lt;= 50 grid[i][j] is either 0 or 1 &amp;nbsp;
+注意：本题与主站 695&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/max-area-of-island/
+func maxAreaOfIsland(grid [][]int) int { } LeetCode题库地址 https://leetcode.cn/problems/ZL6zAn</description></item><item><title>面试题 17.22 单词转换</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/word-transformer-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/word-transformer-lcci/</guid><description>面试题 17.22 单词转换 给定字典中的两个词，长度相等。写一个方法，把一个词转换成另一个词， 但是一次只能改变一个字符。每一步得到的新词都必须能在字典中找到。
+编写一个程序，返回一个可能的转换序列。如有多个可能的转换序列，你可以返回任何一个。
+示例 1:
+输入: beginWord = &amp;quot;hit&amp;quot;, endWord = &amp;quot;cog&amp;quot;, wordList = [&amp;quot;hot&amp;quot;,&amp;quot;dot&amp;quot;,&amp;quot;dog&amp;quot;,&amp;quot;lot&amp;quot;,&amp;quot;log&amp;quot;,&amp;quot;cog&amp;quot;] 输出: [&amp;quot;hit&amp;quot;,&amp;quot;hot&amp;quot;,&amp;quot;dot&amp;quot;,&amp;quot;lot&amp;quot;,&amp;quot;log&amp;quot;,&amp;quot;cog&amp;quot;] 示例 2:
+输入: beginWord = &amp;quot;hit&amp;quot; endWord = &amp;quot;cog&amp;quot; wordList = [&amp;quot;hot&amp;quot;,&amp;quot;dot&amp;quot;,&amp;quot;dog&amp;quot;,&amp;quot;lot&amp;quot;,&amp;quot;log&amp;quot;] 输出: [] 解释:&amp;nbsp;endWord &amp;quot;cog&amp;quot; 不在字典中，所以不存在符合要求的转换序列。 func findLadders(beginWord string, endWord string, wordList []string) []string { } LeetCode题库地址 https://leetcode.cn/problems/word-transformer-lcci</description></item><item><title>剑指 Offer II 106 二分图</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/veab3k/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/veab3k/</guid><description>剑指 Offer II 106 二分图 存在一个 无向图 ，图中有 n 个节点。其中每个节点都有一个介于 0 到 n - 1 之间的唯一编号。
+给定一个二维数组 graph&amp;nbsp;，表示图，其中 graph[u] 是一个节点数组，由节点 u 的邻接节点组成。形式上，对于&amp;nbsp;graph[u] 中的每个 v ，都存在一条位于节点 u 和节点 v 之间的无向边。该无向图同时具有以下属性：
+不存在自环（graph[u] 不包含 u）。 不存在平行边（graph[u] 不包含重复值）。 如果 v 在 graph[u] 内，那么 u 也应该在 graph[v] 内（该图是无向图） 这个图可能不是连通图，也就是说两个节点 u 和 v 之间可能不存在一条连通彼此的路径。 二分图 定义：如果能将一个图的节点集合分割成两个独立的子集 A 和 B ，并使图中的每一条边的两个节点一个来自 A 集合，一个来自 B 集合，就将这个图称为 二分图 。
+如果图是二分图，返回 true ；否则，返回 false 。
+&amp;nbsp;
+示例 1：
+输入：graph = [[1,2,3],[0,2],[0,1,3],[0,2]] 输出：false 解释：不能将节点分割成两个独立的子集，以使每条边都连通一个子集中的一个节点与另一个子集中的一个节点。 示例 2：</description></item><item><title>剑指 Offer II 107 矩阵中的距离</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/2bcmpm/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/2bcmpm/</guid><description>剑指 Offer II 107 矩阵中的距离 给定一个由 0 和 1 组成的矩阵 mat&amp;nbsp;，请输出一个大小相同的矩阵，其中每一个格子是 mat 中对应位置元素到最近的 0 的距离。
+两个相邻元素间的距离为 1 。
+&amp;nbsp;
+示例 1：
+输入：mat = [[0,0,0],[0,1,0],[0,0,0]] 输出：[[0,0,0],[0,1,0],[0,0,0]] 示例 2：
+输入：mat = [[0,0,0],[0,1,0],[1,1,1]] 输出：[[0,0,0],[0,1,0],[1,2,1]] &amp;nbsp;
+提示：
+m == mat.length n == mat[i].length 1 &amp;lt;= m, n &amp;lt;= 104 1 &amp;lt;= m * n &amp;lt;= 104 mat[i][j] is either 0 or 1. mat 中至少有一个 0&amp;nbsp; &amp;nbsp;
+注意：本题与主站 542&amp;nbsp;题相同：https://leetcode-cn.com/problems/01-matrix/
+func updateMatrix(mat [][]int) [][]int { } LeetCode题库地址 https://leetcode.cn/problems/2bCMpM</description></item><item><title>剑指 Offer II 108 单词演变</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/om3rec/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/om3rec/</guid><description>剑指 Offer II 108 单词演变 在字典（单词列表）&amp;nbsp;wordList 中，从单词 beginWord&amp;nbsp;和 endWord 的 转换序列 是一个按下述规格形成的序列：
+序列中第一个单词是 beginWord 。 序列中最后一个单词是 endWord 。 每次转换只能改变一个字母。 转换过程中的中间单词必须是字典&amp;nbsp;wordList 中的单词。 给定两个长度相同但内容不同的单词 beginWord&amp;nbsp;和 endWord 和一个字典 wordList ，找到从&amp;nbsp;beginWord 到&amp;nbsp;endWord 的 最短转换序列 中的 单词数目 。如果不存在这样的转换序列，返回 0。
+&amp;nbsp;
+示例 1：
+输入：beginWord = &amp;quot;hit&amp;quot;, endWord = &amp;quot;cog&amp;quot;, wordList = [&amp;quot;hot&amp;quot;,&amp;quot;dot&amp;quot;,&amp;quot;dog&amp;quot;,&amp;quot;lot&amp;quot;,&amp;quot;log&amp;quot;,&amp;quot;cog&amp;quot;] 输出：5 解释：一个最短转换序列是 &amp;quot;hit&amp;quot; -&amp;gt; &amp;quot;hot&amp;quot; -&amp;gt; &amp;quot;dot&amp;quot; -&amp;gt; &amp;quot;dog&amp;quot; -&amp;gt; &amp;quot;cog&amp;quot;, 返回它的长度 5。 示例 2：
+输入：beginWord = &amp;quot;hit&amp;quot;, endWord = &amp;quot;cog&amp;quot;, wordList = [&amp;quot;hot&amp;quot;,&amp;quot;dot&amp;quot;,&amp;quot;dog&amp;quot;,&amp;quot;lot&amp;quot;,&amp;quot;log&amp;quot;] 输出：0 解释：endWord &amp;quot;cog&amp;quot; 不在字典中，所以无法进行转换。 &amp;nbsp;</description></item><item><title>剑指 Offer II 109 开密码锁</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/zldjc7/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/zldjc7/</guid><description>剑指 Offer II 109 开密码锁 一个密码锁由 4&amp;nbsp;个环形拨轮组成，每个拨轮都有 10 个数字： &amp;#39;0&amp;#39;, &amp;#39;1&amp;#39;, &amp;#39;2&amp;#39;, &amp;#39;3&amp;#39;, &amp;#39;4&amp;#39;, &amp;#39;5&amp;#39;, &amp;#39;6&amp;#39;, &amp;#39;7&amp;#39;, &amp;#39;8&amp;#39;, &amp;#39;9&amp;#39; 。每个拨轮可以自由旋转：例如把 &amp;#39;9&amp;#39; 变为&amp;nbsp;&amp;#39;0&amp;#39;，&amp;#39;0&amp;#39; 变为 &amp;#39;9&amp;#39; 。每次旋转都只能旋转一个拨轮的一位数字。
+锁的初始数字为 &amp;#39;0000&amp;#39; ，一个代表四个拨轮的数字的字符串。
+列表 deadends 包含了一组死亡数字，一旦拨轮的数字和列表里的任何一个元素相同，这个锁将会被永久锁定，无法再被旋转。
+字符串 target 代表可以解锁的数字，请给出解锁需要的最小旋转次数，如果无论如何不能解锁，返回 -1 。
+&amp;nbsp;
+示例 1:
+输入：deadends = [&amp;quot;0201&amp;quot;,&amp;quot;0101&amp;quot;,&amp;quot;0102&amp;quot;,&amp;quot;1212&amp;quot;,&amp;quot;2002&amp;quot;], target = &amp;quot;0202&amp;quot; 输出：6 解释： 可能的移动序列为 &amp;quot;0000&amp;quot; -&amp;gt; &amp;quot;1000&amp;quot; -&amp;gt; &amp;quot;1100&amp;quot; -&amp;gt; &amp;quot;1200&amp;quot; -&amp;gt; &amp;quot;1201&amp;quot; -&amp;gt; &amp;quot;1202&amp;quot; -&amp;gt; &amp;quot;0202&amp;quot;。 注意 &amp;quot;0000&amp;quot; -&amp;gt; &amp;quot;0001&amp;quot; -&amp;gt; &amp;quot;0002&amp;quot; -&amp;gt; &amp;quot;0102&amp;quot; -&amp;gt; &amp;quot;0202&amp;quot; 这样的序列是不能解锁的，因为当拨动到 &amp;quot;0102&amp;quot; 时这个锁就会被锁定。 示例 2:</description></item><item><title>剑指 Offer II 110 所有路径</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/bp4bmd/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/bp4bmd/</guid><description>剑指 Offer II 110 所有路径 给定一个有&amp;nbsp;n&amp;nbsp;个节点的有向无环图，用二维数组&amp;nbsp;graph&amp;nbsp;表示，请找到所有从&amp;nbsp;0&amp;nbsp;到&amp;nbsp;n-1&amp;nbsp;的路径并输出（不要求按顺序）。
+graph&amp;nbsp;的第 i 个数组中的单元都表示有向图中 i&amp;nbsp;号节点所能到达的下一些结点（译者注：有向图是有方向的，即规定了 a&amp;rarr;b 你就不能从 b&amp;rarr;a ），若为空，就是没有下一个节点了。
+&amp;nbsp;
+示例 1：
+输入：graph = [[1,2],[3],[3],[]] 输出：[[0,1,3],[0,2,3]] 解释：有两条路径 0 -&amp;gt; 1 -&amp;gt; 3 和 0 -&amp;gt; 2 -&amp;gt; 3 示例 2：
+输入：graph = [[4,3,1],[3,2,4],[3],[4],[]] 输出：[[0,4],[0,3,4],[0,1,3,4],[0,1,2,3,4],[0,1,4]] 示例 3：
+输入：graph = [[1],[]] 输出：[[0,1]] 示例 4：
+输入：graph = [[1,2,3],[2],[3],[]] 输出：[[0,1,2,3],[0,2,3],[0,3]] 示例 5：
+输入：graph = [[1,3],[2],[3],[]] 输出：[[0,1,2,3],[0,3]] &amp;nbsp;
+提示：
+n == graph.length 2 &amp;lt;= n &amp;lt;= 15 0 &amp;lt;= graph[i][j] &amp;lt; n graph[i][j] != i&amp;nbsp; 保证输入为有向无环图 (GAD) &amp;nbsp;</description></item><item><title>剑指 Offer II 111 计算除法</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/vlzxql/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/vlzxql/</guid><description>剑指 Offer II 111 计算除法 给定一个变量对数组 equations 和一个实数值数组 values 作为已知条件，其中 equations[i] = [Ai, Bi] 和 values[i] 共同表示等式 Ai / Bi = values[i] 。每个 Ai 或 Bi 是一个表示单个变量的字符串。
+另有一些以数组 queries 表示的问题，其中 queries[j] = [Cj, Dj] 表示第 j 个问题，请你根据已知条件找出 Cj / Dj = ? 的结果作为答案。
+返回 所有问题的答案 。如果存在某个无法确定的答案，则用 -1.0 替代这个答案。如果问题中出现了给定的已知条件中没有出现的字符串，也需要用 -1.0 替代这个答案。
+注意：输入总是有效的。可以假设除法运算中不会出现除数为 0 的情况，且不存在任何矛盾的结果。
+&amp;nbsp;
+示例 1：
+输入：equations = [[&amp;quot;a&amp;quot;,&amp;quot;b&amp;quot;],[&amp;quot;b&amp;quot;,&amp;quot;c&amp;quot;]], values = [2.0,3.0], queries = [[&amp;quot;a&amp;quot;,&amp;quot;c&amp;quot;],[&amp;quot;b&amp;quot;,&amp;quot;a&amp;quot;],[&amp;quot;a&amp;quot;,&amp;quot;e&amp;quot;],[&amp;quot;a&amp;quot;,&amp;quot;a&amp;quot;],[&amp;quot;x&amp;quot;,&amp;quot;x&amp;quot;]] 输出：[6.00000,0.50000,-1.00000,1.00000,-1.00000] 解释： 条件：a / b = 2.0, b / c = 3.</description></item><item><title>剑指 Offer II 112 最长递增路径</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/fptfwp/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/fptfwp/</guid><description>剑指 Offer II 112 最长递增路径 给定一个&amp;nbsp;m x n 整数矩阵&amp;nbsp;matrix ，找出其中 最长递增路径 的长度。
+对于每个单元格，你可以往上，下，左，右四个方向移动。 不能 在 对角线 方向上移动或移动到 边界外（即不允许环绕）。
+&amp;nbsp;
+示例 1：
+输入：matrix = [[9,9,4],[6,6,8],[2,1,1]] 输出：4 解释：最长递增路径为&amp;nbsp;[1, 2, 6, 9]。 示例 2：
+输入：matrix = [[3,4,5],[3,2,6],[2,2,1]] 输出：4 解释：最长递增路径是&amp;nbsp;[3, 4, 5, 6]。注意不允许在对角线方向上移动。 示例 3：
+输入：matrix = [[1]] 输出：1 &amp;nbsp;
+提示：
+m == matrix.length n == matrix[i].length 1 &amp;lt;= m, n &amp;lt;= 200 0 &amp;lt;= matrix[i][j] &amp;lt;= 231 - 1 &amp;nbsp;
+注意：本题与主站 329&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/longest-increasing-path-in-a-matrix/
+func longestIncreasingPath(matrix [][]int) int { } LeetCode题库地址 https://leetcode.</description></item><item><title>剑指 Offer II 113 课程顺序</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/qa2igt/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/qa2igt/</guid><description>剑指 Offer II 113 课程顺序 现在总共有 numCourses&amp;nbsp;门课需要选，记为&amp;nbsp;0&amp;nbsp;到&amp;nbsp;numCourses-1。
+给定一个数组&amp;nbsp;prerequisites ，它的每一个元素&amp;nbsp;prerequisites[i]&amp;nbsp;表示两门课程之间的先修顺序。&amp;nbsp;例如&amp;nbsp;prerequisites[i] = [ai, bi]&amp;nbsp;表示想要学习课程 ai&amp;nbsp;，需要先完成课程 bi&amp;nbsp;。
+请根据给出的总课程数 &amp;nbsp;numCourses 和表示先修顺序的&amp;nbsp;prerequisites&amp;nbsp;得出一个可行的修课序列。
+可能会有多个正确的顺序，只要任意返回一种就可以了。如果不可能完成所有课程，返回一个空数组。
+&amp;nbsp;
+示例&amp;nbsp;1:
+输入: numCourses = 2, prerequisites = [[1,0]] 输出: [0,1] 解释:&amp;nbsp;总共有 2 门课程。要学习课程 1，你需要先完成课程 0。因此，正确的课程顺序为 [0,1] 。 示例&amp;nbsp;2:
+输入: numCourses = 4, prerequisites = [[1,0],[2,0],[3,1],[3,2]] 输出: [0,1,2,3] or [0,2,1,3] 解释:&amp;nbsp;总共有 4 门课程。要学习课程 3，你应该先完成课程 1 和课程 2。并且课程 1 和课程 2 都应该排在课程 0 之后。 &amp;nbsp;因此，一个正确的课程顺序是&amp;nbsp;[0,1,2,3] 。另一个正确的排序是&amp;nbsp;[0,2,1,3] 。 示例 3:
+输入: numCourses = 1, prerequisites = [] 输出: [0] 解释:&amp;nbsp;总共 1 门课，直接修第一门课就可。 &amp;nbsp;</description></item><item><title>剑指 Offer II 114 外星文字典</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/jf1jut/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/jf1jut/</guid><description>剑指 Offer II 114 外星文字典 现有一种使用英语字母的外星文语言，这门语言的字母顺序与英语顺序不同。
+给定一个字符串列表 words ，作为这门语言的词典，words 中的字符串已经 按这门新语言的字母顺序进行了排序 。
+请你根据该词典还原出此语言中已知的字母顺序，并 按字母递增顺序 排列。若不存在合法字母顺序，返回 &amp;quot;&amp;quot; 。若存在多种可能的合法字母顺序，返回其中 任意一种 顺序即可。
+字符串 s 字典顺序小于 字符串 t 有两种情况：
+在第一个不同字母处，如果 s 中的字母在这门外星语言的字母顺序中位于 t 中字母之前，那么&amp;nbsp;s 的字典顺序小于 t 。 如果前面 min(s.length, t.length) 字母都相同，那么 s.length &amp;lt; t.length 时，s 的字典顺序也小于 t 。 &amp;nbsp;
+示例 1：
+输入：words = [&amp;quot;wrt&amp;quot;,&amp;quot;wrf&amp;quot;,&amp;quot;er&amp;quot;,&amp;quot;ett&amp;quot;,&amp;quot;rftt&amp;quot;] 输出：&amp;quot;wertf&amp;quot; 示例 2：
+输入：words = [&amp;quot;z&amp;quot;,&amp;quot;x&amp;quot;] 输出：&amp;quot;zx&amp;quot; 示例 3：
+输入：words = [&amp;quot;z&amp;quot;,&amp;quot;x&amp;quot;,&amp;quot;z&amp;quot;] 输出：&amp;quot;&amp;quot; 解释：不存在合法字母顺序，因此返回 &amp;quot;&amp;quot; 。 &amp;nbsp;
+提示：
+1 &amp;lt;= words.length &amp;lt;= 100 1 &amp;lt;= words[i].</description></item><item><title>剑指 Offer II 116 省份数量</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/blyhh0/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/blyhh0/</guid><description>剑指 Offer II 116 省份数量 有 n 个城市，其中一些彼此相连，另一些没有相连。如果城市 a 与城市 b 直接相连，且城市 b 与城市 c 直接相连，那么城市 a 与城市 c 间接相连。
+省份 是一组直接或间接相连的城市，组内不含其他没有相连的城市。
+给你一个 n x n 的矩阵 isConnected ，其中 isConnected[i][j] = 1 表示第 i 个城市和第 j 个城市直接相连，而 isConnected[i][j] = 0 表示二者不直接相连。
+返回矩阵中 省份 的数量。
+&amp;nbsp;
+示例 1：
+输入：isConnected = [[1,1,0],[1,1,0],[0,0,1]] 输出：2 示例 2：
+输入：isConnected = [[1,0,0],[0,1,0],[0,0,1]] 输出：3 &amp;nbsp;
+提示：
+1 &amp;lt;= n &amp;lt;= 200 n == isConnected.length n == isConnected[i].length isConnected[i][j] 为 1 或 0 isConnected[i][i] == 1 isConnected[i][j] == isConnected[j][i] &amp;nbsp;</description></item><item><title>剑指 Offer II 117 相似的字符串</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/h6lpxb/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/h6lpxb/</guid><description>剑指 Offer II 117 相似的字符串 如果交换字符串&amp;nbsp;X 中的两个不同位置的字母，使得它和字符串&amp;nbsp;Y 相等，那么称 X 和 Y 两个字符串相似。如果这两个字符串本身是相等的，那它们也是相似的。
+例如，&amp;quot;tars&amp;quot; 和 &amp;quot;rats&amp;quot; 是相似的 (交换 0 与 2 的位置)；&amp;nbsp;&amp;quot;rats&amp;quot; 和 &amp;quot;arts&amp;quot; 也是相似的，但是 &amp;quot;star&amp;quot; 不与 &amp;quot;tars&amp;quot;，&amp;quot;rats&amp;quot;，或 &amp;quot;arts&amp;quot; 相似。
+总之，它们通过相似性形成了两个关联组：{&amp;quot;tars&amp;quot;, &amp;quot;rats&amp;quot;, &amp;quot;arts&amp;quot;} 和 {&amp;quot;star&amp;quot;}。注意，&amp;quot;tars&amp;quot; 和 &amp;quot;arts&amp;quot; 是在同一组中，即使它们并不相似。形式上，对每个组而言，要确定一个单词在组中，只需要这个词和该组中至少一个单词相似。
+给定一个字符串列表 strs。列表中的每个字符串都是 strs 中其它所有字符串的一个&amp;nbsp;字母异位词&amp;nbsp;。请问 strs 中有多少个相似字符串组？
+字母异位词（anagram），一种把某个字符串的字母的位置（顺序）加以改换所形成的新词。
+&amp;nbsp;
+示例 1：
+输入：strs = [&amp;quot;tars&amp;quot;,&amp;quot;rats&amp;quot;,&amp;quot;arts&amp;quot;,&amp;quot;star&amp;quot;] 输出：2 示例 2：
+输入：strs = [&amp;quot;omv&amp;quot;,&amp;quot;ovm&amp;quot;] 输出：1 &amp;nbsp;
+提示：
+1 &amp;lt;= strs.length &amp;lt;= 300 1 &amp;lt;= strs[i].length &amp;lt;= 300 strs[i] 只包含小写字母。 strs 中的所有单词都具有相同的长度，且是彼此的字母异位词。 &amp;nbsp; &amp;nbsp;</description></item><item><title>剑指 Offer II 118 多余的边</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/7lpjuw/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/7lpjuw/</guid><description>剑指 Offer II 118 多余的边 树可以看成是一个连通且 无环&amp;nbsp;的&amp;nbsp;无向&amp;nbsp;图。
+给定往一棵&amp;nbsp;n 个节点 (节点值&amp;nbsp;1～n) 的树中添加一条边后的图。添加的边的两个顶点包含在 1 到 n&amp;nbsp;中间，且这条附加的边不属于树中已存在的边。图的信息记录于长度为 n 的二维数组 edges&amp;nbsp;，edges[i] = [ai, bi]&amp;nbsp;表示图中在 ai 和 bi 之间存在一条边。
+请找出一条可以删去的边，删除后可使得剩余部分是一个有着 n 个节点的树。如果有多个答案，则返回数组&amp;nbsp;edges&amp;nbsp;中最后出现的边。
+&amp;nbsp;
+示例 1：
+输入: edges = [[1,2],[1,3],[2,3]] 输出: [2,3] 示例 2：
+输入: edges = [[1,2],[2,3],[3,4],[1,4],[1,5]] 输出: [1,4] &amp;nbsp;
+提示:
+n == edges.length 3 &amp;lt;= n &amp;lt;= 1000 edges[i].length == 2 1 &amp;lt;= ai&amp;nbsp;&amp;lt; bi&amp;nbsp;&amp;lt;= edges.length ai != bi edges 中无重复元素 给定的图是连通的&amp;nbsp; &amp;nbsp;
+注意：本题与主站 684&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/redundant-connection/
+func findRedundantConnection(edges [][]int) []int { } LeetCode题库地址 https://leetcode.</description></item><item><title>【2022-12-19每日一题】1971. 寻找图中是否存在路径[Easy]</title><link>/study/leetcode/find-if-path-exists-in-graph/</link><pubDate>Mon, 19 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/find-if-path-exists-in-graph/</guid><description>2022-12-19每日一题：1971. 寻找图中是否存在路径 难度：Easy
+标签：深度优先搜索 、 广度优先搜索 、 并查集 、 图
+有一个具有 n 个顶点的 双向 图，其中每个顶点标记从 0 到 n - 1（包含 0 和 n - 1）。图中的边用一个二维整数数组 edges 表示，其中 edges[i] = [ui, vi] 表示顶点 ui 和顶点 vi 之间的双向边。 每个顶点对由 最多一条 边连接，并且没有顶点存在与自身相连的边。
+请你确定是否存在从顶点 source 开始，到顶点 destination 结束的 有效路径 。
+给你数组 edges 和整数 n、source 和 destination，如果从 source 到 destination 存在 有效路径 ，则返回 true，否则返回 false 。
+&amp;nbsp;
+示例 1：
+输入：n = 3, edges = [[0,1],[1,2],[2,0]], source = 0, destination = 2 输出：true 解释：存在由顶点 0 到顶点 2 的路径: - 0 → 1 → 2 - 0 → 2 示例 2：</description></item><item><title>【2022-11-10每日一题】864. 获取所有钥匙的最短路径[Hard]</title><link>/study/leetcode/shortest-path-to-get-all-keys/</link><pubDate>Thu, 10 Nov 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/shortest-path-to-get-all-keys/</guid><description>2022-11-10每日一题：864. 获取所有钥匙的最短路径 难度：Hard
+标签：位运算 、 广度优先搜索 、 数组 、 矩阵
+给定一个二维网格&amp;nbsp;grid&amp;nbsp;，其中：
+'.' 代表一个空房间 '#' 代表一堵 '@'&amp;nbsp;是起点 小写字母代表钥匙 大写字母代表锁 我们从起点开始出发，一次移动是指向四个基本方向之一行走一个单位空间。我们不能在网格外面行走，也无法穿过一堵墙。如果途经一个钥匙，我们就把它捡起来。除非我们手里有对应的钥匙，否则无法通过锁。
+假设 k&amp;nbsp;为 钥匙/锁 的个数，且满足&amp;nbsp;1 &amp;lt;= k&amp;nbsp;&amp;lt;= 6，字母表中的前 k&amp;nbsp;个字母在网格中都有自己对应的一个小写和一个大写字母。换言之，每个锁有唯一对应的钥匙，每个钥匙也有唯一对应的锁。另外，代表钥匙和锁的字母互为大小写并按字母顺序排列。
+返回获取所有钥匙所需要的移动的最少次数。如果无法获取所有钥匙，返回&amp;nbsp;-1&amp;nbsp;。
+&amp;nbsp;
+示例 1：
+输入：grid = ["@.a.#","###.#","b.A.B"] 输出：8 解释：目标是获得所有钥匙，而不是打开所有锁。 示例 2：
+输入：grid = ["@..aA","..B#.","....b"] 输出：6 示例 3:
+输入: grid = ["@Aa"] 输出: -1 &amp;nbsp;
+提示：
+m == grid.length n == grid[i].length 1 &amp;lt;= m, n &amp;lt;= 30 grid[i][j]&amp;nbsp;只含有&amp;nbsp;'.',&amp;nbsp;'#',&amp;nbsp;'@',&amp;nbsp;'a'-'f'&amp;nbsp;以及&amp;nbsp;'A'-'F' 钥匙的数目范围是&amp;nbsp;[1, 6]&amp;nbsp; 每个钥匙都对应一个 不同 的字母 每个钥匙正好打开一个对应的锁 方法一：状态压缩+广度优先搜索 写法一 func shortestPathAllKeys(grid []string) int { // 获取钥匙个数和起点坐标 var k, si, sj int for i, row := range grid { for j, c := range row { if c == '@' { si, sj = i, j // 起点 } else if c &amp;gt;= 'a' &amp;amp;&amp;amp; c &amp;lt;= 'z' { k++ // 累加钥匙个数 } } } m, n := len(grid), len(grid[0]) type tuple struct { i, j, state int } q := []tuple{{si, sj, 0}} // 初始化队列 visited := map[tuple]bool{{si, sj, 0}: true} // 判重初始化 dirs := []int{-1, 0, 1, 0, -1} // 上右下左 四个方向 ans := 0 // 结果 // 广度优先搜索 for len(q) &amp;gt; 0 { for t := len(q); t &amp;gt; 0; t-- { p := q[0] q = q[1:] i, j, state := p.</description></item><item><title>【2022-10-25每日一题】934. 最短的桥[Medium]</title><link>/study/leetcode/shortest-bridge/</link><pubDate>Tue, 25 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/shortest-bridge/</guid><description>2022-10-25每日一题：934. 最短的桥 难度：Medium
+标签：深度优先搜索 、 广度优先搜索 、 数组 、 矩阵
+给你一个大小为 n x n 的二元矩阵 grid ，其中 1 表示陆地，0 表示水域。
+岛 是由四面相连的 1 形成的一个最大组，即不会与非组内的任何其他 1 相连。grid 中 恰好存在两座岛 。
+你可以将任意数量的 0 变为 1 ，以使两座岛连接起来，变成 一座岛 。
+返回必须翻转的 0 的最小数目。
+&amp;nbsp;
+示例 1：
+输入：grid = [[0,1],[1,0]] 输出：1 示例 2：
+输入：grid = [[0,1,0],[0,0,0],[0,0,1]] 输出：2 示例 3：
+输入：grid = [[1,1,1,1,1],[1,0,0,0,1],[1,0,1,0,1],[1,0,0,0,1],[1,1,1,1,1]] 输出：1 &amp;nbsp;
+提示：
+n == grid.length == grid[i].length 2 &amp;lt;= n &amp;lt;= 100 grid[i][j] 为 0 或 1 grid 中恰有两个岛 方法一：深度优先搜索 详细思路过程见官方题解，这里只做个人刷题记录，方便后续查询阅读</description></item><item><title>【2022-10-16每日一题】886. 可能的二分法[Medium]</title><link>/study/leetcode/possible-bipartition/</link><pubDate>Sun, 16 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/possible-bipartition/</guid><description>2022-10-16每日一题：886. 可能的二分法 难度：Medium
+标签：深度优先搜索 、 广度优先搜索 、 并查集 、 图
+给定一组&amp;nbsp;n&amp;nbsp;人（编号为&amp;nbsp;1, 2, ..., n），&amp;nbsp;我们想把每个人分进任意大小的两组。每个人都可能不喜欢其他人，那么他们不应该属于同一组。
+给定整数 n&amp;nbsp;和数组 dislikes&amp;nbsp;，其中&amp;nbsp;dislikes[i] = [ai, bi]&amp;nbsp;，表示不允许将编号为 ai&amp;nbsp;和&amp;nbsp;&amp;nbsp;bi的人归入同一组。当可以用这种方法将所有人分进两组时，返回 true；否则返回 false。
+&amp;nbsp;
+示例 1：
+输入：n = 4, dislikes = [[1,2],[1,3],[2,4]] 输出：true 解释：group1 [1,4], group2 [2,3] 示例 2：
+输入：n = 3, dislikes = [[1,2],[1,3],[2,3]] 输出：false 示例 3：
+输入：n = 5, dislikes = [[1,2],[2,3],[3,4],[4,5],[1,5]] 输出：false &amp;nbsp;
+提示：
+1 &amp;lt;= n &amp;lt;= 2000 0 &amp;lt;= dislikes.length &amp;lt;= 104 dislikes[i].length == 2 1 &amp;lt;= dislikes[i][j] &amp;lt;= n ai&amp;nbsp;&amp;lt; bi dislikes&amp;nbsp;中每一组都 不同 &amp;nbsp;</description></item><item><title>【2022-09-21每日一题】854. 相似度为 K 的字符串[Hard]</title><link>/study/leetcode/k-similar-strings/</link><pubDate>Wed, 21 Sep 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/k-similar-strings/</guid><description>2022-09-21每日一题：854. 相似度为 K 的字符串 难度：Hard
+标签：广度优先搜索 、 字符串
+对于某些非负整数 k ，如果交换 s1 中两个字母的位置恰好 k 次，能够使结果字符串等于 s2 ，则认为字符串 s1 和 s2 的 相似度为 k 。
+给你两个字母异位词 s1 和 s2 ，返回 s1 和 s2 的相似度 k 的最小值。
+&amp;nbsp;
+示例 1：
+输入：s1 = "ab", s2 = "ba" 输出：1 示例 2：
+输入：s1 = "abc", s2 = "bca" 输出：2 &amp;nbsp;
+提示：
+1 &amp;lt;= s1.length &amp;lt;= 20 s2.length == s1.length s1&amp;nbsp;和&amp;nbsp;s2&amp;nbsp;&amp;nbsp;只包含集合&amp;nbsp;{'a', 'b', 'c', 'd', 'e', 'f'}&amp;nbsp;中的小写字母 s2 是 s1 的一个字母异位词 方法一：广度优先搜索 详细思路过程见官方题解，这里只做个人刷题记录，方便后续查询阅读</description></item><item><title>【2022-09-18每日一题】827. 最大人工岛</title><link>/study/leetcode/making-a-large-island/</link><pubDate>Sun, 18 Sep 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/making-a-large-island/</guid><description>2022-09-18每日一题：827. 最大人工岛 难度：Hard
+标签：深度优先搜索 、 广度优先搜索 、 并查集 、 数组 、 矩阵
+给你一个大小为 n x n 二进制矩阵 grid 。最多 只能将一格 0 变成 1 。
+返回执行此操作后，grid 中最大的岛屿面积是多少？
+岛屿 由一组上、下、左、右四个方向相连的 1 形成。
+示例 1:
+输入: grid = [[1, 0], [0, 1]] 输出: 3 解释: 将一格0变成1，最终连通两个小岛得到面积为 3 的岛屿。 示例 2:
+输入: grid = [[1, 1], [1, 0]] 输出: 4 解释: 将一格0变成1，岛屿的面积扩大为 4。 示例 3:
+输入: grid = [[1, 1], [1, 1]] 输出: 4 解释: 没有0可以让我们变成1，面积依然为 4。 提示：
+n == grid.</description></item><item><title>【2022-09-15每日一题】672. 灯泡开关 Ⅱ</title><link>/study/leetcode/bulb-switcher-ii/</link><pubDate>Thu, 15 Sep 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/bulb-switcher-ii/</guid><description>2022-09-15每日一题：672. 灯泡开关 Ⅱ 难度：Medium 标签：位运算 、 深度优先搜索 、 广度优先搜索 、 数学 房间中有 n&amp;nbsp;只已经打开的灯泡，编号从 1 到 n 。墙上挂着 4 个开关 。
+这 4 个开关各自都具有不同的功能，其中：
+开关 1 ：反转当前所有灯的状态（即开变为关，关变为开） 开关 2 ：反转编号为偶数的灯的状态（即 2, 4, ...） 开关 3 ：反转编号为奇数的灯的状态（即 1, 3, ...） 开关 4 ：反转编号为 j = 3k + 1 的灯的状态，其中 k = 0, 1, 2, ...（即 1, 4, 7, 10, ...） 你必须 恰好 按压开关 presses 次。每次按压，你都需要从 4 个开关中选出一个来执行按压操作。
+给你两个整数 n 和 presses ，执行完所有按压之后，返回 不同可能状态 的数量。
+示例 1：
+输入：n = 1, presses = 1 输出：2 解释：状态可以是： - 按压开关 1 ，[关] - 按压开关 2 ，[开] 示例 2：</description></item><item><title>【2022-08-27每日一题】662. 二叉树最大宽度</title><link>/study/leetcode/maximum-width-of-binary-tree/</link><pubDate>Sat, 27 Aug 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/maximum-width-of-binary-tree/</guid><description>2022-08-27每日一题：662. 二叉树最大宽度 难度：Medium 标签：树 、 深度优先搜索 、 广度优先搜索 、 二叉树 给你一棵二叉树的根节点 root ，返回树的 最大宽度 。
+树的 最大宽度 是所有层中最大的 宽度 。
+每一层的 宽度 被定义为该层最左和最右的非空节点（即，两个端点）之间的长度。将这个二叉树视作与满二叉树结构相同，两端点间会出现一些延伸到这一层的 null 节点，这些 null 节点也计入长度。
+题目数据保证答案将会在&amp;nbsp; 32 位 带符号整数范围内。
+&amp;nbsp;
+示例 1：
+输入：root = [1,3,2,5,3,null,9] 输出：4 解释：最大宽度出现在树的第 3 层，宽度为 4 (5,3,null,9) 。 示例 2：
+输入：root = [1,3,2,5,null,null,9,6,null,7] 输出：7 解释：最大宽度出现在树的第 4 层，宽度为 7 (6,null,null,null,null,null,7) 。 示例 3：
+输入：root = [1,3,2,5] 输出：2 解释：最大宽度出现在树的第 2 层，宽度为 2 (3,2) 。 &amp;nbsp;
+提示：
+树中节点的数目范围是 [1, 3000] -100 &amp;lt;= Node.</description></item><item><title>【2022-08-22每日一题】655. 输出二叉树</title><link>/study/leetcode/print-binary-tree/</link><pubDate>Mon, 22 Aug 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/print-binary-tree/</guid><description>2022-08-22每日一题：655. 输出二叉树 难度：Medium 标签：树 、 深度优先搜索 、 广度优先搜索 、 二叉树 给你一棵二叉树的根节点 root ，请你构造一个下标从 0 开始、大小为 m x n 的字符串矩阵 res ，用以表示树的 格式化布局 。构造此格式化布局矩阵需要遵循以下规则：
+树的 高度 为 height ，矩阵的行数 m 应该等于 height + 1 。 矩阵的列数 n 应该等于 2height+1 - 1 。 根节点 需要放置在 顶行 的 正中间 ，对应位置为 res[0][(n-1)/2] 。 对于放置在矩阵中的每个节点，设对应位置为 res[r][c] ，将其左子节点放置在 res[r+1][c-2height-r-1] ，右子节点放置在 res[r+1][c+2height-r-1] 。 继续这一过程，直到树中的所有节点都妥善放置。 任意空单元格都应该包含空字符串 "" 。 返回构造得到的矩阵 res 。
+&amp;nbsp;
+&amp;nbsp;
+示例 1：
+输入：root = [1,2] 输出： [["","1",""], &amp;nbsp;["2","",""]] 示例 2：</description></item><item><title>【2022-08-17每日一题】1302. 层数最深叶子节点的和</title><link>/study/leetcode/deepest-leaves-sum/</link><pubDate>Wed, 17 Aug 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/deepest-leaves-sum/</guid><description>2022-08-17每日一题：1302. 层数最深叶子节点的和 难度：Medium 标签：树 、 深度优先搜索 、 广度优先搜索 、 二叉树 给你一棵二叉树的根节点 root ，请你返回 层数最深的叶子节点的和 。
+示例 1：
+输入：root = [1,2,3,4,5,null,6,7,null,null,null,null,8] 输出：15 示例 2：
+输入：root = [6,7,8,2,7,1,3,9,null,1,4,null,null,null,5] 输出：19 提示：
+树中节点数目在范围 [1, 104] 之间。 1 &lt;= Node.val &lt;= 100 ### 方法一：BFS（广度优先遍历） /** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ func deepestLeavesSum(root *TreeNode) (ans int) { if root == nil { return ans } queue := []*TreeNode{root} for len(queue) &amp;gt; 0 { ans = 0 for n := len(queue); n &amp;gt; 0; n-- { node := queue[0] queue = queue[1:] if node.</description></item><item><title>2022-08-05每日一题：623. 在二叉树中增加一行</title><link>/study/leetcode/add-one-row-to-tree/</link><pubDate>Fri, 05 Aug 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/add-one-row-to-tree/</guid><description>2022-08-05每日一题：623. 在二叉树中增加一行 给定一个二叉树的根&amp;nbsp;root&amp;nbsp;和两个整数 val 和&amp;nbsp;depth&amp;nbsp;，在给定的深度&amp;nbsp;depth&amp;nbsp;处添加一个值为 val 的节点行。
+注意，根节点&amp;nbsp;root&amp;nbsp;位于深度&amp;nbsp;1&amp;nbsp;。
+加法规则如下:
+给定整数&amp;nbsp;depth，对于深度为&amp;nbsp;depth - 1 的每个非空树节点 cur ，创建两个值为 val 的树节点作为 cur 的左子树根和右子树根。 cur 原来的左子树应该是新的左子树根的左子树。 cur 原来的右子树应该是新的右子树根的右子树。 如果 depth == 1 意味着&amp;nbsp;depth - 1&amp;nbsp;根本没有深度，那么创建一个树节点，值 val 作为整个原始树的新根，而原始树就是新根的左子树。 &amp;nbsp;
+示例 1:
+输入: root = [4,2,6,3,1,5], val = 1, depth = 2 输出: [4,1,1,2,null,null,6,3,1,5] 示例 2:
+输入: root = [4,2,null,3,1], val = 1, depth = 3 输出: [4,2,null,1,1,3,null,null,1] &amp;nbsp;
+提示:
+节点数在&amp;nbsp;[1, 104]&amp;nbsp;范围内 树的深度在&amp;nbsp;[1, 104]范围内 -100 &amp;lt;= Node.val &amp;lt;= 100 -105&amp;nbsp;&amp;lt;= val &amp;lt;= 105 1 &amp;lt;= depth &amp;lt;= the depth of tree + 1 方法一：深度优先遍历 当depth 为 1 时，需要创建一个新的 root，并将原 root 作为新 root 的左子节点。</description></item></channel></rss>

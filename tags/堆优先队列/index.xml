@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>堆（优先队列） on lbbniu</title><link>/tags/%E5%A0%86%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/</link><description>Recent content in 堆（优先队列） on lbbniu</description><generator>Hugo -- gohugo.io</generator><language>zh</language><managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor><webMaster>lbbniu@gmail.com (lbbniu)</webMaster><copyright>&amp;copy; 2021 &lt;a href="https://blog.lbbniu.com/">lbbniu&lt;/a></copyright><lastBuildDate>Wed, 18 Jan 2023 00:01:00 +0800</lastBuildDate><atom:link href="/tags/%E5%A0%86%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/index.xml" rel="self" type="application/rss+xml"/><item><title>剑指 Offer 40 最小的k个数</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/zui-xiao-de-kge-shu-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/zui-xiao-de-kge-shu-lcof/</guid><description>剑指 Offer 40 最小的k个数 输入整数数组 arr ，找出其中最小的 k 个数。例如，输入4、5、1、6、2、7、3、8这8个数字，则最小的4个数字是1、2、3、4。
+&amp;nbsp;
+示例 1：
+输入：arr = [3,2,1], k = 2 输出：[1,2] 或者 [2,1] 示例 2：
+输入：arr = [0,1,2,1], k = 1 输出：[0] &amp;nbsp;
+限制：
+0 &amp;lt;= k &amp;lt;= arr.length &amp;lt;= 10000 0 &amp;lt;= arr[i]&amp;nbsp;&amp;lt;= 10000 func getLeastNumbers(arr []int, k int) []int { } LeetCode题库地址 https://leetcode.cn/problems/zui-xiao-de-kge-shu-lcof</description></item><item><title>剑指 Offer 41 数据流中的中位数</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/shu-ju-liu-zhong-de-zhong-wei-shu-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/shu-ju-liu-zhong-de-zhong-wei-shu-lcof/</guid><description>剑指 Offer 41 数据流中的中位数 如何得到一个数据流中的中位数？如果从数据流中读出奇数个数值，那么中位数就是所有数值排序之后位于中间的数值。如果从数据流中读出偶数个数值，那么中位数就是所有数值排序之后中间两个数的平均值。
+例如，
+[2,3,4]&amp;nbsp;的中位数是 3
+[2,3] 的中位数是 (2 + 3) / 2 = 2.5
+设计一个支持以下两种操作的数据结构：
+void addNum(int num) - 从数据流中添加一个整数到数据结构中。 double findMedian() - 返回目前所有元素的中位数。 示例 1：
+输入： [&amp;quot;MedianFinder&amp;quot;,&amp;quot;addNum&amp;quot;,&amp;quot;addNum&amp;quot;,&amp;quot;findMedian&amp;quot;,&amp;quot;addNum&amp;quot;,&amp;quot;findMedian&amp;quot;] [[],[1],[2],[],[3],[]] 输出：[null,null,null,1.50000,null,2.00000] 示例 2：
+输入： [&amp;quot;MedianFinder&amp;quot;,&amp;quot;addNum&amp;quot;,&amp;quot;findMedian&amp;quot;,&amp;quot;addNum&amp;quot;,&amp;quot;findMedian&amp;quot;] [[],[2],[],[3],[]] 输出：[null,null,2.00000,null,2.50000] &amp;nbsp;
+限制：
+最多会对&amp;nbsp;addNum、findMedian 进行&amp;nbsp;50000&amp;nbsp;次调用。 注意：本题与主站 295 题相同：https://leetcode-cn.com/problems/find-median-from-data-stream/
+type MedianFinder struct { } /** initialize your data structure here. */ func Constructor() MedianFinder { } func (this *MedianFinder) AddNum(num int) { } func (this *MedianFinder) FindMedian() float64 { } /** * Your MedianFinder object will be instantiated and called as such: * obj := Constructor(); * obj.</description></item><item><title>剑指 Offer 49 丑数</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/chou-shu-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/chou-shu-lcof/</guid><description>剑指 Offer 49 丑数 我们把只包含质因子 2、3 和 5 的数称作丑数（Ugly Number）。求按从小到大的顺序的第 n 个丑数。
+&amp;nbsp;
+示例:
+输入: n = 10 输出: 12 解释: 1, 2, 3, 4, 5, 6, 8, 9, 10, 12 是前 10 个丑数。 说明:&amp;nbsp;&amp;nbsp;
+1&amp;nbsp;是丑数。 n&amp;nbsp;不超过1690。 注意：本题与主站 264 题相同：https://leetcode-cn.com/problems/ugly-number-ii/
+func nthUglyNumber(n int) int { } LeetCode题库地址 https://leetcode.cn/problems/chou-shu-lcof</description></item><item><title>剑指 Offer II 059 数据流的第 K 大数值</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/jbjn9c/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/jbjn9c/</guid><description>剑指 Offer II 059 数据流的第 K 大数值 设计一个找到数据流中第 k 大元素的类（class）。注意是排序后的第 k 大元素，不是第 k 个不同的元素。
+请实现 KthLargest&amp;nbsp;类：
+KthLargest(int k, int[] nums) 使用整数 k 和整数流 nums 初始化对象。 int add(int val) 将 val 插入数据流 nums 后，返回当前数据流中第 k 大的元素。 &amp;nbsp;
+示例：
+输入： [&amp;quot;KthLargest&amp;quot;, &amp;quot;add&amp;quot;, &amp;quot;add&amp;quot;, &amp;quot;add&amp;quot;, &amp;quot;add&amp;quot;, &amp;quot;add&amp;quot;] [[3, [4, 5, 8, 2]], [3], [5], [10], [9], [4]] 输出： [null, 4, 5, 5, 8, 8] 解释： KthLargest kthLargest = new KthLargest(3, [4, 5, 8, 2]); kthLargest.add(3); // return 4 kthLargest.</description></item><item><title>剑指 Offer II 060 出现频率最高的 k 个数字</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/g5c51o/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/g5c51o/</guid><description>剑指 Offer II 060 出现频率最高的 k 个数字 给定一个整数数组 nums 和一个整数 k&amp;nbsp;，请返回其中出现频率前 k 高的元素。可以按 任意顺序 返回答案。
+&amp;nbsp;
+示例 1:
+输入: nums = [1,1,1,2,2,3], k = 2 输出: [1,2] 示例 2:
+输入: nums = [1], k = 1 输出: [1] &amp;nbsp;
+提示：
+1 &amp;lt;= nums.length &amp;lt;= 105 k 的取值范围是 [1, 数组中不相同的元素的个数] 题目数据保证答案唯一，换句话说，数组中前 k 个高频元素的集合是唯一的 &amp;nbsp;
+进阶：所设计算法的时间复杂度 必须 优于 O(n log n) ，其中 n&amp;nbsp;是数组大小。
+&amp;nbsp;
+注意：本题与主站 347&amp;nbsp;题相同：https://leetcode-cn.com/problems/top-k-frequent-elements/
+func topKFrequent(nums []int, k int) []int { } LeetCode题库地址 https://leetcode.cn/problems/g5c51o</description></item><item><title>剑指 Offer II 061 和最小的 k 个数对</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/qn8ggx/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/qn8ggx/</guid><description>剑指 Offer II 061 和最小的 k 个数对 给定两个以升序排列的整数数组 nums1 和 nums2&amp;nbsp;,&amp;nbsp;以及一个整数 k&amp;nbsp;。
+定义一对值&amp;nbsp;(u,v)，其中第一个元素来自&amp;nbsp;nums1，第二个元素来自 nums2&amp;nbsp;。
+请找到和最小的 k&amp;nbsp;个数对&amp;nbsp;(u1,v1), &amp;nbsp;(u2,v2) &amp;nbsp;... &amp;nbsp;(uk,vk)&amp;nbsp;。
+&amp;nbsp;
+示例 1:
+输入: nums1 = [1,7,11], nums2 = [2,4,6], k = 3 输出: [1,2],[1,4],[1,6] 解释: 返回序列中的前 3 对数： [1,2],[1,4],[1,6],[7,2],[7,4],[11,2],[7,6],[11,4],[11,6] 示例 2:
+输入: nums1 = [1,1,2], nums2 = [1,2,3], k = 2 输出: [1,1],[1,1] 解释: 返回序列中的前 2 对数： &amp;nbsp; [1,1],[1,1],[1,2],[2,1],[1,2],[2,2],[1,3],[1,3],[2,3] 示例 3:
+输入: nums1 = [1,2], nums2 = [3], k = 3 输出: [1,3],[2,3] 解释: 也可能序列中所有的数对都被返回:[1,3],[2,3] &amp;nbsp;</description></item><item><title>剑指 Offer 59 - I 滑动窗口的最大值</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/hua-dong-chuang-kou-de-zui-da-zhi-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/hua-dong-chuang-kou-de-zui-da-zhi-lcof/</guid><description>剑指 Offer 59 - I 滑动窗口的最大值 给定一个数组 nums 和滑动窗口的大小 k，请找出所有滑动窗口里的最大值。
+示例:
+输入: nums = [1,3,-1,-3,5,3,6,7], 和 k = 3 输出: [3,3,5,5,6,7] 解释: 滑动窗口的位置 最大值 --------------- ----- [1 3 -1] -3 5 3 6 7 3 1 [3 -1 -3] 5 3 6 7 3 1 3 [-1 -3 5] 3 6 7 5 1 3 -1 [-3 5 3] 6 7 5 1 3 -1 -3 [5 3 6] 7 6 1 3 -1 -3 5 [3 6 7] 7 &amp;nbsp;</description></item><item><title>剑指 Offer II 076 数组中的第 k 大的数字</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/xx4gt2/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/xx4gt2/</guid><description>剑指 Offer II 076 数组中的第 k 大的数字 给定整数数组 nums 和整数 k，请返回数组中第 k 个最大的元素。
+请注意，你需要找的是数组排序后的第 k 个最大的元素，而不是第 k 个不同的元素。
+&amp;nbsp;
+示例 1:
+输入: [3,2,1,5,6,4] 和 k = 2 输出: 5 示例&amp;nbsp;2:
+输入: [3,2,3,1,2,4,5,5,6] 和 k = 4 输出: 4 &amp;nbsp;
+提示： 1 &amp;lt;= k &amp;lt;= nums.length &amp;lt;= 104 -104&amp;nbsp;&amp;lt;= nums[i] &amp;lt;= 104 &amp;nbsp;
+注意：本题与主站 215&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/kth-largest-element-in-an-array/
+func findKthLargest(nums []int, k int) int { } LeetCode题库地址 https://leetcode.cn/problems/xx4gT2</description></item><item><title>剑指 Offer II 078 合并排序链表</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/vvxgsw/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/vvxgsw/</guid><description>剑指 Offer II 078 合并排序链表 给定一个链表数组，每个链表都已经按升序排列。
+请将所有链表合并到一个升序链表中，返回合并后的链表。
+&amp;nbsp;
+示例 1：
+输入：lists = [[1,4,5],[1,3,4],[2,6]] 输出：[1,1,2,3,4,4,5,6] 解释：链表数组如下： [ 1-&amp;gt;4-&amp;gt;5, 1-&amp;gt;3-&amp;gt;4, 2-&amp;gt;6 ] 将它们合并到一个有序链表中得到。 1-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;4-&amp;gt;5-&amp;gt;6 示例 2：
+输入：lists = [] 输出：[] 示例 3：
+输入：lists = [[]] 输出：[] &amp;nbsp;
+提示：
+k == lists.length 0 &amp;lt;= k &amp;lt;= 10^4 0 &amp;lt;= lists[i].length &amp;lt;= 500 -10^4 &amp;lt;= lists[i][j] &amp;lt;= 10^4 lists[i] 按 升序 排列 lists[i].length 的总和不超过 10^4 &amp;nbsp;
+注意：本题与主站 23&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/merge-k-sorted-lists/
+/** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func mergeKLists(lists []*ListNode) *ListNode { } LeetCode题库地址 https://leetcode.</description></item><item><title>面试题 17.09 第 k 个数</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/get-kth-magic-number-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/get-kth-magic-number-lcci/</guid><description>面试题 17.09 第 k 个数 有些数的素因子只有 3，5，7，请设计一个算法找出第 k 个数。注意，不是必须有这些素因子，而是必须不包含其他的素因子。例如，前几个数按顺序应该是 1，3，5，7，9，15，21。
+示例 1:
+输入: k = 5 输出: 9 func getKthMagicNumber(k int) int { } LeetCode题库地址 https://leetcode.cn/problems/get-kth-magic-number-lcci</description></item><item><title>面试题 17.14 最小K个数</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/smallest-k-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/smallest-k-lcci/</guid><description>面试题 17.14 最小K个数 设计一个算法，找出数组中最小的k个数。以任意顺序返回这k个数均可。
+示例：
+输入： arr = [1,3,5,7,2,4,6,8], k = 4 输出： [1,2,3,4] 提示：
+0 &amp;lt;= len(arr) &amp;lt;= 100000 0 &amp;lt;= k &amp;lt;= min(100000, len(arr)) func smallestK(arr []int, k int) []int { } LeetCode题库地址 https://leetcode.cn/problems/smallest-k-lcci</description></item><item><title>面试题 17.20 连续中值</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/continuous-median-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/continuous-median-lcci/</guid><description>面试题 17.20 连续中值 随机产生数字并传递给一个方法。你能否完成这个方法，在每次产生新值时，寻找当前所有值的中间值（中位数）并保存。
+中位数是有序列表中间的数。如果列表长度是偶数，中位数则是中间两个数的平均值。
+例如，
+[2,3,4]&amp;nbsp;的中位数是 3
+[2,3] 的中位数是 (2 + 3) / 2 = 2.5
+设计一个支持以下两种操作的数据结构：
+void addNum(int num) - 从数据流中添加一个整数到数据结构中。 double findMedian() - 返回目前所有元素的中位数。 示例：
+addNum(1) addNum(2) findMedian() -&amp;gt; 1.5 addNum(3) findMedian() -&amp;gt; 2 type MedianFinder struct { } /** initialize your data structure here. */ func Constructor() MedianFinder { } func (this *MedianFinder) AddNum(num int) { } func (this *MedianFinder) FindMedian() float64 { } /** * Your MedianFinder object will be instantiated and called as such: * obj := Constructor(); * obj.</description></item><item><title>【2023-01-18每日一题】1825. 求出 MK 平均值[Hard]</title><link>/study/leetcode/finding-mk-average/</link><pubDate>Wed, 18 Jan 2023 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/finding-mk-average/</guid><description>2023-01-18每日一题：1825. 求出 MK 平均值 难度：Hard
+标签：设计 、 队列 、 数据流 、 有序集合 、 堆（优先队列）
+给你两个整数&amp;nbsp;m&amp;nbsp;和&amp;nbsp;k&amp;nbsp;，以及数据流形式的若干整数。你需要实现一个数据结构，计算这个数据流的 MK 平均值&amp;nbsp;。
+MK 平均值&amp;nbsp;按照如下步骤计算：
+如果数据流中的整数少于 m&amp;nbsp;个，MK 平均值&amp;nbsp;为 -1&amp;nbsp;，否则将数据流中最后 m&amp;nbsp;个元素拷贝到一个独立的容器中。 从这个容器中删除最小的 k&amp;nbsp;个数和最大的 k&amp;nbsp;个数。 计算剩余元素的平均值，并 向下取整到最近的整数&amp;nbsp;。 请你实现&amp;nbsp;MKAverage&amp;nbsp;类：
+MKAverage(int m, int k)&amp;nbsp;用一个空的数据流和两个整数 m&amp;nbsp;和 k&amp;nbsp;初始化&amp;nbsp;MKAverage&amp;nbsp;对象。 void addElement(int num)&amp;nbsp;往数据流中插入一个新的元素&amp;nbsp;num&amp;nbsp;。 int calculateMKAverage()&amp;nbsp;对当前的数据流计算并返回 MK 平均数&amp;nbsp;，结果需 向下取整到最近的整数 。 &amp;nbsp;
+示例 1：
+输入： ["MKAverage", "addElement", "addElement", "calculateMKAverage", "addElement", "calculateMKAverage", "addElement", "addElement", "addElement", "calculateMKAverage"] [[3, 1], [3], [1], [], [10], [], [5], [5], [5], []] 输出： [null, null, null, -1, null, 3, null, null, null, 5] 解释： MKAverage obj = new MKAverage(3, 1); obj.</description></item><item><title>【2023-01-02每日一题】1801. 积压订单中的订单总数[Medium]</title><link>/study/leetcode/number-of-orders-in-the-backlog/</link><pubDate>Mon, 02 Jan 2023 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/number-of-orders-in-the-backlog/</guid><description>2023-01-02每日一题：1801. 积压订单中的订单总数 难度：Medium
+标签：数组 、 模拟 、 堆（优先队列）
+给你一个二维整数数组 orders ，其中每个 orders[i] = [pricei, amounti, orderTypei] 表示有 amounti 笔类型为 orderTypei 、价格为 pricei 的订单。
+订单类型 orderTypei 可以分为两种：
+0 表示这是一批采购订单 buy 1 表示这是一批销售订单 sell 注意，orders[i] 表示一批共计 amounti 笔的独立订单，这些订单的价格和类型相同。对于所有有效的 i ，由 orders[i] 表示的所有订单提交时间均早于 orders[i+1] 表示的所有订单。
+存在由未执行订单组成的 积压订单 。积压订单最初是空的。提交订单时，会发生以下情况：
+如果该订单是一笔采购订单 buy ，则可以查看积压订单中价格 最低 的销售订单 sell 。如果该销售订单 sell 的价格 低于或等于 当前采购订单 buy 的价格，则匹配并执行这两笔订单，并将销售订单 sell 从积压订单中删除。否则，采购订单 buy 将会添加到积压订单中。 反之亦然，如果该订单是一笔销售订单 sell ，则可以查看积压订单中价格 最高 的采购订单 buy 。如果该采购订单 buy 的价格 高于或等于 当前销售订单 sell 的价格，则匹配并执行这两笔订单，并将采购订单 buy 从积压订单中删除。否则，销售订单 sell 将会添加到积压订单中。 输入所有订单后，返回积压订单中的 订单总数 。由于数字可能很大，所以需要返回对 109 + 7 取余的结果。</description></item><item><title>【2022-12-30每日一题】855. 考场就座[Medium]</title><link>/study/leetcode/exam-room/</link><pubDate>Fri, 30 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/exam-room/</guid><description>2022-12-30每日一题：855. 考场就座 难度：Medium
+标签：设计 、 有序集合 、 堆（优先队列）
+在考场里，一排有&amp;nbsp;N&amp;nbsp;个座位，分别编号为&amp;nbsp;0, 1, 2, ..., N-1&amp;nbsp;。
+当学生进入考场后，他必须坐在能够使他与离他最近的人之间的距离达到最大化的座位上。如果有多个这样的座位，他会坐在编号最小的座位上。(另外，如果考场里没有人，那么学生就坐在 0 号座位上。)
+返回&amp;nbsp;ExamRoom(int N)&amp;nbsp;类，它有两个公开的函数：其中，函数&amp;nbsp;ExamRoom.seat()&amp;nbsp;会返回一个&amp;nbsp;int&amp;nbsp;（整型数据），代表学生坐的位置；函数&amp;nbsp;ExamRoom.leave(int p)&amp;nbsp;代表坐在座位 p 上的学生现在离开了考场。每次调用&amp;nbsp;ExamRoom.leave(p)&amp;nbsp;时都保证有学生坐在座位&amp;nbsp;p&amp;nbsp;上。
+&amp;nbsp;
+示例：
+输入：[&amp;quot;ExamRoom&amp;quot;,&amp;quot;seat&amp;quot;,&amp;quot;seat&amp;quot;,&amp;quot;seat&amp;quot;,&amp;quot;seat&amp;quot;,&amp;quot;leave&amp;quot;,&amp;quot;seat&amp;quot;], [[10],[],[],[],[],[4],[]] 输出：[null,0,9,4,2,null,5] 解释： ExamRoom(10) -&amp;gt; null seat() -&amp;gt; 0，没有人在考场里，那么学生坐在 0 号座位上。 seat() -&amp;gt; 9，学生最后坐在 9 号座位上。 seat() -&amp;gt; 4，学生最后坐在 4 号座位上。 seat() -&amp;gt; 2，学生最后坐在 2 号座位上。 leave(4) -&amp;gt; null seat() -&amp;gt; 5，学生最后坐在 5 号座位上。 &amp;nbsp;
+提示：
+1 &amp;lt;= N &amp;lt;= 10^9 在所有的测试样例中&amp;nbsp;ExamRoom.seat()&amp;nbsp;和&amp;nbsp;ExamRoom.leave()&amp;nbsp;最多被调用&amp;nbsp;10^4&amp;nbsp;次。 保证在调用&amp;nbsp;ExamRoom.leave(p)&amp;nbsp;时有学生正坐在座位 p 上。 方法一： 详细思路过程见官方题解，这里只做个人刷题记录，方便后续查询阅读
+type ExamRoom struct { } func Constructor(n int) ExamRoom { } func (this *ExamRoom) Seat() int { } func (this *ExamRoom) Leave(p int) { } /** * Your ExamRoom object will be instantiated and called as such: * obj := Constructor(n); * param_1 := obj.</description></item><item><title>【2022-12-21每日一题】1753. 移除石子的最大得分[Medium]</title><link>/study/leetcode/maximum-score-from-removing-stones/</link><pubDate>Wed, 21 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/maximum-score-from-removing-stones/</guid><description>2022-12-21每日一题：1753. 移除石子的最大得分 难度：Medium
+标签：贪心 、 数学 、 堆（优先队列）
+你正在玩一个单人游戏，面前放置着大小分别为 a​​​​​​、b 和 c​​​​​​ 的 三堆 石子。
+每回合你都要从两个 不同的非空堆 中取出一颗石子，并在得分上加 1 分。当存在 两个或更多 的空堆时，游戏停止。
+给你三个整数 a 、b 和 c ，返回可以得到的 最大分数 。
+示例 1：
+输入：a = 2, b = 4, c = 6 输出：6 解释：石子起始状态是 (2, 4, 6) ，最优的一组操作是： - 从第一和第三堆取，石子状态现在是 (1, 4, 5) - 从第一和第三堆取，石子状态现在是 (0, 4, 4) - 从第二和第三堆取，石子状态现在是 (0, 3, 3) - 从第二和第三堆取，石子状态现在是 (0, 2, 2) - 从第二和第三堆取，石子状态现在是 (0, 1, 1) - 从第二和第三堆取，石子状态现在是 (0, 0, 0) 总分：6 分 。 示例 2：</description></item><item><title>【2022-12-05每日一题】1687. 从仓库到码头运输箱子[Hard]</title><link>/study/leetcode/delivering-boxes-from-storage-to-ports/</link><pubDate>Mon, 05 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/delivering-boxes-from-storage-to-ports/</guid><description>2022-12-05每日一题：1687. 从仓库到码头运输箱子 难度：Hard
+标签：线段树 、 队列 、 数组 、 动态规划 、 单调队列 、 堆（优先队列）
+你有一辆货运卡车，你需要用这一辆车把一些箱子从仓库运送到码头。这辆卡车每次运输有 箱子数目的限制 和 总重量的限制 。
+给你一个箱子数组 boxes 和三个整数 portsCount, maxBoxes 和 maxWeight ，其中 boxes[i] = [ports​​i​, weighti] 。
+ports​​i 表示第 i 个箱子需要送达的码头， weightsi 是第 i 个箱子的重量。 portsCount 是码头的数目。 maxBoxes 和 maxWeight 分别是卡车每趟运输箱子数目和重量的限制。 箱子需要按照 数组顺序 运输，同时每次运输需要遵循以下步骤：
+卡车从 boxes 队列中按顺序取出若干个箱子，但不能违反 maxBoxes 和 maxWeight 限制。 对于在卡车上的箱子，我们需要 按顺序 处理它们，卡车会通过 一趟行程 将最前面的箱子送到目的地码头并卸货。如果卡车已经在对应的码头，那么不需要 额外行程 ，箱子也会立马被卸货。 卡车上所有箱子都被卸货后，卡车需要 一趟行程 回到仓库，从箱子队列里再取出一些箱子。 卡车在将所有箱子运输并卸货后，最后必须回到仓库。
+请你返回将所有箱子送到相应码头的 最少行程 次数。
+示例 1：
+输入：boxes = [[1,1],[2,1],[1,1]], portsCount = 2, maxBoxes = 3, maxWeight = 3 输出：4 解释：最优策略如下： - 卡车将所有箱子装上车，到达码头 1 ，然后去码头 2 ，然后再回到码头 1 ，最后回到仓库，总共需要 4 趟行程。 所以总行程数为 4 。 注意到第一个和第三个箱子不能同时被卸货，因为箱子需要按顺序处理（也就是第二个箱子需要先被送到码头 2 ，然后才能处理第三个箱子）。 示例 2：</description></item><item><title>【2022-11-26每日一题】882. 细分图中的可到达节点[Hard]</title><link>/study/leetcode/reachable-nodes-in-subdivided-graph/</link><pubDate>Sat, 26 Nov 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/reachable-nodes-in-subdivided-graph/</guid><description>2022-11-26每日一题：882. 细分图中的可到达节点 难度：Hard
+标签：图 、 最短路 、 堆（优先队列）
+给你一个无向图（原始图），图中有 n 个节点，编号从 0 到 n - 1 。你决定将图中的每条边 细分 为一条节点链，每条边之间的新节点数各不相同。
+图用由边组成的二维数组 edges 表示，其中&amp;nbsp;edges[i] = [ui, vi, cnti] 表示原始图中节点&amp;nbsp;ui 和&amp;nbsp;vi 之间存在一条边，cnti 是将边 细分 后的新节点总数。注意，cnti == 0 表示边不可细分。
+要 细分 边 [ui, vi] ，需要将其替换为 (cnti + 1) 条新边，和&amp;nbsp;cnti 个新节点。新节点为 x1, x2, ..., xcnti ，新边为 [ui, x1], [x1, x2], [x2, x3], ..., [xcnti+1, xcnti], [xcnti, vi] 。
+现在得到一个&amp;nbsp;新的细分图 ，请你计算从节点 0 出发，可以到达多少个节点？如果节点间距离是 maxMoves 或更少，则视为 可以到达 。
+给你原始图和 maxMoves ，返回 新的细分图中从节点 0 出发 可到达的节点数&amp;nbsp;。</description></item><item><title>【2022-10-26每日一题】862. 和至少为 K 的最短子数组[Hard]</title><link>/study/leetcode/shortest-subarray-with-sum-at-least-k/</link><pubDate>Wed, 26 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/shortest-subarray-with-sum-at-least-k/</guid><description>2022-10-26每日一题：862. 和至少为 K 的最短子数组 难度：Hard
+标签：队列 、 数组 、 二分查找 、 前缀和 、 滑动窗口 、 单调队列 、 堆（优先队列）
+给你一个整数数组 nums 和一个整数 k ，找出 nums 中和至少为 k 的 最短非空子数组 ，并返回该子数组的长度。如果不存在这样的 子数组 ，返回 -1 。
+子数组 是数组中 连续 的一部分。
+&amp;nbsp;
+示例 1：
+输入：nums = [1], k = 1 输出：1 示例 2：
+输入：nums = [1,2], k = 4 输出：-1 示例 3：
+输入：nums = [2,-1,2], k = 3 输出：3 &amp;nbsp;
+提示：
+1 &amp;lt;= nums.length &amp;lt;= 105 -105 &amp;lt;= nums[i] &amp;lt;= 105 1 &amp;lt;= k &amp;lt;= 109 方法一：前缀和 + 单调双端队列 推荐题解 func shortestSubarray(nums []int, k int) int { n := len(nums) preSum := make([]int, n+1) for i, num := range nums { preSum[i+1] = preSum[i] + num // 计算前缀和 } ans := n + 1 q := []int{} for i, curSum := range preSum { for len(q) &amp;gt; 0 &amp;amp;&amp;amp; curSum - preSum[q[0]] &amp;gt;= k { ans = min(ans, i-q[0]) q = q[1:] // 上面计算后 q[0] 没有用了，直接移除 } for len(q) &amp;gt;0 &amp;amp;&amp;amp; preSum[q[len(q)-1]] &amp;gt;= curSum { q = q[:len(q)-1] // 移除队列中大约等于当前数的元素 } q = append(q, i) } if ans &amp;lt; n + 1 { return ans } return -1 } func min(a, b int) int { if a &amp;lt; b { return a } return b } 复杂度分析 LeetCode题库地址 https://leetcode.</description></item><item><title>【2022-09-28每日一题】面试题 17.09. 第 k 个数[Medium]</title><link>/study/leetcode/get-kth-magic-number-lcci/</link><pubDate>Wed, 28 Sep 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/get-kth-magic-number-lcci/</guid><description>2022-09-28每日一题：面试题 17.09. 第 k 个数 难度：Medium
+标签：哈希表 、 数学 、 动态规划 、 堆（优先队列）
+有些数的素因子只有 3，5，7，请设计一个算法找出第 k 个数。注意，不是必须有这些素因子，而是必须不包含其他的素因子。例如，前几个数按顺序应该是 1，3，5，7，9，15，21。
+示例 1:
+输入: k = 5 输出: 9 方法一：堆（优先队列） // 小顶堆 type hp struct { sort.IntSlice } func (h hp) Less(i, j int) bool { return h.IntSlice[i] &amp;lt; h.IntSlice[j] } func (h *hp) Push(v interface{}) {h.IntSlice = append(h.IntSlice, v.(int))} func (h *hp) Pop() (v interface{}) { v, h.IntSlice = h.IntSlice[h.Len()-1], h.IntSlice[:h.Len()-1]; return v} var factors = []int{3, 5, 7} func getKthMagicNumber(k int) int { h := hp{sort.</description></item><item><title>【2022-09-11每日一题】：857. 雇佣 K 名工人的最低成本</title><link>/study/leetcode/minimum-cost-to-hire-k-workers/</link><pubDate>Sun, 11 Sep 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/minimum-cost-to-hire-k-workers/</guid><description>2022-09-11每日一题：857. 雇佣 K 名工人的最低成本 难度：Hard 标签：贪心 、 数组 、 排序 、 堆（优先队列） 有 n&amp;nbsp;名工人。&amp;nbsp;给定两个数组&amp;nbsp;quality&amp;nbsp;和&amp;nbsp;wage&amp;nbsp;，其中，quality[i]&amp;nbsp;表示第&amp;nbsp;i&amp;nbsp;名工人的工作质量，其最低期望工资为&amp;nbsp;wage[i]&amp;nbsp;。
+现在我们想雇佣&amp;nbsp;k&amp;nbsp;名工人组成一个工资组。在雇佣&amp;nbsp;一组 k&amp;nbsp;名工人时，我们必须按照下述规则向他们支付工资：
+对工资组中的每名工人，应当按其工作质量与同组其他工人的工作质量的比例来支付工资。 工资组中的每名工人至少应当得到他们的最低期望工资。 给定整数 k ，返回 组成满足上述条件的付费群体所需的最小金额&amp;nbsp;。在实际答案的&amp;nbsp;10-5&amp;nbsp;以内的答案将被接受。。
+&amp;nbsp;
+示例 1：
+输入： quality = [10,20,5], wage = [70,50,30], k = 2 输出： 105.00000 解释： 我们向 0 号工人支付 70，向 2 号工人支付 35。 示例 2：
+输入： quality = [3,1,10,10,1], wage = [4,8,2,2,7], k = 3 输出： 30.66667 解释： 我们向 0 号工人支付 4，向 2 号和 3 号分别支付 13.33333。 &amp;nbsp;
+提示：
+n == quality.length == wage.</description></item><item><title>【2022-08-26每日一题】1464. 数组中两元素的最大乘积</title><link>/study/leetcode/maximum-product-of-two-elements-in-an-array/</link><pubDate>Fri, 26 Aug 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/maximum-product-of-two-elements-in-an-array/</guid><description>2022-08-26每日一题：1464. 数组中两元素的最大乘积 难度：Easy 标签：数组 、 排序 、 堆（优先队列） 给你一个整数数组 nums，请你选择数组的两个不同下标 i 和 j，使 (nums[i]-1)*(nums[j]-1) 取得最大值。
+请你计算并返回该式的最大值。
+&amp;nbsp;
+示例 1：
+输入：nums = [3,4,5,2] 输出：12 解释：如果选择下标 i=1 和 j=2（下标从 0 开始），则可以获得最大值，(nums[1]-1)*(nums[2]-1) = (4-1)*(5-1) = 3*4 = 12 。 示例 2：
+输入：nums = [1,5,4,5] 输出：16 解释：选择下标 i=1 和 j=3（下标从 0 开始），则可以获得最大值 (5-1)*(5-1) = 16 。 示例 3：
+输入：nums = [3,7] 输出：12 &amp;nbsp;
+提示：
+2 &amp;lt;= nums.length &amp;lt;= 500 1 &amp;lt;= nums[i] &amp;lt;= 10^3 方法一：一次遍历找出最大的两个数 func maxProduct(nums []int) int { a, b := nums[0], nums[1] for i := 2; i &amp;lt; len(nums); i++ { // 每次和最小的数进行比较并更新对应数字 if a &amp;lt; b &amp;amp;&amp;amp; a &amp;lt; nums[i] { a = nums[i] } else if b &amp;lt; nums[i] { b = nums[i] } } return (a-1)*(b-1) } 复杂度分析 时间复杂度：O(n) 空间复杂度：O(1) 方法二：排序，取最大两个数 func maxProduct(nums []int) int { sort.</description></item><item><title>【2022-08-25每日一题】658. 找到 K 个最接近的元素</title><link>/study/leetcode/find-k-closest-elements/</link><pubDate>Thu, 25 Aug 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/find-k-closest-elements/</guid><description>2022-08-25每日一题：658. 找到 K 个最接近的元素 难度：Medium 标签：数组 、 双指针 、 二分查找 、 排序 、 堆（优先队列） 给定一个 排序好 的数组&amp;nbsp;arr ，两个整数 k 和 x ，从数组中找到最靠近 x（两数之差最小）的 k 个数。返回的结果必须要是按升序排好的。
+整数 a 比整数 b 更接近 x 需要满足：
+|a - x| &amp;lt; |b - x| 或者 |a - x| == |b - x| 且 a &amp;lt; b &amp;nbsp;
+示例 1：
+输入：arr = [1,2,3,4,5], k = 4, x = 3 输出：[1,2,3,4] 示例 2：
+输入：arr = [1,2,3,4,5], k = 4, x = -1 输出：[1,2,3,4] &amp;nbsp;</description></item></channel></rss>

@@ -1,0 +1,1296 @@
+<!doctype html><html lang=zh dir=ltr><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>第3周 | PHP算法练习 | lbbniu</title>
+<meta name=generator content="Hugo Eureka 0.9.3"><link rel=stylesheet href=/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css><script defer src=/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js></script><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" as=style onload='this.onload=null,this.rel="stylesheet"'><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/github.min.css media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/php.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/java.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/go.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/python.min.js crossorigin></script><link rel=stylesheet href=/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css media=print onload='this.media="all",this.onload=null'><script defer type=text/javascript src=/js/fontawesome.min.35973bea57658ef0dd22ad59ea4642b6c8c67af62bed8659ac326d284ef285a6657cdbcf57d3b2910e7e992f2b20426e.js></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css integrity=sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js integrity=sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY crossorigin></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script><script defer src=https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js integrity=sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0 crossorigin></script><link rel=icon type=image/png sizes=32x32 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_32x32_fill_box_center_3.png><link rel=apple-touch-icon sizes=180x180 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_180x180_fill_box_center_3.png><meta name=description content="第3周 第6课 | 树、二叉树、二叉搜索树 1. 树、二叉树、二叉搜索树的实现和特性 参考链接 二叉搜索树 Demo 思考题 树的面试题解法一般都是递归，为什么？ 说明：同学们可以将自己的思考写在课程下方的留言区一起讨论，也可以写在第 2 周的学习总结中。
+2. 实战题目解析：二叉树的中序遍历 参考链接 树的遍历 Demo 实战题目 / 课后作业 94. 二叉树的中序遍历 /** * Definition for a binary tree node. * class TreeNode { * public $val = null; * public $left = null; * public $right = null; * function __construct($value) { $this->val = $value; } * } */ class Solution { private $values = []; /** * 方法一：递归 * @param TreeNode $root * @return Integer[] */ function inorderTraversal1($root) { $this->inorder($root); return $this->values; } function inorder($root) { if ($root) { $this->inorder($root->left); $this->values[] = $root->val; $this->inorder($root->right); } } /** * 方法二：迭代 * @param TreeNode $root * @return Integer[] */ function inorderTraversal2($root) { $stack = $res = []; while ($root || $stack) { while ($root) { $stack[] = $root; $root = $root->left; } $root = array_pop($stack); $res[] = $root->val; $root = $root->right; } return $res; } /** * 方法三：颜色标记法 * @param TreeNode $root * @return Integer[] */ function inorderTraversal3($root) { $white = 0; $gray = 1; $stack = [[$white, $root]]; $res = []; while ($stack) { [$color, $node ] = array_pop($stack); if (!"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"算法学习","item":"/study/"},{"@type":"ListItem","position":2,"name":"极客时间算法训练营2020版","item":"/study/algorithm/"},{"@type":"ListItem","position":3,"name":"PHP算法练习","item":"/study/algorithm/php/"},{"@type":"ListItem","position":4,"name":"第3周","item":"/study/algorithm/php/03%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%B8%89%E5%91%A8/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/study/algorithm/php/03%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%B8%89%E5%91%A8/"},"headline":"第3周 | PHP算法练习 | lbbniu","datePublished":"2021-11-20T17:18:16+08:00","dateModified":"2021-11-20T17:18:16+08:00","wordCount":4074,"publisher":{"@type":"Person","name":"lbbniu","logo":{"@type":"ImageObject","url":"/images/icon.gif"}},"description":"第3周 第6课 | 树、二叉树、二叉搜索树 1. 树、二叉树、二叉搜索树的实现和特性 参考链接 二叉搜索树 Demo 思考题 树的面试题解法一般都是递归，为什么？ 说明：同学们可以将自己的思考写在课程下方的留言区一起讨论，也可以写在第 2 周的学习总结中。\n2. 实战题目解析：二叉树的中序遍历 参考链接 树的遍历 Demo 实战题目 \/ 课后作业 94. 二叉树的中序遍历 \/** * Definition for a binary tree node. * class TreeNode { * public $val = null; * public $left = null; * public $right = null; * function __construct($value) { $this-\u0026gt;val = $value; } * } *\/ class Solution { private $values = []; \/** * 方法一：递归 * @param TreeNode $root * @return Integer[] *\/ function inorderTraversal1($root) { $this-\u0026gt;inorder($root); return $this-\u0026gt;values; } function inorder($root) { if ($root) { $this-\u0026gt;inorder($root-\u0026gt;left); $this-\u0026gt;values[] = $root-\u0026gt;val; $this-\u0026gt;inorder($root-\u0026gt;right); } } \/** * 方法二：迭代 * @param TreeNode $root * @return Integer[] *\/ function inorderTraversal2($root) { $stack = $res = []; while ($root || $stack) { while ($root) { $stack[] = $root; $root = $root-\u0026gt;left; } $root = array_pop($stack); $res[] = $root-\u0026gt;val; $root = $root-\u0026gt;right; } return $res; } \/** * 方法三：颜色标记法 * @param TreeNode $root * @return Integer[] *\/ function inorderTraversal3($root) { $white = 0; $gray = 1; $stack = [[$white, $root]]; $res = []; while ($stack) { [$color, $node ] = array_pop($stack); if (!"}</script><meta property="og:title" content="第3周 | PHP算法练习 | lbbniu"><meta property="og:type" content="article"><meta property="og:image" content="/images/icon.png"><meta property="og:url" content="/study/algorithm/php/03%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%B8%89%E5%91%A8/"><meta property="og:description" content="第3周 第6课 | 树、二叉树、二叉搜索树 1. 树、二叉树、二叉搜索树的实现和特性 参考链接 二叉搜索树 Demo 思考题 树的面试题解法一般都是递归，为什么？ 说明：同学们可以将自己的思考写在课程下方的留言区一起讨论，也可以写在第 2 周的学习总结中。
+2. 实战题目解析：二叉树的中序遍历 参考链接 树的遍历 Demo 实战题目 / 课后作业 94. 二叉树的中序遍历 /** * Definition for a binary tree node. * class TreeNode { * public $val = null; * public $left = null; * public $right = null; * function __construct($value) { $this->val = $value; } * } */ class Solution { private $values = []; /** * 方法一：递归 * @param TreeNode $root * @return Integer[] */ function inorderTraversal1($root) { $this->inorder($root); return $this->values; } function inorder($root) { if ($root) { $this->inorder($root->left); $this->values[] = $root->val; $this->inorder($root->right); } } /** * 方法二：迭代 * @param TreeNode $root * @return Integer[] */ function inorderTraversal2($root) { $stack = $res = []; while ($root || $stack) { while ($root) { $stack[] = $root; $root = $root->left; } $root = array_pop($stack); $res[] = $root->val; $root = $root->right; } return $res; } /** * 方法三：颜色标记法 * @param TreeNode $root * @return Integer[] */ function inorderTraversal3($root) { $white = 0; $gray = 1; $stack = [[$white, $root]]; $res = []; while ($stack) { [$color, $node ] = array_pop($stack); if (!"><meta property="og:locale" content="zh"><meta property="og:site_name" content="lbbniu"><meta property="article:published_time" content="2021-11-20T17:18:16+08:00"><meta property="article:modified_time" content="2021-11-20T17:18:16+08:00"><meta property="article:section" content="study"><meta property="article:tag" content="算法"><meta property="article:tag" content="leetcode"><meta property="og:see_also" content="/study/leetcode/leetcode/"><meta property="og:see_also" content="/study/algorithm/go/week10/"><meta property="og:see_also" content="/study/algorithm/php/01%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%B8%80%E5%91%A8/"><meta property="og:see_also" content="/study/algorithm/go/week01/"><meta property="og:see_also" content="/study/algorithm/php/02%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%BA%8C%E5%91%A8/"><meta property="og:see_also" content="/study/algorithm/go/week02/"><body class="flex min-h-screen flex-col"><header class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"><div class="mx-auto w-full max-w-screen-xl"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=="Auto"||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName("html")[0].classList.add("dark")</script><nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0"><a href=/ class="me-6 text-primary-text text-xl font-bold">lbbniu</a>
+<button id=navbar-btn class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+<i class="fas fa-bars"></i></button><div id=target class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20"><div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0"><a href=/post/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">文章</a>
+<a href=/cloud-native/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">云原生</a>
+<a href=/study/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 selected-menu-item me-4">算法学习</a>
+<a href=/docs/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">Go学习训练营</a>
+<a href=/tags/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">标签</a></div><div class=flex><div class="relative pt-4 md:pt-0"><div class="cursor-pointer hover:text-eureka" id=lightDarkMode><i class="fas fa-adjust"></i></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id=is-open></div><div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40" id=lightDarkOptions><span class="px-4 py-1 hover:text-eureka" name=Light>浅色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Dark>深色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Auto>自动</span></div></div></div></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id=is-open-mobile></div></nav><script>let element=document.getElementById("lightDarkMode");storageColorScheme==null||storageColorScheme=="Auto"?document.addEventListener("DOMContentLoaded",()=>{window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",switchDarkMode)}):storageColorScheme=="Light"?(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","sun"),element.firstElementChild.classList.add("fa-sun")):storageColorScheme=="Dark"&&(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","moon"),element.firstElementChild.classList.add("fa-moon")),document.addEventListener("DOMContentLoaded",()=>{getcolorscheme(),switchBurger()})</script></div></header><main class="grow pt-16"><div class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8"><div class=lg:pt-12><div class="flex flex-col md:flex-row bg-secondary-bg rounded"><div class="md:w-1/4 lg:w-1/5 border-e"><div class="sticky top-16 pt-6"><div id=sidebar-title class="md:hidden mx-4 px-2 pt-4 pb-2 md:border-b text-tertiary-text md:text-primary-text"><span class=font-semibold>目录</span>
+<i class='fas fa-caret-right ms-1'></i></div><div id=sidebar-toc class="hidden md:block overflow-y-auto mx-6 md:mx-0 pe-6 pt-2 md:max-h-doc-sidebar bg-primary-bg md:bg-transparent"><div class="flex flex-wrap ms-4 -me-2 p-2 bg-secondary-bg md:bg-primary-bg rounded"><a class=hover:text-eureka href=/study/algorithm/php/>PHP算法练习</a></div><ul class=ps-6><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/php/00%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E9%A2%84%E4%B9%A0/>预习</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/php/01%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%B8%80%E5%91%A8/>第1周</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/php/02%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%BA%8C%E5%91%A8/>第2周</a></div></li><li class=py-2><div><a class="text-eureka hover:text-eureka" href=/study/algorithm/php/03%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%B8%89%E5%91%A8/>第3周</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/php/04%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E5%9B%9B%E5%91%A8/>第4周</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/php/04%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E5%9B%9B%E5%91%A8%E6%80%BB%E7%BB%93/>第4周总结</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/php/06%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E5%85%AD%E5%91%A8/>第6周</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/php/07%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%B8%83%E5%91%A8/>第7周</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/php/08%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E5%85%AB%E5%91%A8/>第8周</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/php/09%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%B9%9D%E5%91%A8/>第9周</a></div></li></ul></div></div></div><div class="w-full md:w-3/4 lg:w-4/5 pb-8 pt-2 md:pt-8"><div class=flex><div class="w-full lg:w-3/4 px-6"><article class=prose><h1 class=mb-4>第3周</h1><div class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"><div class="me-6 my-2"><i class="fas fa-calendar me-1"></i>
+<span>2021-11-20</span></div><div class="me-6 my-2"><i class="fas fa-clock me-1"></i>
+<span>20分钟阅读时长</span></div></div><h1 id=第3周-第6课--树二叉树二叉搜索树>第3周 第6课 | 树、二叉树、二叉搜索树</h1><h2 id=1-树二叉树二叉搜索树的实现和特性><strong>1. 树、二叉树、二叉搜索树的实现和特性</strong></h2><h3 id=参考链接>参考链接</h3><ul><li><a href=https://visualgo.net/zh/bst target=_blank rel=noopener>二叉搜索树 Demo</a></li></ul><h3 id=思考题>思考题</h3><p>树的面试题解法一般都是递归，为什么？
+说明：同学们可以将自己的思考写在课程下方的留言区一起讨论，也可以写在第 2 周的学习总结中。</p><h2 id=2-实战题目解析二叉树的中序遍历><strong>2. 实战题目解析：二叉树的中序遍历</strong></h2><h3 id=参考链接-1>参考链接</h3><ul><li><a href=https://visualgo.net/zh/bst target=_blank rel=noopener>树的遍历 Demo</a></li></ul><h3 id=实战题目--课后作业>实战题目 / 课后作业</h3><h4 id=94-二叉树的中序遍历httpsleetcode-cncomproblemsbinary-tree-inorder-traversal><a href=https://leetcode-cn.com/problems/binary-tree-inorder-traversal/ target=_blank rel=noopener>94. 二叉树的中序遍历</a></h4><pre><code class=language-php>/**
+ * Definition for a binary tree node.
+ * class TreeNode {
+ *     public $val = null;
+ *     public $left = null;
+ *     public $right = null;
+ *     function __construct($value) { $this-&gt;val = $value; }
+ * }
+ */
+class Solution {
+
+    private $values = [];
+    /** 
+     * 方法一：递归
+     * @param TreeNode $root
+     * @return Integer[]
+     */
+    function inorderTraversal1($root) {
+        $this-&gt;inorder($root);
+        return $this-&gt;values;
+    }
+    function inorder($root) {
+        if ($root) {
+            $this-&gt;inorder($root-&gt;left);
+            $this-&gt;values[] = $root-&gt;val;
+            $this-&gt;inorder($root-&gt;right);
+        }
+    }
+    /** 
+     * 方法二：迭代
+     * @param TreeNode $root
+     * @return Integer[]
+     */
+    function inorderTraversal2($root) {
+        $stack = $res = [];
+        while ($root || $stack) {
+            while ($root) {
+                $stack[] = $root;
+                $root = $root-&gt;left;
+            }
+            $root = array_pop($stack);
+            $res[] = $root-&gt;val;
+            $root = $root-&gt;right;
+        }
+        return $res;
+    }
+    /** 
+     * 方法三：颜色标记法
+     * @param TreeNode $root
+     * @return Integer[]
+     */
+    function inorderTraversal3($root) {
+        $white = 0; $gray = 1;
+        $stack = [[$white, $root]];
+        $res = [];
+        while ($stack) {
+            [$color, $node ] = array_pop($stack);
+            if (!$node) continue;
+            if ($color == $white) {
+                $stack[] = [$white, $node-&gt;right];
+                $stack[] = [$gray, $node];
+                $stack[] = [$white, $node-&gt;left];
+            } else {
+                $res[] = $node-&gt;val;
+            }
+        }
+        return $res;
+    }
+    /** 
+     * 方法四：莫里斯遍历
+     * Step 1: 将当前节点current初始化为根节点
+	 * Step 2: While current不为空，
+	 * 若current没有左子节点
+     * 	a. 将current添加到输出
+     * 	b. 进入右子树，亦即, current = current.right
+	 * 否则
+     * 	a. 在current的左子树中，令current成为最右侧节点的右子节点
+     * 	b. 进入左子树，亦即，current = current.left
+     * @param TreeNode $root
+     * @return Integer[]
+     */
+    function inorderTraversal4($root) {
+        $res = [];
+        $curr = $root;
+        while ($curr) {
+            if ($curr-&gt;left == null) {
+                $res[] = $curr-&gt;val;
+                $curr = $curr-&gt;right;
+            } else {
+                //查找左子树，最右侧节点
+                $pre = $curr-&gt;left;
+                while ($pre-&gt;right) {
+                    $pre = $pre-&gt;right;
+                }
+                $pre-&gt;right = $curr;
+                $tmp = $curr;
+                $curr = $curr-&gt;left;
+                $tmp-&gt;left = null;
+            }
+        }
+        return $res;
+    }
+}
+</code></pre><h4 id=144-二叉树的前序遍历httpsleetcode-cncomproblemsbinary-tree-preorder-traversal><a href=https://leetcode-cn.com/problems/binary-tree-preorder-traversal/ target=_blank rel=noopener>144. 二叉树的前序遍历</a></h4><pre><code class=language-php>/**
+ * Definition for a binary tree node.
+ * class TreeNode {
+ *     public $val = null;
+ *     public $left = null;
+ *     public $right = null;
+ *     function __construct($value) { $this-&gt;val = $value; }
+ * }
+ */
+class Solution {
+
+    private $values;
+    /**
+     * 方法一：递归
+     * @param TreeNode $root
+     * @return Integer[]
+     */
+    function preorderTraversal1($root) {
+		$this-&gt;values = [];
+        $this-&gt;preorder($root);
+        return $this-&gt;values;
+    }
+    function preorder($root) {
+        if ($root) {
+            $this-&gt;values[] = $root-&gt;val;
+            $this-&gt;preorder($root-&gt;left);
+            $this-&gt;preorder($root-&gt;right);
+        }  
+    }
+    /**
+     * 方法二：迭代
+     * @param TreeNode $root
+     * @return Integer[]
+     */
+    function preorderTraversal2($root) {
+        $res = [];
+        if ($root == null) return $res; 
+        $stack = [$root];
+        while ($stack) {
+            $root = array_pop($stack);
+            if (!$root) continue;
+            $res[] = $root-&gt;val;
+            $stack[] = $root-&gt;right;
+            $stack[] = $root-&gt;left;
+        }
+        return $res;
+    }
+    
+    /**
+     * 方法三：颜色标记法
+     * @param TreeNode $root
+     * @return Integer[]
+     */
+    function preorderTraversal2($root) {
+        $res = [];
+        if (!$root) return $res;
+        $stack = [[false, $root]];
+        while ($stack) {
+            [$flag, $root] = array_pop($stack);
+            if (!$root) continue;
+            if ($flag) {
+                $res[] = $root-&gt;val;
+            } else {
+                $stack[] = [false, $root-&gt;right];
+                $stack[] = [false, $root-&gt;left];
+                $stack[] = [true, $root];
+            }
+        }
+        return $res;
+    }
+    
+    /**
+     * 方法四：莫里斯遍历
+     * @param TreeNode $root
+     * @return Integer[]
+     */
+    function preorderTraversal4($root) {
+        $res = [];
+        $node = $root;
+        while ($node) {
+            //没有左节点
+            if ($node-&gt;left == null) {
+                $res[] = $node-&gt;val;
+                $node = $node-&gt;right;
+            } else {
+                $predecessor = $node-&gt;left;
+                while ($predecessor-&gt;right &amp;&amp; $predecessor-&gt;right != $node) {
+                    $predecessor = $predecessor-&gt;right;
+                }
+                if ($predecessor-&gt;right == null) {
+                 	$res[] = $node-&gt;val;
+                    $predecessor-&gt;right = $node;
+                    $node = $node-&gt;left;
+                } else {
+                    $predecessor-&gt;right = null;
+                    $node = $node-&gt;right;
+                }
+            }
+        }
+        return $res;
+    }
+}
+</code></pre><h4 id=590-n叉树的后序遍历httpsleetcode-cncomproblemsn-ary-tree-postorder-traversal><a href=https://leetcode-cn.com/problems/n-ary-tree-postorder-traversal/ target=_blank rel=noopener>590. N叉树的后序遍历</a></h4><pre><code class=language-cpp>/*
+// Definition for a Node.
+class Node {
+public:
+    int val;
+    vector&lt;Node*&gt; children;
+
+    Node() {}
+
+    Node(int _val) {
+        val = _val;
+    }
+
+    Node(int _val, vector&lt;Node*&gt; _children) {
+        val = _val;
+        children = _children;
+    }
+};
+*/
+class Solution {
+public:
+    /**
+     * 方法一：递归
+     */
+    vector&lt;int&gt; postorder(Node* root) {
+        helper(root);
+        return res;
+    }
+    //方法二：迭代
+    vector&lt;int&gt; postorder2(Node* root) {
+        vector&lt;int&gt; v;
+        if(!root) return v;
+        stack&lt;Node*&gt; s;
+        s.push(root);
+        while (!s.empty()) {
+            Node* node = s.top();
+            v.push_back(node-&gt;val);
+            s.pop();
+            for (int i = 0; i &lt; node-&gt;children.size(); i++) {
+                if (node-&gt;children[i]) {
+                    s.push(node-&gt;children[i]);
+                }
+            }
+        }
+        reverse(v.begin(), v.end());
+        return v;
+    }
+private:
+    vector&lt;int&gt; res;
+    void helper(Node* root) {
+        if (root) {
+            for (int i = 0; i &lt; root-&gt;children.size(); i++) {
+                helper(root-&gt;children[i]);
+            }
+            res.push_back(root-&gt;val);
+        }
+    }
+};
+</code></pre><h4 id=589-n叉树的前序遍历httpsleetcode-cncomproblemsn-ary-tree-preorder-traversal><a href=https://leetcode-cn.com/problems/n-ary-tree-preorder-traversal/ target=_blank rel=noopener>589. N叉树的前序遍历</a></h4><pre><code class=language-cpp>/*
+// Definition for a Node.
+class Node {
+public:
+    int val;
+    vector&lt;Node*&gt; children;
+
+    Node() {}
+
+    Node(int _val) {
+        val = _val;
+    }
+
+    Node(int _val, vector&lt;Node*&gt; _children) {
+        val = _val;
+        children = _children;
+    }
+};
+*/
+class Solution {
+public:
+    //方法一：迭代
+    vector&lt;int&gt; preorder(Node* root) {
+        vector&lt;int&gt; v;
+        if (!root) return v;
+        stack&lt;Node*&gt; s;
+        s.push(root);
+        while (!s.empty()) {
+            Node* node = s.top();
+            v.push_back(node-&gt;val);
+            s.pop();
+            for (int i = node-&gt;children.size() - 1; i &gt;= 0; i--) {
+                if (node-&gt;children[i]) s.push(node-&gt;children[i]); 
+            }
+        }
+        return v;
+    }
+    //方法二：递归
+    vector&lt;int&gt; preorder2(Node* root) {
+        vector&lt;int&gt; v;
+        helper(root, v);
+        return v;
+    }
+    void helper(Node * root, vector&lt;int&gt; &amp;v) {
+        if (root) {
+            v.push_back(root-&gt;val);
+            for (int i = 0; i &lt; root-&gt;children.size(); i++) {
+                helper(root-&gt;children[i], v);
+            }
+        }
+    }
+};
+</code></pre><h4 id=429-n叉树的层序遍历httpsleetcode-cncomproblemsn-ary-tree-level-order-traversal><a href=https://leetcode-cn.com/problems/n-ary-tree-level-order-traversal/ target=_blank rel=noopener>429. N叉树的层序遍历</a></h4><pre><code class=language-cpp>/*
+// Definition for a Node.
+class Node {
+public:
+    int val;
+    vector&lt;Node*&gt; children;
+
+    Node() {}
+
+    Node(int _val) {
+        val = _val;
+    }
+
+    Node(int _val, vector&lt;Node*&gt; _children) {
+        val = _val;
+        children = _children;
+    }
+};
+*/
+class Solution {
+public:
+    vector&lt;vector&lt;int&gt;&gt; v;
+    //方法一：递归
+    vector&lt;vector&lt;int&gt;&gt; levelOrder(Node* root) {
+        if (!root) return v;
+        helper(0, root);
+        return v;
+    }
+    void helper(int l, Node* root) {
+        if (v.size() &lt;= l) v.push_back({vector&lt;int&gt;()});
+        v[l].push_back(root-&gt;val);
+        for (int i = 0; i &lt; root-&gt;children.size(); i++) {
+            if (root-&gt;children[i]) helper(l + 1, root-&gt;children[i]);
+        }
+    }
+    //迭代
+    vector&lt;vector&lt;int&gt;&gt; levelOrder(Node* root) {
+        vector&lt;vector&lt;int&gt;&gt; res;
+        if (!root) return res;
+        queue&lt;Node*&gt; q;
+        q.push(root);
+        while (!q.empty()) {
+            int n = q.size();
+            vector&lt;int&gt; tmp;
+            while(n--) {
+                Node * node = q.front();
+                tmp.push_back(node-&gt;val);
+                q.pop();
+                for (int i = 0; i &lt; node-&gt;children.size(); i++) {
+                    if (node-&gt;children[i]) q.push(node-&gt;children[i]);
+                }
+            }
+            res.push_back(tmp);
+        }
+        return res;
+    }
+};
+</code></pre><h1 id=第3周-第6课--堆和二叉堆图>第3周 第6课 | 堆和二叉堆、图</h1><h2 id=1-堆和二叉堆的实现和特性><strong>1. 堆和二叉堆的实现和特性</strong></h2><h3 id=参考链接-2>参考链接</h3><p><a href=https://en.wikipedia.org/wiki/Heap_%28data_structure%29 target=_blank rel=noopener>维基百科：堆（Heap）</a></p><h2 id=2-实战题目解析最小的k个数滑动窗口最大值等问题><strong>2. 实战题目解析：最小的k个数、滑动窗口最大值等问题</strong></h2><h3 id=实战例题>实战例题</h3><h4 id=面试题40-最小的k个数httpsleetcode-cncomproblemszui-xiao-de-kge-shu-lcof><a href=https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof/ target=_blank rel=noopener>面试题40. 最小的k个数</a></h4><pre><code class=language-php>class Solution {
+
+    /**
+     * 方法一：排序取前k个数
+     * 方法二：使用大顶堆
+     * 方法三：快排
+     * @param Integer[] $arr
+     * @param Integer $k
+     * @return Integer[]
+     */
+    function getLeastNumbers($arr, $k) {
+		$heap = new SplMaxHeap();
+        foreach ($arr as $num) {
+            if ($heap-&gt;count() &lt; $k) {
+                $heap-&gt;insert($num);
+            } else if ($heap-&gt;current() &gt; $num) {
+                $heap-&gt;next();
+                $heap-&gt;insert($num);
+            }
+        }
+        $res = [];
+        foreach ($heap as $num) {
+            $res[] = $num;
+        }
+        return $res;
+    }
+}
+</code></pre><h4 id=239-滑动窗口最大值httpsleetcode-cncomproblemssliding-window-maximum><a href=https://leetcode-cn.com/problems/sliding-window-maximum/ target=_blank rel=noopener>239. 滑动窗口最大值</a></h4><pre><code class=language-java>class Solution {
+    public int[] maxSlidingWindow(int[] nums, int k) {
+		if (nums.length == 0 || k == 0) {
+            return new int[0];
+        }
+        int[] res = new int[nums.length - k + 1];
+        PriorityQueue&lt;Integer&gt; maxPQ = new PriorityQueue&lt;&gt;((a1, a2)-&gt;(a2 - a1));
+        for (int i = 0; i &lt; nums.length; i++) {
+            int start = si - k;
+            if (start &gt;= 0) {
+            	maxPQ.remove(nums[start]);   
+            }
+            maxPQ.offer(nums[i]);
+            if (maxPQ.size() == k) {
+                res[i - k + 1] = maxPQ.peek();
+            }
+        }
+        return res;
+    }
+}
+</code></pre><h4 id=347-前-k-个高频元素httpsleetcode-cncomproblemstop-k-frequent-elements><a href=https://leetcode-cn.com/problems/top-k-frequent-elements/ target=_blank rel=noopener>347. 前 K 个高频元素</a></h4><pre><code class=language-cpp>class Solution {
+public:
+    vector&lt;int&gt; topKFrequent(vector&lt;int&gt;&amp; nums, int k) {
+		priority_queue&lt;pair&lt;int, int&gt;, vector&lt;pair&lt;int, int&gt;&gt;, greater&lt;pair&lt;int,int&gt;&gt;&gt; pq;
+        unnordered_map&lt;int, int&gt; cnt;
+        for (auto num: nums) cnt[num]++;
+        for (auto kv: cnt) {
+            pq.push({kv.second, kv.first});
+            if (pq.size() &gt; k) pq.pop();
+        }
+        vector&lt;int&gt; res;
+        while (!pq.empty()) {
+            res.push_back(pq.top().second);
+            pq.pop();
+        }
+        return res;
+    }
+};
+</code></pre><pre><code class=language-java>class Solution {
+    public List&lt;Integer&gt; topKFrequent(int[] nums, int k) {
+        Map&lt;Integer, Integer&gt; map = new HashMap&lt;&gt;();
+        for (int num: nums) map.put(num, map.getOrDefault(num, 0) + 1);
+        PriorityQueue&lt;Map.Entry&lt;Integer, Integer&gt;&gt; maxHeap = new PriorityQueue((a, b)-&gt;(b.getValue() - a.getValue()));
+        for (Map.Entry&lt;Integer, Integer&gt; entry: map.entrySet()) {
+            maxHeap.add(entry);
+        }
+        List&lt;Integer&gt; res = new ArrayList&lt;&gt;();
+        while (res.size() &lt; k) {
+            Map.Entry&lt;Integer, Integer&gt; entry = maxHeap.poll();
+            res.add(entry.getKey());
+        }
+        return res;
+    }
+}
+</code></pre><h3 id=课后作业>课后作业</h3><h4 id=heapsort-自学httpswwwgeeksforgeeksorgheap-sort><a href=https://www.geeksforgeeks.org/heap-sort/ target=_blank rel=noopener>HeapSort ：自学</a></h4><h4 id=面试题49-丑数httpsleetcode-cncomproblemschou-shu-lcof-和-264-丑数-iihttpsleetcode-cncomproblemsugly-number-ii><a href=https://leetcode-cn.com/problems/chou-shu-lcof/ target=_blank rel=noopener>面试题49. 丑数</a>
+和 <a href=https://leetcode-cn.com/problems/ugly-number-ii/ target=_blank rel=noopener>264. 丑数 II</a></h4><pre><code class=language-php>class Ugly {
+    public $nums = [];
+    //小顶堆
+    function __construct() {
+        $minHp = new SplMinHeap();
+        $minHp-&gt;insert(1);
+        $hash = [1 =&gt; 0];//去重
+        foreach(range(1, 1690) as $i) {
+            $num = $minHp-&gt;current();
+            $this-&gt;nums[] = $num;
+            $minHp-&gt;next();
+            foreach ([2, 3, 5] as $j) {
+                $new = $num * $j;
+                if (!isset($hash[$new])) {
+                    $minHp-&gt;insert($new);
+                    $hash[$new] = 0;
+                }
+            }
+        } 
+    }
+}
+class UglyDp {
+    public $nums = [1];
+    //动态规划
+    function __construct() {
+        $p2 = $p3 = $p5 = 0;
+        for ($i = 1; $i &lt; 1690; $i++) {
+            $num = min($this-&gt;nums[$p2] * 2, $this-&gt;nums[$p3] * 3, $this-&gt;nums[$p5] * 5);
+            $this-&gt;nums[] = $num;
+            if ($num == $this-&gt;nums[$p2] * 2) $p2++; 
+            if ($num == $this-&gt;nums[$p3] * 3) $p3++; 
+            if ($num == $this-&gt;nums[$p5] * 5) $p5++; 
+        }
+    }
+}
+class Solution {
+	private static $ugly;
+    function __construct() {
+        if (!self::$ugly) self::$ugly = new UglyDp();
+    }
+    /**
+     * @param Integer $n
+     * @return Integer
+     */
+    function nthUglyNumber($n) {
+		return self::$ugly-&gt;nums[$n - 1];
+    }
+}
+</code></pre><h4 id=347-前-k-个高频元素httpsleetcode-cncomproblemstop-k-frequent-elements-1><a href=https://leetcode-cn.com/problems/top-k-frequent-elements/ target=_blank rel=noopener>347. 前 K 个高频元素</a></h4><pre><code class=language-cpp>class Solution {
+public:
+    vector&lt;int&gt; topKFrequent(vector&lt;int&gt;&amp; nums, int k) {
+        priority_queue&lt;pair&lt;int, int&gt;, vector&lt;pair&lt;int, int&gt;&gt;, greater&lt;pair&lt;int,int&gt;&gt;&gt; pq;
+        unordered_map&lt;int, int&gt; cnt;
+        for (auto num: nums) cnt[num]++;
+        for (auto kv: cnt) {
+            pq.push({kv.second, kv.first});
+            if (pq.size() &gt; k) pq.pop();
+        }
+        vector&lt;int&gt; res;
+        while (!pq.empty()) {
+            res.push_back(pq.top().second);
+            pq.pop();
+        }
+        return res;
+    }
+};
+</code></pre><pre><code class=language-java>class Solution {
+    public List&lt;Integer&gt; topKFrequent(int[] nums, int k) {
+        Map&lt;Integer, Integer&gt; map = new HashMap&lt;&gt;();
+        for (int num: nums) map.put(num, map.getOrDefault(num, 0) + 1);
+        PriorityQueue&lt;Map.Entry&lt;Integer, Integer&gt;&gt; maxHeap = new PriorityQueue&lt;&gt;((a, b)-&gt;(b.getValue() - a.getValue()));
+        for (Map.Entry&lt;Integer, Integer&gt; entry: map.entrySet()) {
+            maxHeap.add(entry);
+        }
+        List&lt;Integer&gt; res = new ArrayList&lt;&gt;();
+        while (res.size() &lt; k) {
+            Map.Entry&lt;Integer, Integer&gt; entry = maxHeap.poll();
+            res.add(entry.getKey());
+        }
+        return res;
+    }
+}
+</code></pre><h2 id=3-图的实现和特性><strong>3. 图的实现和特性</strong></h2><h3 id=思考题-1>思考题</h3><ul><li>自己画一下有向有权图</li></ul><h3 id=参考链接-3>参考链接</h3><h4 id=连通图个数200-岛屿数量httpsleetcode-cncomproblemsnumber-of-islands>连通图个数：<a href=https://leetcode-cn.com/problems/number-of-islands/ target=_blank rel=noopener>200. 岛屿数量</a></h4><pre><code class=language-php>class Solution {
+
+    /** 
+     * 深度优先遍历
+     * @param String[][] $grid
+     * @return Integer
+     */
+    function numIslands($grid) {
+		$nr = count($grid);
+        if (!$grid || $nr == 0) return 0; 
+        $nc = count($grid[0]);
+        $num = 0;
+        for ($i = 0; $i &lt; $nr; $i++) {
+         	for ($j = 0; $j &lt; $nc; $j++) {
+                if ($grid[$i][$j] == '1') {
+                    $this-&gt;dfs($grid, $i, $j);
+                    $num++;
+                }
+            }   
+        }
+        return $num;
+    }
+    //深度优先搜索
+    function dfs(&amp;$grid, $i, $j) {
+        $nr = count($grid);
+        $nc = count($grid[0]);
+        // if ($i &lt; 0 || $j &lt; 0 || $i &gt;= $nr || $j &gt;= $nc || $grid[$i][$j] != '1') {
+        //     return;
+        // }
+        $grid[$i][$j] = '0';
+        $dx = [-1, 1 ,0, 0];
+        $dy = [0, 0, -1, 1];
+        foreach (range(0, 3) as $k) {
+            $x = $i + $dx[$k];
+            $y = $j + $dy[$k];
+            if ($x &gt;= 0 &amp;&amp; $x &lt; $nr &amp;&amp; $y &gt;= 0 &amp;&amp; $y &lt; $nc &amp;&amp; $grid[$x][$y] == '1') {
+                    $this-&gt;dfs($grid, $x, $y);
+            } 
+        }
+        return 1;
+    }
+    //广度优先搜索
+    function bfs(&amp;$grid, $i, $j) {
+        $nr = count($grid);
+        $nc = count($grid[0]);
+        $queue = [];
+        $queue[] = [$i, $j];
+        $grid[$i][$j] = '0';
+        $dx = [-1, 1 ,0, 0];
+        $dy = [0, 0, -1, 1];
+        while ($queue) {
+            [$r, $c] = array_pop($queue);
+            foreach (range(0, 3) as $k) {
+                $x = $r + $dx[$k];
+                $y = $c + $dy[$k];
+                if ($x &gt;= 0 &amp;&amp; $x &lt; $nr &amp;&amp; $y &gt;= 0 &amp;&amp; $y &lt; $nc &amp;&amp; $grid[$x][$y] == '1') {
+                    $queue[] = [$x, $y];
+                    $grid[$x][$y] = '0';
+                } 
+            }
+        }
+    }
+    //并查集
+}
+</code></pre><h4 id=拓扑排序topological-sorting>拓扑排序（Topological Sorting）：</h4><p><a href=https://zhuanlan.zhihu.com/p/34871092 target=_blank rel=noopener>https://zhuanlan.zhihu.com/p/34871092</a></p><h4 id=最短路径shortest-pathdijkstra>最短路径（Shortest Path）：Dijkstra</h4><p><a href="https://www.bilibili.com/video/av25829980?from=search&amp;seid=13391343514095937158" target=_blank rel=noopener>https://www.bilibili.com/video/av25829980?from=search&seid=13391343514095937158</a></p><h4 id=最小生成树minimum-spanning-tree>最小生成树（Minimum Spanning Tree）：</h4><p><a href="https://www.bilibili.com/video/av84820276?from=search&amp;seid=17476598104352152051" target=_blank rel=noopener>https://www.bilibili.com/video/av84820276?from=search&amp;seid=17476598104352152051</a></p><h1 id=第3周-第7课--泛型递归树的递归>第3周 第7课 | 泛型递归、树的递归</h1><h2 id=1-递归的实现特性以及思维要点><strong>1. 递归的实现、特性以及思维要点</strong></h2><h3 id=参考链接-4>参考链接</h3><ul><li><a href=http://shimo.im/docs/DjqqGCT3xqDYwPyY target=_blank rel=noopener>递归代码模板</a></li></ul><pre><code class=language-python>def recursion(level, param1, param2, ...): 
+    # recursion terminator 递归终止条件
+    if level &gt; MAX_LEVEL: 
+	   process_result 
+	   return 
+
+    # process logic in current level 处理当前层逻辑
+    process(level, data...) 
+
+    # drill down 下探到下一层
+    self.recursion(level + 1, p1, ...) 
+
+    # reverse the current level status if needed 清理当前层
+</code></pre><pre><code class=language-java>public void recur(int level, int param) { 
+
+  // terminator 
+  if (level &gt; MAX_LEVEL) { 
+    // process result 
+    return; 
+  } 
+
+  // process current logic 
+  process(level, param); 
+
+  // drill down 
+  recur( level: level + 1, newParam); 
+
+  // restore current status 
+ 
+}
+</code></pre><p>1、不要人肉递归（最大误区）</p><p>2、找到最近最简单方法，将其拆机为可重复解决的子问题（重复子问题）</p><p>3、数学归纳法思维</p><h2 id=2-实战题目解析爬楼梯括号生成等问题>2. 实战题目解析：爬楼梯、括号生成等问题**</h2><h3 id=实战题目>实战题目</h3><h4 id=70-爬楼梯httpsleetcode-cncomproblemsclimbing-stairs><a href=https://leetcode-cn.com/problems/climbing-stairs/ target=_blank rel=noopener>70. 爬楼梯</a></h4><pre><code class=language-php>class Solution {
+
+    private $map = [];
+    /**
+     * 递归写法
+     * @param Integer $n
+     * @return Integer
+     */
+    function climbStairs($n) {
+        if ($n &lt;= 2) return $n;
+        if (!isset($this-&gt;map[$n])) {
+            $this-&gt;map[$n] = $this-&gt;climbStairs($n - 1) + $this-&gt;climbStairs($n - 2);
+        }
+        return $this-&gt;map[$n];
+    }
+}
+</code></pre><h4 id=22-括号生成httpsleetcode-cncomproblemsgenerate-parentheses><a href=https://leetcode-cn.com/problems/generate-parentheses/ target=_blank rel=noopener>22. 括号生成</a></h4><pre><code class=language-php>class Solution {
+
+    private $result;
+    /**
+     * @param Integer $n
+     * @return String[]
+     */
+    function generateParenthesis($n) {
+        $this-&gt;result = [];
+        $this-&gt;generate(0, 0, $n &quot;&quot;);
+        return $this-&gt;result;
+    }
+    function generate($left, $right, $n, $s) {
+        //递归终止条件
+        if ($left == $n &amp;&amp; $right == $n) {
+            $this-&gt;result[] = $s;
+            return;
+        }
+        //处理当前层逻辑
+        //下探到下一层
+        if ($left &lt; $n) $this-&gt;generate($left + 1, $right, $n, $s.&quot;(&quot;);
+        if ($right &lt; $left) $this-&gt;generate($left, $right + 1, $n, $s.&quot;)&quot;);
+        //清理当前层
+    }
+}
+</code></pre><h4 id=226-翻转二叉树httpsleetcode-cncomproblemsinvert-binary-tree><a href=https://leetcode-cn.com/problems/invert-binary-tree/ target=_blank rel=noopener>226. 翻转二叉树</a></h4><pre><code class=language-php>/**
+ * Definition for a binary tree node.
+ * class TreeNode {
+ *     public $val = null;
+ *     public $left = null;
+ *     public $right = null;
+ *     function __construct($value) { $this-&gt;val = $value; }
+ * }
+ */
+class Solution {
+
+    /**
+     * 递归
+     * @param TreeNode $root
+     * @return TreeNode
+     */
+    function invertTree1($root) {
+        if (!$root) {
+            return $root;
+        }
+        $left = $root-&gt;left;
+        $root-&gt;left = $this-&gt;invertTree($root-&gt;right);
+        $root-&gt;right = $this-&gt;invertTree($left);
+        return $root;
+    }
+    //迭代（使用spl库速度更快）
+    function invertTree2($root) {
+        if (!$root) {
+            return $root;
+        }
+        $queue = [$root];
+        while ($queue) {
+            $current = array_pop($queue);
+            $left = $current-&gt;left;
+            $current-&gt;left = $current-&gt;right;
+            $current-&gt;right = $left;
+            if ($current-&gt;left) $queue[] = $current-&gt;left;
+            if ($current-&gt;right) $queue[] = $current-&gt;right;
+        }
+        return $root;
+    }
+}
+</code></pre><h4 id=98-验证二叉搜索树httpsleetcode-cncomproblemsvalidate-binary-search-tree><a href=https://leetcode-cn.com/problems/validate-binary-search-tree/ target=_blank rel=noopener>98. 验证二叉搜索树</a></h4><pre><code class=language-php>/**
+ * Definition for a binary tree node.
+ * class TreeNode {
+ *     public $val = null;
+ *     public $left = null;
+ *     public $right = null;
+ *     function __construct($value) { $this-&gt;val = $value; }
+ * }
+ */
+class Solution {
+
+    /**
+     * 递归、迭代、中序遍历
+     * @param TreeNode $root
+     * @return Boolean
+     */
+     function isValidBST($root) {
+        return $this-&gt;isValid($root);
+     }
+     function isValid($root, $min = null, $max = null) {
+        if (!$root) return true;
+        if (!$root) return true;
+        if ($min !== null &amp;&amp; $root-&gt;val &lt;= $min) return false;//不能比最小值还小
+        if ($max !== null &amp;&amp; $root-&gt;val &gt;= $max) return false; //不能比最大值还大
+        //左子树更新最大值，右子树更新最小是
+        return $this-&gt;isValid($root-&gt;left, $min, $root-&gt;val) &amp;&amp; $this-&gt;isValid($root-&gt;right, $root-&gt;val, $max);
+        return $this-&gt;isValid($root-&gt;left, $min, $root-&gt;val) &amp;&amp; $this-&gt;isValid($root-&gt;right, $root-&gt;val, $max);
+     }
+}
+</code></pre><h4 id=104-二叉树的最大深度httpsleetcode-cncomproblemsmaximum-depth-of-binary-tree><a href=https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/ target=_blank rel=noopener>104. 二叉树的最大深度</a></h4><pre><code class=language-php>/**
+ * Definition for a binary tree node.
+ * class TreeNode {
+ *     public $val = null;
+ *     public $left = null;
+ *     public $right = null;
+ *     function __construct($value) { $this-&gt;val = $value; }
+ * }
+ */
+class Solution {
+
+    /**
+     * 方法一：递归
+     * 方法二：迭代（使用栈）
+     * @param TreeNode $root
+     * @return Integer
+     */
+    function maxDepth($root) {
+        if (!$root) return 0; 
+    	return max($this-&gt;maxDepth($root-&gt;left), $this-&gt;maxDepth($root-&gt;right)) + 1;
+    }
+}
+</code></pre><h4 id=111-二叉树的最小深度httpsleetcode-cncomproblemsminimum-depth-of-binary-tree><a href=https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/ target=_blank rel=noopener>111. 二叉树的最小深度</a></h4><pre><code class=language-php>/**
+ * Definition for a binary tree node.
+ * class TreeNode {
+ *     public $val = null;
+ *     public $left = null;
+ *     public $right = null;
+ *     function __construct($value) { $this-&gt;val = $value; }
+ * }
+ */
+class Solution {
+
+    /**
+     * 递归
+     * @param TreeNode $root
+     * @return Integer
+     */
+    function minDepth($root) {
+        if (!$root) return 0;
+        if ($root-&gt;left === null &amp;&amp; $root-&gt;right === null) return 1; 
+        $left_depth = $this-&gt;minDepth($root-&gt;left);
+        $right_depth = $this-&gt;minDepth($root-&gt;right);
+        //左右子树有一个为空
+        if ($left_depth == 0 || $right_depth ==0) return $left_depth + $right_depth + 1; 
+        return min($left_depth, $right_depth) + 1;
+    }
+}
+</code></pre><h4 id=297-二叉树的序列化与反序列化httpsleetcode-cncomproblemsserialize-and-deserialize-binary-tree><a href=https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/ target=_blank rel=noopener>297. 二叉树的序列化与反序列化</a></h4><pre><code class=language-php>/**
+ * Definition for a binary tree node.
+ * class TreeNode {
+ *     public $val = null;
+ *     public $left = null;
+ *     public $right = null;
+ *     function __construct($value) { $this-&gt;val = $value; }
+ * }
+ */
+
+class Codec {
+    function __construct() {
+        
+    }
+  
+    /**
+     * @param TreeNode $root
+     * @return String
+     */
+    function serialize($root) {
+        $this-&gt;encode($root, $vals);
+        return implode(',', $vals);
+    }
+    
+    function encode ($node, &amp;$vals = null) {
+        if (!$vals) $vals = [];
+        if ($node) {
+            $vals[] = $node-&gt;val;
+            $this-&gt;encode($node-&gt;left, $vals);
+            $this-&gt;encode($node-&gt;right,$vals);
+        } else {
+            $vals[] = &quot;null&quot;;
+        }
+    }
+  
+    /**
+     * @param String $data
+     * @return TreeNode
+     */
+    function deserialize($data) {
+        $vals = explode(',', $data);
+        return $this-&gt;decode($vals);
+    }
+    
+    function decode(&amp;$vals) {
+        $val = array_shift($vals);
+        if ($val == &quot;null&quot;) {
+            return null;
+        } else {
+            $node = new TreeNode($val);
+            $node-&gt;left = $this-&gt;decode($vals);
+            $node-&gt;right = $this-&gt;decode($vals);
+        }
+        return $node;
+    }
+}
+
+/**
+ * Your Codec object will be instantiated and called as such:
+ * $obj = Codec();
+ * $data = $obj-&gt;serialize($root);
+ * $ans = $obj-&gt;deserialize($data);
+ */
+</code></pre><pre><code class=language-php>class Codec {
+    function __construct() {
+        
+    }
+  
+    /**
+     * @param TreeNode $root
+     * @return String
+     */
+    function serialize($root) {
+        if (!$root) return &quot;[]&quot;;
+       	$res = [];
+        $res = [$root-&gt;val];
+        $queue = new SplQueue();
+        $queue-&gt;push($root);
+        while ($queue-&gt;count()) {
+            $node =  $queue-&gt;shift();
+            if ($node-&gt;left !== null) {
+                $res[] = $node-&gt;left-&gt;val;
+                $queue-&gt;push($node-&gt;left);
+            } else {
+                $res[] = 'null';
+            }
+            if ($node-&gt;right !== null) {
+                $res[] = $node-&gt;right-&gt;val;
+                $queue-&gt;push($node-&gt;right);
+            } else {
+                $res[] = 'null';
+            }
+        }
+        //return '[' . trim(implode(',', $res), ',null') . ']';
+        return '[' . implode(',', $res) . ']';
+    }
+  
+    /**
+     * @param String $data
+     * @return TreeNode
+     */
+    function deserialize($data) {
+        $vals = substr($data, 1, strlen($data) - 2);
+        if (!$vals) return null;
+        $vals = explode(',', $vals);
+        $root = new TreeNode(array_shift($vals));
+        $queue = new SplQueue();
+        $queue-&gt;push($root);
+        while ($vals) {
+            $parent = $queue-&gt;shift();
+            $left = array_shift($vals);
+            if ($left != 'null') {
+                $curr = new TreeNode($left);
+                $parent-&gt;left = $curr;
+                $queue-&gt;push($curr);
+            }
+            $right = array_shift($vals);
+            if ($right != 'null') {
+                $curr = new TreeNode($right);
+                $parent-&gt;right = $curr;
+                $queue-&gt;push($curr);
+            }
+        }
+        return $root;
+    }
+}
+</code></pre><h3 id=每日一课>每日一课</h3><ul><li><a href=https://time.geekbang.org/dailylesson/detail/100028406 target=_blank rel=noopener>如何优雅地计算斐波那契数列</a></li></ul><h3 id=课后作业-1>课后作业</h3><h4 id=236-二叉树的最近公共祖先httpsleetcode-cncomproblemslowest-common-ancestor-of-a-binary-tree><a href=https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/ target=_blank rel=noopener>236. 二叉树的最近公共祖先</a></h4><pre><code class=language-php>/**
+ * Definition for a binary tree node.
+ * class TreeNode {
+ *     public $val = null;
+ *     public $left = null;
+ *     public $right = null;
+ *     function __construct($value) { $this-&gt;val = $value; }
+ * }
+ */
+
+class Solution {
+    /**
+     * 递归
+     * @param TreeNode $root
+     * @param TreeNode $p
+     * @param TreeNode $q
+     * @return TreeNode
+     */
+    function lowestCommonAncestor($root, $p, $q) {
+        if ($root == null || $root == $p || $root == $q) return $root;
+        $left = $this-&gt;lowestCommonAncestor($root-&gt;left, $p, $q);
+        $right = $this-&gt;lowestCommonAncestor($root-&gt;right, $p, $q);
+        if (!$left) {
+            return $right;
+        } else if (!$right){
+            return $left;
+        } else {
+            return $root;
+        }
+    }
+}
+</code></pre><h4 id=105-从前序与中序遍历序列构造二叉树httpsleetcode-cncomproblemsconstruct-binary-tree-from-preorder-and-inorder-traversal><a href=https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/ target=_blank rel=noopener>105. 从前序与中序遍历序列构造二叉树</a></h4><pre><code class=language-php>/**
+ * Definition for a binary tree node.
+ * class TreeNode {
+ *     public $val = null;
+ *     public $left = null;
+ *     public $right = null;
+ *     function __construct($value) { $this-&gt;val = $value; }
+ * }
+ */
+class Solution {
+
+    /**
+     * 递归
+     * @param Integer[] $preorder
+     * @param Integer[] $inorder
+     * @return TreeNode
+     */
+    function buildTree1($preorder, $inorder) {
+        if (count($preorder) == 0) return null;
+        $root = new TreeNode($preorder[0]);
+        $mid = array_search($preorder[0], $inorder);//根节点
+        $root-&gt;left = $this-&gt;buildTree(array_slice($preorder,1, $mid), array_slice($inorder, 0, $mid + 1));//左子树
+        $root-&gt;right = $this-&gt;buildTree(array_slice($preorder, $mid + 1), array_slice($inorder, $mid + 1));//右子树
+        return $root;
+    }
+    
+    //参数优化的递归
+    private $preorder;// 前序参数索引
+    private $inorder;// 中序参数索引
+    private $preindex;
+    private $pmap;//反转中序数组中所有键以及它们关联的值
+    function buildTree1($preorder, $inorder) {
+        $this-&gt;preorder = $preorder;
+        $this-&gt;inorder = $inorder;
+        $this-&gt;pmap = array_flip($inorder);
+        $this-&gt;preindex = 0;
+        return $this-&gt;helper($this-&gt;preindex, count($inorder) - 1);
+    }
+    function helper($instart, $inend) {
+        if ($instart &gt; $inend) return null;
+        $val = $this-&gt;preorder[$this-&gt;preindex++];
+        $index = $this-&gt;pmap[$val];
+        
+        $node = new TreeNode($val);
+        $node-&gt;left = $this-&gt;helper($instart, $index - 1);
+        $node-&gt;right = $this-&gt;helper($index + 1, $inend);
+        return $node;
+    }
+}
+</code></pre><h4 id=77-组合httpsleetcode-cncomproblemscombinations><a href=https://leetcode-cn.com/problems/combinations/ target=_blank rel=noopener>77. 组合</a></h4><pre><code class=language-php>class Solution {
+	private $output = [];
+    private $n;
+    private $k;
+    /**
+     * @param Integer $n
+     * @param Integer $k
+     * @return Integer[][]
+     */
+    function combine($n, $k) {
+        $this-&gt;n = $n;
+        $this-&gt;k = $k;
+        $this-&gt;backtrack();
+        return $this-&gt;output;
+    }
+    function backtrack($first = 1, $curr = []) {
+        if (count($curr) == $this-&gt;k) {
+            $this-&gt;output[] = $curr;
+            return;
+        } 
+        // 此时剩余可选数字个数 $n - $i + 1
+        // 所需数字个数 $k - count($list)
+        //for ($i = $first; $i &lt;= $this-&gt;n; $i++) {
+        for ($i = $first; $this-&gt;n - $i + 1 &gt;= $this-&gt;k - count($curr); $i++) {
+            $curr[] = $i;
+            $this-&gt;backtrack($i + 1, $curr);
+            array_pop($curr);
+        }
+    }
+}
+</code></pre><h4 id=46-全排列httpsleetcode-cncomproblemspermutations><a href=https://leetcode-cn.com/problems/permutations/ target=_blank rel=noopener>46. 全排列</a></h4><pre><code class=language-php>class Solution {
+	private $output = [];
+    /**
+     * @param Integer[] $nums
+     * @return Integer[][]
+     */
+    function permute($nums) {
+        $n = count($nums);
+        $this-&gt;backtrack($nums, $n, 0);
+        return $this-&gt;output;
+    }
+    function backtrack($nums, $n, $level) {
+        if ($level == $n) {
+            $this-&gt;output[] = $nums;
+            return;
+        }
+        for ($i = $level; $i &lt; $n; $i++) {
+            //swap
+            $this-&gt;swap($nums,$i, $level);
+            $this-&gt;backtrack($nums, $n, $level + 1);
+            //backtrack
+            $this-&gt;swap($nums, $level, $i);
+        }
+    }
+    function swap(&amp;$nums, $i, $j) {
+        $tmp = $nums[$i];
+        $nums[$i] = $nums[$j];
+        $nums[$j] = $tmp;
+    }
+}
+</code></pre><h4 id=47-全排列-iihttpsleetcode-cncomproblemspermutations-ii><a href=https://leetcode-cn.com/problems/permutations-ii/ target=_blank rel=noopener>47. 全排列 II</a></h4><pre><code class=language-php>class Solution {
+	private $output = [];
+    /**
+     * @param Integer[] $nums
+     * @return Integer[][]
+     */
+    function permuteUnique($nums) {
+        $len = count($nums);
+        if ($len == 0) return [];
+        sort($nums);
+        $this-&gt;backtrack($nums, $len, 0);
+        return $this-&gt;output;
+    }
+    function backtrack($nums, $len, $level, $used = [], $path = []) {
+        if ($level == $len) {
+            $this-&gt;output[] = $path;
+            return;
+        }
+        for ($i = $level; $i &lt; $len; $i++) {
+            if ($used[$i]) continue;
+            if ($i &gt; 0 &amp;&amp; $nums[i] == $nums[$i - 1] &amp;&amp; !$used[$i]) continue;
+            $path[] = $nums[$i];
+            $used[$i] = true;
+           
+            $this-&gt;backtrack($nums, $len, $level + 1, $used, $path);
+            $used[$i] = false;
+            array_pop($path);
+        }
+    }
+}
+</code></pre><pre><code class=language-php>class Solution {
+
+    private $res = [];
+    private $visited = [];
+    /**
+     * @param Integer[] $nums
+     * @return Integer[][]
+     */
+    function permuteUnique($nums) {
+        sort($nums);
+        $this-&gt;backtrack([], $nums);
+        return $this-&gt;res;
+    }
+    function do($array, $nums) {
+        if (count($array) == count($nums)) {
+            array_push($this-&gt;res, $array);
+            return;
+        }
+
+        for ($i = 0; $i &lt; count($nums); $i++) {
+            if (isset($this-&gt;visited[$i]) &amp;&amp; $this-&gt;visited[$i] == 1) continue;
+            if ($i &gt; 0 &amp;&amp; $nums[$i] == $nums[$i - 1] &amp;&amp; $this-&gt;visited[$i - 1] == 0) continue;
+
+            $this-&gt;visited[$i] = 1;
+            array_push($array, $nums[$i]);
+            $this-&gt;do($array, $nums);
+            array_pop($array);
+            $this-&gt;visited[$i] = 0;
+        }
+    }
+    function backtrack($array, $nums) {
+        if (count($array) == count($nums)) {
+            $this-&gt;res[] = $array;
+            return;
+        }
+        for ($i = 0; $i &lt; count($nums); $i++) {
+            if (isset($this-&gt;visited[$i]) &amp;&amp; $this-&gt;visited[$i] == 1) continue;
+            // 剪枝条件：i &gt; 0 是为了保证 nums[i - 1] 有意义
+            // 写 !visited[i - 1] 是因为 nums[i - 1] 在深度优先遍历的过程中刚刚被撤销选择
+            if ($i &gt; 0 &amp;&amp; $nums[$i] == $nums[$i - 1] &amp;&amp; $this-&gt;visited[$i - 1] == 0) continue;
+
+            $this-&gt;visited[$i] = 1;
+            $array[] = $nums[$i];
+            $this-&gt;backtrack($array, $nums);
+            array_pop($array);
+            $this-&gt;visited[$i] = 0;
+        }
+    }
+}
+</code></pre><h1 id=第3周-第8课--分治回溯>第3周 第8课 | 分治、回溯</h1><h2 id=1-分治回溯的实现和特性><strong>1. 分治、回溯的实现和特性</strong></h2><h3 id=参考链接-5>参考链接</h3><ul><li><a href=https://shimo.im/docs/3xvghYh3JJPKwdvt target=_blank rel=noopener>分治代码模板</a></li></ul><pre><code class=language-python>def divide_conquer(problem, param1, param2, ...): 
+  # recursion terminator 
+  if problem is None: 
+	print_result 
+	return 
+
+  # prepare data 
+  data = prepare_data(problem) 
+  subproblems = split_problem(problem, data) 
+
+  # conquer subproblems 
+  subresult1 = self.divide_conquer(subproblems[0], p1, ...) 
+  subresult2 = self.divide_conquer(subproblems[1], p1, ...) 
+  subresult3 = self.divide_conquer(subproblems[2], p1, ...) 
+  …
+
+  # process and generate the final result 
+  result = process_result(subresult1, subresult2, subresult3, …)
+	
+  # revert the current level states
+</code></pre><h4 id=22-括号生成httpsleetcode-cncomproblemsgenerate-parentheses-1><a href=https://leetcode-cn.com/problems/generate-parentheses/ target=_blank rel=noopener>22. 括号生成</a></h4><pre><code class=language-php>
+</code></pre><h2 id=2-实战题目解析powxn子集><strong>2. 实战题目解析：Pow(x,n)、子集</strong></h2><h3 id=预习题目>预习题目</h3><h4 id=50-powx-nhttpsleetcode-cncomproblemspowx-n><a href=https://leetcode-cn.com/problems/powx-n/ target=_blank rel=noopener>50. Pow(x, n)</a></h4><pre><code class=language-php>class Solution {
+
+    /**
+     * @param Float $x
+     * @param Integer $n
+     * @return Float
+     */
+    function myPow($x, $n) {
+        if ($n &lt; 0) {
+            $n = -$n;
+            $x = 1/$x;
+        }
+        return $this-&gt;pow($x, $n);
+    }
+    function pow ($x, $n) {
+        if ($n == 0) return 1; 
+        $p = $this-&gt;pow($x, $n/2);
+        return $n &amp; 1 ? $p * $p *$x : $p * $p;
+    }
+}
+</code></pre><h4 id=78-子集httpsleetcode-cncomproblemssubsets><a href=https://leetcode-cn.com/problems/subsets/ target=_blank rel=noopener>78. 子集</a></h4><pre><code class=language-php>class Solution {
+
+    /**
+     * @param Integer[] $nums
+     * @return Integer[][]
+     */
+    function subsets($nums) {
+        $res = [];
+        $this-&gt;dfs($res, $nums, [], 0);
+        return $res;
+    }
+    function dfs(&amp;$res, $nums, $path, $index) {
+        if ($index == count($nums)) {
+            $res[] = $path;
+            return;
+        }
+        $this-&gt;dfs($res, $nums, $path, $index + 1);
+        $path[] = $nums[$index];
+        $this-&gt;dfs($res, $nums, $path, $index + 1);
+    }
+}
+</code></pre><pre><code class=language-python>class Solution(object):
+    def subsets(self, nums):
+        &quot;&quot;&quot;
+        :type nums: List[int]
+        :rtype: List[List[int]]
+        &quot;&quot;&quot;
+        res = [[]]
+        for i in nums:
+            res = res + [[i] + num for num in res]
+        return res
+</code></pre><h3 id=参考链接-6>参考链接</h3><ul><li><a href=http://www.matrix67.com/blog/archives/361 target=_blank rel=noopener>牛顿迭代法原理</a></li><li><a href=http://www.voidcn.com/article/p-eudisdmk-zm.html target=_blank rel=noopener>牛顿迭代法代码</a></li></ul><h2 id=3-实战题目解析电话号码的字母组合n皇后><strong>3. 实战题目解析：电话号码的字母组合、N皇后</strong></h2><h3 id=实战题目-1>实战题目</h3><h4 id=169-多数元素httpsleetcode-cncomproblemsmajority-element简单但是高频><a href=https://leetcode-cn.com/problems/majority-element/ target=_blank rel=noopener>169. 多数元素</a>
+（简单、但是高频）</h4><pre><code class=language-php>
+</code></pre><h4 id=17-电话号码的字母组合httpsleetcode-cncomproblemsletter-combinations-of-a-phone-number><a href=https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/ target=_blank rel=noopener>17. 电话号码的字母组合</a></h4><pre><code class=language-php>class Solution {
+
+    /**
+     * @param String $digits
+     * @return String[]
+     */
+    function letterCombinations($digits) {
+        $map = [
+            2 =&gt; 'abc',
+            3 =&gt; 'def',
+            4 =&gt; 'ghi',
+            5 =&gt; 'jkl',
+            6 =&gt; 'mno',
+            7 =&gt; 'pqrs',
+            8 =&gt; 'tuv',
+            9 =&gt; 'wxyz',
+        ]；
+        $res = [];
+        $this-&gt;search(&quot;&quot;, $digits, 0,$res, $map);
+        return $res;
+    }
+    function search($s, $digits, $i, &amp;$res, $map) {
+        if ($i == strlen($digits)) {
+            $res[] = $s;
+            return;
+        }
+        $letters = $map[$digits[$i]];
+        for ($j = 0, $len = strlen($letters); $j &lt; $len; $j++) {
+            $this-&gt;search($s.$letters[$j], $digits, $i + 1, $res, $map);
+        }
+    }
+}
+</code></pre><h4 id=51-n皇后httpsleetcode-cncomproblemsn-queens><a href=https://leetcode-cn.com/problems/n-queens/ target=_blank rel=noopener>51. N皇后</a></h4><pre><code class=language-php>class Solution {
+
+    /**
+     * @param Integer $n
+     * @return String[][]
+     */
+    function solveNQueens($n) {
+        $this-&gt;dfs($n, 0, []);
+        return $this-&gt;res;
+    }
+    function dfs($n, $row, $cur_state) {
+        if ($row == $n) {
+            $output = [];
+            foreach ($cur_state as $row=&gt;$col) {
+                $output[] = str_pad('', $col, '.').'Q'.str_pad('', $n - $col - 1, '.'); 
+            }
+            $this-&gt;res[] = $output;
+            return;
+        }
+        for ($col = 0; $col &lt; $n; $col++) {
+            if ($this-&gt;col[$col] || $this-&gt;pie[$row + $col] 
+            || $this-&gt;na[$row - $col]) continue;
+            $this-&gt;col[$col] = true;
+            $this-&gt;pie[$row + $col] = true;
+            $this-&gt;na[$row - $col] = true;
+            $cur_state[] = $col;
+            $this-&gt;dfs($n, $row + 1, $cur_state);
+            array_pop($cur_state);
+            $this-&gt;col[$col] = false;
+            $this-&gt;pie[$row + $col] = false;
+            $this-&gt;na[$row - $col] = false;
+        }
+    }
+}
+</code></pre><h1 id=本周作业>本周作业</h1><h3 id=简单>简单</h3><ul><li><a href=https://leetcode-cn.com/problems/n-ary-tree-postorder-traversal/ target=_blank rel=noopener>https://leetcode-cn.com/problems/n-ary-tree-postorder-traversal/</a></li><li><a href=https://leetcode-cn.com/problems/n-ary-tree-preorder-traversal/description/ target=_blank rel=noopener>https://leetcode-cn.com/problems/n-ary-tree-preorder-traversal/description/</a></li></ul><h3 id=中等>中等</h3><ul><li><a href=https://leetcode-cn.com/problems/binary-tree-preorder-traversal/ target=_blank rel=noopener>https://leetcode-cn.com/problems/binary-tree-preorder-traversal/</a></li><li><a href=https://leetcode-cn.com/problems/n-ary-tree-level-order-traversal/ target=_blank rel=noopener>https://leetcode-cn.com/problems/n-ary-tree-level-order-traversal/</a></li><li><a href=https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/ target=_blank rel=noopener>https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/</a></li><li><a href=https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/ target=_blank rel=noopener>https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/</a></li><li><a href=https://leetcode-cn.com/problems/combinations/ target=_blank rel=noopener>https://leetcode-cn.com/problems/combinations/</a></li><li><a href=https://leetcode-cn.com/problems/permutations/ target=_blank rel=noopener>https://leetcode-cn.com/problems/permutations/</a></li><li><a href=https://leetcode-cn.com/problems/permutations-ii/ target=_blank rel=noopener>https://leetcode-cn.com/problems/permutations-ii/</a></li></ul><h1 id=总结>总结</h1><h4 id=17-电话号码的字母组合httpsleetcode-cncomproblemsletter-combinations-of-a-phone-number-1><a href=https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/ target=_blank rel=noopener>17. 电话号码的字母组合</a></h4><p>回溯法【时间复杂度：?，空间复杂度：?】</p><h4 id=46-全排列httpsleetcode-cncomproblemspermutations-1><a href=https://leetcode-cn.com/problems/permutations/ target=_blank rel=noopener>46. 全排列</a></h4><p>回溯法【时间复杂度：?，空间复杂度：O(n!)】</p><h4 id=47-全排列-iihttpsleetcode-cncomproblemspermutations-ii-1><a href=https://leetcode-cn.com/problems/permutations-ii/ target=_blank rel=noopener>47. 全排列 II</a></h4><p>回溯法【时间复杂度：O(NxN!)，空间复杂度：O(NxN!)】<a href=https://leetcode-cn.com/problems/permutations-ii/solution/hui-su-suan-fa-python-dai-ma-java-dai-ma-by-liwe-2/ target=_blank rel=noopener>题解</a></p><h4 id=51-n皇后httpsleetcode-cncomproblemsn-queens-1><a href=https://leetcode-cn.com/problems/n-queens/ target=_blank rel=noopener>51. N皇后</a></h4><p>回溯法【时间复杂度：O(n!)，空间复杂度：O(n)】</p><h4 id=77-组合httpsleetcode-cncomproblemscombinations-1><a href=https://leetcode-cn.com/problems/combinations/ target=_blank rel=noopener>77. 组合</a></h4><p>回溯法</p><h4 id=94-二叉树的中序遍历httpsleetcode-cncomproblemsbinary-tree-inorder-traversal-1><a href=https://leetcode-cn.com/problems/binary-tree-inorder-traversal/ target=_blank rel=noopener>94. 二叉树的中序遍历</a></h4><p>方法一：递归【时间复杂度：O(n)，空间复杂度：O(n)】</p><p>方法二：迭代【时间复杂度：O(n)，空间复杂度：O(n)】</p><p>方法三：迭代（栈）【时间复杂度：O(n)，空间复杂度：O(n)】</p><p>方法四：莫里斯遍历【时间复杂度：O(n)，空间复杂度：O(n)】</p><h4 id=105-从前序与中序遍历序列构造二叉树httpsleetcode-cncomproblemsconstruct-binary-tree-from-preorder-and-inorder-traversal-1><a href=https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/ target=_blank rel=noopener>105. 从前序与中序遍历序列构造二叉树</a></h4><p>递归【时间复杂度：O(n)，空间复杂度：O(n)】</p><h4 id=144-二叉树的前序遍历httpsleetcode-cncomproblemsbinary-tree-preorder-traversal-1><a href=https://leetcode-cn.com/problems/binary-tree-preorder-traversal/ target=_blank rel=noopener>144. 二叉树的前序遍历</a></h4><p>方法一：递归【时间复杂度：O(n)，空间复杂度：O(n)】</p><p>方法二：迭代【时间复杂度：O(n)，空间复杂度：O(n)】</p><p>方法三：迭代（栈）【时间复杂度：O(n)，空间复杂度：O(n)】</p><p>方法四：莫里斯遍历【时间复杂度：O(n)，空间复杂度：O(n)】</p><h4 id=169-多数元素httpsleetcode-cncomproblemsmajority-element><a href=https://leetcode-cn.com/problems/majority-element/ target=_blank rel=noopener>169. 多数元素</a></h4><p>方法一：排序法【时间复杂度：O(nlogn)，空间复杂度：O(1)】</p><p>方法二：哈希表计数法【时间复杂度：O(n)，空间复杂度：O(n)】</p><p>方法三：分治法【时间复杂度：<em>O</em>(<em>n</em>log<em>n</em>)，空间复杂度：<em>O</em>(log<em>n</em>)】</p><p>方法四：摩尔投票【时间复杂度：O(n)，空间复杂度：O(1)】</p><p>方法五：随机选取法【时间复杂度：O(n)，空间复杂度：O(1)】</p><h4 id=236-二叉树的最近公共祖先httpsleetcode-cncomproblemslowest-common-ancestor-of-a-binary-tree-1><a href=https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/ target=_blank rel=noopener>236. 二叉树的最近公共祖先</a></h4><p>方法一：递归 【时间复杂度：O(n)，空间复杂度：O(n)】</p><p>方法二：使用父指针迭代 【时间复杂度：O(n)，空间复杂度：O(n)】</p><p>方法三：无父指针的迭代 【时间复杂度：O(n)，空间复杂度：O(n)】</p><h4 id=面试题49-丑数httpsleetcode-cncomproblemschou-shu-lcof-和-264-丑数-iihttpsleetcode-cncomproblemsugly-number-ii-1><a href=https://leetcode-cn.com/problems/chou-shu-lcof/ target=_blank rel=noopener>面试题49. 丑数</a>
+和 <a href=https://leetcode-cn.com/problems/ugly-number-ii/ target=_blank rel=noopener>264. 丑数 II</a></h4><p>方法一：大顶堆</p><p>方法二：动态规划</p><h4 id=347-前-k-个高频元素httpsleetcode-cncomproblemstop-k-frequent-elements-2><a href=https://leetcode-cn.com/problems/top-k-frequent-elements/ target=_blank rel=noopener>347. 前 K 个高频元素</a></h4><p>方法一：小顶堆 【时间复杂度：O(nlogk)，空间复杂度：O(n)】</p><p>方法二：优先级队列 【时间复杂度：O(nlogk)，空间复杂度：O(n)】？</p><p>方法三：排序 【时间复杂度：O(nlogn)，空间复杂度：O(n)】</p><p>方法四：桶排序法 【时间复杂度：O(n)，空间复杂度：O(n)】</p><h4 id=429-n叉树的层序遍历httpsleetcode-cncomproblemsn-ary-tree-level-order-traversal-1><a href=https://leetcode-cn.com/problems/n-ary-tree-level-order-traversal/ target=_blank rel=noopener>429. N叉树的层序遍历</a></h4><p>方法一：bfs【时间复杂度：O(n)，空间复杂度：O(n)】</p><p>方法二：dfs【时间复杂度：O(n)，空间复杂度：O(n)】</p><h4 id=589-n叉树的前序遍历httpsleetcode-cncomproblemsn-ary-tree-preorder-traversal-1><a href=https://leetcode-cn.com/problems/n-ary-tree-preorder-traversal/ target=_blank rel=noopener>589. N叉树的前序遍历</a></h4><p>方法一：递归【时间复杂度：O(n)，空间复杂度：O(n)】</p><p>方法二：迭代【时间复杂度：O(n)，空间复杂度：O(n)】</p><h4 id=590-n叉树的后序遍历httpsleetcode-cncomproblemsn-ary-tree-postorder-traversal-1><a href=https://leetcode-cn.com/problems/n-ary-tree-postorder-traversal/ target=_blank rel=noopener>590. N叉树的后序遍历</a></h4><p>方法一：递归【时间复杂度：O(n)，空间复杂度：O(n)】</p><p>方法二：迭代【时间复杂度：O(n)，空间复杂度：O(n)】</p><h1 id=下周预习>下周预习</h1><h2 id=预习知识点>预习知识点</h2><ul><li><a href=http://time.geekbang.org/column/article/70891 target=_blank rel=noopener>深度和广度优先搜索：如何找出社交网络中的三度好友关系？</a></li><li><a href=http://time.geekbang.org/column/article/73188 target=_blank rel=noopener>贪心算法：如何用贪心算法实现 Huffman 压缩编码？</a></li><li><a href=http://time.geekbang.org/column/article/42520 target=_blank rel=noopener>二分查找（上）：如何用最省内存的方式实现快速查找功能？</a></li><li><a href=http://time.geekbang.org/column/article/42733 target=_blank rel=noopener>二分查找（下）：如何快速定位 IP 对应的省份地址？</a></li></ul><h2 id=预习题目-1>预习题目</h2><ul><li><a href=http://leetcode-cn.com/problems/binary-tree-level-order-traversal/#/description target=_blank rel=noopener>二叉树的层次遍历</a></li><li><a href=http://leetcode-cn.com/problems/assign-cookies/description/ target=_blank rel=noopener>分发饼干</a></li><li><a href=http://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/description/ target=_blank rel=noopener>买卖股票的最佳时机 II</a></li><li><a href=http://leetcode-cn.com/problems/jump-game/ target=_blank rel=noopener>跳跃游戏</a></li><li><a href=http://leetcode-cn.com/problems/sqrtx/ target=_blank rel=noopener>x 的平方根</a></li><li><a href=http://leetcode-cn.com/problems/valid-perfect-square/ target=_blank rel=noopener>有效的完全平方数</a></li></ul></article><div class=my-4><a href=/tags/%E7%AE%97%E6%B3%95/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#算法</a>
+<a href=/tags/leetcode/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#leetcode</a></div><div class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"><div><span class="text-primary-text block font-bold">上一页</span>
+<a href=/study/algorithm/php/02%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%BA%8C%E5%91%A8/ class=block>第2周</a></div><div class="mt-4 md:mt-0 md:text-right"><span class="text-primary-text block font-bold">下一页</span>
+<a href=/study/algorithm/php/04%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E5%9B%9B%E5%91%A8/ class=block>第4周</a></div></div></div></div></div></div></div><script>document.addEventListener("DOMContentLoaded",()=>{hljs.highlightAll(),changeSidebarHeight(),switchDocToc()})</script></div></div></main><footer class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b"><p class="text-sm text-tertiary-text">&copy; 2021 <a href=https://blog.lbbniu.com/>lbbniu</a>
+&#183; Powered by the <a href=https://github.com/wangchucheng/hugo-eureka class=hover:text-eureka>Eureka</a> theme for <a href=https://gohugo.io class=hover:text-eureka>Hugo</a></p></div></div></footer></body></html>

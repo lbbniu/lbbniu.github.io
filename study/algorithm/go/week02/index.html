@@ -1,0 +1,395 @@
+<!doctype html><html lang=zh dir=ltr><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>第2周 栈、队列、哈希表 | Go 算法练习 | lbbniu</title>
+<meta name=generator content="Hugo Eureka 0.9.3"><link rel=stylesheet href=/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css><script defer src=/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js></script><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" as=style onload='this.onload=null,this.rel="stylesheet"'><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/github.min.css media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/php.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/java.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/go.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/python.min.js crossorigin></script><link rel=stylesheet href=/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css media=print onload='this.media="all",this.onload=null'><script defer type=text/javascript src=/js/fontawesome.min.35973bea57658ef0dd22ad59ea4642b6c8c67af62bed8659ac326d284ef285a6657cdbcf57d3b2910e7e992f2b20426e.js></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css integrity=sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js integrity=sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY crossorigin></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script><script defer src=https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js integrity=sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0 crossorigin></script><link rel=icon type=image/png sizes=32x32 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_32x32_fill_box_center_3.png><link rel=apple-touch-icon sizes=180x180 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_180x180_fill_box_center_3.png><meta name=description content="第4课 | 栈、队列、优先队列、双端队列，第5课 | 哈希表、映射、集合"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"算法学习","item":"/study/"},{"@type":"ListItem","position":2,"name":"极客时间算法训练营2020版","item":"/study/algorithm/"},{"@type":"ListItem","position":3,"name":"Go 算法练习","item":"/study/algorithm/go/"},{"@type":"ListItem","position":4,"name":"第2周 栈、队列、哈希表","item":"/study/algorithm/go/week02/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/study/algorithm/go/week02/"},"headline":"第2周 栈、队列、哈希表 | Go 算法练习 | lbbniu","datePublished":"2021-11-20T17:18:16+08:00","dateModified":"2023-11-23T18:27:23+08:00","wordCount":1376,"publisher":{"@type":"Person","name":"lbbniu","logo":{"@type":"ImageObject","url":"/images/icon.gif"}},"description":"第4课 | 栈、队列、优先队列、双端队列，第5课 | 哈希表、映射、集合"}</script><meta property="og:title" content="第2周 栈、队列、哈希表 | Go 算法练习 | lbbniu"><meta property="og:type" content="article"><meta property="og:image" content="/images/icon.png"><meta property="og:url" content="/study/algorithm/go/week02/"><meta property="og:description" content="第4课 | 栈、队列、优先队列、双端队列，第5课 | 哈希表、映射、集合"><meta property="og:locale" content="zh"><meta property="og:site_name" content="lbbniu"><meta property="article:published_time" content="2021-11-20T17:18:16+08:00"><meta property="article:modified_time" content="2023-11-23T18:27:23+08:00"><meta property="article:section" content="study"><meta property="article:tag" content="算法"><meta property="article:tag" content="leetcode"><meta property="og:see_also" content="/study/leetcode/leetcode/"><meta property="og:see_also" content="/study/algorithm/go/week10/"><meta property="og:see_also" content="/study/algorithm/php/01%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%B8%80%E5%91%A8/"><meta property="og:see_also" content="/study/algorithm/go/week01/"><meta property="og:see_also" content="/study/algorithm/php/02%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%BA%8C%E5%91%A8/"><meta property="og:see_also" content="/study/algorithm/php/03%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%B8%89%E5%91%A8/"><body class="flex min-h-screen flex-col"><header class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"><div class="mx-auto w-full max-w-screen-xl"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=="Auto"||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName("html")[0].classList.add("dark")</script><nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0"><a href=/ class="me-6 text-primary-text text-xl font-bold">lbbniu</a>
+<button id=navbar-btn class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+<i class="fas fa-bars"></i></button><div id=target class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20"><div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0"><a href=/post/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">文章</a>
+<a href=/cloud-native/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">云原生</a>
+<a href=/study/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 selected-menu-item me-4">算法学习</a>
+<a href=/docs/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">Go学习训练营</a>
+<a href=/tags/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">标签</a></div><div class=flex><div class="relative pt-4 md:pt-0"><div class="cursor-pointer hover:text-eureka" id=lightDarkMode><i class="fas fa-adjust"></i></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id=is-open></div><div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40" id=lightDarkOptions><span class="px-4 py-1 hover:text-eureka" name=Light>浅色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Dark>深色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Auto>自动</span></div></div></div></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id=is-open-mobile></div></nav><script>let element=document.getElementById("lightDarkMode");storageColorScheme==null||storageColorScheme=="Auto"?document.addEventListener("DOMContentLoaded",()=>{window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",switchDarkMode)}):storageColorScheme=="Light"?(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","sun"),element.firstElementChild.classList.add("fa-sun")):storageColorScheme=="Dark"&&(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","moon"),element.firstElementChild.classList.add("fa-moon")),document.addEventListener("DOMContentLoaded",()=>{getcolorscheme(),switchBurger()})</script></div></header><main class="grow pt-16"><div class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8"><div class=lg:pt-12><div class="flex flex-col md:flex-row bg-secondary-bg rounded"><div class="md:w-1/4 lg:w-1/5 border-e"><div class="sticky top-16 pt-6"><div id=sidebar-title class="md:hidden mx-4 px-2 pt-4 pb-2 md:border-b text-tertiary-text md:text-primary-text"><span class=font-semibold>目录</span>
+<i class='fas fa-caret-right ms-1'></i></div><div id=sidebar-toc class="hidden md:block overflow-y-auto mx-6 md:mx-0 pe-6 pt-2 md:max-h-doc-sidebar bg-primary-bg md:bg-transparent"><div class="flex flex-wrap ms-4 -me-2 p-2 bg-secondary-bg md:bg-primary-bg rounded"><a class=hover:text-eureka href=/study/algorithm/go/>Go 算法练习</a></div><ul class=ps-6><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week00/>预习</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week01/>第1周 数组、链表、跳表</a></div></li><li class=py-2><div><a class="text-eureka hover:text-eureka" href=/study/algorithm/go/week02/>第2周 栈、队列、哈希表</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week03/>第3周 树、递归、分治、回溯</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week04/>第4周 DFS、BFS、贪心、二分查找</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week05/>第5周 期中考试</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week06/>第6周 动态规划</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week07/>第7周 字典树和并查集、高级搜索、红黑树和AVL树</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week08/>第8周 位运算、布隆过滤器和LRU缓存、排序算法</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week09/>第9周 高级动态规划、字符串算法</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week10/>第10周 期末串讲、期末考试、毕业刷题路线</a></div></li></ul></div></div></div><div class="w-full md:w-3/4 lg:w-4/5 pb-8 pt-2 md:pt-8"><div class=flex><div class="w-full lg:w-3/4 px-6"><article class=prose><h1 class=mb-4>第2周 栈、队列、哈希表</h1><div class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"><div class="me-6 my-2"><i class="fas fa-calendar me-1"></i>
+<span>2021-11-20</span></div><div class="me-6 my-2"><i class="fas fa-clock me-1"></i>
+<span>7分钟阅读时长</span></div></div><p>题目数量：9+</p><h2 id=第4课--栈队列优先队列双端队列>第4课 | 栈、队列、优先队列、双端队列</h2><h3 id=1-栈和队列的实现与特性>1. 栈和队列的实现与特性</h3><h4 id=参考链接>参考链接</h4><ul><li><a href=http://docs.oracle.com/javase/10/docs/api/java/util/PriorityQueue.html target=_blank rel=noopener>Java 的 PriorityQueue 文档</a></li><li><a href=http://developer.classpath.org/doc/java/util/Stack-source.html target=_blank rel=noopener>Java 的 Stack 源码</a></li><li><a href=http://fuseyism.com/classpath/doc/java/util/Queue-source.html target=_blank rel=noopener>Java 的 Queue 源码</a></li><li><a href=http://docs.python.org/2/library/heapq.html target=_blank rel=noopener>Python 的 heapq</a></li><li><a href=http://docs.python.org/2/library/collections.html target=_blank rel=noopener>高性能的 container 库</a></li></ul><h3 id=2-实战题目解析有效的括号最小栈等问题>2. 实战题目解析：有效的括号、最小栈等问题</h3><h4 id=预习题目>预习题目</h4><ul><li><a href=https://leetcode-cn.com/problems/valid-parentheses/ target=_blank rel=noopener>20. 有效的括号</a></li></ul><pre><code class=language-go>// 方法一：用map，最优写法
+func isValid(s string) bool {
+    n := len(s)
+    if n % 2 != 0 {
+        return false
+    }
+    mp := map[byte]byte{
+        ')': '(',
+        ']': '[',
+        '}': '{',
+    }
+    stack := []byte{}
+	  for i := range s {  //课替换 for i := 0; i &lt; n; i++ {
+        if mp[s[i]] &gt; 0 {
+            if len(stack) == 0 || stack[len(stack) - 1] != mp[s[i]] {
+                return false
+            }
+            stack = stack[:len(stack) - 1]
+        } else {
+            stack = append(stack, s[i])
+        }
+    }
+    return len(stack) == 0
+}
+// 方法二： 不用map
+func isValid(s string) bool {
+    n := len(s)
+    if n % 2 != 0 {
+        return false
+    }
+    stack := []byte{}
+    for i := range s {
+        // 左括号入栈
+        if s[i] == '(' ||   s[i] == '[' ||  s[i] == '{' {
+            stack = append(stack, s[i])
+        } else {
+            if len(stack) == 0 {
+                return false
+            } else if s[i] == ')' {
+                if stack[len(stack) - 1] != '(' {
+                    return false
+                }
+            } else if s[i] == ']' {
+                if stack[len(stack) - 1] != '[' {
+                    return false
+                }
+            } else if s[i] == '}' {
+                if stack[len(stack) - 1] != '{' {
+                    return false
+                }
+            } 
+            stack = stack[:len(stack) - 1]
+        }
+    }
+    return len(stack) == 0
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/min-stack/ target=_blank rel=noopener>155. 最小栈</a></li></ul><pre><code class=language-go>type MinStack struct {
+    stack, minStack []int
+}
+
+func Constructor() MinStack {
+    return MinStack{
+        stack: []int{},
+        minStack: []int{},
+    }
+}
+
+func (this *MinStack) Push(val int)  {
+    this.stack = append(this.stack, val)
+    if len(this.minStack) == 0 {
+        this.minStack = append(this.minStack, val)
+    } else {
+        this.minStack = append(this.minStack, min(this.minStack[len(this.minStack) - 1], val))
+    }
+}
+
+func (this *MinStack) Pop()  {
+    this.stack = this.stack[:len(this.stack)-1]
+    this.minStack = this.minStack[:len(this.minStack)-1]
+}
+
+func (this *MinStack) Top() int {
+    return this.stack[len(this.stack) - 1]
+}
+
+func (this *MinStack) GetMin() int {
+    return this.minStack[len(this.minStack) - 1]
+}
+
+func min(a, b int) int {
+    if a &lt; b {
+        return a
+    }
+    return b
+}
+
+/**
+ * Your MinStack object will be instantiated and called as such:
+ * obj := Constructor();
+ * obj.Push(val);
+ * obj.Pop();
+ * param_3 := obj.Top();
+ * param_4 := obj.GetMin();
+ */
+</code></pre><h4 id=实战题目>实战题目</h4><ul><li><a href=https://leetcode-cn.com/problems/largest-rectangle-in-histogram/ target=_blank rel=noopener>84. 柱状图中最大的矩形</a>
+困难 重点</li></ul><pre><code class=language-go>// 方法一：栈(最优解), 两种写法：
+// 1.栈中初始放入 -1， 
+// 2.heights 末尾追加 0
+func largestRectangleArea(heights []int) int {
+    
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/sliding-window-maximum/ target=_blank rel=noopener>239. 滑动窗口最大值</a>
+困难 重点</li></ul><pre><code class=language-go>// 方法一：暴力（每次去k个数字中的最大值,共有n-k+1个窗口）
+// 方法二：双端队列
+func maxSlidingWindow(nums []int, k int) (res []int) {
+    dq := []int{}
+    for i, num := range nums {
+        // 1.移除多余的数
+        if len(dq) &gt; 0 &amp;&amp; dq[0] &lt;= i - k {
+            dq = dq[1:]
+        }
+        
+        // 2.移除比当前数小的
+        for len(dq) &gt; 0 &amp;&amp; num &gt; nums[dq[len(dq) - 1]] {
+            dq = dq[:len(dq) - 1]
+        }
+        
+        dq = append(dq, i)
+        // 3.加入题解
+        if i &gt;= k - 1 {
+            res = append(res, nums[dq[0]])
+        }
+    }
+    return res
+}
+// 方法三：动态规划
+</code></pre><h4 id=课后作业>课后作业</h4><ul><li>用 add first 或 add last 这套新的 API 改写 Deque 的代码</li></ul><pre><code class=language-java>Deque&lt;String&gt; deque = new LinkedList&lt;String&gt;();
+deque.addFirst(&quot;a&quot;);
+deque.addFirst(&quot;b&quot;);
+deque.addFirst(&quot;c&quot;);
+System.out.println(deque);
+String str = deque.peekFirst();
+System.out.println(str);
+System.out.println(deque);
+while (deque.size() &gt; 0) {
+    System.out.println(deque.removseFirst());
+}
+System.out.println(deque);
+</code></pre><ul><li><p>分析 Queue 和 Priority Queue 的源码</p></li><li><p><a href=https://leetcode-cn.com/problems/design-circular-deque/ target=_blank rel=noopener>641. 设计循环双端队列</a>
+中等 重点</p></li></ul><pre><code class=language-go>type MyCircularDeque struct {
+    queue []int
+    front, last, cap int
+}
+
+func Constructor(k int) MyCircularDeque {
+    return MyCircularDeque{
+        queue: make([]int, k + 1, k + 1),
+        cap: k + 1,
+    }
+}
+
+func (this *MyCircularDeque) InsertFront(value int) bool {
+    if this.IsFull() {
+        return false
+    }
+    this.front = (this.front - 1 + this.cap) % this.cap
+    this.queue[this.front]= value
+    return true
+}
+
+func (this *MyCircularDeque) InsertLast(value int) bool {
+    if this.IsFull() {
+        return false
+    }
+    this.queue[this.last]= value
+    this.last = (this.last + 1) % this.cap
+    return true
+}
+
+func (this *MyCircularDeque) DeleteFront() bool {
+    if this.IsEmpty() {
+        return false
+    }
+    this.front = (this.front + 1) % this.cap
+    return true
+}
+
+func (this *MyCircularDeque) DeleteLast() bool {
+    if this.IsEmpty() {
+        return false
+    }
+    this.last = (this.last - 1 + this.cap) % this.cap
+    return true
+}
+
+func (this *MyCircularDeque) GetFront() int {
+    if this.IsEmpty() {
+        return -1
+    }
+    return this.queue[this.front]
+}
+
+func (this *MyCircularDeque) GetRear() int {
+    if this.IsEmpty() {
+        return -1
+    }
+    return this.queue[(this.last - 1 + this.cap) % this.cap]
+}
+
+func (this *MyCircularDeque) IsEmpty() bool {
+    return this.front == this.last
+}
+
+func (this *MyCircularDeque) IsFull() bool {
+    return this.front == (this.last + 1) % this.cap
+}
+
+/**
+ * Your MyCircularDeque object will be instantiated and called as such:
+ * obj := Constructor(k);
+ * param_1 := obj.InsertFront(value);
+ * param_2 := obj.InsertLast(value);
+ * param_3 := obj.DeleteFront();
+ * param_4 := obj.DeleteLast();
+ * param_5 := obj.GetFront();
+ * param_6 := obj.GetRear();
+ * param_7 := obj.IsEmpty();
+ * param_8 := obj.IsFull();
+ */
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/trapping-rain-water/ target=_blank rel=noopener>42. 接雨水</a>
+困难 重点</li></ul><pre><code class=language-go>// 方法一：动态规划
+func trap(height []int) int {
+
+}
+// 方法二：单调栈，递减栈
+func trap(height []int) (ans int) {
+    stack := []int{}
+    for i, h := range height {
+        for len(stack) &gt; 0 &amp;&amp; h &gt; height[stack[len(stack)-1]]{
+            top := stack[len(stack) - 1]
+            stack = stack[:len(stack) - 1]
+            if len(stack) == 0 {
+                break
+            }
+            ans += (min(h, height[stack[len(stack) - 1]]) - height[top]) * (i - stack[len(stack) - 1] - 1)
+        }
+        stack = append(stack, i)
+    }
+    return ans
+}
+func min(a, b int) int {
+    if a &lt; b {
+        return a
+    }
+    return b
+}
+// 方法三：左右双指针
+func trap(height []int) int {
+
+}
+</code></pre><p>说明：改写代码和分析源码这两项作业，同学们需要在第 1 周的学习总结中完成。如果不熟悉 Java 语言，这两项作业可选做。</p><h2 id=第5课--哈希表映射集合>第5课 | 哈希表、映射、集合</h2><h3 id=1-哈希表映射集合的实现与特性>1. 哈希表、映射、集合的实现与特性</h3><h4 id=参考链接-1>参考链接</h4><ul><li><a href=http://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/util/Set.html target=_blank rel=noopener>Java Set 文档</a></li><li><a href=http://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/util/Map.html target=_blank rel=noopener>Java Map 文档</a></li></ul><h4 id=课后作业-1>课后作业</h4><p>写一个关于 HashMap 的小总结</p><p>说明：对于不熟悉 Java 语言的同学，此项作业可选做。</p><h3 id=2-实战题目解析有效的字母异位词等问题>2. 实战题目解析：有效的字母异位词等问题</h3><h4 id=实战题目--课后作业>实战题目 / 课后作业</h4><ul><li><a href=https://leetcode-cn.com/problems/valid-anagram/ target=_blank rel=noopener>242. 有效的字母异位词</a></li></ul><pre><code class=language-go>func isAnagram(s string, t string) bool {
+    if len(s) != len(t) {
+        return false
+    }
+    mp := [26]int{} // 可以用 mp := map[byte]int{} 替代，性能没有数组高
+    for i := range s {
+        mp[s[i] - 'a']++
+        mp[t[i] - 'a']--
+    }
+    for _, c := range mp {
+        if c != 0 {
+            return false
+        }
+    }
+    return true
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/group-anagrams/ target=_blank rel=noopener>49. 字母异位词分组</a>
+中等 重点</li></ul><pre><code class=language-go>// 方法一：排序
+func groupAnagrams(strs []string) [][]string {
+    mp := map[string][]string{}
+    for _, str := range strs {
+        s := []byte(str)
+        sort.Slice(s, func(i, j int) bool {return s[i] &lt; s[j]})
+        sortedStr := string(s)
+        mp[sortedStr] = append(mp[sortedStr], str)
+    }
+    ans := [][]string{}
+    for _, v := range mp {
+        ans = append(ans, v)
+    }
+    return ans
+}
+// 方法二：计数
+func groupAnagrams(strs []string) [][]string {
+    mp := map[[26]int][]string{}
+    for _, str := range strs {
+        cnt := [26]int{} // var cnt [26]int
+        for _, c := range str {
+            cnt[c - 'a']++
+        }
+        mp[cnt] = append(mp[cnt], str)
+    }
+    ans := [][]string{}
+    for _, v := range mp {
+        ans = append(ans, v)
+    }
+    return ans
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/two-sum/ target=_blank rel=noopener>1. 两数之和</a></li></ul><pre><code class=language-go>func twoSum(nums []int, target int) []int {
+    mp := map[int]int{}
+    for i, x := range nums {
+        if j, ok := mp[target - x]; ok {
+            return []int{j, i}
+        }
+        mp[x] = i
+    }
+    return nil
+}
+</code></pre><h4 id=参考链接-2>参考链接</h4><ul><li><a href=http://shimo.im/docs/R6g9WJV89QkHrDhr target=_blank rel=noopener>养成收藏精选代码的习惯（示例）</a></li></ul><h2 id=本周作业及下周预习>本周作业及下周预习</h2><h3 id=本周作业>本周作业</h3><h4 id=简单>简单</h4><ul><li>用 add first 或 add last 这套新的 API 改写 Deque 的代码</li><li>分析 Queue 和 Priority Queue 的源码</li></ul><p>说明：改写代码和分析源码这两项作业，同学们需要在第 2 周的学习总结中完成。如果不熟悉 Java 语言，这两项作业可选做。</p><ul><li>写一个关于 HashMap 的小总结。</li></ul><p>说明：对于不熟悉 Java 语言的同学，此项作业可选做。</p><ul><li><a href=https://leetcode-cn.com/problems/two-sum/ target=_blank rel=noopener>1. 两数之和</a></li></ul><pre><code class=language-go>func twoSum(nums []int, target int) []int {
+    mp := map[int]int{}
+    for i, x := range nums {
+        if j, ok := mp[target - x]; ok {
+            return []int{j, i}
+        }
+        mp[x] = i
+    }
+    return nil
+}
+</code></pre><h4 id=中等>中等</h4><ul><li><a href=https://leetcode-cn.com/problems/group-anagrams/ target=_blank rel=noopener>49. 字母异位词分组</a></li></ul><pre><code class=language-go>// 方法一：排序
+func groupAnagrams(strs []string) [][]string {
+    mp := map[string][]string{}
+    for _, str := range strs {
+        s := []byte(str)
+        sort.Slice(s, func(i, j int) bool {return s[i] &lt; s[j]})
+        sortedStr := string(s)
+        mp[sortedStr] = append(mp[sortedStr], str)
+    }
+    ans := [][]string{}
+    for _, v := range mp {
+        ans = append(ans, v)
+    }
+    return ans
+}
+// 方法二：计数
+func groupAnagrams(strs []string) [][]string {
+    mp := map[[26]int][]string{}
+    for _, str := range strs {
+        cnt := [26]int{}
+        for _, c := range str {
+            cnt[c - 'a']++
+        }
+        mp[cnt] = append(mp[cnt], str)
+    }
+    ans := [][]string{}
+    for _, v := range mp {
+        ans = append(ans, v)
+    }
+    return ans
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/design-circular-deque/ target=_blank rel=noopener>641. 设计循环双端队列</a></li></ul><pre><code class=language-go>
+</code></pre><h4 id=困难>困难</h4><ul><li><a href=https://leetcode-cn.com/problems/trapping-rain-water/ target=_blank rel=noopener>42. 接雨水</a></li></ul><pre><code class=language-go>func trap(height []int) int {
+
+}
+</code></pre><ul><li><p>JAVA相关题目</p></li><li><p>用 add first 或 add last 这套新的 API 改写 Deque 的代码</p></li></ul><pre><code class=language-java>Deque&lt;String&gt; deque = new LinkedList&lt;String&gt;();
+deque.addFirst(&quot;a&quot;);
+deque.addFirst(&quot;b&quot;);
+deque.addFirst(&quot;c&quot;);
+System.out.println(deque);
+String str = deque.peekFirst();
+System.out.println(str);
+System.out.println(deque);
+while (deque.size() &gt; 0) {
+    System.out.println(deque.removseFirst());
+}
+System.out.println(deque);
+</code></pre><ul><li><p>分析 Queue 和 Priority Queue 的源码（待补充）</p></li><li><p>关于 HashMap 的小总结（待补充）</p></li></ul><blockquote><p>如果哪里有错误，请高手指出</p></blockquote><h3 id=下周预习>下周预习</h3><h4 id=预习知识点>预习知识点</h4><ul><li><a href=http://time.geekbang.org/column/article/67856 target=_blank rel=noopener>二叉树基础（上）：什么样的二叉树适合用数组来存储？</a></li><li><a href=http://time.geekbang.org/column/article/68334 target=_blank rel=noopener>二叉树基础（下）：有了如此高效的散列表，为什么还需要二叉树？</a></li><li><a href=http://time.geekbang.org/column/article/69388 target=_blank rel=noopener>递归树：如何借助树来求解递归算法的时间复杂度？</a></li><li><a href=http://time.geekbang.org/column/article/73503 target=_blank rel=noopener>分治算法：谈一谈大规模计算框架 MapReduce 中的分治思想</a></li><li><a href=http://time.geekbang.org/column/article/74287 target=_blank rel=noopener>回溯算法：从电影《蝴蝶效应》中学习回溯算法的核心思想</a></li><li><a href=https://time.geekbang.org/column/article/69913 target=_blank rel=noopener>堆和堆排序：为什么说堆排序没有快速排序快？</a></li><li><a href=https://time.geekbang.org/column/article/70187 target=_blank rel=noopener>堆的应用：如何快速获取到 Top 10 最热门的搜索关键词？</a></li><li><a href=https://time.geekbang.org/column/article/70537 target=_blank rel=noopener>图的表示：如何存储微博、微信等社交网络中的好友关系？</a></li></ul><h4 id=预习题目-1>预习题目</h4><ul><li><a href=http://leetcode-cn.com/problems/binary-tree-inorder-traversal/ target=_blank rel=noopener>二叉树的中序遍历</a></li><li><a href=http://leetcode-cn.com/problems/climbing-stairs/ target=_blank rel=noopener>爬楼梯</a></li><li><a href=http://leetcode-cn.com/problems/generate-parentheses/ target=_blank rel=noopener>括号生成</a></li><li><a href=http://leetcode-cn.com/problems/powx-n/ target=_blank rel=noopener>Pow(x, n)</a></li><li><a href=http://leetcode-cn.com/problems/subsets/ target=_blank rel=noopener>子集</a></li></ul></article><div class=my-4><a href=/tags/%E7%AE%97%E6%B3%95/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#算法</a>
+<a href=/tags/leetcode/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#leetcode</a></div><div class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"><div><span class="text-primary-text block font-bold">上一页</span>
+<a href=/study/algorithm/go/week01/ class=block>第1周 数组、链表、跳表</a></div><div class="mt-4 md:mt-0 md:text-right"><span class="text-primary-text block font-bold">下一页</span>
+<a href=/study/algorithm/go/week03/ class=block>第3周 树、递归、分治、回溯</a></div></div></div><div class="hidden lg:block lg:w-1/4"><div class="bg-secondary-bg
+prose sticky top-16 z-10 hidden px-6 py-4 lg:block"><h3>本页内容</h3></div><div class="sticky-toc
+border-s
+hidden px-6 pb-6 lg:block"><nav id=TableOfContents><ul><li><a href=#第4课--栈队列优先队列双端队列>第4课 | 栈、队列、优先队列、双端队列</a><ul><li><a href=#1-栈和队列的实现与特性>1. 栈和队列的实现与特性</a><ul><li><a href=#参考链接>参考链接</a></li></ul></li><li><a href=#2-实战题目解析有效的括号最小栈等问题>2. 实战题目解析：有效的括号、最小栈等问题</a><ul><li><a href=#预习题目>预习题目</a></li><li><a href=#实战题目>实战题目</a></li><li><a href=#课后作业>课后作业</a></li></ul></li></ul></li><li><a href=#第5课--哈希表映射集合>第5课 | 哈希表、映射、集合</a><ul><li><a href=#1-哈希表映射集合的实现与特性>1. 哈希表、映射、集合的实现与特性</a><ul><li><a href=#参考链接-1>参考链接</a></li><li><a href=#课后作业-1>课后作业</a></li></ul></li><li><a href=#2-实战题目解析有效的字母异位词等问题>2. 实战题目解析：有效的字母异位词等问题</a><ul><li><a href=#实战题目--课后作业>实战题目 / 课后作业</a></li><li><a href=#参考链接-2>参考链接</a></li></ul></li></ul></li><li><a href=#本周作业及下周预习>本周作业及下周预习</a><ul><li><a href=#本周作业>本周作业</a><ul><li><a href=#简单>简单</a></li><li><a href=#中等>中等</a></li><li><a href=#困难>困难</a></li></ul></li><li><a href=#下周预习>下周预习</a><ul><li><a href=#预习知识点>预习知识点</a></li><li><a href=#预习题目-1>预习题目</a></li></ul></li></ul></li></ul></nav></div><script>window.addEventListener("DOMContentLoaded",()=>{enableStickyToc()})</script></div></div></div></div></div><script>document.addEventListener("DOMContentLoaded",()=>{hljs.highlightAll(),changeSidebarHeight(),switchDocToc()})</script></div></div></main><footer class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b"><p class="text-sm text-tertiary-text">&copy; 2021 <a href=https://blog.lbbniu.com/>lbbniu</a>
+&#183; Powered by the <a href=https://github.com/wangchucheng/hugo-eureka class=hover:text-eureka>Eureka</a> theme for <a href=https://gohugo.io class=hover:text-eureka>Hugo</a></p></div></div></footer></body></html>

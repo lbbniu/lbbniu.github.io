@@ -1,0 +1,512 @@
+<!doctype html><html lang=zh dir=ltr><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>第一周 数组、链表、栈、队列 | 极客时间算法训练营2021版 | lbbniu</title>
+<meta name=generator content="Hugo Eureka 0.9.3"><link rel=stylesheet href=/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css><script defer src=/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js></script><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" as=style onload='this.onload=null,this.rel="stylesheet"'><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/github.min.css media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/php.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/java.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/go.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/python.min.js crossorigin></script><link rel=stylesheet href=/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css media=print onload='this.media="all",this.onload=null'><script defer type=text/javascript src=/js/fontawesome.min.35973bea57658ef0dd22ad59ea4642b6c8c67af62bed8659ac326d284ef285a6657cdbcf57d3b2910e7e992f2b20426e.js></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css integrity=sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js integrity=sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY crossorigin></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script><script defer src=https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js integrity=sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0 crossorigin></script><link rel=icon type=image/png sizes=32x32 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_32x32_fill_box_center_3.png><link rel=apple-touch-icon sizes=180x180 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_180x180_fill_box_center_3.png><meta name=description content="第 1 课 数组、链表，第 2 课 栈、队列"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"算法学习","item":"/study/"},{"@type":"ListItem","position":2,"name":"极客时间算法训练营2021版","item":"/study/2021algorithm/"},{"@type":"ListItem","position":3,"name":"第一周 数组、链表、栈、队列","item":"/study/2021algorithm/week01/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/study/2021algorithm/week01/"},"headline":"第一周 数组、链表、栈、队列 | 极客时间算法训练营2021版 | lbbniu","datePublished":"2021-11-25T10:30:00+08:00","dateModified":"2023-11-23T18:27:23+08:00","wordCount":1952,"publisher":{"@type":"Person","name":"lbbniu","logo":{"@type":"ImageObject","url":"/images/icon.gif"}},"description":"第 1 课 数组、链表，第 2 课 栈、队列"}</script><meta property="og:title" content="第一周 数组、链表、栈、队列 | 极客时间算法训练营2021版 | lbbniu"><meta property="og:type" content="article"><meta property="og:image" content="/images/icon.png"><meta property="og:url" content="/study/2021algorithm/week01/"><meta property="og:description" content="第 1 课 数组、链表，第 2 课 栈、队列"><meta property="og:locale" content="zh"><meta property="og:site_name" content="lbbniu"><meta property="article:published_time" content="2021-11-25T10:30:00+08:00"><meta property="article:modified_time" content="2023-11-23T18:27:23+08:00"><meta property="article:section" content="study"><meta property="article:tag" content="数组"><meta property="article:tag" content="链表"><meta property="article:tag" content="栈"><meta property="article:tag" content="队列"><body class="flex min-h-screen flex-col"><header class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"><div class="mx-auto w-full max-w-screen-xl"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=="Auto"||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName("html")[0].classList.add("dark")</script><nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0"><a href=/ class="me-6 text-primary-text text-xl font-bold">lbbniu</a>
+<button id=navbar-btn class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+<i class="fas fa-bars"></i></button><div id=target class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20"><div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0"><a href=/post/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">文章</a>
+<a href=/cloud-native/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">云原生</a>
+<a href=/study/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 selected-menu-item me-4">算法学习</a>
+<a href=/docs/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">Go学习训练营</a>
+<a href=/tags/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">标签</a></div><div class=flex><div class="relative pt-4 md:pt-0"><div class="cursor-pointer hover:text-eureka" id=lightDarkMode><i class="fas fa-adjust"></i></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id=is-open></div><div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40" id=lightDarkOptions><span class="px-4 py-1 hover:text-eureka" name=Light>浅色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Dark>深色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Auto>自动</span></div></div></div></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id=is-open-mobile></div></nav><script>let element=document.getElementById("lightDarkMode");storageColorScheme==null||storageColorScheme=="Auto"?document.addEventListener("DOMContentLoaded",()=>{window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",switchDarkMode)}):storageColorScheme=="Light"?(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","sun"),element.firstElementChild.classList.add("fa-sun")):storageColorScheme=="Dark"&&(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","moon"),element.firstElementChild.classList.add("fa-moon")),document.addEventListener("DOMContentLoaded",()=>{getcolorscheme(),switchBurger()})</script></div></header><main class="grow pt-16"><div class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8"><div class=lg:pt-12><div class="flex flex-col md:flex-row bg-secondary-bg rounded"><div class="md:w-1/4 lg:w-1/5 border-e"><div class="sticky top-16 pt-6"><div id=sidebar-title class="md:hidden mx-4 px-2 pt-4 pb-2 md:border-b text-tertiary-text md:text-primary-text"><span class=font-semibold>目录</span>
+<i class='fas fa-caret-right ms-1'></i></div><div id=sidebar-toc class="hidden md:block overflow-y-auto mx-6 md:mx-0 pe-6 pt-2 md:max-h-doc-sidebar bg-primary-bg md:bg-transparent"><div class="flex flex-wrap ms-4 -me-2 p-2 bg-secondary-bg md:bg-primary-bg rounded"><a class=hover:text-eureka href=/study/2021algorithm/>极客时间算法训练营2021版</a></div><ul class=ps-6><li class=py-2><div><a class="text-eureka hover:text-eureka" href=/study/2021algorithm/week01/>第一周 数组、链表、栈、队列</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/2021algorithm/week02/>第二周 哈希表、集合、映射、前缀和、差分、双指针扫描</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/2021algorithm/week03/>第三周 递归、分治、树与图</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/2021algorithm/week04/>第四周 深度优先搜索、广度优先搜索、二叉堆、二叉搜索树</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/2021algorithm/week05/>第五周 二分、排序</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/2021algorithm/week06/>第六周 贪心、动态规划</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/2021algorithm/week07/>第七周 动态规划</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/2021algorithm/week08/>第八周 字典树、并查集，图论算法</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/2021algorithm/week09/>第九周 字符串处理、高级搜索</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/2021algorithm/week10/>第十周 平衡二叉树、跳跃表、树状数组与线段树、实战技巧、总结回顾</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/2021algorithm/final/>毕业刷新路径</a></div></li></ul></div></div></div><div class="w-full md:w-3/4 lg:w-4/5 pb-8 pt-2 md:pt-8"><div class=flex><div class="w-full lg:w-3/4 px-6"><article class=prose><h1 class=mb-4>第一周 数组、链表、栈、队列</h1><div class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"><div class="me-6 my-2"><i class="fas fa-calendar me-1"></i>
+<span>2021-11-25</span></div><div class="me-6 my-2"><i class="fas fa-clock me-1"></i>
+<span>10分钟阅读时长</span></div></div><p>题目数：19</p><h2 id=本周作业>本周作业</h2><ul><li><a href=https://leetcode-cn.com/problems/plus-one/ target=_blank rel=noopener>66.加一</a>
+（Easy）半年内出题频次：</li></ul><table><thead><tr><th style=text-align:center>Facebook</th><th style=text-align:center>字节跳动</th><th style=text-align:center>微软</th><th style=text-align:center>Amazon</th><th style=text-align:center>快手</th><th style=text-align:center>美团</th><th style=text-align:center>Google</th><th style=text-align:center>腾讯</th><th style=text-align:center>华为</th><th style=text-align:center>百度</th></tr></thead><tbody><tr><td style=text-align:center>0</td><td style=text-align:center>0</td><td style=text-align:center>3</td><td style=text-align:center>3</td><td style=text-align:center>0</td><td style=text-align:center>0</td><td style=text-align:center>4</td><td style=text-align:center>0</td><td style=text-align:center>0</td><td style=text-align:center>0</td></tr></tbody></table><pre><code class=language-go>// 写法一，面试推荐写法
+func plusOne(digits []int) []int {
+    n := len(digits)
+    for i := n - 1; i &gt;=0; i-- {
+        digits[i] = (digits[i] + 1) % 10
+        if digits[i] != 0 {
+            return digits
+        }
+    }
+    ans := make([]int, n + 1)
+    ans[0] = 1
+    return ans
+}
+
+// 写法二：
+func plusOne(digits []int) []int {
+    for i := len(digits) - 1; i &gt;= 0; i-- {
+        // 统计9的个数
+        if digits[i] != 9 {
+            digits[i]++
+            for j := i + 1; j &lt; len(digits); j++ {
+                digits[j] = 0
+            }
+            return digits
+        }
+    }
+    digits = make([]int, len(digits) + 1)
+    digits[0] = 1
+    return digits
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/merge-two-sorted-lists/ target=_blank rel=noopener>21.合并两个有序链表</a>
+（Easy）半年内出题频次：</li></ul><table><thead><tr><th style=text-align:center>Facebook</th><th style=text-align:center>字节跳动</th><th style=text-align:center>微软</th><th style=text-align:center>Amazon</th><th style=text-align:center>快手</th><th style=text-align:center>美团</th><th style=text-align:center>Google</th><th style=text-align:center>腾讯</th><th style=text-align:center>华为</th><th style=text-align:center>百度</th></tr></thead><tbody><tr><td style=text-align:center>7</td><td style=text-align:center>23</td><td style=text-align:center>9</td><td style=text-align:center>36</td><td style=text-align:center>2</td><td style=text-align:center>2</td><td style=text-align:center>2</td><td style=text-align:center>14</td><td style=text-align:center>0</td><td style=text-align:center>3</td></tr></tbody></table><pre><code class=language-go>/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
+    dummy := &amp;ListNode{}
+    cur := dummy
+    for list1 != nil &amp;&amp; list2 != nil {
+        if list1.Val &lt; list2.Val {
+            cur.Next = list1
+            list1, cur = list1.Next, cur.Next
+        } else {
+            cur.Next = list2
+            list2, cur = list2.Next, cur.Next
+        }
+    }
+    if list1 != nil {
+        cur.Next = list1
+    } else {
+        cur.Next = list2
+    }
+    return dummy.Next
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/design-circular-deque/ target=_blank rel=noopener>641.设计循环双端队列</a>
+（Medium）半年内出题频次：</li></ul><table><thead><tr><th style=text-align:center>Facebook</th><th style=text-align:center>字节跳动</th><th style=text-align:center>微软</th><th style=text-align:center>Amazon</th><th style=text-align:center>快手</th><th style=text-align:center>美团</th><th style=text-align:center>Google</th><th style=text-align:center>腾讯</th><th style=text-align:center>华为</th><th style=text-align:center>百度</th></tr></thead><tbody><tr><td style=text-align:center>2</td><td style=text-align:center>0</td><td style=text-align:center>0</td><td style=text-align:center>0</td><td style=text-align:center>0</td><td style=text-align:center>0</td><td style=text-align:center>0</td><td style=text-align:center>0</td><td style=text-align:center>0</td><td style=text-align:center>0</td></tr></tbody></table><pre><code class=language-go>
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/maximal-rectangle/ target=_blank rel=noopener>85.最大矩形</a>
+（Hard）半年内出题频次：</li></ul><table><thead><tr><th style=text-align:center>华为</th><th style=text-align:center>字节跳动</th><th style=text-align:center>Google</th><th style=text-align:center>Amazon</th><th style=text-align:center>Apple</th></tr></thead><tbody><tr><td style=text-align:center>3</td><td style=text-align:center>8</td><td style=text-align:center>5</td><td style=text-align:center>4</td><td style=text-align:center>4</td></tr></tbody></table><pre><code class=language-go>
+</code></pre><h2 id=实战例题>实战例题</h2><blockquote><p>以下为课上实战例题</p></blockquote><h3 id=第-1-课-数组链表>第 1 课 数组、链表</h3><h4 id=数组>数组</h4><ul><li><a href=https://leetcode-cn.com/problems/merge-sorted-array/ target=_blank rel=noopener>88.合并有序数组</a></li></ul><p>（Easy）半年内出题频次：</p><table><thead><tr><th style=text-align:center>Facebook</th><th style=text-align:center>字节跳动</th><th style=text-align:center>微软</th><th style=text-align:center>Amazon</th><th style=text-align:center>快手</th><th style=text-align:center>美团</th><th style=text-align:center>Google</th><th style=text-align:center>腾讯</th><th style=text-align:center>华为</th><th style=text-align:center>百度</th></tr></thead><tbody><tr><td style=text-align:center>33</td><td style=text-align:center>19</td><td style=text-align:center>11</td><td style=text-align:center>6</td><td style=text-align:center>5</td><td style=text-align:center>5</td><td style=text-align:center>3</td><td style=text-align:center>0</td><td style=text-align:center>3</td><td style=text-align:center>3</td></tr></tbody></table><pre><code class=language-go>func merge(nums1 []int, m int, nums2 []int, n int) {
+    last := m + n - 1
+    for m, n = m - 1, n - 1; m &gt;= 0 &amp;&amp; n &gt;= 0; last = last - 1 {
+        if nums1[m] &lt; nums2[n] {
+            nums1[last], n = nums2[n], n - 1
+        } else {
+            nums1[last], m = nums2[m], m - 1
+        }
+    }
+    for n &gt;= 0 {
+        nums1[last], last, n = nums2[n], last - 1, n - 1
+    }
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/ target=_blank rel=noopener>26.删除有序数组中的重复项</a></li></ul><p>（Easy）半年内出题频次：</p><table><thead><tr><th style=text-align:center>Facebook</th><th style=text-align:center>字节跳动</th><th style=text-align:center>微软</th><th style=text-align:center>Amazon</th><th style=text-align:center>滴滴</th><th style=text-align:center>美团</th><th style=text-align:center>Google</th><th style=text-align:center>Apple</th></tr></thead><tbody><tr><td style=text-align:center>11</td><td style=text-align:center>13</td><td style=text-align:center>6</td><td style=text-align:center>6</td><td style=text-align:center>2</td><td style=text-align:center>2</td><td style=text-align:center>2</td><td style=text-align:center>4</td></tr></tbody></table><pre><code class=language-go>// 写法一
+func removeDuplicates(nums []int) int {
+    idx := 0
+    for cur, n := 0, len(nums); cur &lt; n; cur++ {
+        if cur == 0 || nums[cur-1] != nums[cur] {
+            nums[idx] = nums[cur]
+            idx++
+        }
+    }
+    return idx
+}
+
+// 写法二
+func removeDuplicates(nums []int) int {
+    n := len(nums)
+    if n == 0 {
+        return 0
+    }
+    slow := 1
+    for fast := 1; fast &lt; n; fast++ {
+        if nums[fast] != nums[fast-1] {
+            nums[slow] = nums[fast]
+            slow++
+        }
+    }
+    return slow
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/move-zeroes/ target=_blank rel=noopener>283.移动零</a></li></ul><p>（Easy）半年内出题频次：</p><table><thead><tr><th style=text-align:center>Facebook</th><th style=text-align:center>字节跳动</th><th style=text-align:center>微软</th><th style=text-align:center>Amazon</th><th style=text-align:center>Bloomberg</th><th style=text-align:center>Apple</th><th style=text-align:center>Google</th><th style=text-align:center>eBay</th><th style=text-align:center>Cisco</th><th style=text-align:center>SAP思爱普</th></tr></thead><tbody><tr><td style=text-align:center>19</td><td style=text-align:center>9</td><td style=text-align:center>8</td><td style=text-align:center>7</td><td style=text-align:center>7</td><td style=text-align:center>5</td><td style=text-align:center>5</td><td style=text-align:center>3</td><td style=text-align:center>3</td><td style=text-align:center>2</td></tr></tbody></table><pre><code class=language-go>// 写法一
+func moveZeroes(nums []int)  {
+    n := len(nums)
+    for lastNonZero, i := 0, 0; i &lt; n; i++ {
+        if nums[i] != 0 {
+            nums[lastNonZero], nums[i] = nums[i], nums[lastNonZero]
+            lastNonZero++
+        }
+    }
+}
+
+// 写法二
+func moveZeroes(nums []int)  {
+    lastNonZero, n := 0, len(nums)
+    for i := 0; i &lt; n; i++ {
+        if nums[i] != 0 {
+            nums[lastNonZero] = nums[i]
+            lastNonZero++
+        }
+    }
+    for lastNonZero &lt; n {
+        nums[lastNonZero] = 0
+        lastNonZero++
+    }
+}
+</code></pre><h4 id=链表>链表</h4><ul><li><a href=https://leetcode-cn.com/problems/reverse-linked-list/ target=_blank rel=noopener>206.反转链表</a></li></ul><p>（Easy）半年内出题频次：</p><table><thead><tr><th style=text-align:center>Facebook</th><th style=text-align:center>字节跳动</th><th style=text-align:center>微软</th><th style=text-align:center>Amazon</th><th style=text-align:center>滴滴</th><th style=text-align:center>美团</th><th style=text-align:center>Google</th><th style=text-align:center>腾讯</th><th style=text-align:center>Apple</th><th style=text-align:center>百度</th></tr></thead><tbody><tr><td style=text-align:center>4</td><td style=text-align:center>42</td><td style=text-align:center>9</td><td style=text-align:center>13</td><td style=text-align:center>7</td><td style=text-align:center>7</td><td style=text-align:center>6</td><td style=text-align:center>14</td><td style=text-align:center>7</td><td style=text-align:center>4</td></tr></tbody></table><pre><code class=language-go>/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+// 迭代
+func reverseList(head *ListNode) *ListNode {
+    var pre *ListNode
+    for head != nil {
+        // tmp := head.Next
+        // head.Next = pre
+        // pre = head
+        // head = tmp
+        pre, head, head.Next = head, head.Next, pre
+    }
+    return pre
+}
+
+// 递归
+func reverseList(head *ListNode) *ListNode {
+    if head == nil || head.Next == nil {
+        return head
+    }
+    newHead := reverseList(head.Next)
+    head.Next.Next = head
+    head.Next = nil
+    return newHead
+}
+
+// 头插法
+func reverseList(head *ListNode) *ListNode {
+    dummy := new(ListNode)
+    for head != nil {
+        head.Next, dummy.Next, head = dummy.Next, head, head.Next
+    }
+    return dummy.Next
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/reverse-nodes-in-k-group/ target=_blank rel=noopener>25.K 个一组翻转链表</a></li></ul><p>（Hard）半年内出题频次：</p><table><thead><tr><th style=text-align:center>Facebook</th><th style=text-align:center>字节跳动</th><th style=text-align:center>微软</th><th style=text-align:center>Amazon</th><th style=text-align:center>快手</th><th style=text-align:center>美团</th><th style=text-align:center>Google</th><th style=text-align:center>腾讯</th><th style=text-align:center>Apple</th><th style=text-align:center>eBay</th></tr></thead><tbody><tr><td style=text-align:center>5</td><td style=text-align:center>40</td><td style=text-align:center>13</td><td style=text-align:center>15</td><td style=text-align:center>2</td><td style=text-align:center>2</td><td style=text-align:center>3</td><td style=text-align:center>6</td><td style=text-align:center>3</td><td style=text-align:center>3</td></tr></tbody></table><pre><code class=language-go>/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+// 方法一： 迭代 + 尾插法
+func reverseKGroup(head *ListNode, k int) *ListNode {
+    dummy := &amp;ListNode{}
+    dummy.Next = head
+    pre, tail := dummy, dummy
+    for pre.Next != nil {
+        for i := 0; i &lt; k &amp;&amp; tail != nil; i++ {
+            tail = tail.Next
+        }
+        if tail == nil {
+            break
+        }
+        next := pre.Next
+        for pre.Next != tail {
+            cur := pre.Next
+            pre.Next = cur.Next
+
+            cur.Next = tail.Next
+            tail.Next = cur
+        }
+        pre, tail = next, next
+    }
+    return dummy.Next
+}
+
+// 方法二：迭代 + 独立反转函数（递归、头插法、旧地反转）
+func reverseKGroup(head *ListNode, k int) *ListNode {
+    dummy := &amp;ListNode{}
+    dummy.Next = head
+    pre, tail := dummy, dummy
+    for pre.Next != nil {
+        for i :=0; i &lt; k &amp;&amp;tail != nil; i++ {
+            tail = tail.Next
+        }
+        if tail == nil {
+            break
+        }
+        next := tail.Next
+        tail.Next = nil
+        head =  pre.Next
+        pre.Next = reverse(pre.Next)
+        head.Next = next
+        pre, tail = head, head
+    }
+    return dummy.Next
+}
+
+func reverse(head *ListNode) *ListNode {
+    // 头插法
+    dummy := &amp;ListNode{}
+    for head != nil {
+        cur := head.Next
+        head.Next = dummy.Next
+        dummy.Next = head
+        head = cur
+    }
+    return dummy.Next
+}
+
+// 方法三：递归 + 尾插法
+func reverseKGroup(head *ListNode, k int) *ListNode {
+    count, cur := 0, head
+    for ; count &lt; k &amp;&amp; cur != nil; count++ {
+        cur = cur.Next
+    }
+    if count == k {
+        cur = reverseKGroup(cur, k)
+        for ; count &gt; 0; count-- {
+            next := head.Next
+            head.Next = cur
+            cur = head
+            head = next
+        }
+        head = cur
+    }
+    return head
+}
+</code></pre><ul><li><a href=https://www.acwing.com/problem/content/description/138/ target=_blank rel=noopener>136.邻值查找</a></li></ul><p>（Medium）（ACWing）</p><pre><code class=language-go>
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/linked-list-cycle/ target=_blank rel=noopener>141.环形链表</a></li></ul><p>（Medium）半年内出题频次：</p><table><thead><tr><th style=text-align:center>Facebook</th><th style=text-align:center>字节跳动</th><th style=text-align:center>微软</th><th style=text-align:center>Amazon</th><th style=text-align:center>Bloomberg</th><th style=text-align:center>百度</th><th style=text-align:center>腾讯</th><th style=text-align:center>Apple</th><th style=text-align:center>Shopee</th></tr></thead><tbody><tr><td style=text-align:center>4</td><td style=text-align:center>11</td><td style=text-align:center>7</td><td style=text-align:center>7</td><td style=text-align:center>3</td><td style=text-align:center>3</td><td style=text-align:center>3</td><td style=text-align:center>2</td><td style=text-align:center>2</td></tr></tbody></table><pre><code class=language-go>/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+// 方法一：快慢指针
+func hasCycle(head *ListNode) bool {
+    slow, fast := head, head
+    for fast != nil &amp;&amp; fast.Next != nil {
+        slow, fast = slow.Next, fast.Next.Next
+        if slow == fast {
+            return true
+        }
+    }
+    return false
+}
+
+// 方法二：哈希表
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/linked-list-cycle-ii/ target=_blank rel=noopener>142.环形链表 II</a></li></ul><p>（Medium）半年内出题频次：</p><table><thead><tr><th style=text-align:center>Facebook</th><th style=text-align:center>字节跳动</th><th style=text-align:center>微软</th><th style=text-align:center>Amazon</th><th style=text-align:center>快手</th><th style=text-align:center>美团</th><th style=text-align:center>Google</th><th style=text-align:center>腾讯</th><th style=text-align:center>华为</th><th style=text-align:center>百度</th></tr></thead><tbody><tr><td style=text-align:center>2</td><td style=text-align:center>14</td><td style=text-align:center>2</td><td style=text-align:center>2</td><td style=text-align:center>0</td><td style=text-align:center>2</td><td style=text-align:center>0</td><td style=text-align:center>0</td><td style=text-align:center>0</td><td style=text-align:center>0</td></tr></tbody></table><pre><code class=language-go>/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+func detectCycle(head *ListNode) *ListNode {
+    slow, fast := head, head
+    for fast != nil &amp;&amp; fast.Next != nil {
+        slow, fast = slow.Next, fast.Next.Next
+        if slow == fast {
+            for slow != head {
+                slow, head = slow.Next, head.Next
+            }
+            return slow
+        }
+    }
+    return nil
+}
+</code></pre><h3 id=第-2-课-栈队列>第 2 课 栈、队列</h3><h4 id=栈>栈</h4><ul><li><a href=https://leetcode-cn.com/problems/valid-parentheses/ target=_blank rel=noopener>20.有效的括号</a></li></ul><p>（Medium）半年内出题频次：</p><table><thead><tr><th style=text-align:center>Facebook</th><th style=text-align:center>字节跳动</th><th style=text-align:center>微软</th><th style=text-align:center>Amazon</th><th style=text-align:center>Apple</th><th style=text-align:center>Google</th><th style=text-align:center>Bloomberg</th><th style=text-align:center>华为</th><th style=text-align:center>LinkedIn</th><th style=text-align:center>Shopee</th></tr></thead><tbody><tr><td style=text-align:center>12</td><td style=text-align:center>24</td><td style=text-align:center>15</td><td style=text-align:center>25</td><td style=text-align:center>10</td><td style=text-align:center>7</td><td style=text-align:center>9</td><td style=text-align:center>8</td><td style=text-align:center>13</td><td style=text-align:center>7</td></tr></tbody></table><pre><code class=language-go>// 写法一：
+func isValid(s string) bool {
+    n := len(s)
+    if n % 2 == 1 {
+        return false
+    }
+    pairs := map[byte]byte{
+        ')': '(',
+        ']': '[',
+        '}': '{',
+    }
+    stack := []byte{}
+    for _, c := range []byte(s) {
+        if pairs[c] &gt; 0 {
+            if len(stack) == 0 || stack[len(stack)-1] != pairs[c] {
+                return false
+            }
+            stack = stack[:len(stack)-1]
+        } else {
+            stack = append(stack, c)
+        }
+    }
+    return len(stack) == 0
+}
+// 写法二：
+func isValid(s string) bool {
+    n := len(s)
+    if n % 2 == 1 {
+        return false
+    }
+    pairs := map[byte]byte{
+        ')': '(',
+        ']': '[',
+        '}': '{',
+    }
+    stack := []byte{}
+    for i := 0; i &lt; n; i++ { // 区别
+        if pairs[s[i]] &gt; 0 {
+            if len(stack) == 0 || stack[len(stack)-1] != pairs[s[i]] {
+                return false
+            }
+            stack = stack[:len(stack)-1]
+        } else {
+            stack = append(stack, s[i])
+        }
+    }
+    return len(stack) == 0
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/min-stack/ target=_blank rel=noopener>155.最小栈</a></li></ul><p>（Medium）半年内出题频次：</p><table><thead><tr><th style=text-align:center>Bloomberg</th><th style=text-align:center>字节跳动</th><th style=text-align:center>微软</th><th style=text-align:center>Amazon</th><th style=text-align:center>快手</th><th style=text-align:center>美团</th><th style=text-align:center>Google</th><th style=text-align:center>Apple</th><th style=text-align:center>高盛集团</th><th style=text-align:center>Coupang</th></tr></thead><tbody><tr><td style=text-align:center>12</td><td style=text-align:center>10</td><td style=text-align:center>12</td><td style=text-align:center>15</td><td style=text-align:center>0</td><td style=text-align:center>0</td><td style=text-align:center>0</td><td style=text-align:center>3</td><td style=text-align:center>0</td><td style=text-align:center>0</td></tr></tbody></table><pre><code class=language-go>type MinStack struct {
+    stack, minStack []int
+}
+
+
+func Constructor() MinStack {
+    return MinStack{}
+}
+
+
+func (this *MinStack) Push(val int)  {
+    this.stack = append(this.stack, val)
+    minVal := val
+    if len(this.minStack) &gt; 0 &amp;&amp; this.minStack[len(this.minStack)-1] &lt; val {
+        minVal = this.minStack[len(this.minStack)-1]
+    }
+    this.minStack = append(this.minStack, minVal)
+}
+
+
+func (this *MinStack) Pop()  {
+    l := len(this.stack)
+    this.stack = this.stack[:l-1]
+    this.minStack = this.minStack[:l-1]
+}
+
+
+func (this *MinStack) Top() int {
+    return this.stack[len(this.stack)-1]
+}
+
+
+func (this *MinStack) GetMin() int {
+    return this.minStack[len(this.minStack)-1]
+}
+
+
+/**
+ * Your MinStack object will be instantiated and called as such:
+ * obj := Constructor();
+ * obj.Push(val);
+ * obj.Pop();
+ * param_3 := obj.Top();
+ * param_4 := obj.GetMin();
+ */
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/evaluate-reverse-polish-notation/ target=_blank rel=noopener>150.逆波兰表达式求值</a></li></ul><p>（Medium）半年内出题频次：</p><table><thead><tr><th style=text-align:center>Facebook</th><th style=text-align:center>字节跳动</th><th style=text-align:center>微软</th><th style=text-align:center>Amazon</th><th style=text-align:center>LinkedIn</th><th style=text-align:center>Google</th></tr></thead><tbody><tr><td style=text-align:center>3</td><td style=text-align:center>3</td><td style=text-align:center>3</td><td style=text-align:center>8</td><td style=text-align:center>6</td><td style=text-align:center>6</td></tr></tbody></table><pre><code class=language-go>
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/basic-calculator/ target=_blank rel=noopener>224.基本计算器 (选做)</a></li></ul><p>（Hard）半年内出题频次：</p><table><thead><tr><th style=text-align:center>Facebook</th><th style=text-align:center>字节跳动</th><th style=text-align:center>微软</th><th style=text-align:center>Amazon</th><th style=text-align:center>Roblox</th><th style=text-align:center>Shopee</th><th style=text-align:center>Google</th><th style=text-align:center>Apple</th><th style=text-align:center>Wish</th></tr></thead><tbody><tr><td style=text-align:center>8</td><td style=text-align:center>15</td><td style=text-align:center>12</td><td style=text-align:center>7</td><td style=text-align:center>6</td><td style=text-align:center>3</td><td style=text-align:center>4</td><td style=text-align:center>2</td><td style=text-align:center>2</td></tr></tbody></table><pre><code class=language-go>
+</code></pre><h4 id=单调栈单调队列>单调栈、单调队列</h4><ul><li><a href=https://leetcode-cn.com/problems/largest-rectangle-in-histogram/ target=_blank rel=noopener>84.柱状图中最大的矩形</a>
+<strong>重点重点重点</strong></li></ul><p>（Hard）半年内出题频次：</p><table><thead><tr><th style=text-align:center>字节跳动</th><th style=text-align:center>微软</th><th style=text-align:center>Amazon</th><th style=text-align:center>eBay</th><th style=text-align:center>Google</th><th style=text-align:center>华为</th></tr></thead><tbody><tr><td style=text-align:center>7</td><td style=text-align:center>5</td><td style=text-align:center>9</td><td style=text-align:center>2</td><td style=text-align:center>3</td><td style=text-align:center>2</td></tr></tbody></table><pre><code class=language-go>// 写法一：
+func largestRectangleArea(heights []int) (ans int) {
+    // 比栈顶元素小大才出栈，最后一个元素后需要补一个0，让最后一个元素有机会出栈。
+    heights = append(heights, 0)
+    // 单调升序栈
+    stack := []int{}
+    for i, height := range heights {
+        for len(stack) &gt; 0 &amp;&amp; height &lt; heights[stack[len(stack)-1]] {
+            top := stack[len(stack)-1]
+            stack = stack[:len(stack)-1]
+            width := i
+            if len(stack) &gt; 0 {
+                width = i - stack[len(stack)-1] - 1
+            }
+            ans = max(ans,  heights[top] * w)
+        }
+        stack = append(stack, i)
+    }
+    return ans
+}
+// 写法二：
+func largestRectangleArea(heights []int) (maxArea int) {
+    stack := []int{}
+    stack = append(stack, -1)
+    for i, height := range heights {
+        // 从小 -&gt; 大 栈
+        for stack[len(stack) - 1] != -1 &amp;&amp; height &lt; heights[stack[len(stack) - 1]]{
+            top := stack[len(stack) - 1]
+            stack = stack[:len(stack) - 1]
+            h := heights[top]
+            maxArea = max(maxArea, h * (i - stack[len(stack) - 1] - 1))
+        }
+        stack = append(stack, i)
+    }
+    last := len(heights)
+    // 处理剩余数据
+    for stack[len(stack) - 1] != -1 {
+        top := stack[len(stack) - 1]
+        stack = stack[:len(stack) - 1]
+        h := heights[top]
+        maxArea = max(maxArea, h * (last - stack[len(stack) - 1] - 1))
+    }
+    return maxArea
+}
+
+func max(a, b int) int {
+    if a &gt; b {
+        return a
+    }
+    return b
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/sliding-window-maximum/ target=_blank rel=noopener>239.滑动窗口最大值</a></li></ul><p>（Hard）半年内出题频次：</p><table><thead><tr><th style=text-align:center>Facebook</th><th style=text-align:center>字节跳动</th><th style=text-align:center>微软</th><th style=text-align:center>Amazon</th><th style=text-align:center>高盛集团</th><th style=text-align:center>Google</th><th style=text-align:center>阿里巴巴</th><th style=text-align:center>Bloomberg</th><th style=text-align:center>Twitter</th></tr></thead><tbody><tr><td style=text-align:center>6</td><td style=text-align:center>6</td><td style=text-align:center>5</td><td style=text-align:center>27</td><td style=text-align:center>2</td><td style=text-align:center>8</td><td style=text-align:center>2</td><td style=text-align:center>2</td><td style=text-align:center>2</td></tr></tbody></table><pre><code class=language-go>// 方法一：双端队列
+
+// 方法二：大顶堆
+
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/trapping-rain-water/ target=_blank rel=noopener>42.接雨水</a>
+<strong>重点重点重点</strong></li></ul><p>（Hard）半年内出题频次：</p><table><thead><tr><th style=text-align:center>Facebook</th><th style=text-align:center>字节跳动</th><th style=text-align:center>微软</th><th style=text-align:center>Amazon</th><th style=text-align:center>高盛集团</th><th style=text-align:center>美团</th><th style=text-align:center>Google</th><th style=text-align:center>Bloomberg</th><th style=text-align:center>网易</th><th style=text-align:center>Apple</th></tr></thead><tbody><tr><td style=text-align:center>35</td><td style=text-align:center>34</td><td style=text-align:center>9</td><td style=text-align:center>46</td><td style=text-align:center>34</td><td style=text-align:center>5</td><td style=text-align:center>10</td><td style=text-align:center>11</td><td style=text-align:center>7</td><td style=text-align:center>5</td></tr></tbody></table><pre><code class=language-go>// 方法一：单调栈（大-&gt;小）
+func trap(heights []int) (ans int) {
+    stack := []int{}
+    for i, height := range heights {
+        for len(stack) &gt; 0 &amp;&amp; height &gt; heights[stack[len(stack)-1]]{
+            top := stack[len(stack)-1]
+            stack = stack[:len(stack)-1]
+            if len(stack) == 0 {
+                break
+            }
+            ans += ((min(height, heights[stack[len(stack)-1]]) - heights[top]) * (i - stack[len(stack)-1] - 1))
+        }
+        stack = append(stack, i)
+    }
+    return ans
+}
+// 方法二：双指针
+func trap(height []int) (ans int) {
+    left, right := 0, len(height) - 1
+    leftMax, rightMax := 0, 0
+    for left &lt; right {
+        leftMax = max(leftMax, height[left])
+        rightMax = max(rightMax, height[right])
+        if height[left] &lt; height[right] {
+            ans += leftMax - height[left]
+            left++
+        } else {
+            ans += rightMax - height[right]
+            right--
+        }
+    }
+    return ans
+}
+
+// 公共函数
+func max(a, b int) int {
+    if a &gt; b {
+        return a
+    }
+    return b
+}
+
+func min(a, b int) int {
+    if a &lt; b {
+        return a
+    }
+    return b
+}
+</code></pre></article><div class=my-4><a href=/tags/%E6%95%B0%E7%BB%84/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#数组</a>
+<a href=/tags/%E9%93%BE%E8%A1%A8/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#链表</a>
+<a href=/tags/%E6%A0%88/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#栈</a>
+<a href=/tags/%E9%98%9F%E5%88%97/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#队列</a></div><div class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"><div></div><div class="mt-4 md:mt-0 md:text-right"><span class="text-primary-text block font-bold">下一页</span>
+<a href=/study/2021algorithm/week02/ class=block>第二周 哈希表、集合、映射、前缀和、差分、双指针扫描</a></div></div></div><div class="hidden lg:block lg:w-1/4"><div class="bg-secondary-bg
+prose sticky top-16 z-10 hidden px-6 py-4 lg:block"><h3>本页内容</h3></div><div class="sticky-toc
+border-s
+hidden px-6 pb-6 lg:block"><nav id=TableOfContents><ul><li><a href=#本周作业>本周作业</a></li><li><a href=#实战例题>实战例题</a><ul><li><a href=#第-1-课-数组链表>第 1 课 数组、链表</a><ul><li><a href=#数组>数组</a></li><li><a href=#链表>链表</a></li></ul></li><li><a href=#第-2-课-栈队列>第 2 课 栈、队列</a><ul><li><a href=#栈>栈</a></li><li><a href=#单调栈单调队列>单调栈、单调队列</a></li></ul></li></ul></li></ul></nav></div><script>window.addEventListener("DOMContentLoaded",()=>{enableStickyToc()})</script></div></div></div></div></div><script>document.addEventListener("DOMContentLoaded",()=>{hljs.highlightAll(),changeSidebarHeight(),switchDocToc()})</script></div></div></main><footer class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b"><p class="text-sm text-tertiary-text">&copy; 2021 <a href=https://blog.lbbniu.com/>lbbniu</a>
+&#183; Powered by the <a href=https://github.com/wangchucheng/hugo-eureka class=hover:text-eureka>Eureka</a> theme for <a href=https://gohugo.io class=hover:text-eureka>Hugo</a></p></div></div></footer></body></html>

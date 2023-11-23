@@ -1,0 +1,168 @@
+<!doctype html><html lang=zh dir=ltr><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>第1周 数组、链表、跳表 | Go 算法练习 | lbbniu</title>
+<meta name=generator content="Hugo Eureka 0.9.3"><link rel=stylesheet href=/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css><script defer src=/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js></script><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" as=style onload='this.onload=null,this.rel="stylesheet"'><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/github.min.css media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/php.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/java.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/go.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/python.min.js crossorigin></script><link rel=stylesheet href=/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css media=print onload='this.media="all",this.onload=null'><script defer type=text/javascript src=/js/fontawesome.min.35973bea57658ef0dd22ad59ea4642b6c8c67af62bed8659ac326d284ef285a6657cdbcf57d3b2910e7e992f2b20426e.js></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css integrity=sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js integrity=sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY crossorigin></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script><script defer src=https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js integrity=sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0 crossorigin></script><link rel=icon type=image/png sizes=32x32 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_32x32_fill_box_center_3.png><link rel=apple-touch-icon sizes=180x180 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_180x180_fill_box_center_3.png><meta name=description content="第3课|数组、链表、跳表"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"算法学习","item":"/study/"},{"@type":"ListItem","position":2,"name":"极客时间算法训练营2020版","item":"/study/algorithm/"},{"@type":"ListItem","position":3,"name":"Go 算法练习","item":"/study/algorithm/go/"},{"@type":"ListItem","position":4,"name":"第1周 数组、链表、跳表","item":"/study/algorithm/go/week01/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/study/algorithm/go/week01/"},"headline":"第1周 数组、链表、跳表 | Go 算法练习 | lbbniu","datePublished":"2021-11-20T17:18:16+08:00","dateModified":"2023-11-23T18:27:23+08:00","wordCount":629,"publisher":{"@type":"Person","name":"lbbniu","logo":{"@type":"ImageObject","url":"/images/icon.gif"}},"description":"第3课|数组、链表、跳表"}</script><meta property="og:title" content="第1周 数组、链表、跳表 | Go 算法练习 | lbbniu"><meta property="og:type" content="article"><meta property="og:image" content="/images/icon.png"><meta property="og:url" content="/study/algorithm/go/week01/"><meta property="og:description" content="第3课|数组、链表、跳表"><meta property="og:locale" content="zh"><meta property="og:site_name" content="lbbniu"><meta property="article:published_time" content="2021-11-20T17:18:16+08:00"><meta property="article:modified_time" content="2023-11-23T18:27:23+08:00"><meta property="article:section" content="study"><meta property="article:tag" content="算法"><meta property="article:tag" content="leetcode"><meta property="og:see_also" content="/study/leetcode/leetcode/"><meta property="og:see_also" content="/study/algorithm/go/week10/"><meta property="og:see_also" content="/study/algorithm/php/01%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%B8%80%E5%91%A8/"><meta property="og:see_also" content="/study/algorithm/php/02%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%BA%8C%E5%91%A8/"><meta property="og:see_also" content="/study/algorithm/go/week02/"><meta property="og:see_also" content="/study/algorithm/php/03%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%B8%89%E5%91%A8/"><body class="flex min-h-screen flex-col"><header class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"><div class="mx-auto w-full max-w-screen-xl"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=="Auto"||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName("html")[0].classList.add("dark")</script><nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0"><a href=/ class="me-6 text-primary-text text-xl font-bold">lbbniu</a>
+<button id=navbar-btn class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+<i class="fas fa-bars"></i></button><div id=target class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20"><div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0"><a href=/post/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">文章</a>
+<a href=/cloud-native/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">云原生</a>
+<a href=/study/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 selected-menu-item me-4">算法学习</a>
+<a href=/docs/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">Go学习训练营</a>
+<a href=/tags/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">标签</a></div><div class=flex><div class="relative pt-4 md:pt-0"><div class="cursor-pointer hover:text-eureka" id=lightDarkMode><i class="fas fa-adjust"></i></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id=is-open></div><div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40" id=lightDarkOptions><span class="px-4 py-1 hover:text-eureka" name=Light>浅色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Dark>深色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Auto>自动</span></div></div></div></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id=is-open-mobile></div></nav><script>let element=document.getElementById("lightDarkMode");storageColorScheme==null||storageColorScheme=="Auto"?document.addEventListener("DOMContentLoaded",()=>{window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",switchDarkMode)}):storageColorScheme=="Light"?(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","sun"),element.firstElementChild.classList.add("fa-sun")):storageColorScheme=="Dark"&&(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","moon"),element.firstElementChild.classList.add("fa-moon")),document.addEventListener("DOMContentLoaded",()=>{getcolorscheme(),switchBurger()})</script></div></header><main class="grow pt-16"><div class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8"><div class=lg:pt-12><div class="flex flex-col md:flex-row bg-secondary-bg rounded"><div class="md:w-1/4 lg:w-1/5 border-e"><div class="sticky top-16 pt-6"><div id=sidebar-title class="md:hidden mx-4 px-2 pt-4 pb-2 md:border-b text-tertiary-text md:text-primary-text"><span class=font-semibold>目录</span>
+<i class='fas fa-caret-right ms-1'></i></div><div id=sidebar-toc class="hidden md:block overflow-y-auto mx-6 md:mx-0 pe-6 pt-2 md:max-h-doc-sidebar bg-primary-bg md:bg-transparent"><div class="flex flex-wrap ms-4 -me-2 p-2 bg-secondary-bg md:bg-primary-bg rounded"><a class=hover:text-eureka href=/study/algorithm/go/>Go 算法练习</a></div><ul class=ps-6><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week00/>预习</a></div></li><li class=py-2><div><a class="text-eureka hover:text-eureka" href=/study/algorithm/go/week01/>第1周 数组、链表、跳表</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week02/>第2周 栈、队列、哈希表</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week03/>第3周 树、递归、分治、回溯</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week04/>第4周 DFS、BFS、贪心、二分查找</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week05/>第5周 期中考试</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week06/>第6周 动态规划</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week07/>第7周 字典树和并查集、高级搜索、红黑树和AVL树</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week08/>第8周 位运算、布隆过滤器和LRU缓存、排序算法</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week09/>第9周 高级动态规划、字符串算法</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week10/>第10周 期末串讲、期末考试、毕业刷题路线</a></div></li></ul></div></div></div><div class="w-full md:w-3/4 lg:w-4/5 pb-8 pt-2 md:pt-8"><div class=flex><div class="w-full lg:w-3/4 px-6"><article class=prose><h1 class=mb-4>第1周 数组、链表、跳表</h1><div class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"><div class="me-6 my-2"><i class="fas fa-calendar me-1"></i>
+<span>2021-11-20</span></div><div class="me-6 my-2"><i class="fas fa-clock me-1"></i>
+<span>3分钟阅读时长</span></div></div><p>题目数量：16</p><h2 id=第三课数组链表跳表>第三课|数组、链表、跳表</h2><h3 id=1-数组链表跳表的基本实现和特性>1. 数组、链表、跳表的基本实现和特性</h3><h4 id=参考链接>参考链接</h4><ul><li><p><a href=http://developer.classpath.org/doc/java/util/ArrayList-source.html target=_blank rel=noopener>Java 源码分析（ArrayList）</a></p></li><li><p><a href=http://www.geeksforgeeks.org/implementing-a-linked-list-in-java-using-class/ target=_blank rel=noopener>Linked List 的标准实现代码</a></p></li><li><p>[Linked List 示例代码](<a href=http://www.cs.cmu.edu/~adamchik/15-121/lectures/Linked target=_blank rel=noopener>http://www.cs.cmu.edu/~adamchik/15-121/lectures/Linked</a>
+Lists/code/LinkedList.java)</p></li><li><p><a href=http://developer.classpath.org/doc/java/util/LinkedList-source.html target=_blank rel=noopener>Java 源码分析（LinkedList）</a></p></li><li><p>LRU Cache - Linked list：<a href=http://leetcode-cn.com/problems/lru-cache target=_blank rel=noopener> LRU 缓存机制</a></p></li><li><p>Redis - Skip List：<a href=http://redisbook.readthedocs.io/en/latest/internal-datastruct/skiplist.html target=_blank rel=noopener>跳跃表</a>
+、<a href=http://www.zhihu.com/question/20202931 target=_blank rel=noopener>为啥 Redis 使用跳表（Skip List）而不是使用 Red-Black？</a></p></li></ul><h3 id=2-实战题目解析移动零>2. 实战题目解析：移动零</h3><h3 id=3-实战题目解析盛水最多的容器爬楼梯>3. 实战题目解析：盛水最多的容器、爬楼梯</h3><h4 id=array-实战题目>Array 实战题目</h4><ul><li><a href=https://leetcode-cn.com/problems/container-with-most-water/ target=_blank rel=noopener>11. 盛最多水的容器</a></li></ul><pre><code class=language-go>// 双指针
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/move-zeroes/ target=_blank rel=noopener>283. 移动零</a></li></ul><pre><code class=language-go>// 双指针
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/climbing-stairs/ target=_blank rel=noopener>70. 爬楼梯</a></li></ul><pre><code class=language-go>
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/3sum/ target=_blank rel=noopener>15. 三数之和</a>
+(高频老题）</li></ul><pre><code class=language-go>// 排序 + 双指针
+</code></pre><h3 id=4-实战题目解析3数之和环形链表>4. 实战题目解析：3数之和、环形链表</h3><p>两数之和题目：<a href=https://leetcode-cn.com/problems/two-sum/ target=_blank rel=noopener> https://leetcode-cn.com/problems/two-sum/</a></p><h4 id=linked-list-实战题目>Linked List 实战题目</h4><ul><li><p><a href=https://leetcode-cn.com/problems/reverse-linked-list/ target=_blank rel=noopener>206. 反转链表</a></p></li><li><p>使用递归函数，一直递归到链表的最后一个结点，该结点就是反转后的头结点，记作 ret .</p></li><li><p>此后，每次函数在返回的过程中，让当前结点的下一个结点的 next 指针指向当前节点。</p></li><li><p>同时让当前结点的 next 指针指向 NULL ，从而实现从链表尾部开始的局部反转</p></li><li><p>当递归函数全部出栈后，链表反转完成。</p></li></ul><pre><code class=language-go>// 原地反转
+// 头插法
+// 递归
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/swap-nodes-in-pairs/ target=_blank rel=noopener>24. 两两交换链表中的节点</a></li></ul><pre><code class=language-go>
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/linked-list-cycle/ target=_blank rel=noopener>141. 环形链表</a></li></ul><pre><code class=language-go>// 快慢指针
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/linked-list-cycle-ii/ target=_blank rel=noopener>142. 环形链表 II</a></li></ul><pre><code class=language-go>// 快慢指针
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/reverse-nodes-in-k-group/ target=_blank rel=noopener>25. K 个一组翻转链表</a>
+困难 重点</li></ul><pre><code class=language-go>
+</code></pre><h4 id=课后作业>课后作业</h4><ul><li><a href=https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/ target=_blank rel=noopener>26. 删除排序数组中的重复项</a></li></ul><pre><code class=language-go>func removeDuplicates(nums []int) int {
+    n := len(nums)
+    if n == 0 {
+        return 0
+    }
+    slow := 1
+    for fast := 1; fast &lt; n; fast++ {
+        if nums[fast] != nums[fast-1] {
+            nums[slow] = nums[fast]
+            slow++
+        }
+    }
+    return slow
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/rotate-array/ target=_blank rel=noopener>189. 旋转数组</a>
+中等 重点</li></ul><pre><code class=language-go>// 方法一：使用新数组直接放到对应位置
+func rotate(nums []int, k int) {
+    n := len(nums)
+    newNums := make([]int, n)
+    for i := 0; i &lt; n; i++ {
+        newNums[(i + k) % n] = nums[i]
+    }
+    copy(nums, newNums)
+}
+// 方法二：1 环状替换
+func rotate(nums []int, k int) {
+    n := len(nums)
+    k %= n
+    for start, count := 0, gcd(k, n); start &lt; count; start++ {
+        pre, cur := nums[start], start
+        for ok := true; ok; ok = cur != start {
+            next := (cur + k) % n
+            nums[next], pre, cur = pre, nums[next], next
+        }
+    }
+}
+
+func gcd(a, b int) int {
+    for a != 0 {
+        a, b = b%a, a
+    }
+    return b
+}
+// 方法二：2 环状替换
+func rotate(nums []int, k int)  {
+    n := len(nums)
+    k %= n
+    for start, count := 0, 0; count &lt; n; start++ {
+        pre, cur := nums[start], start 
+        for ok := true; ok; ok = start != cur {
+            next := (cur + k) % n
+            pre, cur, nums[next] = nums[next], next, pre
+            count++
+        }
+    }
+}
+
+// 方法三：数组翻转
+func reverse(a []int) {
+    for i, n := 0, len(a); i &lt; n/2; i++ {
+        a[i], a[n-1-i] = a[n-1-i], a[i]
+    }
+}
+
+func rotate(nums []int, k int) {
+    k %= len(nums)
+    reverse(nums)
+    reverse(nums[:k])
+    reverse(nums[k:])
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/merge-two-sorted-lists/ target=_blank rel=noopener>21. 合并两个有序链表</a></li></ul><pre><code class=language-go>/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
+
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/merge-sorted-array/ target=_blank rel=noopener>88. 合并两个有序数组</a></li></ul><pre><code class=language-go>//方法一：直接合并后排序
+func merge(nums1 []int, m int, nums2 []int, _ int) {
+    copy(nums1[m:], nums2)
+    sort.Ints(nums1)
+}
+
+// 双指针
+func merge(nums1 []int, m int, nums2 []int, n int)  {
+    last := m + n - 1
+    m, n = m - 1, n - 1
+    for m &gt;= 0 &amp;&amp; n &gt;=0 {
+        if nums1[m] &lt; nums2[n] {
+            nums1[last], n, last = nums2[n], n - 1, last - 1
+        } else {
+            nums1[last], m, last = nums1[m], m - 1, last - 1
+        }
+    }
+    for n &gt;= 0 {
+        nums1[last], last, n = nums2[n], last - 1, n - 1
+    }
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/two-sum/ target=_blank rel=noopener>1. 两数之和</a></li></ul><pre><code class=language-go>// 暴力两层循环
+// 哈希表
+func twoSum(nums []int, target int) []int {
+    ht := map[int]int{}
+    for i, n := range nums {
+        m := target - n
+        if j, ok := ht[m]; ok {
+            return []int{j, i}
+        } 
+        ht[n] = i
+    }
+    return nil
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/move-zeroes/ target=_blank rel=noopener>283. 移动零</a></li></ul><pre><code class=language-go>func moveZeroes(nums []int)  {
+    for left,right := 0, 0; right &lt; len(nums); right++ {
+        if nums[right] != 0 {
+            nums[left], nums[right] = nums[right], nums[left]
+            left++
+        }
+    }
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/plus-one/ target=_blank rel=noopener>66. 加一</a></li></ul><pre><code class=language-go>func plusOne(digits []int) []int {
+    for i := len(digits) -1 ; i &gt;= 0; i-- {
+        digits[i] = (digits[i] + 1) % 10
+        if digits[i] != 0 {
+            return digits
+        }
+    }
+    digits = make([]int, len(digits) + 1)
+    digits[0] = 1
+    return digits
+}
+</code></pre><h2 id=本周作业及下周预习>本周作业及下周预习</h2><h3 id=本周作业同上课后作业相同>本周作业同上课后作业相同</h3><h3 id=下周预习>下周预习</h3><h4 id=预习知识点>预习知识点</h4><ul><li><a href=http://time.geekbang.org/column/article/41222 target=_blank rel=noopener>栈：如何实现浏览器的前进和后退功能？</a></li><li><a href=http://time.geekbang.org/column/article/41330 target=_blank rel=noopener>队列：队列在线程池等有限资源池中的应用</a></li><li><a href=http://time.geekbang.org/column/article/64233 target=_blank rel=noopener>散列表（上）：Word 文档中的单词拼写检查功能是如何实现的？</a></li><li><a href=http://time.geekbang.org/column/article/64586 target=_blank rel=noopener>散列表（中）：如何打造一个工业级水平的散列表？</a></li><li><a href=http://time.geekbang.org/column/article/64858 target=_blank rel=noopener>散列表（下）：为什么散列表和链表经常会一起使用？</a></li><li><a href=http://time.geekbang.org/column/article/65312 target=_blank rel=noopener>哈希算法（上）：如何防止数据库中的用户信息被脱库？</a></li><li><a href=http://time.geekbang.org/column/article/67388 target=_blank rel=noopener>哈希算法（下）：哈希算法在分布式系统中有哪些应用？</a></li></ul><h4 id=预习题目>预习题目</h4><ul><li><a href=https://leetcode-cn.com/problems/valid-parentheses/ target=_blank rel=noopener>有效的括号</a></li><li><a href=https://leetcode-cn.com/problems/min-stack/ target=_blank rel=noopener>最小栈</a></li></ul></article><div class=my-4><a href=/tags/%E7%AE%97%E6%B3%95/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#算法</a>
+<a href=/tags/leetcode/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#leetcode</a></div><div class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"><div><span class="text-primary-text block font-bold">上一页</span>
+<a href=/study/algorithm/go/week00/ class=block>预习</a></div><div class="mt-4 md:mt-0 md:text-right"><span class="text-primary-text block font-bold">下一页</span>
+<a href=/study/algorithm/go/week02/ class=block>第2周 栈、队列、哈希表</a></div></div></div><div class="hidden lg:block lg:w-1/4"><div class="bg-secondary-bg
+prose sticky top-16 z-10 hidden px-6 py-4 lg:block"><h3>本页内容</h3></div><div class="sticky-toc
+border-s
+hidden px-6 pb-6 lg:block"><nav id=TableOfContents><ul><li><a href=#第三课数组链表跳表>第三课|数组、链表、跳表</a><ul><li><a href=#1-数组链表跳表的基本实现和特性>1. 数组、链表、跳表的基本实现和特性</a><ul><li><a href=#参考链接>参考链接</a></li></ul></li><li><a href=#2-实战题目解析移动零>2. 实战题目解析：移动零</a></li><li><a href=#3-实战题目解析盛水最多的容器爬楼梯>3. 实战题目解析：盛水最多的容器、爬楼梯</a><ul><li><a href=#array-实战题目>Array 实战题目</a></li></ul></li><li><a href=#4-实战题目解析3数之和环形链表>4. 实战题目解析：3数之和、环形链表</a><ul><li><a href=#linked-list-实战题目>Linked List 实战题目</a></li><li><a href=#课后作业>课后作业</a></li></ul></li></ul></li><li><a href=#本周作业及下周预习>本周作业及下周预习</a><ul><li><a href=#本周作业同上课后作业相同>本周作业同上课后作业相同</a></li><li><a href=#下周预习>下周预习</a><ul><li><a href=#预习知识点>预习知识点</a></li><li><a href=#预习题目>预习题目</a></li></ul></li></ul></li></ul></nav></div><script>window.addEventListener("DOMContentLoaded",()=>{enableStickyToc()})</script></div></div></div></div></div><script>document.addEventListener("DOMContentLoaded",()=>{hljs.highlightAll(),changeSidebarHeight(),switchDocToc()})</script></div></div></main><footer class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b"><p class="text-sm text-tertiary-text">&copy; 2021 <a href=https://blog.lbbniu.com/>lbbniu</a>
+&#183; Powered by the <a href=https://github.com/wangchucheng/hugo-eureka class=hover:text-eureka>Eureka</a> theme for <a href=https://gohugo.io class=hover:text-eureka>Hugo</a></p></div></div></footer></body></html>

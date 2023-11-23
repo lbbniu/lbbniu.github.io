@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>数论 on lbbniu</title><link>/tags/%E6%95%B0%E8%AE%BA/</link><description>Recent content in 数论 on lbbniu</description><generator>Hugo -- gohugo.io</generator><language>zh</language><managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor><webMaster>lbbniu@gmail.com (lbbniu)</webMaster><copyright>&amp;copy; 2021 &lt;a href="https://blog.lbbniu.com/">lbbniu&lt;/a></copyright><lastBuildDate>Sat, 14 Jan 2023 00:01:00 +0800</lastBuildDate><atom:link href="/tags/%E6%95%B0%E8%AE%BA/index.xml" rel="self" type="application/rss+xml"/><item><title>【2023-01-14每日一题】1819. 序列中不同最大公约数的数目[Hard]</title><link>/study/leetcode/number-of-different-subsequences-gcds/</link><pubDate>Sat, 14 Jan 2023 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/number-of-different-subsequences-gcds/</guid><description>2023-01-14每日一题：1819. 序列中不同最大公约数的数目 难度：Hard
+标签：数组 、 数学 、 计数 、 数论
+给你一个由正整数组成的数组 nums 。
+数字序列的 最大公约数 定义为序列中所有整数的共有约数中的最大整数。
+例如，序列 [4,6,16] 的最大公约数是 2 。 数组的一个 子序列 本质是一个序列，可以通过删除数组中的某些元素（或者不删除）得到。
+例如，[2,5,10] 是 [1,2,1,2,4,1,5,10] 的一个子序列。 计算并返回 nums 的所有 非空 子序列中 不同 最大公约数的 数目 。
+示例 1：
+输入：nums = [6,10,3] 输出：5 解释：上图显示了所有的非空子序列与各自的最大公约数。 不同的最大公约数为 6 、10 、3 、2 和 1 。 示例 2：
+输入：nums = [5,15,40,5,6] 输出：7 提示：
+1 &lt;= nums.length &lt;= 105 1 &lt;= nums[i] &lt;= 2 * 105 方法一： 详细思路过程见官方题解，这里只做个人刷题记录，方便后续查询阅读
+func countDifferentSubsequenceGCDs(nums []int) int { } 复杂度分析 LeetCode题库地址 https://leetcode.</description></item><item><title>【2022-12-22每日一题】1799. N 次操作后的最大分数和[Hard]</title><link>/study/leetcode/maximize-score-after-n-operations/</link><pubDate>Thu, 22 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/maximize-score-after-n-operations/</guid><description>2022-12-22每日一题：1799. N 次操作后的最大分数和 难度：Hard
+标签：位运算 、 数组 、 数学 、 动态规划 、 回溯 、 状态压缩 、 数论
+给你 nums ，它是一个大小为 2 * n 的正整数数组。你必须对这个数组执行 n 次操作。
+在第 i 次操作时（操作编号从 1 开始），你需要：
+选择两个元素 x 和 y 。 获得分数 i * gcd(x, y) 。 将 x 和 y 从 nums 中删除。 请你返回 n 次操作后你能获得的分数和最大为多少。
+函数 gcd(x, y) 是 x 和 y 的最大公约数。
+示例 1：
+输入：nums = [1,2] 输出：1 解释：最优操作是： (1 * gcd(1, 2)) = 1 示例 2：</description></item></channel></rss>

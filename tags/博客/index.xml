@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>博客 on lbbniu</title><link>/tags/%E5%8D%9A%E5%AE%A2/</link><description>Recent content in 博客 on lbbniu</description><generator>Hugo -- gohugo.io</generator><language>zh</language><managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor><webMaster>lbbniu@gmail.com (lbbniu)</webMaster><copyright>&amp;copy; 2021 &lt;a href="https://blog.lbbniu.com/">lbbniu&lt;/a></copyright><lastBuildDate>Sat, 20 Nov 2021 17:18:16 +0800</lastBuildDate><atom:link href="/tags/%E5%8D%9A%E5%AE%A2/index.xml" rel="self" type="application/rss+xml"/><item><title>静态博客工具</title><link>/2021/11/20/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E5%B7%A5%E5%85%B7/</link><pubDate>Sat, 20 Nov 2021 17:18:16 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/2021/11/20/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E5%B7%A5%E5%85%B7/</guid><description> ruby 编写的 Jekyll [GitHub Pages支持]
+Node.js 编写的 Hexo
+Vue.js 编写的 vuepress
+Go 编写的 Hugo
+Python 编写的 Pelican
+以及更人性化的 Gridea
+GitHub Pages 搭建教程 hugo相关博客</description></item></channel></rss>

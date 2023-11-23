@@ -1,369 +1,97 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-<head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <link rel="stylesheet" href="http://fonts.useso.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-  <title>fabric一些简单用法总结  &middot; lbbniu</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-<meta name="description" content="这里是lbbniu的个人博客" />
-
-<meta name="keywords" content="">
-
-
-<meta property="og:title" content="fabric一些简单用法总结  &middot; lbbniu ">
-<meta property="og:site_name" content="lbbniu"/>
-<meta property="og:url" content="https://blog.lbbniu.com/2021/11/20/fabric%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/" />
-<meta property="og:locale" content="en-us">
-
-
-<meta property="og:type" content="article" />
-<meta property="og:description" content=""/>
-<meta property="og:article:published_time" content="2021-11-20T17:18:16&#43;08:00" />
-<meta property="og:article:modified_time" content="2021-11-20T17:18:16&#43;08:00" />
-
-  
-
-  
-
-<script type="application/ld+json">
-  {
-    "@context": "http://schema.org",
-    "@type": "Article",
-    "headline": "fabric一些简单用法总结",
-    "author": {
-      "@type": "Person",
-      "name": "lbbniu"
-    },
-    "datePublished": "2021-11-20",
-    "description": "",
-    "wordCount":  234 
-  }
-</script>
-
-
-
-<link rel="canonical" href="https://blog.lbbniu.com/2021/11/20/fabric%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/" />
-
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://blog.lbbniu.com/touch-icon-144-precomposed.png">
-<link href="https://blog.lbbniu.com/favicon.png" rel="icon">
-
-<meta name="generator" content="Hugo 0.89.4" />
-
-  <!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
-
-<link href='https://fonts.googleapis.com/css?family=Merriweather:300%7CRaleway%7COpen+Sans' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="/css/font-awesome.min.css">
-<link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="/css/highlight/default.css">
-
-  
-  
-</head>
-<body>
-  <main id="main-wrapper" class="container main_wrapper has-sidebar">
-    <header id="main-header" class="container main_header">
-  <div class="container brand">
-  <div class="container title h1-like">
-  <a class="baselink" href="https://blog.lbbniu.com/">
-  lbbniu
-
-</a>
-
-</div>
-
-  
-<div class="container topline">
-  
-  学无止境，然则问可少耶?
-
-
-</div>
-
-
-</div>
-
-  <nav class="container nav primary no-print">
-  
-
-<a class="homelink" href="https://blog.lbbniu.com/">首页</a>
-
-
-  
-<a href="https://blog.lbbniu.com/post" title="Show list of posts">列表</a>
-
-<a href="https://blog.lbbniu.com/golang" title="Show list of tags">Golang</a>
-
-<a href="https://blog.lbbniu.com/k8s" title="Show list of tags">Kubernetes</a>
-
-<a href="https://blog.lbbniu.com/tags" title="Show list of tags">标签</a>
-
-<a href="https://blog.lbbniu.com/about">关于</a>
-
-
-</nav>
-
-<div class="container nav secondary no-print">
-  
-<a id="contact-link-email" class="contact_link" rel="me" aria-label="Email" href="mailto:lbbniu@gmail.com">
-  <span class="fa fa-envelope-square"></span></a>
-
-
-
-<a id="contact-link-github" class="contact_link" rel="me" aria-label="Github" href="https://github.com/lbbniu">
-  <span class="fa fa-github-square"></span></a>
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-
-
-  
-
-</header>
-
-
-<article id="main-content" class="container main_content single">
-  <header class="container hat">
-  <h1>fabric一些简单用法总结
-</h1>
-
-  <div class="metas">
-<time datetime="2021-11-20">20 Nov, 2021</time>
-
-
-  
-  &middot; Read in about 2 min
-  &middot; (234 Words)
-  <br>
-  
-
-
-</div>
-
-</header>
-
-  <div class="container content">
-  <p><strong>1.支持中文</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#!/usr/bin/python env</span>
-<span style="color:#75715e"># -*- coding: utf-8 -*-</span>
-</code></pre></div><p><strong>2.支持颜色</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> fabric.colors <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
-print(red(<span style="color:#e6db74">&#34;红色&#34;</span>) <span style="color:#f92672">+</span> green(<span style="color:#e6db74">&#34;绿色&#34;</span><span style="color:#960050;background-color:#1e0010">，</span>bold<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>) <span style="color:#f92672">+</span> blue(<span style="color:#e6db74">&#34;蓝色&#34;</span>,bold<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>) <span style="color:#f92672">+</span> white(<span style="color:#e6db74">&#34;白色&#34;</span>) <span style="color:#f92672">+</span> yellow(<span style="color:#e6db74">&#34;黄色&#34;</span>) <span style="color:#f92672">+</span> cyan(<span style="color:#e6db74">&#34;蓝绿色&#34;</span>) <span style="color:#f92672">+</span> magenta(<span style="color:#e6db74">&#34;品红色&#34;</span>))
-</code></pre></div><p><strong>3.设置主机组及账号密码</strong></p>
-<p>主机密码不同时：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">env<span style="color:#f92672">.</span>hosts <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;tomcat@192.168.244.128&#39;</span>,<span style="color:#e6db74">&#39;tomcat@192.168.244.129&#39;</span>]
-env<span style="color:#f92672">.</span>passwords <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;tomcat@192.168.244.128:22&#39;</span>:<span style="color:#e6db74">&#39;111111&#39;</span>,<span style="color:#e6db74">&#39;tomcat@192.168.244.129:22&#39;</span>:<span style="color:#e6db74">&#39;111111&#39;</span>}
-</code></pre></div><p>主机密码相同时:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">env<span style="color:#f92672">.</span>hosts<span style="color:#f92672">=</span>[ 
-<span style="color:#e6db74">&#39;tomcat@192.168.244.128:22&#39;</span>, 
-<span style="color:#e6db74">&#39;tomcat@192.168.244.129:22&#39;</span>, 
+<!doctype html><html lang=zh dir=ltr><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>fabric一些简单用法总结 | lbbniu</title>
+<meta name=generator content="Hugo Eureka 0.9.3"><link rel=stylesheet href=/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css><script defer src=/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js></script><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" as=style onload='this.onload=null,this.rel="stylesheet"'><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/github.min.css media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/php.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/java.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/go.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/python.min.js crossorigin></script><link rel=stylesheet href=/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css media=print onload='this.media="all",this.onload=null'><script defer type=text/javascript src=/js/fontawesome.min.35973bea57658ef0dd22ad59ea4642b6c8c67af62bed8659ac326d284ef285a6657cdbcf57d3b2910e7e992f2b20426e.js></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css integrity=sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js integrity=sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY crossorigin></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script><script defer src=https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js integrity=sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0 crossorigin></script><link rel=icon type=image/png sizes=32x32 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_32x32_fill_box_center_3.png><link rel=apple-touch-icon sizes=180x180 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_180x180_fill_box_center_3.png><meta name=description content="支持中文、支持颜色、设置主机组及账号密码、运行shell命令、切换目录执行、上传下载文件等"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"文章列表","item":"/post/"},{"@type":"ListItem","position":2,"name":"fabric一些简单用法总结","item":"/2021/11/20/fabric%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/2021/11/20/fabric%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/"},"headline":"fabric一些简单用法总结 | lbbniu","datePublished":"2021-11-20T17:18:16+08:00","dateModified":"2021-11-20T17:18:16+08:00","wordCount":234,"publisher":{"@type":"Person","name":"lbbniu","logo":{"@type":"ImageObject","url":"/images/icon.gif"}},"description":"支持中文、支持颜色、设置主机组及账号密码、运行shell命令、切换目录执行、上传下载文件等"}</script><meta property="og:title" content="fabric一些简单用法总结 | lbbniu"><meta property="og:type" content="article"><meta property="og:image" content="/images/icon.png"><meta property="og:url" content="/2021/11/20/fabric%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/"><meta property="og:description" content="支持中文、支持颜色、设置主机组及账号密码、运行shell命令、切换目录执行、上传下载文件等"><meta property="og:locale" content="zh"><meta property="og:site_name" content="lbbniu"><meta property="article:published_time" content="2021-11-20T17:18:16+08:00"><meta property="article:modified_time" content="2021-11-20T17:18:16+08:00"><meta property="article:section" content="post"><meta property="article:tag" content="fabric"><body class="flex min-h-screen flex-col"><header class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"><div class="mx-auto w-full max-w-screen-xl"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=="Auto"||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName("html")[0].classList.add("dark")</script><nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0"><a href=/ class="me-6 text-primary-text text-xl font-bold">lbbniu</a>
+<button id=navbar-btn class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+<i class="fas fa-bars"></i></button><div id=target class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20"><div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0"><a href=/post/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">文章</a>
+<a href=/cloud-native/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">云原生</a>
+<a href=/study/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">算法学习</a>
+<a href=/docs/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">Go学习训练营</a>
+<a href=/tags/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">标签</a></div><div class=flex><div class="relative pt-4 md:pt-0"><div class="cursor-pointer hover:text-eureka" id=lightDarkMode><i class="fas fa-adjust"></i></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id=is-open></div><div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40" id=lightDarkOptions><span class="px-4 py-1 hover:text-eureka" name=Light>浅色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Dark>深色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Auto>自动</span></div></div></div></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id=is-open-mobile></div></nav><script>let element=document.getElementById("lightDarkMode");storageColorScheme==null||storageColorScheme=="Auto"?document.addEventListener("DOMContentLoaded",()=>{window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",switchDarkMode)}):storageColorScheme=="Light"?(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","sun"),element.firstElementChild.classList.add("fa-sun")):storageColorScheme=="Dark"&&(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","moon"),element.firstElementChild.classList.add("fa-moon")),document.addEventListener("DOMContentLoaded",()=>{getcolorscheme(),switchBurger()})</script></div></header><main class="grow pt-16"><div class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8"><div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12"><div class="lg:col-start-2 bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"><article class=prose><h1 class=mb-4>fabric一些简单用法总结</h1><div class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"><div class="me-6 my-2"><i class="fas fa-calendar me-1"></i>
+<span>2021-11-20</span></div><div class="me-6 my-2"><i class="fas fa-clock me-1"></i>
+<span>2分钟阅读时长</span></div></div><p><strong>1.支持中文</strong></p><pre><code class=language-python>#!/usr/bin/python env
+# -*- coding: utf-8 -*-
+</code></pre><p><strong>2.支持颜色</strong></p><pre><code class=language-python>from fabric.colors import *
+print(red(&quot;红色&quot;) + green(&quot;绿色&quot;，bold=False) + blue(&quot;蓝色&quot;,bold=True) + white(&quot;白色&quot;) + yellow(&quot;黄色&quot;) + cyan(&quot;蓝绿色&quot;) + magenta(&quot;品红色&quot;))
+</code></pre><p><strong>3.设置主机组及账号密码</strong></p><p>主机密码不同时：</p><pre><code class=language-python>env.hosts = ['tomcat@192.168.244.128','tomcat@192.168.244.129']
+env.passwords = {'tomcat@192.168.244.128:22':'111111','tomcat@192.168.244.129:22':'111111'}
+</code></pre><p>主机密码相同时:</p><pre><code class=language-python>env.hosts=[ 
+'tomcat@192.168.244.128:22', 
+'tomcat@192.168.244.129:22', 
 ] 
-env<span style="color:#f92672">.</span>password <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;1111&#39;</span>
-</code></pre></div><p>使用ssh keyfile:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">env<span style="color:#f92672">.</span>key_filename <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;/opt/fab/server_key&#39;</span>]
-env<span style="color:#f92672">.</span>user <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;tomcat&#39;</span>
-env<span style="color:#f92672">.</span>password <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;111111&#39;</span>
-env<span style="color:#f92672">.</span>port <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;2862&#39;</span>
-</code></pre></div><p><strong>4.运行shell命令</strong></p>
-<p>在本地运行命令:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">local(<span style="color:#e6db74">&#39;pwd&#39;</span>)
-local(<span style="color:#e6db74">&#39;set -m ; /etc/init.d/tomcat restart&#39;</span>) 
-<span style="color:#75715e"># 如果是脚本，要加set -m 支持后台执行并返回状态，否则会报错</span>
-</code></pre></div><p>在服务器上运行命令:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">run(<span style="color:#e6db74">&#39;uname -a&#39;</span>)
-</code></pre></div><p><strong>5.切换目录执行</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">with</span> cd(<span style="color:#e6db74">&#39;/opt/tomcat&#39;</span>)
-    run(<span style="color:#e6db74">&#39;set -m ;  ./bin/startup.sh&#39;</span>)
-<span style="color:#66d9ef">with</span> lcd(<span style="color:#e6db74">&#39;/opt/tomcat&#39;</span>)
-    run(<span style="color:#e6db74">&#39;pwd&#39;</span>)
-</code></pre></div><p>cd 是在远程服务器上执行，lcd是在本地执行</p>
-<p><strong>6.上传下载文件</strong>
-从远端服务器下载:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">get(<span style="color:#e6db74">&#39;/remote/path/&#39;</span>,<span style="color:#e6db74">&#39;/local/path/&#39;</span>)
-</code></pre></div><p>上传文件到远端服务器:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"> put(<span style="color:#e6db74">&#39;/local/path/&#39;</span>,<span style="color:#e6db74">&#39;/remote/path&#39;</span>)
-</code></pre></div><p>这两种方式使用的是sftp协议</p>
-<p><strong>7.判断文件或目录是否存在</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> fabric.contrib.files <span style="color:#f92672">import</span> exists
-    <span style="color:#66d9ef">if</span> exists(<span style="color:#e6db74">&#39;/opt/tomcat/logs/catalina.out&#39;</span>):
-        print <span style="color:#e6db74">&#39;catalina.out exist&#39;</span>    
-    <span style="color:#66d9ef">else</span>:
-        print <span style="color:#e6db74">&#39;catalina.out not exist&#39;</span>
-</code></pre></div><p><strong>8.判断远程主机的文件中是否存在文本</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> fabric.contrib.files <span style="color:#f92672">import</span> contains
-    <span style="color:#66d9ef">if</span> contains(<span style="color:#e6db74">&#39;/opt/tomcat/catalina.out&#39;</span>,<span style="color:#e6db74">&#39;username1&#39;</span>):
-        print <span style="color:#e6db74">&#34;contains text&#34;</span>
-    <span style="color:#66d9ef">else</span><span style="color:#960050;background-color:#1e0010">：</span>
-        print <span style="color:#e6db74">&#34;no contains&#34;</span>
-</code></pre></div><p><strong>9.以sudo权限运行</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">sudo(<span style="color:#e6db74">&#39;whoami&#39;</span>,user<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;tomcat&#39;</span>)
-</code></pre></div><p>用户须在/etc/sudoers里配置sudo权限</p>
-<p><strong>10.命令嵌套</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">with</span> prefix(<span style="color:#e6db74">&#39;cd /opt/fab&#39;</span>):
-    run(<span style="color:#e6db74">&#39;pwd&#39;</span>)
-    <span style="color:#66d9ef">with</span> prefix(<span style="color:#e6db74">&#39;cd fabfiles&#39;</span>):
-        run(<span style="color:#e6db74">&#39;pwd&#39;</span>)
-        run(<span style="color:#e6db74">&#39;ls&#39;</span>)
-</code></pre></div><p>上面的代码等同于:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd /opt/fab <span style="color:#f92672">&amp;&amp;</span> pwd
-cd /var/fab <span style="color:#f92672">&amp;&amp;</span> cd fabfiles <span style="color:#f92672">&amp;&amp;</span> pwd <span style="color:#f92672">&amp;&amp;</span> ls
-</code></pre></div><p><strong>11.从键盘接收输入</strong></p>
-<p>使用python的函数， 接收一行：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">text <span style="color:#f92672">=</span> raw_input() 
+env.password = '1111'
+</code></pre><p>使用ssh keyfile:</p><pre><code class=language-python>env.key_filename = ['/opt/fab/server_key']
+env.user = 'tomcat'
+env.password = '111111'
+env.port = '2862'
+</code></pre><p><strong>4.运行shell命令</strong></p><p>在本地运行命令:</p><pre><code class=language-python>local('pwd')
+local('set -m ; /etc/init.d/tomcat restart') 
+# 如果是脚本，要加set -m 支持后台执行并返回状态，否则会报错
+</code></pre><p>在服务器上运行命令:</p><pre><code class=language-python>run('uname -a')
+</code></pre><p><strong>5.切换目录执行</strong></p><pre><code class=language-python>with cd('/opt/tomcat')
+    run('set -m ;  ./bin/startup.sh')
+with lcd('/opt/tomcat')
+    run('pwd')
+</code></pre><p>cd 是在远程服务器上执行，lcd是在本地执行</p><p><strong>6.上传下载文件</strong>
+从远端服务器下载:</p><pre><code class=language-python>get('/remote/path/','/local/path/')
+</code></pre><p>上传文件到远端服务器:</p><pre><code class=language-python> put('/local/path/','/remote/path')
+</code></pre><p>这两种方式使用的是sftp协议</p><p><strong>7.判断文件或目录是否存在</strong></p><pre><code class=language-python>from fabric.contrib.files import exists
+    if exists('/opt/tomcat/logs/catalina.out'):
+        print 'catalina.out exist'    
+    else:
+        print 'catalina.out not exist'
+</code></pre><p><strong>8.判断远程主机的文件中是否存在文本</strong></p><pre><code class=language-python>from fabric.contrib.files import contains
+    if contains('/opt/tomcat/catalina.out','username1'):
+        print &quot;contains text&quot;
+    else：
+        print &quot;no contains&quot;
+</code></pre><p><strong>9.以sudo权限运行</strong></p><pre><code class=language-python>sudo('whoami',user='tomcat')
+</code></pre><p>用户须在/etc/sudoers里配置sudo权限</p><p><strong>10.命令嵌套</strong></p><pre><code class=language-python>with prefix('cd /opt/fab'):
+    run('pwd')
+    with prefix('cd fabfiles'):
+        run('pwd')
+        run('ls')
+</code></pre><p>上面的代码等同于:</p><pre><code class=language-bash>cd /opt/fab &amp;&amp; pwd
+cd /var/fab &amp;&amp; cd fabfiles &amp;&amp; pwd &amp;&amp; ls
+</code></pre><p><strong>11.从键盘接收输入</strong></p><p>使用python的函数， 接收一行：</p><pre><code class=language-python>text = raw_input() 
 print text
-</code></pre></div><p>接收一段：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> sys
-update_log <span style="color:#f92672">=</span> sys<span style="color:#f92672">.</span>stdin<span style="color:#f92672">.</span>read()
+</code></pre><p>接收一段：</p><pre><code class=language-python>import sys
+update_log = sys.stdin.read()
 print update_log
-</code></pre></div><p><strong>12.只运行一次函数</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@runs_once</span>
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">local_file_backup</span>
-    print <span style="color:#960050;background-color:#1e0010">‘</span>我只运行一次<span style="color:#960050;background-color:#1e0010">’</span>
-</code></pre></div><p>fabric执行时都会在每台主机上执行所有函数，如果有函数只需执行一次，可以用这个参数</p>
-<p><strong>13.用roles定义分组</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">env<span style="color:#f92672">.</span>roledefs <span style="color:#f92672">=</span> {
-    <span style="color:#e6db74">&#39;ftp&#39;</span>: [<span style="color:#e6db74">&#39;192.168.1.100&#39;</span>],
-    <span style="color:#e6db74">&#39;web&#39;</span>: [<span style="color:#e6db74">&#39;192.168.1.101&#39;</span>, <span style="color:#e6db74">&#39;192.168.1.102&#39;</span>, <span style="color:#e6db74">&#39;192.168.1.103&#39;</span>],
+</code></pre><p><strong>12.只运行一次函数</strong></p><pre><code class=language-python>@runs_once
+def local_file_backup
+    print ‘我只运行一次’
+</code></pre><p>fabric执行时都会在每台主机上执行所有函数，如果有函数只需执行一次，可以用这个参数</p><p><strong>13.用roles定义分组</strong></p><pre><code class=language-python>env.roledefs = {
+    'ftp': ['192.168.1.100'],
+    'web': ['192.168.1.101', '192.168.1.102', '192.168.1.103'],
 }
-</code></pre></div><p>定义分组的好处是可以指定某一分组主机，执行某一任务
-例如：从ftp主机下载代码，传到web上</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@runs_once</span>
-<span style="color:#960050;background-color:#1e0010">＠</span>roles(<span style="color:#e6db74">&#39;ftp&#39;</span>)
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">download</span>():
-    print <span style="color:#e6db74">&#39;donwload files&#39;</span>
+</code></pre><p>定义分组的好处是可以指定某一分组主机，执行某一任务
+例如：从ftp主机下载代码，传到web上</p><pre><code class=language-python>@runs_once
+＠roles('ftp')
+def download():
+    print 'donwload files'
 
-<span style="color:#a6e22e">@roles</span>(<span style="color:#e6db74">&#39;web&#39;</span>)
-    put(<span style="color:#e6db74">&#39;local/files&#39;</span>,<span style="color:#e6db74">&#39;remote/files&#39;</span>)
-</code></pre></div><p><strong>14.使用rsync传输</strong>
-put/get/project.upload_project 都是使用sftp方式，比较慢，fabric提供了rsync方式</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> fabric.contrib <span style="color:#f92672">import</span> project, console
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">syncfile</span>():
-    project<span style="color:#f92672">.</span>rsync_project(
-        remote_dir<span style="color:#f92672">=</span>online_dir,
-        local_dir<span style="color:#f92672">=/</span>tmp<span style="color:#f92672">/</span>upload<span style="color:#f92672">/</span>,
-        default_opts<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;-avczp&#39;</span>,
-                    delete<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>
+@roles('web')
+    put('local/files','remote/files')
+</code></pre><p><strong>14.使用rsync传输</strong>
+put/get/project.upload_project 都是使用sftp方式，比较慢，fabric提供了rsync方式</p><pre><code class=language-python>from fabric.contrib import project, console
+def syncfile():
+    project.rsync_project(
+        remote_dir=online_dir,
+        local_dir=/tmp/upload/,
+        default_opts='-avczp',
+                    delete=True
     )
-</code></pre></div><p><strong>15.任务增加说明</strong>
-用def一个函数后，在<code>fab -f fabfile.py -l</code>中只能看到函数名，没有说明，例如上面的rsync例子的结果：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@localhost tmp<span style="color:#f92672">]</span><span style="color:#75715e"># fab -f rsync.py -l</span>
+</code></pre><p><strong>15.任务增加说明</strong>
+用def一个函数后，在<code>fab -f fabfile.py -l</code>中只能看到函数名，没有说明，例如上面的rsync例子的结果：</p><pre><code class=language-bash>root@localhost tmp]# fab -f rsync.py -l
 Available commands:
 syncfile
-</code></pre></div><p>添加函数说明可以在def下用三个引号来写说明。格式：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">rsyncfile</span>():
-    <span style="color:#e6db74">&#34;&#34;&#34;使用rsync同步文件&#34;&#34;&#34;</span>
-</code></pre></div><p>在执行一下：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@localhost tmp<span style="color:#f92672">]</span><span style="color:#75715e"># fab -f rsync.py -l</span>
+</code></pre><p>添加函数说明可以在def下用三个引号来写说明。格式：</p><pre><code class=language-python>def rsyncfile():
+    &quot;&quot;&quot;使用rsync同步文件&quot;&quot;&quot;
+</code></pre><p>在执行一下：</p><pre><code class=language-bash>root@localhost tmp]# fab -f rsync.py -l
 Available commands:
 syncfile
-</code></pre></div>
-</div>
-
-
-  <footer class="container">
-  <div class="container navigation no-print">
-  <h2>Navigation</h2>
-  
-  
-
-    
-    <a class="prev" href="https://blog.lbbniu.com/2021/11/20/nginx-lua%E7%9B%B4%E6%8E%A5%E9%98%B6%E6%AE%B5/" title="nginx lua直接阶段">
-      上一篇
-    </a>
-    
-
-    
-    <a class="next" href="https://blog.lbbniu.com/2021/11/20/docker%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E7%BD%91%E6%AE%B5/" title="Docker修改默认网段">
-      下一篇
-    </a>
-    
-
-  
-
-
-</div>
-
-  
-
-</footer>
-
-</article>
-      <footer id="main-footer" class="container main_footer">
-  
-
-  <div class="container nav foot no-print">
-  
-<a href="https://blog.lbbniu.com/license">license</a>
-
-
-  <a class="toplink" href="#">back to top</a>
-
-</div>
-
-  <div class="container credits">
-  
-<div class="container footline">
-  
-  code with <!-- raw HTML omitted --><!-- raw HTML omitted -->
-
-
-</div>
-
-
-  
-<div class="container copyright">
-  
-  (c) 2021 lbbniu.
-
-
-</div>
-
-
-</div>
-
-</footer>
-
-    </main>
-    
-
-
-<script src="/js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-
-
-
-    
-  </body>
-</html>
-
+</code></pre></article><div class=my-4><a href=/tags/fabric/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#fabric</a></div><div class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"><div><span class="text-primary-text block font-bold">上一页</span>
+<a href=/2021/11/20/docker%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E7%BD%91%E6%AE%B5/ class=block>Docker修改默认网段</a></div><div class="mt-4 md:mt-0 md:text-right"><span class="text-primary-text block font-bold">下一页</span>
+<a href=/2021/11/20/nginx-lua%E7%9B%B4%E6%8E%A5%E9%98%B6%E6%AE%B5/ class=block>nginx lua直接阶段</a></div></div></div></div><script>document.addEventListener("DOMContentLoaded",()=>{hljs.highlightAll()})</script></div></div></main><footer class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b"><p class="text-sm text-tertiary-text">&copy; 2021 <a href=https://blog.lbbniu.com/>lbbniu</a>
+&#183; Powered by the <a href=https://github.com/wangchucheng/hugo-eureka class=hover:text-eureka>Eureka</a> theme for <a href=https://gohugo.io class=hover:text-eureka>Hugo</a></p></div></div></footer></body></html>

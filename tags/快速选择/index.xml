@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>快速选择 on lbbniu</title><link>/tags/%E5%BF%AB%E9%80%9F%E9%80%89%E6%8B%A9/</link><description>Recent content in 快速选择 on lbbniu</description><generator>Hugo -- gohugo.io</generator><language>zh</language><managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor><webMaster>lbbniu@gmail.com (lbbniu)</webMaster><copyright>&amp;copy; 2021 &lt;a href="https://blog.lbbniu.com/">lbbniu&lt;/a></copyright><lastBuildDate>Thu, 28 Jul 2022 22:00:00 +0800</lastBuildDate><atom:link href="/tags/%E5%BF%AB%E9%80%9F%E9%80%89%E6%8B%A9/index.xml" rel="self" type="application/rss+xml"/><item><title>剑指 Offer 40 最小的k个数</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/zui-xiao-de-kge-shu-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/zui-xiao-de-kge-shu-lcof/</guid><description>剑指 Offer 40 最小的k个数 输入整数数组 arr ，找出其中最小的 k 个数。例如，输入4、5、1、6、2、7、3、8这8个数字，则最小的4个数字是1、2、3、4。
+&amp;nbsp;
+示例 1：
+输入：arr = [3,2,1], k = 2 输出：[1,2] 或者 [2,1] 示例 2：
+输入：arr = [0,1,2,1], k = 1 输出：[0] &amp;nbsp;
+限制：
+0 &amp;lt;= k &amp;lt;= arr.length &amp;lt;= 10000 0 &amp;lt;= arr[i]&amp;nbsp;&amp;lt;= 10000 func getLeastNumbers(arr []int, k int) []int { } LeetCode题库地址 https://leetcode.cn/problems/zui-xiao-de-kge-shu-lcof</description></item><item><title>剑指 Offer II 060 出现频率最高的 k 个数字</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/g5c51o/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/g5c51o/</guid><description>剑指 Offer II 060 出现频率最高的 k 个数字 给定一个整数数组 nums 和一个整数 k&amp;nbsp;，请返回其中出现频率前 k 高的元素。可以按 任意顺序 返回答案。
+&amp;nbsp;
+示例 1:
+输入: nums = [1,1,1,2,2,3], k = 2 输出: [1,2] 示例 2:
+输入: nums = [1], k = 1 输出: [1] &amp;nbsp;
+提示：
+1 &amp;lt;= nums.length &amp;lt;= 105 k 的取值范围是 [1, 数组中不相同的元素的个数] 题目数据保证答案唯一，换句话说，数组中前 k 个高频元素的集合是唯一的 &amp;nbsp;
+进阶：所设计算法的时间复杂度 必须 优于 O(n log n) ，其中 n&amp;nbsp;是数组大小。
+&amp;nbsp;
+注意：本题与主站 347&amp;nbsp;题相同：https://leetcode-cn.com/problems/top-k-frequent-elements/
+func topKFrequent(nums []int, k int) []int { } LeetCode题库地址 https://leetcode.cn/problems/g5c51o</description></item><item><title>剑指 Offer II 076 数组中的第 k 大的数字</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/xx4gt2/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/xx4gt2/</guid><description>剑指 Offer II 076 数组中的第 k 大的数字 给定整数数组 nums 和整数 k，请返回数组中第 k 个最大的元素。
+请注意，你需要找的是数组排序后的第 k 个最大的元素，而不是第 k 个不同的元素。
+&amp;nbsp;
+示例 1:
+输入: [3,2,1,5,6,4] 和 k = 2 输出: 5 示例&amp;nbsp;2:
+输入: [3,2,3,1,2,4,5,5,6] 和 k = 4 输出: 4 &amp;nbsp;
+提示： 1 &amp;lt;= k &amp;lt;= nums.length &amp;lt;= 104 -104&amp;nbsp;&amp;lt;= nums[i] &amp;lt;= 104 &amp;nbsp;
+注意：本题与主站 215&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/kth-largest-element-in-an-array/
+func findKthLargest(nums []int, k int) int { } LeetCode题库地址 https://leetcode.cn/problems/xx4gT2</description></item><item><title>面试题 17.14 最小K个数</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/smallest-k-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/smallest-k-lcci/</guid><description>面试题 17.14 最小K个数 设计一个算法，找出数组中最小的k个数。以任意顺序返回这k个数均可。
+示例：
+输入： arr = [1,3,5,7,2,4,6,8], k = 4 输出： [1,2,3,4] 提示：
+0 &amp;lt;= len(arr) &amp;lt;= 100000 0 &amp;lt;= k &amp;lt;= min(100000, len(arr)) func smallestK(arr []int, k int) []int { } LeetCode题库地址 https://leetcode.cn/problems/smallest-k-lcci</description></item></channel></rss>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>归并排序 on lbbniu</title><link>/tags/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/</link><description>Recent content in 归并排序 on lbbniu</description><generator>Hugo -- gohugo.io</generator><language>zh</language><managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor><webMaster>lbbniu@gmail.com (lbbniu)</webMaster><copyright>&amp;copy; 2021 &lt;a href="https://blog.lbbniu.com/">lbbniu&lt;/a></copyright><lastBuildDate>Thu, 28 Jul 2022 22:00:00 +0800</lastBuildDate><atom:link href="/tags/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/index.xml" rel="self" type="application/rss+xml"/><item><title>剑指 Offer 51 数组中的逆序对</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/shu-zu-zhong-de-ni-xu-dui-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/shu-zu-zhong-de-ni-xu-dui-lcof/</guid><description>剑指 Offer 51 数组中的逆序对 在数组中的两个数字，如果前面一个数字大于后面的数字，则这两个数字组成一个逆序对。输入一个数组，求出这个数组中的逆序对的总数。
+&amp;nbsp;
+示例 1:
+输入: [7,5,6,4] 输出: 5 &amp;nbsp;
+限制：
+0 &amp;lt;= 数组长度 &amp;lt;= 50000
+func reversePairs(nums []int) int { } LeetCode题库地址 https://leetcode.cn/problems/shu-zu-zhong-de-ni-xu-dui-lcof</description></item><item><title>剑指 Offer II 077 链表排序</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/7whec2/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/7whec2/</guid><description>剑指 Offer II 077 链表排序 给定链表的头结点&amp;nbsp;head&amp;nbsp;，请将其按 升序 排列并返回 排序后的链表 。
+&amp;nbsp;
+示例 1：
+输入：head = [4,2,1,3] 输出：[1,2,3,4] 示例 2：
+输入：head = [-1,5,3,4,0] 输出：[-1,0,3,4,5] 示例 3：
+输入：head = [] 输出：[] &amp;nbsp;
+提示：
+链表中节点的数目在范围&amp;nbsp;[0, 5 * 104]&amp;nbsp;内 -105&amp;nbsp;&amp;lt;= Node.val &amp;lt;= 105 &amp;nbsp;
+进阶：你可以在&amp;nbsp;O(n&amp;nbsp;log&amp;nbsp;n) 时间复杂度和常数级空间复杂度下，对链表进行排序吗？
+&amp;nbsp;
+注意：本题与主站 148&amp;nbsp;题相同：https://leetcode-cn.com/problems/sort-list/
+/** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func sortList(head *ListNode) *ListNode { } LeetCode题库地址 https://leetcode.cn/problems/7WHec2</description></item><item><title>剑指 Offer II 078 合并排序链表</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/vvxgsw/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/vvxgsw/</guid><description>剑指 Offer II 078 合并排序链表 给定一个链表数组，每个链表都已经按升序排列。
+请将所有链表合并到一个升序链表中，返回合并后的链表。
+&amp;nbsp;
+示例 1：
+输入：lists = [[1,4,5],[1,3,4],[2,6]] 输出：[1,1,2,3,4,4,5,6] 解释：链表数组如下： [ 1-&amp;gt;4-&amp;gt;5, 1-&amp;gt;3-&amp;gt;4, 2-&amp;gt;6 ] 将它们合并到一个有序链表中得到。 1-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;4-&amp;gt;5-&amp;gt;6 示例 2：
+输入：lists = [] 输出：[] 示例 3：
+输入：lists = [[]] 输出：[] &amp;nbsp;
+提示：
+k == lists.length 0 &amp;lt;= k &amp;lt;= 10^4 0 &amp;lt;= lists[i].length &amp;lt;= 500 -10^4 &amp;lt;= lists[i][j] &amp;lt;= 10^4 lists[i] 按 升序 排列 lists[i].length 的总和不超过 10^4 &amp;nbsp;
+注意：本题与主站 23&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/merge-k-sorted-lists/
+/** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func mergeKLists(lists []*ListNode) *ListNode { } LeetCode题库地址 https://leetcode.</description></item></channel></rss>

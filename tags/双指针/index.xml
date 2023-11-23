@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>双指针 on lbbniu</title><link>/tags/%E5%8F%8C%E6%8C%87%E9%92%88/</link><description>Recent content in 双指针 on lbbniu</description><generator>Hugo -- gohugo.io</generator><language>zh</language><managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor><webMaster>lbbniu@gmail.com (lbbniu)</webMaster><copyright>&amp;copy; 2021 &lt;a href="https://blog.lbbniu.com/">lbbniu&lt;/a></copyright><lastBuildDate>Mon, 16 Jan 2023 00:01:00 +0800</lastBuildDate><atom:link href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/index.xml" rel="self" type="application/rss+xml"/><item><title>剑指 Offer 06 从尾到头打印链表</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/cong-wei-dao-tou-da-yin-lian-biao-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/cong-wei-dao-tou-da-yin-lian-biao-lcof/</guid><description>剑指 Offer 06 从尾到头打印链表 输入一个链表的头节点，从尾到头反过来返回每个节点的值（用数组返回）。
+&amp;nbsp;
+示例 1：
+输入：head = [1,3,2] 输出：[2,3,1] &amp;nbsp;
+限制：
+0 &amp;lt;= 链表长度 &amp;lt;= 10000
+/** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func reversePrint(head *ListNode) []int { } LeetCode题库地址 https://leetcode.cn/problems/cong-wei-dao-tou-da-yin-lian-biao-lcof</description></item><item><title>面试题 01.05 一次编辑</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/one-away-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/one-away-lcci/</guid><description>面试题 01.05 一次编辑 字符串有三种编辑操作:插入一个英文字符、删除一个英文字符或者替换一个英文字符。 给定两个字符串，编写一个函数判定它们是否只需要一次(或者零次)编辑。
+&amp;nbsp;
+示例&amp;nbsp;1:
+输入: first = "pale" second = "ple" 输出: True &amp;nbsp;
+示例&amp;nbsp;2:
+输入: first = "pales" second = "pal" 输出: False func oneEditAway(first string, second string) bool { } LeetCode题库地址 https://leetcode.cn/problems/one-away-lcci</description></item><item><title>剑指 Offer II 006 排序数组中两个数字之和</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/kll5u1/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/kll5u1/</guid><description>剑指 Offer II 006 排序数组中两个数字之和 给定一个已按照 升序排列&amp;nbsp; 的整数数组&amp;nbsp;numbers ，请你从数组中找出两个数满足相加之和等于目标数&amp;nbsp;target 。
+函数应该以长度为 2 的整数数组的形式返回这两个数的下标值。numbers 的下标 从 0&amp;nbsp;开始计数 ，所以答案数组应当满足 0&amp;nbsp;&amp;lt;= answer[0] &amp;lt; answer[1] &amp;lt;&amp;nbsp;numbers.length&amp;nbsp;。
+假设数组中存在且只存在一对符合条件的数字，同时一个数字不能使用两次。
+&amp;nbsp;
+示例 1：
+输入：numbers = [1,2,4,6,10], target = 8 输出：[1,3] 解释：2 与 6 之和等于目标数 8 。因此 index1 = 1, index2 = 3 。 示例 2：
+输入：numbers = [2,3,4], target = 6 输出：[0,2] 示例 3：
+输入：numbers = [-1,0], target = -1 输出：[0,1] &amp;nbsp;
+提示：
+2 &amp;lt;= numbers.length &amp;lt;= 3 * 104 -1000 &amp;lt;= numbers[i] &amp;lt;= 1000 numbers 按 递增顺序 排列 -1000 &amp;lt;= target &amp;lt;= 1000 仅存在一个有效答案 &amp;nbsp;</description></item><item><title>面试题 01.06 字符串压缩</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/compress-string-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/compress-string-lcci/</guid><description>面试题 01.06 字符串压缩 字符串压缩。利用字符重复出现的次数，编写一种方法，实现基本的字符串压缩功能。比如，字符串aabcccccaaa会变为a2b1c5a3。若“压缩”后的字符串没有变短，则返回原先的字符串。你可以假设字符串中只包含大小写英文字母（a至z）。
+示例1:
+输入："aabcccccaaa" 输出："a2b1c5a3" 示例2:
+输入："abbccd" 输出："abbccd" 解释："abbccd"压缩后为"a1b2c2d1"，比原字符串长度更长。 提示：
+字符串长度在[0, 50000]范围内。 func compressString(S string) string { } LeetCode题库地址 https://leetcode.cn/problems/compress-string-lcci</description></item><item><title>剑指 Offer II 007 数组中和为 0 的三个数</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/1fgaju/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/1fgaju/</guid><description>剑指 Offer II 007 数组中和为 0 的三个数 给定一个包含 n 个整数的数组&amp;nbsp;nums，判断&amp;nbsp;nums&amp;nbsp;中是否存在三个元素&amp;nbsp;a ，b ，c ，使得&amp;nbsp;a + b + c = 0 ？请找出所有和为 0 且&amp;nbsp;不重复&amp;nbsp;的三元组。
+&amp;nbsp;
+示例 1：
+输入：nums = [-1,0,1,2,-1,-4] 输出：[[-1,-1,2],[-1,0,1]] 示例 2：
+输入：nums = [] 输出：[] 示例 3：
+输入：nums = [0] 输出：[] &amp;nbsp;
+提示：
+0 &amp;lt;= nums.length &amp;lt;= 3000 -105 &amp;lt;= nums[i] &amp;lt;= 105 &amp;nbsp;
+注意：本题与主站 15&amp;nbsp;题相同：https://leetcode-cn.com/problems/3sum/
+func threeSum(nums []int) [][]int { } LeetCode题库地址 https://leetcode.cn/problems/1fGaJU</description></item><item><title>面试题 02.01 移除重复节点</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/remove-duplicate-node-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/remove-duplicate-node-lcci/</guid><description>面试题 02.01 移除重复节点 编写代码，移除未排序链表中的重复节点。保留最开始出现的节点。
+示例1:
+输入：[1, 2, 3, 3, 2, 1] 输出：[1, 2, 3] 示例2:
+输入：[1, 1, 1, 1, 2] 输出：[1, 2] 提示：
+链表长度在[0, 20000]范围内。 链表元素在[0, 20000]范围内。 进阶：
+如果不得使用临时缓冲区，该怎么解决？
+/** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func removeDuplicateNodes(head *ListNode) *ListNode { } LeetCode题库地址 https://leetcode.cn/problems/remove-duplicate-node-lcci</description></item><item><title>面试题 02.02 返回倒数第 k 个节点</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/kth-node-from-end-of-list-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/kth-node-from-end-of-list-lcci/</guid><description>面试题 02.02 返回倒数第 k 个节点 实现一种算法，找出单向链表中倒数第 k 个节点。返回该节点的值。
+注意：本题相对原题稍作改动
+示例：
+输入： 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5 和 k = 2 输出： 4 说明：
+给定的 k&amp;nbsp;保证是有效的。
+/** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func kthToLast(head *ListNode, k int) int { } LeetCode题库地址 https://leetcode.cn/problems/kth-node-from-end-of-list-lcci</description></item><item><title>面试题 02.04 分割链表</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/partition-list-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/partition-list-lcci/</guid><description>面试题 02.04 分割链表 给你一个链表的头节点 head 和一个特定值 x ，请你对链表进行分隔，使得所有 小于 x 的节点都出现在 大于或等于 x 的节点之前。
+你不需要&amp;nbsp;保留&amp;nbsp;每个分区中各节点的初始相对位置。
+&amp;nbsp;
+示例 1：
+输入：head = [1,4,3,2,5,2], x = 3 输出：[1,2,2,4,3,5] 示例 2：
+输入：head = [2,1], x = 2 输出：[1,2] &amp;nbsp;
+提示：
+链表中节点的数目在范围 [0, 200] 内 -100 &amp;lt;= Node.val &amp;lt;= 100 -200 &amp;lt;= x &amp;lt;= 200 /** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func partition(head *ListNode, x int) *ListNode { } LeetCode题库地址 https://leetcode.</description></item><item><title>剑指 Offer II 014 字符串中的变位词</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/mpnail/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/mpnail/</guid><description>剑指 Offer II 014 字符串中的变位词 给定两个字符串&amp;nbsp;s1&amp;nbsp;和&amp;nbsp;s2，写一个函数来判断 s2 是否包含 s1&amp;nbsp;的某个变位词。
+换句话说，第一个字符串的排列之一是第二个字符串的 子串 。
+&amp;nbsp;
+示例 1：
+输入: s1 = &amp;quot;ab&amp;quot; s2 = &amp;quot;eidbaooo&amp;quot; 输出: True 解释: s2 包含 s1 的排列之一 (&amp;quot;ba&amp;quot;). 示例 2：
+输入: s1= &amp;quot;ab&amp;quot; s2 = &amp;quot;eidboaoo&amp;quot; 输出: False &amp;nbsp;
+提示：
+1 &amp;lt;= s1.length, s2.length &amp;lt;= 104 s1 和 s2 仅包含小写字母 &amp;nbsp;
+注意：本题与主站 567&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/permutation-in-string/
+func checkInclusion(s1 string, s2 string) bool { } LeetCode题库地址 https://leetcode.cn/problems/MPnaiL</description></item><item><title>面试题 02.06 回文链表</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/palindrome-linked-list-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/palindrome-linked-list-lcci/</guid><description>面试题 02.06 回文链表 编写一个函数，检查输入的链表是否是回文的。
+&amp;nbsp;
+示例 1：
+输入： 1-&amp;gt;2 输出： false 示例 2：
+输入： 1-&amp;gt;2-&amp;gt;2-&amp;gt;1 输出： true &amp;nbsp;
+进阶：
+你能否用 O(n) 时间复杂度和 O(1) 空间复杂度解决此题？
+/** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func isPalindrome(head *ListNode) bool { } LeetCode题库地址 https://leetcode.cn/problems/palindrome-linked-list-lcci</description></item><item><title>面试题 02.07 链表相交</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/intersection-of-two-linked-lists-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/intersection-of-two-linked-lists-lcci/</guid><description>面试题 02.07 链表相交 给你两个单链表的头节点 headA 和 headB ，请你找出并返回两个单链表相交的起始节点。如果两个链表没有交点，返回 null 。
+图示两个链表在节点 c1 开始相交：
+题目数据 保证 整个链式结构中不存在环。
+注意，函数返回结果后，链表必须 保持其原始结构 。
+示例 1：
+输入：intersectVal = 8, listA = [4,1,8,4,5], listB = [5,0,1,8,4,5], skipA = 2, skipB = 3 输出：Intersected at '8' 解释：相交节点的值为 8 （注意，如果两个链表相交则不能为 0）。 从各自的表头开始算起，链表 A 为 [4,1,8,4,5]，链表 B 为 [5,0,1,8,4,5]。 在 A 中，相交节点前有 2 个节点；在 B 中，相交节点前有 3 个节点。 示例 2：
+输入：intersectVal = 2, listA = [0,9,1,2,4], listB = [3,2,4], skipA = 3, skipB = 1 输出：Intersected at '2' 解释：相交节点的值为 2 （注意，如果两个链表相交则不能为 0）。 从各自的表头开始算起，链表 A 为 [0,9,1,2,4]，链表 B 为 [3,2,4]。 在 A 中，相交节点前有 3 个节点；在 B 中，相交节点前有 1 个节点。 示例 3：</description></item><item><title>面试题 02.08 环路检测</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/linked-list-cycle-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/linked-list-cycle-lcci/</guid><description>面试题 02.08 环路检测 给定一个链表，如果它是有环链表，实现一个算法返回环路的开头节点。若环不存在，请返回 null。
+如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定链表中的环，我们使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。 如果 pos 是 -1，则在该链表中没有环。注意：pos 不作为参数进行传递，仅仅是为了标识链表的实际情况。
+&amp;nbsp;
+示例 1：
+输入：head = [3,2,0,-4], pos = 1 输出：tail connects to node index 1 解释：链表中有一个环，其尾部连接到第二个节点。 示例 2：
+输入：head = [1,2], pos = 0 输出：tail connects to node index 0 解释：链表中有一个环，其尾部连接到第一个节点。 示例 3：
+输入：head = [1], pos = -1 输出：no cycle 解释：链表中没有环。 &amp;nbsp;
+进阶：
+你是否可以不用额外空间解决此题？ &amp;nbsp;
+/** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func detectCycle(head *ListNode) *ListNode { } LeetCode题库地址 https://leetcode.</description></item><item><title>剑指 Offer II 018 有效的回文</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/xltzeq/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/xltzeq/</guid><description>剑指 Offer II 018 有效的回文 给定一个字符串 s ，验证 s&amp;nbsp;是否是&amp;nbsp;回文串&amp;nbsp;，只考虑字母和数字字符，可以忽略字母的大小写。
+本题中，将空字符串定义为有效的&amp;nbsp;回文串&amp;nbsp;。
+&amp;nbsp;
+示例 1:
+输入: s = &amp;quot;A man, a plan, a canal: Panama&amp;quot; 输出: true 解释：&amp;quot;amanaplanacanalpanama&amp;quot; 是回文串 示例 2:
+输入: s = &amp;quot;race a car&amp;quot; 输出: false 解释：&amp;quot;raceacar&amp;quot; 不是回文串 &amp;nbsp;
+提示：
+1 &amp;lt;= s.length &amp;lt;= 2 * 105 字符串 s 由 ASCII 字符组成 &amp;nbsp;
+注意：本题与主站 125&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/valid-palindrome/
+func isPalindrome(s string) bool { } LeetCode题库地址 https://leetcode.cn/problems/XltzEq</description></item><item><title>剑指 Offer II 019 最多删除一个字符得到回文</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/rqku0d/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/rqku0d/</guid><description>剑指 Offer II 019 最多删除一个字符得到回文 给定一个非空字符串&amp;nbsp;s，请判断如果&amp;nbsp;最多 从字符串中删除一个字符能否得到一个回文字符串。
+&amp;nbsp;
+示例 1:
+输入: s = &amp;quot;aba&amp;quot; 输出: true 示例 2:
+输入: s = &amp;quot;abca&amp;quot; 输出: true 解释: 可以删除 &amp;quot;c&amp;quot; 字符 或者 &amp;quot;b&amp;quot; 字符 示例 3:
+输入: s = &amp;quot;abc&amp;quot; 输出: false &amp;nbsp;
+提示:
+1 &amp;lt;= s.length &amp;lt;= 105 s 由小写英文字母组成 &amp;nbsp;
+注意：本题与主站 680&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/valid-palindrome-ii/
+func validPalindrome(s string) bool { } LeetCode题库地址 https://leetcode.cn/problems/RQku0D</description></item><item><title>剑指 Offer 21 调整数组顺序使奇数位于偶数前面</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/diao-zheng-shu-zu-shun-xu-shi-qi-shu-wei-yu-ou-shu-qian-mian-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/diao-zheng-shu-zu-shun-xu-shi-qi-shu-wei-yu-ou-shu-qian-mian-lcof/</guid><description>剑指 Offer 21 调整数组顺序使奇数位于偶数前面 输入一个整数数组，实现一个函数来调整该数组中数字的顺序，使得所有奇数在数组的前半部分，所有偶数在数组的后半部分。
+&amp;nbsp;
+示例：
+输入：nums =&amp;nbsp;[1,2,3,4] 输出：[1,3,2,4] 注：[3,1,2,4] 也是正确的答案之一。 &amp;nbsp;
+提示：
+0 &amp;lt;= nums.length &amp;lt;= 50000 0 &amp;lt;= nums[i] &amp;lt;= 10000 func exchange(nums []int) []int { } LeetCode题库地址 https://leetcode.cn/problems/diao-zheng-shu-zu-shun-xu-shi-qi-shu-wei-yu-ou-shu-qian-mian-lcof</description></item><item><title>剑指 Offer 22 链表中倒数第k个节点</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/</guid><description>剑指 Offer 22 链表中倒数第k个节点 输入一个链表，输出该链表中倒数第k个节点。为了符合大多数人的习惯，本题从1开始计数，即链表的尾节点是倒数第1个节点。
+例如，一个链表有 6 个节点，从头节点开始，它们的值依次是 1、2、3、4、5、6。这个链表的倒数第 3 个节点是值为 4 的节点。
+示例：
+给定一个链表: 1->2->3->4->5, 和 k = 2. 返回链表 4->5. /** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func getKthFromEnd(head *ListNode, k int) *ListNode { } LeetCode题库地址 https://leetcode.cn/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof</description></item><item><title>剑指 Offer II 021 删除链表的倒数第 n 个结点</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/slwz0r/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/slwz0r/</guid><description>剑指 Offer II 021 删除链表的倒数第 n 个结点 给定一个链表，删除链表的倒数第&amp;nbsp;n&amp;nbsp;个结点，并且返回链表的头结点。
+&amp;nbsp;
+示例 1：
+输入：head = [1,2,3,4,5], n = 2 输出：[1,2,3,5] 示例 2：
+输入：head = [1], n = 1 输出：[] 示例 3：
+输入：head = [1,2], n = 1 输出：[1] &amp;nbsp;
+提示：
+链表中结点的数目为 sz 1 &amp;lt;= sz &amp;lt;= 30 0 &amp;lt;= Node.val &amp;lt;= 100 1 &amp;lt;= n &amp;lt;= sz &amp;nbsp;
+进阶：能尝试使用一趟扫描实现吗？
+&amp;nbsp;
+注意：本题与主站 19&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/
+/** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func removeNthFromEnd(head *ListNode, n int) *ListNode { } LeetCode题库地址 https://leetcode.</description></item><item><title>剑指 Offer II 022 链表中环的入口节点</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/c32eov/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/c32eov/</guid><description>剑指 Offer II 022 链表中环的入口节点 给定一个链表，返回链表开始入环的第一个节点。 从链表的头节点开始沿着 next 指针进入环的第一个节点为环的入口节点。如果链表无环，则返回&amp;nbsp;null。
+为了表示给定链表中的环，我们使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。 如果 pos 是 -1，则在该链表中没有环。注意，pos 仅仅是用于标识环的情况，并不会作为参数传递到函数中。
+说明：不允许修改给定的链表。
+&amp;nbsp;
+示例 1：
+输入：head = [3,2,0,-4], pos = 1 输出：返回索引为 1 的链表节点 解释：链表中有一个环，其尾部连接到第二个节点。 示例&amp;nbsp;2：
+输入：head = [1,2], pos = 0 输出：返回索引为 0 的链表节点 解释：链表中有一个环，其尾部连接到第一个节点。 示例 3：
+输入：head = [1], pos = -1 输出：返回 null 解释：链表中没有环。 &amp;nbsp;
+提示：
+链表中节点的数目范围在范围 [0, 104] 内 -105 &amp;lt;= Node.val &amp;lt;= 105 pos 的值为 -1 或者链表中的一个有效索引 &amp;nbsp;
+进阶：是否可以使用 O(1) 空间解决此题？
+&amp;nbsp;</description></item><item><title>剑指 Offer II 023 两个链表的第一个重合节点</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/3u1wk4/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/3u1wk4/</guid><description>剑指 Offer II 023 两个链表的第一个重合节点 给定两个单链表的头节点&amp;nbsp;headA 和 headB ，请找出并返回两个单链表相交的起始节点。如果两个链表没有交点，返回 null 。
+图示两个链表在节点 c1 开始相交：
+题目数据 保证 整个链式结构中不存在环。
+注意，函数返回结果后，链表必须 保持其原始结构 。
+&amp;nbsp;
+示例 1：
+输入：intersectVal = 8, listA = [4,1,8,4,5], listB = [5,0,1,8,4,5], skipA = 2, skipB = 3 输出：Intersected at &amp;#39;8&amp;#39; 解释：相交节点的值为 8 （注意，如果两个链表相交则不能为 0）。 从各自的表头开始算起，链表 A 为 [4,1,8,4,5]，链表 B 为 [5,0,1,8,4,5]。 在 A 中，相交节点前有 2 个节点；在 B 中，相交节点前有 3 个节点。 示例&amp;nbsp;2：
+输入：intersectVal&amp;nbsp;= 2, listA = [0,9,1,2,4], listB = [3,2,4], skipA = 3, skipB = 1 输出：Intersected at &amp;#39;2&amp;#39; 解释：相交节点的值为 2 （注意，如果两个链表相交则不能为 0）。 从各自的表头开始算起，链表 A 为 [0,9,1,2,4]，链表 B 为 [3,2,4]。 在 A 中，相交节点前有 3 个节点；在 B 中，相交节点前有 1 个节点。 示例&amp;nbsp;3：</description></item><item><title>剑指 Offer II 026 重排链表</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/lgjmqu/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/lgjmqu/</guid><description>剑指 Offer II 026 重排链表 给定一个单链表 L 的头节点 head ，单链表 L 表示为：
+&amp;nbsp;L0&amp;nbsp;&amp;rarr; L1&amp;nbsp;&amp;rarr; &amp;hellip; &amp;rarr; Ln-1&amp;nbsp;&amp;rarr; Ln&amp;nbsp;
+请将其重新排列后变为：
+L0&amp;nbsp;&amp;rarr;&amp;nbsp;Ln&amp;nbsp;&amp;rarr;&amp;nbsp;L1&amp;nbsp;&amp;rarr;&amp;nbsp;Ln-1&amp;nbsp;&amp;rarr;&amp;nbsp;L2&amp;nbsp;&amp;rarr;&amp;nbsp;Ln-2&amp;nbsp;&amp;rarr; &amp;hellip;
+不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。
+&amp;nbsp;
+示例 1:
+输入: head = [1,2,3,4] 输出: [1,4,2,3] 示例 2:
+输入: head = [1,2,3,4,5] 输出: [1,5,2,4,3] &amp;nbsp;
+提示：
+链表的长度范围为 [1, 5 * 104] 1 &amp;lt;= node.val &amp;lt;= 1000 &amp;nbsp;
+注意：本题与主站 143&amp;nbsp;题相同：https://leetcode-cn.com/problems/reorder-list/&amp;nbsp;
+/** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func reorderList(head *ListNode) { } LeetCode题库地址 https://leetcode.</description></item><item><title>剑指 Offer II 027 回文链表</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/amhzsa/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/amhzsa/</guid><description>剑指 Offer II 027 回文链表 给定一个链表的 头节点&amp;nbsp;head&amp;nbsp;，请判断其是否为回文链表。
+如果一个链表是回文，那么链表节点序列从前往后看和从后往前看是相同的。
+&amp;nbsp;
+示例 1：
+输入: head = [1,2,3,3,2,1] 输出: true 示例 2：
+输入: head = [1,2] 输出: false &amp;nbsp;
+提示：
+链表 L 的长度范围为 [1, 105] 0&amp;nbsp;&amp;lt;= node.val &amp;lt;= 9 &amp;nbsp;
+进阶：能否用&amp;nbsp;O(n) 时间复杂度和 O(1) 空间复杂度解决此题？
+&amp;nbsp;
+注意：本题与主站 234&amp;nbsp;题相同：https://leetcode-cn.com/problems/palindrome-linked-list/
+/** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func isPalindrome(head *ListNode) bool { } LeetCode题库地址 https://leetcode.cn/problems/aMhZSa</description></item><item><title>剑指 Offer 41 数据流中的中位数</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/shu-ju-liu-zhong-de-zhong-wei-shu-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/shu-ju-liu-zhong-de-zhong-wei-shu-lcof/</guid><description>剑指 Offer 41 数据流中的中位数 如何得到一个数据流中的中位数？如果从数据流中读出奇数个数值，那么中位数就是所有数值排序之后位于中间的数值。如果从数据流中读出偶数个数值，那么中位数就是所有数值排序之后中间两个数的平均值。
+例如，
+[2,3,4]&amp;nbsp;的中位数是 3
+[2,3] 的中位数是 (2 + 3) / 2 = 2.5
+设计一个支持以下两种操作的数据结构：
+void addNum(int num) - 从数据流中添加一个整数到数据结构中。 double findMedian() - 返回目前所有元素的中位数。 示例 1：
+输入： [&amp;quot;MedianFinder&amp;quot;,&amp;quot;addNum&amp;quot;,&amp;quot;addNum&amp;quot;,&amp;quot;findMedian&amp;quot;,&amp;quot;addNum&amp;quot;,&amp;quot;findMedian&amp;quot;] [[],[1],[2],[],[3],[]] 输出：[null,null,null,1.50000,null,2.00000] 示例 2：
+输入： [&amp;quot;MedianFinder&amp;quot;,&amp;quot;addNum&amp;quot;,&amp;quot;findMedian&amp;quot;,&amp;quot;addNum&amp;quot;,&amp;quot;findMedian&amp;quot;] [[],[2],[],[3],[]] 输出：[null,null,2.00000,null,2.50000] &amp;nbsp;
+限制：
+最多会对&amp;nbsp;addNum、findMedian 进行&amp;nbsp;50000&amp;nbsp;次调用。 注意：本题与主站 295 题相同：https://leetcode-cn.com/problems/find-median-from-data-stream/
+type MedianFinder struct { } /** initialize your data structure here. */ func Constructor() MedianFinder { } func (this *MedianFinder) AddNum(num int) { } func (this *MedianFinder) FindMedian() float64 { } /** * Your MedianFinder object will be instantiated and called as such: * obj := Constructor(); * obj.</description></item><item><title>剑指 Offer 52 两个链表的第一个公共节点</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/liang-ge-lian-biao-de-di-yi-ge-gong-gong-jie-dian-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/liang-ge-lian-biao-de-di-yi-ge-gong-gong-jie-dian-lcof/</guid><description>剑指 Offer 52 两个链表的第一个公共节点 输入两个链表，找出它们的第一个公共节点。
+如下面的两个链表：
+在节点 c1 开始相交。
+&amp;nbsp;
+示例 1：
+输入：intersectVal = 8, listA = [4,1,8,4,5], listB = [5,0,1,8,4,5], skipA = 2, skipB = 3 输出：Reference of the node with value = 8 输入解释：相交节点的值为 8 （注意，如果两个列表相交则不能为 0）。从各自的表头开始算起，链表 A 为 [4,1,8,4,5]，链表 B 为 [5,0,1,8,4,5]。在 A 中，相交节点前有 2 个节点；在 B 中，相交节点前有 3 个节点。 &amp;nbsp;
+示例&amp;nbsp;2：
+输入：intersectVal&amp;nbsp;= 2, listA = [0,9,1,2,4], listB = [3,2,4], skipA = 3, skipB = 1 输出：Reference of the node with value = 2 输入解释：相交节点的值为 2 （注意，如果两个列表相交则不能为 0）。从各自的表头开始算起，链表 A 为 [0,9,1,2,4]，链表 B 为 [3,2,4]。在 A 中，相交节点前有 3 个节点；在 B 中，相交节点前有 1 个节点。 &amp;nbsp;</description></item><item><title>面试题 10.01 合并排序的数组</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/sorted-merge-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/sorted-merge-lcci/</guid><description>面试题 10.01 合并排序的数组 给定两个排序后的数组 A 和 B，其中 A 的末端有足够的缓冲空间容纳 B。 编写一个方法，将 B 合并入 A 并排序。
+初始化&amp;nbsp;A 和 B 的元素数量分别为&amp;nbsp;m 和 n。
+示例:
+输入: A = [1,2,3,0,0,0], m = 3 B = [2,5,6], n = 3 输出:&amp;nbsp;[1,2,2,3,5,6] 说明:
+A.length == n + m func merge(A []int, m int, B []int, n int) { } LeetCode题库地址 https://leetcode.cn/problems/sorted-merge-lcci</description></item><item><title>剑指 Offer II 056 二叉搜索树中两个节点之和</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/opldqz/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/opldqz/</guid><description>剑指 Offer II 056 二叉搜索树中两个节点之和 给定一个二叉搜索树的 根节点 root&amp;nbsp;和一个整数 k , 请判断该二叉搜索树中是否存在两个节点它们的值之和等于 k 。假设二叉搜索树中节点的值均唯一。
+&amp;nbsp;
+示例 1：
+输入: root = [8,6,10,5,7,9,11], k = 12 输出: true 解释: 节点 5 和节点 7 之和等于 12 示例 2：
+输入: root = [8,6,10,5,7,9,11], k = 22 输出: false 解释: 不存在两个节点值之和为 22 的节点 &amp;nbsp;
+提示：
+二叉树的节点个数的范围是&amp;nbsp;&amp;nbsp;[1, 104]. -104&amp;nbsp;&amp;lt;= Node.val &amp;lt;= 104 root&amp;nbsp;为二叉搜索树 -105&amp;nbsp;&amp;lt;= k &amp;lt;= 105 &amp;nbsp;
+注意：本题与主站 653 题相同：&amp;nbsp;https://leetcode-cn.com/problems/two-sum-iv-input-is-a-bst/
+/** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ func findTarget(root *TreeNode, k int) bool { } LeetCode题库地址 https://leetcode.</description></item><item><title>剑指 Offer 57 和为s的两个数字</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/he-wei-sde-liang-ge-shu-zi-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/he-wei-sde-liang-ge-shu-zi-lcof/</guid><description>剑指 Offer 57 和为s的两个数字 输入一个递增排序的数组和一个数字s，在数组中查找两个数，使得它们的和正好是s。如果有多对数字的和等于s，则输出任意一对即可。
+&amp;nbsp;
+示例 1：
+输入：nums = [2,7,11,15], target = 9 输出：[2,7] 或者 [7,2] 示例 2：
+输入：nums = [10,26,30,31,47,60], target = 40 输出：[10,30] 或者 [30,10] &amp;nbsp;
+限制：
+1 &amp;lt;= nums.length &amp;lt;= 10^5 1 &amp;lt;= nums[i]&amp;nbsp;&amp;lt;= 10^6 func twoSum(nums []int, target int) []int { } LeetCode题库地址 https://leetcode.cn/problems/he-wei-sde-liang-ge-shu-zi-lcof</description></item><item><title>剑指 Offer 57 - II 和为s的连续正数序列</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/he-wei-sde-lian-xu-zheng-shu-xu-lie-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/he-wei-sde-lian-xu-zheng-shu-xu-lie-lcof/</guid><description>剑指 Offer 57 - II 和为s的连续正数序列 输入一个正整数 target ，输出所有和为 target 的连续正整数序列（至少含有两个数）。
+序列内的数字由小到大排列，不同序列按照首个数字从小到大排列。
+&amp;nbsp;
+示例 1：
+输入：target = 9 输出：[[2,3,4],[4,5]] 示例 2：
+输入：target = 15 输出：[[1,2,3,4,5],[4,5,6],[7,8]] &amp;nbsp;
+限制：
+1 &amp;lt;= target &amp;lt;= 10^5 &amp;nbsp;
+func findContinuousSequence(target int) [][]int { } LeetCode题库地址 https://leetcode.cn/problems/he-wei-sde-lian-xu-zheng-shu-xu-lie-lcof</description></item><item><title>剑指 Offer 58 - I 翻转单词顺序</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/fan-zhuan-dan-ci-shun-xu-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/fan-zhuan-dan-ci-shun-xu-lcof/</guid><description>剑指 Offer 58 - I 翻转单词顺序 输入一个英文句子，翻转句子中单词的顺序，但单词内字符的顺序不变。为简单起见，标点符号和普通字母一样处理。例如输入字符串&amp;quot;I am a student. &amp;quot;，则输出&amp;quot;student. a am I&amp;quot;。
+&amp;nbsp;
+示例 1：
+输入: &amp;quot;the sky is blue&amp;quot; 输出:&amp;nbsp;&amp;quot;blue is sky the&amp;quot; 示例 2：
+输入: &amp;quot; &amp;nbsp;hello world! &amp;nbsp;&amp;quot; 输出:&amp;nbsp;&amp;quot;world! hello&amp;quot; 解释: 输入字符串可以在前面或者后面包含多余的空格，但是反转后的字符不能包括。 示例 3：
+输入: &amp;quot;a good &amp;nbsp; example&amp;quot; 输出:&amp;nbsp;&amp;quot;example good a&amp;quot; 解释: 如果两个单词间有多余的空格，将反转后单词间的空格减少到只含一个。 &amp;nbsp;
+说明：
+无空格字符构成一个单词。 输入字符串可以在前面或者后面包含多余的空格，但是反转后的字符不能包括。 如果两个单词间有多余的空格，将反转后单词间的空格减少到只含一个。 注意：本题与主站 151 题相同：https://leetcode-cn.com/problems/reverse-words-in-a-string/
+注意：此题对比原题有改动
+func reverseWords(s string) string { } LeetCode题库地址 https://leetcode.cn/problems/fan-zhuan-dan-ci-shun-xu-lcof</description></item><item><title>剑指 Offer 58 - II 左旋转字符串</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/zuo-xuan-zhuan-zi-fu-chuan-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/zuo-xuan-zhuan-zi-fu-chuan-lcof/</guid><description>剑指 Offer 58 - II 左旋转字符串 字符串的左旋转操作是把字符串前面的若干个字符转移到字符串的尾部。请定义一个函数实现字符串左旋转操作的功能。比如，输入字符串&amp;quot;abcdefg&amp;quot;和数字2，该函数将返回左旋转两位得到的结果&amp;quot;cdefgab&amp;quot;。
+&amp;nbsp;
+示例 1：
+输入: s = &amp;quot;abcdefg&amp;quot;, k = 2 输出:&amp;nbsp;&amp;quot;cdefgab&amp;quot; 示例 2：
+输入: s = &amp;quot;lrloseumgh&amp;quot;, k = 6 输出:&amp;nbsp;&amp;quot;umghlrlose&amp;quot; &amp;nbsp;
+限制：
+1 &amp;lt;= k &amp;lt; s.length &amp;lt;= 10000 func reverseLeftWords(s string, n int) string { } LeetCode题库地址 https://leetcode.cn/problems/zuo-xuan-zhuan-zi-fu-chuan-lcof</description></item><item><title>面试题 16.06 最小差</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/smallest-difference-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/smallest-difference-lcci/</guid><description>面试题 16.06 最小差 给定两个整数数组a和b，计算具有最小差绝对值的一对数值（每个数组中取一个值），并返回该对数值的差
+示例：
+输入：{1, 3, 15, 11, 2}, {23, 127, 235, 19, 8} 输出：3，即数值对(11, 8) 提示：
+1 &lt;= a.length, b.length &lt;= 100000 -2147483648 &lt;= a[i], b[i] &lt;= 2147483647 正确结果在区间 [0, 2147483647] 内 func smallestDifference(a []int, b []int) int { } LeetCode题库地址 https://leetcode.cn/problems/smallest-difference-lcci</description></item><item><title>面试题 16.16 部分排序</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/sub-sort-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/sub-sort-lcci/</guid><description>面试题 16.16 部分排序 给定一个整数数组，编写一个函数，找出索引m和n，只要将索引区间[m,n]的元素排好序，整个数组就是有序的。注意：n-m尽量最小，也就是说，找出符合条件的最短序列。函数返回值为[m,n]，若不存在这样的m和n（例如整个数组是有序的），请返回[-1,-1]。
+示例：
+输入： [1,2,4,7,10,11,7,12,6,7,16,18,19] 输出： [3,9] 提示：
+0 &lt;= len(array) &lt;= 1000000 func subSort(array []int) []int { } LeetCode题库地址 https://leetcode.cn/problems/sub-sort-lcci</description></item><item><title>剑指 Offer II 077 链表排序</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/7whec2/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/7whec2/</guid><description>剑指 Offer II 077 链表排序 给定链表的头结点&amp;nbsp;head&amp;nbsp;，请将其按 升序 排列并返回 排序后的链表 。
+&amp;nbsp;
+示例 1：
+输入：head = [4,2,1,3] 输出：[1,2,3,4] 示例 2：
+输入：head = [-1,5,3,4,0] 输出：[-1,0,3,4,5] 示例 3：
+输入：head = [] 输出：[] &amp;nbsp;
+提示：
+链表中节点的数目在范围&amp;nbsp;[0, 5 * 104]&amp;nbsp;内 -105&amp;nbsp;&amp;lt;= Node.val &amp;lt;= 105 &amp;nbsp;
+进阶：你可以在&amp;nbsp;O(n&amp;nbsp;log&amp;nbsp;n) 时间复杂度和常数级空间复杂度下，对链表进行排序吗？
+&amp;nbsp;
+注意：本题与主站 148&amp;nbsp;题相同：https://leetcode-cn.com/problems/sort-list/
+/** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func sortList(head *ListNode) *ListNode { } LeetCode题库地址 https://leetcode.cn/problems/7WHec2</description></item><item><title>面试题 16.24 数对和</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/pairs-with-sum-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/pairs-with-sum-lcci/</guid><description>面试题 16.24 数对和 设计一个算法，找出数组中两数之和为指定值的所有整数对。一个数只能属于一个数对。
+示例 1:
+输入: nums = [5,6,5], target = 11 输出: [[5,6]] 示例 2:
+输入: nums = [5,6,5,6], target = 11 输出: [[5,6],[5,6]] 提示：
+nums.length &amp;lt;= 100000 func pairSums(nums []int, target int) [][]int { } LeetCode题库地址 https://leetcode.cn/problems/pairs-with-sum-lcci</description></item><item><title>面试题 17.20 连续中值</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/continuous-median-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/continuous-median-lcci/</guid><description>面试题 17.20 连续中值 随机产生数字并传递给一个方法。你能否完成这个方法，在每次产生新值时，寻找当前所有值的中间值（中位数）并保存。
+中位数是有序列表中间的数。如果列表长度是偶数，中位数则是中间两个数的平均值。
+例如，
+[2,3,4]&amp;nbsp;的中位数是 3
+[2,3] 的中位数是 (2 + 3) / 2 = 2.5
+设计一个支持以下两种操作的数据结构：
+void addNum(int num) - 从数据流中添加一个整数到数据结构中。 double findMedian() - 返回目前所有元素的中位数。 示例：
+addNum(1) addNum(2) findMedian() -&amp;gt; 1.5 addNum(3) findMedian() -&amp;gt; 2 type MedianFinder struct { } /** initialize your data structure here. */ func Constructor() MedianFinder { } func (this *MedianFinder) AddNum(num int) { } func (this *MedianFinder) FindMedian() float64 { } /** * Your MedianFinder object will be instantiated and called as such: * obj := Constructor(); * obj.</description></item><item><title>面试题 17.21 直方图的水量</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/volume-of-histogram-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/volume-of-histogram-lcci/</guid><description>面试题 17.21 直方图的水量 给定一个直方图(也称柱状图)，假设有人从上面源源不断地倒水，最后直方图能存多少水量?直方图的宽度为 1。
+上面是由数组 [0,1,0,2,1,0,1,3,2,1,2,1] 表示的直方图，在这种情况下，可以接 6 个单位的水（蓝色部分表示水）。&amp;nbsp;感谢 Marcos 贡献此图。
+示例:
+输入: [0,1,0,2,1,0,1,3,2,1,2,1] 输出: 6 func trap(height []int) int { } LeetCode题库地址 https://leetcode.cn/problems/volume-of-histogram-lcci</description></item><item><title>【2023-01-16每日一题】1813. 句子相似性 III[Medium]</title><link>/study/leetcode/sentence-similarity-iii/</link><pubDate>Mon, 16 Jan 2023 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/sentence-similarity-iii/</guid><description>2023-01-16每日一题：1813. 句子相似性 III 难度：Medium
+标签：数组 、 双指针 、 字符串
+一个句子是由一些单词与它们之间的单个空格组成，且句子的开头和结尾没有多余空格。比方说，"Hello World" ，"HELLO" ，"hello world hello world" 都是句子。每个单词都 只 包含大写和小写英文字母。
+如果两个句子 sentence1 和 sentence2 ，可以通过往其中一个句子插入一个任意的句子（可以是空句子）而得到另一个句子，那么我们称这两个句子是 相似的 。比方说，sentence1 = "Hello my name is Jane" 且 sentence2 = "Hello Jane" ，我们可以往 sentence2 中 "Hello" 和 "Jane" 之间插入 "my name is" 得到 sentence1 。
+给你两个句子 sentence1 和 sentence2 ，如果 sentence1 和 sentence2 是相似的，请你返回 true ，否则返回 false 。
+示例 1：
+输入：sentence1 = "My name is Haley", sentence2 = "My Haley" 输出：true 解释：可以往 sentence2 中 "</description></item><item><title>【2022-12-28每日一题】1750. 删除字符串两端相同字符后的最短长度[Medium]</title><link>/study/leetcode/minimum-length-of-string-after-deleting-similar-ends/</link><pubDate>Wed, 28 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/minimum-length-of-string-after-deleting-similar-ends/</guid><description>2022-12-28每日一题：1750. 删除字符串两端相同字符后的最短长度 难度：Medium
+标签：双指针 、 字符串
+给你一个只包含字符 'a'，'b' 和 'c' 的字符串 s ，你可以执行下面这个操作（5 个步骤）任意次：
+选择字符串 s 一个 非空 的前缀，这个前缀的所有字符都相同。 选择字符串 s 一个 非空 的后缀，这个后缀的所有字符都相同。 前缀和后缀在字符串中任意位置都不能有交集。 前缀和后缀包含的所有字符都要相同。 同时删除前缀和后缀。 请你返回对字符串 s 执行上面操作任意次以后（可能 0 次），能得到的 最短长度 。
+示例 1：
+输入：s = "ca" 输出：2 解释：你没法删除任何一个字符，所以字符串长度仍然保持不变。 示例 2：
+输入：s = "cabaabac" 输出：0 解释：最优操作序列为： - 选择前缀 "c" 和后缀 "c" 并删除它们，得到 s = "abaaba" 。 - 选择前缀 "a" 和后缀 "a" 并删除它们，得到 s = "baab" 。 - 选择前缀 "b" 和后缀 "b" 并删除它们，得到 s = "</description></item><item><title>【2022-12-24每日一题】1754. 构造字典序最大的合并字符串[Medium]</title><link>/study/leetcode/largest-merge-of-two-strings/</link><pubDate>Sat, 24 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/largest-merge-of-two-strings/</guid><description>2022-12-24每日一题：1754. 构造字典序最大的合并字符串 难度：Medium
+标签：贪心 、 双指针 、 字符串
+给你两个字符串 word1 和 word2 。你需要按下述方式构造一个新字符串 merge ：如果 word1 或 word2 非空，选择 下面选项之一 继续操作：
+如果 word1 非空，将 word1 中的第一个字符附加到 merge 的末尾，并将其从 word1 中移除。 &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;例如，&amp;lt;code&amp;gt;word1 = &amp;quot;abc&amp;quot; &amp;lt;/code&amp;gt;且 &amp;lt;code&amp;gt;merge = &amp;quot;dv&amp;quot;&amp;lt;/code&amp;gt; ，在执行此选项操作之后，&amp;lt;code&amp;gt;word1 = &amp;quot;bc&amp;quot;&amp;lt;/code&amp;gt; ，同时 &amp;lt;code&amp;gt;merge = &amp;quot;dva&amp;quot;&amp;lt;/code&amp;gt; 。&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;如果 &amp;lt;code&amp;gt;word2&amp;lt;/code&amp;gt; 非空，将 &amp;lt;code&amp;gt;word2&amp;lt;/code&amp;gt; 中的第一个字符附加到 &amp;lt;code&amp;gt;merge&amp;lt;/code&amp;gt; 的末尾，并将其从 &amp;lt;code&amp;gt;word2&amp;lt;/code&amp;gt; 中移除。 &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;例如，&amp;lt;code&amp;gt;word2 = &amp;quot;abc&amp;quot; &amp;lt;/code&amp;gt;且 &amp;lt;code&amp;gt;merge = &amp;quot;&amp;quot;&amp;lt;/code&amp;gt; ，在执行此选项操作之后，&amp;lt;code&amp;gt;word2 = &amp;quot;bc&amp;quot;&amp;lt;/code&amp;gt; ，同时 &amp;lt;code&amp;gt;merge = &amp;quot;a&amp;quot;&amp;lt;/code&amp;gt; 。&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;/li&amp;gt; 返回你可以构造的字典序 最大 的合并字符串 merge 。</description></item><item><title>【2022-11-25每日一题】809. 情感丰富的文字[Medium]</title><link>/study/leetcode/expressive-words/</link><pubDate>Fri, 25 Nov 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/expressive-words/</guid><description>2022-11-25每日一题：809. 情感丰富的文字 难度：Medium
+标签：数组 、 双指针 、 字符串
+有时候人们会用重复写一些字母来表示额外的感受，比如 "hello" -&amp;gt; "heeellooo", "hi" -&amp;gt; "hiii"。我们将相邻字母都相同的一串字符定义为相同字母组，例如："h", "eee", "ll", "ooo"。
+对于一个给定的字符串 S ，如果另一个单词能够通过将一些字母组扩张从而使其和 S 相同，我们将这个单词定义为可扩张的（stretchy）。扩张操作定义如下：选择一个字母组（包含字母&amp;nbsp;c&amp;nbsp;），然后往其中添加相同的字母&amp;nbsp;c&amp;nbsp;使其长度达到 3 或以上。
+例如，以&amp;nbsp;"hello" 为例，我们可以对字母组&amp;nbsp;"o" 扩张得到 "hellooo"，但是无法以同样的方法得到 "helloo" 因为字母组 "oo" 长度小于&amp;nbsp;3。此外，我们可以进行另一种扩张 "ll" -&amp;gt; "lllll" 以获得&amp;nbsp;"helllllooo"。如果&amp;nbsp;s = "helllllooo"，那么查询词&amp;nbsp;"hello" 是可扩张的，因为可以对它执行这两种扩张操作使得&amp;nbsp;query = "hello" -&amp;gt; "hellooo" -&amp;gt;&amp;nbsp;"helllllooo" = s。
+输入一组查询单词，输出其中可扩张的单词数量。
+&amp;nbsp;
+示例：
+输入： s = "heeellooo" words = ["hello", "hi", "helo"] 输出：1 解释： 我们能通过扩张 "hello" 的 "e" 和 "o" 来得到 "heeellooo"。 我们不能通过扩张 "helo" 来得到 "heeellooo" 因为 "ll" 的长度小于 3 。 &amp;nbsp;</description></item><item><title>【2022-11-24每日一题】795. 区间子数组个数[Medium]</title><link>/study/leetcode/number-of-subarrays-with-bounded-maximum/</link><pubDate>Thu, 24 Nov 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/number-of-subarrays-with-bounded-maximum/</guid><description>2022-11-24每日一题：795. 区间子数组个数 难度：Medium
+标签：数组 、 双指针
+给你一个整数数组 nums 和两个整数：left 及 right 。找出 nums 中连续、非空且其中最大元素在范围&amp;nbsp;[left, right] 内的子数组，并返回满足条件的子数组的个数。
+生成的测试用例保证结果符合 32-bit 整数范围。
+&amp;nbsp;
+示例 1：
+输入：nums = [2,1,4,3], left = 2, right = 3 输出：3 解释：满足条件的三个子数组：[2], [2, 1], [3] 示例 2：
+输入：nums = [2,9,2,5,6], left = 2, right = 8 输出：7 &amp;nbsp;
+提示：
+1 &amp;lt;= nums.length &amp;lt;= 105 0 &amp;lt;= nums[i] &amp;lt;= 109 0 &amp;lt;= left &amp;lt;= right &amp;lt;= 109 方法一：一次遍历 推荐解释1-官方 推荐测试2-灵茶山艾府 // 写法一 func numSubarrayBoundedMax(nums []int, left int, right int) (cnt int) { last1, last2 := -1, -1 for i, x := range nums { if left &amp;lt;= x &amp;amp;&amp;amp; x &amp;lt;= right { last1 = i } else x &amp;gt; right { last1, last2 = -1, i } if last1 !</description></item><item><title>【2022-10-31每日一题】481. 神奇字符串[Medium]</title><link>/study/leetcode/magical-string/</link><pubDate>Mon, 31 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/magical-string/</guid><description>2022-10-31每日一题：481. 神奇字符串 难度：Medium
+标签：双指针 、 字符串
+神奇字符串 s 仅由 '1' 和 '2' 组成，并需要遵守下面的规则：
+神奇字符串 s 的神奇之处在于，串联字符串中 '1' 和 '2' 的连续出现次数可以生成该字符串。 s 的前几个元素是 s = "1221121221221121122……" 。如果将 s 中连续的若干 1 和 2 进行分组，可以得到 "1 22 11 2 1 22 1 22 11 2 11 22 ......" 。每组中 1 或者 2 的出现次数分别是 "1 2 2 1 1 2 1 2 2 1 2 2 ......" 。上面的出现次数正是 s 自身。
+给你一个整数 n ，返回在神奇字符串 s 的前 n 个数字中 1 的数目。</description></item><item><title>【2022-10-23每日一题】1768. 交替合并字符串[Easy]</title><link>/study/leetcode/merge-strings-alternately/</link><pubDate>Sun, 23 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/merge-strings-alternately/</guid><description>2022-10-23每日一题：1768. 交替合并字符串 难度：Easy
+标签：双指针 、 字符串
+给你两个字符串 word1 和 word2 。请你从 word1 开始，通过交替添加字母来合并字符串。如果一个字符串比另一个字符串长，就将多出来的字母追加到合并后字符串的末尾。
+返回 合并后的字符串 。
+示例 1：
+输入：word1 = "abc", word2 = "pqr" 输出："apbqcr" 解释：字符串合并情况如下所示： word1： a b c word2： p q r 合并后： a p b q c r 示例 2：
+输入：word1 = "ab", word2 = "pqrs" 输出："apbqrs" 解释：注意，word2 比 word1 长，"rs" 需要追加到合并后字符串的末尾。 word1： a b word2： p q r s 合并后： a p b q r s 示例 3：
+输入：word1 = "abcd", word2 = "</description></item><item><title>【2022-10-08每日一题】870. 优势洗牌[Medium]</title><link>/study/leetcode/advantage-shuffle/</link><pubDate>Sat, 08 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/advantage-shuffle/</guid><description>2022-10-08每日一题：870. 优势洗牌 难度：Medium
+标签：贪心 、 数组 、 双指针 、 排序
+给定两个大小相等的数组&amp;nbsp;nums1&amp;nbsp;和&amp;nbsp;nums2，nums1&amp;nbsp;相对于 nums&amp;nbsp;的优势可以用满足&amp;nbsp;nums1[i] &amp;gt; nums2[i]&amp;nbsp;的索引 i&amp;nbsp;的数目来描述。
+返回 nums1&amp;nbsp;的任意排列，使其相对于 nums2&amp;nbsp;的优势最大化。
+&amp;nbsp;
+示例 1：
+输入：nums1 = [2,7,11,15], nums2 = [1,10,4,11] 输出：[2,11,7,15] 示例 2：
+输入：nums1 = [12,24,8,32], nums2 = [13,25,32,11] 输出：[24,32,8,12] &amp;nbsp;
+提示：
+1 &amp;lt;= nums1.length &amp;lt;= 105 nums2.length == nums1.length 0 &amp;lt;= nums1[i], nums2[i] &amp;lt;= 109 方法一：排序+贪心算法 详细思路过程见官方题解，这里只做个人刷题记录，方便后续查询阅读
+func advantageCount(nums1 []int, nums2 []int) []int { // 构造索引数组 n := len(nums1) idx1 := make([]int, n) idx2 := make([]int, n) for i := 1; i &amp;lt; n; i++ { idx1[i] = i idx2[i] = i } // 对索引数组升序排序，比较巧妙 sort.</description></item><item><title>【2022-10-02每日一题】777. 在LR字符串中交换相邻字符[Medium]</title><link>/study/leetcode/swap-adjacent-in-lr-string/</link><pubDate>Sun, 02 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/swap-adjacent-in-lr-string/</guid><description>2022-10-02每日一题：777. 在LR字符串中交换相邻字符 难度：Medium
+标签：双指针 、 字符串
+在一个由 &amp;#39;L&amp;#39; , &amp;#39;R&amp;#39; 和 &amp;#39;X&amp;#39; 三个字符组成的字符串（例如&amp;quot;RXXLRXRXL&amp;quot;）中进行移动操作。一次移动操作指用一个&amp;quot;LX&amp;quot;替换一个&amp;quot;XL&amp;quot;，或者用一个&amp;quot;XR&amp;quot;替换一个&amp;quot;RX&amp;quot;。现给定起始字符串start和结束字符串end，请编写代码，当且仅当存在一系列移动操作使得start可以转换成end时， 返回True。
+&amp;nbsp;
+示例 :
+输入: start = &amp;quot;RXXLRXRXL&amp;quot;, end = &amp;quot;XRLXXRRLX&amp;quot; 输出: True 解释: 我们可以通过以下几步将start转换成end: RXXLRXRXL -&amp;gt; XRXLRXRXL -&amp;gt; XRLXRXRXL -&amp;gt; XRLXXRRXL -&amp;gt; XRLXXRRLX &amp;nbsp;
+提示：
+1 &amp;lt;= len(start) = len(end) &amp;lt;= 10000。 start和end中的字符串仅限于&amp;#39;L&amp;#39;, &amp;#39;R&amp;#39;和&amp;#39;X&amp;#39;。 方法一： 详细思路过程见官方题解，这里只做个人刷题记录，方便后续查询阅读
+每次移动操作将 “XL&amp;quot; 替换成 “LX&amp;quot;，或将 “RX&amp;quot; 替换成“XR&amp;quot;，等价于如下操作：
+如果一个字符 ‘L’ 左侧的相邻字符是 ‘X’，则将字符 ‘L’ 向左移动一位，将其左侧的 ‘X’ 向右移动一位；
+如果一个字符 ‘R’ 右侧的相邻字符是 ‘X’，则将字符 ‘R’ 向右移动一位，将其右侧的 ‘X’ 向左移动一位。
+// 写法一 func canTransform(start, end string) bool { i, j, n := 0, 0, len(start) for i &amp;lt; n &amp;amp;&amp;amp; j &amp;lt; n { for i &amp;lt; n &amp;amp;&amp;amp; start[i] == 'X' { i++ } for j &amp;lt; n &amp;amp;&amp;amp; end[j] == 'X' { j++ } if i &amp;lt; n &amp;amp;&amp;amp; j &amp;lt; n { if start[i] !</description></item><item><title>【2022-08-25每日一题】658. 找到 K 个最接近的元素</title><link>/study/leetcode/find-k-closest-elements/</link><pubDate>Thu, 25 Aug 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/find-k-closest-elements/</guid><description>2022-08-25每日一题：658. 找到 K 个最接近的元素 难度：Medium 标签：数组 、 双指针 、 二分查找 、 排序 、 堆（优先队列） 给定一个 排序好 的数组&amp;nbsp;arr ，两个整数 k 和 x ，从数组中找到最靠近 x（两数之差最小）的 k 个数。返回的结果必须要是按升序排好的。
+整数 a 比整数 b 更接近 x 需要满足：
+|a - x| &amp;lt; |b - x| 或者 |a - x| == |b - x| 且 a &amp;lt; b &amp;nbsp;
+示例 1：
+输入：arr = [1,2,3,4,5], k = 4, x = 3 输出：[1,2,3,4] 示例 2：
+输入：arr = [1,2,3,4,5], k = 4, x = -1 输出：[1,2,3,4] &amp;nbsp;</description></item></channel></rss>

@@ -1,0 +1,845 @@
+<!doctype html><html lang=zh dir=ltr><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>第4周 DFS、BFS、贪心、二分查找 | Go 算法练习 | lbbniu</title>
+<meta name=generator content="Hugo Eureka 0.9.3"><link rel=stylesheet href=/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css><script defer src=/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js></script><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" as=style onload='this.onload=null,this.rel="stylesheet"'><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/github.min.css media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/php.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/java.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/go.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/python.min.js crossorigin></script><link rel=stylesheet href=/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css media=print onload='this.media="all",this.onload=null'><script defer type=text/javascript src=/js/fontawesome.min.35973bea57658ef0dd22ad59ea4642b6c8c67af62bed8659ac326d284ef285a6657cdbcf57d3b2910e7e992f2b20426e.js></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css integrity=sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js integrity=sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY crossorigin></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script><script defer src=https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js integrity=sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0 crossorigin></script><link rel=icon type=image/png sizes=32x32 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_32x32_fill_box_center_3.png><link rel=apple-touch-icon sizes=180x180 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_180x180_fill_box_center_3.png><meta name=description content="第9课 | 深度优先搜索和广度优先搜索、第10课 | 贪心算法、第11课 | 二分查找"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"算法学习","item":"/study/"},{"@type":"ListItem","position":2,"name":"极客时间算法训练营2020版","item":"/study/algorithm/"},{"@type":"ListItem","position":3,"name":"Go 算法练习","item":"/study/algorithm/go/"},{"@type":"ListItem","position":4,"name":"第4周 DFS、BFS、贪心、二分查找","item":"/study/algorithm/go/week04/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/study/algorithm/go/week04/"},"headline":"第4周 DFS、BFS、贪心、二分查找 | Go 算法练习 | lbbniu","datePublished":"2021-12-20T22:42:54+08:00","dateModified":"2023-11-23T18:27:23+08:00","wordCount":3145,"publisher":{"@type":"Person","name":"lbbniu","logo":{"@type":"ImageObject","url":"/images/icon.gif"}},"description":"第9课 | 深度优先搜索和广度优先搜索、第10课 | 贪心算法、第11课 | 二分查找"}</script><meta property="og:title" content="第4周 DFS、BFS、贪心、二分查找 | Go 算法练习 | lbbniu"><meta property="og:type" content="article"><meta property="og:image" content="/images/icon.png"><meta property="og:url" content="/study/algorithm/go/week04/"><meta property="og:description" content="第9课 | 深度优先搜索和广度优先搜索、第10课 | 贪心算法、第11课 | 二分查找"><meta property="og:locale" content="zh"><meta property="og:site_name" content="lbbniu"><meta property="article:published_time" content="2021-12-20T22:42:54+08:00"><meta property="article:modified_time" content="2023-11-23T18:27:23+08:00"><meta property="article:section" content="study"><body class="flex min-h-screen flex-col"><header class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"><div class="mx-auto w-full max-w-screen-xl"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=="Auto"||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName("html")[0].classList.add("dark")</script><nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0"><a href=/ class="me-6 text-primary-text text-xl font-bold">lbbniu</a>
+<button id=navbar-btn class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+<i class="fas fa-bars"></i></button><div id=target class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20"><div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0"><a href=/post/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">文章</a>
+<a href=/cloud-native/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">云原生</a>
+<a href=/study/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 selected-menu-item me-4">算法学习</a>
+<a href=/docs/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">Go学习训练营</a>
+<a href=/tags/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">标签</a></div><div class=flex><div class="relative pt-4 md:pt-0"><div class="cursor-pointer hover:text-eureka" id=lightDarkMode><i class="fas fa-adjust"></i></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id=is-open></div><div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40" id=lightDarkOptions><span class="px-4 py-1 hover:text-eureka" name=Light>浅色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Dark>深色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Auto>自动</span></div></div></div></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id=is-open-mobile></div></nav><script>let element=document.getElementById("lightDarkMode");storageColorScheme==null||storageColorScheme=="Auto"?document.addEventListener("DOMContentLoaded",()=>{window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",switchDarkMode)}):storageColorScheme=="Light"?(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","sun"),element.firstElementChild.classList.add("fa-sun")):storageColorScheme=="Dark"&&(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","moon"),element.firstElementChild.classList.add("fa-moon")),document.addEventListener("DOMContentLoaded",()=>{getcolorscheme(),switchBurger()})</script></div></header><main class="grow pt-16"><div class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8"><div class=lg:pt-12><div class="flex flex-col md:flex-row bg-secondary-bg rounded"><div class="md:w-1/4 lg:w-1/5 border-e"><div class="sticky top-16 pt-6"><div id=sidebar-title class="md:hidden mx-4 px-2 pt-4 pb-2 md:border-b text-tertiary-text md:text-primary-text"><span class=font-semibold>目录</span>
+<i class='fas fa-caret-right ms-1'></i></div><div id=sidebar-toc class="hidden md:block overflow-y-auto mx-6 md:mx-0 pe-6 pt-2 md:max-h-doc-sidebar bg-primary-bg md:bg-transparent"><div class="flex flex-wrap ms-4 -me-2 p-2 bg-secondary-bg md:bg-primary-bg rounded"><a class=hover:text-eureka href=/study/algorithm/go/>Go 算法练习</a></div><ul class=ps-6><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week00/>预习</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week01/>第1周 数组、链表、跳表</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week02/>第2周 栈、队列、哈希表</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week03/>第3周 树、递归、分治、回溯</a></div></li><li class=py-2><div><a class="text-eureka hover:text-eureka" href=/study/algorithm/go/week04/>第4周 DFS、BFS、贪心、二分查找</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week05/>第5周 期中考试</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week06/>第6周 动态规划</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week07/>第7周 字典树和并查集、高级搜索、红黑树和AVL树</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week08/>第8周 位运算、布隆过滤器和LRU缓存、排序算法</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week09/>第9周 高级动态规划、字符串算法</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week10/>第10周 期末串讲、期末考试、毕业刷题路线</a></div></li></ul></div></div></div><div class="w-full md:w-3/4 lg:w-4/5 pb-8 pt-2 md:pt-8"><div class=flex><div class="w-full lg:w-3/4 px-6"><article class=prose><h1 class=mb-4>第4周 DFS、BFS、贪心、二分查找</h1><div class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"><div class="me-6 my-2"><i class="fas fa-calendar me-1"></i>
+<span>2021-12-20</span></div><div class="me-6 my-2"><i class="fas fa-clock me-1"></i>
+<span>15分钟阅读时长</span></div></div><p>题目数量：20</p><h2 id=第9课--深度优先搜索和广度优先搜索>第9课 | 深度优先搜索和广度优先搜索</h2><h3 id=1-深度优先搜索广度优先搜索的实现和特性>1. 深度优先搜索、广度优先搜索的实现和特性</h3><h4 id=参考链接>参考链接</h4><ul><li><a href=http://shimo.im/docs/ddgwCccJQKxkrcTq target=_blank rel=noopener>DFS 代码模板（递归写法、非递归写法）</a></li><li><a href=http://shimo.im/docs/P8TqKHGKt3ytkYYd target=_blank rel=noopener>BFS 代码模板</a></li></ul><h3 id=2-实战题目解析二叉树的层次遍历等问题>2. 实战题目解析：二叉树的层次遍历等问题</h3><h4 id=实战题目>实战题目</h4><ul><li><a href=https://leetcode-cn.com/problems/binary-tree-level-order-traversal/ target=_blank rel=noopener>102. 二叉树的层序遍历</a></li></ul><pre><code class=language-go>/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+// bfs
+func levelOrder(root *TreeNode) (res [][]int) {
+    if root == nil {
+        return nil
+    }
+    queue := []*TreeNode{root}
+    for len(queue) &gt; 0 {
+        level := []int{}
+        for size := len(queue); size &gt; 0; size-- {
+            node := queue[0]
+            queue = queue[1:]
+            level = append(level, node.Val)
+            if node.Left != nil {
+                queue = append(queue, node.Left)
+            }
+            if node.Right != nil {
+                queue = append(queue, node.Right)
+            }
+        }
+        res = append(res, level)
+    }
+    return res
+}
+// dfs
+func levelOrder(root *TreeNode) (res [][]int) {
+    if root == nil {
+        return nil
+    }
+    var dfs func(level int, root *TreeNode)
+    dfs = func(level int, root *TreeNode) {
+        if root == nil {
+            return
+        }
+        if len(res) &lt; level {
+            res = append(res, []int{})
+        }
+        res[level - 1] = append(res[level - 1], root.Val)
+        dfs(level + 1, root.Left)
+        dfs(level + 1, root.Right)
+    }
+    dfs(1, root)
+    return res
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/minimum-genetic-mutation/ target=_blank rel=noopener>433. 最小基因变化</a></li></ul><pre><code class=language-go>// bfs
+func minMutation(start string, end string, bank []string) (ans int) {
+    mp := map[string]bool{}
+    for _, b := range bank {
+        mp[b] = true
+    }
+    if !mp[end] || len(start) != len(end){
+        return -1
+    }
+    ws := []byte{'A', 'C', 'G', 'T'}
+    used := map[string]bool{}
+    queue := []string{start}
+    used[start] = true
+    n := len(start)
+    for len(queue) &gt; 0 {
+        for size := len(queue); size &gt; 0; size-- {
+            w := queue[0]
+            if w == end {
+                return ans
+            }
+            queue = queue[1:]
+            b := []byte(w)
+            for i := 0; i &lt; n; i++ {
+                o := b[i]
+                for _, c := range ws {
+                    b[i] = c
+                    if used[string(b)] {
+                        continue
+                    }
+                    if mp[string(b)] {
+                        queue = append(queue, string(b))
+                        used[string(b)] = true
+                    }
+                }
+                b[i] = o
+            }
+        }
+        ans++
+    }
+    return -1
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/generate-parentheses/ target=_blank rel=noopener>22. 括号生成</a>
+重点</li></ul><pre><code class=language-go>// dfs，还有其他写法
+func generateParenthesis(n int) (res []string) {
+    var generate func(int, int, string)
+    generate = func(left, right int, path string) {
+        if left == n &amp;&amp; right == n {
+            res = append(res, path)
+            return
+        }
+        if left &lt; n {
+            generate(left + 1, right, path + &quot;(&quot;)
+        }
+        if right &lt; left {
+            generate(left, right + 1, path + &quot;)&quot;)
+        }
+    }
+    generate(0, 0, &quot;&quot;)
+    return res
+}
+// bfs
+// 其他写参考官方
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/find-largest-value-in-each-tree-row/ target=_blank rel=noopener>515. 在每个树行中找最大值</a></li></ul><pre><code class=language-go>/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+// bfs
+func largestValues(root *TreeNode) (res []int) {
+    if root == nil {
+        return res
+    }
+    queue := []*TreeNode{root}
+    for len(queue) &gt; 0 {
+        max := math.MinInt32
+        for size := len(queue); size &gt; 0; size-- {
+            node := queue[0]
+            queue = queue[1:]
+            if max &lt; node.Val {
+                max = node.Val
+            }
+            if node.Left != nil {
+                queue = append(queue, node.Left)
+            }
+            if node.Right != nil {
+                queue = append(queue, node.Right)
+            }
+        }
+        res = append(res, max)
+    }
+    return res
+}
+// dfs
+</code></pre><h4 id=课后作业>课后作业</h4><ul><li><a href=https://leetcode-cn.com/problems/word-ladder/ target=_blank rel=noopener>127. 单词接龙</a></li></ul><pre><code class=language-go>// 单bfs
+func ladderLength(beginWord string, endWord string, wordList []string) int {
+    mp := map[string]struct{}{}
+    for _, word := range wordList {
+        mp[word] = struct{}{}
+    }
+    mp[beginWord] = struct{}{}
+    if _, ok := mp[endWord]; !ok {
+        return 0
+    }
+    cnt := 0
+    queue := []string{beginWord}
+    visited := map[string]struct{}{}
+    visited[beginWord] = struct{}{}
+    wordLen := len(beginWord)
+    for len(queue) &gt; 0 {
+        cnt++
+        for size := len(queue); size &gt; 0; size-- {
+            w := queue[0]
+            queue = queue[1:]
+            s := []byte(w)
+            // for i, b := range s {
+            for i := 0; i &lt; wordLen; i++ {
+                b := s[i]
+                for j := byte('a'); j &lt;= 'z'; j++ {
+                    if j == b {
+                        continue
+                    }
+                    s[i] = j
+                    nextWord := string(s)
+                    if _, ok := mp[nextWord]; !ok {
+                        continue
+                    }
+                    if nextWord == endWord {
+                        return cnt + 1
+                    }
+                    if _, ok := visited[nextWord]; !ok {
+                        queue = append(queue, nextWord)
+                        visited[nextWord] = struct{}{}
+                    }
+                }
+                s[i] = b
+            }
+        }
+    }
+    return 0
+}
+// 双向 bfs
+func ladderLength(beginWord string, endWord string, wordList []string) int {
+    mp := map[string]struct{}{}
+    for _, word := range wordList {
+        mp[word] = struct{}{}
+    }
+    mp[beginWord] = struct{}{}
+    if _, ok := mp[endWord]; !ok {
+        return 0
+    }
+    cnt := 0
+    beginMap := map[string]struct{}{}
+    beginMap[beginWord] = struct{}{}
+    endMap := map[string]struct{}{}
+    endMap[endWord] = struct{}{}
+    visited := map[string]struct{}{}
+    wordLen := len(beginWord)
+    for len(beginMap) &gt; 0 &amp;&amp; len(endMap) &gt; 0 {
+        cnt++
+        if len(beginMap) &gt; len(endMap) {
+            beginMap, endMap = endMap, beginMap
+        }
+        tmpMap := map[string]struct{}{}
+        for w, _ := range beginMap {
+            s := []byte(w)
+            for i := 0; i &lt; wordLen; i++ {
+                b := s[i]
+                for j := byte('a'); j &lt;= 'z'; j++ {
+                    if j == b {
+                        continue
+                    }
+                    s[i] = j
+                    nextWord := string(s)
+                    if _, ok := mp[nextWord]; !ok {
+                        continue
+                    }
+                    if _, ok := endMap[nextWord]; ok {
+                        return cnt + 1
+                    }
+                    if _, ok := visited[nextWord]; !ok {
+                        tmpMap[nextWord] = struct{}{}
+                        visited[nextWord] = struct{}{}
+                    }
+                }
+                s[i] = b
+            }
+        }
+        beginMap = tmpMap
+    }
+    return 0
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/word-ladder-ii/ target=_blank rel=noopener>126. 单词接龙 II</a></li></ul><pre><code class=language-go>// bfs
+func findLadders(beginWord string, endWord string, wordList []string) (res [][]string) {
+    mp := map[string]struct{}{}
+    for _, word := range wordList {
+        mp[word] = struct{}{}
+    }
+    if _, ok := mp[endWord]; !ok {
+        return res
+    }
+    from := map[string][]string{}
+    from[beginWord] = []string{}
+    steps := map[string]int{}
+    queue := []string{beginWord}
+    step := 0
+    var found bool
+    for len(queue) &gt; 0 {
+        step++
+        for size := len(queue); size &gt; 0; size-- {
+            curWord := queue[0]
+            queue = queue[1:]
+            s := []byte(curWord)
+            for i, b := range s {
+                for j := byte('a'); j &lt;= 'z'; j++ {
+                    s[i] = j
+                    nextWord := string(s)
+                    if steps[nextWord] == step {
+                        from[nextWord] = append(from[nextWord], curWord)
+                    }
+                    if _, ok := mp[nextWord]; !ok {
+                        continue
+                    }
+                    delete(mp, nextWord)
+                    queue = append(queue, nextWord)
+                    if _, ok := from[nextWord]; !ok {
+                        from[nextWord] = []string{}
+                    }
+                    from[nextWord] = append(from[nextWord], curWord)
+                    steps[nextWord] = step
+                    if nextWord == endWord {
+                        found = true
+                    }
+                }
+                s[i] = b
+            }
+        }
+        if found {
+            step++
+            break
+        }
+    }
+    path := make([]string, step)
+    path[step - 1] = endWord
+    var dfs func(string, int)
+    dfs = func(preWord string, idx int) {
+        if preWord == beginWord {
+            res = append(res, append([]string(nil), path...))
+            return
+        }
+        for _, pre := range from[preWord] {
+            path[idx - 1] = pre
+            dfs(pre, idx - 1)
+            path[idx - 1] = &quot;&quot;
+        }
+    }
+    dfs(endWord, step - 1)
+    return res
+}
+// 双向 bfs
+func findLadders(beginWord string, endWord string, wordList []string) (res [][]string) {
+    mp := map[string]struct{}{}
+    // 因为需要快速判断扩展出的单词是否在 wordList 里，因此需要将 wordList 存入哈希表，这里命名为「字典」
+    for _, word := range wordList {
+        mp[word] = struct{}{}
+    }
+    // 特殊用例判断
+    if _, ok := mp[endWord]; !ok {
+        return res
+    }
+    from := map[string][]string{}
+    // 第 1 步：广度优先遍历建图
+    // 记录扩展出的单词是在第几次扩展的时候得到的，key：单词，value：在广度优先遍历的第几层
+    steps1 := map[string]int{beginWord: 0}
+    steps2 := map[string]int{endWord: 0}
+    q1 := []string{beginWord}
+    q2 := []string{endWord}
+    step :=[2]int{}
+    found := false
+    update := func(q []string, steps1, steps2  map[string]int, flag int) []string {
+        step[flag]++
+        for size := len(q); size &gt; 0; size-- {
+            currWord := q[0]
+            q = q[1:]
+            s := []byte(currWord)
+            for i, b := range s {
+                // 将每一位替换成 26 个小写英文字母
+                for j := byte('a'); j &lt;= 'z'; j++ {
+                    s[i] = j
+                    nextWord := string(s)
+                    if _, ok := mp[nextWord]; !ok {
+                        continue
+                    }
+                    stepTmp, ok := steps1[nextWord]
+                    if ok &amp;&amp; step[flag] &gt; stepTmp {
+                        continue
+                    } 
+                    if !ok || (ok &amp;&amp; stepTmp == step[flag]) {
+                        if flag == 0 {
+                            from[nextWord] = append(from[nextWord], currWord)
+                        } else {
+                            from[currWord] = append(from[currWord], nextWord)
+                        }
+                    }
+                    // 这一层扩展出的单词进入队列
+                    q = append(q, nextWord)
+                    // 记录 nextWord 的 step
+                    steps1[nextWord] = step[flag]
+                    // 当前层找到了
+                    if _, ok := steps2[nextWord]; ok {
+                        found = true
+                    }
+                }
+                //改回原单词
+                s[i] = b
+            }
+        }
+        if found {
+            step[flag]++
+        }
+        return q
+    }
+    for len(q1) &gt; 0 &amp;&amp; len(q2) &gt; 0 &amp;&amp; !found {
+        if len(q1) &lt; len(q2) {
+            q1 = update(q1, steps1, steps2, 0)
+        } else {
+            q2 = update(q2, steps2, steps1, 1)
+        }
+    }
+    // 第 2 步：深度优先遍历找到所有解，从 endWord 恢复到 beginWord ，所以每次尝试操作 path 列表的头部
+    if found {
+        l := step[0] + step[1]
+        path := make([]string, l)
+        var dfs func(string, int)
+        dfs = func(nextWord string, idx int) {
+            if nextWord == beginWord {
+                res = append(res, append([]string(nil), path...))
+                return 
+            }
+            for _, word := range from[nextWord] {
+                path[idx - 1] = word
+                dfs(word, idx - 1)
+                path[idx - 1] = &quot;&quot;
+            }
+        }
+        path[l - 1] = endWord
+        dfs(endWord, l - 1)
+    }
+    return res
+}
+</code></pre><pre><code class=language-go>// 命名规范版本
+func findLadders(beginWord string, endWord string, wordList []string) (res [][]string) {
+	mp := map[string]struct{}{}
+	for _, word := range wordList {
+		mp[word] = struct{}{}
+	}
+	if _, ok := mp[endWord]; !ok {
+		return res
+	}
+	from := map[string][]string{}
+	beginStep, endStep := map[string]int{beginWord: 0}, map[string]int{endWord: 0}
+	beginQueue, endQueue := []string{beginWord}, []string{endWord}
+	steps := [2]int{}
+	var found bool
+	update := func(q []string, step1, step2 map[string]int, flag int) []string {
+		steps[flag]++
+		for size := len(q); size &gt; 0; size-- {
+			curWord := q[0]
+			q = q[1:]
+			s := []byte(curWord)
+			for i, b := range s {
+				for j := byte('a'); j &lt;= 'z'; j++ {
+					s[i] = j
+					nextWord := string(s)
+					if _, ok := mp[nextWord]; !ok || j == b {
+						continue
+					}
+                    oldStep, ok := step1[nextWord]
+                    if ok &amp;&amp; oldStep &lt; steps[flag] {
+                        continue
+                    }
+					if !ok || oldStep == steps[flag] {
+						if flag == 0 {
+							from[nextWord] = append(from[nextWord], curWord)
+						} else {
+							from[curWord] = append(from[curWord], nextWord)
+						}
+					}
+					q = append(q, nextWord)
+					step1[nextWord] = steps[flag]
+					if _, ok := step2[nextWord]; ok {
+						found = true
+					}
+				}
+				s[i] = b
+			}
+		}
+		if found {
+			steps[flag]++
+		}
+		return q
+	}
+	for len(beginQueue) &gt; 0 &amp;&amp; len(endQueue) &gt; 0 &amp;&amp; !found {
+		if len(beginQueue) &lt;= len(endQueue) {
+			beginQueue = update(beginQueue, beginStep, endStep, 0)
+		} else {
+			endQueue = update(endQueue, endStep, beginStep, 1)
+		}
+	}
+	if found {
+		step := steps[0] + steps[1]
+		path := make([]string, step)
+		path[step-1] = endWord
+		var dfs func(string, int)
+		dfs = func(s string, i int) {
+			if s == beginWord {
+				res = append(res, append([]string(nil), path...))
+				return
+			}
+			for _, word := range from[s] {
+				path[i-1] = word
+				dfs(word, i-1)
+				//path[i-1] = &quot;&quot;
+			}
+		}
+		dfs(endWord, step-1)
+	}
+	return res
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/number-of-islands/ target=_blank rel=noopener>200. 岛屿数量</a></li></ul><pre><code class=language-go>// dfs
+// bfs
+var fx = [][2]int{{0, 1}, {1, 0}, {0, -1}, {-1, 0}}
+func numIslands(grid [][]byte) (ans int) {
+    n, m := len(grid), len(grid[0])
+    for i := 0; i &lt; n; i++ {
+        for j := 0; j &lt; m; j++ {
+            if grid[i][j] == '1' {
+                ans++
+                grid[i][j] = '0'
+                queue := [][2]int{{i, j}}
+                for len(queue) &gt; 0 {
+                    cur := queue[0]
+                    queue = queue[1:]
+                    for _, f := range fx {
+                        ni, nj := cur[0] + f[0], cur[1] + f[1]
+                        if 0 &lt;= ni &amp;&amp; ni &lt; n &amp;&amp; 0 &lt;= nj &amp;&amp; nj &lt; m &amp;&amp; grid[ni][nj] == '1' {
+                            grid[ni][nj] = '0'
+                            queue = append(queue, [2]int{ni, nj})
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return ans
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/minesweeper/ target=_blank rel=noopener>529. 扫雷游戏</a></li></ul><pre><code class=language-go>// dfs
+
+// bfs
+func updateBoard(board [][]byte, click []int) [][]byte {
+    n, m := len(board), len(board[0])
+    queue := [][]int{click}
+    for len(queue) &gt; 0 {
+        click = queue[0]
+        queue = queue[1:]
+        x, y := click[0], click[1]
+        if board[x][y] == 'M' || board[x][y] == 'X' {
+            board[x][y] = 'X'
+        } else {
+            //计算周围的地雷
+            count := 0
+            for i := -1; i &lt;= 1; i++ {
+                for j := -1; j &lt;= 1; j++ {
+                    if i == 0 &amp;&amp; j == 0 {
+                        continue
+                    }
+                    nx, ny := x + i, y + j
+                    if 0 &lt;= nx &amp;&amp; nx &lt; n &amp;&amp; 0 &lt;= ny &amp;&amp; ny &lt; m &amp;&amp; (board[nx][ny] == 'M' || board[nx][ny] == 'X'){
+                        count++
+                    }
+                }
+            }
+
+            //有地雷，标注地雷的个数
+            if count &gt; 0 {
+                board[x][y] = byte(count + '0')
+            } else {
+                //没有地雷，标注为B
+                board[x][y] = 'B'
+                for i := -1; i &lt;= 1; i++ {
+                    for j := -1; j &lt;= 1; j++ {
+                        if i == 0 &amp;&amp; j == 0 {
+                            continue
+                        }
+                        nx, ny := x + i, y + j
+                        if 0 &lt;= nx &amp;&amp; nx &lt; n &amp;&amp; 0 &lt;= ny &amp;&amp; ny &lt; m &amp;&amp; board[nx][ny] == 'E' {
+                            queue = append(queue, []int{nx, ny})
+                            board[nx][ny] = 'B'
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return board
+}
+</code></pre><h2 id=第10课--贪心算法>第10课 | 贪心算法</h2><h3 id=贪心的实现特性及实战题目解析>贪心的实现、特性及实战题目解析</h3><h4 id=参考链接-1>参考链接</h4><ul><li><a href=https://leetcode-cn.com/problems/coin-change/ target=_blank rel=noopener>322. 零钱兑换</a></li></ul><pre><code class=language-go>func coinChange(coins []int, amount int) int {
+    dp := make([]int, amount + 1)
+    for i := 1; i &lt;= amount; i++ {
+        dp[i] = amount + 1 //初始化dp数组
+        //循环各个面值，找到dp[i]最优解
+        for _, coin := range coins {
+            if coin &lt;= i &amp;&amp; dp[i] &gt; dp[i - coin] + 1 {
+                //递推公式
+                dp[i] = dp[i - coin] + 1
+            }
+        }
+    }
+    if dp[amount] &gt; amount {
+        return -1
+    }
+    return dp[amount]
+}
+</code></pre><ul><li><a href=https://zh.wikipedia.org/wiki/%e5%8a%a8%e6%80%81%e8%a7%84%e5%88%92 target=_blank rel=noopener>动态规划定义</a></li></ul><h4 id=课后作业-1>课后作业</h4><ul><li><a href=https://leetcode-cn.com/problems/lemonade-change/ target=_blank rel=noopener>860. 柠檬水找零</a></li></ul><pre><code class=language-go>// 写法一
+func lemonadeChange(bills []int) bool {
+    five, ten := 0, 0
+    for _, bill := range bills {
+        if bill == 5 {
+            five++
+        } else if bill == 10 { // 10元是5元找零
+            five, ten = five - 1, ten + 1
+        } else if ten &gt; 0 { // 有10元
+            five, ten =  five - 1, ten - 1
+        } else { // 没有10元
+            five -= 3
+        }
+        if five &lt; 0 { // 判断5元个数是否小于0
+            return false
+        }
+    }
+    return true
+}
+// 写法二
+func lemonadeChange(bills []int) bool {
+    five, ten := 0, 0
+    for _, bill := range bills {
+        if bill == 5 {
+            five++
+        } else if bill == 10 {
+            if five &lt; 0 {
+                return false
+            }
+            five--
+            ten++
+        } else { // 20
+            if five &gt; 0 &amp;&amp; ten &gt; 0 {
+                five--
+                ten--
+            } else if five &gt;= 3 {
+                five -= 3
+            } else {
+                return false
+            }
+        }
+    }
+    return true
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/ target=_blank rel=noopener>122. 买卖股票的最佳时机 II</a></li></ul><pre><code class=language-go>// 贪心
+func maxProfit(prices []int) (ans int) {
+    for i := 1; i &lt; len(prices); i++ {
+        if prices[i] &gt; prices[i-1] {
+            ans += prices[i] - prices[i-1]
+        }
+    }
+    return ans
+}
+// dp
+func maxProfit(prices []int) int {
+    dp0, dp1 := 0, -prices[0]
+    for i := 0; i &lt; len(prices); i++ {
+        dp0, dp1 = max(dp0, dp1 + prices[i]), max(dp0 - prices[i], dp1)
+    }
+    return dp0
+}
+func max(a, b int) int {
+    if a &gt; b {
+        return a
+    }
+    return b
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/assign-cookies/ target=_blank rel=noopener>455. 分发饼干</a></li></ul><pre><code class=language-go>func findContentChildren(g []int, s []int) int {
+    sort.Ints(g)
+    sort.Ints(s)
+    child := 0
+    for j := 0; child &lt; len(g) &amp;&amp; j &lt; len(s); j++ {
+        if g[child] &lt;= s[j] {
+            child++
+        }
+    }
+    return child
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/walking-robot-simulation/ target=_blank rel=noopener>874. 模拟行走机器人</a>
+重点在方向控制</li></ul><pre><code class=language-go>// 效率最高写法
+func robotSim(commands []int, obstacles [][]int) int {
+    obsMap := map[int]bool{}
+    for _, obstacle := range obstacles {
+        key := calculateHashKey(obstacle)
+        obsMap[key] = true
+    }
+
+     //方向数组
+    dx := []int{0, 1, 0, -1}
+    dy := []int{1, 0, -1, 0}
+
+    ans := 0
+    x, y := 0, 0
+    direction := 0 //0-N 1-E 2-S 3-W
+    for _, cmd := range commands {
+        if cmd == -2 { // 左转
+            direction = (direction + 3) % 4
+        } else if cmd == -1 { // 右转
+            direction = (direction + 1) % 4
+        } else {
+            for i := 0; i &lt; cmd; i++ {
+                nx := x + dx[direction]
+                ny := y + dy[direction]
+
+                if obsMap[calculateHashKey([]int{nx, ny})] {
+                    break
+                }
+                x, y = nx, ny
+            }
+            if tVal := x * x + y * y; tVal &gt; ans {
+                ans = tVal
+            }
+        }
+    }
+    return ans
+}
+
+func calculateHashKey(obstacle []int) int {
+    return (30000 + obstacle[0]) * 60001 + (30000 + obstacle[1])
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/jump-game/ target=_blank rel=noopener>55. 跳跃游戏</a></li></ul><pre><code class=language-go>// 反向
+func canJump1(nums []int) bool {
+    revCanJump := len(nums) - 1
+    for i := revCanJump; i &gt;= 0; i-- {
+        if i + nums[i] &gt;= revCanJump {
+            revCanJump = i
+        }
+    }
+    return revCanJump == 0
+}
+
+// 正向
+func canJump(nums []int) bool {
+    can := nums[0]
+    for i := 1; i &lt; len(nums); i++ {
+        if can &lt; i {
+            return false
+        }
+        can = max(can, i + nums[i])
+    }
+    return true
+}
+
+func max(a, b int) int {
+    if a &gt; b {
+        return a
+    }
+    return b
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/jump-game-ii/ target=_blank rel=noopener>45. 跳跃游戏 II</a></li></ul><pre><code class=language-go>func jump(nums []int) (ans int) {
+    n := len(nums)
+    if n &lt; 2 {
+        return ans
+    }
+    ans = 1
+    curMaxJump, preMaxJump := nums[0], nums[0]
+    for i := 1; i &lt; n; i++ {
+        if i &gt; preMaxJump {
+            preMaxJump = curMaxJump
+            ans++
+        }
+        if i + nums[i] &gt; curMaxJump {
+            curMaxJump = i + nums[i]
+        }
+    }
+    return ans
+}
+</code></pre><h2 id=第11课--二分查找>第11课 | 二分查找</h2><h3 id=二分查找的实现特性及实战题目解析>二分查找的实现、特性及实战题目解析</h3><h4 id=参考链接-2>参考链接</h4><ul><li><a href=https://shimo.im/docs/hjQqRQkGgwd9g36J target=_blank rel=noopener>二分查找代码模板</a></li><li><a href=https://www.beyond3d.com/content/articles/8/ target=_blank rel=noopener>Fast InvSqrt() 扩展阅读</a></li></ul><h4 id=实战题目-1>实战题目</h4><ul><li><a href=https://leetcode-cn.com/problems/sqrtx/ target=_blank rel=noopener>69. x 的平方根</a></li></ul><pre><code class=language-go>// 二分
+// 牛顿迭代
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/valid-perfect-square/ target=_blank rel=noopener>367. 有效的完全平方数</a></li></ul><pre><code class=language-go>// 二分
+// 牛顿迭代
+</code></pre><h4 id=课后作业-2>课后作业</h4><ul><li><a href=https://leetcode-cn.com/problems/search-in-rotated-sorted-array/ target=_blank rel=noopener>33. 搜索旋转排序数组</a></li></ul><pre><code class=language-go>// 标准二分
+func search(nums []int, target int) int {
+    l, r := 0, len(nums) - 1
+    for l &lt;= r {
+        mid := l + (r - l) &gt;&gt; 1
+        if nums[mid] == target {
+            return mid
+        } else if nums[l] &lt;= nums[mid] { // nums[l] 可改为 nums[0]
+            if nums[l] &lt;= target &amp;&amp; target &lt; nums[mid] {
+                r = mid - 1
+            } else {
+                l = mid + 1
+            }
+        } else {
+            if nums[mid] &lt; target &amp;&amp; target &lt;= nums[r] {
+                l = mid + 1
+            } else {
+                r = mid - 1
+            }
+        }
+    }
+    return -1
+}
+// 位运算二分
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/search-a-2d-matrix/ target=_blank rel=noopener>74. 搜索二维矩阵</a></li></ul><pre><code class=language-go>// 二分查找
+func searchMatrix(matrix [][]int, target int) bool {
+    m, n := len(matrix), len(matrix[0])
+    l, r := 0, m * n - 1
+    for l &lt;= r {
+        mid := l + (r - l) &gt;&gt; 1
+        num := matrix[mid/n][mid%n]
+        if num &lt; target {
+            l = mid + 1
+        } else if num &gt; target {
+            r = mid - 1
+        } else {
+            return true
+        }
+    }
+    return false
+}
+// 官方使用系统库，一次、二次二分查找
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/ target=_blank rel=noopener>153. 寻找旋转排序数组中的最小值</a></li></ul><pre><code class=language-go>// 写法一
+func findMin(nums []int) int {
+    low, high := 0, len(nums) - 1
+    for low &lt; high {
+        pivot := low + (high - low) &gt;&gt; 1
+        if nums[pivot] &gt; nums[high] {
+            low = pivot + 1
+        } else {
+            high = pivot
+        }
+    }
+    return nums[low]
+}
+// 写法二： 复杂写法
+func findMin(nums []int) int {
+    l, r := 0, len(nums) - 1
+    if nums[l] &lt; nums[r] || l == r {
+        return nums[l]
+    }
+    for l &lt; r {
+        m := l + (r - l) &gt;&gt; 1
+        if nums[m] &gt; nums[m + 1] {
+            return nums[m + 1]
+        }
+        if nums[m - 1] &gt; nums[m] {
+            return nums[m]
+        }
+        if nums[l] &lt; nums[m] {
+            l = m + 1
+        } else {
+            r = m
+        }
+    }
+    return nums[l]
+}
+</code></pre><ul><li>使用二分查找，寻找一个半有序数组 [4, 5, 6, 7, 0, 1, 2] 中间无序的地方
+说明：同学们可以将自己的思路、代码写在第 4 周的学习总结中</li></ul><h2 id=本周作业及第6周预习>本周作业及第6周预习</h2><p>下周为期中考试周，无视频课程，会安排覃超老师进行答疑直播（具体时间以微信班级群通知为准）。请同学们自行复习~</p><h3 id=本周作业>本周作业</h3><h4 id=简单>简单</h4><ul><li><p><a href=https://leetcode-cn.com/problems/lemonade-change/ target=_blank rel=noopener>860. 柠檬水找零</a></p></li><li><p><a href=https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/ target=_blank rel=noopener>122. 买卖股票的最佳时机 II</a></p></li><li><p><a href=https://leetcode-cn.com/problems/assign-cookies/ target=_blank rel=noopener>455. 分发饼干</a></p></li><li><p><a href=https://leetcode-cn.com/problems/walking-robot-simulation/ target=_blank rel=noopener>874. 模拟行走机器人</a></p></li><li><p>使用二分查找，寻找一个半有序数组 [4, 5, 6, 7, 0, 1, 2] 中间无序的地方
+说明：同学们可以将自己的思路、代码写在第 3 周的学习总结中</p></li></ul><h4 id=中等>中等</h4><ul><li><p><a href=https://leetcode-cn.com/problems/word-ladder/ target=_blank rel=noopener>127. 单词接龙</a></p></li><li><p><a href=https://leetcode-cn.com/problems/number-of-islands/ target=_blank rel=noopener>200. 岛屿数量</a></p></li><li><p><a href=https://leetcode-cn.com/problems/minesweeper/ target=_blank rel=noopener>529. 扫雷游戏</a></p></li><li><p><a href=https://leetcode-cn.com/problems/jump-game/ target=_blank rel=noopener>55. 跳跃游戏</a></p></li><li><p><a href=https://leetcode-cn.com/problems/search-in-rotated-sorted-array/ target=_blank rel=noopener>33. 搜索旋转排序数组</a></p></li><li><p><a href=https://leetcode-cn.com/problems/search-a-2d-matrix/ target=_blank rel=noopener>74. 搜索二维矩阵</a></p></li><li><p><a href=https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/ target=_blank rel=noopener>153. 寻找旋转排序数组中的最小值</a></p></li></ul><h4 id=困难>困难</h4><ul><li><p><a href=https://leetcode-cn.com/problems/word-ladder-ii/ target=_blank rel=noopener>126. 单词接龙 II</a></p></li><li><p><a href=https://leetcode-cn.com/problems/jump-game-ii/ target=_blank rel=noopener>45. 跳跃游戏 II</a></p></li></ul><h3 id=第-6-周预习>第 6 周预习</h3><h4 id=预习知识点>预习知识点</h4><ul><li><a href=https://en.wikipedia.org/wiki/Dynamic_programming target=_blank rel=noopener>动态规划定义</a></li><li><a href=https://time.geekbang.org/column/article/74788 target=_blank rel=noopener>初识动态规划：如何巧妙解决“双十一”购物时的凑单问题？</a></li><li><a href=https://time.geekbang.org/column/article/75702 target=_blank rel=noopener>动态规划理论：一篇文章带你彻底搞懂最优子结构、无后效性和重复子问题</a></li><li><a href=https://time.geekbang.org/column/article/75794 target=_blank rel=noopener>动态规划实战：如何实现搜索引擎中的拼写纠错功能？</a></li></ul><h4 id=预习题目>预习题目</h4><ul><li><a href=https://leetcode-cn.com/problems/longest-common-subsequence/ target=_blank rel=noopener>最长公共子序列题目</a></li><li><a href=https://leetcode-cn.com/problems/triangle/description/ target=_blank rel=noopener>三角形最小路径和</a></li><li><a href=https://leetcode-cn.com/problems/maximum-subarray/ target=_blank rel=noopener>最大子序和</a></li><li><a href=https://leetcode-cn.com/problems/house-robber/ target=_blank rel=noopener>打家劫舍</a></li></ul></article><div class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"><div><span class="text-primary-text block font-bold">上一页</span>
+<a href=/study/algorithm/go/week03/ class=block>第3周 树、递归、分治、回溯</a></div><div class="mt-4 md:mt-0 md:text-right"><span class="text-primary-text block font-bold">下一页</span>
+<a href=/study/algorithm/go/week05/ class=block>第5周 期中考试</a></div></div></div><div class="hidden lg:block lg:w-1/4"><div class="bg-secondary-bg
+prose sticky top-16 z-10 hidden px-6 py-4 lg:block"><h3>本页内容</h3></div><div class="sticky-toc
+border-s
+hidden px-6 pb-6 lg:block"><nav id=TableOfContents><ul><li><a href=#第9课--深度优先搜索和广度优先搜索>第9课 | 深度优先搜索和广度优先搜索</a><ul><li><a href=#1-深度优先搜索广度优先搜索的实现和特性>1. 深度优先搜索、广度优先搜索的实现和特性</a><ul><li><a href=#参考链接>参考链接</a></li></ul></li><li><a href=#2-实战题目解析二叉树的层次遍历等问题>2. 实战题目解析：二叉树的层次遍历等问题</a><ul><li><a href=#实战题目>实战题目</a></li><li><a href=#课后作业>课后作业</a></li></ul></li></ul></li><li><a href=#第10课--贪心算法>第10课 | 贪心算法</a><ul><li><a href=#贪心的实现特性及实战题目解析>贪心的实现、特性及实战题目解析</a><ul><li><a href=#参考链接-1>参考链接</a></li><li><a href=#课后作业-1>课后作业</a></li></ul></li></ul></li><li><a href=#第11课--二分查找>第11课 | 二分查找</a><ul><li><a href=#二分查找的实现特性及实战题目解析>二分查找的实现、特性及实战题目解析</a><ul><li><a href=#参考链接-2>参考链接</a></li><li><a href=#实战题目-1>实战题目</a></li><li><a href=#课后作业-2>课后作业</a></li></ul></li></ul></li><li><a href=#本周作业及第6周预习>本周作业及第6周预习</a><ul><li><a href=#本周作业>本周作业</a><ul><li><a href=#简单>简单</a></li><li><a href=#中等>中等</a></li><li><a href=#困难>困难</a></li></ul></li><li><a href=#第-6-周预习>第 6 周预习</a><ul><li><a href=#预习知识点>预习知识点</a></li><li><a href=#预习题目>预习题目</a></li></ul></li></ul></li></ul></nav></div><script>window.addEventListener("DOMContentLoaded",()=>{enableStickyToc()})</script></div></div></div></div></div><script>document.addEventListener("DOMContentLoaded",()=>{hljs.highlightAll(),changeSidebarHeight(),switchDocToc()})</script></div></div></main><footer class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b"><p class="text-sm text-tertiary-text">&copy; 2021 <a href=https://blog.lbbniu.com/>lbbniu</a>
+&#183; Powered by the <a href=https://github.com/wangchucheng/hugo-eureka class=hover:text-eureka>Eureka</a> theme for <a href=https://gohugo.io class=hover:text-eureka>Hugo</a></p></div></div></footer></body></html>

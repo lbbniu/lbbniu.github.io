@@ -1,0 +1,188 @@
+<!doctype html><html lang=zh dir=ltr><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Tars服务容器化 | lbbniu</title>
+<meta name=generator content="Hugo Eureka 0.9.3"><link rel=stylesheet href=/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css><script defer src=/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js></script><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" as=style onload='this.onload=null,this.rel="stylesheet"'><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/github.min.css media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/php.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/java.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/go.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/python.min.js crossorigin></script><link rel=stylesheet href=/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css media=print onload='this.media="all",this.onload=null'><script defer type=text/javascript src=/js/fontawesome.min.35973bea57658ef0dd22ad59ea4642b6c8c67af62bed8659ac326d284ef285a6657cdbcf57d3b2910e7e992f2b20426e.js></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css integrity=sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js integrity=sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY crossorigin></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script><script defer src=https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js integrity=sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0 crossorigin></script><link rel=icon type=image/png sizes=32x32 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_32x32_fill_box_center_3.png><link rel=apple-touch-icon sizes=180x180 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_180x180_fill_box_center_3.png><meta name=description content="Tars服务容器化核心逻辑梳理， TarsCpp、TarsGo、TarsPHP"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"云原生笔记","item":"/cloud-native/"},{"@type":"ListItem","position":2,"name":"Tars服务容器化","item":"/cloud-native/tars%E5%AE%B9%E5%99%A8%E5%8C%96/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/cloud-native/tars%E5%AE%B9%E5%99%A8%E5%8C%96/"},"headline":"Tars服务容器化 | lbbniu","datePublished":"2021-11-25T13:30:16+08:00","dateModified":"2021-11-25T13:30:16+08:00","wordCount":609,"publisher":{"@type":"Person","name":"lbbniu","logo":{"@type":"ImageObject","url":"/images/icon.gif"}},"description":"Tars服务容器化核心逻辑梳理， TarsCpp、TarsGo、TarsPHP"}</script><meta property="og:title" content="Tars服务容器化 | lbbniu"><meta property="og:type" content="article"><meta property="og:image" content="/images/icon.png"><meta property="og:url" content="/cloud-native/tars%E5%AE%B9%E5%99%A8%E5%8C%96/"><meta property="og:description" content="Tars服务容器化核心逻辑梳理， TarsCpp、TarsGo、TarsPHP"><meta property="og:locale" content="zh"><meta property="og:site_name" content="lbbniu"><meta property="article:published_time" content="2021-11-25T13:30:16+08:00"><meta property="article:modified_time" content="2021-11-25T13:30:16+08:00"><meta property="article:section" content="cloud-native"><meta property="article:tag" content="k8s"><meta property="article:tag" content="Tars"><meta property="article:tag" content="容器化"><meta property="og:see_also" content="/cloud-native/%E4%BA%91%E5%8E%9F%E7%94%9F%E5%B8%B8%E7%94%A8%E5%AD%A6%E4%B9%A0%E7%BD%91%E5%9D%80/"><meta property="og:see_also" content="/cloud-native/k8s-install/"><body class="flex min-h-screen flex-col"><header class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"><div class="mx-auto w-full max-w-screen-xl"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=="Auto"||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName("html")[0].classList.add("dark")</script><nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0"><a href=/ class="me-6 text-primary-text text-xl font-bold">lbbniu</a>
+<button id=navbar-btn class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+<i class="fas fa-bars"></i></button><div id=target class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20"><div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0"><a href=/post/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">文章</a>
+<a href=/cloud-native/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 selected-menu-item me-4">云原生</a>
+<a href=/study/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">算法学习</a>
+<a href=/docs/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">Go学习训练营</a>
+<a href=/tags/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">标签</a></div><div class=flex><div class="relative pt-4 md:pt-0"><div class="cursor-pointer hover:text-eureka" id=lightDarkMode><i class="fas fa-adjust"></i></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id=is-open></div><div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40" id=lightDarkOptions><span class="px-4 py-1 hover:text-eureka" name=Light>浅色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Dark>深色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Auto>自动</span></div></div></div></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id=is-open-mobile></div></nav><script>let element=document.getElementById("lightDarkMode");storageColorScheme==null||storageColorScheme=="Auto"?document.addEventListener("DOMContentLoaded",()=>{window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",switchDarkMode)}):storageColorScheme=="Light"?(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","sun"),element.firstElementChild.classList.add("fa-sun")):storageColorScheme=="Dark"&&(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","moon"),element.firstElementChild.classList.add("fa-moon")),document.addEventListener("DOMContentLoaded",()=>{getcolorscheme(),switchBurger()})</script></div></header><main class="grow pt-16"><div class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8"><div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12"><div class="bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"><article class=prose><h1 class=mb-4>Tars服务容器化</h1><div class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"><div class="me-6 my-2"><i class="fas fa-calendar me-1"></i>
+<span>2021-11-25</span></div><div class="me-6 my-2"><i class="fas fa-clock me-1"></i>
+<span>3分钟阅读时长</span></div></div><h2 id=tars容器化逻辑>tars容器化逻辑</h2><h3 id=tars-协议文件>tars 协议文件</h3><pre><code>module tars
+{
+    struct AdapterConf{
+        0 require string servant;
+        1 require string endpoint;
+        2 optional string protocol;
+        3 optional int maxConns;
+        4 optional int threadNum;
+        5 optional int queueCap;
+        6 optional int queueTimeout;
+    };
+    
+    struct onStartupReq{
+        0 require string nodeName;
+        1 require string application;
+        2 require string server;
+        3 optional string setID;
+        4 optional vector&lt;AdapterConf&gt; adapters;
+        5 optional bool disableFlow;
+        6 optional string State = &quot;active&quot;;
+        7 optional string Version;
+        8 optional string templateName;
+        9 optional string serverType;
+    };
+
+    struct onPrestopReq{
+        0 require string nodeName;
+        1 optional string application;
+        2 optional string server;
+    };
+
+    struct keepAliveReq{
+        0 require string nodeName;
+        1 require string state; // inactive or active
+        2 optional string application;
+        3 optional string server;
+    };
+
+    struct RegisterMetricsReq{
+        0 require string nodeName;
+        1 require string application;
+        2 require string server;
+        3 require int metricsPort;
+    };
+
+    struct GetMetricsAdaptersReq{
+        0 optional map&lt;string, string&gt; filter; // enable in feature
+    };
+
+    struct MetricsAdapterInfo{
+        0 optional vector&lt;string&gt; targets;
+        1 optional map&lt;string, string&gt; labels;
+    };
+
+    interface tarsregistry
+    {
+        void onStartup(onStartupReq req);
+        void onPrestop(onPrestopReq req);
+        void keepAlive(keepAliveReq req);
+        void registerMetrics(RegisterMetricsReq req);
+        void getMetricsAdapters(GetMetricsAdaptersReq req, out vector&lt;MetricsAdapterInfo&gt; rsp);
+    };
+};
+</code></pre><h3 id=onstartup>onStartup</h3><pre><code class=language-mysql>-- 增加 t_node_info  记录			
+insert into t_node_info(node_name, node_obj, endpoint_ip, endpoint_port, 
+				last_reg_time, last_heartbeat, setting_state, present_state) 
+				values(?, ?, ?, ?, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), ?, ?)
+				ON DUPLICATE KEY UPDATE last_heartbeat = CURRENT_TIMESTAMP()
+
+-- 增加 t_server_conf  记录				    
+insert into t_server_conf(
+		application, server_name, node_name, patch_version, present_state,
+		enable_set, set_name, set_area, set_group, template_name, server_type,
+		setting_state, registry_timestamp, patch_time, posttime
+	 )
+	 values(
+		?, ?, ?, ?, ?,
+		?, ?, ?, ?, ?, ?,
+		&quot;active&quot;, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP()
+	 )
+	 ON DUPLICATE KEY UPDATE patch_version=?, present_state=?, template_name=?, server_type=?,
+	 enable_set=?, set_name=?, set_area=?, set_group=?,
+	 setting_state=&quot;active&quot;, registry_timestamp=CURRENT_TIMESTAMP(), patch_time=CURRENT_TIMESTAMP(), posttime=CURRENT_TIMESTAMP()
+	 
+-- 增加 t_adapter_conf  记录	
+insert into t_adapter_conf(
+			application, server_name, node_name,
+			adapter_name, servant, thread_num, endpoint, 
+			protocol, max_connections, queuecap, queuetimeout
+		 )
+		 values(
+			?, ?, ?,
+			?, ?, ?, ?,
+			?, ?, ?, ?
+		 )
+		 ON DUPLICATE KEY UPDATE
+		 adapter_name=?, servant=?, thread_num=?, endpoint=?,
+		 protocol=?, max_connections=?, queuecap=?, queuetimeout=?
+</code></pre><h3 id=onprestop>onPrestop</h3><pre><code class=language-mysql>-- 删除 t_adapter_conf 记录
+delete from t_adapter_conf where node_name=? and application=? and server_name=?
+-- 删除 t_server_conf 记录
+delete from t_server_conf where node_name=? and application=? and server_name=?
+-- 删除 t_config_files 记录
+delete from t_config_files where host&lt;&gt;'' and host=? and server_name=?
+</code></pre><h3 id=keepalive>keepAlive</h3><pre><code class=language-mysql>-- 更新node监控上报时间
+update t_node_info set last_heartbeat = CURRENT_TIMESTAMP() where node_name = ?
+-- 更新节点状态
+update t_node_info set present_state = ? where node_name = ?
+-- 更新服务状态
+update t_server_conf set present_state = ? where node_name = ? and application = ? and server_name = ?
+</code></pre><h3 id=清理异常数据tarscli-notify-clean-n>清理异常数据[tarscli notify clean n]</h3><pre><code class=language-mysql>-- 获取待清理服务列表
+select node_name, application, server_name from t_server_conf where node_name in 
+		(select node_name from t_node_info where present_state='inactive' and last_heartbeat&lt;?)
+-- 获取待清理节点列表		
+select node_name from t_node_info where present_state='inactive' and last_heartbeat&lt;? 
+	and node_name not in (select node_name from t_server_conf)
+
+-- 清理无效服务列表
+delete from t_server_conf where node_name in 
+	(select node_name from t_node_info where present_state='inactive' and last_heartbeat&lt;?)
+-- 清理 t_adapter_conf
+delete from t_adapter_conf where node_name in 
+	(select node_name from t_node_info where present_state='inactive' and last_heartbeat&lt;?)
+-- 清理无效配置记录
+delete from t_config_files where host&lt;&gt;'' and host in 
+	(select node_name from t_node_info where present_state='inactive' and last_heartbeat&lt;?)
+-- 清理无效节点
+delete from t_node_info where present_state='inactive' and last_heartbeat&lt;? 
+	and node_name not in (select node_name from t_server_conf)
+</code></pre><h3 id=tarscli>tarscli</h3><pre><code class=language-bash># 1.生成服务配置文件
+# 2.读取配置，[生成workerId]，调用 onStartup 注册服务，服务状态初始化为 activating
+# 3.启动tarsnode 
+# 4.定时检测tarsnode保活和调用 keepAlive 上报服务状态
+tarscli supervisor
+
+# 1.读取配置，2.服务就绪检测（主要检测服务端口）
+tarscli hzcheck
+
+# 1.调用 keepAlive 修改服务状态为 deactivating 
+# 2.给服务发送 prestop 管理命令
+# 3.等待 N 秒后， 调用 onPrestop 销毁注册服务，目前k8s最多等待29s
+tarscli prestop
+
+# 1.生成服务配置文件
+tarscli genconf
+</code></pre><h2 id=tarsgo-调用链支持测试>TarsGo 调用链支持测试</h2><pre><code>helm repo add tars-stable https://tarscloud.github.io/TarsDocker/charts/stable
+
+kubectl create namespace tars-test
+
+helm install tars-test tars-stable/tars --namespace tars-test \
+    --set tars.namespace=tars-test,tars.replicas=1,tarsnode.replicas=1,tars.host=domain.com,tars.port=6080,tars.data=/data/shared/tars-data,mysql.data=/data/shared/mysql-data,mysql.rebuild=false
+
+helm install tars-test tars-stable/tars --namespace tars-test     --set tars.namespace=tars-test,tars.replicas=1,tarsnode.replicas=1,tars.host=domain.com,tars.port=6080,tars.data=/data/shared/tars-data,mysql.data=/data/shared/mysql-data,mysql.rebuild=false
+
+curl http://10.0.0.224:8200/json/HelloWorld.PHPTarsuser.Index/jsonfunc \
+-d '{&quot;name&quot;:&quot;postman&quot;,&quot;req&quot;:{&quot;x&quot;:100,&quot;y&quot;:200,&quot;name&quot;:&quot;postman&quot;}}' -vvv
+
+
+curl http://10.0.0.224:8200/json/Trace.TarsTraceFrontServer.FrontendObj/Add -d '{&quot;a&quot;:1, &quot;b&quot;:2}' -vvv; echo &quot;&quot;
+
+curl http://10.0.0.224:8200/json/Trace.TarsTraceFrontServer.FrontendObj/jsonfunc \
+-d '{
+	&quot;name&quot;: &quot;postman&quot;,
+	&quot;req&quot;: {
+		&quot;x&quot;:100,
+		&quot;y&quot;:200,
+		&quot;name&quot;: &quot;postman&quot;
+	}
+}'
+
+</code></pre></article><div class=my-4><a href=/tags/k8s/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#k8s</a>
+<a href=/tags/tars/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#Tars</a>
+<a href=/tags/%E5%AE%B9%E5%99%A8%E5%8C%96/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#容器化</a></div><div class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"><div><span class="text-primary-text block font-bold">上一页</span>
+<a href=/cloud-native/cert-manager/ class=block>cert-manager 和 alidns-webhook 安装</a></div><div class="mt-4 md:mt-0 md:text-right"><span class="text-primary-text block font-bold">下一页</span>
+<a href=/cloud-native/%E4%BA%91%E5%8E%9F%E7%94%9F%E5%B8%B8%E7%94%A8%E5%AD%A6%E4%B9%A0%E7%BD%91%E5%9D%80/ class=block>云原生常用学习网址</a></div></div></div><div class=col-span-2><div class="bg-primary-bg
+prose sticky top-16 z-10 hidden px-6 py-4 lg:block"><h3>本页内容</h3></div><div class="sticky-toc hidden px-6 pb-6 lg:block"><nav id=TableOfContents><ul><li><a href=#tars容器化逻辑>tars容器化逻辑</a><ul><li><a href=#tars-协议文件>tars 协议文件</a></li><li><a href=#onstartup>onStartup</a></li><li><a href=#onprestop>onPrestop</a></li><li><a href=#keepalive>keepAlive</a></li><li><a href=#清理异常数据tarscli-notify-clean-n>清理异常数据[tarscli notify clean n]</a></li><li><a href=#tarscli>tarscli</a></li></ul></li><li><a href=#tarsgo-调用链支持测试>TarsGo 调用链支持测试</a></li></ul></nav></div><script>window.addEventListener("DOMContentLoaded",()=>{enableStickyToc()})</script></div><div class="bg-secondary-bg prose col-span-2 rounded p-6 lg:col-span-6"><h3>相关</h3><a href=/cloud-native/%E4%BA%91%E5%8E%9F%E7%94%9F%E5%B8%B8%E7%94%A8%E5%AD%A6%E4%B9%A0%E7%BD%91%E5%9D%80/ class=no-underline>云原生常用学习网址</a><br><a href=/cloud-native/k8s-install/ class=no-underline>解决k8s相关组件安装镜像无法拉取</a><br></div></div><script>document.addEventListener("DOMContentLoaded",()=>{hljs.highlightAll()})</script></div></div></main><footer class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b"><p class="text-sm text-tertiary-text">&copy; 2021 <a href=https://blog.lbbniu.com/>lbbniu</a>
+&#183; Powered by the <a href=https://github.com/wangchucheng/hugo-eureka class=hover:text-eureka>Eureka</a> theme for <a href=https://gohugo.io class=hover:text-eureka>Hugo</a></p></div></div></footer></body></html>

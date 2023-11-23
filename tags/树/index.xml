@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>树 on lbbniu</title><link>/tags/%E6%A0%91/</link><description>Recent content in 树 on lbbniu</description><generator>Hugo -- gohugo.io</generator><language>zh</language><managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor><webMaster>lbbniu@gmail.com (lbbniu)</webMaster><copyright>&amp;copy; 2021 &lt;a href="https://blog.lbbniu.com/">lbbniu&lt;/a></copyright><lastBuildDate>Sat, 10 Sep 2022 00:01:00 +0800</lastBuildDate><atom:link href="/tags/%E6%A0%91/index.xml" rel="self" type="application/rss+xml"/><item><title>剑指 Offer 07 重建二叉树</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/zhong-jian-er-cha-shu-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/zhong-jian-er-cha-shu-lcof/</guid><description>剑指 Offer 07 重建二叉树 输入某二叉树的前序遍历和中序遍历的结果，请构建该二叉树并返回其根节点。
+假设输入的前序遍历和中序遍历的结果中都不含重复的数字。
+示例 1:
+Input: preorder = [3,9,20,15,7], inorder = [9,3,15,20,7] Output: [3,9,20,null,null,15,7] 示例 2:
+Input: preorder = [-1], inorder = [-1] Output: [-1] 限制：
+0 &lt;= 节点个数 &lt;= 5000
+注意：本题与主站 105 题重复：https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
+/** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ func buildTree(preorder []int, inorder []int) *TreeNode { } LeetCode题库地址 https://leetcode.cn/problems/zhong-jian-er-cha-shu-lcof</description></item><item><title>剑指 Offer 26 树的子结构</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/shu-de-zi-jie-gou-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/shu-de-zi-jie-gou-lcof/</guid><description>剑指 Offer 26 树的子结构 输入两棵二叉树A和B，判断B是不是A的子结构。(约定空树不是任意一个树的子结构)
+B是A的子结构， 即 A中有出现和B相同的结构和节点值。
+例如:
+给定的树 A:
+&amp;nbsp; &amp;nbsp; &amp;nbsp;3
+&amp;nbsp; &amp;nbsp; / \
+&amp;nbsp; &amp;nbsp;4 &amp;nbsp; 5
+&amp;nbsp; / \
+&amp;nbsp;1 &amp;nbsp; 2
+给定的树 B：
+&amp;nbsp; &amp;nbsp;4&amp;nbsp;
+&amp;nbsp; /
+&amp;nbsp;1
+返回 true，因为 B 与 A 的一个子树拥有相同的结构和节点值。
+示例 1：
+输入：A = [1,2,3], B = [3,1] 输出：false 示例 2：
+输入：A = [3,4,5,1,2], B = [4,1] 输出：true 限制：
+0 &amp;lt;= 节点个数 &amp;lt;= 10000
+/** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ func isSubStructure(A *TreeNode, B *TreeNode) bool { } LeetCode题库地址 https://leetcode.</description></item><item><title>剑指 Offer 27 二叉树的镜像</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/er-cha-shu-de-jing-xiang-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/er-cha-shu-de-jing-xiang-lcof/</guid><description>剑指 Offer 27 二叉树的镜像 请完成一个函数，输入一个二叉树，该函数输出它的镜像。
+例如输入：
+&amp;nbsp; &amp;nbsp; &amp;nbsp;4
+&amp;nbsp; &amp;nbsp;/ &amp;nbsp; \
+&amp;nbsp; 2 &amp;nbsp; &amp;nbsp; 7
+&amp;nbsp;/ \ &amp;nbsp; / \
+1 &amp;nbsp; 3 6 &amp;nbsp; 9
+镜像输出：
+&amp;nbsp; &amp;nbsp; &amp;nbsp;4
+&amp;nbsp; &amp;nbsp;/ &amp;nbsp; \
+&amp;nbsp; 7 &amp;nbsp; &amp;nbsp; 2
+&amp;nbsp;/ \ &amp;nbsp; / \
+9 &amp;nbsp; 6 3&amp;nbsp; &amp;nbsp;1
+&amp;nbsp;
+示例 1：
+输入：root = [4,2,7,1,3,6,9] 输出：[4,7,2,9,6,3,1] &amp;nbsp;
+限制：
+0 &amp;lt;= 节点个数 &amp;lt;= 1000
+注意：本题与主站 226 题相同：https://leetcode-cn.com/problems/invert-binary-tree/
+/** * Definition for a binary tree node.</description></item><item><title>面试题 04.02 最小高度树</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/minimum-height-tree-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/minimum-height-tree-lcci/</guid><description>面试题 04.02 最小高度树 给定一个有序整数数组，元素各不相同且按升序排列，编写一个算法，创建一棵高度最小的二叉搜索树。
+示例:给定有序数组: [-10,-3,0,5,9],
+一个可能的答案是：[0,-3,9,-10,null,5]，它可以表示下面这个高度平衡二叉搜索树：
+0 / &amp;#92 -3 9 / / -10 5 /** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ func sortedArrayToBST(nums []int) *TreeNode { } LeetCode题库地址 https://leetcode.cn/problems/minimum-height-tree-lcci</description></item><item><title>剑指 Offer 28 对称的二叉树</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/dui-cheng-de-er-cha-shu-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/dui-cheng-de-er-cha-shu-lcof/</guid><description>剑指 Offer 28 对称的二叉树 请实现一个函数，用来判断一棵二叉树是不是对称的。如果一棵二叉树和它的镜像一样，那么它是对称的。
+例如，二叉树&amp;nbsp;[1,2,2,3,4,4,3] 是对称的。
+&amp;nbsp; &amp;nbsp; 1
+&amp;nbsp; &amp;nbsp;/ \
+&amp;nbsp; 2 &amp;nbsp; 2
+&amp;nbsp;/ \ / \
+3 &amp;nbsp;4 4 &amp;nbsp;3
+但是下面这个&amp;nbsp;[1,2,2,null,3,null,3] 则不是镜像对称的:
+&amp;nbsp; &amp;nbsp; 1
+&amp;nbsp; &amp;nbsp;/ \
+&amp;nbsp; 2 &amp;nbsp; 2
+&amp;nbsp; &amp;nbsp;\ &amp;nbsp; \
+&amp;nbsp; &amp;nbsp;3 &amp;nbsp; &amp;nbsp;3
+&amp;nbsp;
+示例 1：
+输入：root = [1,2,2,3,4,4,3] 输出：true 示例 2：
+输入：root = [1,2,2,null,3,null,3] 输出：false &amp;nbsp;
+限制：
+0 &amp;lt;= 节点个数 &amp;lt;= 1000
+注意：本题与主站 101 题相同：https://leetcode-cn.com/problems/symmetric-tree/
+/** * Definition for a binary tree node.</description></item><item><title>面试题 04.03 特定深度节点链表</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/list-of-depth-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/list-of-depth-lcci/</guid><description>面试题 04.03 特定深度节点链表 给定一棵二叉树，设计一个算法，创建含有某一深度上所有节点的链表（比如，若一棵树的深度为 D，则会创建出 D 个链表）。返回一个包含所有深度的链表的数组。
+&amp;nbsp;
+示例：
+输入：[1,2,3,4,5,null,7,8] 1 / \ 2 3 / \ \ 4 5 7 / 8 输出：[[1],[2,3],[4,5,7],[8]] /** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ /** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func listOfDepth(tree *TreeNode) []*ListNode { } LeetCode题库地址 https://leetcode.</description></item><item><title>面试题 04.04 检查平衡性</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/check-balance-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/check-balance-lcci/</guid><description>面试题 04.04 检查平衡性 实现一个函数，检查二叉树是否平衡。在这个问题中，平衡树的定义如下：任意一个节点，其两棵子树的高度差不超过 1。
+示例 1:给定二叉树 [3,9,20,null,null,15,7]
+3
+/ &amp;#92
+9 20
+/ &amp;#92
+15 7
+返回 true 。示例 2:
+给定二叉树 [1,2,2,3,3,null,null,4,4]
+1
+/ &amp;#92
+2 2
+/ &amp;#92
+3 3
+/ &amp;#92
+4 4
+返回 false 。 /** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ func isBalanced(root *TreeNode) bool { } LeetCode题库地址 https://leetcode.cn/problems/check-balance-lcci</description></item><item><title>面试题 04.05 合法二叉搜索树</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/legal-binary-search-tree-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/legal-binary-search-tree-lcci/</guid><description>面试题 04.05 合法二叉搜索树 实现一个函数，检查一棵二叉树是否为二叉搜索树。
+示例 1:输入:
+2
+/ &amp;#92
+1 3
+输出: true
+示例 2:输入:
+5
+/ &amp;#92
+1 4
+/ &amp;#92
+3 6
+输出: false
+解释: 输入为: [5,1,4,null,null,3,6]。
+根节点的值为 5 ，但是其右子节点值为 4 。 /** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ func isValidBST(root *TreeNode) bool { } LeetCode题库地址 https://leetcode.cn/problems/legal-binary-search-tree-lcci</description></item><item><title>面试题 04.06 后继者</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/successor-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/successor-lcci/</guid><description>面试题 04.06 后继者 设计一个算法，找出二叉搜索树中指定节点的&amp;ldquo;下一个&amp;rdquo;节点（也即中序后继）。
+如果指定节点没有对应的&amp;ldquo;下一个&amp;rdquo;节点，则返回null。
+示例 1:
+输入: root = [2,1,3], p = 1 2 / \ 1 3 输出: 2 示例 2:
+输入: root = [5,3,6,2,4,null,null,1], p = 6 5 / \ 3 6 / \ 2 4 / 1 输出: null /** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ func inorderSuccessor(root *TreeNode, p *TreeNode) *TreeNode { } LeetCode题库地址 https://leetcode.</description></item><item><title>剑指 Offer 32 - I 从上到下打印二叉树</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/cong-shang-dao-xia-da-yin-er-cha-shu-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/cong-shang-dao-xia-da-yin-er-cha-shu-lcof/</guid><description>剑指 Offer 32 - I 从上到下打印二叉树 从上到下打印出二叉树的每个节点，同一层的节点按照从左到右的顺序打印。
+&amp;nbsp;
+例如:
+给定二叉树:&amp;nbsp;[3,9,20,null,null,15,7],
+3 / \ 9 20 / \ 15 7 返回：
+[3,9,20,15,7] &amp;nbsp;
+提示：
+节点总数 &amp;lt;= 1000 /** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ func levelOrder(root *TreeNode) []int { } LeetCode题库地址 https://leetcode.cn/problems/cong-shang-dao-xia-da-yin-er-cha-shu-lcof</description></item><item><title>面试题 04.08 首个共同祖先</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/first-common-ancestor-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/first-common-ancestor-lcci/</guid><description>面试题 04.08 首个共同祖先 设计并实现一个算法，找出二叉树中某两个节点的第一个共同祖先。不得将其他的节点存储在另外的数据结构中。注意：这不一定是二叉搜索树。
+例如，给定如下二叉树: root = [3,5,1,6,2,0,8,null,null,7,4]
+3 / \ 5 1 / \ / \ 6 2 0 8 / \ 7 4 示例 1:
+输入: root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 1 输出: 3 解释: 节点 5 和节点 1 的最近公共祖先是节点 3。 示例 2:
+输入: root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 4 输出: 5 解释: 节点 5 和节点 4 的最近公共祖先是节点 5。因为根据定义最近公共祖先节点可以为节点本身。 说明:
+所有节点的值都是唯一的。 p、q 为不同节点且均存在于给定的二叉树中。 /** * Definition for a binary tree node.</description></item><item><title>剑指 Offer 32 - II 从上到下打印二叉树 II</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/cong-shang-dao-xia-da-yin-er-cha-shu-ii-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/cong-shang-dao-xia-da-yin-er-cha-shu-ii-lcof/</guid><description>剑指 Offer 32 - II 从上到下打印二叉树 II 从上到下按层打印二叉树，同一层的节点按从左到右的顺序打印，每一层打印到一行。
+&amp;nbsp;
+例如:
+给定二叉树:&amp;nbsp;[3,9,20,null,null,15,7],
+3 / \ 9 20 / \ 15 7 返回其层次遍历结果：
+[ [3], [9,20], [15,7] ] &amp;nbsp;
+提示：
+节点总数 &amp;lt;= 1000 注意：本题与主站 102 题相同：https://leetcode-cn.com/problems/binary-tree-level-order-traversal/
+/** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ func levelOrder(root *TreeNode) [][]int { } LeetCode题库地址 https://leetcode.cn/problems/cong-shang-dao-xia-da-yin-er-cha-shu-ii-lcof</description></item><item><title>面试题 04.09 二叉搜索树序列</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/bst-sequences-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/bst-sequences-lcci/</guid><description>面试题 04.09 二叉搜索树序列 从左向右遍历一个数组，通过不断将其中的元素插入树中可以逐步地生成一棵二叉搜索树。
+给定一个由不同节点组成的二叉搜索树 root，输出所有可能生成此树的数组。
+&amp;nbsp;
+示例 1:
+输入: root = [2,1,3] 输出: [[2,1,3],[2,3,1]] 解释: 数组 [2,1,3]、[2,3,1] 均可以通过从左向右遍历元素插入树中形成以下二叉搜索树 &amp;nbsp; 2 &amp;nbsp; / \ &amp;nbsp; 1 3 示例&amp;nbsp;2:
+输入: root = [4,1,null,null,3,2] 输出: [[4,1,3,2]] &amp;nbsp;
+提示：
+二叉搜索树中的节点数在&amp;nbsp;[0, 1000]&amp;nbsp;的范围内 1 &amp;lt;= 节点值&amp;nbsp;&amp;lt;= 10^6 用例保证符合要求的数组数量不超过 5000
+/** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ func BSTSequences(root *TreeNode) [][]int { } LeetCode题库地址 https://leetcode.</description></item><item><title>剑指 Offer 32 - III 从上到下打印二叉树 III</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/cong-shang-dao-xia-da-yin-er-cha-shu-iii-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/cong-shang-dao-xia-da-yin-er-cha-shu-iii-lcof/</guid><description>剑指 Offer 32 - III 从上到下打印二叉树 III 请实现一个函数按照之字形顺序打印二叉树，即第一行按照从左到右的顺序打印，第二层按照从右到左的顺序打印，第三行再按照从左到右的顺序打印，其他行以此类推。
+&amp;nbsp;
+例如:
+给定二叉树:&amp;nbsp;[3,9,20,null,null,15,7],
+3 / \ 9 20 / \ 15 7 返回其层次遍历结果：
+[ [3], [20,9], [15,7] ] &amp;nbsp;
+提示：
+节点总数 &amp;lt;= 1000 /** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ func levelOrder(root *TreeNode) [][]int { } LeetCode题库地址 https://leetcode.cn/problems/cong-shang-dao-xia-da-yin-er-cha-shu-iii-lcof</description></item><item><title>面试题 04.10 检查子树</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/check-subtree-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/check-subtree-lcci/</guid><description>面试题 04.10 检查子树 检查子树。你有两棵非常大的二叉树：T1，有几万个节点；T2，有几万个节点。设计一个算法，判断 T2 是否为 T1 的子树。
+如果 T1 有这么一个节点 n，其子树与 T2 一模一样，则 T2 为 T1 的子树，也就是说，从节点 n 处把树砍断，得到的树与 T2 完全相同。
+注意：此题相对书上原题略有改动。
+示例1:
+输入：t1 = [1, 2, 3], t2 = [2] 输出：true 示例2:
+输入：t1 = [1, null, 2, 4], t2 = [3, 2] 输出：false 提示：
+树的节点数目范围为[0, 20000]。 /** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ func checkSubTree(t1 *TreeNode, t2 *TreeNode) bool { } LeetCode题库地址 https://leetcode.</description></item><item><title>剑指 Offer 33 二叉搜索树的后序遍历序列</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof/</guid><description>剑指 Offer 33 二叉搜索树的后序遍历序列 输入一个整数数组，判断该数组是不是某二叉搜索树的后序遍历结果。如果是则返回&amp;nbsp;true，否则返回&amp;nbsp;false。假设输入的数组的任意两个数字都互不相同。
+&amp;nbsp;
+参考以下这颗二叉搜索树：
+5 / \ 2 6 / \ 1 3 示例 1：
+输入: [1,6,3,2,5] 输出: false 示例 2：
+输入: [1,3,2,6,5] 输出: true &amp;nbsp;
+提示：
+数组长度 &amp;lt;= 1000 func verifyPostorder(postorder []int) bool { } LeetCode题库地址 https://leetcode.cn/problems/er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof</description></item><item><title>面试题 04.12 求和路径</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/paths-with-sum-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/paths-with-sum-lcci/</guid><description>面试题 04.12 求和路径 给定一棵二叉树，其中每个节点都含有一个整数数值(该值或正或负)。设计一个算法，打印节点数值总和等于某个给定值的所有路径的数量。注意，路径不一定非得从二叉树的根节点或叶节点开始或结束，但是其方向必须向下(只能从父节点指向子节点方向)。
+示例:
+给定如下二叉树，以及目标和&amp;nbsp;sum = 22，
+5 / \ 4 8 / / \ 11 13 4 / \ / \ 7 2 5 1 返回:
+3 解释：和为 22&amp;nbsp;的路径有：[5,4,11,2], [5,8,4,5], [4,11,7] 提示：
+节点总数 &amp;lt;= 10000 /** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ func pathSum(root *TreeNode, sum int) int { } LeetCode题库地址 https://leetcode.cn/problems/paths-with-sum-lcci</description></item><item><title>剑指 Offer 34 二叉树中和为某一值的路径</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/er-cha-shu-zhong-he-wei-mou-yi-zhi-de-lu-jing-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/er-cha-shu-zhong-he-wei-mou-yi-zhi-de-lu-jing-lcof/</guid><description>剑指 Offer 34 二叉树中和为某一值的路径 给你二叉树的根节点 root 和一个整数目标和 targetSum ，找出所有 从根节点到叶子节点 路径总和等于给定目标和的路径。
+叶子节点 是指没有子节点的节点。
+&amp;nbsp;
+示例 1：
+输入：root = [5,4,8,11,null,13,4,7,2,null,null,5,1], targetSum = 22 输出：[[5,4,11,2],[5,8,4,5]] 示例 2：
+输入：root = [1,2,3], targetSum = 5 输出：[] 示例 3：
+输入：root = [1,2], targetSum = 0 输出：[] &amp;nbsp;
+提示：
+树中节点总数在范围 [0, 5000] 内 -1000 &amp;lt;= Node.val &amp;lt;= 1000 -1000 &amp;lt;= targetSum &amp;lt;= 1000 注意：本题与主站 113&amp;nbsp;题相同：https://leetcode-cn.com/problems/path-sum-ii/
+/** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ func pathSum(root *TreeNode, target int) [][]int { } LeetCode题库地址 https://leetcode.</description></item><item><title>剑指 Offer 36 二叉搜索树与双向链表</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/er-cha-sou-suo-shu-yu-shuang-xiang-lian-biao-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/er-cha-sou-suo-shu-yu-shuang-xiang-lian-biao-lcof/</guid><description>剑指 Offer 36 二叉搜索树与双向链表 输入一棵二叉搜索树，将该二叉搜索树转换成一个排序的循环双向链表。要求不能创建任何新的节点，只能调整树中节点指针的指向。
+&amp;nbsp;
+为了让您更好地理解问题，以下面的二叉搜索树为例：
+&amp;nbsp;
+&amp;nbsp;
+我们希望将这个二叉搜索树转化为双向循环链表。链表中的每个节点都有一个前驱和后继指针。对于双向循环链表，第一个节点的前驱是最后一个节点，最后一个节点的后继是第一个节点。
+下图展示了上面的二叉搜索树转化成的链表。&amp;ldquo;head&amp;rdquo; 表示指向链表中有最小元素的节点。
+&amp;nbsp;
+&amp;nbsp;
+特别地，我们希望可以就地完成转换操作。当转化完成以后，树中节点的左指针需要指向前驱，树中节点的右指针需要指向后继。还需要返回链表中的第一个节点的指针。
+&amp;nbsp;
+注意：本题与主站 426 题相同：https://leetcode-cn.com/problems/convert-binary-search-tree-to-sorted-doubly-linked-list/
+注意：此题对比原题有改动。
+LeetCode题库地址 https://leetcode.cn/problems/er-cha-sou-suo-shu-yu-shuang-xiang-lian-biao-lcof</description></item><item><title>剑指 Offer 37 序列化二叉树</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/xu-lie-hua-er-cha-shu-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/xu-lie-hua-er-cha-shu-lcof/</guid><description>剑指 Offer 37 序列化二叉树 请实现两个函数，分别用来序列化和反序列化二叉树。
+你需要设计一个算法来实现二叉树的序列化与反序列化。这里不限定你的序列 / 反序列化算法执行逻辑，你只需要保证一个二叉树可以被序列化为一个字符串并且将这个字符串反序列化为原始的树结构。
+提示：输入输出格式与 LeetCode 目前使用的方式一致，详情请参阅&amp;nbsp;LeetCode 序列化二叉树的格式。你并非必须采取这种方式，你也可以采用其他的方法解决这个问题。
+&amp;nbsp;
+示例：
+输入：root = [1,2,3,null,null,4,5] 输出：[1,2,3,null,null,4,5] &amp;nbsp;
+注意：本题与主站 297 题相同：https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/
+LeetCode题库地址 https://leetcode.cn/problems/xu-lie-hua-er-cha-shu-lcof</description></item><item><title>剑指 Offer II 043 往完全二叉树添加节点</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/naqhdt/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/naqhdt/</guid><description>剑指 Offer II 043 往完全二叉树添加节点 完全二叉树是每一层（除最后一层外）都是完全填充（即，节点数达到最大，第 n 层有 2n-1&amp;nbsp;个节点）的，并且所有的节点都尽可能地集中在左侧。
+设计一个用完全二叉树初始化的数据结构&amp;nbsp;CBTInserter，它支持以下几种操作：
+CBTInserter(TreeNode root)&amp;nbsp;使用根节点为&amp;nbsp;root&amp;nbsp;的给定树初始化该数据结构； CBTInserter.insert(int v)&amp;nbsp; 向树中插入一个新节点，节点类型为 TreeNode，值为 v 。使树保持完全二叉树的状态，并返回插入的新节点的父节点的值； CBTInserter.get_root() 将返回树的根节点。 &amp;nbsp;
+示例 1：
+输入：inputs = [&amp;quot;CBTInserter&amp;quot;,&amp;quot;insert&amp;quot;,&amp;quot;get_root&amp;quot;], inputs = [[[1]],[2],[]] 输出：[null,1,[1,2]] 示例 2：
+输入：inputs = [&amp;quot;CBTInserter&amp;quot;,&amp;quot;insert&amp;quot;,&amp;quot;insert&amp;quot;,&amp;quot;get_root&amp;quot;], inputs = [[[1,2,3,4,5,6]],[7],[8],[]] 输出：[null,3,4,[1,2,3,4,5,6,7,8]] &amp;nbsp;
+提示：
+最初给定的树是完全二叉树，且包含&amp;nbsp;1&amp;nbsp;到&amp;nbsp;1000&amp;nbsp;个节点。 每个测试用例最多调用&amp;nbsp;CBTInserter.insert&amp;nbsp; 操作&amp;nbsp;10000&amp;nbsp;次。 给定节点或插入节点的每个值都在&amp;nbsp;0&amp;nbsp;到&amp;nbsp;5000&amp;nbsp;之间。 &amp;nbsp;
+注意：本题与主站 919&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/complete-binary-tree-inserter/
+/** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ type CBTInserter struct { } func Constructor(root *TreeNode) CBTInserter { } func (this *CBTInserter) Insert(v int) int { } func (this *CBTInserter) Get_root() *TreeNode { } /** * Your CBTInserter object will be instantiated and called as such: * obj := Constructor(root); * param_1 := obj.</description></item><item><title>剑指 Offer II 044 二叉树每层的最大值</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/hpov7l/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/hpov7l/</guid><description>剑指 Offer II 044 二叉树每层的最大值 给定一棵二叉树的根节点&amp;nbsp;root ，请找出该二叉树中每一层的最大值。
+&amp;nbsp;
+示例1：
+输入: root = [1,3,2,5,3,null,9] 输出: [1,3,9] 解释: 1 / \ 3 2 / \ \ 5 3 9 示例2：
+输入: root = [1,2,3] 输出: [1,3] 解释: 1 / \ 2 3 示例3：
+输入: root = [1] 输出: [1] 示例4：
+输入: root = [1,null,2] 输出: [1,2] 解释: &amp;nbsp; 1 &amp;nbsp; \ &amp;nbsp; 2 示例5：
+输入: root = [] 输出: [] &amp;nbsp;
+提示：
+二叉树的节点个数的范围是 [0,104] -231&amp;nbsp;&amp;lt;= Node.val &amp;lt;= 231&amp;nbsp;- 1 &amp;nbsp;</description></item><item><title>剑指 Offer II 045 二叉树最底层最左边的值</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/lwunpt/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/lwunpt/</guid><description>剑指 Offer II 045 二叉树最底层最左边的值 给定一个二叉树的 根节点 root，请找出该二叉树的&amp;nbsp;最底层&amp;nbsp;最左边&amp;nbsp;节点的值。
+假设二叉树中至少有一个节点。
+&amp;nbsp;
+示例 1:
+输入: root = [2,1,3] 输出: 1 示例 2: 输入: [1,2,3,4,null,5,6,null,null,7] 输出: 7 &amp;nbsp;
+提示:
+二叉树的节点个数的范围是 [1,104] -231&amp;nbsp;&amp;lt;= Node.val &amp;lt;= 231&amp;nbsp;- 1&amp;nbsp; &amp;nbsp;
+注意：本题与主站 513&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/find-bottom-left-tree-value/
+/** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ func findBottomLeftValue(root *TreeNode) int { } LeetCode题库地址 https://leetcode.cn/problems/LwUNpT</description></item><item><title>剑指 Offer II 046 二叉树的右侧视图</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/wnc0lk/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/wnc0lk/</guid><description>剑指 Offer II 046 二叉树的右侧视图 给定一个二叉树的 根节点 root，想象自己站在它的右侧，按照从顶部到底部的顺序，返回从右侧所能看到的节点值。
+&amp;nbsp;
+示例 1:
+输入:&amp;nbsp;[1,2,3,null,5,null,4] 输出:&amp;nbsp;[1,3,4] 示例 2:
+输入:&amp;nbsp;[1,null,3] 输出:&amp;nbsp;[1,3] 示例 3:
+输入:&amp;nbsp;[] 输出:&amp;nbsp;[] &amp;nbsp;
+提示:
+二叉树的节点个数的范围是 [0,100] -100&amp;nbsp;&amp;lt;= Node.val &amp;lt;= 100&amp;nbsp; &amp;nbsp;
+注意：本题与主站 199&amp;nbsp;题相同：https://leetcode-cn.com/problems/binary-tree-right-side-view/
+/** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ func rightSideView(root *TreeNode) []int { } LeetCode题库地址 https://leetcode.cn/problems/WNC0Lk</description></item><item><title>剑指 Offer II 047 二叉树剪枝</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/pocwxh/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/pocwxh/</guid><description>剑指 Offer II 047 二叉树剪枝 给定一个二叉树 根节点&amp;nbsp;root&amp;nbsp;，树的每个节点的值要么是 0，要么是 1。请剪除该二叉树中所有节点的值为 0 的子树。
+节点 node 的子树为&amp;nbsp;node 本身，以及所有 node&amp;nbsp;的后代。
+&amp;nbsp;
+示例 1:
+输入: [1,null,0,0,1] 输出: [1,null,0,null,1] 解释: 只有红色节点满足条件&amp;ldquo;所有不包含 1 的子树&amp;rdquo;。 右图为返回的答案。 示例 2:
+输入: [1,0,1,0,0,0,1] 输出: [1,null,1,null,1] 解释: 示例 3:
+输入: [1,1,0,1,1,0,1,0] 输出: [1,1,0,1,1,null,1] 解释: &amp;nbsp;
+提示:
+二叉树的节点个数的范围是 [1,200] 二叉树节点的值只会是 0 或 1 &amp;nbsp;
+注意：本题与主站 814&amp;nbsp;题相同：https://leetcode-cn.com/problems/binary-tree-pruning/
+/** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ func pruneTree(root *TreeNode) *TreeNode { } LeetCode题库地址 https://leetcode.</description></item><item><title>剑指 Offer II 048 序列化与反序列化二叉树</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/h54ybf/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/h54ybf/</guid><description>剑指 Offer II 048 序列化与反序列化二叉树 序列化是将一个数据结构或者对象转换为连续的比特位的操作，进而可以将转换后的数据存储在一个文件或者内存中，同时也可以通过网络传输到另一个计算机环境，采取相反方式重构得到原数据。
+请设计一个算法来实现二叉树的序列化与反序列化。这里不限定你的序列 / 反序列化算法执行逻辑，只需要保证一个二叉树可以被序列化为一个字符串并且将这个字符串反序列化为原始的树结构。
+&amp;nbsp;
+示例 1：
+输入：root = [1,2,3,null,null,4,5] 输出：[1,2,3,null,null,4,5] 示例 2：
+输入：root = [] 输出：[] 示例 3：
+输入：root = [1] 输出：[1] 示例 4：
+输入：root = [1,2] 输出：[1,2] &amp;nbsp;
+提示：
+输入输出格式与 LeetCode 目前使用的方式一致，详情请参阅&amp;nbsp;LeetCode 序列化二叉树的格式。你并非必须采取这种方式，也可以采用其他的方法解决这个问题。 树中结点数在范围 [0, 104] 内 -1000 &amp;lt;= Node.val &amp;lt;= 1000 &amp;nbsp;
+注意：本题与主站 297&amp;nbsp;题相同：https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/&amp;nbsp;
+/** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ type Codec struct { } func Constructor() Codec { } // Serializes a tree to a single string.</description></item><item><title>剑指 Offer II 049 从根节点到叶节点的路径数字之和</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/3etpl5/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/3etpl5/</guid><description>剑指 Offer II 049 从根节点到叶节点的路径数字之和 给定一个二叉树的根节点 root ，树中每个节点都存放有一个 0 到 9 之间的数字。
+每条从根节点到叶节点的路径都代表一个数字：
+例如，从根节点到叶节点的路径 1 -&amp;gt; 2 -&amp;gt; 3 表示数字 123 。 计算从根节点到叶节点生成的 所有数字之和 。
+叶节点 是指没有子节点的节点。
+&amp;nbsp;
+示例 1：
+输入：root = [1,2,3] 输出：25 解释： 从根到叶子节点路径 1-&amp;gt;2 代表数字 12 从根到叶子节点路径 1-&amp;gt;3 代表数字 13 因此，数字总和 = 12 + 13 = 25 示例 2：
+输入：root = [4,9,0,5,1] 输出：1026 解释： 从根到叶子节点路径 4-&amp;gt;9-&amp;gt;5 代表数字 495 从根到叶子节点路径 4-&amp;gt;9-&amp;gt;1 代表数字 491 从根到叶子节点路径 4-&amp;gt;0 代表数字 40 因此，数字总和 = 495 + 491 + 40 = 1026 &amp;nbsp;</description></item><item><title>剑指 Offer II 050 向下的路径节点之和</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/6euywp/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/6euywp/</guid><description>剑指 Offer II 050 向下的路径节点之和 给定一个二叉树的根节点 root&amp;nbsp;，和一个整数 targetSum ，求该二叉树里节点值之和等于 targetSum 的 路径 的数目。
+路径 不需要从根节点开始，也不需要在叶子节点结束，但是路径方向必须是向下的（只能从父节点到子节点）。
+&amp;nbsp;
+示例 1：
+输入：root = [10,5,-3,3,2,null,11,3,-2,null,1], targetSum = 8 输出：3 解释：和等于 8 的路径有 3 条，如图所示。 示例 2：
+输入：root = [5,4,8,11,null,13,4,7,2,null,null,5,1], targetSum = 22 输出：3 &amp;nbsp;
+提示:
+二叉树的节点个数的范围是 [0,1000] -109&amp;nbsp;&amp;lt;= Node.val &amp;lt;= 109&amp;nbsp; -1000&amp;nbsp;&amp;lt;= targetSum&amp;nbsp;&amp;lt;= 1000&amp;nbsp; &amp;nbsp;
+注意：本题与主站 437&amp;nbsp;题相同：https://leetcode-cn.com/problems/path-sum-iii/
+/** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ func pathSum(root *TreeNode, targetSum int) int { } LeetCode题库地址 https://leetcode.</description></item><item><title>剑指 Offer II 051 节点之和最大的路径</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/jc7mid/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/jc7mid/</guid><description>剑指 Offer II 051 节点之和最大的路径 路径 被定义为一条从树中任意节点出发，沿父节点-子节点连接，达到任意节点的序列。同一个节点在一条路径序列中 至多出现一次 。该路径 至少包含一个 节点，且不一定经过根节点。
+路径和 是路径中各节点值的总和。
+给定一个二叉树的根节点 root ，返回其 最大路径和，即所有路径上节点值之和的最大值。
+&amp;nbsp;
+示例 1：
+输入：root = [1,2,3] 输出：6 解释：最优路径是 2 -&amp;gt; 1 -&amp;gt; 3 ，路径和为 2 + 1 + 3 = 6 示例 2：
+输入：root = [-10,9,20,null,null,15,7] 输出：42 解释：最优路径是 15 -&amp;gt; 20 -&amp;gt; 7 ，路径和为 15 + 20 + 7 = 42 &amp;nbsp;
+提示：
+树中节点数目范围是 [1, 3 * 104] -1000 &amp;lt;= Node.val &amp;lt;= 1000 &amp;nbsp;
+注意：本题与主站 124&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/binary-tree-maximum-path-sum/
+/** * Definition for a binary tree node.</description></item><item><title>剑指 Offer II 052 展平二叉搜索树</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/nybbnl/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/nybbnl/</guid><description>剑指 Offer II 052 展平二叉搜索树 给你一棵二叉搜索树，请&amp;nbsp;按中序遍历 将其重新排列为一棵递增顺序搜索树，使树中最左边的节点成为树的根节点，并且每个节点没有左子节点，只有一个右子节点。
+&amp;nbsp;
+示例 1：
+输入：root = [5,3,6,2,4,null,8,1,null,null,null,7,9] 输出：[1,null,2,null,3,null,4,null,5,null,6,null,7,null,8,null,9] 示例 2：
+输入：root = [5,1,7] 输出：[1,null,5,null,7] &amp;nbsp;
+提示：
+树中节点数的取值范围是 [1, 100] 0 &amp;lt;= Node.val &amp;lt;= 1000 &amp;nbsp;
+注意：本题与主站 897&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/increasing-order-search-tree/
+/** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ func increasingBST(root *TreeNode) *TreeNode { } LeetCode题库地址 https://leetcode.cn/problems/NYBBNL</description></item><item><title>剑指 Offer II 053 二叉搜索树中的中序后继</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/p5rct8/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/p5rct8/</guid><description>剑指 Offer II 053 二叉搜索树中的中序后继 给定一棵二叉搜索树和其中的一个节点 p ，找到该节点在树中的中序后继。如果节点没有中序后继，请返回 null 。
+节点&amp;nbsp;p&amp;nbsp;的后继是值比&amp;nbsp;p.val&amp;nbsp;大的节点中键值最小的节点，即按中序遍历的顺序节点 p 的下一个节点。
+&amp;nbsp;
+示例 1：
+输入：root = [2,1,3], p = 1 输出：2 解释：这里 1 的中序后继是 2。请注意 p 和返回值都应是 TreeNode 类型。 示例&amp;nbsp;2：
+输入：root = [5,3,6,2,4,null,null,1], p = 6 输出：null 解释：因为给出的节点没有中序后继，所以答案就返回 null 了。 &amp;nbsp;
+提示：
+树中节点的数目在范围 [1, 104] 内。 -105 &amp;lt;= Node.val &amp;lt;= 105 树中各节点的值均保证唯一。 &amp;nbsp;
+注意：本题与主站 285&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/inorder-successor-in-bst/
+/** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ func inorderSuccessor(root *TreeNode, p *TreeNode) *TreeNode { } LeetCode题库地址 https://leetcode.</description></item><item><title>剑指 Offer II 054 所有大于等于节点的值之和</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/w6cpku/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/w6cpku/</guid><description>剑指 Offer II 054 所有大于等于节点的值之和 给定一个二叉搜索树，请将它的每个节点的值替换成树中大于或者等于该节点值的所有节点值之和。
+&amp;nbsp;
+提醒一下，二叉搜索树满足下列约束条件：
+节点的左子树仅包含键 小于 节点键的节点。 节点的右子树仅包含键 大于 节点键的节点。 左右子树也必须是二叉搜索树。 &amp;nbsp;
+示例 1：
+输入：root = [4,1,6,0,2,5,7,null,null,null,3,null,null,null,8] 输出：[30,36,21,36,35,26,15,null,null,null,33,null,null,null,8] 示例 2：
+输入：root = [0,null,1] 输出：[1,null,1] 示例 3：
+输入：root = [1,0,2] 输出：[3,3,2] 示例 4：
+输入：root = [3,2,4,1] 输出：[7,9,4,10] &amp;nbsp;
+提示：
+树中的节点数介于 0&amp;nbsp;和 104&amp;nbsp;之间。 每个节点的值介于 -104&amp;nbsp;和&amp;nbsp;104&amp;nbsp;之间。 树中的所有值 互不相同 。 给定的树为二叉搜索树。 &amp;nbsp;
+注意：
+本题与主站 538&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/convert-bst-to-greater-tree/ 本题与主站 1038&amp;nbsp;题相同：https://leetcode-cn.com/problems/binary-search-tree-to-greater-sum-tree/ /** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ func convertBST(root *TreeNode) *TreeNode { } LeetCode题库地址 https://leetcode.</description></item><item><title>剑指 Offer 54 二叉搜索树的第k大节点</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/er-cha-sou-suo-shu-de-di-kda-jie-dian-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/er-cha-sou-suo-shu-de-di-kda-jie-dian-lcof/</guid><description>剑指 Offer 54 二叉搜索树的第k大节点 给定一棵二叉搜索树，请找出其中第 k 大的节点的值。
+&amp;nbsp;
+示例 1:
+输入: root = [3,1,4,null,2], k = 1 3 / \ 1 4 \ &amp;nbsp; 2 输出: 4 示例 2:
+输入: root = [5,3,6,2,4,null,null,1], k = 3 5 / \ 3 6 / \ 2 4 / 1 输出: 4 &amp;nbsp;
+限制：
+1 ≤ k ≤ 二叉搜索树元素个数 /** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ func kthLargest(root *TreeNode, k int) int { } LeetCode题库地址 https://leetcode.</description></item><item><title>剑指 Offer II 055 二叉搜索树迭代器</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/ktoapq/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/ktoapq/</guid><description>剑指 Offer II 055 二叉搜索树迭代器 实现一个二叉搜索树迭代器类BSTIterator ，表示一个按中序遍历二叉搜索树（BST）的迭代器：
+BSTIterator(TreeNode root) 初始化 BSTIterator 类的一个对象。BST 的根节点 root 会作为构造函数的一部分给出。指针应初始化为一个不存在于 BST 中的数字，且该数字小于 BST 中的任何元素。 boolean hasNext() 如果向指针右侧遍历存在数字，则返回 true ；否则返回 false 。 int next()将指针向右移动，然后返回指针处的数字。 注意，指针初始化为一个不存在于 BST 中的数字，所以对 next() 的首次调用将返回 BST 中的最小元素。
+可以假设&amp;nbsp;next()&amp;nbsp;调用总是有效的，也就是说，当调用 next()&amp;nbsp;时，BST 的中序遍历中至少存在一个下一个数字。
+&amp;nbsp;
+示例：
+输入 inputs = [&amp;quot;BSTIterator&amp;quot;, &amp;quot;next&amp;quot;, &amp;quot;next&amp;quot;, &amp;quot;hasNext&amp;quot;, &amp;quot;next&amp;quot;, &amp;quot;hasNext&amp;quot;, &amp;quot;next&amp;quot;, &amp;quot;hasNext&amp;quot;, &amp;quot;next&amp;quot;, &amp;quot;hasNext&amp;quot;] inputs = [[[7, 3, 15, null, null, 9, 20]], [], [], [], [], [], [], [], [], []] 输出 [null, 3, 7, true, 9, true, 15, true, 20, false] 解释 BSTIterator bSTIterator = new BSTIterator([7, 3, 15, null, null, 9, 20]); bSTIterator.</description></item><item><title>剑指 Offer 55 - I 二叉树的深度</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/er-cha-shu-de-shen-du-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/er-cha-shu-de-shen-du-lcof/</guid><description>剑指 Offer 55 - I 二叉树的深度 输入一棵二叉树的根节点，求该树的深度。从根节点到叶节点依次经过的节点（含根、叶节点）形成树的一条路径，最长路径的长度为树的深度。
+例如：
+给定二叉树 [3,9,20,null,null,15,7]，
+3 / \ 9 20 / \ 15 7 返回它的最大深度&amp;nbsp;3 。
+&amp;nbsp;
+提示：
+节点总数 &amp;lt;= 10000 注意：本题与主站 104&amp;nbsp;题相同：https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/
+/** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ func maxDepth(root *TreeNode) int { } LeetCode题库地址 https://leetcode.cn/problems/er-cha-shu-de-shen-du-lcof</description></item><item><title>剑指 Offer II 056 二叉搜索树中两个节点之和</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/opldqz/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/opldqz/</guid><description>剑指 Offer II 056 二叉搜索树中两个节点之和 给定一个二叉搜索树的 根节点 root&amp;nbsp;和一个整数 k , 请判断该二叉搜索树中是否存在两个节点它们的值之和等于 k 。假设二叉搜索树中节点的值均唯一。
+&amp;nbsp;
+示例 1：
+输入: root = [8,6,10,5,7,9,11], k = 12 输出: true 解释: 节点 5 和节点 7 之和等于 12 示例 2：
+输入: root = [8,6,10,5,7,9,11], k = 22 输出: false 解释: 不存在两个节点值之和为 22 的节点 &amp;nbsp;
+提示：
+二叉树的节点个数的范围是&amp;nbsp;&amp;nbsp;[1, 104]. -104&amp;nbsp;&amp;lt;= Node.val &amp;lt;= 104 root&amp;nbsp;为二叉搜索树 -105&amp;nbsp;&amp;lt;= k &amp;lt;= 105 &amp;nbsp;
+注意：本题与主站 653 题相同：&amp;nbsp;https://leetcode-cn.com/problems/two-sum-iv-input-is-a-bst/
+/** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ func findTarget(root *TreeNode, k int) bool { } LeetCode题库地址 https://leetcode.</description></item><item><title>剑指 Offer 55 - II 平衡二叉树</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/ping-heng-er-cha-shu-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/ping-heng-er-cha-shu-lcof/</guid><description>剑指 Offer 55 - II 平衡二叉树 输入一棵二叉树的根节点，判断该树是不是平衡二叉树。如果某二叉树中任意节点的左右子树的深度相差不超过1，那么它就是一棵平衡二叉树。
+示例 1:
+给定二叉树 [3,9,20,null,null,15,7]
+3 / \ 9 20 / \ 15 7 返回 true 。
+示例 2:
+给定二叉树 [1,2,2,3,3,null,null,4,4]
+1 / \ 2 2 / \ 3 3 / \ 4 4 返回 false 。
+限制：
+0 &lt;= 树的结点个数 &lt;= 10000 注意：本题与主站 110 题相同：https://leetcode-cn.com/problems/balanced-binary-tree/
+/** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ func isBalanced(root *TreeNode) bool { } LeetCode题库地址 https://leetcode.</description></item><item><title>剑指 Offer II 059 数据流的第 K 大数值</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/jbjn9c/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/jbjn9c/</guid><description>剑指 Offer II 059 数据流的第 K 大数值 设计一个找到数据流中第 k 大元素的类（class）。注意是排序后的第 k 大元素，不是第 k 个不同的元素。
+请实现 KthLargest&amp;nbsp;类：
+KthLargest(int k, int[] nums) 使用整数 k 和整数流 nums 初始化对象。 int add(int val) 将 val 插入数据流 nums 后，返回当前数据流中第 k 大的元素。 &amp;nbsp;
+示例：
+输入： [&amp;quot;KthLargest&amp;quot;, &amp;quot;add&amp;quot;, &amp;quot;add&amp;quot;, &amp;quot;add&amp;quot;, &amp;quot;add&amp;quot;, &amp;quot;add&amp;quot;] [[3, [4, 5, 8, 2]], [3], [5], [10], [9], [4]] 输出： [null, 4, 5, 5, 8, 8] 解释： KthLargest kthLargest = new KthLargest(3, [4, 5, 8, 2]); kthLargest.add(3); // return 4 kthLargest.</description></item><item><title>剑指 Offer 68 - I 二叉搜索树的最近公共祖先</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/er-cha-sou-suo-shu-de-zui-jin-gong-gong-zu-xian-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/er-cha-sou-suo-shu-de-zui-jin-gong-gong-zu-xian-lcof/</guid><description>剑指 Offer 68 - I 二叉搜索树的最近公共祖先 给定一个二叉搜索树, 找到该树中两个指定节点的最近公共祖先。
+百度百科中最近公共祖先的定义为：&amp;ldquo;对于有根树 T 的两个结点 p、q，最近公共祖先表示为一个结点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。&amp;rdquo;
+例如，给定如下二叉搜索树:&amp;nbsp; root =&amp;nbsp;[6,2,8,0,4,7,9,null,null,3,5]
+&amp;nbsp;
+示例 1:
+输入: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 8 输出: 6 解释: 节点 2 和节点 8 的最近公共祖先是 6。 示例 2:
+输入: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 4 输出: 2 解释: 节点 2 和节点 4 的最近公共祖先是 2, 因为根据定义最近公共祖先节点可以为节点本身。 &amp;nbsp;
+说明:
+所有节点的值都是唯一的。 p、q 为不同节点且均存在于给定的二叉搜索树中。 注意：本题与主站 235 题相同：https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
+LeetCode题库地址 https://leetcode.</description></item><item><title>剑指 Offer 68 - II 二叉树的最近公共祖先</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/er-cha-shu-de-zui-jin-gong-gong-zu-xian-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/er-cha-shu-de-zui-jin-gong-gong-zu-xian-lcof/</guid><description>剑指 Offer 68 - II 二叉树的最近公共祖先 给定一个二叉树, 找到该树中两个指定节点的最近公共祖先。
+百度百科中最近公共祖先的定义为：&amp;ldquo;对于有根树 T 的两个结点 p、q，最近公共祖先表示为一个结点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。&amp;rdquo;
+例如，给定如下二叉树:&amp;nbsp; root =&amp;nbsp;[3,5,1,6,2,0,8,null,null,7,4]
+&amp;nbsp;
+示例 1:
+输入: root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 1 输出: 3 解释: 节点 5 和节点 1 的最近公共祖先是节点 3。 示例&amp;nbsp;2:
+输入: root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 4 输出: 5 解释: 节点 5 和节点 4 的最近公共祖先是节点 5。因为根据定义最近公共祖先节点可以为节点本身。 &amp;nbsp;
+说明:
+所有节点的值都是唯一的。 p、q 为不同节点且均存在于给定的二叉树中。 注意：本题与主站 236 题相同：https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/
+/** * Definition for a binary tree node.</description></item><item><title>面试题 17.12 BiNode</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/binode-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/binode-lcci/</guid><description>面试题 17.12 BiNode 二叉树数据结构TreeNode可用来表示单向链表（其中left置空，right为下一个链表节点）。实现一个方法，把二叉搜索树转换为单向链表，要求依然符合二叉搜索树的性质，转换操作应是原址的，也就是在原始的二叉搜索树上直接修改。
+返回转换后的单向链表的头节点。
+注意：本题相对原题稍作改动
+&amp;nbsp;
+示例：
+输入： [4,2,5,1,3,null,6,0] 输出： [0,null,1,null,2,null,3,null,4,null,5,null,6] 提示：
+节点数量不会超过 100000。 /** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ func convertBiNode(root *TreeNode) *TreeNode { } LeetCode题库地址 https://leetcode.cn/problems/binode-lcci</description></item><item><title>【2022-09-10每日一题】669. 修剪二叉搜索树</title><link>/study/leetcode/trim-a-binary-search-tree/</link><pubDate>Sat, 10 Sep 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/trim-a-binary-search-tree/</guid><description>2022-09-10每日一题：669. 修剪二叉搜索树 难度：Medium 标签：树 、 深度优先搜索 、 二叉搜索树 、 二叉树 给你二叉搜索树的根节点 root ，同时给定最小边界low 和最大边界 high。通过修剪二叉搜索树，使得所有节点的值在[low, high]中。修剪树 不应该&amp;nbsp;改变保留在树中的元素的相对结构 (即，如果没有被移除，原有的父代子代关系都应当保留)。 可以证明，存在&amp;nbsp;唯一的答案&amp;nbsp;。
+所以结果应当返回修剪好的二叉搜索树的新的根节点。注意，根节点可能会根据给定的边界发生改变。
+&amp;nbsp;
+示例 1：
+输入：root = [1,0,2], low = 1, high = 2 输出：[1,null,2] 示例 2：
+输入：root = [3,0,4,null,2,null,null,1], low = 1, high = 3 输出：[3,2,null,1] &amp;nbsp;
+提示：
+树中节点数在范围 [1, 104] 内 0 &amp;lt;= Node.val &amp;lt;= 104 树中每个节点的值都是 唯一 的 题目数据保证输入是一棵有效的二叉搜索树 0 &amp;lt;= low &amp;lt;= high &amp;lt;= 104 ### 方法一：递归 /** * Definition for a binary tree node.</description></item><item><title>【2022-09-05每日一题】652. 寻找重复的子树</title><link>/study/leetcode/find-duplicate-subtrees/</link><pubDate>Mon, 05 Sep 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/find-duplicate-subtrees/</guid><description>2022-09-05每日一题：652. 寻找重复的子树 难度：Medium 标签：树 、 深度优先搜索 、 哈希表 、 二叉树 给定一棵二叉树 root，返回所有重复的子树。
+对于同一类的重复子树，你只需要返回其中任意一棵的根结点即可。
+如果两棵树具有相同的结构和相同的结点值，则它们是重复的。
+&amp;nbsp;
+示例 1：
+输入：root = [1,2,3,4,null,2,4,null,null,4] 输出：[[2,4],[4]] 示例 2：
+输入：root = [2,1,1] 输出：[[1]] 示例 3：
+输入：root = [2,2,2,3,null,3,null] 输出：[[2,3],[3]] &amp;nbsp;
+提示：
+树中的结点数在[1,10^4]范围内。 -200 &amp;lt;= Node.val &amp;lt;= 200 ### 方法一：使用序列化进行唯一表示 个人刷题记录，方便后续复习，具体解析思路请查看官方题解
+/** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ func findDuplicateSubtrees(root *TreeNode) []*TreeNode { repeat := map[*TreeNode]struct{}{} seen := map[string]*TreeNode{} var dfs func (*TreeNode) string dfs = func (node *TreeNode) string { if node == nil { return &amp;quot;&amp;quot; } // 序列化构造唯一key serial := fmt.</description></item><item><title>【2022-09-02每日一题】687. 最长同值路径</title><link>/study/leetcode/longest-univalue-path/</link><pubDate>Fri, 02 Sep 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/longest-univalue-path/</guid><description>2022-09-02每日一题：687. 最长同值路径 难度：Medium 标签：树 、 深度优先搜索 、 二叉树 给定一个二叉树的&amp;nbsp;root&amp;nbsp;，返回&amp;nbsp;最长的路径的长度 ，这个路径中的&amp;nbsp;每个节点具有相同值&amp;nbsp;。 这条路径可以经过也可以不经过根节点。
+两个节点之间的路径长度&amp;nbsp;由它们之间的边数表示。
+&amp;nbsp;
+示例 1:
+输入：root = [5,4,5,1,1,5] 输出：2 示例 2:
+输入：root = [1,4,5,4,4,5] 输出：2 &amp;nbsp;
+提示:
+树的节点数的范围是&amp;nbsp;[0, 104]&amp;nbsp; -1000 &amp;lt;= Node.val &amp;lt;= 1000 树的深度将不超过 1000&amp;nbsp; ### 方法一：深度优先遍历（递归） /** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ func longestUnivaluePath(root *TreeNode) (ans int) { var dfs func(*TreeNode) int dfs = func (node *TreeNode) int { if node == nil { return 0 } left, right := dfs(node.</description></item><item><title>【2022-08-30每日一题】998. 最大二叉树 II</title><link>/study/leetcode/maximum-binary-tree-ii/</link><pubDate>Tue, 30 Aug 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/maximum-binary-tree-ii/</guid><description>2022-08-30每日一题：998. 最大二叉树 II 难度：Medium 标签：树 、 二叉树 最大树 定义：一棵树，并满足：其中每个节点的值都大于其子树中的任何其他值。
+给你最大树的根节点 root 和一个整数 val 。
+就像 之前的问题 那样，给定的树是利用 Construct(a)&amp;nbsp;例程从列表&amp;nbsp;a（root = Construct(a)）递归地构建的：
+如果 a 为空，返回&amp;nbsp;null 。 否则，令&amp;nbsp;a[i] 作为 a 的最大元素。创建一个值为&amp;nbsp;a[i]&amp;nbsp;的根节点 root 。 root&amp;nbsp;的左子树将被构建为&amp;nbsp;Construct([a[0], a[1], ..., a[i - 1]]) 。 root&amp;nbsp;的右子树将被构建为&amp;nbsp;Construct([a[i + 1], a[i + 2], ..., a[a.length - 1]]) 。 返回&amp;nbsp;root 。 请注意，题目没有直接给出 a ，只是给出一个根节点&amp;nbsp;root = Construct(a) 。
+假设 b 是 a 的副本，并在末尾附加值 val。题目数据保证 b 中的值互不相同。
+返回&amp;nbsp;Construct(b) 。
+&amp;nbsp;
+示例 1：
+输入：root = [4,1,3,null,null,2], val = 5 输出：[5,4,null,1,3,null,null,2] 解释：a = [1,4,2,3], b = [1,4,2,3,5] 示例 2：</description></item><item><title>【2022-08-27每日一题】662. 二叉树最大宽度</title><link>/study/leetcode/maximum-width-of-binary-tree/</link><pubDate>Sat, 27 Aug 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/maximum-width-of-binary-tree/</guid><description>2022-08-27每日一题：662. 二叉树最大宽度 难度：Medium 标签：树 、 深度优先搜索 、 广度优先搜索 、 二叉树 给你一棵二叉树的根节点 root ，返回树的 最大宽度 。
+树的 最大宽度 是所有层中最大的 宽度 。
+每一层的 宽度 被定义为该层最左和最右的非空节点（即，两个端点）之间的长度。将这个二叉树视作与满二叉树结构相同，两端点间会出现一些延伸到这一层的 null 节点，这些 null 节点也计入长度。
+题目数据保证答案将会在&amp;nbsp; 32 位 带符号整数范围内。
+&amp;nbsp;
+示例 1：
+输入：root = [1,3,2,5,3,null,9] 输出：4 解释：最大宽度出现在树的第 3 层，宽度为 4 (5,3,null,9) 。 示例 2：
+输入：root = [1,3,2,5,null,null,9,6,null,7] 输出：7 解释：最大宽度出现在树的第 4 层，宽度为 7 (6,null,null,null,null,null,7) 。 示例 3：
+输入：root = [1,3,2,5] 输出：2 解释：最大宽度出现在树的第 2 层，宽度为 2 (3,2) 。 &amp;nbsp;
+提示：
+树中节点的数目范围是 [1, 3000] -100 &amp;lt;= Node.</description></item><item><title>【2022-08-22每日一题】655. 输出二叉树</title><link>/study/leetcode/print-binary-tree/</link><pubDate>Mon, 22 Aug 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/print-binary-tree/</guid><description>2022-08-22每日一题：655. 输出二叉树 难度：Medium 标签：树 、 深度优先搜索 、 广度优先搜索 、 二叉树 给你一棵二叉树的根节点 root ，请你构造一个下标从 0 开始、大小为 m x n 的字符串矩阵 res ，用以表示树的 格式化布局 。构造此格式化布局矩阵需要遵循以下规则：
+树的 高度 为 height ，矩阵的行数 m 应该等于 height + 1 。 矩阵的列数 n 应该等于 2height+1 - 1 。 根节点 需要放置在 顶行 的 正中间 ，对应位置为 res[0][(n-1)/2] 。 对于放置在矩阵中的每个节点，设对应位置为 res[r][c] ，将其左子节点放置在 res[r+1][c-2height-r-1] ，右子节点放置在 res[r+1][c+2height-r-1] 。 继续这一过程，直到树中的所有节点都妥善放置。 任意空单元格都应该包含空字符串 "" 。 返回构造得到的矩阵 res 。
+&amp;nbsp;
+&amp;nbsp;
+示例 1：
+输入：root = [1,2] 输出： [["","1",""], &amp;nbsp;["2","",""]] 示例 2：</description></item><item><title>【2022-08-20每日一题】654. 最大二叉树</title><link>/study/leetcode/maximum-binary-tree/</link><pubDate>Sat, 20 Aug 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/maximum-binary-tree/</guid><description>2022-08-20每日一题：654. 最大二叉树 难度：Medium 标签：栈 、 树 、 数组 、 分治 、 二叉树 、 单调栈 给定一个不重复的整数数组&amp;nbsp;nums 。&amp;nbsp;最大二叉树&amp;nbsp;可以用下面的算法从&amp;nbsp;nums 递归地构建:
+创建一个根节点，其值为&amp;nbsp;nums 中的最大值。 递归地在最大值&amp;nbsp;左边&amp;nbsp;的&amp;nbsp;子数组前缀上&amp;nbsp;构建左子树。 递归地在最大值 右边 的&amp;nbsp;子数组后缀上&amp;nbsp;构建右子树。 返回&amp;nbsp;nums 构建的 最大二叉树 。
+&amp;nbsp;
+示例 1：
+输入：nums = [3,2,1,6,0,5] 输出：[6,3,5,null,2,0,null,null,1] 解释：递归调用如下所示： - [3,2,1,6,0,5] 中的最大值是 6 ，左边部分是 [3,2,1] ，右边部分是 [0,5] 。 - [3,2,1] 中的最大值是 3 ，左边部分是 [] ，右边部分是 [2,1] 。 - 空数组，无子节点。 - [2,1] 中的最大值是 2 ，左边部分是 [] ，右边部分是 [1] 。 - 空数组，无子节点。 - 只有一个元素，所以子节点是一个值为 1 的节点。 - [0,5] 中的最大值是 5 ，左边部分是 [0] ，右边部分是 [] 。 - 只有一个元素，所以子节点是一个值为 0 的节点。 - 空数组，无子节点。 示例 2：</description></item><item><title>【2022-08-17每日一题】1302. 层数最深叶子节点的和</title><link>/study/leetcode/deepest-leaves-sum/</link><pubDate>Wed, 17 Aug 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/deepest-leaves-sum/</guid><description>2022-08-17每日一题：1302. 层数最深叶子节点的和 难度：Medium 标签：树 、 深度优先搜索 、 广度优先搜索 、 二叉树 给你一棵二叉树的根节点 root ，请你返回 层数最深的叶子节点的和 。
+示例 1：
+输入：root = [1,2,3,4,5,null,6,7,null,null,null,null,8] 输出：15 示例 2：
+输入：root = [6,7,8,2,7,1,3,9,null,1,4,null,null,null,5] 输出：19 提示：
+树中节点数目在范围 [1, 104] 之间。 1 &lt;= Node.val &lt;= 100 ### 方法一：BFS（广度优先遍历） /** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ func deepestLeavesSum(root *TreeNode) (ans int) { if root == nil { return ans } queue := []*TreeNode{root} for len(queue) &amp;gt; 0 { ans = 0 for n := len(queue); n &amp;gt; 0; n-- { node := queue[0] queue = queue[1:] if node.</description></item><item><title>2022-08-05每日一题：623. 在二叉树中增加一行</title><link>/study/leetcode/add-one-row-to-tree/</link><pubDate>Fri, 05 Aug 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/add-one-row-to-tree/</guid><description>2022-08-05每日一题：623. 在二叉树中增加一行 给定一个二叉树的根&amp;nbsp;root&amp;nbsp;和两个整数 val 和&amp;nbsp;depth&amp;nbsp;，在给定的深度&amp;nbsp;depth&amp;nbsp;处添加一个值为 val 的节点行。
+注意，根节点&amp;nbsp;root&amp;nbsp;位于深度&amp;nbsp;1&amp;nbsp;。
+加法规则如下:
+给定整数&amp;nbsp;depth，对于深度为&amp;nbsp;depth - 1 的每个非空树节点 cur ，创建两个值为 val 的树节点作为 cur 的左子树根和右子树根。 cur 原来的左子树应该是新的左子树根的左子树。 cur 原来的右子树应该是新的右子树根的右子树。 如果 depth == 1 意味着&amp;nbsp;depth - 1&amp;nbsp;根本没有深度，那么创建一个树节点，值 val 作为整个原始树的新根，而原始树就是新根的左子树。 &amp;nbsp;
+示例 1:
+输入: root = [4,2,6,3,1,5], val = 1, depth = 2 输出: [4,1,1,2,null,null,6,3,1,5] 示例 2:
+输入: root = [4,2,null,3,1], val = 1, depth = 3 输出: [4,2,null,1,1,3,null,null,1] &amp;nbsp;
+提示:
+节点数在&amp;nbsp;[1, 104]&amp;nbsp;范围内 树的深度在&amp;nbsp;[1, 104]范围内 -100 &amp;lt;= Node.val &amp;lt;= 100 -105&amp;nbsp;&amp;lt;= val &amp;lt;= 105 1 &amp;lt;= depth &amp;lt;= the depth of tree + 1 方法一：深度优先遍历 当depth 为 1 时，需要创建一个新的 root，并将原 root 作为新 root 的左子节点。</description></item></channel></rss>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>几何 on lbbniu</title><link>/tags/%E5%87%A0%E4%BD%95/</link><description>Recent content in 几何 on lbbniu</description><generator>Hugo -- gohugo.io</generator><language>zh</language><managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor><webMaster>lbbniu@gmail.com (lbbniu)</webMaster><copyright>&amp;copy; 2021 &lt;a href="https://blog.lbbniu.com/">lbbniu&lt;/a></copyright><lastBuildDate>Thu, 28 Jul 2022 22:00:00 +0800</lastBuildDate><atom:link href="/tags/%E5%87%A0%E4%BD%95/index.xml" rel="self" type="application/rss+xml"/><item><title>面试题 16.03 交点</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/intersection-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/intersection-lcci/</guid><description>面试题 16.03 交点 给定两条线段（表示为起点start = {X1, Y1}和终点end = {X2, Y2}），如果它们有交点，请计算其交点，没有交点则返回空值。
+要求浮点型误差不超过10^-6。若有多个交点（线段重叠）则返回 X 值最小的点，X 坐标相同则返回 Y 值最小的点。
+&amp;nbsp;
+示例 1：
+输入： line1 = {0, 0}, {1, 0} line2 = {1, 1}, {0, -1} 输出： {0.5, 0} 示例 2：
+输入： line1 = {0, 0}, {3, 3} line2 = {1, 1}, {2, 2} 输出： {1, 1} 示例 3：
+输入： line1 = {0, 0}, {1, 1} line2 = {1, 0}, {2, 1} 输出： {}，两条线段没有交点 &amp;nbsp;
+提示：
+坐标绝对值不会超过 2^7 输入的坐标均是有效的二维坐标 func intersection(start1 []int, end1 []int, start2 []int, end2 []int) []float64 { } LeetCode题库地址 https://leetcode.</description></item><item><title>面试题 16.13 平分正方形</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/bisect-squares-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/bisect-squares-lcci/</guid><description>面试题 16.13 平分正方形 给定两个正方形及一个二维平面。请找出将这两个正方形分割成两半的一条直线。假设正方形顶边和底边与 x 轴平行。
+每个正方形的数据square包含3个数值，正方形的左下顶点坐标[X,Y] = [square[0],square[1]]，以及正方形的边长square[2]。所求直线穿过两个正方形会形成4个交点，请返回4个交点形成线段的两端点坐标（两个端点即为4个交点中距离最远的2个点，这2个点所连成的线段一定会穿过另外2个交点）。2个端点坐标[X1,Y1]和[X2,Y2]的返回格式为{X1,Y1,X2,Y2}，要求若X1 != X2，需保证X1 &amp;lt; X2，否则需保证Y1 &amp;lt;= Y2。
+若同时有多条直线满足要求，则选择斜率最大的一条计算并返回（与Y轴平行的直线视为斜率无穷大）。
+示例：
+输入： square1 = {-1, -1, 2} square2 = {0, -1, 2} 输出： {-1,0,2,0} 解释： 直线 y = 0 能将两个正方形同时分为等面积的两部分，返回的两线段端点为[-1,0]和[2,0] 提示：
+square.length == 3 square[2] &amp;gt; 0 func cutSquares(square1 []int, square2 []int) []float64 { } LeetCode题库地址 https://leetcode.cn/problems/bisect-squares-lcci</description></item><item><title>面试题 16.14 最佳直线</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/best-line-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/best-line-lcci/</guid><description>面试题 16.14 最佳直线 给定一个二维平面及平面上的 N 个点列表Points，其中第i个点的坐标为Points[i]=[Xi,Yi]。请找出一条直线，其通过的点的数目最多。
+设穿过最多点的直线所穿过的全部点编号从小到大排序的列表为S，你仅需返回[S[0],S[1]]作为答案，若有多条直线穿过了相同数量的点，则选择S[0]值较小的直线返回，S[0]相同则选择S[1]值较小的直线返回。
+示例：
+输入： [[0,0],[1,1],[1,0],[2,0]] 输出： [0,2] 解释： 所求直线穿过的3个点的编号为[0,2,3] 提示：
+2 &lt;= len(Points) &lt;= 300 len(Points[i]) = 2 func bestLine(points [][]int) []int { } LeetCode题库地址 https://leetcode.cn/problems/best-line-lcci</description></item></channel></rss>

@@ -1,0 +1,201 @@
+<!doctype html><html lang=zh dir=ltr><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>写给go开发者的Tars教程-Tars协议基础 | lbbniu</title>
+<meta name=generator content="Hugo Eureka 0.9.3"><link rel=stylesheet href=/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css><script defer src=/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js></script><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" as=style onload='this.onload=null,this.rel="stylesheet"'><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/github.min.css media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/php.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/java.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/go.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/python.min.js crossorigin></script><link rel=stylesheet href=/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css media=print onload='this.media="all",this.onload=null'><script defer type=text/javascript src=/js/fontawesome.min.35973bea57658ef0dd22ad59ea4642b6c8c67af62bed8659ac326d284ef285a6657cdbcf57d3b2910e7e992f2b20426e.js></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css integrity=sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js integrity=sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY crossorigin></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script><script defer src=https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js integrity=sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0 crossorigin></script><link rel=icon type=image/png sizes=32x32 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_32x32_fill_box_center_3.png><link rel=apple-touch-icon sizes=180x180 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_180x180_fill_box_center_3.png><meta name=description content="写给go开发者的Tars教程-Tars协议基础"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"文章列表","item":"/post/"},{"@type":"ListItem","position":2,"name":"写给go开发者的Tars教程-Tars协议基础","item":"/2023/06/18/tarsgo-protocol/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/2023/06/18/tarsgo-protocol/"},"headline":"写给go开发者的Tars教程-Tars协议基础 | lbbniu","datePublished":"2023-06-18T15:20:00+08:00","dateModified":"2023-06-18T15:20:00+08:00","wordCount":1039,"author":{"@type":"Person","name":["lbbniu"]},"publisher":{"@type":"Person","name":"lbbniu","logo":{"@type":"ImageObject","url":"/images/icon.gif"}},"description":"写给go开发者的Tars教程-Tars协议基础"}</script><meta property="og:title" content="写给go开发者的Tars教程-Tars协议基础 | lbbniu"><meta property="og:type" content="article"><meta property="og:image" content="/images/icon.png"><meta property="og:url" content="/2023/06/18/tarsgo-protocol/"><meta property="og:description" content="写给go开发者的Tars教程-Tars协议基础"><meta property="og:locale" content="zh"><meta property="og:site_name" content="lbbniu"><meta property="article:published_time" content="2023-06-18T15:20:00+08:00"><meta property="article:modified_time" content="2023-06-18T15:20:00+08:00"><meta property="article:section" content="post"><meta property="article:tag" content="Tars"><meta property="og:see_also" content="/2023/06/18/tarsgo-rpc/"><meta property="og:see_also" content="/cloud-native/tars%E5%AE%B9%E5%99%A8%E5%8C%96/"><body class="flex min-h-screen flex-col"><header class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"><div class="mx-auto w-full max-w-screen-xl"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=="Auto"||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName("html")[0].classList.add("dark")</script><nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0"><a href=/ class="me-6 text-primary-text text-xl font-bold">lbbniu</a>
+<button id=navbar-btn class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+<i class="fas fa-bars"></i></button><div id=target class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20"><div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0"><a href=/post/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">文章</a>
+<a href=/cloud-native/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">云原生</a>
+<a href=/study/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">算法学习</a>
+<a href=/docs/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">Go学习训练营</a>
+<a href=/tags/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">标签</a></div><div class=flex><div class="relative pt-4 md:pt-0"><div class="cursor-pointer hover:text-eureka" id=lightDarkMode><i class="fas fa-adjust"></i></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id=is-open></div><div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40" id=lightDarkOptions><span class="px-4 py-1 hover:text-eureka" name=Light>浅色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Dark>深色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Auto>自动</span></div></div></div></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id=is-open-mobile></div></nav><script>let element=document.getElementById("lightDarkMode");storageColorScheme==null||storageColorScheme=="Auto"?document.addEventListener("DOMContentLoaded",()=>{window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",switchDarkMode)}):storageColorScheme=="Light"?(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","sun"),element.firstElementChild.classList.add("fa-sun")):storageColorScheme=="Dark"&&(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","moon"),element.firstElementChild.classList.add("fa-moon")),document.addEventListener("DOMContentLoaded",()=>{getcolorscheme(),switchBurger()})</script></div></header><main class="grow pt-16"><div class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8"><div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12"><div class="bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"><article class=prose><h1 class=mb-4>写给go开发者的Tars教程-Tars协议基础</h1><div class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"><div class="me-6 my-2"><i class="fas fa-calendar me-1"></i>
+<span>2023-06-18</span></div><div class="me-6 my-2"><i class="fas fa-clock me-1"></i>
+<span>5分钟阅读时长</span></div><div class="me-6 my-2"><i class="fas fa-folder me-1"></i>
+<a href=/categories/tarsgo/ class=hover:text-eureka>tarsgo</a></div></div><h2 id=简介>简介</h2><p>Tars这个名字取自于电影"星际穿越"中的机器人，它是基于名字服务使用Tars协议的高性能RPC开发框架，配套一体化的运营管理平台，并通过伸缩调度，实现运维半托管服务。</p><p>Tars是腾讯从2008年到今天一直在使用的后台逻辑层的统一应用框架TAF（Total Application Framework），目前支持C++、Java、PHP、Nodejs、Go语言。该框架为用户提供了涉及到开发、运维、以及测试的一整套解决方案，帮助一个产品或者服务快速开发、部署、测试、上线。 它集可扩展协议编解码、高性能RPC通信框架、名字路由与发现、发布监控、日志统计、配置管理等于一体，通过它可以快速用微服务的方式构建自己的稳定可靠的分布式应用，并实现完整有效的服务治理。</p><p>目前该框架在腾讯内部，各大核心业务都在使用，颇受欢迎，基于该框架部署运行的服务节点规模达到上万个。</p><h3 id=支持平台>支持平台</h3><p>目前运行的操作系统平台如下：</p><ul><li><p>Linux</p></li><li><p>Mac(>=2.1.0 support)</p></li></ul><h3 id=支持语言>支持语言</h3><p>目前支持的开发语言如下：</p><ul><li><p>C++</p></li><li><p>Java</p></li><li><p>Nodejs</p></li><li><p>PHP</p></li><li><p>Go</p></li></ul><h3 id=版本管理>版本管理</h3><p>Tars由多种模块组成, 分散在多个仓库中, 并且基础框架版本和语言版本可以独立发展, 鉴于此, 从2.1.0版本开始, 框架的版本TAG打在TarsFramework仓库上, 不再体现在Tars这个仓库上.</p><h2 id=tars-idl>Tars IDL</h2><p>所谓序列化通俗来说就是把内存的一段数据转化成二进制并存储或者通过网络传输，而读取磁盘或另一端收到后可以在内存中重建这段数据</p><p>1、<code>tars</code>协议是跨语言跨平台的序列化协议。</p><p>2、<code>tars</code>协议本身也可以被用于非RPC场景，如存储</p><p><code>json</code>、<code> xml</code>都是一种序列化的方式，只是他们不需要提前预定义idl，且具备可读性，当然他们传输的体积也因此较大，可以说是各有优劣。</p><h3 id=关键字>关键字</h3><pre><code class=language-apl>void,struct,bool,byte,short,int,double,float,long,string,vector,map,key,routekey,module,interface,out,require,optional,false,true,enum,const
+</code></pre><h3 id=注释>注释</h3><p>采用 c++的注释规范：</p><ul><li>//表示注释一行</li><li>/**/表示注释范围中的所有代码。</li></ul><h3 id=基本类型>基本类型</h3><p>基本类型会涉及到不同语言和编码方式，这里只整理tars和go类型对照表</p><table><thead><tr><th>.tars Type</th><th>Go Type</th><th>Notes</th></tr></thead><tbody><tr><td>void</td><td>函数无返回值</td><td>只能在函数的返回值表示</td></tr><tr><td>bool</td><td>bool</td><td>布尔类型</td></tr><tr><td>byte</td><td>int8</td><td>有符号字符</td></tr><tr><td>unsigned byte</td><td>uint8</td><td>无符号字符</td></tr><tr><td>short</td><td>int16</td><td>有符号短整型</td></tr><tr><td>unsigned short</td><td>uint16</td><td>无符号短整形</td></tr><tr><td>int</td><td>int32</td><td>有符号整型</td></tr><tr><td>unsigned int</td><td>uint32</td><td>无符号整形</td></tr><tr><td>long</td><td>int64</td><td>有符号长整型</td></tr><tr><td>float</td><td>float32</td><td>32位浮点数</td></tr><tr><td>double</td><td>float64</td><td>64位浮点数</td></tr><tr><td>string</td><td>string</td><td>字符串</td></tr></tbody></table><h3 id=复杂类型>复杂类型</h3><table><thead><tr><th>.tars Type</th><th>Go Type</th><th>Notes</th></tr></thead><tbody><tr><td>enum</td><td>int32</td><td>枚举类型会转为int32</td></tr><tr><td>vector</td><td>slice</td><td>序列</td></tr><tr><td>map</td><td>map</td><td>字典</td></tr></tbody></table><h4 id=枚举>枚举</h4><p>枚举类型的定义如下：</p><pre><code class=language-apl>enum EnumType
+{
+    EnumType1,
+    EnumType2,
+    EnumType3
+};
+</code></pre><p>说明：</p><blockquote><ul><li>枚举类型支持在指定枚举变量的值，例如支持：EnumType1 = 1 这种定义方式</li><li>第一个定义的枚举类型值为 0，这里 EnumType1 的值为 0</li></ul></blockquote><h4 id=序列>序列</h4><p>序列用 vector 来定义，如下：</p><pre><code class=language-apl>vector&lt;int&gt; vi;
+</code></pre><h4 id=字典>字典</h4><p>字典用 map 来定义，如下：</p><pre><code class=language-apl>map&lt;int, string&gt; m;
+</code></pre><h3 id=常量>常量</h3><p>Tars 文件中可以定义常量，例如：</p><pre><code class=language-apl>const int a = 0;
+const string s = “abc”;
+</code></pre><p>说明：</p><blockquote><ul><li>由于 map，vector 没有描述常量的值，因此不支持 map，vector 的定义；</li></ul></blockquote><h3 id=嵌套>嵌套</h3><p>任何 struct，map，vector 都可以嵌套；</p><h3 id=结构>结构</h3><p>结构定义如下：</p><pre><code class=language-apl>struct Test
+{
+    0  require  string s;
+    1  optional int  i = 23;
+};
+
+key[Test, s, i];
+</code></pre><p>说明：</p><blockquote><ul><li>第一列数字表示该字段的标识（tag），无论结构增减字段，该字段得值都不变，必须和响应的字段对应；</li><li>Tag 的值必须要>=0 且&lt;=255；</li><li>require 表示该字段必选；</li><li>optional 表示该字段可选；</li><li>对于 optional 字段，可以有一个缺省值，缺省值在编码时默认不打包；</li></ul></blockquote><p>key 说明：</p><blockquote><ul><li>在TarsGo中不做处理，在TarsCpp会按下面规则处理。</li><li>表示结构的小于比较符号，缺省时 Struct 是没有小于操作的，如果定义了 key，则生成小于比较符。</li></ul></blockquote><p>key 详细说明：</p><blockquote><ul><li>key[Stuct, member…]：</li><li>Struct：表示结构的名称</li><li>Member：表示该结构的成员变量，可以有多个；</li><li>生成的小于比较操作符，按照 key 中成员变量定义的顺序进行优先&lt;比较；</li><li>生成小于比较操作符以后，该结构就可以作为 map 的 key；</li></ul></blockquote><h3 id=接口>接口</h3><p>接口定义如下，例如：</p><pre><code class=language-apl>interface Demo
+{
+    int get(out vector&lt;map&lt;int, string&gt;&gt; v);
+    int set(vector&lt;map&lt;int, string&gt;&gt; v);
+};
+</code></pre><p>说明：</p><blockquote><ul><li>表示输出参数</li><li>接口定义后，通过自动代码生成工具（如：tars2go)会生成同步接口和异步接口等代码</li></ul></blockquote><h3 id=名字空间>名字空间</h3><p>所有的 struct，interface 必须在名字空间中，例如：</p><pre><code class=language-apl>module MemCache
+{
+    struct Key
+    {
+        0 require string s;
+    };
+
+    struct Value
+    {
+        0 require string s;
+    };
+
+    interface MemCacheI
+    {
+        int get(Key k, out Value v);
+        int set(Key k, Value v);
+    };
+};
+</code></pre><p>说明：</p><blockquote><ul><li>名字空间不能嵌套;</li><li>可以引用其他名字空间,例如:Demo1::Key</li></ul></blockquote><h3 id=使用已有协议类型import>使用已有协议类型（import）</h3><p>一个 tars 文件可以 include 另外一个 tars 文件, 只需要在头部如下引用其他文件即可: <code>#include "other.tars"</code></p><p>即可引用其他 tars 文件中的结构体了</p><h3 id=完整协议定义示例>完整协议定义示例</h3><p>所有标识符不能带有&rsquo;tars_’符号，且必须以字母开头，同时不能和关键字冲突。</p><pre><code class=language-apl>#include &quot;other.tars&quot;
+
+module Demo {
+    const int a = 0;
+    const string s = &quot;abc&quot;;
+    //表示注释一行
+    /*表示注释范围中的所有代码。*/
+    struct Demo {
+        0 require bool a;
+        1 optional byte b;
+        2 optional unsigned byte c;
+        3 optional short d;
+        4 optional unsigned short e;
+        5 optional int f;
+        6 optional unsigned int g;
+        7 optional long h;
+        8 optional float i;
+        9 optional double k;
+        10 optional string l;
+        11 optional vector&lt;string&gt; m; // 序列
+        12 optional map&lt;string,int&gt; n; // 字典
+    };
+    key[Demo, a, b];
+
+    enum EnumType
+    {
+        EnumType1,
+        EnumType2,
+        EnumType3
+    };
+
+    interface DemoIter
+    {
+        int get(out vector&lt;map&lt;int, string&gt;&gt; v);
+        int set(vector&lt;map&lt;int, string&gt;&gt; v);
+        void demo(Demo demoIn, out Demo demoOut);
+    };
+};
+</code></pre><h3 id=生成go代码>生成Go代码</h3><p>逼迫篇幅代码过长，这里只给出了struct转换后的Go语言代码</p><pre><code class=language-go>// Demo struct implement
+type Demo struct {
+	A bool             `json:&quot;a&quot;`
+	B int8             `json:&quot;b&quot;`
+	C uint8            `json:&quot;c&quot;`
+	D int16            `json:&quot;d&quot;`
+	E uint16           `json:&quot;e&quot;`
+	F int32            `json:&quot;f&quot;`
+	G uint32           `json:&quot;g&quot;`
+	H int64            `json:&quot;h&quot;`
+	I float32          `json:&quot;i&quot;`
+	K float64          `json:&quot;k&quot;`
+	L string           `json:&quot;l&quot;`
+	M []string         `json:&quot;m&quot;`
+	N map[string]int32 `json:&quot;n&quot;`
+}
+</code></pre><h2 id=tars协议数据编码>Tars协议数据编码</h2><h3 id=基本结构>基本结构</h3><p>每一个数据由两个部分组成：<code>头信息</code> +<code> 实际数据</code>，而其中头信息包括：<code>Type(4 bits)</code> + <code>Tag 1(4 bits)</code> + <code>Tag 2(1 byte) </code>，<code>Tag 2</code> 是可选的，当 <code>Tag</code> 的值不超过 14 时，只需要用 <code>Tag 1</code> 就可以表示；当 <code>Tag</code> 的值超过 14 而小于 256 时，<code>Tag 1</code> 固定为 15，而用 <code>Tag 2</code> 表示 <code>Tag</code> 的值。<code>Tag</code> 不允许大于 255。</p><p>Type 表示类型，用 4 个二进制位表示，取值范围是 0~15，用来标识该数据的类型。不同类型的数据，其后紧跟着的实际数据的长度和格式都是不一样的，详见一下的类型表。</p><p><code>Tag</code> 由 <code>Tag 1</code> 和 <code>Tag 2</code> 一起表示。取值范围是 0~255，即该数据在结构中的字段 ID，用来区分不同的字段，也就是说一个<code>struct</code>中最多有256个属性。</p><h3 id=编码类型表>编码类型表</h3><p>注意，这里的类型与 tars 文件定义的类型是两个不同的概念，这里的类型只是标识数据存储的类型，而不是数据定义的类型。</p><table><thead><tr><th>Type取值</th><th>类型</th><th>备注</th></tr></thead><tbody><tr><td>0</td><td>int1</td><td>紧跟 1 个字节整型数据</td></tr><tr><td>1</td><td>int2</td><td>紧跟 2 个字节整型数据</td></tr><tr><td>2</td><td>int4</td><td>紧跟 4 个字节整型数据</td></tr><tr><td>3</td><td>int8</td><td>紧跟 8 个字节整型数据</td></tr><tr><td>4</td><td>float</td><td>紧跟 4 个字节浮点型数据</td></tr><tr><td>5</td><td>double</td><td>紧跟 8 个字节浮点型数据</td></tr><tr><td>6</td><td>String1</td><td>紧跟 1 个字节长度，再跟内容</td></tr><tr><td>7</td><td>String4</td><td>紧跟 4 个字节长度，再跟内容</td></tr><tr><td>8</td><td>Map</td><td>紧跟一个整型数据表示 Map 的大小，再跟[key, value]对列表</td></tr><tr><td>9</td><td>List</td><td>紧跟一个整型数据表示 List 的大小，再跟元素列表</td></tr><tr><td>10</td><td>自定义结构开始</td><td>自定义结构开始标志</td></tr><tr><td>11</td><td>自定义结构结束</td><td>自定义结构结束标志，Tag 为 0</td></tr><tr><td>12</td><td>数字 0</td><td>表示数字 0，后面不跟数据</td></tr><tr><td>13</td><td>SimpleList</td><td>简单列表（目前用在 byte 数组），紧跟一个类型字段（目前只支持 byte），紧跟一个整型数据表示长度，再跟 byte 数据</td></tr></tbody></table><h3 id=各类型详细描述>各类型详细描述</h3><ol><li><p>基本类型（包括 int1、int2、int4、int8、float、double），头信息后紧跟数值数据。char、bool 也被看作整型。所有的整型数据之间不做区分，也就是说一个 short 的值可以赋值给一个 int。</p></li><li><p>数字 0，头信息后不跟数据，表示数值 0。所有基本类型的 0 值都可以这样来表示。这是考虑到数字 0 出现的概率比较大，所以单独提一个类型，以节省空间。</p></li><li><p>字符串（包括 String1、String4）</p><p>- String1 跟一个字节的长度（该长度数据不包括头信息），接着紧跟内容。</p><p>- String4 与之类似。</p></li><li><p>Map紧跟一个整形数据（包括头信息）表示 Map 的大小，然后紧跟[Key 数据（Tag 为 0），Value 数据（Tag 为 1）]对列表。</p></li><li><p>List紧跟一个整形数据（包括头信息）表示 List 的大小，然后紧跟元素列表（Tag 为 0）</p></li><li><p>自定义结构体开始标志，后面紧跟字段数据，字段按照 tag 升序顺序排列</p></li><li><p>自定义结构体结束标志，Tag 为 0</p></li></ol><h3 id=对象持久化>对象持久化</h3><p>对于自定义结构体的持久化，由开始标志与结束标志来标识。</p><p>比如如下结构定义：</p><pre><code class=language-apl>struct TestInfo
+{
+    1  require  int    ii  = 34;
+    2  optional string s   = &quot;abc&quot;;
+};
+
+struct TestInfo2
+{
+    1  require TestInfo  t;
+    2  require int       a = 12345;
+};
+</code></pre><p>其中，默认的 TestInfo2 结构编码后结果为：</p><p><img src=https://doc.tarsyun.com/assets/tars_tupstruct.png alt=tars></p><h2 id=tars-底层rpc消息格式>Tars 底层RPC消息格式</h2><p>TUP 底层协议完全采用 Tars 定义，与 Tars 的底层数据包定义一致，其中 require 的字段为 TUP 必须的字段，optional 为访问 Tars 服务时额外需要用到的字段。</p><h3 id=请求包httpsgithubcomtarscloudtarsgoblobmastertarsprotocolresrequestftars><a href=https://github.com/TarsCloud/TarsGo/blob/master/tars/protocol/res/RequestF.tars target=_blank rel=noopener>请求包</a></h3><pre><code class=language-apl>//请求包体
+struct RequestPacket
+{
+    1  require short        iVersion;         //版本号
+    2  optional byte        cPacketType;      //包类型
+    3  optional int         iMessageType;     //消息类型
+    4  require int          iRequestId;       //请求ID
+    5  require string       sServantName;     //servant名字
+    6  require string       sFuncName;        //函数名称
+    7  require vector&lt;byte&gt; sBuffer;          //二进制buffer
+    8  optional int         iTimeout;         //超时时间（毫秒）
+    9  optional map&lt;string, string&gt; context;  //业务上下文
+    10 optional map&lt;string, string&gt; status;   //框架协议上下文
+};
+</code></pre><h3 id=响应包httpsgithubcomtarscloudtarsgoblobmastertarsprotocolresrequestftars><a href=https://github.com/TarsCloud/TarsGo/blob/master/tars/protocol/res/RequestF.tars target=_blank rel=noopener>响应包</a></h3><pre><code class=language-apl>//响应包体
+struct ResponsePacket
+{
+    1 require short         iVersion;       //版本号
+    2 optional byte         cPacketType;    //包类型
+    3 require int           iRequestId;     //请求ID
+    4 optional int          iMessageType;   //消息类型
+    5 optional int          iRet;           //返回值
+    6 require vector&lt;byte&gt;  sBuffer;        //二进制流
+    7 optional map&lt;string, string&gt; status;  //框架协议上下文
+    8 optional string       sResultDesc;    //结果描述
+    9 optional map&lt;string, string&gt; context; //业务上下文
+};
+</code></pre><h4 id=tars定义的返回码httpsgithubcomtarscloudtarsgoblobmastertarsprotocolresbaseftars><a href=https://github.com/TarsCloud/TarsGo/blob/master/tars/protocol/res/BaseF.tars target=_blank rel=noopener>TARS定义的返回码</a></h4><pre><code class=language-apl>//返回值
+const int TAFSERVERSUCCESS       = 0;       //服务器端处理成功
+const int TAFSERVERDECODEERR     = -1;      //服务器端解码异常
+const int TAFSERVERENCODEERR     = -2;      //服务器端编码异常
+const int TAFSERVERNOFUNCERR     = -3;      //服务器端没有该函数
+const int TAFSERVERNOSERVANTERR  = -4;      //服务器端没有该Servant对象
+const int TAFSERVERRESETGRID     = -5;      //服务器端灰度状态不一致
+const int TAFSERVERQUEUETIMEOUT  = -6;      //服务器队列超过限制
+const int TAFASYNCCALLTIMEOUT    = -7;      //异步调用超时
+const int TAFINVOKETIMEOUT       = -7;      //调用超时
+const int TAFPROXYCONNECTERR     = -8;      //proxy链接异常
+const int TAFSERVEROVERLOAD      = -9;      //服务器端超负载,超过队列长度
+const int TAFADAPTERNULL         = -10;     //客户端选路为空，服务不存在或者所有服务down掉了
+const int TAFINVOKEBYINVALIDESET = -11;     //客户端按set规则调用非法
+const int TAFCLIENTDECODEERR     = -12;     //客户端解码异常
+const int TAFSERVERUNKNOWNERR    = -99;     //服务器端位置异常
+</code></pre><h2 id=tars2go-使用>tars2go 使用</h2><h3 id=安装>安装</h3><pre><code class=language-bash>go install github.com/TarsCloud/TarsGo/tars/tools/tars2go@latest
+</code></pre><h3 id=验证安装>验证安装</h3><pre><code># tars2go
+Usage: tars2go [flags] *.tars
+       tars2go -I tars/protocol/res/endpoint [-I ...] QueryF.tars
+       tars2go -include=&quot;dir1;dir2;dir3&quot;
+  -E	Generate code before fmt for troubleshooting
+  -I value
+    	Specify a specific import path
+  -add-servant
+    	Generate AddServant function (default true)
+  -debug
+    	enable debug mode
+  -dispatch-reporter
+    	Dispatch reporter support
+  -include string
+    	set search path of tars protocol
+  -json-omitempty
+    	Generate json omitempty support
+  -module string
+    	current go module path
+  -module-cycle
+    	support jce module cycle include(do not support jce file cycle include)
+  -module-upper
+    	native module names are supported, otherwise the system will upper the first letter of the module name
+  -outdir string
+    	which dir to put generated code
+  -tarsPath string
+    	Specify the tars source path. (default &quot;github.com/TarsCloud/TarsGo/tars&quot;)
+  -without-trace
+    	no call chain tracking logic required
+</code></pre><h4 id=核心参数>核心参数</h4><ul><li><code>-module</code> 控制当前go模块路径，默认值为空</li><li><code>-module-cycle</code> 支持jce模块循环include（不支持jce文件循环include）</li><li><code>-module-upper</code> 支持原生模块名称，否则系统会将模块名称的首字母大写</li><li><code>-outdir</code> 将生成的代码放在哪个目录</li><li><code>-tarsPath</code> 指定 tars 源路径。 （默认“github.com/TarsCloud/TarsGo/tars”）</li><li><code>-without-trace</code> 是否生成Tars调用链跟踪相关代码，默认会生成</li><li><code>-add-servant</code> 生成 AddServant 函数（默认为 true）</li><li><code>-include</code>设置tars协议的include搜索路径</li><li><code>-json-omitempty</code>是否生成 json omitempty 支持</li></ul><h3 id=使用>使用</h3><pre><code class=language-bash>tars2go \
+	-without-trace=true \
+	-add-servant=false \
+	-tarsPath github.com/TarsCloud/TarsGo/tars \
+	-module github.com/TarsCloud/TarsGo/tars/protocol/res \
+	*.tars
+</code></pre><h2 id=参考资料>参考资料</h2><ul><li><a href=https://doc.tarsyun.com/#/base/tars-protocol.md target=_blank rel=noopener>https://doc.tarsyun.com/#/base/tars-protocol.md</a></li></ul><h2 id=关注公众号获得更多精彩文章>关注公众号获得更多精彩文章</h2><p><img src=https://gitee.com/lbbniu/typora/raw/master/qrcode_for_gh_4ab47aa64a20_258.jpg alt=公众号：刘兵兵></p></article><div class=my-4><a href=/tags/tars/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#Tars</a></div><div class=py-2><div class="my-8 flex flex-col items-center md:flex-row"><a href=/authors/lbbniu/ class="md:me-4 text-primary-text h-24 w-24"><i class="fas fa-user-circle fa-6x"></i></a><div class="mt-4 w-full md:mt-0 md:w-auto"><a href=/authors/lbbniu/ class="mb-2 block border-b pb-1 text-lg font-bold"><h3>lbbniu</h3></a><span class="block pb-2"></span></div></div></div><div class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"><div></div><div class="mt-4 md:mt-0 md:text-right"><span class="text-primary-text block font-bold">下一页</span>
+<a href=/2023/06/18/tarsgo-rpc/ class=block>写给Go开发者的Tars教程-通信模式</a></div></div></div><div class=col-span-2><div class="bg-primary-bg
+prose sticky top-16 z-10 hidden px-6 py-4 lg:block"><h3>本页内容</h3></div><div class="sticky-toc hidden px-6 pb-6 lg:block"><nav id=TableOfContents><ul><li><a href=#简介>简介</a><ul><li><a href=#支持平台>支持平台</a></li><li><a href=#支持语言>支持语言</a></li><li><a href=#版本管理>版本管理</a></li></ul></li><li><a href=#tars-idl>Tars IDL</a><ul><li><a href=#关键字>关键字</a></li><li><a href=#注释>注释</a></li><li><a href=#基本类型>基本类型</a></li><li><a href=#复杂类型>复杂类型</a><ul><li><a href=#枚举>枚举</a></li><li><a href=#序列>序列</a></li><li><a href=#字典>字典</a></li></ul></li><li><a href=#常量>常量</a></li><li><a href=#嵌套>嵌套</a></li><li><a href=#结构>结构</a></li><li><a href=#接口>接口</a></li><li><a href=#名字空间>名字空间</a></li><li><a href=#使用已有协议类型import>使用已有协议类型（import）</a></li><li><a href=#完整协议定义示例>完整协议定义示例</a></li><li><a href=#生成go代码>生成Go代码</a></li></ul></li><li><a href=#tars协议数据编码>Tars协议数据编码</a><ul><li><a href=#基本结构>基本结构</a></li><li><a href=#编码类型表>编码类型表</a></li><li><a href=#各类型详细描述>各类型详细描述</a></li><li><a href=#对象持久化>对象持久化</a></li></ul></li><li><a href=#tars-底层rpc消息格式>Tars 底层RPC消息格式</a><ul><li><a href=#请求包httpsgithubcomtarscloudtarsgoblobmastertarsprotocolresrequestftars><a href=https://github.com/TarsCloud/TarsGo/blob/master/tars/protocol/res/RequestF.tars>请求包</a></a></li><li><a href=#响应包httpsgithubcomtarscloudtarsgoblobmastertarsprotocolresrequestftars><a href=https://github.com/TarsCloud/TarsGo/blob/master/tars/protocol/res/RequestF.tars>响应包</a></a><ul><li><a href=#tars定义的返回码httpsgithubcomtarscloudtarsgoblobmastertarsprotocolresbaseftars><a href=https://github.com/TarsCloud/TarsGo/blob/master/tars/protocol/res/BaseF.tars>TARS定义的返回码</a></a></li></ul></li></ul></li><li><a href=#tars2go-使用>tars2go 使用</a><ul><li><a href=#安装>安装</a></li><li><a href=#验证安装>验证安装</a><ul><li><a href=#核心参数>核心参数</a></li></ul></li><li><a href=#使用>使用</a></li></ul></li><li><a href=#参考资料>参考资料</a></li><li><a href=#关注公众号获得更多精彩文章>关注公众号获得更多精彩文章</a></li></ul></nav></div><script>window.addEventListener("DOMContentLoaded",()=>{enableStickyToc()})</script></div><div class="bg-secondary-bg prose col-span-2 rounded p-6 lg:col-span-6"><h3>相关</h3><a href=/2023/06/18/tarsgo-rpc/ class=no-underline>写给Go开发者的Tars教程-通信模式</a><br><a href=/cloud-native/tars%E5%AE%B9%E5%99%A8%E5%8C%96/ class=no-underline>Tars服务容器化</a><br></div></div><script>document.addEventListener("DOMContentLoaded",()=>{hljs.highlightAll()})</script></div></div></main><footer class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b"><p class="text-sm text-tertiary-text">&copy; 2021 <a href=https://blog.lbbniu.com/>lbbniu</a>
+&#183; Powered by the <a href=https://github.com/wangchucheng/hugo-eureka class=hover:text-eureka>Eureka</a> theme for <a href=https://gohugo.io class=hover:text-eureka>Hugo</a></p></div></div></footer></body></html>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>分治 on lbbniu</title><link>/tags/%E5%88%86%E6%B2%BB/</link><description>Recent content in 分治 on lbbniu</description><generator>Hugo -- gohugo.io</generator><language>zh</language><managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor><webMaster>lbbniu@gmail.com (lbbniu)</webMaster><copyright>&amp;copy; 2021 &lt;a href="https://blog.lbbniu.com/">lbbniu&lt;/a></copyright><lastBuildDate>Sat, 20 Aug 2022 00:01:00 +0800</lastBuildDate><atom:link href="/tags/%E5%88%86%E6%B2%BB/index.xml" rel="self" type="application/rss+xml"/><item><title>剑指 Offer 04 二维数组中的查找</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/er-wei-shu-zu-zhong-de-cha-zhao-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/er-wei-shu-zu-zhong-de-cha-zhao-lcof/</guid><description>剑指 Offer 04 二维数组中的查找 在一个 n * m 的二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个高效的函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。
+示例:
+现有矩阵 matrix 如下：
+[ [1, 4, 7, 11, 15], [2, 5, 8, 12, 19], [3, 6, 9, 16, 22], [10, 13, 14, 17, 24], [18, 21, 23, 26, 30] ] 给定 target = 5，返回 true。
+给定 target = 20，返回 false。
+限制：
+0 &lt;= n &lt;= 1000
+0 &lt;= m &lt;= 1000
+注意：本题与主站 240 题相同：https://leetcode-cn.com/problems/search-a-2d-matrix-ii/
+func findNumberIn2DArray(matrix [][]int, target int) bool { } LeetCode题库地址 https://leetcode.cn/problems/er-wei-shu-zu-zhong-de-cha-zhao-lcof</description></item><item><title>剑指 Offer 07 重建二叉树</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/zhong-jian-er-cha-shu-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/zhong-jian-er-cha-shu-lcof/</guid><description>剑指 Offer 07 重建二叉树 输入某二叉树的前序遍历和中序遍历的结果，请构建该二叉树并返回其根节点。
+假设输入的前序遍历和中序遍历的结果中都不含重复的数字。
+示例 1:
+Input: preorder = [3,9,20,15,7], inorder = [9,3,15,20,7] Output: [3,9,20,null,null,15,7] 示例 2:
+Input: preorder = [-1], inorder = [-1] Output: [-1] 限制：
+0 &lt;= 节点个数 &lt;= 5000
+注意：本题与主站 105 题重复：https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
+/** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ func buildTree(preorder []int, inorder []int) *TreeNode { } LeetCode题库地址 https://leetcode.cn/problems/zhong-jian-er-cha-shu-lcof</description></item><item><title>面试题 04.02 最小高度树</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/minimum-height-tree-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/minimum-height-tree-lcci/</guid><description>面试题 04.02 最小高度树 给定一个有序整数数组，元素各不相同且按升序排列，编写一个算法，创建一棵高度最小的二叉搜索树。
+示例:给定有序数组: [-10,-3,0,5,9],
+一个可能的答案是：[0,-3,9,-10,null,5]，它可以表示下面这个高度平衡二叉搜索树：
+0 / &amp;#92 -3 9 / / -10 5 /** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ func sortedArrayToBST(nums []int) *TreeNode { } LeetCode题库地址 https://leetcode.cn/problems/minimum-height-tree-lcci</description></item><item><title>剑指 Offer 39 数组中出现次数超过一半的数字</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/shu-zu-zhong-chu-xian-ci-shu-chao-guo-yi-ban-de-shu-zi-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/shu-zu-zhong-chu-xian-ci-shu-chao-guo-yi-ban-de-shu-zi-lcof/</guid><description>剑指 Offer 39 数组中出现次数超过一半的数字 数组中有一个数字出现的次数超过数组长度的一半，请找出这个数字。
+&amp;nbsp;
+你可以假设数组是非空的，并且给定的数组总是存在多数元素。
+&amp;nbsp;
+示例&amp;nbsp;1:
+输入: [1, 2, 3, 2, 2, 2, 5, 4, 2] 输出: 2 &amp;nbsp;
+限制：
+1 &amp;lt;= 数组长度 &amp;lt;= 50000
+&amp;nbsp;
+注意：本题与主站 169 题相同：https://leetcode-cn.com/problems/majority-element/
+&amp;nbsp;
+func majorityElement(nums []int) int { } LeetCode题库地址 https://leetcode.cn/problems/shu-zu-zhong-chu-xian-ci-shu-chao-guo-yi-ban-de-shu-zi-lcof</description></item><item><title>剑指 Offer 40 最小的k个数</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/zui-xiao-de-kge-shu-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/zui-xiao-de-kge-shu-lcof/</guid><description>剑指 Offer 40 最小的k个数 输入整数数组 arr ，找出其中最小的 k 个数。例如，输入4、5、1、6、2、7、3、8这8个数字，则最小的4个数字是1、2、3、4。
+&amp;nbsp;
+示例 1：
+输入：arr = [3,2,1], k = 2 输出：[1,2] 或者 [2,1] 示例 2：
+输入：arr = [0,1,2,1], k = 1 输出：[0] &amp;nbsp;
+限制：
+0 &amp;lt;= k &amp;lt;= arr.length &amp;lt;= 10000 0 &amp;lt;= arr[i]&amp;nbsp;&amp;lt;= 10000 func getLeastNumbers(arr []int, k int) []int { } LeetCode题库地址 https://leetcode.cn/problems/zui-xiao-de-kge-shu-lcof</description></item><item><title>剑指 Offer 42 连续子数组的最大和</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/lian-xu-zi-shu-zu-de-zui-da-he-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/lian-xu-zi-shu-zu-de-zui-da-he-lcof/</guid><description>剑指 Offer 42 连续子数组的最大和 输入一个整型数组，数组中的一个或连续多个整数组成一个子数组。求所有子数组的和的最大值。
+要求时间复杂度为O(n)。
+&amp;nbsp;
+示例1:
+输入: nums = [-2,1,-3,4,-1,2,1,-5,4] 输出: 6 解释:&amp;nbsp;连续子数组&amp;nbsp;[4,-1,2,1] 的和最大，为&amp;nbsp;6。 &amp;nbsp;
+提示：
+1 &amp;lt;=&amp;nbsp;arr.length &amp;lt;= 10^5 -100 &amp;lt;= arr[i] &amp;lt;= 100 注意：本题与主站 53 题相同：https://leetcode-cn.com/problems/maximum-subarray/
+&amp;nbsp;
+func maxSubArray(nums []int) int { } LeetCode题库地址 https://leetcode.cn/problems/lian-xu-zi-shu-zu-de-zui-da-he-lcof</description></item><item><title>剑指 Offer 51 数组中的逆序对</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/shu-zu-zhong-de-ni-xu-dui-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/shu-zu-zhong-de-ni-xu-dui-lcof/</guid><description>剑指 Offer 51 数组中的逆序对 在数组中的两个数字，如果前面一个数字大于后面的数字，则这两个数字组成一个逆序对。输入一个数组，求出这个数组中的逆序对的总数。
+&amp;nbsp;
+示例 1:
+输入: [7,5,6,4] 输出: 5 &amp;nbsp;
+限制：
+0 &amp;lt;= 数组长度 &amp;lt;= 50000
+func reversePairs(nums []int) int { } LeetCode题库地址 https://leetcode.cn/problems/shu-zu-zhong-de-ni-xu-dui-lcof</description></item><item><title>面试题 10.09 排序矩阵查找</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/sorted-matrix-search-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/sorted-matrix-search-lcci/</guid><description>面试题 10.09 排序矩阵查找 给定M&amp;times;N矩阵，每一行、每一列都按升序排列，请编写代码找出某元素。
+示例:
+现有矩阵 matrix 如下：
+[ [1, 4, 7, 11, 15], [2, 5, 8, 12, 19], [3, 6, 9, 16, 22], [10, 13, 14, 17, 24], [18, 21, 23, 26, 30] ] 给定 target&amp;nbsp;=&amp;nbsp;5，返回&amp;nbsp;true。
+给定&amp;nbsp;target&amp;nbsp;=&amp;nbsp;20，返回&amp;nbsp;false。
+func searchMatrix(matrix [][]int, target int) bool { } LeetCode题库地址 https://leetcode.cn/problems/sorted-matrix-search-lcci</description></item><item><title>剑指 Offer II 060 出现频率最高的 k 个数字</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/g5c51o/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/g5c51o/</guid><description>剑指 Offer II 060 出现频率最高的 k 个数字 给定一个整数数组 nums 和一个整数 k&amp;nbsp;，请返回其中出现频率前 k 高的元素。可以按 任意顺序 返回答案。
+&amp;nbsp;
+示例 1:
+输入: nums = [1,1,1,2,2,3], k = 2 输出: [1,2] 示例 2:
+输入: nums = [1], k = 1 输出: [1] &amp;nbsp;
+提示：
+1 &amp;lt;= nums.length &amp;lt;= 105 k 的取值范围是 [1, 数组中不相同的元素的个数] 题目数据保证答案唯一，换句话说，数组中前 k 个高频元素的集合是唯一的 &amp;nbsp;
+进阶：所设计算法的时间复杂度 必须 优于 O(n log n) ，其中 n&amp;nbsp;是数组大小。
+&amp;nbsp;
+注意：本题与主站 347&amp;nbsp;题相同：https://leetcode-cn.com/problems/top-k-frequent-elements/
+func topKFrequent(nums []int, k int) []int { } LeetCode题库地址 https://leetcode.cn/problems/g5c51o</description></item><item><title>剑指 Offer II 076 数组中的第 k 大的数字</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/xx4gt2/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/xx4gt2/</guid><description>剑指 Offer II 076 数组中的第 k 大的数字 给定整数数组 nums 和整数 k，请返回数组中第 k 个最大的元素。
+请注意，你需要找的是数组排序后的第 k 个最大的元素，而不是第 k 个不同的元素。
+&amp;nbsp;
+示例 1:
+输入: [3,2,1,5,6,4] 和 k = 2 输出: 5 示例&amp;nbsp;2:
+输入: [3,2,3,1,2,4,5,5,6] 和 k = 4 输出: 4 &amp;nbsp;
+提示： 1 &amp;lt;= k &amp;lt;= nums.length &amp;lt;= 104 -104&amp;nbsp;&amp;lt;= nums[i] &amp;lt;= 104 &amp;nbsp;
+注意：本题与主站 215&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/kth-largest-element-in-an-array/
+func findKthLargest(nums []int, k int) int { } LeetCode题库地址 https://leetcode.cn/problems/xx4gT2</description></item><item><title>剑指 Offer II 077 链表排序</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/7whec2/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/7whec2/</guid><description>剑指 Offer II 077 链表排序 给定链表的头结点&amp;nbsp;head&amp;nbsp;，请将其按 升序 排列并返回 排序后的链表 。
+&amp;nbsp;
+示例 1：
+输入：head = [4,2,1,3] 输出：[1,2,3,4] 示例 2：
+输入：head = [-1,5,3,4,0] 输出：[-1,0,3,4,5] 示例 3：
+输入：head = [] 输出：[] &amp;nbsp;
+提示：
+链表中节点的数目在范围&amp;nbsp;[0, 5 * 104]&amp;nbsp;内 -105&amp;nbsp;&amp;lt;= Node.val &amp;lt;= 105 &amp;nbsp;
+进阶：你可以在&amp;nbsp;O(n&amp;nbsp;log&amp;nbsp;n) 时间复杂度和常数级空间复杂度下，对链表进行排序吗？
+&amp;nbsp;
+注意：本题与主站 148&amp;nbsp;题相同：https://leetcode-cn.com/problems/sort-list/
+/** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func sortList(head *ListNode) *ListNode { } LeetCode题库地址 https://leetcode.cn/problems/7WHec2</description></item><item><title>面试题 16.17 连续数列</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/contiguous-sequence-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/contiguous-sequence-lcci/</guid><description>面试题 16.17 连续数列 给定一个整数数组，找出总和最大的连续数列，并返回总和。
+示例：
+输入： [-2,1,-3,4,-1,2,1,-5,4] 输出： 6 解释： 连续子数组 [4,-1,2,1] 的和最大，为 6。 进阶：
+如果你已经实现复杂度为 O(n) 的解法，尝试使用更为精妙的分治法求解。
+func maxSubArray(nums []int) int { } LeetCode题库地址 https://leetcode.cn/problems/contiguous-sequence-lcci</description></item><item><title>剑指 Offer II 078 合并排序链表</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/vvxgsw/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/vvxgsw/</guid><description>剑指 Offer II 078 合并排序链表 给定一个链表数组，每个链表都已经按升序排列。
+请将所有链表合并到一个升序链表中，返回合并后的链表。
+&amp;nbsp;
+示例 1：
+输入：lists = [[1,4,5],[1,3,4],[2,6]] 输出：[1,1,2,3,4,4,5,6] 解释：链表数组如下： [ 1-&amp;gt;4-&amp;gt;5, 1-&amp;gt;3-&amp;gt;4, 2-&amp;gt;6 ] 将它们合并到一个有序链表中得到。 1-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;4-&amp;gt;5-&amp;gt;6 示例 2：
+输入：lists = [] 输出：[] 示例 3：
+输入：lists = [[]] 输出：[] &amp;nbsp;
+提示：
+k == lists.length 0 &amp;lt;= k &amp;lt;= 10^4 0 &amp;lt;= lists[i].length &amp;lt;= 500 -10^4 &amp;lt;= lists[i][j] &amp;lt;= 10^4 lists[i] 按 升序 排列 lists[i].length 的总和不超过 10^4 &amp;nbsp;
+注意：本题与主站 23&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/merge-k-sorted-lists/
+/** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func mergeKLists(lists []*ListNode) *ListNode { } LeetCode题库地址 https://leetcode.</description></item><item><title>面试题 17.14 最小K个数</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/smallest-k-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/smallest-k-lcci/</guid><description>面试题 17.14 最小K个数 设计一个算法，找出数组中最小的k个数。以任意顺序返回这k个数均可。
+示例：
+输入： arr = [1,3,5,7,2,4,6,8], k = 4 输出： [1,2,3,4] 提示：
+0 &amp;lt;= len(arr) &amp;lt;= 100000 0 &amp;lt;= k &amp;lt;= min(100000, len(arr)) func smallestK(arr []int, k int) []int { } LeetCode题库地址 https://leetcode.cn/problems/smallest-k-lcci</description></item><item><title>【2022-08-20每日一题】654. 最大二叉树</title><link>/study/leetcode/maximum-binary-tree/</link><pubDate>Sat, 20 Aug 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/maximum-binary-tree/</guid><description>2022-08-20每日一题：654. 最大二叉树 难度：Medium 标签：栈 、 树 、 数组 、 分治 、 二叉树 、 单调栈 给定一个不重复的整数数组&amp;nbsp;nums 。&amp;nbsp;最大二叉树&amp;nbsp;可以用下面的算法从&amp;nbsp;nums 递归地构建:
+创建一个根节点，其值为&amp;nbsp;nums 中的最大值。 递归地在最大值&amp;nbsp;左边&amp;nbsp;的&amp;nbsp;子数组前缀上&amp;nbsp;构建左子树。 递归地在最大值 右边 的&amp;nbsp;子数组后缀上&amp;nbsp;构建右子树。 返回&amp;nbsp;nums 构建的 最大二叉树 。
+&amp;nbsp;
+示例 1：
+输入：nums = [3,2,1,6,0,5] 输出：[6,3,5,null,2,0,null,null,1] 解释：递归调用如下所示： - [3,2,1,6,0,5] 中的最大值是 6 ，左边部分是 [3,2,1] ，右边部分是 [0,5] 。 - [3,2,1] 中的最大值是 3 ，左边部分是 [] ，右边部分是 [2,1] 。 - 空数组，无子节点。 - [2,1] 中的最大值是 2 ，左边部分是 [] ，右边部分是 [1] 。 - 空数组，无子节点。 - 只有一个元素，所以子节点是一个值为 1 的节点。 - [0,5] 中的最大值是 5 ，左边部分是 [0] ，右边部分是 [] 。 - 只有一个元素，所以子节点是一个值为 0 的节点。 - 空数组，无子节点。 示例 2：</description></item></channel></rss>

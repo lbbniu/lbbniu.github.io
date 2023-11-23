@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>sre on lbbniu</title><link>/tags/sre/</link><description>Recent content in sre on lbbniu</description><generator>Hugo -- gohugo.io</generator><language>zh</language><managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor><webMaster>lbbniu@gmail.com (lbbniu)</webMaster><copyright>&amp;copy; 2021 &lt;a href="https://blog.lbbniu.com/">lbbniu&lt;/a></copyright><lastBuildDate>Tue, 21 Jun 2022 17:18:16 +0800</lastBuildDate><atom:link href="/tags/sre/index.xml" rel="self" type="application/rss+xml"/><item><title>Google SRE</title><link>/2022/06/21/google-sre/</link><pubDate>Tue, 21 Jun 2022 17:18:16 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/2022/06/21/google-sre/</guid><description>第4章 服务质量目标 服务质量术语 服务质量指标（SLI）—— indicator 服务质量目标（SLO）——Objective 服务质量协议（SLA）——Agreement 单词 指标（indicator） 持久性（durability） 可用性（availability） 目标（Objective） 协议（Agreement） 第5章 减少琐事 4个黄金指标 延迟、流量、错误和饱和度（saturation）
+第7章 自动化 自动化工具：Puppet、Chef、cfengine
+Chubby服务器
+第10章基于时间序列数据进行有效报警 监控：Pormetheus、Riemann、Heka和Bosun
+time-series 第11章 on-call轮值 最理想的方法论是这样的：在有足够数据支撑的时候按步骤解决问题，同时不停地审视和验证目前所有的假设。
+最重要的资源有：
+● 清晰的问题升级路线。
+● 清晰定义的应急事件处理步骤。
+● 无指责，对事不对人的文化氛围。
+第12章 有效的故障排查手段 1.对通用的故障排查过程的理解（不依靠任何特定系统）。
+2.对发生故障的系统的足够了解
+读者应该小心避免： ● 关注了错误的系统现象，或者错误地理解了系统现象的含义。这样会在错误的方向上浪费时间。
+● 不能正确修改系统的配置信息、输入信息或者系统运行环境，造成不能安全和有效地测试假设。
+● 将问题过早地归结为极为不可能的因素（例如认为是宇宙射线造成数据变化，虽然有可能发生，但是并不应该在解决问题初期做这个假设），或者念念不忘之前曾经发生过的系统问题，认为一旦发生过一次，就有可能再次发生。
+● 试图解决与当前系统问题相关的一些问题，却没有认识到这些其实只是巧合，或者这些问题其实是由于当前系统的问题造成的。（比如发现数据库压力大的情况下，环境温度也有所上升，于是试图解决环境温度问题。）
+Dapper 提供了非常有用的了解分布式系统工作情况的一种方式
+单词 监测指标（telemetry）
+定位（triage）
+相关性（correlation）
+因果关系（causation）
+问题分解（Divide &amp;amp; Conquer）
+对分法（bisection）
+第14章 紧急事故管理 一次流程管理良好的事故 第17章 测试可靠性 传统测试 单元测试（unit test） 集成测试（integration test） 依赖注入（dependency injection） 系统测试（system test） 冒烟测试（smoke test）：冒烟测试有时也被称为理性测试 性能测试（performance test） 回归测试（regression test） 生产测试 变更发布与测试 配置测试 金丝雀测试 第18章 SRE 部门中的软件工程实践 Auxon 案例 基于意图的容量规划 1.</description></item></channel></rss>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>扫描线 on lbbniu</title><link>/tags/%E6%89%AB%E6%8F%8F%E7%BA%BF/</link><description>Recent content in 扫描线 on lbbniu</description><generator>Hugo -- gohugo.io</generator><language>zh</language><managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor><webMaster>lbbniu@gmail.com (lbbniu)</webMaster><copyright>&amp;copy; 2021 &lt;a href="https://blog.lbbniu.com/">lbbniu&lt;/a></copyright><lastBuildDate>Fri, 16 Sep 2022 00:01:00 +0800</lastBuildDate><atom:link href="/tags/%E6%89%AB%E6%8F%8F%E7%BA%BF/index.xml" rel="self" type="application/rss+xml"/><item><title>【2022-09-16每日一题】850. 矩形面积 II</title><link>/study/leetcode/rectangle-area-ii/</link><pubDate>Fri, 16 Sep 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/rectangle-area-ii/</guid><description>2022-09-16每日一题：850. 矩形面积 II 难度：Hard 标签：线段树 、 数组 、 有序集合 、 扫描线 我们给出了一个（轴对齐的）二维矩形列表&amp;nbsp;rectangles&amp;nbsp;。 对于&amp;nbsp;rectangle[i] = [x1, y1, x2, y2]，其中（x1，y1）是矩形&amp;nbsp;i&amp;nbsp;左下角的坐标，&amp;nbsp;(xi1, yi1)&amp;nbsp;是该矩形 左下角 的坐标，&amp;nbsp;(xi2, yi2)&amp;nbsp;是该矩形&amp;nbsp;右上角 的坐标。
+计算平面中所有&amp;nbsp;rectangles&amp;nbsp;所覆盖的 总面积 。任何被两个或多个矩形覆盖的区域应只计算 一次 。
+返回 总面积 。因为答案可能太大，返回&amp;nbsp;109&amp;nbsp;+ 7 的&amp;nbsp;模&amp;nbsp;。
+&amp;nbsp;
+示例 1：
+输入：rectangles = [[0,0,2,2],[1,0,2,3],[1,0,3,1]] 输出：6 解释：如图所示，三个矩形覆盖了总面积为6的区域。 从(1,1)到(2,2)，绿色矩形和红色矩形重叠。 从(1,0)到(2,3)，三个矩形都重叠。 示例 2：
+输入：rectangles = [[0,0,1000000000,1000000000]] 输出：49 解释：答案是 1018 对 (109 + 7) 取模的结果， 即 49 。 &amp;nbsp;
+提示：
+1 &amp;lt;= rectangles.length &amp;lt;= 200 rectanges[i].length = 4 0 &amp;lt;= xi1, yi1, xi2, yi2&amp;nbsp;&amp;lt;= 109 矩形叠加覆盖后的总面积不会超越&amp;nbsp;2^63 - 1&amp;nbsp;，这意味着可以用一个&amp;nbsp;64 位有符号整数来保存面积结果。 方法一： 详细思路过程见宫水三叶题解，这里只做个人刷题记录，方便后续查询阅读</description></item></channel></rss>

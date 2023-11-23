@@ -1,0 +1,526 @@
+<!doctype html><html lang=zh dir=ltr><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>第8周 | PHP算法练习 | lbbniu</title>
+<meta name=generator content="Hugo Eureka 0.9.3"><link rel=stylesheet href=/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css><script defer src=/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js></script><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" as=style onload='this.onload=null,this.rel="stylesheet"'><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/github.min.css media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/php.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/java.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/go.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/python.min.js crossorigin></script><link rel=stylesheet href=/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css media=print onload='this.media="all",this.onload=null'><script defer type=text/javascript src=/js/fontawesome.min.35973bea57658ef0dd22ad59ea4642b6c8c67af62bed8659ac326d284ef285a6657cdbcf57d3b2910e7e992f2b20426e.js></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css integrity=sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js integrity=sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY crossorigin></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script><script defer src=https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js integrity=sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0 crossorigin></script><link rel=icon type=image/png sizes=32x32 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_32x32_fill_box_center_3.png><link rel=apple-touch-icon sizes=180x180 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_180x180_fill_box_center_3.png><meta name=description content="第8周 第16课 | 位运算 1. 位运算基础及实战要点 参考链接 如何从十进制转换为二进制 2. 位运算实战题目解析 参考链接 N 皇后位运算代码示例 def totalNQueens(self, n): if n < 1: return [] self.count = 0 self.DFS(n, 0, 0, 0, 0) return self.count def DFS(self, n, row, cols, pie, na): # recursion terminator if row >= n: self.count += 1 return bits = (~(cols | pie | na)) & ((1 << n) — 1) # 得到当前所有的空位 while bits: p = bits & —bits # 取到最低位的1 bits = bits & (bits — 1) # 表示在p位置上放入皇后 self."><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"算法学习","item":"/study/"},{"@type":"ListItem","position":2,"name":"极客时间算法训练营2020版","item":"/study/algorithm/"},{"@type":"ListItem","position":3,"name":"PHP算法练习","item":"/study/algorithm/php/"},{"@type":"ListItem","position":4,"name":"第8周","item":"/study/algorithm/php/08%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E5%85%AB%E5%91%A8/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/study/algorithm/php/08%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E5%85%AB%E5%91%A8/"},"headline":"第8周 | PHP算法练习 | lbbniu","datePublished":"2021-11-20T17:18:16+08:00","dateModified":"2021-11-20T17:18:16+08:00","wordCount":1814,"publisher":{"@type":"Person","name":"lbbniu","logo":{"@type":"ImageObject","url":"/images/icon.gif"}},"description":"第8周 第16课 | 位运算 1. 位运算基础及实战要点 参考链接 如何从十进制转换为二进制 2. 位运算实战题目解析 参考链接 N 皇后位运算代码示例 def totalNQueens(self, n): if n \u0026lt; 1: return [] self.count = 0 self.DFS(n, 0, 0, 0, 0) return self.count def DFS(self, n, row, cols, pie, na): # recursion terminator if row \u0026gt;= n: self.count \u002b= 1 return bits = (~(cols | pie | na)) \u0026amp; ((1 \u0026lt;\u0026lt; n) — 1) # 得到当前所有的空位 while bits: p = bits \u0026amp; —bits # 取到最低位的1 bits = bits \u0026amp; (bits — 1) # 表示在p位置上放入皇后 self."}</script><meta property="og:title" content="第8周 | PHP算法练习 | lbbniu"><meta property="og:type" content="article"><meta property="og:image" content="/images/icon.png"><meta property="og:url" content="/study/algorithm/php/08%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E5%85%AB%E5%91%A8/"><meta property="og:description" content="第8周 第16课 | 位运算 1. 位运算基础及实战要点 参考链接 如何从十进制转换为二进制 2. 位运算实战题目解析 参考链接 N 皇后位运算代码示例 def totalNQueens(self, n): if n < 1: return [] self.count = 0 self.DFS(n, 0, 0, 0, 0) return self.count def DFS(self, n, row, cols, pie, na): # recursion terminator if row >= n: self.count += 1 return bits = (~(cols | pie | na)) & ((1 << n) — 1) # 得到当前所有的空位 while bits: p = bits & —bits # 取到最低位的1 bits = bits & (bits — 1) # 表示在p位置上放入皇后 self."><meta property="og:locale" content="zh"><meta property="og:site_name" content="lbbniu"><meta property="article:published_time" content="2021-11-20T17:18:16+08:00"><meta property="article:modified_time" content="2021-11-20T17:18:16+08:00"><meta property="article:section" content="study"><meta property="article:tag" content="算法"><meta property="article:tag" content="leetcode"><meta property="og:see_also" content="/study/leetcode/leetcode/"><meta property="og:see_also" content="/study/algorithm/go/week10/"><meta property="og:see_also" content="/study/algorithm/php/01%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%B8%80%E5%91%A8/"><meta property="og:see_also" content="/study/algorithm/go/week01/"><meta property="og:see_also" content="/study/algorithm/php/02%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%BA%8C%E5%91%A8/"><meta property="og:see_also" content="/study/algorithm/go/week02/"><body class="flex min-h-screen flex-col"><header class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"><div class="mx-auto w-full max-w-screen-xl"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=="Auto"||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName("html")[0].classList.add("dark")</script><nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0"><a href=/ class="me-6 text-primary-text text-xl font-bold">lbbniu</a>
+<button id=navbar-btn class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+<i class="fas fa-bars"></i></button><div id=target class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20"><div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0"><a href=/post/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">文章</a>
+<a href=/cloud-native/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">云原生</a>
+<a href=/study/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 selected-menu-item me-4">算法学习</a>
+<a href=/docs/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">Go学习训练营</a>
+<a href=/tags/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">标签</a></div><div class=flex><div class="relative pt-4 md:pt-0"><div class="cursor-pointer hover:text-eureka" id=lightDarkMode><i class="fas fa-adjust"></i></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id=is-open></div><div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40" id=lightDarkOptions><span class="px-4 py-1 hover:text-eureka" name=Light>浅色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Dark>深色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Auto>自动</span></div></div></div></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id=is-open-mobile></div></nav><script>let element=document.getElementById("lightDarkMode");storageColorScheme==null||storageColorScheme=="Auto"?document.addEventListener("DOMContentLoaded",()=>{window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",switchDarkMode)}):storageColorScheme=="Light"?(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","sun"),element.firstElementChild.classList.add("fa-sun")):storageColorScheme=="Dark"&&(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","moon"),element.firstElementChild.classList.add("fa-moon")),document.addEventListener("DOMContentLoaded",()=>{getcolorscheme(),switchBurger()})</script></div></header><main class="grow pt-16"><div class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8"><div class=lg:pt-12><div class="flex flex-col md:flex-row bg-secondary-bg rounded"><div class="md:w-1/4 lg:w-1/5 border-e"><div class="sticky top-16 pt-6"><div id=sidebar-title class="md:hidden mx-4 px-2 pt-4 pb-2 md:border-b text-tertiary-text md:text-primary-text"><span class=font-semibold>目录</span>
+<i class='fas fa-caret-right ms-1'></i></div><div id=sidebar-toc class="hidden md:block overflow-y-auto mx-6 md:mx-0 pe-6 pt-2 md:max-h-doc-sidebar bg-primary-bg md:bg-transparent"><div class="flex flex-wrap ms-4 -me-2 p-2 bg-secondary-bg md:bg-primary-bg rounded"><a class=hover:text-eureka href=/study/algorithm/php/>PHP算法练习</a></div><ul class=ps-6><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/php/00%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E9%A2%84%E4%B9%A0/>预习</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/php/01%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%B8%80%E5%91%A8/>第1周</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/php/02%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%BA%8C%E5%91%A8/>第2周</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/php/03%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%B8%89%E5%91%A8/>第3周</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/php/04%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E5%9B%9B%E5%91%A8/>第4周</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/php/04%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E5%9B%9B%E5%91%A8%E6%80%BB%E7%BB%93/>第4周总结</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/php/06%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E5%85%AD%E5%91%A8/>第6周</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/php/07%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%B8%83%E5%91%A8/>第7周</a></div></li><li class=py-2><div><a class="text-eureka hover:text-eureka" href=/study/algorithm/php/08%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E5%85%AB%E5%91%A8/>第8周</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/php/09%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%B9%9D%E5%91%A8/>第9周</a></div></li></ul></div></div></div><div class="w-full md:w-3/4 lg:w-4/5 pb-8 pt-2 md:pt-8"><div class=flex><div class="w-full lg:w-3/4 px-6"><article class=prose><h1 class=mb-4>第8周</h1><div class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"><div class="me-6 my-2"><i class="fas fa-calendar me-1"></i>
+<span>2021-11-20</span></div><div class="me-6 my-2"><i class="fas fa-clock me-1"></i>
+<span>9分钟阅读时长</span></div></div><h1 id=第8周-第16课--位运算>第8周 第16课 | 位运算</h1><h2 id=1-位运算基础及实战要点>1. 位运算基础及实战要点</h2><h3 id=参考链接>参考链接</h3><h4 id=如何从十进制转换为二进制httpszhwikihowcom从十进制转换为二进制><a href=https://zh.wikihow.com/%e4%bb%8e%e5%8d%81%e8%bf%9b%e5%88%b6%e8%bd%ac%e6%8d%a2%e4%b8%ba%e4%ba%8c%e8%bf%9b%e5%88%b6 target=_blank rel=noopener>如何从十进制转换为二进制</a></h4><h2 id=2-位运算实战题目解析>2. 位运算实战题目解析</h2><h3 id=参考链接-1>参考链接</h3><h4 id=n-皇后位运算代码示例httpsshimoimdocsrhtyt8hcpt6d9tj8><a href=https://shimo.im/docs/rHTyt8hcpT6D9Tj8/ target=_blank rel=noopener>N 皇后位运算代码示例</a></h4><pre><code class=language-python>def totalNQueens(self, n): 
+	if n &lt; 1: return [] 
+	self.count = 0 
+	self.DFS(n, 0, 0, 0, 0) 
+	return self.count
+
+def DFS(self, n, row, cols, pie, na): 
+	# recursion terminator 
+	if row &gt;= n: 
+		self.count += 1 
+		return
+
+	bits = (~(cols | pie | na)) &amp; ((1 &lt;&lt; n) — 1)  # 得到当前所有的空位
+
+	while bits: 
+		p = bits &amp; —bits # 取到最低位的1
+		bits = bits &amp; (bits — 1) # 表示在p位置上放入皇后
+		self.DFS(n, row + 1, cols | p, (pie | p) &lt;&lt; 1, (na | p) &gt;&gt; 1) 
+        # 不需要revert  cols, pie, na 的状态
+</code></pre><pre><code class=language-java>class Solution {
+	private int size; 
+	private int count;
+
+	private void solve(int row, int ld, int rd) { 
+		if (row == size) { 
+			count++; 
+			return; 
+		}
+		int pos = size &amp; (~(row | ld | rd)); 
+		while (pos != 0) { 
+			int p = pos &amp; (-pos); 
+			pos -= p; // pos &amp;= pos - 1; 
+			solve(row | p, (ld | p) &lt;&lt; 1, (rd | p) &gt;&gt; 1); 
+		} 
+	} 
+
+public int totalNQueens(int n) { 
+	count = 0; 
+	size = (1 &lt;&lt; n) - 1; 
+	solve(0, 0, 0); 
+	return count; 
+  } 
+}
+</code></pre><pre><code class=language-python>def solveNQueens(self, n):
+  def DFS(queens, xy_dif, xy_sum):
+    p = len(queens)
+    if p==n:
+        result.append(queens)
+        return None
+    for q in range(n):
+        if q not in queens and p-q not in xy_dif and \
+          p+q not in xy_sum: 
+            DFS(queens+[q], xy_dif+[p-q], xy_sum+[p+q])  
+  result = []
+  DFS([],[],[])
+  return [ [&quot;.&quot;*i + &quot;Q&quot; + &quot;.&quot;*(n-i-1) for i in sol] for sol in result]
+</code></pre><h3 id=实战题目--课后作业>实战题目 / 课后作业</h3><h4 id=191-位1的个数httpsleetcode-cncomproblemsnumber-of-1-bits><a href=https://leetcode-cn.com/problems/number-of-1-bits/ target=_blank rel=noopener>191. 位1的个数</a></h4><pre><code class=language-php>class Solution {
+    /**
+     * 位运算
+     * @param Integer $n
+     * @return Integer
+     */
+    function hammingWeight($n) {
+        $cnt = 0;
+        while ($n &gt; 0) {
+            $cnt++;
+            $n &amp;= $n - 1;
+        }
+        return $cnt;
+    }
+    
+    function hammingWeight($n) {
+        $cnt = 0;
+        while ($n &gt; 0) {
+            $cnt += $n &amp; 1;
+            $n = $n &gt;&gt; 1;
+        }
+        return $cnt;
+    }
+    
+    function hammingWeight($n) {
+        $count = 0;
+        $mask = 1;
+        for($i=0; $i&lt;32; $i++) {
+            if ($n &amp; $mask) {
+                $count ++;
+            }
+            $mask = $mask &lt;&lt; 1;
+        }
+        return $count;
+    }
+}
+</code></pre><h4 id=231-2的幂httpsleetcode-cncomproblemspower-of-two><a href=https://leetcode-cn.com/problems/power-of-two/ target=_blank rel=noopener>231. 2的幂</a></h4><pre><code class=language-php>class Solution {
+
+    /**
+     * @param Integer $n
+     * @return Boolean
+     */
+    function isPowerOfTwo($n) {
+        return $n &gt; 0 &amp;&amp; ($n &amp; ($n - 1)) == 0;
+        //return ($n &gt; 0) &amp;&amp; ($n &amp; -$n) == $n;
+    }
+}
+</code></pre><h4 id=190-颠倒二进制位httpsleetcode-cncomproblemsreverse-bits><a href=https://leetcode-cn.com/problems/reverse-bits/ target=_blank rel=noopener>190. 颠倒二进制位</a></h4><pre><code class=language-php>class Solution {
+    /**
+     * @param Integer $n
+     * @return Integer
+     */
+    function reverseBits($n) {
+        $ret = 0;
+        $power = 31;
+        while ($ret &gt; 0) {
+            $ret += ($n &amp; 1) &lt;&lt; $power;
+            $n = $n &gt;&gt; 1;
+            $power -= 1;
+        }
+        return $res;
+    }
+}
+</code></pre><h4 id=51-n皇后httpsleetcode-cncomproblemsn-queens><a href=https://leetcode-cn.com/problems/n-queens/ target=_blank rel=noopener>51. N皇后</a></h4><pre><code class=language-php>class Solution {
+    private $res = [];
+    private $count = 0;
+    /**
+     * @param Integer $n
+     * @return String[][]
+     */
+    function solveNQueens($n) {
+        if ($n &lt; 1) return 0;
+        $this-&gt;dfs($n, 0, 0, 0, 0, []);
+        return $this-&gt;res;
+    }
+    function dfs($n, $row, $cols, $pie, $na, $curr_state) {
+        if ($n &lt;= $row) {
+            $res = [];
+            foreach ($curr_state as $col) {
+                for ($j = 0; $j &lt; $n; $j++) {
+                    if ($col &amp; (1 &lt;&lt; $j)) {
+                        $col = $j;
+                        break;
+                    }
+                }
+                $res[] = str_pad('', $col, '.') . 'Q' . str_pad('', $n - $col - 1, '.');
+            }
+            $this-&gt;res[] = $res;
+            $this-&gt;count++;
+            return;
+        }
+        $bits = (~($cols | $pie | $na)) &amp; ((1 &lt;&lt; $n) - 1);
+        while ($bits) {
+            $p = $bits &amp; -$bits;
+            $curr_state[] = $p;  //这里存在bug， 请大佬指出哪里，应该怎么写
+            $this-&gt;dfs($n, $row + 1, $cols | $p, ($pie | $p) &lt;&lt; 1, ($na | $p) &gt;&gt; 1, $curr_state);
+            array_pop($curr_state);
+            $bits = $bits &amp; ($bits - 1);
+        }
+    }
+}
+</code></pre><h4 id=52-n皇后-iihttpsleetcode-cncomproblemsn-queens-ii><a href=https://leetcode-cn.com/problems/n-queens-ii/ target=_blank rel=noopener>52. N皇后 II</a></h4><pre><code class=language-php>class Solution {
+	private $count = 0;
+    /**
+     * @param Integer $n
+     * @return Integer
+     */
+    function totalNQueens($n) {
+        if ($n &lt; 1) return 0;
+        $this-&gt;dfs($n, 0, 0, 0, 0);
+        return $this-&gt;count;
+    }
+    function dfs($n, $row, $col, $pie, $na) {
+        if ($n == $row) {
+            $this-&gt;count++;
+            return;
+        }
+        $bits = (~($col | $pie | $na)) &amp; ((1 &lt;&lt; $n)) - 1);//得到所有的空位
+        while ($bits) {
+            $p = $bits &amp; -$bits; //获取最后一位1
+            $bits &amp;= ($bits - 1); 
+            $this-&gt;dfs($n, $row + 1, $col | $p, ($pie | $p) &lt;&lt; 1, ($na | $p) &gt;&gt; 1);
+        }
+    }
+}
+</code></pre><h4 id=338-比特位计数httpsleetcode-cncomproblemscounting-bits><a href=https://leetcode-cn.com/problems/counting-bits/ target=_blank rel=noopener>338. 比特位计数</a></h4><pre><code class=language-php>class Solution {
+
+    /**
+     * @param Integer $num
+     * @return Integer[]
+     */
+    function countBits($num) {
+        $dp = array_fill(0, $num + 1; 0);
+        for ($i = 1; $i &lt;= $num; $i++) {
+            $dp[$i] = $dp[$i &amp; ($i - 1)] + 1;
+        }
+        return $dp;
+    }
+}
+// $dp[$i] = $dp[$i &gt;&gt; 1] + ($i&amp;1);
+</code></pre><h1 id=第8周-第17课--布隆过滤器和lru缓存>第8周 第17课 | 布隆过滤器和LRU缓存</h1><h2 id=1-布隆过滤器的实现及应用>1. 布隆过滤器的实现及应用</h2><h3 id=参考链接-2>参考链接</h3><h4 id=布隆过滤器的原理和实现httpswwwcnblogscomcpselvisp6265825html><a href=https://www.cnblogs.com/cpselvis/p/6265825.html target=_blank rel=noopener>布隆过滤器的原理和实现</a></h4><h4 id=使用布隆过滤器解决缓存击穿垃圾邮件识别集合判重httpsblogcsdnnettianyaleixiaowuarticledetails74721877><a href=https://blog.csdn.net/tianyaleixiaowu/article/details/74721877 target=_blank rel=noopener>使用布隆过滤器解决缓存击穿、垃圾邮件识别、集合判重</a></h4><h4 id=布隆过滤器-python-代码示例httpsshimoimdocsxkwrcwrdxrv3qpkg><a href=https://shimo.im/docs/xKwrcwrDxRv3QpKG/ target=_blank rel=noopener>布隆过滤器 Python 代码示例</a></h4><h4 id=布隆过滤器-python-实现示例httpswwwgeeksforgeeksorgbloom-filters-introduction-and-python-implementation><a href=https://www.geeksforgeeks.org/bloom-filters-introduction-and-python-implementation/ target=_blank rel=noopener>布隆过滤器 Python 实现示例</a></h4><h4 id=高性能布隆过滤器-python-实现示例httpsgithubcomjhggpybloof><a href=https://github.com/jhgg/pybloof target=_blank rel=noopener>高性能布隆过滤器 Python 实现示例</a></h4><h4 id=布隆过滤器-java-实现示例-1httpsgithubcomlovasoabloomfilterblobmastersrcmainjavabloomfilterjava><a href=https://github.com/lovasoa/bloomfilter/blob/master/src/main/java/BloomFilter.java target=_blank rel=noopener>布隆过滤器 Java 实现示例 1</a></h4><h4 id=布隆过滤器-java-实现示例-2httpsgithubcombaqendorestes-bloomfilter><a href=https://github.com/Baqend/Orestes-Bloomfilter target=_blank rel=noopener>布隆过滤器 Java 实现示例 2</a></h4><h2 id=2-lru-cache的实现应用和题解>2. LRU Cache的实现、应用和题解</h2><h3 id=参考链接-3>参考链接</h3><h4 id=understanding-the-meltdown-exploithttpswwwsqlpassionatarchive20180106understanding-the-meltdown-exploit-in-my-own-simple-words><a href=https://www.sqlpassion.at/archive/2018/01/06/understanding-the-meltdown-exploit-in-my-own-simple-words/ target=_blank rel=noopener>Understanding the Meltdown exploit</a></h4><h4 id=替换算法总揽httpsenwikipediaorgwikicache_replacement_policies><a href=https://en.wikipedia.org/wiki/Cache_replacement_policies target=_blank rel=noopener>替换算法总揽</a></h4><h4 id=lru-cache-python-代码示例httpsshimoimdocsttxrkgwjpxg6wkgy><a href=https://shimo.im/docs/tTxRkGwJpXG6WkGY/ target=_blank rel=noopener>LRU Cache Python 代码示例</a></h4><pre><code class=language-python>class LRUCache(object): 
+
+	def __init__(self, capacity): 
+		self.dic = collections.OrderedDict() 
+		self.remain = capacity
+
+	def get(self, key): 
+		if key not in self.dic: 
+			return -1 
+		v = self.dic.pop(key) 
+		self.dic[key] = v   # key as the newest one 
+		return v 
+
+	def put(self, key, value): 
+		if key in self.dic: 
+			self.dic.pop(key) 
+		else: 
+			if self.remain &gt; 0: 
+				self.remain -= 1 
+			else:   # self.dic is full
+				self.dic.popitem(last=False) 
+		self.dic[key] = value
+</code></pre><h3 id=实战题目--课后作业-1>实战题目 / 课后作业</h3><h4 id=146-lru缓存机制httpsleetcode-cncomproblemslru-cache><a href=https://leetcode-cn.com/problems/lru-cache/ target=_blank rel=noopener>146. LRU缓存机制</a></h4><pre><code class=language-php>class LRUCache {
+    private $capacity;
+    private $map = [];
+    private $head = null;
+    private $tail = null;
+
+    /**
+     * @param Integer $capacity
+     */
+    function __construct($capacity) {
+        $this-&gt;capacity = $capacity;
+        $this-&gt;head = new DictNode('head',0);
+        $this-&gt;tail = new DictNode('end',0);
+        $this-&gt;head-&gt;next =  $this-&gt;tail;
+        $this-&gt;tail-&gt;pre = $this-&gt;head;
+    }
+
+    /**
+     * @param Integer $key
+     * @return Integer
+     */
+    function get($key) {
+        $result = -1;
+        if (array_key_exists($key,$this-&gt;map)){
+            $node = $this-&gt;map[$key];
+            $result = $node-&gt;value;
+            $this-&gt;move_node_to_head($node);
+        }
+        return $result;
+    }
+
+    /**
+     * @param Integer $key
+     * @param Integer $value
+     * @return NULL
+     */
+    function put($key, $value) {
+        if (array_key_exists($key,$this-&gt;map)){
+            $node = $this-&gt;map[$key];
+            $node-&gt;value = $value;
+            $this-&gt;move_node_to_head($node);
+        } else {
+            $node = new DictNode($key,$value);
+            $this-&gt;map[$key] = $node;
+            $firstNode = $this-&gt;head-&gt;next;
+            $firstNode-&gt;pre = $node;
+            $this-&gt;head-&gt;next = $node;
+            $node-&gt;next = $firstNode;
+            $node-&gt;pre = $this-&gt;head;
+        }
+        if (count($this-&gt;map) &gt; $this-&gt;capacity){
+            $lastNode = $this-&gt;tail-&gt;pre;
+            $lastSecondNode = $this-&gt;tail-&gt;pre-&gt;pre;
+            $this-&gt;tail-&gt;pre = $lastSecondNode;
+            $lastSecondNode-&gt;next = $this-&gt;tail;
+            unset($this-&gt;map[$lastNode-&gt;key]);
+        }
+
+    }
+    function move_node_to_head($node){
+        $preNode = $node-&gt;pre;
+        $nextNode = $node-&gt;next;
+        $preNode-&gt;next = $nextNode;
+        $nextNode-&gt;pre = $preNode;
+        $firstNode = $this-&gt;head-&gt;next;
+        $firstNode-&gt;pre = $node;
+        $this-&gt;head-&gt;next = $node;
+        $node-&gt;next = $firstNode;
+        $node-&gt;pre = $this-&gt;head;
+    }
+}
+class DictNode {
+    public $value;
+    public $key;
+    public $pre = null;
+    public $next = null;
+
+    public function __construct($key,$value)
+    {
+        $this-&gt;key = $key;
+        $this-&gt;value = $value;
+    }
+}
+</code></pre><h1 id=第8周-第18课--排序算法>第8周 第18课 | 排序算法</h1><h2 id=1-初级排序和高级排序的实现和特性>1. 初级排序和高级排序的实现和特性</h2><h3 id=参考链接-4>参考链接</h3><h4 id=十大经典排序算法httpswwwcnblogscomonepixelp7674659html><a href=https://www.cnblogs.com/onepixel/p/7674659.html target=_blank rel=noopener>十大经典排序算法</a></h4><h4 id=快速排序代码示例httpsshimoimdocs98kjvgwwgptpygky><a href=https://shimo.im/docs/98KjvGwwGpTpYGKy/ target=_blank rel=noopener>快速排序代码示例</a></h4><h4 id=归并排序代码示例httpsshimoimdocsyqgg6vtdkwkxjkwx><a href=https://shimo.im/docs/YqgG6vtdKwkXJkWx/ target=_blank rel=noopener>归并排序代码示例</a></h4><h4 id=堆排序代码示例httpsshimoimdocs6krvhrphpgjhgctx><a href=https://shimo.im/docs/6kRVHRphpgjHgCtx/ target=_blank rel=noopener>堆排序代码示例</a></h4><h2 id=课后作业>课后作业</h2><p>用自己熟悉的编程语言，手写各种初级排序代码</p><h2 id=2-特殊排序及实战题目详解>2. 特殊排序及实战题目详解</h2><h2 id=参考链接-5>参考链接</h2><h4 id=十大经典排序算法httpswwwcnblogscomonepixelp7674659html-1><a href=https://www.cnblogs.com/onepixel/p/7674659.html target=_blank rel=noopener>十大经典排序算法</a></h4><p><a href=https://github.com/algorithm007-class02/algorithm007-class02/issues/1078 target=_blank rel=noopener>常见的9种排序java</a></p><h4 id=9-种经典排序算法可视化动画httpswwwbilibilicomvideoav25136272><a href=https://www.bilibili.com/video/av25136272 target=_blank rel=noopener>9 种经典排序算法可视化动画</a></h4><h4 id=6-分钟看完-15-种排序算法动画展示httpswwwbilibilicomvideoav63851336><a href=https://www.bilibili.com/video/av63851336 target=_blank rel=noopener>6 分钟看完 15 种排序算法动画展示</a></h4><h3 id=实战题目--课后作业-2>实战题目 / 课后作业</h3><h4 id=1122-数组的相对排序httpsleetcode-cncomproblemsrelative-sort-array><a href=https://leetcode-cn.com/problems/relative-sort-array/ target=_blank rel=noopener>1122. 数组的相对排序</a></h4><pre><code class=language-php>class Solution {
+
+    /**
+     * 方法一:计数排序
+     * @param Integer[] $arr1
+     * @param Integer[] $arr2
+     * @return Integer[]
+     */
+    function relativeSortArray1($arr1, $arr2) {
+        $arr = array_fill(0, 1001, 0);
+        foreach ($arr1 as $num) {
+            $arr[$num]++;
+        }
+        $res = [];
+        foreach ($arr2 as $num) {
+            while ($arr[$num]) {
+                $res[] = $num;
+                $arr[$num]--;
+            }
+        }
+        for ($i = 0; $i &lt;= 1001; $i++) {
+            while ($arr[$i]) {
+                $res[] = $i;
+                $arr[$i]--;
+            }
+        }
+        return $res;
+    }
+
+    //方法二
+    function relativeSortArray($arr1, $arr2) {
+        $arr = array_count_values($arr1);
+        $res = [];
+        foreach ($arr2 as $num) {
+            while ($arr[$num]) {
+                $res[] = $num;
+                $arr[$num]--;
+            }
+            unset($arr[$num]);
+        }
+        ksort($arr);
+        foreach ($arr as $num =&gt; $count) {
+            while ($count) {
+                $res[] = $num;
+                $count--;
+            }
+        }
+        return $res;
+    }
+}
+</code></pre><h4 id=242-有效的字母异位词httpsleetcode-cncomproblemsvalid-anagram><a href=https://leetcode-cn.com/problems/valid-anagram/ target=_blank rel=noopener>242. 有效的字母异位词</a></h4><pre><code class=language-php>class Solution {
+
+    /**
+     * 方法一：哈希表
+     * @param String $s
+     * @param String $t
+     * @return Boolean
+     */
+    function isAnagram1($s, $t) {
+        $len = strlen($s);
+        if ($len != strlen($t)) return false;
+        $map = [];
+        for ($i = 0; $i &lt; $len; $i++) {
+            if (!isset($map[$s[$i]])) $map[$s[$i]] = 0;
+            if (!isset($map[$t[$i]])) $map[$t[$i]] = 0;
+            $map[$s[$i]]++;
+            $map[$t[$i]]--;
+        }
+        foreach ($map as $c) {
+            if ($c) return false; 
+        }
+        return true;
+    }
+
+    //方法二：统计字母出现的次数比较
+    function isAnagram2($s, $t) {
+        return count_chars($s, 1) == count_chars($t, 1);
+    }
+
+    /**
+     * 方法三：排序比较
+     * @param String $s
+     * @param String $t
+     * @return Boolean
+     */
+    function isAnagram($s, $t) {
+        $s = str_split($s);
+        $t = str_split($t);
+        sort($s);
+        sort($t);
+        return $s == $t;
+    }
+}
+</code></pre><h4 id=1244-design-a-leaderboard-解题思路分析httpsleetcode-cncomproblemsdesign-a-leaderboard><a href=https://leetcode-cn.com/problems/design-a-leaderboard/ target=_blank rel=noopener>1244. Design A Leaderboard 解题思路分析</a></h4><p><a href=https://hwchang0417.wordpress.com/2019/11/04/leetcode-1244-design-a-leaderboard/ target=_blank rel=noopener>https://hwchang0417.wordpress.com/2019/11/04/leetcode-1244-design-a-leaderboard/</a></p><p><a href=https://leetcode.jp/leetcode-1244-design-a-leaderboard-%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E5%88%86%E6%9E%90/ target=_blank rel=noopener>题目说明地址</a></p><pre><code class=language-cpp>class Leaderboard {
+public:
+    map&lt;int, int&gt; m;
+    Leaderboard() {}
+    
+    void addScore(int playerId, int score) {
+        m[playerId] += score;
+    }
+    
+    int top(int K) {
+        int sum = 0;
+        priority_queue&lt;int, std::vector&lt;int&gt;, std::greater&lt;int&gt;&gt; pq;
+        for(pair&lt;int, int&gt; p : m){
+            sum += p.second;
+            pq.push(p.second);
+            if(pq.size() &gt; K){
+                sum -= pq.top();
+                pq.pop();
+            }
+        }
+        return sum;
+    }
+    
+    void reset(int playerId) {
+        m.erase(m.find(playerId));
+    }
+};
+</code></pre><h4 id=56-合并区间httpsleetcode-cncomproblemsmerge-intervals><a href=https://leetcode-cn.com/problems/merge-intervals/ target=_blank rel=noopener>56. 合并区间</a></h4><pre><code class=language-php>class Solution {
+
+    /**
+     * @param Integer[][] $intervals
+     * @return Integer[][]
+     */
+    function merge($intervals) {
+        //排序
+        array_multisort(array_column($intervals, 0), $intervals);
+        $res = [];
+        $i = -1;
+        foreach ($intervals as $interval) {
+            if ($i == -1 || $res[$i][1] &lt; $interval[0]) {
+                $res[++$i] = $interval;
+            } else {
+                $res[$i][1] = max($res[$i][1], $interval[1]);
+            }
+        }
+        return $res;
+    }
+}
+</code></pre><h4 id=493-翻转对httpsleetcode-cncomproblemsreverse-pairs><a href=https://leetcode-cn.com/problems/reverse-pairs/ target=_blank rel=noopener>493. 翻转对</a></h4><pre><code class=language-php>class Solution {
+
+    /**
+     * @param Integer[] $nums
+     * @return Integer
+     */
+    function reversePairs($nums) {
+        return $this-&gt;mergesort($nums, 0, count($nums) - 1);
+        return $this-&gt;mergesort_and_count($nums, 0, count($nums) - 1);
+    }
+
+    /**
+     * 参考链接
+     * https://leetcode.com/problems/reverse-pairs/discuss/97306
+     * @param [type] $nums
+     * @param [type] $start
+     * @param [type] $end
+     * @return int
+     */
+    function mergesort(&amp;$nums, $start, $end) {
+        if ($start &gt;= $end) return 0;
+        $mid = $start + (($end - $start) &gt;&gt; 1);
+        $count = $this-&gt;mergesort($nums, $start, $mid) + $this-&gt;mergesort($nums, $mid + 1, $end);
+        $cache = [];
+        $i = $t = $start;
+        $c = 0;
+        for ($j = $mid + 1; $j &lt;= $end; $j++, $c++) {
+            while ($i &lt;= $mid &amp;&amp; $nums[$i] &lt;= 2 * $nums[$j]) $i++;
+            while ($t &lt;= $mid &amp;&amp; $nums[$t] &lt; $nums[$j]) $cache[$c++] = $nums[$t++];
+            $cache[$c] = $nums[$j];
+            $count += $mid - $i + 1;
+        }
+        while ($t &lt;= $mid) $cache[$c++] = $nums[$t++];
+        for ($i = 0; $i &lt; $c; $i++) {
+            $nums[$start + $i] = $cache[$i];
+        } 
+        return $count;
+    }
+
+    function mergesort_and_count(&amp;$nums, $start, $end) {
+        if ($start &gt;= $end) return 0;
+        $mid = $start + (($end - $start) &gt;&gt; 1);
+        $count = $this-&gt;mergesort_and_count($nums, $start, $mid) + $this-&gt;mergesort_and_count($nums, $mid + 1, $end);
+        $j = $mid + 1;
+        for ($i = $start; $i &lt;= $mid; $i++) {
+            while ($j &lt;= $end &amp;&amp; $nums[$i] &gt; $nums[$j] * 2) $j++;
+            $count += $j - ($mid + 1);
+        }
+        $this-&gt;merge($nums, $start, $mid, $end);
+        return $count;
+    }
+
+    function merge(&amp;$nums, $start, $mid, $end) {
+        $n1 = $mid - $start + 1;
+        $n2 = $end - $mid;
+        $l = $r = [];
+        for ($i = 0; $i &lt; $n1; $i++) $l[$i] = $nums[$start + $i];
+        for ($i = 0; $i &lt; $n2; $i++) $r[$i] = $nums[$mid + 1 + $i];
+        for ($i = 0, $j = 0, $k = $start; $k &lt;= $end; $k++) {
+            if ($j &gt;= $n2 || ($i &lt; $n1 &amp;&amp; $l[$i] &lt; $r[$j])) {
+                $nums[$k] = $l[$i++];
+            } else {
+                $nums[$k] = $r[$j++];
+            }
+        }
+    }
+}
+</code></pre><h2 id=本周作业>本周作业</h2><h3 id=简单>简单</h3><h4 id=191-位1的个数httpsleetcode-cncomproblemsnumber-of-1-bits-1><a href=https://leetcode-cn.com/problems/number-of-1-bits/ target=_blank rel=noopener>191. 位1的个数</a></h4><h4 id=231-2的幂httpsleetcode-cncomproblemspower-of-two-1><a href=https://leetcode-cn.com/problems/power-of-two/ target=_blank rel=noopener>231. 2的幂</a></h4><h4 id=190-颠倒二进制位httpsleetcode-cncomproblemsreverse-bits-1><a href=https://leetcode-cn.com/problems/reverse-bits/ target=_blank rel=noopener>190. 颠倒二进制位</a></h4><p>用自己熟悉的编程语言，手写各种初级排序代码，提交到第 8 周学习总结中。</p><h4 id=1122-数组的相对排序httpsleetcode-cncomproblemsrelative-sort-array-1><a href=https://leetcode-cn.com/problems/relative-sort-array/ target=_blank rel=noopener>1122. 数组的相对排序</a></h4><h4 id=242-有效的字母异位词httpsleetcode-cncomproblemsvalid-anagram-1><a href=https://leetcode-cn.com/problems/valid-anagram/ target=_blank rel=noopener>242. 有效的字母异位词</a></h4><h3 id=中等>中等</h3><h4 id=242-有效的字母异位词httpsleetcode-cncomproblemsvalid-anagram-2><a href=https://leetcode-cn.com/problems/valid-anagram/ target=_blank rel=noopener>242. 有效的字母异位词</a></h4><p><a href=https://leetcode-cn.com/problems/design-a-leaderboard/ target=_blank rel=noopener>https://leetcode-cn.com/problems/design-a-leaderboard/</a></p><h4 id=56-合并区间httpsleetcode-cncomproblemsmerge-intervals-1><a href=https://leetcode-cn.com/problems/merge-intervals/ target=_blank rel=noopener>56. 合并区间</a></h4><h3 id=困难>困难</h3><h4 id=51-n皇后httpsleetcode-cncomproblemsn-queens-1><a href=https://leetcode-cn.com/problems/n-queens/ target=_blank rel=noopener>51. N皇后</a></h4><h4 id=52-n皇后-iihttpsleetcode-cncomproblemsn-queens-ii-1><a href=https://leetcode-cn.com/problems/n-queens-ii/ target=_blank rel=noopener>52. N皇后 II</a></h4><h4 id=493-翻转对httpsleetcode-cncomproblemsreverse-pairs-1><a href=https://leetcode-cn.com/problems/reverse-pairs/ target=_blank rel=noopener>493. 翻转对</a></h4><h2 id=下周预习>下周预习</h2><h4 id=预习知识点>预习知识点</h4><ul><li><a href=http://time.geekbang.org/column/article/71187 target=_blank rel=noopener>字符串匹配基础：如何借助哈希算法实现高效字符串匹配？</a></li><li><a href=http://time.geekbang.org/column/article/71525 target=_blank rel=noopener>字符串匹配基础：如何实现文本编辑器中的查找功能？</a></li><li><a href=http://time.geekbang.org/column/article/71845 target=_blank rel=noopener>字符串匹配基础：如何借助 BM 算法轻松理解 KMP 算法？</a></li></ul><h4 id=预习题目>预习题目</h4><ul><li><a href=http://leetcode-cn.com/problems/unique-paths/ target=_blank rel=noopener>不同路径</a></li><li><a href=http://leetcode-cn.com/problems/minimum-path-sum/ target=_blank rel=noopener>最小路径和</a></li></ul></article><div class=my-4><a href=/tags/%E7%AE%97%E6%B3%95/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#算法</a>
+<a href=/tags/leetcode/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#leetcode</a></div><div class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"><div><span class="text-primary-text block font-bold">上一页</span>
+<a href=/study/algorithm/php/07%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%B8%83%E5%91%A8/ class=block>第7周</a></div><div class="mt-4 md:mt-0 md:text-right"><span class="text-primary-text block font-bold">下一页</span>
+<a href=/study/algorithm/php/09%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%B9%9D%E5%91%A8/ class=block>第9周</a></div></div></div></div></div></div></div><script>document.addEventListener("DOMContentLoaded",()=>{hljs.highlightAll(),changeSidebarHeight(),switchDocToc()})</script></div></div></main><footer class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b"><p class="text-sm text-tertiary-text">&copy; 2021 <a href=https://blog.lbbniu.com/>lbbniu</a>
+&#183; Powered by the <a href=https://github.com/wangchucheng/hugo-eureka class=hover:text-eureka>Eureka</a> theme for <a href=https://gohugo.io class=hover:text-eureka>Hugo</a></p></div></div></footer></body></html>

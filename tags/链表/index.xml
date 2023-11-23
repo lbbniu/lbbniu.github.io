@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>链表 on lbbniu</title><link>/tags/%E9%93%BE%E8%A1%A8/</link><description>Recent content in 链表 on lbbniu</description><generator>Hugo -- gohugo.io</generator><language>zh</language><managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor><webMaster>lbbniu@gmail.com (lbbniu)</webMaster><copyright>&amp;copy; 2021 &lt;a href="https://blog.lbbniu.com/">lbbniu&lt;/a></copyright><lastBuildDate>Wed, 12 Oct 2022 00:01:00 +0800</lastBuildDate><atom:link href="/tags/%E9%93%BE%E8%A1%A8/index.xml" rel="self" type="application/rss+xml"/><item><title>第一周 数组、链表、栈、队列</title><link>/study/2021algorithm/week01/</link><pubDate>Thu, 25 Nov 2021 10:30:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/2021algorithm/week01/</guid><description>题目数：19
+本周作业 66.加一 （Easy）半年内出题频次： Facebook 字节跳动 微软 Amazon 快手 美团 Google 腾讯 华为 百度 0 0 3 3 0 0 4 0 0 0 // 写法一，面试推荐写法 func plusOne(digits []int) []int { n := len(digits) for i := n - 1; i &amp;gt;=0; i-- { digits[i] = (digits[i] + 1) % 10 if digits[i] != 0 { return digits } } ans := make([]int, n + 1) ans[0] = 1 return ans } // 写法二： func plusOne(digits []int) []int { for i := len(digits) - 1; i &amp;gt;= 0; i-- { // 统计9的个数 if digits[i] !</description></item><item><title>剑指 Offer 06 从尾到头打印链表</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/cong-wei-dao-tou-da-yin-lian-biao-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/cong-wei-dao-tou-da-yin-lian-biao-lcof/</guid><description>剑指 Offer 06 从尾到头打印链表 输入一个链表的头节点，从尾到头反过来返回每个节点的值（用数组返回）。
+&amp;nbsp;
+示例 1：
+输入：head = [1,3,2] 输出：[2,3,1] &amp;nbsp;
+限制：
+0 &amp;lt;= 链表长度 &amp;lt;= 10000
+/** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func reversePrint(head *ListNode) []int { } LeetCode题库地址 https://leetcode.cn/problems/cong-wei-dao-tou-da-yin-lian-biao-lcof</description></item><item><title>面试题 02.01 移除重复节点</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/remove-duplicate-node-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/remove-duplicate-node-lcci/</guid><description>面试题 02.01 移除重复节点 编写代码，移除未排序链表中的重复节点。保留最开始出现的节点。
+示例1:
+输入：[1, 2, 3, 3, 2, 1] 输出：[1, 2, 3] 示例2:
+输入：[1, 1, 1, 1, 2] 输出：[1, 2] 提示：
+链表长度在[0, 20000]范围内。 链表元素在[0, 20000]范围内。 进阶：
+如果不得使用临时缓冲区，该怎么解决？
+/** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func removeDuplicateNodes(head *ListNode) *ListNode { } LeetCode题库地址 https://leetcode.cn/problems/remove-duplicate-node-lcci</description></item><item><title>面试题 02.02 返回倒数第 k 个节点</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/kth-node-from-end-of-list-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/kth-node-from-end-of-list-lcci/</guid><description>面试题 02.02 返回倒数第 k 个节点 实现一种算法，找出单向链表中倒数第 k 个节点。返回该节点的值。
+注意：本题相对原题稍作改动
+示例：
+输入： 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5 和 k = 2 输出： 4 说明：
+给定的 k&amp;nbsp;保证是有效的。
+/** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func kthToLast(head *ListNode, k int) int { } LeetCode题库地址 https://leetcode.cn/problems/kth-node-from-end-of-list-lcci</description></item><item><title>面试题 02.03 删除中间节点</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/delete-middle-node-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/delete-middle-node-lcci/</guid><description>面试题 02.03 删除中间节点 若链表中的某个节点，既不是链表头节点，也不是链表尾节点，则称其为该链表的「中间节点」。
+假定已知链表的某一个中间节点，请实现一种算法，将该节点从链表中删除。
+例如，传入节点 c（位于单向链表 a->b->c->d->e->f 中），将其删除后，剩余链表为 a->b->d->e->f
+示例：
+输入：节点 5 （位于单向链表 4->5->1->9 中） 输出：不返回任何数据，从链表中删除传入的节点 5，使链表变为 4->1->9 /** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func deleteNode(node *ListNode) { } LeetCode题库地址 https://leetcode.cn/problems/delete-middle-node-lcci</description></item><item><title>面试题 02.04 分割链表</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/partition-list-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/partition-list-lcci/</guid><description>面试题 02.04 分割链表 给你一个链表的头节点 head 和一个特定值 x ，请你对链表进行分隔，使得所有 小于 x 的节点都出现在 大于或等于 x 的节点之前。
+你不需要&amp;nbsp;保留&amp;nbsp;每个分区中各节点的初始相对位置。
+&amp;nbsp;
+示例 1：
+输入：head = [1,4,3,2,5,2], x = 3 输出：[1,2,2,4,3,5] 示例 2：
+输入：head = [2,1], x = 2 输出：[1,2] &amp;nbsp;
+提示：
+链表中节点的数目在范围 [0, 200] 内 -100 &amp;lt;= Node.val &amp;lt;= 100 -200 &amp;lt;= x &amp;lt;= 200 /** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func partition(head *ListNode, x int) *ListNode { } LeetCode题库地址 https://leetcode.</description></item><item><title>面试题 02.05 链表求和</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/sum-lists-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/sum-lists-lcci/</guid><description>面试题 02.05 链表求和 给定两个用链表表示的整数，每个节点包含一个数位。
+这些数位是反向存放的，也就是个位排在链表首部。
+编写函数对这两个整数求和，并用链表形式返回结果。
+&amp;nbsp;
+示例：
+输入：(7 -&amp;gt; 1 -&amp;gt; 6) + (5 -&amp;gt; 9 -&amp;gt; 2)，即617 + 295 输出：2 -&amp;gt; 1 -&amp;gt; 9，即912 进阶：思考一下，假设这些数位是正向存放的，又该如何解决呢?
+示例：
+输入：(6 -&amp;gt; 1 -&amp;gt; 7) + (2 -&amp;gt; 9 -&amp;gt; 5)，即617 + 295 输出：9 -&amp;gt; 1 -&amp;gt; 2，即912 /** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode { } LeetCode题库地址 https://leetcode.</description></item><item><title>面试题 02.06 回文链表</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/palindrome-linked-list-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/palindrome-linked-list-lcci/</guid><description>面试题 02.06 回文链表 编写一个函数，检查输入的链表是否是回文的。
+&amp;nbsp;
+示例 1：
+输入： 1-&amp;gt;2 输出： false 示例 2：
+输入： 1-&amp;gt;2-&amp;gt;2-&amp;gt;1 输出： true &amp;nbsp;
+进阶：
+你能否用 O(n) 时间复杂度和 O(1) 空间复杂度解决此题？
+/** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func isPalindrome(head *ListNode) bool { } LeetCode题库地址 https://leetcode.cn/problems/palindrome-linked-list-lcci</description></item><item><title>面试题 02.07 链表相交</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/intersection-of-two-linked-lists-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/intersection-of-two-linked-lists-lcci/</guid><description>面试题 02.07 链表相交 给你两个单链表的头节点 headA 和 headB ，请你找出并返回两个单链表相交的起始节点。如果两个链表没有交点，返回 null 。
+图示两个链表在节点 c1 开始相交：
+题目数据 保证 整个链式结构中不存在环。
+注意，函数返回结果后，链表必须 保持其原始结构 。
+示例 1：
+输入：intersectVal = 8, listA = [4,1,8,4,5], listB = [5,0,1,8,4,5], skipA = 2, skipB = 3 输出：Intersected at '8' 解释：相交节点的值为 8 （注意，如果两个链表相交则不能为 0）。 从各自的表头开始算起，链表 A 为 [4,1,8,4,5]，链表 B 为 [5,0,1,8,4,5]。 在 A 中，相交节点前有 2 个节点；在 B 中，相交节点前有 3 个节点。 示例 2：
+输入：intersectVal = 2, listA = [0,9,1,2,4], listB = [3,2,4], skipA = 3, skipB = 1 输出：Intersected at '2' 解释：相交节点的值为 2 （注意，如果两个链表相交则不能为 0）。 从各自的表头开始算起，链表 A 为 [0,9,1,2,4]，链表 B 为 [3,2,4]。 在 A 中，相交节点前有 3 个节点；在 B 中，相交节点前有 1 个节点。 示例 3：</description></item><item><title>剑指 Offer 18 删除链表的节点</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/shan-chu-lian-biao-de-jie-dian-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/shan-chu-lian-biao-de-jie-dian-lcof/</guid><description>剑指 Offer 18 删除链表的节点 给定单向链表的头指针和一个要删除的节点的值，定义一个函数删除该节点。
+返回删除后的链表的头节点。
+注意：此题对比原题有改动
+示例 1:
+输入: head = [4,5,1,9], val = 5 输出: [4,1,9] 解释: 给定你链表中值为&amp;nbsp;5&amp;nbsp;的第二个节点，那么在调用了你的函数之后，该链表应变为 4 -&amp;gt; 1 -&amp;gt; 9. 示例 2:
+输入: head = [4,5,1,9], val = 1 输出: [4,5,9] 解释: 给定你链表中值为&amp;nbsp;1&amp;nbsp;的第三个节点，那么在调用了你的函数之后，该链表应变为 4 -&amp;gt; 5 -&amp;gt; 9. &amp;nbsp;
+说明：
+题目保证链表中节点的值互不相同 若使用 C 或 C++ 语言，你不需要 free 或 delete 被删除的节点 /** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func deleteNode(head *ListNode, val int) *ListNode { } LeetCode题库地址 https://leetcode.</description></item><item><title>面试题 02.08 环路检测</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/linked-list-cycle-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/linked-list-cycle-lcci/</guid><description>面试题 02.08 环路检测 给定一个链表，如果它是有环链表，实现一个算法返回环路的开头节点。若环不存在，请返回 null。
+如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定链表中的环，我们使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。 如果 pos 是 -1，则在该链表中没有环。注意：pos 不作为参数进行传递，仅仅是为了标识链表的实际情况。
+&amp;nbsp;
+示例 1：
+输入：head = [3,2,0,-4], pos = 1 输出：tail connects to node index 1 解释：链表中有一个环，其尾部连接到第二个节点。 示例 2：
+输入：head = [1,2], pos = 0 输出：tail connects to node index 0 解释：链表中有一个环，其尾部连接到第一个节点。 示例 3：
+输入：head = [1], pos = -1 输出：no cycle 解释：链表中没有环。 &amp;nbsp;
+进阶：
+你是否可以不用额外空间解决此题？ &amp;nbsp;
+/** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func detectCycle(head *ListNode) *ListNode { } LeetCode题库地址 https://leetcode.</description></item><item><title>面试题 03.03 堆盘子</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/stack-of-plates-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/stack-of-plates-lcci/</guid><description>面试题 03.03 堆盘子 堆盘子。设想有一堆盘子，堆太高可能会倒下来。因此，在现实生活中，盘子堆到一定高度时，我们就会另外堆一堆盘子。请实现数据结构SetOfStacks，模拟这种行为。SetOfStacks应该由多个栈组成，并且在前一个栈填满时新建一个栈。此外，SetOfStacks.push()和SetOfStacks.pop()应该与普通栈的操作方法相同（也就是说，pop()返回的值，应该跟只有一个栈时的情况一样）。 进阶：实现一个popAt(int index)方法，根据指定的子栈，执行pop操作。
+当某个栈为空时，应当删除该栈。当栈中没有元素或不存在该栈时，pop，popAt&amp;nbsp;应返回 -1.
+示例1:
+输入： [&amp;quot;StackOfPlates&amp;quot;, &amp;quot;push&amp;quot;, &amp;quot;push&amp;quot;, &amp;quot;popAt&amp;quot;, &amp;quot;pop&amp;quot;, &amp;quot;pop&amp;quot;] [[1], [1], [2], [1], [], []] 输出： [null, null, null, 2, 1, -1] 示例2:
+输入： [&amp;quot;StackOfPlates&amp;quot;, &amp;quot;push&amp;quot;, &amp;quot;push&amp;quot;, &amp;quot;push&amp;quot;, &amp;quot;popAt&amp;quot;, &amp;quot;popAt&amp;quot;, &amp;quot;popAt&amp;quot;] [[2], [1], [2], [3], [0], [0], [0]] 输出： [null, null, null, null, 2, 1, 3] type StackOfPlates struct { } func Constructor(cap int) StackOfPlates { } func (this *StackOfPlates) Push(val int) { } func (this *StackOfPlates) Pop() int { } func (this *StackOfPlates) PopAt(index int) int { } /** * Your StackOfPlates object will be instantiated and called as such: * obj := Constructor(cap); * obj.</description></item><item><title>剑指 Offer 22 链表中倒数第k个节点</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/</guid><description>剑指 Offer 22 链表中倒数第k个节点 输入一个链表，输出该链表中倒数第k个节点。为了符合大多数人的习惯，本题从1开始计数，即链表的尾节点是倒数第1个节点。
+例如，一个链表有 6 个节点，从头节点开始，它们的值依次是 1、2、3、4、5、6。这个链表的倒数第 3 个节点是值为 4 的节点。
+示例：
+给定一个链表: 1->2->3->4->5, 和 k = 2. 返回链表 4->5. /** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func getKthFromEnd(head *ListNode, k int) *ListNode { } LeetCode题库地址 https://leetcode.cn/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof</description></item><item><title>剑指 Offer II 021 删除链表的倒数第 n 个结点</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/slwz0r/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/slwz0r/</guid><description>剑指 Offer II 021 删除链表的倒数第 n 个结点 给定一个链表，删除链表的倒数第&amp;nbsp;n&amp;nbsp;个结点，并且返回链表的头结点。
+&amp;nbsp;
+示例 1：
+输入：head = [1,2,3,4,5], n = 2 输出：[1,2,3,5] 示例 2：
+输入：head = [1], n = 1 输出：[] 示例 3：
+输入：head = [1,2], n = 1 输出：[1] &amp;nbsp;
+提示：
+链表中结点的数目为 sz 1 &amp;lt;= sz &amp;lt;= 30 0 &amp;lt;= Node.val &amp;lt;= 100 1 &amp;lt;= n &amp;lt;= sz &amp;nbsp;
+进阶：能尝试使用一趟扫描实现吗？
+&amp;nbsp;
+注意：本题与主站 19&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/
+/** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func removeNthFromEnd(head *ListNode, n int) *ListNode { } LeetCode题库地址 https://leetcode.</description></item><item><title>剑指 Offer 24 反转链表</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/fan-zhuan-lian-biao-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/fan-zhuan-lian-biao-lcof/</guid><description>剑指 Offer 24 反转链表 定义一个函数，输入一个链表的头节点，反转该链表并输出反转后链表的头节点。
+&amp;nbsp;
+示例:
+输入: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL 输出: 5-&amp;gt;4-&amp;gt;3-&amp;gt;2-&amp;gt;1-&amp;gt;NULL &amp;nbsp;
+限制：
+0 &amp;lt;= 节点个数 &amp;lt;= 5000
+&amp;nbsp;
+注意：本题与主站 206 题相同：https://leetcode-cn.com/problems/reverse-linked-list/
+/** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func reverseList(head *ListNode) *ListNode { } LeetCode题库地址 https://leetcode.cn/problems/fan-zhuan-lian-biao-lcof</description></item><item><title>剑指 Offer II 022 链表中环的入口节点</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/c32eov/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/c32eov/</guid><description>剑指 Offer II 022 链表中环的入口节点 给定一个链表，返回链表开始入环的第一个节点。 从链表的头节点开始沿着 next 指针进入环的第一个节点为环的入口节点。如果链表无环，则返回&amp;nbsp;null。
+为了表示给定链表中的环，我们使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。 如果 pos 是 -1，则在该链表中没有环。注意，pos 仅仅是用于标识环的情况，并不会作为参数传递到函数中。
+说明：不允许修改给定的链表。
+&amp;nbsp;
+示例 1：
+输入：head = [3,2,0,-4], pos = 1 输出：返回索引为 1 的链表节点 解释：链表中有一个环，其尾部连接到第二个节点。 示例&amp;nbsp;2：
+输入：head = [1,2], pos = 0 输出：返回索引为 0 的链表节点 解释：链表中有一个环，其尾部连接到第一个节点。 示例 3：
+输入：head = [1], pos = -1 输出：返回 null 解释：链表中没有环。 &amp;nbsp;
+提示：
+链表中节点的数目范围在范围 [0, 104] 内 -105 &amp;lt;= Node.val &amp;lt;= 105 pos 的值为 -1 或者链表中的一个有效索引 &amp;nbsp;
+进阶：是否可以使用 O(1) 空间解决此题？
+&amp;nbsp;</description></item><item><title>剑指 Offer 25 合并两个排序的链表</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/he-bing-liang-ge-pai-xu-de-lian-biao-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/he-bing-liang-ge-pai-xu-de-lian-biao-lcof/</guid><description>剑指 Offer 25 合并两个排序的链表 输入两个递增排序的链表，合并这两个链表并使新链表中的节点仍然是递增排序的。
+示例1：
+输入：1-&amp;gt;2-&amp;gt;4, 1-&amp;gt;3-&amp;gt;4 输出：1-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;4 限制：
+0 &amp;lt;= 链表长度 &amp;lt;= 1000
+注意：本题与主站 21 题相同：https://leetcode-cn.com/problems/merge-two-sorted-lists/
+/** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode { } LeetCode题库地址 https://leetcode.cn/problems/he-bing-liang-ge-pai-xu-de-lian-biao-lcof</description></item><item><title>剑指 Offer II 023 两个链表的第一个重合节点</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/3u1wk4/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/3u1wk4/</guid><description>剑指 Offer II 023 两个链表的第一个重合节点 给定两个单链表的头节点&amp;nbsp;headA 和 headB ，请找出并返回两个单链表相交的起始节点。如果两个链表没有交点，返回 null 。
+图示两个链表在节点 c1 开始相交：
+题目数据 保证 整个链式结构中不存在环。
+注意，函数返回结果后，链表必须 保持其原始结构 。
+&amp;nbsp;
+示例 1：
+输入：intersectVal = 8, listA = [4,1,8,4,5], listB = [5,0,1,8,4,5], skipA = 2, skipB = 3 输出：Intersected at &amp;#39;8&amp;#39; 解释：相交节点的值为 8 （注意，如果两个链表相交则不能为 0）。 从各自的表头开始算起，链表 A 为 [4,1,8,4,5]，链表 B 为 [5,0,1,8,4,5]。 在 A 中，相交节点前有 2 个节点；在 B 中，相交节点前有 3 个节点。 示例&amp;nbsp;2：
+输入：intersectVal&amp;nbsp;= 2, listA = [0,9,1,2,4], listB = [3,2,4], skipA = 3, skipB = 1 输出：Intersected at &amp;#39;2&amp;#39; 解释：相交节点的值为 2 （注意，如果两个链表相交则不能为 0）。 从各自的表头开始算起，链表 A 为 [0,9,1,2,4]，链表 B 为 [3,2,4]。 在 A 中，相交节点前有 3 个节点；在 B 中，相交节点前有 1 个节点。 示例&amp;nbsp;3：</description></item><item><title>剑指 Offer II 024 反转链表</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/uhnkqh/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/uhnkqh/</guid><description>剑指 Offer II 024 反转链表 给定单链表的头节点 head ，请反转链表，并返回反转后的链表的头节点。
+&amp;nbsp;
+示例 1：
+输入：head = [1,2,3,4,5] 输出：[5,4,3,2,1] 示例 2：
+输入：head = [1,2] 输出：[2,1] 示例 3：
+输入：head = [] 输出：[] &amp;nbsp;
+提示：
+链表中节点的数目范围是 [0, 5000] -5000 &amp;lt;= Node.val &amp;lt;= 5000 &amp;nbsp;
+进阶：链表可以选用迭代或递归方式完成反转。你能否用两种方法解决这道题？
+&amp;nbsp;
+注意：本题与主站 206&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/reverse-linked-list/
+/** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func reverseList(head *ListNode) *ListNode { } LeetCode题库地址 https://leetcode.cn/problems/UHnkqh</description></item><item><title>剑指 Offer II 025 链表中的两数相加</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/lmsnwu/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/lmsnwu/</guid><description>剑指 Offer II 025 链表中的两数相加 给定两个 非空链表 l1和 l2&amp;nbsp;来代表两个非负整数。数字最高位位于链表开始位置。它们的每个节点只存储一位数字。将这两数相加会返回一个新的链表。
+可以假设除了数字 0 之外，这两个数字都不会以零开头。
+&amp;nbsp;
+示例1：
+输入：l1 = [7,2,4,3], l2 = [5,6,4] 输出：[7,8,0,7] 示例2：
+输入：l1 = [2,4,3], l2 = [5,6,4] 输出：[8,0,7] 示例3：
+输入：l1 = [0], l2 = [0] 输出：[0] &amp;nbsp;
+提示：
+链表的长度范围为 [1, 100] 0 &amp;lt;= node.val &amp;lt;= 9 输入数据保证链表代表的数字无前导 0 &amp;nbsp;
+进阶：如果输入链表不能修改该如何处理？换句话说，不能对列表中的节点进行翻转。
+&amp;nbsp;
+注意：本题与主站 445&amp;nbsp;题相同：https://leetcode-cn.com/problems/add-two-numbers-ii/
+/** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode { } LeetCode题库地址 https://leetcode.</description></item><item><title>剑指 Offer II 026 重排链表</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/lgjmqu/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/lgjmqu/</guid><description>剑指 Offer II 026 重排链表 给定一个单链表 L 的头节点 head ，单链表 L 表示为：
+&amp;nbsp;L0&amp;nbsp;&amp;rarr; L1&amp;nbsp;&amp;rarr; &amp;hellip; &amp;rarr; Ln-1&amp;nbsp;&amp;rarr; Ln&amp;nbsp;
+请将其重新排列后变为：
+L0&amp;nbsp;&amp;rarr;&amp;nbsp;Ln&amp;nbsp;&amp;rarr;&amp;nbsp;L1&amp;nbsp;&amp;rarr;&amp;nbsp;Ln-1&amp;nbsp;&amp;rarr;&amp;nbsp;L2&amp;nbsp;&amp;rarr;&amp;nbsp;Ln-2&amp;nbsp;&amp;rarr; &amp;hellip;
+不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。
+&amp;nbsp;
+示例 1:
+输入: head = [1,2,3,4] 输出: [1,4,2,3] 示例 2:
+输入: head = [1,2,3,4,5] 输出: [1,5,2,4,3] &amp;nbsp;
+提示：
+链表的长度范围为 [1, 5 * 104] 1 &amp;lt;= node.val &amp;lt;= 1000 &amp;nbsp;
+注意：本题与主站 143&amp;nbsp;题相同：https://leetcode-cn.com/problems/reorder-list/&amp;nbsp;
+/** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func reorderList(head *ListNode) { } LeetCode题库地址 https://leetcode.</description></item><item><title>面试题 04.03 特定深度节点链表</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/list-of-depth-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/list-of-depth-lcci/</guid><description>面试题 04.03 特定深度节点链表 给定一棵二叉树，设计一个算法，创建含有某一深度上所有节点的链表（比如，若一棵树的深度为 D，则会创建出 D 个链表）。返回一个包含所有深度的链表的数组。
+&amp;nbsp;
+示例：
+输入：[1,2,3,4,5,null,7,8] 1 / \ 2 3 / \ \ 4 5 7 / 8 输出：[[1],[2,3],[4,5,7],[8]] /** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ /** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func listOfDepth(tree *TreeNode) []*ListNode { } LeetCode题库地址 https://leetcode.</description></item><item><title>剑指 Offer II 027 回文链表</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/amhzsa/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/amhzsa/</guid><description>剑指 Offer II 027 回文链表 给定一个链表的 头节点&amp;nbsp;head&amp;nbsp;，请判断其是否为回文链表。
+如果一个链表是回文，那么链表节点序列从前往后看和从后往前看是相同的。
+&amp;nbsp;
+示例 1：
+输入: head = [1,2,3,3,2,1] 输出: true 示例 2：
+输入: head = [1,2] 输出: false &amp;nbsp;
+提示：
+链表 L 的长度范围为 [1, 105] 0&amp;nbsp;&amp;lt;= node.val &amp;lt;= 9 &amp;nbsp;
+进阶：能否用&amp;nbsp;O(n) 时间复杂度和 O(1) 空间复杂度解决此题？
+&amp;nbsp;
+注意：本题与主站 234&amp;nbsp;题相同：https://leetcode-cn.com/problems/palindrome-linked-list/
+/** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func isPalindrome(head *ListNode) bool { } LeetCode题库地址 https://leetcode.cn/problems/aMhZSa</description></item><item><title>剑指 Offer II 028 展平多级双向链表</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/qv1da2/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/qv1da2/</guid><description>剑指 Offer II 028 展平多级双向链表 多级双向链表中，除了指向下一个节点和前一个节点指针之外，它还有一个子链表指针，可能指向单独的双向链表。这些子列表也可能会有一个或多个自己的子项，依此类推，生成多级数据结构，如下面的示例所示。
+给定位于列表第一级的头节点，请扁平化列表，即将这样的多级双向链表展平成普通的双向链表，使所有结点出现在单级双链表中。
+&amp;nbsp;
+示例 1：
+输入：head = [1,2,3,4,5,6,null,null,null,7,8,9,10,null,null,11,12] 输出：[1,2,3,7,8,11,12,9,10,4,5,6] 解释： 输入的多级列表如下图所示： 扁平化后的链表如下图： 示例 2：
+输入：head = [1,2,null,3] 输出：[1,3,2] 解释： 输入的多级列表如下图所示： 1---2---NULL | 3---NULL 示例 3：
+输入：head = [] 输出：[] &amp;nbsp;
+如何表示测试用例中的多级链表？
+以 示例 1 为例：
+1---2---3---4---5---6--NULL | 7---8---9---10--NULL | 11--12--NULL 序列化其中的每一级之后：
+[1,2,3,4,5,6,null] [7,8,9,10,null] [11,12,null] 为了将每一级都序列化到一起，我们需要每一级中添加值为 null 的元素，以表示没有节点连接到上一级的上级节点。
+[1,2,3,4,5,6,null] [null,null,7,8,9,10,null] [null,11,12,null] 合并所有序列化结果，并去除末尾的 null 。
+[1,2,3,4,5,6,null,null,null,7,8,9,10,null,null,11,12] &amp;nbsp;
+提示：
+节点数目不超过 1000 1 &amp;lt;= Node.val &amp;lt;= 10^5 &amp;nbsp;
+注意：本题与主站 430&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/flatten-a-multilevel-doubly-linked-list/
+/** * Definition for a Node.</description></item><item><title>剑指 Offer II 029 排序的循环链表</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/4ueaj6/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/4ueaj6/</guid><description>剑指 Offer II 029 排序的循环链表 给定循环单调非递减列表中的一个点，写一个函数向这个列表中插入一个新元素&amp;nbsp;insertVal ，使这个列表仍然是循环升序的。
+给定的可以是这个列表中任意一个顶点的指针，并不一定是这个列表中最小元素的指针。
+如果有多个满足条件的插入位置，可以选择任意一个位置插入新的值，插入后整个列表仍然保持有序。
+如果列表为空（给定的节点是 null），需要创建一个循环有序列表并返回这个节点。否则。请返回原先给定的节点。
+&amp;nbsp;
+示例 1：
+&amp;nbsp;
+输入：head = [3,4,1], insertVal = 2 输出：[3,4,1,2] 解释：在上图中，有一个包含三个元素的循环有序列表，你获得值为 3 的节点的指针，我们需要向表中插入元素 2 。新插入的节点应该在 1 和 3 之间，插入之后，整个列表如上图所示，最后返回节点 3 。 示例 2：
+输入：head = [], insertVal = 1 输出：[1] 解释：列表为空（给定的节点是 null），创建一个循环有序列表并返回这个节点。 示例 3：
+输入：head = [1], insertVal = 0 输出：[1,0] &amp;nbsp;
+提示：
+0 &amp;lt;= Number of Nodes &amp;lt;= 5 * 10^4 -10^6 &amp;lt;= Node.val &amp;lt;= 10^6 -10^6 &amp;lt;=&amp;nbsp;insertVal &amp;lt;= 10^6 &amp;nbsp;
+注意：本题与主站 708&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.</description></item><item><title>剑指 Offer II 031 最近最少使用缓存</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/orixps/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/orixps/</guid><description>剑指 Offer II 031 最近最少使用缓存 运用所掌握的数据结构，设计和实现一个&amp;nbsp; LRU (Least Recently Used，最近最少使用) 缓存机制 。
+实现 LRUCache 类：
+LRUCache(int capacity) 以正整数作为容量&amp;nbsp;capacity 初始化 LRU 缓存 int get(int key) 如果关键字 key 存在于缓存中，则返回关键字的值，否则返回 -1 。 void put(int key, int value)&amp;nbsp;如果关键字已经存在，则变更其数据值；如果关键字不存在，则插入该组「关键字-值」。当缓存容量达到上限时，它应该在写入新数据之前删除最久未使用的数据值，从而为新的数据值留出空间。 &amp;nbsp;
+示例：
+输入 [&amp;quot;LRUCache&amp;quot;, &amp;quot;put&amp;quot;, &amp;quot;put&amp;quot;, &amp;quot;get&amp;quot;, &amp;quot;put&amp;quot;, &amp;quot;get&amp;quot;, &amp;quot;put&amp;quot;, &amp;quot;get&amp;quot;, &amp;quot;get&amp;quot;, &amp;quot;get&amp;quot;] [[2], [1, 1], [2, 2], [1], [3, 3], [2], [4, 4], [1], [3], [4]] 输出 [null, null, null, 1, null, -1, null, -1, 3, 4] 解释 LRUCache lRUCache = new LRUCache(2); lRUCache.</description></item><item><title>剑指 Offer 35 复杂链表的复制</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/fu-za-lian-biao-de-fu-zhi-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/fu-za-lian-biao-de-fu-zhi-lcof/</guid><description>剑指 Offer 35 复杂链表的复制 请实现 copyRandomList 函数，复制一个复杂链表。在复杂链表中，每个节点除了有一个 next 指针指向下一个节点，还有一个 random 指针指向链表中的任意节点或者 null。
+&amp;nbsp;
+示例 1：
+输入：head = [[7,null],[13,0],[11,4],[10,2],[1,0]] 输出：[[7,null],[13,0],[11,4],[10,2],[1,0]] 示例 2：
+输入：head = [[1,1],[2,1]] 输出：[[1,1],[2,1]] 示例 3：
+输入：head = [[3,null],[3,0],[3,null]] 输出：[[3,null],[3,0],[3,null]] 示例 4：
+输入：head = [] 输出：[] 解释：给定的链表为空（空指针），因此返回 null。 &amp;nbsp;
+提示：
+-10000 &amp;lt;= Node.val &amp;lt;= 10000 Node.random&amp;nbsp;为空（null）或指向链表中的节点。 节点数目不超过 1000 。 &amp;nbsp;
+注意：本题与主站 138 题相同：https://leetcode-cn.com/problems/copy-list-with-random-pointer/
+&amp;nbsp;
+/** * Definition for a Node. * type Node struct { * Val int * Next *Node * Random *Node * } */ func copyRandomList(head *Node) *Node { } LeetCode题库地址 https://leetcode.</description></item><item><title>剑指 Offer 36 二叉搜索树与双向链表</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/er-cha-sou-suo-shu-yu-shuang-xiang-lian-biao-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/er-cha-sou-suo-shu-yu-shuang-xiang-lian-biao-lcof/</guid><description>剑指 Offer 36 二叉搜索树与双向链表 输入一棵二叉搜索树，将该二叉搜索树转换成一个排序的循环双向链表。要求不能创建任何新的节点，只能调整树中节点指针的指向。
+&amp;nbsp;
+为了让您更好地理解问题，以下面的二叉搜索树为例：
+&amp;nbsp;
+&amp;nbsp;
+我们希望将这个二叉搜索树转化为双向循环链表。链表中的每个节点都有一个前驱和后继指针。对于双向循环链表，第一个节点的前驱是最后一个节点，最后一个节点的后继是第一个节点。
+下图展示了上面的二叉搜索树转化成的链表。&amp;ldquo;head&amp;rdquo; 表示指向链表中有最小元素的节点。
+&amp;nbsp;
+&amp;nbsp;
+特别地，我们希望可以就地完成转换操作。当转化完成以后，树中节点的左指针需要指向前驱，树中节点的右指针需要指向后继。还需要返回链表中的第一个节点的指针。
+&amp;nbsp;
+注意：本题与主站 426 题相同：https://leetcode-cn.com/problems/convert-binary-search-tree-to-sorted-doubly-linked-list/
+注意：此题对比原题有改动。
+LeetCode题库地址 https://leetcode.cn/problems/er-cha-sou-suo-shu-yu-shuang-xiang-lian-biao-lcof</description></item><item><title>剑指 Offer 52 两个链表的第一个公共节点</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/liang-ge-lian-biao-de-di-yi-ge-gong-gong-jie-dian-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/liang-ge-lian-biao-de-di-yi-ge-gong-gong-jie-dian-lcof/</guid><description>剑指 Offer 52 两个链表的第一个公共节点 输入两个链表，找出它们的第一个公共节点。
+如下面的两个链表：
+在节点 c1 开始相交。
+&amp;nbsp;
+示例 1：
+输入：intersectVal = 8, listA = [4,1,8,4,5], listB = [5,0,1,8,4,5], skipA = 2, skipB = 3 输出：Reference of the node with value = 8 输入解释：相交节点的值为 8 （注意，如果两个列表相交则不能为 0）。从各自的表头开始算起，链表 A 为 [4,1,8,4,5]，链表 B 为 [5,0,1,8,4,5]。在 A 中，相交节点前有 2 个节点；在 B 中，相交节点前有 3 个节点。 &amp;nbsp;
+示例&amp;nbsp;2：
+输入：intersectVal&amp;nbsp;= 2, listA = [0,9,1,2,4], listB = [3,2,4], skipA = 3, skipB = 1 输出：Reference of the node with value = 2 输入解释：相交节点的值为 2 （注意，如果两个列表相交则不能为 0）。从各自的表头开始算起，链表 A 为 [0,9,1,2,4]，链表 B 为 [3,2,4]。在 A 中，相交节点前有 3 个节点；在 B 中，相交节点前有 1 个节点。 &amp;nbsp;</description></item><item><title>剑指 Offer II 077 链表排序</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/7whec2/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/7whec2/</guid><description>剑指 Offer II 077 链表排序 给定链表的头结点&amp;nbsp;head&amp;nbsp;，请将其按 升序 排列并返回 排序后的链表 。
+&amp;nbsp;
+示例 1：
+输入：head = [4,2,1,3] 输出：[1,2,3,4] 示例 2：
+输入：head = [-1,5,3,4,0] 输出：[-1,0,3,4,5] 示例 3：
+输入：head = [] 输出：[] &amp;nbsp;
+提示：
+链表中节点的数目在范围&amp;nbsp;[0, 5 * 104]&amp;nbsp;内 -105&amp;nbsp;&amp;lt;= Node.val &amp;lt;= 105 &amp;nbsp;
+进阶：你可以在&amp;nbsp;O(n&amp;nbsp;log&amp;nbsp;n) 时间复杂度和常数级空间复杂度下，对链表进行排序吗？
+&amp;nbsp;
+注意：本题与主站 148&amp;nbsp;题相同：https://leetcode-cn.com/problems/sort-list/
+/** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func sortList(head *ListNode) *ListNode { } LeetCode题库地址 https://leetcode.cn/problems/7WHec2</description></item><item><title>剑指 Offer II 078 合并排序链表</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/vvxgsw/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/vvxgsw/</guid><description>剑指 Offer II 078 合并排序链表 给定一个链表数组，每个链表都已经按升序排列。
+请将所有链表合并到一个升序链表中，返回合并后的链表。
+&amp;nbsp;
+示例 1：
+输入：lists = [[1,4,5],[1,3,4],[2,6]] 输出：[1,1,2,3,4,4,5,6] 解释：链表数组如下： [ 1-&amp;gt;4-&amp;gt;5, 1-&amp;gt;3-&amp;gt;4, 2-&amp;gt;6 ] 将它们合并到一个有序链表中得到。 1-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;4-&amp;gt;5-&amp;gt;6 示例 2：
+输入：lists = [] 输出：[] 示例 3：
+输入：lists = [[]] 输出：[] &amp;nbsp;
+提示：
+k == lists.length 0 &amp;lt;= k &amp;lt;= 10^4 0 &amp;lt;= lists[i].length &amp;lt;= 500 -10^4 &amp;lt;= lists[i][j] &amp;lt;= 10^4 lists[i] 按 升序 排列 lists[i].length 的总和不超过 10^4 &amp;nbsp;
+注意：本题与主站 23&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/merge-k-sorted-lists/
+/** * Definition for singly-linked list. * type ListNode struct { * Val int * Next *ListNode * } */ func mergeKLists(lists []*ListNode) *ListNode { } LeetCode题库地址 https://leetcode.</description></item><item><title>面试题 16.25 LRU 缓存</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/lru-cache-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/lru-cache-lcci/</guid><description>面试题 16.25 LRU 缓存 设计和构建一个&amp;ldquo;最近最少使用&amp;rdquo;缓存，该缓存会删除最近最少使用的项目。缓存应该从键映射到值(允许你插入和检索特定键对应的值)，并在初始化时指定最大容量。当缓存被填满时，它应该删除最近最少使用的项目。
+它应该支持以下操作： 获取数据 get 和 写入数据 put 。
+获取数据 get(key) - 如果密钥 (key) 存在于缓存中，则获取密钥的值（总是正数），否则返回 -1。
+写入数据 put(key, value) - 如果密钥不存在，则写入其数据值。当缓存容量达到上限时，它应该在写入新数据之前删除最近最少使用的数据值，从而为新的数据值留出空间。
+示例:
+LRUCache cache = new LRUCache( 2 /* 缓存容量 */ ); cache.put(1, 1); cache.put(2, 2); cache.get(1); // 返回 1 cache.put(3, 3); // 该操作会使得密钥 2 作废 cache.get(2); // 返回 -1 (未找到) cache.put(4, 4); // 该操作会使得密钥 1 作废 cache.get(1); // 返回 -1 (未找到) cache.get(3); // 返回 3 cache.get(4); // 返回 4 type LRUCache struct { } func Constructor(capacity int) LRUCache { } func (this *LRUCache) Get(key int) int { } func (this *LRUCache) Put(key int, value int) { } /** * Your LRUCache object will be instantiated and called as such: * obj := Constructor(capacity); * param_1 := obj.</description></item><item><title>面试题 17.12 BiNode</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/binode-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/binode-lcci/</guid><description>面试题 17.12 BiNode 二叉树数据结构TreeNode可用来表示单向链表（其中left置空，right为下一个链表节点）。实现一个方法，把二叉搜索树转换为单向链表，要求依然符合二叉搜索树的性质，转换操作应是原址的，也就是在原始的二叉搜索树上直接修改。
+返回转换后的单向链表的头节点。
+注意：本题相对原题稍作改动
+&amp;nbsp;
+示例：
+输入： [4,2,5,1,3,null,6,0] 输出： [0,null,1,null,2,null,3,null,4,null,5,null,6] 提示：
+节点数量不会超过 100000。 /** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ func convertBiNode(root *TreeNode) *TreeNode { } LeetCode题库地址 https://leetcode.cn/problems/binode-lcci</description></item><item><title>【2022-10-12每日一题】817. 链表组件[Medium]</title><link>/study/leetcode/linked-list-components/</link><pubDate>Wed, 12 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/linked-list-components/</guid><description>2022-10-12每日一题：817. 链表组件 难度：Medium
+标签：数组 、 哈希表 、 链表
+给定链表头结点&amp;nbsp;head，该链表上的每个结点都有一个 唯一的整型值 。同时给定列表&amp;nbsp;nums，该列表是上述链表中整型值的一个子集。
+返回列表&amp;nbsp;nums&amp;nbsp;中组件的个数，这里对组件的定义为：链表中一段最长连续结点的值（该值必须在列表&amp;nbsp;nums&amp;nbsp;中）构成的集合。
+&amp;nbsp;
+示例&amp;nbsp;1：
+输入: head = [0,1,2,3], nums = [0,1,3] 输出: 2 解释: 链表中,0 和 1 是相连接的，且 nums 中不包含 2，所以 [0, 1] 是 nums 的一个组件，同理 [3] 也是一个组件，故返回 2。 示例 2：
+&amp;nbsp;
+输入: head = [0,1,2,3,4], nums = [0,3,1,4] 输出: 2 解释: 链表中，0 和 1 是相连接的，3 和 4 是相连接的，所以 [0, 1] 和 [3, 4] 是两个组件，故返回 2。 &amp;nbsp;
+提示：
+链表中节点数为n 1 &amp;lt;= n &amp;lt;= 104 0 &amp;lt;= Node.</description></item><item><title>【2022-09-23每日一题】707. 设计链表[Medium]</title><link>/study/leetcode/design-linked-list/</link><pubDate>Fri, 23 Sep 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/design-linked-list/</guid><description>2022-09-23每日一题：707. 设计链表 难度：Medium
+标签：设计 、 链表
+设计链表的实现。您可以选择使用单链表或双链表。单链表中的节点应该具有两个属性：val&amp;nbsp;和&amp;nbsp;next。val&amp;nbsp;是当前节点的值，next&amp;nbsp;是指向下一个节点的指针/引用。如果要使用双向链表，则还需要一个属性&amp;nbsp;prev&amp;nbsp;以指示链表中的上一个节点。假设链表中的所有节点都是 0-index 的。
+在链表类中实现这些功能：
+get(index)：获取链表中第&amp;nbsp;index&amp;nbsp;个节点的值。如果索引无效，则返回-1。 addAtHead(val)：在链表的第一个元素之前添加一个值为&amp;nbsp;val&amp;nbsp;的节点。插入后，新节点将成为链表的第一个节点。 addAtTail(val)：将值为&amp;nbsp;val 的节点追加到链表的最后一个元素。 addAtIndex(index,val)：在链表中的第&amp;nbsp;index&amp;nbsp;个节点之前添加值为&amp;nbsp;val&amp;nbsp; 的节点。如果&amp;nbsp;index&amp;nbsp;等于链表的长度，则该节点将附加到链表的末尾。如果 index 大于链表长度，则不会插入节点。如果index小于0，则在头部插入节点。 deleteAtIndex(index)：如果索引&amp;nbsp;index 有效，则删除链表中的第&amp;nbsp;index 个节点。 &amp;nbsp;
+示例：
+MyLinkedList linkedList = new MyLinkedList(); linkedList.addAtHead(1); linkedList.addAtTail(3); linkedList.addAtIndex(1,2); //链表变为1-&amp;gt; 2-&amp;gt; 3 linkedList.get(1); //返回2 linkedList.deleteAtIndex(1); //现在链表是1-&amp;gt; 3 linkedList.get(1); //返回3 &amp;nbsp;
+提示：
+所有val值都在&amp;nbsp;[1, 1000]&amp;nbsp;之内。 操作次数将在&amp;nbsp;&amp;nbsp;[1, 1000]&amp;nbsp;之内。 请不要使用内置的 LinkedList 库。 方法一：单向链表 详细思路过程见官方题解，这里只做个人刷题记录，方便后续查询阅读
+type MyLinkedList struct { head *ListNode count int } func Constructor() MyLinkedList { return MyLinkedList{&amp;amp;ListNode{}, 0} } func (this *MyLinkedList) Get(index int) int { // 获取链表中第 index 个节点的值。如果索引无效，则返回-1。 if index &amp;lt; 0 || index &amp;gt;= this.</description></item><item><title>【2022-08-15每日一题】641. 设计循环双端队列</title><link>/study/leetcode/design-circular-deque/</link><pubDate>Mon, 15 Aug 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/design-circular-deque/</guid><description>2022-08-15每日一题：641. 设计循环双端队列 难度：Medium 标签：设计 、 队列 、 数组 、 链表 设计实现双端队列。
+实现 MyCircularDeque 类:
+MyCircularDeque(int k)&amp;nbsp;：构造函数,双端队列最大为 k 。 boolean insertFront()：将一个元素添加到双端队列头部。 如果操作成功返回 true&amp;nbsp;，否则返回 false 。 boolean insertLast()&amp;nbsp;：将一个元素添加到双端队列尾部。如果操作成功返回 true&amp;nbsp;，否则返回 false 。 boolean deleteFront()&amp;nbsp;：从双端队列头部删除一个元素。 如果操作成功返回 true&amp;nbsp;，否则返回 false 。 boolean deleteLast()&amp;nbsp;：从双端队列尾部删除一个元素。如果操作成功返回 true&amp;nbsp;，否则返回 false 。 int getFront()&amp;nbsp;)：从双端队列头部获得一个元素。如果双端队列为空，返回 -1&amp;nbsp;。 int getRear()&amp;nbsp;：获得双端队列的最后一个元素。&amp;nbsp;如果双端队列为空，返回 -1 。 boolean isEmpty()&amp;nbsp;：若双端队列为空，则返回&amp;nbsp;true&amp;nbsp;，否则返回 false &amp;nbsp;。 boolean isFull()&amp;nbsp;：若双端队列满了，则返回&amp;nbsp;true&amp;nbsp;，否则返回 false 。 &amp;nbsp;
+示例 1：
+输入 ["MyCircularDeque", "insertLast", "insertLast", "insertFront", "insertFront", "getRear", "isFull", "deleteLast", "insertFront", "getFront"] [[3], [1], [2], [3], [4], [], [], [], [4], []] 输出 [null, true, true, true, false, 2, true, true, true, 4] 解释 MyCircularDeque circularDeque = new MycircularDeque(3); // 设置容量大小为3 circularDeque.</description></item><item><title>2022-08-01每日一题：622 设计循环队列</title><link>/study/leetcode/design-circular-queue/</link><pubDate>Tue, 02 Aug 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/design-circular-queue/</guid><description>622 设计循环队列 设计你的循环队列实现。 循环队列是一种线性数据结构，其操作表现基于 FIFO（先进先出）原则并且队尾被连接在队首之后以形成一个循环。它也被称为&amp;ldquo;环形缓冲器&amp;rdquo;。
+循环队列的一个好处是我们可以利用这个队列之前用过的空间。在一个普通队列里，一旦一个队列满了，我们就不能插入下一个元素，即使在队列前面仍有空间。但是使用循环队列，我们能使用这些空间去存储新的值。
+你的实现应该支持如下操作：
+MyCircularQueue(k): 构造器，设置队列长度为 k 。 Front: 从队首获取元素。如果队列为空，返回 -1 。 Rear: 获取队尾元素。如果队列为空，返回 -1 。 enQueue(value): 向循环队列插入一个元素。如果成功插入则返回真。 deQueue(): 从循环队列中删除一个元素。如果成功删除则返回真。 isEmpty(): 检查循环队列是否为空。 isFull(): 检查循环队列是否已满。 &amp;nbsp;
+示例：
+MyCircularQueue circularQueue = new MyCircularQueue(3); // 设置长度为 3 circularQueue.enQueue(1); &amp;nbsp;// 返回 true circularQueue.enQueue(2); &amp;nbsp;// 返回 true circularQueue.enQueue(3); &amp;nbsp;// 返回 true circularQueue.enQueue(4); &amp;nbsp;// 返回 false，队列已满 circularQueue.Rear(); &amp;nbsp;// 返回 3 circularQueue.isFull(); &amp;nbsp;// 返回 true circularQueue.deQueue(); &amp;nbsp;// 返回 true circularQueue.enQueue(4); &amp;nbsp;// 返回 true circularQueue.Rear(); &amp;nbsp;// 返回 4 &amp;nbsp;
+提示：</description></item></channel></rss>

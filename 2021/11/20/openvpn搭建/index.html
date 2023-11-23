@@ -1,319 +1,68 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-<head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <link rel="stylesheet" href="http://fonts.useso.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-  <title>OpenVpn搭建  &middot; lbbniu</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-<meta name="description" content="这里是lbbniu的个人博客" />
-
-<meta name="keywords" content="">
-
-
-<meta property="og:title" content="OpenVpn搭建  &middot; lbbniu ">
-<meta property="og:site_name" content="lbbniu"/>
-<meta property="og:url" content="https://blog.lbbniu.com/2021/11/20/openvpn%E6%90%AD%E5%BB%BA/" />
-<meta property="og:locale" content="en-us">
-
-
-<meta property="og:type" content="article" />
-<meta property="og:description" content=""/>
-<meta property="og:article:published_time" content="2021-11-20T17:18:16&#43;08:00" />
-<meta property="og:article:modified_time" content="2021-11-20T17:18:16&#43;08:00" />
-
-  
-
-  
-
-<script type="application/ld+json">
-  {
-    "@context": "http://schema.org",
-    "@type": "Article",
-    "headline": "OpenVpn搭建",
-    "author": {
-      "@type": "Person",
-      "name": "lbbniu"
-    },
-    "datePublished": "2021-11-20",
-    "description": "",
-    "wordCount":  228 
-  }
-</script>
-
-
-
-<link rel="canonical" href="https://blog.lbbniu.com/2021/11/20/openvpn%E6%90%AD%E5%BB%BA/" />
-
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://blog.lbbniu.com/touch-icon-144-precomposed.png">
-<link href="https://blog.lbbniu.com/favicon.png" rel="icon">
-
-<meta name="generator" content="Hugo 0.89.4" />
-
-  <!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
-
-<link href='https://fonts.googleapis.com/css?family=Merriweather:300%7CRaleway%7COpen+Sans' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="/css/font-awesome.min.css">
-<link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="/css/highlight/default.css">
-
-  
-  
-</head>
-<body>
-  <main id="main-wrapper" class="container main_wrapper has-sidebar">
-    <header id="main-header" class="container main_header">
-  <div class="container brand">
-  <div class="container title h1-like">
-  <a class="baselink" href="https://blog.lbbniu.com/">
-  lbbniu
-
-</a>
-
-</div>
-
-  
-<div class="container topline">
-  
-  学无止境，然则问可少耶?
-
-
-</div>
-
-
-</div>
-
-  <nav class="container nav primary no-print">
-  
-
-<a class="homelink" href="https://blog.lbbniu.com/">首页</a>
-
-
-  
-<a href="https://blog.lbbniu.com/post" title="Show list of posts">列表</a>
-
-<a href="https://blog.lbbniu.com/golang" title="Show list of tags">Golang</a>
-
-<a href="https://blog.lbbniu.com/k8s" title="Show list of tags">Kubernetes</a>
-
-<a href="https://blog.lbbniu.com/tags" title="Show list of tags">标签</a>
-
-<a href="https://blog.lbbniu.com/about">关于</a>
-
-
-</nav>
-
-<div class="container nav secondary no-print">
-  
-<a id="contact-link-email" class="contact_link" rel="me" aria-label="Email" href="mailto:lbbniu@gmail.com">
-  <span class="fa fa-envelope-square"></span></a>
-
-
-
-<a id="contact-link-github" class="contact_link" rel="me" aria-label="Github" href="https://github.com/lbbniu">
-  <span class="fa fa-github-square"></span></a>
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-
-
-  
-
-</header>
-
-
-<article id="main-content" class="container main_content single">
-  <header class="container hat">
-  <h1>OpenVpn搭建
-</h1>
-
-  <div class="metas">
-<time datetime="2021-11-20">20 Nov, 2021</time>
-
-
-  
-  &middot; Read in about 2 min
-  &middot; (228 Words)
-  <br>
-  
-
-
-</div>
-
-</header>
-
-  <div class="container content">
-  <h4 id="初始化">初始化</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 证书密码见服务器 mm.md</span>
-<span style="color:#75715e"># 创建目录</span>
+<!doctype html><html lang=zh dir=ltr><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>OpenVpn搭建 | lbbniu</title>
+<meta name=generator content="Hugo Eureka 0.9.3"><link rel=stylesheet href=/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css><script defer src=/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js></script><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" as=style onload='this.onload=null,this.rel="stylesheet"'><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/github.min.css media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/php.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/java.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/go.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/python.min.js crossorigin></script><link rel=stylesheet href=/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css media=print onload='this.media="all",this.onload=null'><script defer type=text/javascript src=/js/fontawesome.min.35973bea57658ef0dd22ad59ea4642b6c8c67af62bed8659ac326d284ef285a6657cdbcf57d3b2910e7e992f2b20426e.js></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css integrity=sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js integrity=sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY crossorigin></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script><script defer src=https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js integrity=sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0 crossorigin></script><link rel=icon type=image/png sizes=32x32 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_32x32_fill_box_center_3.png><link rel=apple-touch-icon sizes=180x180 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_180x180_fill_box_center_3.png><meta name=description content="初始化、添加用户脚本、删除用户脚本、其他常用操作"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"文章列表","item":"/post/"},{"@type":"ListItem","position":2,"name":"OpenVpn搭建","item":"/2021/11/20/openvpn%E6%90%AD%E5%BB%BA/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/2021/11/20/openvpn%E6%90%AD%E5%BB%BA/"},"headline":"OpenVpn搭建 | lbbniu","datePublished":"2021-11-20T17:18:16+08:00","dateModified":"2023-11-23T18:27:23+08:00","wordCount":228,"publisher":{"@type":"Person","name":"lbbniu","logo":{"@type":"ImageObject","url":"/images/icon.gif"}},"description":"初始化、添加用户脚本、删除用户脚本、其他常用操作"}</script><meta property="og:title" content="OpenVpn搭建 | lbbniu"><meta property="og:type" content="article"><meta property="og:image" content="/images/icon.png"><meta property="og:url" content="/2021/11/20/openvpn%E6%90%AD%E5%BB%BA/"><meta property="og:description" content="初始化、添加用户脚本、删除用户脚本、其他常用操作"><meta property="og:locale" content="zh"><meta property="og:site_name" content="lbbniu"><meta property="article:published_time" content="2021-11-20T17:18:16+08:00"><meta property="article:modified_time" content="2023-11-23T18:27:23+08:00"><meta property="article:section" content="post"><meta property="article:tag" content="vpn"><body class="flex min-h-screen flex-col"><header class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"><div class="mx-auto w-full max-w-screen-xl"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=="Auto"||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName("html")[0].classList.add("dark")</script><nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0"><a href=/ class="me-6 text-primary-text text-xl font-bold">lbbniu</a>
+<button id=navbar-btn class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+<i class="fas fa-bars"></i></button><div id=target class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20"><div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0"><a href=/post/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">文章</a>
+<a href=/cloud-native/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">云原生</a>
+<a href=/study/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">算法学习</a>
+<a href=/docs/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">Go学习训练营</a>
+<a href=/tags/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">标签</a></div><div class=flex><div class="relative pt-4 md:pt-0"><div class="cursor-pointer hover:text-eureka" id=lightDarkMode><i class="fas fa-adjust"></i></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id=is-open></div><div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40" id=lightDarkOptions><span class="px-4 py-1 hover:text-eureka" name=Light>浅色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Dark>深色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Auto>自动</span></div></div></div></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id=is-open-mobile></div></nav><script>let element=document.getElementById("lightDarkMode");storageColorScheme==null||storageColorScheme=="Auto"?document.addEventListener("DOMContentLoaded",()=>{window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",switchDarkMode)}):storageColorScheme=="Light"?(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","sun"),element.firstElementChild.classList.add("fa-sun")):storageColorScheme=="Dark"&&(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","moon"),element.firstElementChild.classList.add("fa-moon")),document.addEventListener("DOMContentLoaded",()=>{getcolorscheme(),switchBurger()})</script></div></header><main class="grow pt-16"><div class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8"><div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12"><div class="lg:col-start-2 bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"><article class=prose><h1 class=mb-4>OpenVpn搭建</h1><div class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"><div class="me-6 my-2"><i class="fas fa-calendar me-1"></i>
+<span>2021-11-20</span></div><div class="me-6 my-2"><i class="fas fa-clock me-1"></i>
+<span>2分钟阅读时长</span></div></div><h4 id=初始化>初始化</h4><pre><code class=language-bash># 证书密码见服务器 mm.md
+# 创建目录
 mkdir -p /data/openvpn/conf
-<span style="color:#75715e"># 初始化 openvpn 配置</span>
+# 初始化 openvpn 配置
 docker run -v /data/openvpn:/etc/openvpn --rm kylemanna/openvpn ovpn_genconfig -u udp://vpn.lbbniu.com
-<span style="color:#75715e"># 初始化证书 根据提示数据证书密码和组织名称</span>
+# 初始化证书 根据提示数据证书密码和组织名称
 docker run -v /data/openvpn:/etc/openvpn --rm -ti kylemanna/openvpn ovpn_initpki
-<span style="color:#75715e"># 增加用户</span>
+# 增加用户
 docker run -v /data/openvpn:/etc/openvpn --rm -ti kylemanna/openvpn easyrsa build-client-full lbbniu nopass
-<span style="color:#75715e"># 导出用户配置文件</span>
+# 导出用户配置文件
 docker run -v /data/openvpn:/etc/openvpn --rm -ti kylemanna/openvpn ovpn_getclient lbbniu &gt; /data/openvpn/conf/lbbniu.ovpn
-<span style="color:#75715e"># 启动服务</span>
-docker run --name openvpn -v /data/openvpn:/etc/openvpn -d -p 1194:1194/udp --cap-add<span style="color:#f92672">=</span>NET_ADMIN kylemanna/openvpn
-</code></pre></div><h4 id="添加用户脚本">添加用户脚本</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
-</span><span style="color:#75715e"></span><span style="color:#75715e"># openvpn_useradd.sh</span>
-password<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;证书密码&#39;</span>
-read -p <span style="color:#e6db74">&#34;please your username: &#34;</span> NAME
-expect <span style="color:#e6db74">&lt;&lt;EOF
-</span><span style="color:#e6db74">    spawn docker exec -it openvpn easyrsa build-client-full $NAME nopass
-</span><span style="color:#e6db74">    expect &#34;ca.key:&#34; {send &#34;$password\n&#34;}
-</span><span style="color:#e6db74">    expect eof
-</span><span style="color:#e6db74">EOF</span>
-docker exec -ti openvpn ovpn_getclient $NAME &gt; /data/openvpn/conf/<span style="color:#e6db74">&#34;</span>$NAME<span style="color:#e6db74">&#34;</span>.ovpn
-sed -i <span style="color:#e6db74">&#39;s/redirect-gateway/#redirect-gateway/&#39;</span> /data/openvpn/conf/<span style="color:#e6db74">&#34;</span>$NAME<span style="color:#e6db74">&#34;</span>.ovpn
-</code></pre></div><h4 id="删除用户脚本">删除用户脚本</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
-</span><span style="color:#75715e"></span><span style="color:#75715e"># openvpn_userdel.sh</span>
-password<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;证书密码&#39;</span>
-read -p <span style="color:#e6db74">&#34;Delete username: &#34;</span> DNAME
-expect <span style="color:#e6db74">&lt;&lt;EOF
-</span><span style="color:#e6db74">    spawn docker exec -ti openvpn easyrsa revoke $DNAME
-</span><span style="color:#e6db74">    expect {
-</span><span style="color:#e6db74">        &#34;revocation:&#34; { send &#34;yes\n&#34;;exp_continue }
-</span><span style="color:#e6db74">        &#34;ca.key:&#34; { send &#34;$password\n&#34; }
-</span><span style="color:#e6db74">    }
-</span><span style="color:#e6db74">    expect eof
-</span><span style="color:#e6db74">    spawn docker exec -ti openvpn easyrsa gen-crl
-</span><span style="color:#e6db74">    expect &#34;ca.key:&#34; { send &#34;$password\n&#34;}
-</span><span style="color:#e6db74">    expect eof
-</span><span style="color:#e6db74">EOF</span>
-docker exec -ti openvpn rm -f /etc/openvpn/pki/reqs/<span style="color:#e6db74">&#34;</span>$DNAME<span style="color:#e6db74">&#34;</span>.req
-docker exec -ti openvpn rm -f /etc/openvpn/pki/private/<span style="color:#e6db74">&#34;</span>$DNAME<span style="color:#e6db74">&#34;</span>.key
-docker exec -ti openvpn rm -f /etc/openvpn/pki/issued/<span style="color:#e6db74">&#34;</span>$DNAME<span style="color:#e6db74">&#34;</span>.crt
-docker exec -ti openvpn rm -f /etc/openvpn/conf/<span style="color:#e6db74">&#34;</span>$DNAME<span style="color:#e6db74">&#34;</span>.ovpn
-docker exec -ti openvpn rm -rf /etc/openvpn/clients/<span style="color:#e6db74">&#34;</span>$DNAME<span style="color:#e6db74">&#34;</span>
-</code></pre></div><h4 id="添加删除用户操作">添加删除用户操作</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd /root/docker-compose
-<span style="color:#75715e"># 添加用户 然后输入用户名</span>
+# 启动服务
+docker run --name openvpn -v /data/openvpn:/etc/openvpn -d -p 1194:1194/udp --cap-add=NET_ADMIN kylemanna/openvpn
+</code></pre><h4 id=添加用户脚本>添加用户脚本</h4><pre><code class=language-bash>#!/bin/bash
+# openvpn_useradd.sh
+password='证书密码'
+read -p &quot;please your username: &quot; NAME
+expect &lt;&lt;EOF
+    spawn docker exec -it openvpn easyrsa build-client-full $NAME nopass
+    expect &quot;ca.key:&quot; {send &quot;$password\n&quot;}
+    expect eof
+EOF
+docker exec -ti openvpn ovpn_getclient $NAME &gt; /data/openvpn/conf/&quot;$NAME&quot;.ovpn
+sed -i 's/redirect-gateway/#redirect-gateway/' /data/openvpn/conf/&quot;$NAME&quot;.ovpn
+</code></pre><h4 id=删除用户脚本>删除用户脚本</h4><pre><code class=language-bash>#!/bin/bash
+# openvpn_userdel.sh
+password='证书密码'
+read -p &quot;Delete username: &quot; DNAME
+expect &lt;&lt;EOF
+    spawn docker exec -ti openvpn easyrsa revoke $DNAME
+    expect {
+        &quot;revocation:&quot; { send &quot;yes\n&quot;;exp_continue }
+        &quot;ca.key:&quot; { send &quot;$password\n&quot; }
+    }
+    expect eof
+    spawn docker exec -ti openvpn easyrsa gen-crl
+    expect &quot;ca.key:&quot; { send &quot;$password\n&quot;}
+    expect eof
+EOF
+docker exec -ti openvpn rm -f /etc/openvpn/pki/reqs/&quot;$DNAME&quot;.req
+docker exec -ti openvpn rm -f /etc/openvpn/pki/private/&quot;$DNAME&quot;.key
+docker exec -ti openvpn rm -f /etc/openvpn/pki/issued/&quot;$DNAME&quot;.crt
+docker exec -ti openvpn rm -f /etc/openvpn/conf/&quot;$DNAME&quot;.ovpn
+docker exec -ti openvpn rm -rf /etc/openvpn/clients/&quot;$DNAME&quot;
+</code></pre><h4 id=添加删除用户操作>添加删除用户操作</h4><pre><code class=language-bash>cd /root/docker-compose
+# 添加用户 然后输入用户名
 ./openvpn_useradd.sh
-<span style="color:#75715e"># 删除用户 然后输入用户名</span>
+# 删除用户 然后输入用户名
 ./openvpn_userdel.sh
-</code></pre></div><h4 id="其他常用操作">其他常用操作</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 查看连接用户列表</span>
+</code></pre><h4 id=其他常用操作>其他常用操作</h4><pre><code class=language-bash># 查看连接用户列表
 docker exec openvpn ovpn_status
 
-<span style="color:#75715e"># 配置走vpn的路由</span>
-</code></pre></div><p>mac客户端：https://github.com/Tunnelblick/Tunnelblick/releases</p>
-<p>参考链接：https://blog.whsir.com/post-2809.html</p>
-<p>路由配置: <a href="https://www.bbsmax.com/A/lk5aNy3Zd1/">https://www.bbsmax.com/A/lk5aNy3Zd1/</a></p>
-<p>docker修改默认网关：https://www.cnblogs.com/52fhy/p/9308422.html</p>
-<p>七款适用于企业的开源 VPN 工具：http://www.zzvips.com/news/2317.html</p>
-
-</div>
-
-
-  <footer class="container">
-  <div class="container navigation no-print">
-  <h2>Navigation</h2>
-  
-  
-
-    
-    <a class="prev" href="https://blog.lbbniu.com/2021/11/20/%E5%BE%AE%E6%98%8E%E4%BA%92%E5%8A%A8%E5%8F%82%E4%B8%8E%E9%A1%B9%E7%9B%AE%E5%88%97%E8%A1%A8/" title="微明互动参与项目列表">
-      上一篇
-    </a>
-    
-
-    
-    <a class="next" href="https://blog.lbbniu.com/2021/11/20/nginx-lua%E7%9B%B4%E6%8E%A5%E9%98%B6%E6%AE%B5/" title="nginx lua直接阶段">
-      下一篇
-    </a>
-    
-
-  
-
-
-</div>
-
-  
-
-</footer>
-
-</article>
-      <footer id="main-footer" class="container main_footer">
-  
-
-  <div class="container nav foot no-print">
-  
-<a href="https://blog.lbbniu.com/license">license</a>
-
-
-  <a class="toplink" href="#">back to top</a>
-
-</div>
-
-  <div class="container credits">
-  
-<div class="container footline">
-  
-  code with <!-- raw HTML omitted --><!-- raw HTML omitted -->
-
-
-</div>
-
-
-  
-<div class="container copyright">
-  
-  (c) 2021 lbbniu.
-
-
-</div>
-
-
-</div>
-
-</footer>
-
-    </main>
-    
-
-
-<script src="/js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-
-
-
-    
-  </body>
-</html>
-
+# 配置走vpn的路由
+</code></pre><p>mac客户端：https://github.com/Tunnelblick/Tunnelblick/releases</p><p>参考链接：https://blog.whsir.com/post-2809.html</p><p>路由配置: <a href=https://www.bbsmax.com/A/lk5aNy3Zd1/ target=_blank rel=noopener>https://www.bbsmax.com/A/lk5aNy3Zd1/</a></p><p>docker修改默认网关：https://www.cnblogs.com/52fhy/p/9308422.html</p><p>七款适用于企业的开源 VPN 工具：http://www.zzvips.com/news/2317.html</p></article><div class=my-4><a href=/tags/vpn/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#vpn</a></div><div class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"><div><span class="text-primary-text block font-bold">上一页</span>
+<a href=/2021/11/20/nginx-lua%E7%9B%B4%E6%8E%A5%E9%98%B6%E6%AE%B5/ class=block>nginx lua直接阶段</a></div><div class="mt-4 md:mt-0 md:text-right"><span class="text-primary-text block font-bold">下一页</span>
+<a href=/2021/11/20/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E5%B7%A5%E5%85%B7/ class=block>静态博客工具</a></div></div></div></div><script>document.addEventListener("DOMContentLoaded",()=>{hljs.highlightAll()})</script></div></div></main><footer class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b"><p class="text-sm text-tertiary-text">&copy; 2021 <a href=https://blog.lbbniu.com/>lbbniu</a>
+&#183; Powered by the <a href=https://github.com/wangchucheng/hugo-eureka class=hover:text-eureka>Eureka</a> theme for <a href=https://gohugo.io class=hover:text-eureka>Hugo</a></p></div></div></footer></body></html>

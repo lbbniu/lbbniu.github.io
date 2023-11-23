@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>贪心 on lbbniu</title><link>/tags/%E8%B4%AA%E5%BF%83/</link><description>Recent content in 贪心 on lbbniu</description><generator>Hugo -- gohugo.io</generator><language>zh</language><managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor><webMaster>lbbniu@gmail.com (lbbniu)</webMaster><copyright>&amp;copy; 2021 &lt;a href="https://blog.lbbniu.com/">lbbniu&lt;/a></copyright><lastBuildDate>Wed, 04 Jan 2023 00:01:00 +0800</lastBuildDate><atom:link href="/tags/%E8%B4%AA%E5%BF%83/index.xml" rel="self" type="application/rss+xml"/><item><title>剑指 Offer II 019 最多删除一个字符得到回文</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/rqku0d/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/rqku0d/</guid><description>剑指 Offer II 019 最多删除一个字符得到回文 给定一个非空字符串&amp;nbsp;s，请判断如果&amp;nbsp;最多 从字符串中删除一个字符能否得到一个回文字符串。
+&amp;nbsp;
+示例 1:
+输入: s = &amp;quot;aba&amp;quot; 输出: true 示例 2:
+输入: s = &amp;quot;abca&amp;quot; 输出: true 解释: 可以删除 &amp;quot;c&amp;quot; 字符 或者 &amp;quot;b&amp;quot; 字符 示例 3:
+输入: s = &amp;quot;abc&amp;quot; 输出: false &amp;nbsp;
+提示:
+1 &amp;lt;= s.length &amp;lt;= 105 s 由小写英文字母组成 &amp;nbsp;
+注意：本题与主站 680&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/valid-palindrome-ii/
+func validPalindrome(s string) bool { } LeetCode题库地址 https://leetcode.cn/problems/RQku0D</description></item><item><title>剑指 Offer 45 把数组排成最小的数</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/ba-shu-zu-pai-cheng-zui-xiao-de-shu-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/ba-shu-zu-pai-cheng-zui-xiao-de-shu-lcof/</guid><description>剑指 Offer 45 把数组排成最小的数 输入一个非负整数数组，把数组里所有数字拼接起来排成一个数，打印能拼接出的所有数字中最小的一个。
+&amp;nbsp;
+示例 1:
+输入: [10,2] 输出: &amp;quot;102&amp;quot; 示例&amp;nbsp;2:
+输入: [3,30,34,5,9] 输出: &amp;quot;3033459&amp;quot; &amp;nbsp;
+提示:
+0 &amp;lt; nums.length &amp;lt;= 100 说明: 输出结果可能非常大，所以你需要返回一个字符串而不是整数 拼接起来的数字可能会有前导 0，最后结果不需要去掉前导 0 func minNumber(nums []int) string { } LeetCode题库地址 https://leetcode.cn/problems/ba-shu-zu-pai-cheng-zui-xiao-de-shu-lcof</description></item><item><title>面试题 10.11 峰与谷</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/peaks-and-valleys-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/peaks-and-valleys-lcci/</guid><description>面试题 10.11 峰与谷 在一个整数数组中，&amp;ldquo;峰&amp;rdquo;是大于或等于相邻整数的元素，相应地，&amp;ldquo;谷&amp;rdquo;是小于或等于相邻整数的元素。例如，在数组{5, 8, 4, 2, 3, 4, 6}中，{8, 6}是峰， {5, 2}是谷。现在给定一个整数数组，将该数组按峰与谷的交替顺序排序。
+示例:
+输入: [5, 3, 1, 2, 3] 输出:&amp;nbsp;[5, 1, 3, 2, 3] 提示：
+nums.length &amp;lt;= 10000 func wiggleSort(nums []int) { } LeetCode题库地址 https://leetcode.cn/problems/peaks-and-valleys-lcci</description></item><item><title>面试题 16.16 部分排序</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/sub-sort-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/sub-sort-lcci/</guid><description>面试题 16.16 部分排序 给定一个整数数组，编写一个函数，找出索引m和n，只要将索引区间[m,n]的元素排好序，整个数组就是有序的。注意：n-m尽量最小，也就是说，找出符合条件的最短序列。函数返回值为[m,n]，若不存在这样的m和n（例如整个数组是有序的），请返回[-1,-1]。
+示例：
+输入： [1,2,4,7,10,11,7,12,6,7,16,18,19] 输出： [3,9] 提示：
+0 &lt;= len(array) &lt;= 1000000 func subSort(array []int) []int { } LeetCode题库地址 https://leetcode.cn/problems/sub-sort-lcci</description></item><item><title>【2023-01-04每日一题】1802. 有界数组中指定下标处的最大值[Medium]</title><link>/study/leetcode/maximum-value-at-a-given-index-in-a-bounded-array/</link><pubDate>Wed, 04 Jan 2023 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/maximum-value-at-a-given-index-in-a-bounded-array/</guid><description>2023-01-04每日一题：1802. 有界数组中指定下标处的最大值 难度：Medium
+标签：贪心 、 二分查找
+给你三个正整数 n、index 和 maxSum 。你需要构造一个同时满足下述所有条件的数组 nums（下标 从 0 开始 计数）：
+nums.length == n nums[i] 是 正整数 ，其中 0 &amp;lt;= i &amp;lt; n abs(nums[i] - nums[i+1]) &amp;lt;= 1 ，其中 0 &amp;lt;= i &amp;lt; n-1 nums 中所有元素之和不超过 maxSum nums[index] 的值被 最大化 返回你所构造的数组中的 nums[index] 。
+注意：abs(x) 等于 x 的前提是 x &amp;gt;= 0 ；否则，abs(x) 等于 -x 。
+示例 1：
+输入：n = 4, index = 2, maxSum = 6 输出：2 解释：数组 [1,1,2,1] 和 [1,2,2,1] 满足所有条件。不存在其他在指定下标处具有更大值的有效数组。 示例 2：</description></item><item><title>【2022-12-27每日一题】2027. 转换字符串的最少操作次数[Easy]</title><link>/study/leetcode/minimum-moves-to-convert-string/</link><pubDate>Tue, 27 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/minimum-moves-to-convert-string/</guid><description>2022-12-27每日一题：2027. 转换字符串的最少操作次数 难度：Easy
+标签：贪心 、 字符串
+给你一个字符串 s ，由 n 个字符组成，每个字符不是 'X' 就是 'O' 。
+一次 操作 定义为从 s 中选出 三个连续字符 并将选中的每个字符都转换为 'O' 。注意，如果字符已经是 'O' ，只需要保持 不变 。
+返回将 s 中所有字符均转换为 'O' 需要执行的&amp;nbsp;最少&amp;nbsp;操作次数。
+&amp;nbsp;
+示例 1：
+输入：s = "XXX" 输出：1 解释：XXX -&amp;gt; OOO 一次操作，选中全部 3 个字符，并将它们转换为 'O' 。 示例 2：
+输入：s = "XXOX" 输出：2 解释：XXOX -&amp;gt; OOOX -&amp;gt; OOOO 第一次操作，选择前 3 个字符，并将这些字符转换为 'O' 。 然后，选中后 3 个字符，并执行转换。最终得到的字符串全由字符 'O' 组成。 示例 3：
+输入：s = "OOOO" 输出：0 解释：s 中不存在需要转换的 'X' 。 &amp;nbsp;</description></item><item><title>【2022-12-25每日一题】1739. 放置盒子[Hard]</title><link>/study/leetcode/building-boxes/</link><pubDate>Sun, 25 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/building-boxes/</guid><description>2022-12-25每日一题：1739. 放置盒子 难度：Hard
+标签：贪心 、 数学 、 二分查找
+有一个立方体房间，其长度、宽度和高度都等于 n 个单位。请你在房间里放置 n 个盒子，每个盒子都是一个单位边长的立方体。放置规则如下：
+你可以把盒子放在地板上的任何地方。 如果盒子 x 需要放置在盒子 y 的顶部，那么盒子 y 竖直的四个侧面都 必须 与另一个盒子或墙相邻。 给你一个整数 n ，返回接触地面的盒子的 最少 可能数量。
+示例 1：
+输入：n = 3 输出：3 解释：上图是 3 个盒子的摆放位置。 这些盒子放在房间的一角，对应左侧位置。 示例 2：
+输入：n = 4 输出：3 解释：上图是 3 个盒子的摆放位置。 这些盒子放在房间的一角，对应左侧位置。 示例 3：
+输入：n = 10 输出：6 解释：上图是 10 个盒子的摆放位置。 这些盒子放在房间的一角，对应后方位置。 提示：
+1 &lt;= n &lt;= 109 方法一：ylb https://leetcode.cn/problems/building-boxes/solutions/2031828/by-lcbin-nbq1/ func minimumBoxes(n int) int { s, k := 0, 1 for s+k*(k+1)/2 &amp;lt;= n { s += k*(k+1)/2 k++ } k-- ans := k*(k+1)/2 for s &amp;lt; n { ans++ s += k k++ } return ans } 复杂度分析 时间复杂度: $O(\sqrt{n})$，空间复杂度 $O(1)$。其中 n 为题目给定的盒子数量。 方法二：灵茶山艾府 https://leetcode.</description></item><item><title>【2022-12-24每日一题】1754. 构造字典序最大的合并字符串[Medium]</title><link>/study/leetcode/largest-merge-of-two-strings/</link><pubDate>Sat, 24 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/largest-merge-of-two-strings/</guid><description>2022-12-24每日一题：1754. 构造字典序最大的合并字符串 难度：Medium
+标签：贪心 、 双指针 、 字符串
+给你两个字符串 word1 和 word2 。你需要按下述方式构造一个新字符串 merge ：如果 word1 或 word2 非空，选择 下面选项之一 继续操作：
+如果 word1 非空，将 word1 中的第一个字符附加到 merge 的末尾，并将其从 word1 中移除。 &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;例如，&amp;lt;code&amp;gt;word1 = &amp;quot;abc&amp;quot; &amp;lt;/code&amp;gt;且 &amp;lt;code&amp;gt;merge = &amp;quot;dv&amp;quot;&amp;lt;/code&amp;gt; ，在执行此选项操作之后，&amp;lt;code&amp;gt;word1 = &amp;quot;bc&amp;quot;&amp;lt;/code&amp;gt; ，同时 &amp;lt;code&amp;gt;merge = &amp;quot;dva&amp;quot;&amp;lt;/code&amp;gt; 。&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;如果 &amp;lt;code&amp;gt;word2&amp;lt;/code&amp;gt; 非空，将 &amp;lt;code&amp;gt;word2&amp;lt;/code&amp;gt; 中的第一个字符附加到 &amp;lt;code&amp;gt;merge&amp;lt;/code&amp;gt; 的末尾，并将其从 &amp;lt;code&amp;gt;word2&amp;lt;/code&amp;gt; 中移除。 &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;例如，&amp;lt;code&amp;gt;word2 = &amp;quot;abc&amp;quot; &amp;lt;/code&amp;gt;且 &amp;lt;code&amp;gt;merge = &amp;quot;&amp;quot;&amp;lt;/code&amp;gt; ，在执行此选项操作之后，&amp;lt;code&amp;gt;word2 = &amp;quot;bc&amp;quot;&amp;lt;/code&amp;gt; ，同时 &amp;lt;code&amp;gt;merge = &amp;quot;a&amp;quot;&amp;lt;/code&amp;gt; 。&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;/li&amp;gt; 返回你可以构造的字典序 最大 的合并字符串 merge 。</description></item><item><title>【2022-12-21每日一题】1753. 移除石子的最大得分[Medium]</title><link>/study/leetcode/maximum-score-from-removing-stones/</link><pubDate>Wed, 21 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/maximum-score-from-removing-stones/</guid><description>2022-12-21每日一题：1753. 移除石子的最大得分 难度：Medium
+标签：贪心 、 数学 、 堆（优先队列）
+你正在玩一个单人游戏，面前放置着大小分别为 a​​​​​​、b 和 c​​​​​​ 的 三堆 石子。
+每回合你都要从两个 不同的非空堆 中取出一颗石子，并在得分上加 1 分。当存在 两个或更多 的空堆时，游戏停止。
+给你三个整数 a 、b 和 c ，返回可以得到的 最大分数 。
+示例 1：
+输入：a = 2, b = 4, c = 6 输出：6 解释：石子起始状态是 (2, 4, 6) ，最优的一组操作是： - 从第一和第三堆取，石子状态现在是 (1, 4, 5) - 从第一和第三堆取，石子状态现在是 (0, 4, 4) - 从第二和第三堆取，石子状态现在是 (0, 3, 3) - 从第二和第三堆取，石子状态现在是 (0, 2, 2) - 从第二和第三堆取，石子状态现在是 (0, 1, 1) - 从第二和第三堆取，石子状态现在是 (0, 0, 0) 总分：6 分 。 示例 2：</description></item><item><title>【2022-12-18每日一题】1703. 得到连续 K 个 1 的最少相邻交换次数[Hard]</title><link>/study/leetcode/minimum-adjacent-swaps-for-k-consecutive-ones/</link><pubDate>Sun, 18 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/minimum-adjacent-swaps-for-k-consecutive-ones/</guid><description>2022-12-18每日一题：1703. 得到连续 K 个 1 的最少相邻交换次数 难度：Hard
+标签：贪心 、 数组 、 前缀和 、 滑动窗口
+给你一个整数数组 nums 和一个整数 k 。 nums 仅包含 0 和 1 。每一次移动，你可以选择 相邻 两个数字并将它们交换。
+请你返回使 nums 中包含 k 个 连续 1 的 最少 交换次数。
+示例 1：
+输入：nums = [1,0,0,1,0,1], k = 2 输出：1 解释：在第一次操作时，nums 可以变成 [1,0,0,0,1,1] 得到连续两个 1 。 示例 2：
+输入：nums = [1,0,0,0,0,0,1,1], k = 3 输出：5 解释：通过 5 次操作，最左边的 1 可以移到右边直到 nums 变为 [0,0,0,0,0,1,1,1] 。 示例 3：
+输入：nums = [1,1,0,1], k = 2 输出：0 解释：nums 已经有连续 2 个 1 了。 提示：</description></item><item><title>【2022-12-17每日一题】1764. 通过连接另一个数组的子数组得到一个数组[Medium]</title><link>/study/leetcode/form-array-by-concatenating-subarrays-of-another-array/</link><pubDate>Sat, 17 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/form-array-by-concatenating-subarrays-of-another-array/</guid><description>2022-12-17每日一题：1764. 通过连接另一个数组的子数组得到一个数组 难度：Medium
+标签：贪心 、 数组 、 字符串匹配
+给你一个长度为 n 的二维整数数组 groups ，同时给你一个整数数组 nums 。
+你是否可以从 nums 中选出 n 个 不相交 的子数组，使得第 i 个子数组与 groups[i] （下标从 0 开始）完全相同，且如果 i > 0 ，那么第 (i-1) 个子数组在 nums 中出现的位置在第 i 个子数组前面。（也就是说，这些子数组在 nums 中出现的顺序需要与 groups 顺序相同）
+如果你可以找出这样的 n 个子数组，请你返回 true ，否则返回 false 。
+如果不存在下标为 k 的元素 nums[k] 属于不止一个子数组，就称这些子数组是 不相交 的。子数组指的是原数组中连续元素组成的一个序列。
+示例 1：
+输入：groups = [[1,-1,-1],[3,-2,0]], nums = [1,-1,0,1,-1,-1,3,-2,0] 输出：true 解释：你可以分别在 nums 中选出第 0 个子数组 [1,-1,0,1,-1,-1,3,-2,0] 和第 1 个子数组 [1,-1,0,1,-1,-1,3,-2,0] 。 这两个子数组是不相交的，因为它们没有任何共同的元素。 示例 2：</description></item><item><title>【2022-12-16每日一题】1785. 构成特定和需要添加的最少元素[Medium]</title><link>/study/leetcode/minimum-elements-to-add-to-form-a-given-sum/</link><pubDate>Fri, 16 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/minimum-elements-to-add-to-form-a-given-sum/</guid><description>2022-12-16每日一题：1785. 构成特定和需要添加的最少元素 难度：Medium
+标签：贪心 、 数组
+给你一个整数数组 nums ，和两个整数 limit 与 goal 。数组 nums 有一条重要属性：abs(nums[i]) &lt;= limit 。
+返回使数组元素总和等于 goal 所需要向数组中添加的 最少元素数量 ，添加元素 不应改变 数组中 abs(nums[i]) &lt;= limit 这一属性。
+注意，如果 x >= 0 ，那么 abs(x) 等于 x ；否则，等于 -x 。
+示例 1：
+输入：nums = [1,-1,1], limit = 3, goal = -4 输出：2 解释：可以将 -2 和 -3 添加到数组中，数组的元素总和变为 1 - 1 + 1 - 2 - 3 = -4 。 示例 2：
+输入：nums = [1,-10,9,1], limit = 100, goal = 0 输出：1 提示：</description></item><item><title>【2022-12-11每日一题】1827. 最少操作使数组递增[Easy]</title><link>/study/leetcode/minimum-operations-to-make-the-array-increasing/</link><pubDate>Sun, 11 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/minimum-operations-to-make-the-array-increasing/</guid><description>2022-12-11每日一题：1827. 最少操作使数组递增 难度：Easy
+标签：贪心 、 数组
+给你一个整数数组 nums （下标从 0 开始）。每一次操作中，你可以选择数组中一个元素，并将它增加 1 。
+比方说，如果 nums = [1,2,3] ，你可以选择增加 nums[1] 得到 nums = [1,3,3] 。 请你返回使 nums 严格递增 的 最少 操作次数。
+我们称数组 nums 是 严格递增的 ，当它满足对于所有的 0 &amp;lt;= i &amp;lt; nums.length - 1 都有 nums[i] &amp;lt; nums[i+1] 。一个长度为 1 的数组是严格递增的一种特殊情况。
+示例 1：
+输入：nums = [1,1,1] 输出：3 解释：你可以进行如下操作： 1) 增加 nums[2] ，数组变为 [1,1,2] 。 2) 增加 nums[1] ，数组变为 [1,2,2] 。 3) 增加 nums[2] ，数组变为 [1,2,3] 。 示例 2：</description></item><item><title>【2022-12-07每日一题】1775. 通过最少操作次数使数组的和相等[Medium]</title><link>/study/leetcode/equal-sum-arrays-with-minimum-number-of-operations/</link><pubDate>Wed, 07 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/equal-sum-arrays-with-minimum-number-of-operations/</guid><description>2022-12-07每日一题：1775. 通过最少操作次数使数组的和相等 难度：Medium
+标签：贪心 、 数组 、 哈希表 、 计数
+给你两个长度可能不等的整数数组 nums1 和 nums2 。两个数组中的所有值都在 1 到 6 之间（包含 1 和 6）。
+每次操作中，你可以选择 任意 数组中的任意一个整数，将它变成 1 到 6 之间 任意 的值（包含 1 和 6）。
+请你返回使 nums1 中所有数的和与 nums2 中所有数的和相等的最少操作次数。如果无法使两个数组的和相等，请返回 -1 。
+示例 1：
+输入：nums1 = [1,2,3,4,5,6], nums2 = [1,1,2,2,2,2] 输出：3 解释：你可以通过 3 次操作使 nums1 中所有数的和与 nums2 中所有数的和相等。以下数组下标都从 0 开始。 - 将 nums2[0] 变为 6 。 nums1 = [1,2,3,4,5,6], nums2 = [6,1,2,2,2,2] 。 - 将 nums1[5] 变为 1 。 nums1 = [1,2,3,4,5,1], nums2 = [6,1,2,2,2,2] 。 - 将 nums1[2] 变为 2 。 nums1 = [1,2,2,4,5,1], nums2 = [6,1,2,2,2,2] 。 示例 2：</description></item><item><title>【2022-11-15每日一题】1710. 卡车上的最大单元数[Easy]</title><link>/study/leetcode/maximum-units-on-a-truck/</link><pubDate>Tue, 15 Nov 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/maximum-units-on-a-truck/</guid><description>2022-11-15每日一题：1710. 卡车上的最大单元数 难度：Easy
+标签：贪心 、 数组 、 排序
+请你将一些箱子装在 一辆卡车 上。给你一个二维数组 boxTypes ，其中 boxTypes[i] = [numberOfBoxesi, numberOfUnitsPerBoxi] ：
+numberOfBoxesi 是类型 i 的箱子的数量。 numberOfUnitsPerBoxi 是类型 i 每个箱子可以装载的单元数量。 整数 truckSize 表示卡车上可以装载 箱子 的 最大数量 。只要箱子数量不超过 truckSize ，你就可以选择任意箱子装到卡车上。
+返回卡车可以装载 单元 的 最大 总数。
+示例 1：
+输入：boxTypes = [[1,3],[2,2],[3,1]], truckSize = 4 输出：8 解释：箱子的情况如下： - 1 个第一类的箱子，里面含 3 个单元。 - 2 个第二类的箱子，每个里面含 2 个单元。 - 3 个第三类的箱子，每个里面含 1 个单元。 可以选择第一类和第二类的所有箱子，以及第三类的一个箱子。 单元总数 = (1 * 3) + (2 * 2) + (1 * 1) = 8 示例 2：</description></item><item><title>【2022-10-13每日一题】769. 最多能完成排序的块[Medium]</title><link>/study/leetcode/max-chunks-to-make-sorted/</link><pubDate>Thu, 13 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/max-chunks-to-make-sorted/</guid><description>2022-10-13每日一题：769. 最多能完成排序的块 难度：Medium
+标签：栈 、 贪心 、 数组 、 排序 、 单调栈
+给定一个长度为 n 的整数数组 arr ，它表示在 [0, n - 1] 范围内的整数的排列。
+我们将 arr 分割成若干 块 (即分区)，并对每个块单独排序。将它们连接起来后，使得连接的结果和按升序排序后的原数组相同。
+返回数组能分成的最多块数量。
+&amp;nbsp;
+示例 1:
+输入: arr = [4,3,2,1,0] 输出: 1 解释: 将数组分成2块或者更多块，都无法得到所需的结果。 例如，分成 [4, 3], [2, 1, 0] 的结果是 [3, 4, 0, 1, 2]，这不是有序的数组。 示例 2:
+输入: arr = [1,0,2,3,4] 输出: 4 解释: 我们可以把它分成两块，例如 [1, 0], [2, 3, 4]。 然而，分成 [1, 0], [2], [3], [4] 可以得到最多的块数。 &amp;nbsp;
+提示:</description></item><item><title>【2022-10-08每日一题】870. 优势洗牌[Medium]</title><link>/study/leetcode/advantage-shuffle/</link><pubDate>Sat, 08 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/advantage-shuffle/</guid><description>2022-10-08每日一题：870. 优势洗牌 难度：Medium
+标签：贪心 、 数组 、 双指针 、 排序
+给定两个大小相等的数组&amp;nbsp;nums1&amp;nbsp;和&amp;nbsp;nums2，nums1&amp;nbsp;相对于 nums&amp;nbsp;的优势可以用满足&amp;nbsp;nums1[i] &amp;gt; nums2[i]&amp;nbsp;的索引 i&amp;nbsp;的数目来描述。
+返回 nums1&amp;nbsp;的任意排列，使其相对于 nums2&amp;nbsp;的优势最大化。
+&amp;nbsp;
+示例 1：
+输入：nums1 = [2,7,11,15], nums2 = [1,10,4,11] 输出：[2,11,7,15] 示例 2：
+输入：nums1 = [12,24,8,32], nums2 = [13,25,32,11] 输出：[24,32,8,12] &amp;nbsp;
+提示：
+1 &amp;lt;= nums1.length &amp;lt;= 105 nums2.length == nums1.length 0 &amp;lt;= nums1[i], nums2[i] &amp;lt;= 109 方法一：排序+贪心算法 详细思路过程见官方题解，这里只做个人刷题记录，方便后续查询阅读
+func advantageCount(nums1 []int, nums2 []int) []int { // 构造索引数组 n := len(nums1) idx1 := make([]int, n) idx2 := make([]int, n) for i := 1; i &amp;lt; n; i++ { idx1[i] = i idx2[i] = i } // 对索引数组升序排序，比较巧妙 sort.</description></item><item><title>【2022-10-04每日一题】921. 使括号有效的最少添加[Medium]</title><link>/study/leetcode/minimum-add-to-make-parentheses-valid/</link><pubDate>Tue, 04 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/minimum-add-to-make-parentheses-valid/</guid><description>2022-10-04每日一题：921. 使括号有效的最少添加 难度：Medium
+标签：栈 、 贪心 、 字符串
+只有满足下面几点之一，括号字符串才是有效的：
+它是一个空字符串，或者 它可以被写成&amp;nbsp;AB&amp;nbsp;（A&amp;nbsp;与&amp;nbsp;B&amp;nbsp;连接）, 其中&amp;nbsp;A 和&amp;nbsp;B&amp;nbsp;都是有效字符串，或者 它可以被写作&amp;nbsp;(A)，其中&amp;nbsp;A&amp;nbsp;是有效字符串。 给定一个括号字符串 s ，移动N次，你就可以在字符串的任何位置插入一个括号。
+例如，如果 s = "()))" ，你可以插入一个开始括号为 "(()))" 或结束括号为 "())))" 。 返回 为使结果字符串 s 有效而必须添加的最少括号数。
+&amp;nbsp;
+示例 1：
+输入：s = "())" 输出：1 示例 2：
+输入：s = "(((" 输出：3 &amp;nbsp;
+提示：
+1 &amp;lt;= s.length &amp;lt;= 1000 s 只包含&amp;nbsp;'(' 和&amp;nbsp;')'&amp;nbsp;字符。 方法一： 详细思路过程见官方题解，这里只做个人刷题记录，方便后续查询阅读
+从左到右遍历字符串，在遍历过程中维护左括号的个数以及添加次数。
+如果遇到左括号，则将左括号的个数加 1。
+如果遇到右括号，则需要和前面的左括号进行匹配，具体做法如下：
+如果左括号的个数大于 0，则前面有左括号可以匹配，因此将左括号的个数减 1，表示有一个左括号和当前右括号匹配；
+如果左括号的个数等于 0，则前面没有左括号可以匹配，需要添加一个左括号才能匹配，因此将添加次数加 1。
+遍历结束后，需要检查左括号的个数是否为 0
+func minAddToMakeValid(s string) int { left, ans := 0, 0 for _, ch := range s { if ch == '(' { left++ } else if left &amp;gt; 0 { left-- } else { ans++ } } return left + ans } 复杂度分析 时间复杂度：O(n)，其中 n 是字符串的长度。遍历字符串一次。 空间复杂度：O(1)。只需要维护常量的额外空间。 LeetCode题库地址 https://leetcode.</description></item><item><title>【2022-09-13每日一题】670. 最大交换</title><link>/study/leetcode/maximum-swap/</link><pubDate>Tue, 13 Sep 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/maximum-swap/</guid><description>2022-09-13每日一题：670. 最大交换 难度：Medium 标签：贪心 、 数学 给定一个非负整数，你至多可以交换一次数字中的任意两位。返回你能得到的最大值。
+示例 1 :
+输入: 2736 输出: 7236 解释: 交换数字2和数字7。 示例 2 :
+输入: 9973 输出: 9973 解释: 不需要交换。 注意:
+给定数字的范围是&amp;nbsp;[0, 108] ### 方法一：暴力枚举 func maximumSwap(num int) int { ans := num s := []byte(strconv.Itoa(num)) for i := range s { for j := range s[:i] { s[i], s[j] = s[j], s[i] v, _ := strconv.Atoi(string(s)) ans = max(ans, v) s[i], s[j] = s[j], s[i] // 还原 } } return ans } func max(a, b int) int { if a &amp;gt; b { return a } return b } 复杂度分析 时间复杂度：O(log^3*num) 空间复杂度：O(lognum) 方法二：贪心 解题思路 func maximumSwap(num int) int { nums := []byte(strconv.</description></item><item><title>【2022-09-11每日一题】：857. 雇佣 K 名工人的最低成本</title><link>/study/leetcode/minimum-cost-to-hire-k-workers/</link><pubDate>Sun, 11 Sep 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/minimum-cost-to-hire-k-workers/</guid><description>2022-09-11每日一题：857. 雇佣 K 名工人的最低成本 难度：Hard 标签：贪心 、 数组 、 排序 、 堆（优先队列） 有 n&amp;nbsp;名工人。&amp;nbsp;给定两个数组&amp;nbsp;quality&amp;nbsp;和&amp;nbsp;wage&amp;nbsp;，其中，quality[i]&amp;nbsp;表示第&amp;nbsp;i&amp;nbsp;名工人的工作质量，其最低期望工资为&amp;nbsp;wage[i]&amp;nbsp;。
+现在我们想雇佣&amp;nbsp;k&amp;nbsp;名工人组成一个工资组。在雇佣&amp;nbsp;一组 k&amp;nbsp;名工人时，我们必须按照下述规则向他们支付工资：
+对工资组中的每名工人，应当按其工作质量与同组其他工人的工作质量的比例来支付工资。 工资组中的每名工人至少应当得到他们的最低期望工资。 给定整数 k ，返回 组成满足上述条件的付费群体所需的最小金额&amp;nbsp;。在实际答案的&amp;nbsp;10-5&amp;nbsp;以内的答案将被接受。。
+&amp;nbsp;
+示例 1：
+输入： quality = [10,20,5], wage = [70,50,30], k = 2 输出： 105.00000 解释： 我们向 0 号工人支付 70，向 2 号工人支付 35。 示例 2：
+输入： quality = [3,1,10,10,1], wage = [4,8,2,2,7], k = 3 输出： 30.66667 解释： 我们向 0 号工人支付 4，向 2 号和 3 号分别支付 13.33333。 &amp;nbsp;
+提示：
+n == quality.length == wage.</description></item><item><title>【2022-09-03每日一题】646. 最长数对链</title><link>/study/leetcode/maximum-length-of-pair-chain/</link><pubDate>Sat, 03 Sep 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/maximum-length-of-pair-chain/</guid><description>2022-09-03每日一题：646. 最长数对链 难度：Medium 标签：贪心 、 数组 、 动态规划 、 排序 给出 n 个数对。 在每一个数对中，第一个数字总是比第二个数字小。
+现在，我们定义一种跟随关系，当且仅当 b &lt; c 时，数对(c, d) 才可以跟在 (a, b) 后面。我们用这种形式来构造一个数对链。
+给定一个数对集合，找出能够形成的最长数对链的长度。你不需要用到所有的数对，你可以以任何顺序选择其中的一些数对来构造。
+示例：
+输入：[[1,2], [2,3], [3,4]] 输出：2 解释：最长的数对链是 [1,2] -> [3,4] 提示：
+给出数对的个数在 [1, 1000] 范围内。 ### 方法一：动态规划 func findLongestChain(pairs [][]int) int { sort.Slice(pairs, func(i, j int) bool { return pairs[i][0] &amp;lt; pairs[j][0] }) n := len(pairs) dp := make([]int, n) for i, p := range pairs { dp[i] = 1 // 初始化时，dp 需要全部赋值为 1 for j, q := range pairs[:i] { if p[0] &amp;gt; q[1] { dp[i] = max(dp[i], dp[j] + 1) } } } return dp[n-1] } func max(a, b int) int { if a &amp;gt; b { return a } return b } 复杂度分析 时间复杂度：O(n^2)，其中 n 为 pairs 的长度。排序的时间复杂度为O(nlogn)，两层 for 循环的时间复杂度为 O(n^2)。</description></item><item><title>【2022-08-13每日一题】768. 最多能完成排序的块 II</title><link>/study/leetcode/max-chunks-to-make-sorted-ii/</link><pubDate>Sat, 13 Aug 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/max-chunks-to-make-sorted-ii/</guid><description>2022-08-13每日一题：768. 最多能完成排序的块 II 难度：Hard 标签：栈 、 贪心 、 数组 、 排序 、 单调栈 这个问题和&amp;ldquo;最多能完成排序的块&amp;rdquo;相似，但给定数组中的元素可以重复，输入数组最大长度为2000，其中的元素最大为10**8。
+arr是一个可能包含重复元素的整数数组，我们将这个数组分割成几个&amp;ldquo;块&amp;rdquo;，并将这些块分别进行排序。之后再连接起来，使得连接的结果和按升序排序后的原数组相同。
+我们最多能将数组分成多少块？
+示例&amp;nbsp;1:
+输入: arr = [5,4,3,2,1] 输出: 1 解释: 将数组分成2块或者更多块，都无法得到所需的结果。 例如，分成 [5, 4], [3, 2, 1] 的结果是 [4, 5, 1, 2, 3]，这不是有序的数组。 示例 2:
+输入: arr = [2,1,3,4,4] 输出: 4 解释: 我们可以把它分成两块，例如 [2, 1], [3, 4, 4]。 然而，分成 [2, 1], [3], [4], [4] 可以得到最多的块数。 注意:
+arr的长度在[1, 2000]之间。 arr[i]的大小在[0, 10**8]之间。 ### 方法一：单调栈 思路 对于已经分好块的数组，若块数大于 1，则可以得到以下结论：右边的块的所有数字均大于或等于左边的块的所有数字。考虑这个问题：对于已经分好块的数组，若在其末尾添加一个数字，如何求得新数组的分块方式？
+新添加的数字可能会改变原数组的分块方式。如果新添加的数字大于或等于原数组最后一个块的最大值，则这个新添加的数字可以自己形成一个块。如果新添加的数字小于原数组最后一个块的最大值，则它必须融入最后一个块。如果它大于或等于原数组倒数第二个块（如果有）的最大值，那么这个过程可以停止，新数组的分块方式已经求得。否则，它将继续融合原数组倒数第二个块，直到遇到一个块，使得该块的最大值小于或等于这个新添加的数，或者这个数字已经融合了所有块。
+上述分析过程中，我们只用到了块的最大值来进行比较，比较过程又是从右到左，符合栈的思想，因此可以用类似单调栈的数据结构来存储块的最大值。
+代码 func maxChunksToSorted(arr []int) int { st := []int{} for _, x := range arr { if len(st) == 0 || x &amp;gt;= st[len(st)-1] { st = append(st, x) } else { mx := st[len(st)-1] st = st[:len(st)-1] for len(st) &amp;gt; 0 &amp;amp;&amp;amp; st[len(st)-1] &amp;gt; x { st = st[:len(st)-1] } st = append(st, mx) } } return len(st) } 复杂度分析 时间复杂度：O(n)，其中 n 是输入数组 arr 的长度。需要遍历一遍数组，入栈的操作最多为 n 次。</description></item><item><title>2022-08-04每日一题：1403. 非递增顺序的最小子序列</title><link>/study/leetcode/minimum-subsequence-in-non-increasing-order/</link><pubDate>Thu, 04 Aug 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/minimum-subsequence-in-non-increasing-order/</guid><description>2022-08-04每日一题：1403. 非递增顺序的最小子序列 给你一个数组 nums，请你从中抽取一个子序列，满足该子序列的元素之和 严格 大于未包含在该子序列中的各元素之和。
+如果存在多个解决方案，只需返回 长度最小 的子序列。如果仍然有多个解决方案，则返回 元素之和最大 的子序列。
+与子数组不同的地方在于，「数组的子序列」不强调元素在原数组中的连续性，也就是说，它可以通过从数组中分离一些（也可能不分离）元素得到。
+注意，题目数据保证满足所有约束条件的解决方案是 唯一 的。同时，返回的答案应当按 非递增顺序 排列。
+&amp;nbsp;
+示例 1：
+输入：nums = [4,3,10,9,8] 输出：[10,9] 解释：子序列 [10,9] 和 [10,8] 是最小的、满足元素之和大于其他各元素之和的子序列。但是 [10,9] 的元素之和最大。&amp;nbsp; 示例 2：
+输入：nums = [4,4,7,6,7] 输出：[7,7,6] 解释：子序列 [7,7] 的和为 14 ，不严格大于剩下的其他元素之和（14 = 4 + 4 + 6）。因此，[7,6,7] 是满足题意的最小子序列。注意，元素按非递增顺序返回。 示例 3：
+输入：nums = [6] 输出：[6] &amp;nbsp;
+提示：
+1 &amp;lt;= nums.length &amp;lt;= 500 1 &amp;lt;= nums[i] &amp;lt;= 100 ### 写法一 要求的子序列的和大于整个数组和的一半，且是略大于（因为要求长度最小）
+题目中要求的&amp;quot;非递增顺序&amp;quot;给了很大的暗示：可以排序，然后从后往前找，找到最短的、和大于整个数组和一半的、子数组即可
+func minSubsequence(nums []int) []int { // 降序 sort.</description></item></channel></rss>

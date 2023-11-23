@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>动态规划 on lbbniu</title><link>/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</link><description>Recent content in 动态规划 on lbbniu</description><generator>Hugo -- gohugo.io</generator><language>zh</language><managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor><webMaster>lbbniu@gmail.com (lbbniu)</webMaster><copyright>&amp;copy; 2021 &lt;a href="https://blog.lbbniu.com/">lbbniu&lt;/a></copyright><lastBuildDate>Thu, 22 Dec 2022 00:01:00 +0800</lastBuildDate><atom:link href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/index.xml" rel="self" type="application/rss+xml"/><item><title>剑指 Offer II 003 前 n 个数字二进制中 1 的个数</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/w3tcbm/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/w3tcbm/</guid><description>剑指 Offer II 003 前 n 个数字二进制中 1 的个数 给定一个非负整数 n&amp;nbsp;，请计算 0 到 n 之间的每个数字的二进制表示中 1 的个数，并输出一个数组。
+&amp;nbsp;
+示例 1:
+输入: n = 2 输出: [0,1,1] 解释: 0 --&amp;gt; 0 1 --&amp;gt; 1 2 --&amp;gt; 10 示例&amp;nbsp;2:
+输入: n = 5 输出: [0,1,1,2,1,2] 解释: 0 --&amp;gt; 0 1 --&amp;gt; 1 2 --&amp;gt; 10 3 --&amp;gt; 11 4 --&amp;gt; 100 5 --&amp;gt; 101 &amp;nbsp;
+说明 :
+0 &amp;lt;= n &amp;lt;= 105 &amp;nbsp;
+进阶:
+给出时间复杂度为&amp;nbsp;O(n*sizeof(integer))&amp;nbsp;的解答非常容易。但你可以在线性时间&amp;nbsp;O(n)&amp;nbsp;内用一趟扫描做到吗？ 要求算法的空间复杂度为&amp;nbsp;O(n)&amp;nbsp;。 你能进一步完善解法吗？要求在C++或任何其他语言中不使用任何内置函数（如 C++ 中的&amp;nbsp;__builtin_popcount&amp;nbsp;）来执行此操作。 &amp;nbsp;</description></item><item><title>剑指 Offer 10- I 斐波那契数列</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/fei-bo-na-qi-shu-lie-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/fei-bo-na-qi-shu-lie-lcof/</guid><description>剑指 Offer 10- I 斐波那契数列 写一个函数，输入 n ，求斐波那契（Fibonacci）数列的第 n 项（即 F(N)）。斐波那契数列的定义如下：
+F(0) = 0, F(1) = 1 F(N) = F(N - 1) + F(N - 2), 其中 N > 1. 斐波那契数列由 0 和 1 开始，之后的斐波那契数就是由之前的两数相加而得出。
+答案需要取模 1e9+7（1000000007），如计算初始结果为：1000000008，请返回 1。
+示例 1：
+输入：n = 2 输出：1 示例 2：
+输入：n = 5 输出：5 提示：
+0 &lt;= n &lt;= 100 func fib(n int) int { } LeetCode题库地址 https://leetcode.cn/problems/fei-bo-na-qi-shu-lie-lcof</description></item><item><title>剑指 Offer 10- II 青蛙跳台阶问题</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/qing-wa-tiao-tai-jie-wen-ti-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/qing-wa-tiao-tai-jie-wen-ti-lcof/</guid><description>剑指 Offer 10- II 青蛙跳台阶问题 一只青蛙一次可以跳上1级台阶，也可以跳上2级台阶。求该青蛙跳上一个 n&amp;nbsp;级的台阶总共有多少种跳法。
+答案需要取模 1e9+7（1000000007），如计算初始结果为：1000000008，请返回 1。
+示例 1：
+输入：n = 2 输出：2 示例 2：
+输入：n = 7 输出：21 示例 3：
+输入：n = 0 输出：1 提示：
+0 &amp;lt;= n &amp;lt;= 100 注意：本题与主站 70 题相同：https://leetcode-cn.com/problems/climbing-stairs/
+&amp;nbsp;
+func numWays(n int) int { } LeetCode题库地址 https://leetcode.cn/problems/qing-wa-tiao-tai-jie-wen-ti-lcof</description></item><item><title>剑指 Offer 13 机器人的运动范围</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/ji-qi-ren-de-yun-dong-fan-wei-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/ji-qi-ren-de-yun-dong-fan-wei-lcof/</guid><description>剑指 Offer 13 机器人的运动范围 地上有一个m行n列的方格，从坐标 [0,0] 到坐标 [m-1,n-1] 。一个机器人从坐标 [0, 0] 的格子开始移动，它每次可以向左、右、上、下移动一格（不能移动到方格外），也不能进入行坐标和列坐标的数位之和大于k的格子。例如，当k为18时，机器人能够进入方格 [35, 37] ，因为3+5+3+7=18。但它不能进入方格 [35, 38]，因为3+5+3+8=19。请问该机器人能够到达多少个格子？
+&amp;nbsp;
+示例 1：
+输入：m = 2, n = 3, k = 1 输出：3 示例 2：
+输入：m = 3, n = 1, k = 0 输出：1 提示：
+1 &amp;lt;= n,m &amp;lt;= 100 0 &amp;lt;= k&amp;nbsp;&amp;lt;= 20 func movingCount(m int, n int, k int) int { } LeetCode题库地址 https://leetcode.cn/problems/ji-qi-ren-de-yun-dong-fan-wei-lcof</description></item><item><title>面试题13 机器人的运动范围</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/ji-qi-ren-de-yun-dong-fan-wei-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/ji-qi-ren-de-yun-dong-fan-wei-lcof/</guid><description>面试题13 机器人的运动范围 地上有一个m行n列的方格，从坐标 [0,0] 到坐标 [m-1,n-1] 。一个机器人从坐标 [0, 0] 的格子开始移动，它每次可以向左、右、上、下移动一格（不能移动到方格外），也不能进入行坐标和列坐标的数位之和大于k的格子。例如，当k为18时，机器人能够进入方格 [35, 37] ，因为3+5+3+7=18。但它不能进入方格 [35, 38]，因为3+5+3+8=19。请问该机器人能够到达多少个格子？
+&amp;nbsp;
+示例 1：
+输入：m = 2, n = 3, k = 1 输出：3 示例 2：
+输入：m = 3, n = 1, k = 0 输出：1 提示：
+1 &amp;lt;= n,m &amp;lt;= 100 0 &amp;lt;= k&amp;nbsp;&amp;lt;= 20 func movingCount(m int, n int, k int) int { } LeetCode题库地址 https://leetcode.cn/problems/ji-qi-ren-de-yun-dong-fan-wei-lcof</description></item><item><title>剑指 Offer 14- I 剪绳子</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/jian-sheng-zi-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/jian-sheng-zi-lcof/</guid><description>剑指 Offer 14- I 剪绳子 给你一根长度为 n 的绳子，请把绳子剪成整数长度的 m 段（m、n都是整数，n&amp;gt;1并且m&amp;gt;1），每段绳子的长度记为 k[0],k[1]...k[m-1] 。请问 k[0]*k[1]*...*k[m-1] 可能的最大乘积是多少？例如，当绳子的长度是8时，我们把它剪成长度分别为2、3、3的三段，此时得到的最大乘积是18。
+示例 1：
+输入: 2 输出: 1 解释: 2 = 1 + 1, 1 &amp;times; 1 = 1 示例&amp;nbsp;2:
+输入: 10 输出: 36 解释: 10 = 3 + 3 + 4, 3 &amp;times;&amp;nbsp;3 &amp;times;&amp;nbsp;4 = 36 提示：
+2 &amp;lt;= n &amp;lt;= 58 注意：本题与主站 343 题相同：https://leetcode-cn.com/problems/integer-break/
+func cuttingRope(n int) int { } LeetCode题库地址 https://leetcode.cn/problems/jian-sheng-zi-lcof</description></item><item><title>剑指 Offer 14- II 剪绳子 II</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/jian-sheng-zi-ii-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/jian-sheng-zi-ii-lcof/</guid><description>剑指 Offer 14- II 剪绳子 II 给你一根长度为 n 的绳子，请把绳子剪成整数长度的 m&amp;nbsp;段（m、n都是整数，n&amp;gt;1并且m&amp;gt;1），每段绳子的长度记为 k[0],k[1]...k[m - 1] 。请问 k[0]*k[1]*...*k[m - 1] 可能的最大乘积是多少？例如，当绳子的长度是8时，我们把它剪成长度分别为2、3、3的三段，此时得到的最大乘积是18。
+答案需要取模 1e9+7（1000000007），如计算初始结果为：1000000008，请返回 1。
+&amp;nbsp;
+示例 1：
+输入: 2 输出: 1 解释: 2 = 1 + 1, 1 &amp;times; 1 = 1 示例&amp;nbsp;2:
+输入: 10 输出: 36 解释: 10 = 3 + 3 + 4, 3 &amp;times;&amp;nbsp;3 &amp;times;&amp;nbsp;4 = 36 &amp;nbsp;
+提示：
+2 &amp;lt;= n &amp;lt;= 1000 注意：本题与主站 343 题相同：https://leetcode-cn.com/problems/integer-break/
+func cuttingRope(n int) int { } LeetCode题库地址 https://leetcode.cn/problems/jian-sheng-zi-ii-lcof</description></item><item><title>剑指 Offer 19 正则表达式匹配</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/zheng-ze-biao-da-shi-pi-pei-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/zheng-ze-biao-da-shi-pi-pei-lcof/</guid><description>剑指 Offer 19 正则表达式匹配 请实现一个函数用来匹配包含&amp;#39;. &amp;#39;和&amp;#39;*&amp;#39;的正则表达式。模式中的字符&amp;#39;.&amp;#39;表示任意一个字符，而&amp;#39;*&amp;#39;表示它前面的字符可以出现任意次（含0次）。在本题中，匹配是指字符串的所有字符匹配整个模式。例如，字符串&amp;quot;aaa&amp;quot;与模式&amp;quot;a.a&amp;quot;和&amp;quot;ab*ac*a&amp;quot;匹配，但与&amp;quot;aa.a&amp;quot;和&amp;quot;ab*a&amp;quot;均不匹配。
+示例 1:
+输入: s = &amp;quot;aa&amp;quot; p = &amp;quot;a&amp;quot; 输出: false 解释: &amp;quot;a&amp;quot; 无法匹配 &amp;quot;aa&amp;quot; 整个字符串。 示例 2:
+输入: s = &amp;quot;aa&amp;quot; p = &amp;quot;a*&amp;quot; 输出: true 解释:&amp;nbsp;因为 &amp;#39;*&amp;#39; 代表可以匹配零个或多个前面的那一个元素, 在这里前面的元素就是 &amp;#39;a&amp;#39;。因此，字符串 &amp;quot;aa&amp;quot; 可被视为 &amp;#39;a&amp;#39; 重复了一次。 示例&amp;nbsp;3:
+输入: s = &amp;quot;ab&amp;quot; p = &amp;quot;.*&amp;quot; 输出: true 解释:&amp;nbsp;&amp;quot;.*&amp;quot; 表示可匹配零个或多个（&amp;#39;*&amp;#39;）任意字符（&amp;#39;.&amp;#39;）。 示例 4:
+输入: s = &amp;quot;aab&amp;quot; p = &amp;quot;c*a*b&amp;quot; 输出: true 解释:&amp;nbsp;因为 &amp;#39;*&amp;#39; 表示零个或多个，这里 &amp;#39;c&amp;#39; 为 0 个, &amp;#39;a&amp;#39; 被重复一次。因此可以匹配字符串 &amp;quot;aab&amp;quot;。 示例 5:</description></item><item><title>剑指 Offer II 020 回文子字符串的个数</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/a7vohd/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/a7vohd/</guid><description>剑指 Offer II 020 回文子字符串的个数 给定一个字符串 s ，请计算这个字符串中有多少个回文子字符串。
+具有不同开始位置或结束位置的子串，即使是由相同的字符组成，也会被视作不同的子串。
+&amp;nbsp;
+示例 1：
+输入：s = "abc" 输出：3 解释：三个回文子串: "a", "b", "c" 示例 2：
+输入：s = "aaa" 输出：6 解释：6个回文子串: "a", "a", "a", "aa", "aa", "aaa" &amp;nbsp;
+提示：
+1 &amp;lt;= s.length &amp;lt;= 1000 s 由小写英文字母组成 &amp;nbsp;
+注意：本题与主站 647 题相同：https://leetcode-cn.com/problems/palindromic-substrings/&amp;nbsp;
+func countSubstrings(s string) int { } LeetCode题库地址 https://leetcode.cn/problems/a7VOhD</description></item><item><title>面试题 05.03 翻转数位</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/reverse-bits-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/reverse-bits-lcci/</guid><description>面试题 05.03 翻转数位 给定一个32位整数 num，你可以将一个数位从0变为1。请编写一个程序，找出你能够获得的最长的一串1的长度。
+示例 1：
+输入: num = 1775(110111011112) 输出: 8 示例 2：
+输入: num = 7(01112) 输出: 4 func reverseBits(num int) int { } LeetCode题库地址 https://leetcode.cn/problems/reverse-bits-lcci</description></item><item><title>剑指 Offer II 040 矩阵中最大的矩形</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/plyxkq/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/plyxkq/</guid><description>剑指 Offer II 040 矩阵中最大的矩形 给定一个由&amp;nbsp;0 和 1&amp;nbsp;组成的矩阵 matrix&amp;nbsp;，找出只包含 1 的最大矩形，并返回其面积。
+注意：此题 matrix&amp;nbsp;输入格式为一维 01 字符串数组。
+&amp;nbsp;
+示例 1：
+输入：matrix = ["10100","10111","11111","10010"] 输出：6 解释：最大矩形如上图所示。 示例 2：
+输入：matrix = [] 输出：0 示例 3：
+输入：matrix = ["0"] 输出：0 示例 4：
+输入：matrix = ["1"] 输出：1 示例 5：
+输入：matrix = ["00"] 输出：0 &amp;nbsp;
+提示：
+rows == matrix.length cols == matrix[0].length 0 &amp;lt;= row, cols &amp;lt;= 200 matrix[i][j] 为 '0' 或 '1' &amp;nbsp;
+注意：本题与主站 85 题相同（输入参数格式不同）：&amp;nbsp;https://leetcode-cn.com/problems/maximal-rectangle/
+func maximalRectangle(matrix []string) int { } LeetCode题库地址 https://leetcode.</description></item><item><title>面试题 08.01 三步问题</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/three-steps-problem-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/three-steps-problem-lcci/</guid><description>面试题 08.01 三步问题 三步问题。有个小孩正在上楼梯，楼梯有n阶台阶，小孩一次可以上1阶、2阶或3阶。实现一种方法，计算小孩有多少种上楼梯的方式。结果可能很大，你需要对结果模1000000007。
+示例1:
+输入：n = 3 输出：4 说明: 有四种走法 示例2:
+输入：n = 5 输出：13 提示:
+n范围在[1, 1000000]之间 func waysToStep(n int) int { } LeetCode题库地址 https://leetcode.cn/problems/three-steps-problem-lcci</description></item><item><title>剑指 Offer 42 连续子数组的最大和</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/lian-xu-zi-shu-zu-de-zui-da-he-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/lian-xu-zi-shu-zu-de-zui-da-he-lcof/</guid><description>剑指 Offer 42 连续子数组的最大和 输入一个整型数组，数组中的一个或连续多个整数组成一个子数组。求所有子数组的和的最大值。
+要求时间复杂度为O(n)。
+&amp;nbsp;
+示例1:
+输入: nums = [-2,1,-3,4,-1,2,1,-5,4] 输出: 6 解释:&amp;nbsp;连续子数组&amp;nbsp;[4,-1,2,1] 的和最大，为&amp;nbsp;6。 &amp;nbsp;
+提示：
+1 &amp;lt;=&amp;nbsp;arr.length &amp;lt;= 10^5 -100 &amp;lt;= arr[i] &amp;lt;= 100 注意：本题与主站 53 题相同：https://leetcode-cn.com/problems/maximum-subarray/
+&amp;nbsp;
+func maxSubArray(nums []int) int { } LeetCode题库地址 https://leetcode.cn/problems/lian-xu-zi-shu-zu-de-zui-da-he-lcof</description></item><item><title>面试题 08.02 迷路的机器人</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/robot-in-a-grid-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/robot-in-a-grid-lcci/</guid><description>面试题 08.02 迷路的机器人 设想有个机器人坐在一个网格的左上角，网格 r 行 c 列。机器人只能向下或向右移动，但不能走到一些被禁止的网格（有障碍物）。设计一种算法，寻找机器人从左上角移动到右下角的路径。
+网格中的障碍物和空位置分别用 1 和 0 来表示。
+返回一条可行的路径，路径由经过的网格的行号和列号组成。左上角为 0 行 0 列。如果没有可行的路径，返回空数组。
+示例&amp;nbsp;1:
+输入: [ &amp;nbsp; [0,0,0], &amp;nbsp; [0,1,0], &amp;nbsp; [0,0,0] ] 输出: [[0,0],[0,1],[0,2],[1,2],[2,2]] 解释: 输入中标粗的位置即为输出表示的路径，即 0行0列（左上角） -&amp;gt; 0行1列 -&amp;gt; 0行2列 -&amp;gt; 1行2列 -&amp;gt; 2行2列（右下角） 说明：r&amp;nbsp;和 c 的值均不超过 100。
+func pathWithObstacles(obstacleGrid [][]int) [][]int { } LeetCode题库地址 https://leetcode.cn/problems/robot-in-a-grid-lcci</description></item><item><title>剑指 Offer 43 1～n 整数中 1 出现的次数</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/1nzheng-shu-zhong-1chu-xian-de-ci-shu-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/1nzheng-shu-zhong-1chu-xian-de-ci-shu-lcof/</guid><description>剑指 Offer 43 1～n 整数中 1 出现的次数 输入一个整数 n ，求1～n这n个整数的十进制表示中1出现的次数。
+例如，输入12，1～12这些整数中包含1 的数字有1、10、11和12，1一共出现了5次。
+示例 1：
+输入：n = 12 输出：5 示例 2：
+输入：n = 13 输出：6 限制：
+1 &lt;= n &lt; 2^31 注意：本题与主站 233 题相同：https://leetcode-cn.com/problems/number-of-digit-one/
+func countDigitOne(n int) int { } LeetCode题库地址 https://leetcode.cn/problems/1nzheng-shu-zhong-1chu-xian-de-ci-shu-lcof</description></item><item><title>剑指 Offer 46 把数字翻译成字符串</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/ba-shu-zi-fan-yi-cheng-zi-fu-chuan-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/ba-shu-zi-fan-yi-cheng-zi-fu-chuan-lcof/</guid><description>剑指 Offer 46 把数字翻译成字符串 给定一个数字，我们按照如下规则把它翻译为字符串：0 翻译成 &amp;ldquo;a&amp;rdquo; ，1 翻译成 &amp;ldquo;b&amp;rdquo;，&amp;hellip;&amp;hellip;，11 翻译成 &amp;ldquo;l&amp;rdquo;，&amp;hellip;&amp;hellip;，25 翻译成 &amp;ldquo;z&amp;rdquo;。一个数字可能有多个翻译。请编程实现一个函数，用来计算一个数字有多少种不同的翻译方法。
+&amp;nbsp;
+示例 1:
+输入: 12258 输出: 5 解释: 12258有5种不同的翻译，分别是&amp;quot;bccfi&amp;quot;, &amp;quot;bwfi&amp;quot;, &amp;quot;bczi&amp;quot;, &amp;quot;mcfi&amp;quot;和&amp;quot;mzi&amp;quot; &amp;nbsp;
+提示：
+0 &amp;lt;= num &amp;lt; 231 func translateNum(num int) int { } LeetCode题库地址 https://leetcode.cn/problems/ba-shu-zi-fan-yi-cheng-zi-fu-chuan-lcof</description></item><item><title>剑指 Offer 47 礼物的最大价值</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/li-wu-de-zui-da-jie-zhi-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/li-wu-de-zui-da-jie-zhi-lcof/</guid><description>剑指 Offer 47 礼物的最大价值 在一个 m*n 的棋盘的每一格都放有一个礼物，每个礼物都有一定的价值（价值大于 0）。你可以从棋盘的左上角开始拿格子里的礼物，并每次向右或者向下移动一格、直到到达棋盘的右下角。给定一个棋盘及其上面的礼物的价值，请计算你最多能拿到多少价值的礼物？
+&amp;nbsp;
+示例 1:
+输入: [ &amp;nbsp; [1,3,1], &amp;nbsp; [1,5,1], &amp;nbsp; [4,2,1] ] 输出: 12 解释: 路径 1&amp;rarr;3&amp;rarr;5&amp;rarr;2&amp;rarr;1 可以拿到最多价值的礼物 &amp;nbsp;
+提示：
+0 &amp;lt; grid.length &amp;lt;= 200 0 &amp;lt; grid[0].length &amp;lt;= 200 func maxValue(grid [][]int) int { } LeetCode题库地址 https://leetcode.cn/problems/li-wu-de-zui-da-jie-zhi-lcof</description></item><item><title>剑指 Offer 49 丑数</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/chou-shu-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/chou-shu-lcof/</guid><description>剑指 Offer 49 丑数 我们把只包含质因子 2、3 和 5 的数称作丑数（Ugly Number）。求按从小到大的顺序的第 n 个丑数。
+&amp;nbsp;
+示例:
+输入: n = 10 输出: 12 解释: 1, 2, 3, 4, 5, 6, 8, 9, 10, 12 是前 10 个丑数。 说明:&amp;nbsp;&amp;nbsp;
+1&amp;nbsp;是丑数。 n&amp;nbsp;不超过1690。 注意：本题与主站 264 题相同：https://leetcode-cn.com/problems/ugly-number-ii/
+func nthUglyNumber(n int) int { } LeetCode题库地址 https://leetcode.cn/problems/chou-shu-lcof</description></item><item><title>面试题 08.09 括号</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/bracket-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/bracket-lcci/</guid><description>面试题 08.09 括号 括号。设计一种算法，打印n对括号的所有合法的（例如，开闭一一对应）组合。
+说明：解集不能包含重复的子集。
+例如，给出 n = 3，生成结果为：
+[ "((()))", "(()())", "(())()", "()(())", "()()()" ] func generateParenthesis(n int) []string { } LeetCode题库地址 https://leetcode.cn/problems/bracket-lcci</description></item><item><title>剑指 Offer II 051 节点之和最大的路径</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/jc7mid/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/jc7mid/</guid><description>剑指 Offer II 051 节点之和最大的路径 路径 被定义为一条从树中任意节点出发，沿父节点-子节点连接，达到任意节点的序列。同一个节点在一条路径序列中 至多出现一次 。该路径 至少包含一个 节点，且不一定经过根节点。
+路径和 是路径中各节点值的总和。
+给定一个二叉树的根节点 root ，返回其 最大路径和，即所有路径上节点值之和的最大值。
+&amp;nbsp;
+示例 1：
+输入：root = [1,2,3] 输出：6 解释：最优路径是 2 -&amp;gt; 1 -&amp;gt; 3 ，路径和为 2 + 1 + 3 = 6 示例 2：
+输入：root = [-10,9,20,null,null,15,7] 输出：42 解释：最优路径是 15 -&amp;gt; 20 -&amp;gt; 7 ，路径和为 15 + 20 + 7 = 42 &amp;nbsp;
+提示：
+树中节点数目范围是 [1, 3 * 104] -1000 &amp;lt;= Node.val &amp;lt;= 1000 &amp;nbsp;
+注意：本题与主站 124&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/binary-tree-maximum-path-sum/
+/** * Definition for a binary tree node.</description></item><item><title>面试题 08.11 硬币</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/coin-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/coin-lcci/</guid><description>面试题 08.11 硬币 硬币。给定数量不限的硬币，币值为25分、10分、5分和1分，编写代码计算n分有几种表示法。(结果可能会很大，你需要将结果模上1000000007)
+示例1:
+输入: n = 5 输出：2 解释: 有两种方式可以凑成总金额: 5=5 5=1+1+1+1+1 示例2:
+输入: n = 10 输出：4 解释: 有四种方式可以凑成总金额: 10=10 10=5+5 10=5+1+1+1+1+1 10=1+1+1+1+1+1+1+1+1+1 说明：
+注意:
+你可以假设：
+0 &amp;lt;= n (总金额) &amp;lt;= 1000000 func waysToChange(n int) int { } LeetCode题库地址 https://leetcode.cn/problems/coin-lcci</description></item><item><title>面试题 08.13 堆箱子</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/pile-box-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/pile-box-lcci/</guid><description>面试题 08.13 堆箱子 堆箱子。给你一堆n个箱子，箱子宽 wi、深 di、高 hi。箱子不能翻转，将箱子堆起来时，下面箱子的宽度、高度和深度必须大于上面的箱子。实现一种方法，搭出最高的一堆箱子。箱堆的高度为每个箱子高度的总和。
+输入使用数组[wi, di, hi]表示每个箱子。
+示例1:
+输入：box = [[1, 1, 1], [2, 2, 2], [3, 3, 3]] 输出：6 示例2:
+输入：box = [[1, 1, 1], [2, 3, 4], [2, 6, 7], [3, 4, 5]] 输出：10 提示:
+箱子的数目不大于3000个。 func pileBox(box [][]int) int { } LeetCode题库地址 https://leetcode.cn/problems/pile-box-lcci</description></item><item><title>面试题 08.14 布尔运算</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/boolean-evaluation-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/boolean-evaluation-lcci/</guid><description>面试题 08.14 布尔运算 给定一个布尔表达式和一个期望的布尔结果 result，布尔表达式由 0 (false)、1 (true)、&amp;amp; (AND)、 | (OR) 和 ^ (XOR) 符号组成。实现一个函数，算出有几种可使该表达式得出 result 值的括号方法。
+示例 1:
+输入: s = &amp;quot;1^0|0|1&amp;quot;, result = 0 输出: 2 解释:&amp;nbsp;两种可能的括号方法是 1^(0|(0|1)) 1^((0|0)|1) 示例 2:
+输入: s = &amp;quot;0&amp;amp;0&amp;amp;0&amp;amp;1^1|0&amp;quot;, result = 1 输出: 10 提示：
+运算符的数量不超过 19 个 func countEval(s string, result int) int { } LeetCode题库地址 https://leetcode.cn/problems/boolean-evaluation-lcci</description></item><item><title>剑指 Offer 60 n个骰子的点数</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/nge-tou-zi-de-dian-shu-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/nge-tou-zi-de-dian-shu-lcof/</guid><description>剑指 Offer 60 n个骰子的点数 把n个骰子扔在地上，所有骰子朝上一面的点数之和为s。输入n，打印出s的所有可能的值出现的概率。
+&amp;nbsp;
+你需要用一个浮点数数组返回答案，其中第 i 个元素代表这 n 个骰子所能掷出的点数集合中第 i 小的那个的概率。
+&amp;nbsp;
+示例 1:
+输入: 1 输出: [0.16667,0.16667,0.16667,0.16667,0.16667,0.16667] 示例&amp;nbsp;2:
+输入: 2 输出: [0.02778,0.05556,0.08333,0.11111,0.13889,0.16667,0.13889,0.11111,0.08333,0.05556,0.02778] &amp;nbsp;
+限制：
+1 &amp;lt;= n &amp;lt;= 11
+func dicesProbability(n int) []float64 { } LeetCode题库地址 https://leetcode.cn/problems/nge-tou-zi-de-dian-shu-lcof</description></item><item><title>剑指 Offer 63 股票的最大利润</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/gu-piao-de-zui-da-li-run-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/gu-piao-de-zui-da-li-run-lcof/</guid><description>剑指 Offer 63 股票的最大利润 假设把某股票的价格按照时间先后顺序存储在数组中，请问买卖该股票一次可能获得的最大利润是多少？
+&amp;nbsp;
+示例 1:
+输入: [7,1,5,3,6,4] 输出: 5 解释: 在第 2 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 6）的时候卖出，最大利润 = 6-1 = 5 。 注意利润不能是 7-1 = 6, 因为卖出价格需要大于买入价格。 示例 2:
+输入: [7,6,4,3,1] 输出: 0 解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。 &amp;nbsp;
+限制：
+0 &amp;lt;= 数组长度 &amp;lt;= 10^5
+&amp;nbsp;
+注意：本题与主站 121 题相同：https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/
+func maxProfit(prices []int) int { } LeetCode题库地址 https://leetcode.cn/problems/gu-piao-de-zui-da-li-run-lcof</description></item><item><title>面试题 16.17 连续数列</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/contiguous-sequence-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/contiguous-sequence-lcci/</guid><description>面试题 16.17 连续数列 给定一个整数数组，找出总和最大的连续数列，并返回总和。
+示例：
+输入： [-2,1,-3,4,-1,2,1,-5,4] 输出： 6 解释： 连续子数组 [4,-1,2,1] 的和最大，为 6。 进阶：
+如果你已经实现复杂度为 O(n) 的解法，尝试使用更为精妙的分治法求解。
+func maxSubArray(nums []int) int { } LeetCode题库地址 https://leetcode.cn/problems/contiguous-sequence-lcci</description></item><item><title>剑指 Offer II 085 生成匹配的括号</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/idbivt/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/idbivt/</guid><description>剑指 Offer II 085 生成匹配的括号 正整数&amp;nbsp;n&amp;nbsp;代表生成括号的对数，请设计一个函数，用于能够生成所有可能的并且 有效的 括号组合。
+&amp;nbsp;
+示例 1：
+输入：n = 3 输出：[&amp;quot;((()))&amp;quot;,&amp;quot;(()())&amp;quot;,&amp;quot;(())()&amp;quot;,&amp;quot;()(())&amp;quot;,&amp;quot;()()()&amp;quot;] 示例 2：
+输入：n = 1 输出：[&amp;quot;()&amp;quot;] &amp;nbsp;
+提示：
+1 &amp;lt;= n &amp;lt;= 8 &amp;nbsp;
+注意：本题与主站 22&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/generate-parentheses/
+func generateParenthesis(n int) []string { } LeetCode题库地址 https://leetcode.cn/problems/IDBivT</description></item><item><title>剑指 Offer II 088 爬楼梯的最少成本</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/gzcjip/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/gzcjip/</guid><description>剑指 Offer II 088 爬楼梯的最少成本 数组的每个下标作为一个阶梯，第 i 个阶梯对应着一个非负数的体力花费值&amp;nbsp;cost[i]（下标从 0 开始）。
+每当爬上一个阶梯都要花费对应的体力值，一旦支付了相应的体力值，就可以选择向上爬一个阶梯或者爬两个阶梯。
+请找出达到楼层顶部的最低花费。在开始时，你可以选择从下标为 0 或 1 的元素作为初始阶梯。
+&amp;nbsp;
+示例&amp;nbsp;1：
+输入：cost = [10, 15, 20] 输出：15 解释：最低花费是从 cost[1] 开始，然后走两步即可到阶梯顶，一共花费 15 。 &amp;nbsp;示例 2：
+输入：cost = [1, 100, 1, 1, 1, 100, 1, 1, 100, 1] 输出：6 解释：最低花费方式是从 cost[0] 开始，逐个经过那些 1 ，跳过 cost[3] ，一共花费 6 。 &amp;nbsp;
+提示：
+2 &amp;lt;= cost.length &amp;lt;= 1000 0 &amp;lt;= cost[i] &amp;lt;= 999 &amp;nbsp;
+注意：本题与主站 746&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/min-cost-climbing-stairs/
+func minCostClimbingStairs(cost []int) int { } LeetCode题库地址 https://leetcode.</description></item><item><title>剑指 Offer II 089 房屋偷盗</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/gu0c2t/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/gu0c2t/</guid><description>剑指 Offer II 089 房屋偷盗 一个专业的小偷，计划偷窃沿街的房屋。每间房内都藏有一定的现金，影响小偷偷窃的唯一制约因素就是相邻的房屋装有相互连通的防盗系统，如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警。
+给定一个代表每个房屋存放金额的非负整数数组 nums&amp;nbsp;，请计算&amp;nbsp;不触动警报装置的情况下 ，一夜之内能够偷窃到的最高金额。
+&amp;nbsp;
+示例 1：
+输入：nums = [1,2,3,1] 输出：4 解释：偷窃 1 号房屋 (金额 = 1) ，然后偷窃 3 号房屋 (金额 = 3)。 &amp;nbsp; 偷窃到的最高金额 = 1 + 3 = 4 。 示例 2：
+输入：nums = [2,7,9,3,1] 输出：12 解释：偷窃 1 号房屋 (金额 = 2), 偷窃 3 号房屋 (金额 = 9)，接着偷窃 5 号房屋 (金额 = 1)。 &amp;nbsp; 偷窃到的最高金额 = 2 + 9 + 1 = 12 。 &amp;nbsp;
+提示：
+1 &amp;lt;= nums.</description></item><item><title>面试题 17.06 2出现的次数</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/number-of-2s-in-range-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/number-of-2s-in-range-lcci/</guid><description>面试题 17.06 2出现的次数 编写一个方法，计算从 0 到 n (含 n) 中数字 2 出现的次数。
+示例:
+输入: 25 输出: 9 解释: (2, 12, 20, 21, 22, 23, 24, 25)(注意 22 应该算作两次) 提示：
+n &amp;lt;= 10^9 func numberOf2sInRange(n int) int { } LeetCode题库地址 https://leetcode.cn/problems/number-of-2s-in-range-lcci</description></item><item><title>剑指 Offer II 090 环形房屋偷盗</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/pzwkhm/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/pzwkhm/</guid><description>剑指 Offer II 090 环形房屋偷盗 一个专业的小偷，计划偷窃一个环形街道上沿街的房屋，每间房内都藏有一定的现金。这个地方所有的房屋都 围成一圈 ，这意味着第一个房屋和最后一个房屋是紧挨着的。同时，相邻的房屋装有相互连通的防盗系统，如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警 。
+给定一个代表每个房屋存放金额的非负整数数组 nums ，请计算&amp;nbsp;在不触动警报装置的情况下 ，今晚能够偷窃到的最高金额。
+&amp;nbsp;
+示例&amp;nbsp;1：
+输入：nums = [2,3,2] 输出：3 解释：你不能先偷窃 1 号房屋（金额 = 2），然后偷窃 3 号房屋（金额 = 2）, 因为他们是相邻的。 示例 2：
+输入：nums = [1,2,3,1] 输出：4 解释：你可以先偷窃 1 号房屋（金额 = 1），然后偷窃 3 号房屋（金额 = 3）。 &amp;nbsp; 偷窃到的最高金额 = 1 + 3 = 4 。 示例 3：
+输入：nums = [0] 输出：0 &amp;nbsp;
+提示：
+1 &amp;lt;= nums.length &amp;lt;= 100 0 &amp;lt;= nums[i] &amp;lt;= 1000 &amp;nbsp;
+注意：本题与主站 213&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/house-robber-ii/
+func rob(nums []int) int { } LeetCode题库地址 https://leetcode.</description></item><item><title>剑指 Offer II 091 粉刷房子</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/jej789/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/jej789/</guid><description>剑指 Offer II 091 粉刷房子 假如有一排房子，共 n 个，每个房子可以被粉刷成红色、蓝色或者绿色这三种颜色中的一种，你需要粉刷所有的房子并且使其相邻的两个房子颜色不能相同。
+当然，因为市场上不同颜色油漆的价格不同，所以房子粉刷成不同颜色的花费成本也是不同的。每个房子粉刷成不同颜色的花费是以一个&amp;nbsp;n x 3&amp;nbsp;的正整数矩阵 costs 来表示的。
+例如，costs[0][0] 表示第 0 号房子粉刷成红色的成本花费；costs[1][2]&amp;nbsp;表示第 1 号房子粉刷成绿色的花费，以此类推。
+请计算出粉刷完所有房子最少的花费成本。
+&amp;nbsp;
+示例 1：
+输入: costs = [[17,2,17],[16,16,5],[14,3,19]] 输出: 10 解释: 将 0 号房子粉刷成蓝色，1 号房子粉刷成绿色，2 号房子粉刷成蓝色。 &amp;nbsp; 最少花费: 2 + 5 + 3 = 10。 示例 2：
+输入: costs = [[7,6,2]] 输出: 2 &amp;nbsp;
+提示:
+costs.length == n costs[i].length == 3 1 &amp;lt;= n &amp;lt;= 100 1 &amp;lt;= costs[i][j] &amp;lt;= 20 &amp;nbsp;
+注意：本题与主站 256&amp;nbsp;题相同：https://leetcode-cn.com/problems/paint-house/
+func minCost(costs [][]int) int { } LeetCode题库地址 https://leetcode.</description></item><item><title>面试题 17.08 马戏团人塔</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/circus-tower-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/circus-tower-lcci/</guid><description>面试题 17.08 马戏团人塔 有个马戏团正在设计叠罗汉的表演节目，一个人要站在另一人的肩膀上。出于实际和美观的考虑，在上面的人要比下面的人矮一点且轻一点。已知马戏团每个人的身高和体重，请编写代码计算叠罗汉最多能叠几个人。
+示例：
+输入：height = [65,70,56,75,60,68] weight = [100,150,90,190,95,110] 输出：6 解释：从上往下数，叠罗汉最多能叠 6 层：(56,90), (60,95), (65,100), (68,110), (70,150), (75,190) 提示：
+height.length == weight.length &lt;= 10000 func bestSeqAtIndex(height []int, weight []int) int { } LeetCode题库地址 https://leetcode.cn/problems/circus-tower-lcci</description></item><item><title>剑指 Offer II 092 翻转字符</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/cyjerh/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/cyjerh/</guid><description>剑指 Offer II 092 翻转字符 如果一个由&amp;nbsp;&amp;#39;0&amp;#39; 和 &amp;#39;1&amp;#39;&amp;nbsp;组成的字符串，是以一些 &amp;#39;0&amp;#39;（可能没有 &amp;#39;0&amp;#39;）后面跟着一些 &amp;#39;1&amp;#39;（也可能没有 &amp;#39;1&amp;#39;）的形式组成的，那么该字符串是&amp;nbsp;单调递增&amp;nbsp;的。
+我们给出一个由字符 &amp;#39;0&amp;#39; 和 &amp;#39;1&amp;#39;&amp;nbsp;组成的字符串 s，我们可以将任何&amp;nbsp;&amp;#39;0&amp;#39; 翻转为&amp;nbsp;&amp;#39;1&amp;#39;&amp;nbsp;或者将&amp;nbsp;&amp;#39;1&amp;#39;&amp;nbsp;翻转为&amp;nbsp;&amp;#39;0&amp;#39;。
+返回使 s&amp;nbsp;单调递增&amp;nbsp;的最小翻转次数。
+&amp;nbsp;
+示例 1：
+输入：s = &amp;quot;00110&amp;quot; 输出：1 解释：我们翻转最后一位得到 00111. 示例 2：
+输入：s = &amp;quot;010110&amp;quot; 输出：2 解释：我们翻转得到 011111，或者是 000111。 示例 3：
+输入：s = &amp;quot;00011000&amp;quot; 输出：2 解释：我们翻转得到 00000000。 &amp;nbsp;
+提示：
+1 &amp;lt;= s.length &amp;lt;= 20000 s 中只包含字符&amp;nbsp;&amp;#39;0&amp;#39;&amp;nbsp;和&amp;nbsp;&amp;#39;1&amp;#39; &amp;nbsp;
+注意：本题与主站 926&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/flip-string-to-monotone-increasing/
+func minFlipsMonoIncr(s string) int { } LeetCode题库地址 https://leetcode.cn/problems/cyJERH</description></item><item><title>面试题 17.09 第 k 个数</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/get-kth-magic-number-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/get-kth-magic-number-lcci/</guid><description>面试题 17.09 第 k 个数 有些数的素因子只有 3，5，7，请设计一个算法找出第 k 个数。注意，不是必须有这些素因子，而是必须不包含其他的素因子。例如，前几个数按顺序应该是 1，3，5，7，9，15，21。
+示例 1:
+输入: k = 5 输出: 9 func getKthMagicNumber(k int) int { } LeetCode题库地址 https://leetcode.cn/problems/get-kth-magic-number-lcci</description></item><item><title>剑指 Offer II 093 最长斐波那契数列</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/q91fma/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/q91fma/</guid><description>剑指 Offer II 093 最长斐波那契数列 如果序列&amp;nbsp;X_1, X_2, ..., X_n&amp;nbsp;满足下列条件，就说它是&amp;nbsp;斐波那契式&amp;nbsp;的：
+n &amp;gt;= 3 对于所有&amp;nbsp;i + 2 &amp;lt;= n，都有&amp;nbsp;X_i + X_{i+1} = X_{i+2} 给定一个严格递增的正整数数组形成序列 arr&amp;nbsp;，找到 arr 中最长的斐波那契式的子序列的长度。如果一个不存在，返回&amp;nbsp;&amp;nbsp;0 。
+（回想一下，子序列是从原序列&amp;nbsp; arr 中派生出来的，它从 arr 中删掉任意数量的元素（也可以不删），而不改变其余元素的顺序。例如，&amp;nbsp;[3, 5, 8]&amp;nbsp;是&amp;nbsp;[3, 4, 5, 6, 7, 8]&amp;nbsp;的一个子序列）
+&amp;nbsp;
+示例 1：
+输入: arr = [1,2,3,4,5,6,7,8] 输出: 5 解释: 最长的斐波那契式子序列为 [1,2,3,5,8] 。 示例&amp;nbsp;2：
+输入: arr = [1,3,7,11,12,14,18] 输出: 3 解释: 最长的斐波那契式子序列有 [1,11,12]、[3,11,14] 以及 [7,11,18] 。 &amp;nbsp;
+提示：
+3 &amp;lt;= arr.length &amp;lt;= 1000 1 &amp;lt;= arr[i] &amp;lt; arr[i + 1] &amp;lt;= 10^9</description></item><item><title>剑指 Offer II 094 最少回文分割</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/omkaoa/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/omkaoa/</guid><description>剑指 Offer II 094 最少回文分割 给定一个字符串 s，请将 s 分割成一些子串，使每个子串都是回文串。
+返回符合要求的 最少分割次数 。
+&amp;nbsp;
+示例 1：
+输入：s = &amp;quot;aab&amp;quot; 输出：1 解释：只需一次分割就可将&amp;nbsp;s 分割成 [&amp;quot;aa&amp;quot;,&amp;quot;b&amp;quot;] 这样两个回文子串。 示例 2：
+输入：s = &amp;quot;a&amp;quot; 输出：0 示例 3：
+输入：s = &amp;quot;ab&amp;quot; 输出：1 &amp;nbsp;
+提示：
+1 &amp;lt;= s.length &amp;lt;= 2000 s 仅由小写英文字母组成 &amp;nbsp;
+注意：本题与主站 132&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/palindrome-partitioning-ii/
+func minCut(s string) int { } LeetCode题库地址 https://leetcode.cn/problems/omKAoA</description></item><item><title>剑指 Offer II 095 最长公共子序列</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/qjnos7/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/qjnos7/</guid><description>剑指 Offer II 095 最长公共子序列 给定两个字符串&amp;nbsp;text1 和&amp;nbsp;text2，返回这两个字符串的最长 公共子序列 的长度。如果不存在 公共子序列 ，返回 0 。
+一个字符串的&amp;nbsp;子序列&amp;nbsp;是指这样一个新的字符串：它是由原字符串在不改变字符的相对顺序的情况下删除某些字符（也可以不删除任何字符）后组成的新字符串。
+例如，&amp;quot;ace&amp;quot; 是 &amp;quot;abcde&amp;quot; 的子序列，但 &amp;quot;aec&amp;quot; 不是 &amp;quot;abcde&amp;quot; 的子序列。 两个字符串的 公共子序列 是这两个字符串所共同拥有的子序列。
+&amp;nbsp;
+示例 1：
+输入：text1 = &amp;quot;abcde&amp;quot;, text2 = &amp;quot;ace&amp;quot; 输出：3 解释：最长公共子序列是 &amp;quot;ace&amp;quot; ，它的长度为 3 。 示例 2：
+输入：text1 = &amp;quot;abc&amp;quot;, text2 = &amp;quot;abc&amp;quot; 输出：3 解释：最长公共子序列是 &amp;quot;abc&amp;quot; ，它的长度为 3 。 示例 3：
+输入：text1 = &amp;quot;abc&amp;quot;, text2 = &amp;quot;def&amp;quot; 输出：0 解释：两个字符串没有公共子序列，返回 0 。 &amp;nbsp;
+提示：
+1 &amp;lt;= text1.length, text2.length &amp;lt;= 1000 text1 和&amp;nbsp;text2 仅由小写英文字符组成。 &amp;nbsp;</description></item><item><title>剑指 Offer II 096 字符串交织</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/iy6buf/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/iy6buf/</guid><description>剑指 Offer II 096 字符串交织 给定三个字符串&amp;nbsp;s1、s2、s3，请判断&amp;nbsp;s3&amp;nbsp;能不能由&amp;nbsp;s1&amp;nbsp;和&amp;nbsp;s2&amp;nbsp;交织（交错）&amp;nbsp;组成。
+两个字符串 s 和 t 交织&amp;nbsp;的定义与过程如下，其中每个字符串都会被分割成若干 非空 子字符串：
+s = s1 + s2 + ... + sn t = t1 + t2 + ... + tm |n - m| &amp;lt;= 1 交织 是 s1 + t1 + s2 + t2 + s3 + t3 + ... 或者 t1 + s1 + t2 + s2 + t3 + s3 + ... 提示：a + b 意味着字符串 a 和 b 连接。
+&amp;nbsp;
+示例 1：</description></item><item><title>面试题 17.13 恢复空格</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/re-space-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/re-space-lcci/</guid><description>面试题 17.13 恢复空格 哦，不！你不小心把一个长篇文章中的空格、标点都删掉了，并且大写也弄成了小写。像句子&amp;quot;I reset the computer. It still didn&amp;rsquo;t boot!&amp;quot;已经变成了&amp;quot;iresetthecomputeritstilldidntboot&amp;quot;。在处理标点符号和大小写之前，你得先把它断成词语。当然了，你有一本厚厚的词典dictionary，不过，有些词没在词典里。假设文章用sentence表示，设计一个算法，把文章断开，要求未识别的字符最少，返回未识别的字符数。
+注意：本题相对原题稍作改动，只需返回未识别的字符数
+&amp;nbsp;
+示例：
+输入： dictionary = [&amp;quot;looked&amp;quot;,&amp;quot;just&amp;quot;,&amp;quot;like&amp;quot;,&amp;quot;her&amp;quot;,&amp;quot;brother&amp;quot;] sentence = &amp;quot;jesslookedjustliketimherbrother&amp;quot; 输出： 7 解释： 断句后为&amp;quot;jess looked just like tim her brother&amp;quot;，共7个未识别字符。 提示：
+0 &amp;lt;= len(sentence) &amp;lt;= 1000 dictionary中总字符数不超过 150000。 你可以认为dictionary和sentence中只包含小写字母。 func respace(dictionary []string, sentence string) int { } LeetCode题库地址 https://leetcode.cn/problems/re-space-lcci</description></item><item><title>剑指 Offer II 097 子序列的数目</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/21dk04/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/21dk04/</guid><description>剑指 Offer II 097 子序列的数目 给定一个字符串 s 和一个字符串 t ，计算在 s 的子序列中 t 出现的个数。
+字符串的一个 子序列 是指，通过删除一些（也可以不删除）字符且不干扰剩余字符相对位置所组成的新字符串。（例如，&amp;quot;ACE&amp;quot;&amp;nbsp;是&amp;nbsp;&amp;quot;ABCDE&amp;quot;&amp;nbsp;的一个子序列，而&amp;nbsp;&amp;quot;AEC&amp;quot;&amp;nbsp;不是）
+题目数据保证答案符合 32 位带符号整数范围。
+&amp;nbsp;
+示例&amp;nbsp;1：
+输入：s = &amp;quot;rabbbit&amp;quot;, t = &amp;quot;rabbit&amp;quot; 输出：3 解释： 如下图所示, 有 3 种可以从 s 中得到 &amp;quot;rabbit&amp;quot; 的方案。 rabbbit rabbbit rabbbit 示例&amp;nbsp;2：
+输入：s = &amp;quot;babgbag&amp;quot;, t = &amp;quot;bag&amp;quot; 输出：5 解释： 如下图所示, 有 5 种可以从 s 中得到 &amp;quot;bag&amp;quot; 的方案。 babgbag babgbag babgbag babgbag babgbag &amp;nbsp;
+提示：
+0 &amp;lt;= s.length, t.length &amp;lt;= 1000 s 和 t 由英文字母组成 &amp;nbsp;</description></item><item><title>剑指 Offer II 098 路径的数目</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/2aoefn/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/2aoefn/</guid><description>剑指 Offer II 098 路径的数目 一个机器人位于一个 m x n&amp;nbsp;网格的左上角 （起始点在下图中标记为 &amp;ldquo;Start&amp;rdquo; ）。
+机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角（在下图中标记为 &amp;ldquo;Finish&amp;rdquo; ）。
+问总共有多少条不同的路径？
+&amp;nbsp;
+示例 1：
+输入：m = 3, n = 7 输出：28 示例 2：
+输入：m = 3, n = 2 输出：3 解释： 从左上角开始，总共有 3 条路径可以到达右下角。 1. 向右 -&amp;gt; 向下 -&amp;gt; 向下 2. 向下 -&amp;gt; 向下 -&amp;gt; 向右 3. 向下 -&amp;gt; 向右 -&amp;gt; 向下 示例 3：
+输入：m = 7, n = 3 输出：28 示例 4：
+输入：m = 3, n = 3 输出：6 &amp;nbsp;</description></item><item><title>剑指 Offer II 099 最小路径之和</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/0i0mdw/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/0i0mdw/</guid><description>剑指 Offer II 099 最小路径之和 给定一个包含非负整数的 m&amp;nbsp;x&amp;nbsp;n&amp;nbsp;网格&amp;nbsp;grid ，请找出一条从左上角到右下角的路径，使得路径上的数字总和为最小。
+说明：一个机器人每次只能向下或者向右移动一步。
+&amp;nbsp;
+示例 1：
+输入：grid = [[1,3,1],[1,5,1],[4,2,1]] 输出：7 解释：因为路径 1&amp;rarr;3&amp;rarr;1&amp;rarr;1&amp;rarr;1 的总和最小。 示例 2：
+输入：grid = [[1,2,3],[4,5,6]] 输出：12 &amp;nbsp;
+提示：
+m == grid.length n == grid[i].length 1 &amp;lt;= m, n &amp;lt;= 200 0 &amp;lt;= grid[i][j] &amp;lt;= 100 &amp;nbsp;
+注意：本题与主站 64&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/minimum-path-sum/
+func minPathSum(grid [][]int) int { } LeetCode题库地址 https://leetcode.cn/problems/0i0mDW</description></item><item><title>面试题 17.16 按摩师</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/the-masseuse-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/the-masseuse-lcci/</guid><description>面试题 17.16 按摩师 一个有名的按摩师会收到源源不断的预约请求，每个预约都可以选择接或不接。在每次预约服务之间要有休息时间，因此她不能接受相邻的预约。给定一个预约请求序列，替按摩师找到最优的预约集合（总预约时间最长），返回总的分钟数。
+注意：本题相对原题稍作改动
+&amp;nbsp;
+示例 1：
+输入： [1,2,3,1] 输出： 4 解释： 选择 1 号预约和 3 号预约，总时长 = 1 + 3 = 4。 示例 2：
+输入： [2,7,9,3,1] 输出： 12 解释： 选择 1 号预约、 3 号预约和 5 号预约，总时长 = 2 + 9 + 1 = 12。 示例 3：
+输入： [2,1,4,5,3,1,1,3] 输出： 12 解释： 选择 1 号预约、 3 号预约、 5 号预约和 8 号预约，总时长 = 2 + 4 + 3 + 3 = 12。 func massage(nums []int) int { } LeetCode题库地址 https://leetcode.</description></item><item><title>剑指 Offer II 100 三角形中最小路径之和</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/ilpe0q/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/ilpe0q/</guid><description>剑指 Offer II 100 三角形中最小路径之和 给定一个三角形 triangle ，找出自顶向下的最小路径和。
+每一步只能移动到下一行中相邻的结点上。相邻的结点 在这里指的是 下标 与 上一层结点下标 相同或者等于 上一层结点下标 + 1 的两个结点。也就是说，如果正位于当前行的下标 i ，那么下一步可以移动到下一行的下标 i 或 i + 1 。
+&amp;nbsp;
+示例 1：
+输入：triangle = [[2],[3,4],[6,5,7],[4,1,8,3]] 输出：11 解释：如下面简图所示： 2 3 4 6 5 7 4 1 8 3 自顶向下的最小路径和为&amp;nbsp;11（即，2&amp;nbsp;+&amp;nbsp;3&amp;nbsp;+&amp;nbsp;5&amp;nbsp;+&amp;nbsp;1&amp;nbsp;= 11）。 示例 2：
+输入：triangle = [[-10]] 输出：-10 &amp;nbsp;
+提示：
+1 &amp;lt;= triangle.length &amp;lt;= 200 triangle[0].length == 1 triangle[i].length == triangle[i - 1].length + 1 -104 &amp;lt;= triangle[i][j] &amp;lt;= 104 &amp;nbsp;</description></item><item><title>剑指 Offer II 102 加减的目标值</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/yavdxd/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/yavdxd/</guid><description>剑指 Offer II 102 加减的目标值 给定一个正整数数组 nums 和一个整数 target 。
+向数组中的每个整数前添加&amp;nbsp;&amp;#39;+&amp;#39; 或 &amp;#39;-&amp;#39; ，然后串联起所有整数，可以构造一个 表达式 ：
+例如，nums = [2, 1] ，可以在 2 之前添加 &amp;#39;+&amp;#39; ，在 1 之前添加 &amp;#39;-&amp;#39; ，然后串联起来得到表达式 &amp;quot;+2-1&amp;quot; 。 返回可以通过上述方法构造的、运算结果等于 target 的不同 表达式 的数目。
+&amp;nbsp;
+示例 1：
+输入：nums = [1,1,1,1,1], target = 3 输出：5 解释：一共有 5 种方法让最终目标和为 3 。 -1 + 1 + 1 + 1 + 1 = 3 +1 - 1 + 1 + 1 + 1 = 3 +1 + 1 - 1 + 1 + 1 = 3 +1 + 1 + 1 - 1 + 1 = 3 +1 + 1 + 1 + 1 - 1 = 3 示例 2：</description></item><item><title>剑指 Offer II 103 最少的硬币数目</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/gam7ch/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/gam7ch/</guid><description>剑指 Offer II 103 最少的硬币数目 给定不同面额的硬币 coins 和一个总金额 amount。编写一个函数来计算可以凑成总金额所需的最少的硬币个数。如果没有任何一种硬币组合能组成总金额，返回&amp;nbsp;-1。
+你可以认为每种硬币的数量是无限的。
+&amp;nbsp;
+示例&amp;nbsp;1：
+输入：coins = [1, 2, 5], amount = 11 输出：3 解释：11 = 5 + 5 + 1 示例 2：
+输入：coins = [2], amount = 3 输出：-1 示例 3：
+输入：coins = [1], amount = 0 输出：0 示例 4：
+输入：coins = [1], amount = 1 输出：1 示例 5：
+输入：coins = [1], amount = 2 输出：2 &amp;nbsp;
+提示：
+1 &amp;lt;= coins.length &amp;lt;= 12 1 &amp;lt;= coins[i] &amp;lt;= 231 - 1 0 &amp;lt;= amount &amp;lt;= 104 &amp;nbsp;</description></item><item><title>剑指 Offer II 104 排列的数目</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/d0f0sv/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/d0f0sv/</guid><description>剑指 Offer II 104 排列的数目 给定一个由 不同&amp;nbsp;正整数组成的数组 nums ，和一个目标整数 target 。请从 nums 中找出并返回总和为 target 的元素组合的个数。数组中的数字可以在一次排列中出现任意次，但是顺序不同的序列被视作不同的组合。
+题目数据保证答案符合 32 位整数范围。
+&amp;nbsp;
+示例 1：
+输入：nums = [1,2,3], target = 4 输出：7 解释： 所有可能的组合为： (1, 1, 1, 1) (1, 1, 2) (1, 2, 1) (1, 3) (2, 1, 1) (2, 2) (3, 1) 请注意，顺序不同的序列被视作不同的组合。 示例 2：
+输入：nums = [9], target = 3 输出：0 &amp;nbsp;
+提示：
+1 &amp;lt;= nums.length &amp;lt;= 200 1 &amp;lt;= nums[i] &amp;lt;= 1000 nums 中的所有元素 互不相同 1 &amp;lt;= target &amp;lt;= 1000 &amp;nbsp;</description></item><item><title>面试题 17.21 直方图的水量</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/volume-of-histogram-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/volume-of-histogram-lcci/</guid><description>面试题 17.21 直方图的水量 给定一个直方图(也称柱状图)，假设有人从上面源源不断地倒水，最后直方图能存多少水量?直方图的宽度为 1。
+上面是由数组 [0,1,0,2,1,0,1,3,2,1,2,1] 表示的直方图，在这种情况下，可以接 6 个单位的水（蓝色部分表示水）。&amp;nbsp;感谢 Marcos 贡献此图。
+示例:
+输入: [0,1,0,2,1,0,1,3,2,1,2,1] 输出: 6 func trap(height []int) int { } LeetCode题库地址 https://leetcode.cn/problems/volume-of-histogram-lcci</description></item><item><title>面试题 17.23 最大黑方阵</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/max-black-square-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/max-black-square-lcci/</guid><description>面试题 17.23 最大黑方阵 给定一个方阵，其中每个单元(像素)非黑即白。设计一个算法，找出 4 条边皆为黑色像素的最大子方阵。
+返回一个数组 [r, c, size] ，其中&amp;nbsp;r,&amp;nbsp;c&amp;nbsp;分别代表子方阵左上角的行号和列号，size 是子方阵的边长。若有多个满足条件的子方阵，返回 r 最小的，若 r 相同，返回 c 最小的子方阵。若无满足条件的子方阵，返回空数组。
+示例 1:
+输入: [ &amp;nbsp; [1,0,1], &amp;nbsp; [0,0,1], &amp;nbsp; [0,0,1] ] 输出: [1,0,2] 解释: 输入中 0 代表黑色，1 代表白色，标粗的元素即为满足条件的最大子方阵 示例 2:
+输入: [ &amp;nbsp; [0,1,1], &amp;nbsp; [1,0,1], &amp;nbsp; [1,1,0] ] 输出: [0,0,1] 提示：
+matrix.length == matrix[0].length &amp;lt;= 200 func findSquare(matrix [][]int) []int { } LeetCode题库地址 https://leetcode.cn/problems/max-black-square-lcci</description></item><item><title>剑指 Offer II 107 矩阵中的距离</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/2bcmpm/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/2bcmpm/</guid><description>剑指 Offer II 107 矩阵中的距离 给定一个由 0 和 1 组成的矩阵 mat&amp;nbsp;，请输出一个大小相同的矩阵，其中每一个格子是 mat 中对应位置元素到最近的 0 的距离。
+两个相邻元素间的距离为 1 。
+&amp;nbsp;
+示例 1：
+输入：mat = [[0,0,0],[0,1,0],[0,0,0]] 输出：[[0,0,0],[0,1,0],[0,0,0]] 示例 2：
+输入：mat = [[0,0,0],[0,1,0],[1,1,1]] 输出：[[0,0,0],[0,1,0],[1,2,1]] &amp;nbsp;
+提示：
+m == mat.length n == mat[i].length 1 &amp;lt;= m, n &amp;lt;= 104 1 &amp;lt;= m * n &amp;lt;= 104 mat[i][j] is either 0 or 1. mat 中至少有一个 0&amp;nbsp; &amp;nbsp;
+注意：本题与主站 542&amp;nbsp;题相同：https://leetcode-cn.com/problems/01-matrix/
+func updateMatrix(mat [][]int) [][]int { } LeetCode题库地址 https://leetcode.cn/problems/2bCMpM</description></item><item><title>面试题 17.24 最大子矩阵</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/max-submatrix-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/max-submatrix-lcci/</guid><description>面试题 17.24 最大子矩阵 给定一个正整数、负整数和 0 组成的 N &amp;times; M&amp;nbsp;矩阵，编写代码找出元素总和最大的子矩阵。
+返回一个数组 [r1, c1, r2, c2]，其中 r1, c1 分别代表子矩阵左上角的行号和列号，r2, c2 分别代表右下角的行号和列号。若有多个满足条件的子矩阵，返回任意一个均可。
+注意：本题相对书上原题稍作改动
+示例：
+输入： [ &amp;nbsp; [-1,0], &amp;nbsp; [0,-1] ] 输出：[0,1,0,1] 解释：输入中标粗的元素即为输出所表示的矩阵 &amp;nbsp;
+说明：
+1 &amp;lt;= matrix.length, matrix[0].length &amp;lt;= 200 func getMaxMatrix(matrix [][]int) []int { } LeetCode题库地址 https://leetcode.cn/problems/max-submatrix-lcci</description></item><item><title>剑指 Offer II 112 最长递增路径</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/fptfwp/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/fptfwp/</guid><description>剑指 Offer II 112 最长递增路径 给定一个&amp;nbsp;m x n 整数矩阵&amp;nbsp;matrix ，找出其中 最长递增路径 的长度。
+对于每个单元格，你可以往上，下，左，右四个方向移动。 不能 在 对角线 方向上移动或移动到 边界外（即不允许环绕）。
+&amp;nbsp;
+示例 1：
+输入：matrix = [[9,9,4],[6,6,8],[2,1,1]] 输出：4 解释：最长递增路径为&amp;nbsp;[1, 2, 6, 9]。 示例 2：
+输入：matrix = [[3,4,5],[3,2,6],[2,2,1]] 输出：4 解释：最长递增路径是&amp;nbsp;[3, 4, 5, 6]。注意不允许在对角线方向上移动。 示例 3：
+输入：matrix = [[1]] 输出：1 &amp;nbsp;
+提示：
+m == matrix.length n == matrix[i].length 1 &amp;lt;= m, n &amp;lt;= 200 0 &amp;lt;= matrix[i][j] &amp;lt;= 231 - 1 &amp;nbsp;
+注意：本题与主站 329&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/longest-increasing-path-in-a-matrix/
+func longestIncreasingPath(matrix [][]int) int { } LeetCode题库地址 https://leetcode.</description></item><item><title>【2022-12-22每日一题】1799. N 次操作后的最大分数和[Hard]</title><link>/study/leetcode/maximize-score-after-n-operations/</link><pubDate>Thu, 22 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/maximize-score-after-n-operations/</guid><description>2022-12-22每日一题：1799. N 次操作后的最大分数和 难度：Hard
+标签：位运算 、 数组 、 数学 、 动态规划 、 回溯 、 状态压缩 、 数论
+给你 nums ，它是一个大小为 2 * n 的正整数数组。你必须对这个数组执行 n 次操作。
+在第 i 次操作时（操作编号从 1 开始），你需要：
+选择两个元素 x 和 y 。 获得分数 i * gcd(x, y) 。 将 x 和 y 从 nums 中删除。 请你返回 n 次操作后你能获得的分数和最大为多少。
+函数 gcd(x, y) 是 x 和 y 的最大公约数。
+示例 1：
+输入：nums = [1,2] 输出：1 解释：最优操作是： (1 * gcd(1, 2)) = 1 示例 2：</description></item><item><title>【2022-12-10每日一题】1691. 堆叠长方体的最大高度[Hard]</title><link>/study/leetcode/maximum-height-by-stacking-cuboids/</link><pubDate>Sat, 10 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/maximum-height-by-stacking-cuboids/</guid><description>2022-12-10每日一题：1691. 堆叠长方体的最大高度 难度：Hard
+标签：数组 、 动态规划 、 排序
+给你 n 个长方体 cuboids ，其中第 i 个长方体的长宽高表示为 cuboids[i] = [widthi, lengthi, heighti]（下标从 0 开始）。请你从 cuboids 选出一个 子集 ，并将它们堆叠起来。
+如果 widthi &lt;= widthj 且 lengthi &lt;= lengthj 且 heighti &lt;= heightj ，你就可以将长方体 i 堆叠在长方体 j 上。你可以通过旋转把长方体的长宽高重新排列，以将它放在另一个长方体上。
+返回 堆叠长方体 cuboids 可以得到的 最大高度 。
+示例 1：
+输入：cuboids = [[50,45,20],[95,37,53],[45,23,12]] 输出：190 解释： 第 1 个长方体放在底部，53x37 的一面朝下，高度为 95 。 第 0 个长方体放在中间，45x20 的一面朝下，高度为 50 。 第 2 个长方体放在上面，23x12 的一面朝下，高度为 45 。 总高度是 95 + 50 + 45 = 190 。 示例 2：</description></item><item><title>【2022-12-05每日一题】1687. 从仓库到码头运输箱子[Hard]</title><link>/study/leetcode/delivering-boxes-from-storage-to-ports/</link><pubDate>Mon, 05 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/delivering-boxes-from-storage-to-ports/</guid><description>2022-12-05每日一题：1687. 从仓库到码头运输箱子 难度：Hard
+标签：线段树 、 队列 、 数组 、 动态规划 、 单调队列 、 堆（优先队列）
+你有一辆货运卡车，你需要用这一辆车把一些箱子从仓库运送到码头。这辆卡车每次运输有 箱子数目的限制 和 总重量的限制 。
+给你一个箱子数组 boxes 和三个整数 portsCount, maxBoxes 和 maxWeight ，其中 boxes[i] = [ports​​i​, weighti] 。
+ports​​i 表示第 i 个箱子需要送达的码头， weightsi 是第 i 个箱子的重量。 portsCount 是码头的数目。 maxBoxes 和 maxWeight 分别是卡车每趟运输箱子数目和重量的限制。 箱子需要按照 数组顺序 运输，同时每次运输需要遵循以下步骤：
+卡车从 boxes 队列中按顺序取出若干个箱子，但不能违反 maxBoxes 和 maxWeight 限制。 对于在卡车上的箱子，我们需要 按顺序 处理它们，卡车会通过 一趟行程 将最前面的箱子送到目的地码头并卸货。如果卡车已经在对应的码头，那么不需要 额外行程 ，箱子也会立马被卸货。 卡车上所有箱子都被卸货后，卡车需要 一趟行程 回到仓库，从箱子队列里再取出一些箱子。 卡车在将所有箱子运输并卸货后，最后必须回到仓库。
+请你返回将所有箱子送到相应码头的 最少行程 次数。
+示例 1：
+输入：boxes = [[1,1],[2,1],[1,1]], portsCount = 2, maxBoxes = 3, maxWeight = 3 输出：4 解释：最优策略如下： - 卡车将所有箱子装上车，到达码头 1 ，然后去码头 2 ，然后再回到码头 1 ，最后回到仓库，总共需要 4 趟行程。 所以总行程数为 4 。 注意到第一个和第三个箱子不能同时被卸货，因为箱子需要按顺序处理（也就是第二个箱子需要先被送到码头 2 ，然后才能处理第三个箱子）。 示例 2：</description></item><item><title>【2022-12-04每日一题】1774. 最接近目标价格的甜点成本[Medium]</title><link>/study/leetcode/closest-dessert-cost/</link><pubDate>Sun, 04 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/closest-dessert-cost/</guid><description>2022-12-04每日一题：1774. 最接近目标价格的甜点成本 难度：Medium
+标签：数组 、 动态规划 、 回溯
+你打算做甜点，现在需要购买配料。目前共有 n 种冰激凌基料和 m 种配料可供选购。而制作甜点需要遵循以下几条规则：
+必须选择 一种 冰激凌基料。 可以添加 一种或多种 配料，也可以不添加任何配料。 每种类型的配料 最多两份 。 给你以下三个输入：
+baseCosts ，一个长度为 n 的整数数组，其中每个 baseCosts[i] 表示第 i 种冰激凌基料的价格。 toppingCosts，一个长度为 m 的整数数组，其中每个 toppingCosts[i] 表示 一份 第 i 种冰激凌配料的价格。 target ，一个整数，表示你制作甜点的目标价格。 你希望自己做的甜点总成本尽可能接近目标价格 target 。
+返回最接近 target 的甜点成本。如果有多种方案，返回 成本相对较低 的一种。
+示例 1：
+输入：baseCosts = [1,7], toppingCosts = [3,4], target = 10 输出：10 解释：考虑下面的方案组合（所有下标均从 0 开始）： - 选择 1 号基料：成本 7 - 选择 1 份 0 号配料：成本 1 x 3 = 3 - 选择 0 份 1 号配料：成本 0 x 4 = 0 总成本：7 + 3 + 0 = 10 。 示例 2：</description></item><item><title>【2022-11-28每日一题】813. 最大平均值和的分组[Medium]</title><link>/study/leetcode/largest-sum-of-averages/</link><pubDate>Mon, 28 Nov 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/largest-sum-of-averages/</guid><description>2022-11-28每日一题：813. 最大平均值和的分组 难度：Medium
+标签：数组 、 动态规划 、 前缀和
+给定数组&amp;nbsp;nums&amp;nbsp;和一个整数&amp;nbsp;k&amp;nbsp;。我们将给定的数组&amp;nbsp;nums&amp;nbsp;分成 最多&amp;nbsp;k&amp;nbsp;个相邻的非空子数组 。&amp;nbsp;分数 由每个子数组内的平均值的总和构成。
+注意我们必须使用 nums 数组中的每一个数进行分组，并且分数不一定需要是整数。
+返回我们所能得到的最大 分数 是多少。答案误差在&amp;nbsp;10-6&amp;nbsp;内被视为是正确的。
+&amp;nbsp;
+示例 1:
+输入: nums = [9,1,2,3,9], k = 3 输出: 20.00000 解释: nums 的最优分组是[9], [1, 2, 3], [9]. 得到的分数是 9 + (1 + 2 + 3) / 3 + 9 = 20. 我们也可以把 nums 分成[9, 1], [2], [3, 9]. 这样的分组得到的分数为 5 + 2 + 6 = 13, 但不是最大值. 示例 2:
+输入: nums = [1,2,3,4,5,6,7], k = 4 输出: 20.</description></item><item><title>【2022-11-21每日一题】808. 分汤[Medium]</title><link>/study/leetcode/soup-servings/</link><pubDate>Mon, 21 Nov 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/soup-servings/</guid><description>2022-11-21每日一题：808. 分汤 难度：Medium
+标签：数学 、 动态规划 、 概率与统计
+有&amp;nbsp;A&amp;nbsp;和&amp;nbsp;B 两种类型&amp;nbsp;的汤。一开始每种类型的汤有&amp;nbsp;n&amp;nbsp;毫升。有四种分配操作：
+提供 100ml 的 汤A 和 0ml 的 汤B 。 提供 75ml 的 汤A 和 25ml 的 汤B 。 提供 50ml 的 汤A 和 50ml 的 汤B 。 提供 25ml 的 汤A 和 75ml 的 汤B 。 当我们把汤分配给某人之后，汤就没有了。每个回合，我们将从四种概率同为 0.25 的操作中进行分配选择。如果汤的剩余量不足以完成某次操作，我们将尽可能分配。当两种类型的汤都分配完时，停止操作。
+注意&amp;nbsp;不存在先分配 100 ml 汤B 的操作。
+需要返回的值：&amp;nbsp;汤A&amp;nbsp;先分配完的概率 +&amp;nbsp;&amp;nbsp;汤A和汤B&amp;nbsp;同时分配完的概率 / 2。返回值在正确答案&amp;nbsp;10-5&amp;nbsp;的范围内将被认为是正确的。
+&amp;nbsp;
+示例 1:
+输入: n = 50 输出: 0.62500 解释:如果我们选择前两个操作，A 首先将变为空。 对于第三个操作，A 和 B 会同时变为空。 对于第四个操作，B 首先将变为空。 所以 A 变为空的总概率加上 A 和 B 同时变为空的概率的一半是 0.</description></item><item><title>【2022-11-20每日一题】799. 香槟塔[Medium]</title><link>/study/leetcode/champagne-tower/</link><pubDate>Sun, 20 Nov 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/champagne-tower/</guid><description>2022-11-20每日一题：799. 香槟塔 难度：Medium
+标签：动态规划
+我们把玻璃杯摆成金字塔的形状，其中&amp;nbsp;第一层&amp;nbsp;有 1 个玻璃杯， 第二层&amp;nbsp;有 2 个，依次类推到第 100 层，每个玻璃杯 (250ml) 将盛有香槟。
+从顶层的第一个玻璃杯开始倾倒一些香槟，当顶层的杯子满了，任何溢出的香槟都会立刻等流量的流向左右两侧的玻璃杯。当左右两边的杯子也满了，就会等流量的流向它们左右两边的杯子，依次类推。（当最底层的玻璃杯满了，香槟会流到地板上）
+例如，在倾倒一杯香槟后，最顶层的玻璃杯满了。倾倒了两杯香槟后，第二层的两个玻璃杯各自盛放一半的香槟。在倒三杯香槟后，第二层的香槟满了 - 此时总共有三个满的玻璃杯。在倒第四杯后，第三层中间的玻璃杯盛放了一半的香槟，他两边的玻璃杯各自盛放了四分之一的香槟，如下图所示。
+现在当倾倒了非负整数杯香槟后，返回第 i 行 j&amp;nbsp;个玻璃杯所盛放的香槟占玻璃杯容积的比例（ i 和 j&amp;nbsp;都从0开始）。
+&amp;nbsp;
+示例 1: 输入: poured(倾倒香槟总杯数) = 1, query_glass(杯子的位置数) = 1, query_row(行数) = 1 输出: 0.00000 解释: 我们在顶层（下标是（0，0））倒了一杯香槟后，没有溢出，因此所有在顶层以下的玻璃杯都是空的。 示例 2: 输入: poured(倾倒香槟总杯数) = 2, query_glass(杯子的位置数) = 1, query_row(行数) = 1 输出: 0.50000 解释: 我们在顶层（下标是（0，0）倒了两杯香槟后，有一杯量的香槟将从顶层溢出，位于（1，0）的玻璃杯和（1，1）的玻璃杯平分了这一杯香槟，所以每个玻璃杯有一半的香槟。 示例 3:
+输入: poured = 100000009, query_row = 33, query_glass = 17 输出: 1.00000 &amp;nbsp;
+提示:
+0 &amp;lt;=&amp;nbsp;poured &amp;lt;= 109 0 &amp;lt;= query_glass &amp;lt;= query_row&amp;nbsp;&amp;lt; 100 方法一：模拟或动态规划 代码 func champagneTower(poured int, query_row int, query_glass int) float64 { row := []float64{float64(poured)} for i := 1; i &amp;lt;= query_row; i++ { newRow := make([]float64, i + 1) for j, volume := range row { if volume &amp;gt; 1 { volume -= 1 newRow[j] += volume/2 newRow[j+1] += volume/2 } } row = newRow } return math.</description></item><item><title>【2022-11-14每日一题】805. 数组的均值分割[Hard]</title><link>/study/leetcode/split-array-with-same-average/</link><pubDate>Mon, 14 Nov 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/split-array-with-same-average/</guid><description>2022-11-14每日一题：805. 数组的均值分割 难度：Hard
+标签：位运算 、 数组 、 数学 、 动态规划 、 状态压缩
+给定你一个整数数组&amp;nbsp;nums
+我们要将&amp;nbsp;nums&amp;nbsp;数组中的每个元素移动到&amp;nbsp;A&amp;nbsp;数组 或者&amp;nbsp;B&amp;nbsp;数组中，使得&amp;nbsp;A&amp;nbsp;数组和&amp;nbsp;B&amp;nbsp;数组不为空，并且&amp;nbsp;average(A) == average(B)&amp;nbsp;。
+如果可以完成则返回true&amp;nbsp;， 否则返回 false&amp;nbsp;&amp;nbsp;。
+注意：对于数组&amp;nbsp;arr&amp;nbsp;, &amp;nbsp;average(arr)&amp;nbsp;是&amp;nbsp;arr&amp;nbsp;的所有元素除以&amp;nbsp;arr&amp;nbsp;长度的和。
+&amp;nbsp;
+示例 1:
+输入: nums = [1,2,3,4,5,6,7,8] 输出: true 解释: 我们可以将数组分割为 [1,4,5,8] 和 [2,3,6,7], 他们的平均值都是4.5。 示例 2:
+输入: nums = [3,1] 输出: false &amp;nbsp;
+提示:
+1 &amp;lt;= nums.length &amp;lt;= 30 0 &amp;lt;= nums[i] &amp;lt;= 104 方法一：折半查找 详细思路过程见官方题解，这里只做个人刷题记录，方便后续查询阅读
+题解一 题解二 func splitArraySameAverage(nums []int) bool { n := len(nums) if n == 1 { // 不符合A, B都有元素 return false } // 求和 sum := 0 for _, v := range nums { sum += v } // 预处理数组 for i, v := range nums { nums[i] = v * n - sum } m := n &amp;gt;&amp;gt; 1 // 相当于 n/2 left := map[int]bool{} // 左侧处理 for i := 1; i &amp;lt; 1&amp;lt;&amp;lt;m; i++ { total := 0 for j, v := range nums { if i&amp;gt;&amp;gt;j&amp;amp;1 &amp;gt; 0 { total += v } } if total == 0 { return true } left[total] = true } // 右半部分处理 rsum := 0 for _, v := range nums[m:] { rsum += v } for i := 1; i &amp;lt; 1&amp;lt;&amp;lt;(n-m); i++ { total := 0 for j, v := range nums[m:] { if i&amp;gt;&amp;gt;j&amp;amp;1 &amp;gt; 0 { total += v } } // rsum !</description></item><item><title>【2022-11-12每日一题】790. 多米诺和托米诺平铺[Medium]</title><link>/study/leetcode/domino-and-tromino-tiling/</link><pubDate>Sat, 12 Nov 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/domino-and-tromino-tiling/</guid><description>2022-11-12每日一题：790. 多米诺和托米诺平铺 难度：Medium
+标签：动态规划
+有两种形状的瓷砖：一种是&amp;nbsp;2 x 1 的多米诺形，另一种是形如&amp;nbsp;"L" 的托米诺形。两种形状都可以旋转。
+给定整数 n ，返回可以平铺&amp;nbsp;2 x n 的面板的方法的数量。返回对&amp;nbsp;109&amp;nbsp;+ 7&amp;nbsp;取模&amp;nbsp;的值。
+平铺指的是每个正方形都必须有瓷砖覆盖。两个平铺不同，当且仅当面板上有四个方向上的相邻单元中的两个，使得恰好有一个平铺有一个瓷砖占据两个正方形。
+&amp;nbsp;
+示例 1:
+输入: n = 3 输出: 5 解释: 五种不同的方法如上所示。 示例 2:
+输入: n = 1 输出: 1 &amp;nbsp;
+提示：
+1 &amp;lt;= n &amp;lt;= 1000 方法一：动态规划 详细思路过程见官方题解，这里只做个人刷题记录，方便后续查询阅读
+代码 func numTilings(n int) int { const mod int = 1e9+7 dp := make([][4]int, n+1) dp[0][3] = 1 for i := 1; i &amp;lt;= n; i++ { dp[i][0] = dp[i-1][3] // 一个正方形都没有被覆盖，记为状态 0 dp[i][1] = (dp[i-1][0] + dp[i-1][2])%mod// 只有上方的正方形被覆盖，记为状态 1 dp[i][2] = (dp[i-1][0] + dp[i-1][1])%mod// 只有下方的正方形被覆盖，记为状态 2 // 上下两个正方形都被覆盖，记为状态 3 dp[i][3] = (((dp[i-1][0] + dp[i-1][1])%mod + dp[i-1][2])%mod + dp[i-1][3])%mod } return dp[n][3] } 复杂度分析 时间复杂度：O(n)，其中 n 是总列数。</description></item><item><title>【2022-11-09每日一题】764. 最大加号标志[Medium]</title><link>/study/leetcode/largest-plus-sign/</link><pubDate>Wed, 09 Nov 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/largest-plus-sign/</guid><description>2022-11-09每日一题：764. 最大加号标志 难度：Medium
+标签：数组 、 动态规划
+在一个 n x n 的矩阵&amp;nbsp;grid&amp;nbsp;中，除了在数组&amp;nbsp;mines&amp;nbsp;中给出的元素为&amp;nbsp;0，其他每个元素都为&amp;nbsp;1。mines[i] = [xi, yi]表示&amp;nbsp;grid[xi][yi] == 0
+返回 &amp;nbsp;grid 中包含&amp;nbsp;1&amp;nbsp;的最大的 轴对齐 加号标志的阶数 。如果未找到加号标志，则返回 0 。
+一个&amp;nbsp;k&amp;nbsp;阶由&amp;nbsp;1&amp;nbsp;组成的 “轴对称”加号标志 具有中心网格&amp;nbsp;grid[r][c] == 1&amp;nbsp;，以及4个从中心向上、向下、向左、向右延伸，长度为&amp;nbsp;k-1，由&amp;nbsp;1&amp;nbsp;组成的臂。注意，只有加号标志的所有网格要求为 1 ，别的网格可能为 0 也可能为 1 。
+&amp;nbsp;
+示例 1：
+输入: n = 5, mines = [[4, 2]] 输出: 2 解释: 在上面的网格中，最大加号标志的阶只能是2。一个标志已在图中标出。 示例 2：
+输入: n = 1, mines = [[0, 0]] 输出: 0 解释: 没有加号标志，返回 0 。 &amp;nbsp;
+提示：
+1 &amp;lt;= n &amp;lt;= 500 1 &amp;lt;= mines.</description></item><item><title>【2022-10-28每日一题】907. 子数组的最小值之和[Medium]</title><link>/study/leetcode/sum-of-subarray-minimums/</link><pubDate>Fri, 28 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/sum-of-subarray-minimums/</guid><description>2022-10-28每日一题：907. 子数组的最小值之和 难度：Medium
+标签：栈 、 数组 、 动态规划 、 单调栈
+给定一个整数数组 arr，找到 min(b) 的总和，其中 b 的范围为 arr 的每个（连续）子数组。
+由于答案可能很大，因此 返回答案模 10^9 + 7 。
+示例 1：
+输入：arr = [3,1,2,4] 输出：17 解释： 子数组为 [3]，[1]，[2]，[4]，[3,1]，[1,2]，[2,4]，[3,1,2]，[1,2,4]，[3,1,2,4]。 最小值为 3，1，2，4，1，1，2，1，1，1，和为 17。 示例 2：
+输入：arr = [11,81,94,43,3] 输出：444 提示：
+1 &lt;= arr.length &lt;= 3 * 104 1 &lt;= arr[i] &lt;= 3 * 104 方法一：单调栈 官方优化版 const mod int = 1e9+7 func sumSubarrayMins(arr []int) int { n := len(arr) left, right := make([]int, n), make([]int, n) stack := []int{-1} // -1 为哨兵 for i := 0; i &amp;lt; n; i++ { for len(stack) &amp;gt; 1 &amp;amp;&amp;amp; arr[stack[len(stack)-1]] &amp;gt;= arr[i] { stack = stack[:len(stack)-1] } left[i] = i - stack[len(stack)-1] stack = append(stack, i) } stack = []int{n} for i := n - 1; i &amp;gt;= 0; i-- { for len(stack) &amp;gt; 1 &amp;amp;&amp;amp; arr[stack[len(stack)-1]] &amp;gt; arr[i] { stack = stack[:len(stack)-1] } right[i] = stack[len(stack)-1] - i stack = append(stack, i) } ans := 0 for i, x := range arr { ans = (ans + x * left[i] * right[i]) % mod } return ans } 延迟计算宽度 const mod int = 1e9+7 func sumSubarrayMins(arr []int) int { n := len(arr) left, right := make([]int, n), make([]int, n) stack := []int{-1} // -1 为哨兵 for i := 0; i &amp;lt; n; i++ { for len(stack) &amp;gt; 1 &amp;amp;&amp;amp; arr[stack[len(stack)-1]] &amp;gt;= arr[i] { stack = stack[:len(stack)-1] } left[i] = stack[len(stack)-1] stack = append(stack, i) } stack = []int{n} for i := n - 1; i &amp;gt;= 0; i-- { for len(stack) &amp;gt; 1 &amp;amp;&amp;amp; arr[stack[len(stack)-1]] &amp;gt; arr[i] { stack = stack[:len(stack)-1] } right[i] = stack[len(stack)-1] stack = append(stack, i) } ans := 0 for i, x := range arr { ans = (ans + x * (i - left[i]) * (right[i]-i)) % mod } return ans } 二次遍历变形 func sumSubarrayMins(arr []int) (ans int) { n := len(arr) left := make([]int, n) right := make([]int, n) for i := range right { right[i] = n } st := []int{-1} // -1 为哨兵，方便计算赋值 for i, x := range arr { for len(st) &amp;gt; 1 &amp;amp;&amp;amp; arr[st[len(st)-1]] &amp;gt;= x { right[st[len(st)-1]] = i // i 恰好是栈顶的右边界 st = st[:len(st)-1] } left[i] = st[len(st)-1] // 可以直接计算 i - st[len(st)-1] st = append(st, i) } for i, x := range arr { ans += x * (i - left[i]) * (right[i] - i) // 累加贡献 } return ans % (1e9 + 7) } 优化版本：一次遍历 func sumSubarrayMins(arr []int) (ans int) { arr = append(arr, -1) st := []int{-1} // 哨兵 for r, x := range arr { for len(st) &amp;gt; 1 &amp;amp;&amp;amp; arr[st[len(st)-1]] &amp;gt;= x { i := st[len(st)-1] st = st[:len(st)-1] ans += arr[i] * (i - st[len(st)-1]) * (r - i) // 累加贡献 } st = append(st, r) } return ans % (1e9 + 7) } 复杂度分析 时间复杂度：O(n)。 空间复杂度：O(n)。 方法二：动态规划 const mod int = 1e9 + 7 func sumSubarrayMins(arr []int) (ans int) { n := len(arr) dp := make([]int, n) stack := []int{} // 栈中保持数组索引 for i, x := range arr { // 移除栈顶比当前数大的所有数 for len(stack) &amp;gt; 0 &amp;amp;&amp;amp; arr[stack[len(stack)-1]] &amp;gt; x { stack = stack[:len(stack)-1] } k := i + 1 // 栈为空的k值 if len(stack) &amp;gt; 0 { k = i - stack[len(stack)-1] } dp[i] = k * x if len(stack) &amp;gt; 0 { dp[i] += dp[i-k] } ans = (ans+dp[i]) % mod stack = append(stack, i) } return ans } 复杂度分析 时间复杂度：O(n)。 空间复杂度：O(n)。 LeetCode题库地址 https://leetcode.</description></item><item><title>【2022-10-22每日一题】1235. 规划兼职工作[Hard]</title><link>/study/leetcode/maximum-profit-in-job-scheduling/</link><pubDate>Sat, 22 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/maximum-profit-in-job-scheduling/</guid><description>2022-10-22每日一题：1235. 规划兼职工作 难度：Hard
+标签：数组 、 二分查找 、 动态规划 、 排序
+你打算利用空闲时间来做兼职工作赚些零花钱。
+这里有&amp;nbsp;n&amp;nbsp;份兼职工作，每份工作预计从&amp;nbsp;startTime[i]&amp;nbsp;开始到&amp;nbsp;endTime[i]&amp;nbsp;结束，报酬为&amp;nbsp;profit[i]。
+给你一份兼职工作表，包含开始时间&amp;nbsp;startTime，结束时间&amp;nbsp;endTime&amp;nbsp;和预计报酬&amp;nbsp;profit&amp;nbsp;三个数组，请你计算并返回可以获得的最大报酬。
+注意，时间上出现重叠的 2 份工作不能同时进行。
+如果你选择的工作在时间&amp;nbsp;X&amp;nbsp;结束，那么你可以立刻进行在时间&amp;nbsp;X&amp;nbsp;开始的下一份工作。
+&amp;nbsp;
+示例 1：
+输入：startTime = [1,2,3,3], endTime = [3,4,5,6], profit = [50,10,40,70] 输出：120 解释： 我们选出第 1 份和第 4 份工作， 时间范围是 [1-3]+[3-6]，共获得报酬 120 = 50 + 70。 示例 2：
+输入：startTime = [1,2,3,4,6], endTime = [3,5,10,6,9], profit = [20,20,100,70,60] 输出：150 解释： 我们选择第 1，4，5 份工作。 共获得报酬 150 = 20 + 70 + 60。 示例 3：
+输入：startTime = [1,1,1], endTime = [2,3,4], profit = [5,6,4] 输出：6 &amp;nbsp;</description></item><item><title>【2022-10-18每日一题】902. 最大为 N 的数字组合[Hard]</title><link>/study/leetcode/numbers-at-most-n-given-digit-set/</link><pubDate>Tue, 18 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/numbers-at-most-n-given-digit-set/</guid><description>2022-10-18每日一题：902. 最大为 N 的数字组合 难度：Hard
+标签：数组 、 数学 、 字符串 、 二分查找 、 动态规划
+给定一个按&amp;nbsp;非递减顺序&amp;nbsp;排列的数字数组&amp;nbsp;digits&amp;nbsp;。你可以用任意次数&amp;nbsp;digits[i]&amp;nbsp;来写的数字。例如，如果&amp;nbsp;digits = ['1','3','5']，我们可以写数字，如&amp;nbsp;'13',&amp;nbsp;'551', 和&amp;nbsp;'1351315'。
+返回 可以生成的小于或等于给定整数 n 的正整数的个数&amp;nbsp;。
+&amp;nbsp;
+示例 1：
+输入：digits = ["1","3","5","7"], n = 100 输出：20 解释： 可写出的 20 个数字是： 1, 3, 5, 7, 11, 13, 15, 17, 31, 33, 35, 37, 51, 53, 55, 57, 71, 73, 75, 77. 示例 2：
+输入：digits = ["1","4","9"], n = 1000000000 输出：29523 解释： 我们可以写 3 个一位数字，9 个两位数字，27 个三位数字， 81 个四位数字，243 个五位数字，729 个六位数字， 2187 个七位数字，6561 个八位数字和 19683 个九位数字。 总共，可以使用D中的数字写出 29523 个整数。 示例 3:</description></item><item><title>【2022-10-14每日一题】940. 不同的子序列 II[Hard]</title><link>/study/leetcode/distinct-subsequences-ii/</link><pubDate>Fri, 14 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/distinct-subsequences-ii/</guid><description>2022-10-14每日一题：940. 不同的子序列 II 难度：Hard
+标签：字符串 、 动态规划
+给定一个字符串 s，计算 s 的 不同非空子序列 的个数。因为结果可能很大，所以返回答案需要对 10^9 + 7 取余 。
+字符串的 子序列 是经由原字符串删除一些（也可能不删除）字符但不改变剩余字符相对位置的一个新字符串。
+例如，"ace" 是 "abcde" 的一个子序列，但 "aec" 不是。 &amp;nbsp;
+示例 1：
+输入：s = "abc" 输出：7 解释：7 个不同的子序列分别是 "a", "b", "c", "ab", "ac", "bc", 以及 "abc"。 示例 2：
+输入：s = "aba" 输出：6 解释：6 个不同的子序列分别是 "a", "b", "ab", "ba", "aa" 以及 "aba"。 示例 3：
+输入：s = "aaa" 输出：3 解释：3 个不同的子序列分别是 "a", "aa" 以及 "aaa"。 &amp;nbsp;
+提示：
+1 &amp;lt;= s.</description></item><item><title>【2022-10-10每日一题】801. 使序列递增的最小交换次数[Hard]</title><link>/study/leetcode/minimum-swaps-to-make-sequences-increasing/</link><pubDate>Mon, 10 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/minimum-swaps-to-make-sequences-increasing/</guid><description>2022-10-10每日一题：801. 使序列递增的最小交换次数 难度：Hard
+标签：数组 、 动态规划
+我们有两个长度相等且不为空的整型数组&amp;nbsp;nums1&amp;nbsp;和&amp;nbsp;nums2&amp;nbsp;。在一次操作中，我们可以交换&amp;nbsp;nums1[i]&amp;nbsp;和&amp;nbsp;nums2[i]的元素。
+例如，如果 nums1 = [1,2,3,8] ， nums2 =[5,6,7,4] ，你可以交换 i = 3 处的元素，得到 nums1 =[1,2,3,4] 和 nums2 =[5,6,7,8] 。 返回 使 nums1 和 nums2 严格递增&amp;nbsp;所需操作的最小次数 。
+数组&amp;nbsp;arr&amp;nbsp;严格递增 且&amp;nbsp;&amp;nbsp;arr[0] &amp;lt; arr[1] &amp;lt; arr[2] &amp;lt; ... &amp;lt; arr[arr.length - 1]&amp;nbsp;。
+注意：
+用例保证可以实现操作。 &amp;nbsp;
+示例 1:
+输入: nums1 = [1,3,5,4], nums2 = [1,2,3,7] 输出: 1 解释: 交换 A[3] 和 B[3] 后，两个数组如下: A = [1, 3, 5, 7] ， B = [1, 2, 3, 4] 两个数组均为严格递增的。 示例 2:</description></item><item><title>【2022-09-28每日一题】面试题 17.09. 第 k 个数[Medium]</title><link>/study/leetcode/get-kth-magic-number-lcci/</link><pubDate>Wed, 28 Sep 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/get-kth-magic-number-lcci/</guid><description>2022-09-28每日一题：面试题 17.09. 第 k 个数 难度：Medium
+标签：哈希表 、 数学 、 动态规划 、 堆（优先队列）
+有些数的素因子只有 3，5，7，请设计一个算法找出第 k 个数。注意，不是必须有这些素因子，而是必须不包含其他的素因子。例如，前几个数按顺序应该是 1，3，5，7，9，15，21。
+示例 1:
+输入: k = 5 输出: 9 方法一：堆（优先队列） // 小顶堆 type hp struct { sort.IntSlice } func (h hp) Less(i, j int) bool { return h.IntSlice[i] &amp;lt; h.IntSlice[j] } func (h *hp) Push(v interface{}) {h.IntSlice = append(h.IntSlice, v.(int))} func (h *hp) Pop() (v interface{}) { v, h.IntSlice = h.IntSlice[h.Len()-1], h.IntSlice[:h.Len()-1]; return v} var factors = []int{3, 5, 7} func getKthMagicNumber(k int) int { h := hp{sort.</description></item><item><title>【2022-09-25每日一题】788. 旋转数字[Medium]</title><link>/study/leetcode/rotated-digits/</link><pubDate>Sun, 25 Sep 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/rotated-digits/</guid><description>2022-09-25每日一题：788. 旋转数字 难度：Medium
+标签：数学 、 动态规划
+我们称一个数 X 为好数, 如果它的每位数字逐个地被旋转 180 度后，我们仍可以得到一个有效的，且和 X 不同的数。要求每位数字都要被旋转。
+如果一个数的每位数字被旋转以后仍然还是一个数字，&amp;nbsp;则这个数是有效的。0, 1, 和 8 被旋转后仍然是它们自己；2 和 5 可以互相旋转成对方（在这种情况下，它们以不同的方向旋转，换句话说，2 和 5 互为镜像）；6 和 9 同理，除了这些以外其他的数字旋转以后都不再是有效的数字。
+现在我们有一个正整数&amp;nbsp;N, 计算从&amp;nbsp;1 到&amp;nbsp;N 中有多少个数&amp;nbsp;X 是好数？
+&amp;nbsp;
+示例：
+输入: 10 输出: 4 解释: 在[1, 10]中有四个好数： 2, 5, 6, 9。 注意 1 和 10 不是好数, 因为他们在旋转之后不变。 &amp;nbsp;
+提示：
+N&amp;nbsp;的取值范围是&amp;nbsp;[1, 10000]。 方法一：枚举 详细思路过程见官方题解，这里只做个人刷题记录，方便后续查询阅读
+官方check数组法 // 写法一： // 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 var check = []int{0, 0, 1,-1,-1, 1, 1,-1, 0, 1} // 反转后0代码原样, 1有对应数字，-1 无效 func rotatedDigits(n int) (ans int) { for i := 1; i &amp;lt;= n; i++ { s := strconv.</description></item><item><title>【2022-09-20每日一题】698. 划分为k个相等的子集</title><link>/study/leetcode/partition-to-k-equal-sum-subsets/</link><pubDate>Tue, 20 Sep 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/partition-to-k-equal-sum-subsets/</guid><description>2022-09-20每日一题：698. 划分为k个相等的子集 难度：Medium
+标签：位运算 、 记忆化搜索 、 数组 、 动态规划 、 回溯 、 状态压缩
+给定一个整数数组&amp;nbsp;&amp;nbsp;nums 和一个正整数 k，找出是否有可能把这个数组分成 k 个非空子集，其总和都相等。
+&amp;nbsp;
+示例 1：
+输入： nums = [4, 3, 2, 3, 5, 2, 1], k = 4 输出： True 说明： 有可能将其分成 4 个子集（5），（1,4），（2,3），（2,3）等于总和。 示例 2:
+输入: nums = [1,2,3,4], k = 3 输出: false &amp;nbsp;
+提示：
+1 &amp;lt;= k &amp;lt;= len(nums) &amp;lt;= 16 0 &amp;lt; nums[i] &amp;lt; 10000 每个元素的频率在 [1,4] 范围内 方法一：状态压缩 + 记忆化搜索 详细思路过程见官方题解，这里只做个人刷题记录，方便后续查询阅读
+思路与算法 func canPartitionKSubsets(nums []int, k int) bool { all := 0 for _, num := range nums { all += num } // 不能整除 if all%k &amp;gt; 0 { return false } sort.</description></item><item><title>【2022-09-06每日一题】828. 统计子串中的唯一字符</title><link>/study/leetcode/count-unique-characters-of-all-substrings-of-a-given-string/</link><pubDate>Tue, 06 Sep 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/count-unique-characters-of-all-substrings-of-a-given-string/</guid><description>2022-09-06每日一题：828. 统计子串中的唯一字符 难度：Hard 标签：哈希表 、 字符串 、 动态规划 我们定义了一个函数 countUniqueChars(s) 来统计字符串 s 中的唯一字符，并返回唯一字符的个数。
+例如：s = "LEETCODE" ，则其中 "L", "T","C","O","D" 都是唯一字符，因为它们只出现一次，所以 countUniqueChars(s) = 5 。
+本题将会给你一个字符串 s ，我们需要返回 countUniqueChars(t) 的总和，其中 t 是 s 的子字符串。输入用例保证返回值为&amp;nbsp;32 位整数。
+注意，某些子字符串可能是重复的，但你统计时也必须算上这些重复的子字符串（也就是说，你必须统计 s 的所有子字符串中的唯一字符）。
+&amp;nbsp;
+示例 1：
+输入: s = "ABC" 输出: 10 解释: 所有可能的子串为："A","B","C","AB","BC" 和 "ABC"。 其中，每一个子串都由独特字符构成。 所以其长度总和为：1 + 1 + 1 + 2 + 2 + 3 = 10 示例 2：
+输入: s = "ABA" 输出: 8 解释: 除了 countUniqueChars("ABA") = 1 之外，其余与示例 1 相同。 示例 3：</description></item><item><title>【2022-09-03每日一题】646. 最长数对链</title><link>/study/leetcode/maximum-length-of-pair-chain/</link><pubDate>Sat, 03 Sep 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/maximum-length-of-pair-chain/</guid><description>2022-09-03每日一题：646. 最长数对链 难度：Medium 标签：贪心 、 数组 、 动态规划 、 排序 给出 n 个数对。 在每一个数对中，第一个数字总是比第二个数字小。
+现在，我们定义一种跟随关系，当且仅当 b &lt; c 时，数对(c, d) 才可以跟在 (a, b) 后面。我们用这种形式来构造一个数对链。
+给定一个数对集合，找出能够形成的最长数对链的长度。你不需要用到所有的数对，你可以以任何顺序选择其中的一些数对来构造。
+示例：
+输入：[[1,2], [2,3], [3,4]] 输出：2 解释：最长的数对链是 [1,2] -> [3,4] 提示：
+给出数对的个数在 [1, 1000] 范围内。 ### 方法一：动态规划 func findLongestChain(pairs [][]int) int { sort.Slice(pairs, func(i, j int) bool { return pairs[i][0] &amp;lt; pairs[j][0] }) n := len(pairs) dp := make([]int, n) for i, p := range pairs { dp[i] = 1 // 初始化时，dp 需要全部赋值为 1 for j, q := range pairs[:i] { if p[0] &amp;gt; q[1] { dp[i] = max(dp[i], dp[j] + 1) } } } return dp[n-1] } func max(a, b int) int { if a &amp;gt; b { return a } return b } 复杂度分析 时间复杂度：O(n^2)，其中 n 为 pairs 的长度。排序的时间复杂度为O(nlogn)，两层 for 循环的时间复杂度为 O(n^2)。</description></item><item><title>第八课动态规划</title><link>/study/batj%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95/8.%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</link><pubDate>Sat, 20 Nov 2021 17:18:16 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/batj%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95/8.%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</guid><description>70. 爬楼梯 class Solution { public: int climbStairs(int n) { std::vector&amp;lt;int&amp;gt; dp(n + 3, 0); dp[1] = 1; dp[2] = 1; for (int i = 3; i &amp;lt;= n; i++) { dp[i] = dp[i - 1] + dp[i - 2]; } return dp[n]; } }; 198. 打家劫舍 class Solution { public: int rob(vector&amp;lt;int&amp;gt;&amp;amp; nums) { if (nums.size() == 0) { return 0; } if (nums.size() == 1) { return nums[0]; } //设第一个房间的最优解dp[i] std::vector&amp;lt;int&amp;gt; dp(nums.size(), 0); dp[0] = nums[0]; dp[1] = std::max(nums[0], nums[1]); for (int i = 2; i &amp;lt; nums.</description></item></channel></rss>

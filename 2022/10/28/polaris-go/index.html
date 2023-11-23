@@ -1,0 +1,168 @@
+<!doctype html><html lang=zh dir=ltr><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>polaris-go 源码走读 | lbbniu</title>
+<meta name=generator content="Hugo Eureka 0.9.3"><link rel=stylesheet href=/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css><script defer src=/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js></script><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" as=style onload='this.onload=null,this.rel="stylesheet"'><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/github.min.css media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/php.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/java.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/go.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/python.min.js crossorigin></script><link rel=stylesheet href=/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css media=print onload='this.media="all",this.onload=null'><script defer type=text/javascript src=/js/fontawesome.min.35973bea57658ef0dd22ad59ea4642b6c8c67af62bed8659ac326d284ef285a6657cdbcf57d3b2910e7e992f2b20426e.js></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css integrity=sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js integrity=sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY crossorigin></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script><script defer src=https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js integrity=sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0 crossorigin></script><link rel=icon type=image/png sizes=32x32 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_32x32_fill_box_center_3.png><link rel=apple-touch-icon sizes=180x180 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_180x180_fill_box_center_3.png><meta name=description content="描述"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"文章列表","item":"/post/"},{"@type":"ListItem","position":2,"name":"polaris-go 源码走读","item":"/2022/10/28/polaris-go/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/2022/10/28/polaris-go/"},"headline":"polaris-go 源码走读 | lbbniu","datePublished":"2022-10-28T15:20:00+08:00","dateModified":"2023-11-23T18:27:23+08:00","wordCount":673,"author":{"@type":"Person","name":["lbbniu"]},"publisher":{"@type":"Person","name":"lbbniu","logo":{"@type":"ImageObject","url":"/images/icon.gif"}},"description":"描述"}</script><meta property="og:title" content="polaris-go 源码走读 | lbbniu"><meta property="og:type" content="article"><meta property="og:image" content="/images/icon.png"><meta property="og:url" content="/2022/10/28/polaris-go/"><meta property="og:description" content="描述"><meta property="og:locale" content="zh"><meta property="og:site_name" content="lbbniu"><meta property="article:published_time" content="2022-10-28T15:20:00+08:00"><meta property="article:modified_time" content="2023-11-23T18:27:23+08:00"><meta property="article:section" content="post"><meta property="article:tag" content="polaris"><body class="flex min-h-screen flex-col"><header class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"><div class="mx-auto w-full max-w-screen-xl"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=="Auto"||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName("html")[0].classList.add("dark")</script><nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0"><a href=/ class="me-6 text-primary-text text-xl font-bold">lbbniu</a>
+<button id=navbar-btn class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+<i class="fas fa-bars"></i></button><div id=target class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20"><div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0"><a href=/post/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">文章</a>
+<a href=/cloud-native/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">云原生</a>
+<a href=/study/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">算法学习</a>
+<a href=/docs/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">Go学习训练营</a>
+<a href=/tags/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">标签</a></div><div class=flex><div class="relative pt-4 md:pt-0"><div class="cursor-pointer hover:text-eureka" id=lightDarkMode><i class="fas fa-adjust"></i></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id=is-open></div><div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40" id=lightDarkOptions><span class="px-4 py-1 hover:text-eureka" name=Light>浅色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Dark>深色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Auto>自动</span></div></div></div></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id=is-open-mobile></div></nav><script>let element=document.getElementById("lightDarkMode");storageColorScheme==null||storageColorScheme=="Auto"?document.addEventListener("DOMContentLoaded",()=>{window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",switchDarkMode)}):storageColorScheme=="Light"?(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","sun"),element.firstElementChild.classList.add("fa-sun")):storageColorScheme=="Dark"&&(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","moon"),element.firstElementChild.classList.add("fa-moon")),document.addEventListener("DOMContentLoaded",()=>{getcolorscheme(),switchBurger()})</script></div></header><main class="grow pt-16"><div class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8"><div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12"><div class="bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"><article class=prose><h1 class=mb-4>polaris-go 源码走读</h1><div class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"><div class="me-6 my-2"><i class="fas fa-calendar me-1"></i>
+<span>2022-10-28</span></div><div class="me-6 my-2"><i class="fas fa-clock me-1"></i>
+<span>4分钟阅读时长</span></div><div class="me-6 my-2"><i class="fas fa-folder me-1"></i>
+<a href=/categories/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/ class=hover:text-eureka>源码分析</a></div></div><h2 id=provider>provider</h2><h3 id=实例化providerapi>实例化ProviderAPI</h3><ul><li>NewProviderAPI() -> 根据默认配置文件<code>./polaris.yaml</code> 实例化<ul><li>api.newProviderAPI->api.newProviderAPIByConfig->api.InitContextByConfig->[api.newProviderAPIByContext]-><code>&amp;providerAPI{rawAPI: p}</code></li></ul></li><li>NewProviderAPIByFile(path string) -> 根据指定配置文件实例化<ul><li>api.newProviderAPIByFile->api.InitContextByFile->api.InitContextByStream->api.InitContextByConfig->[api.newProviderAPIByContext]-><code>&amp;providerAPI{rawAPI: p}</code></li></ul></li><li>NewProviderAPIByConfig(cfg config.Configuration) -> 根据指定配置实例化<ul><li>api.newProviderAPIByConfig->api.InitContextByConfig->[api.newProviderAPIByContext]</li></ul></li><li>NewProviderAPIByContext(context api.SDKContext) -> 根据指定<code>api.SDKContext</code>实例化<ul><li>api.newProviderAPIByContext-><code>&amp;providerAPI{rawAPI: p}</code></li></ul></li><li>NewProviderAPIByAddress(address &mldr;string) -> 根据指定 <code>polaris-server</code> 地址实例化<ul><li>api.newProviderAPIByAddress->[config.NewDefaultConfiguration]->api.newProviderAPIByConfig->api.InitContextByConfig->[api.newProviderAPIByContext]-><code>&amp;providerAPI{rawAPI: p}</code></li></ul></li></ul><p>以上所有方法最终都会走到<code>api.newProviderAPIByContex</code>方法, 然后返回<code>&amp;providerAPI{rawAPI: p}</code></p><p>![image-20221104120449226](/Users/lbbniu/Library/Application Support/typora-user-images/image-20221104120449226.png)</p><h3 id=相关接口定义>相关接口定义</h3><pre><code class=language-go>// ProviderAPI CL5服务端API的主接口
+type ProviderAPI interface {
+	// RegisterInstance
+	// minimum supported version of polaris-server is v1.10.0
+	RegisterInstance(instance *InstanceRegisterRequest) (*model.InstanceRegisterResponse, error)
+	// Deregister synchronize the anti registration service
+	Deregister(instance *InstanceDeRegisterRequest) error
+	// Destroy the api is destroyed and cannot be called again
+	Destroy()
+}
+</code></pre><h4 id=registerinstance>RegisterInstance</h4><pre><code class=language-go>// providerAPI 调用者对外函数实现
+type providerAPI struct {
+	rawAPI api.ProviderAPI
+}
+
+func (p *providerAPI) RegisterInstance(instance *InstanceRegisterRequest)
+  p.rawAPI.RegisterInstance((*api.InstanceRegisterRequest)(instance))
+	c.context.GetEngine().SyncRegisterV2(&amp;instance.InstanceRegisterRequest)
+	  request.SetDefaultTTL() // 设置默认ttl
+	  // 同步进行服务注册
+	  e.doSyncRegister(request, registerstate.CreateRegisterV2Header())
+	    data.BuildControlParam(instance, e.configuration, param) // build 实例参数
+        data.RetrySyncCall(&quot;register&quot;, ... // 带重试机制
+          // connector proxy 方法
+          e.connector.RegisterInstance(request.(*model.InstanceRegisterRequest), header)  
+            p.ServerConnector.RegisterInstance(req, header) // serverconnector plugin
+               conn, err := g.connManager.GetConnection(opKey, config.DiscoverCluster) // 获取server连接
+               namingClient := namingpb.NewPolarisGRPCClient(network.ToGRPCConn(conn.Conn)) // grpc 客户端
+               reqProto := registerRequestToProto(req) // 返回 namingpb.Instance 类型
+               pbResp, err := namingClient.RegisterInstance(ctx, reqProto) // grpc 调用完成服务注册
+	  // 心跳上报以及出错重新同步进行服务注册
+	  e.registerStates.PutRegister(request, e.doSyncRegister, e.SyncHeartbeat)
+        // regis = e.doSyncRegister, beat = e.SyncHeartbeat
+        go c.runHeartbeat(ctx, state, regis, beat)
+          ticker := time.NewTicker(time.Duration(*instance.TTL) * time.Second)
+          &lt;-ticker.C // 定时上报健康状态
+            beat(hbReq) // e.SyncHeartbeat(hbReq)
+              // connector proxy 方法
+              e.connector.Heartbeat(request.(*model.InstanceHeartbeatRequest))
+                p.ServerConnector.Heartbeat(instance) // serverconnector plugin
+                  conn, err := g.connManager.GetConnection(opKey, config.HealthCheckCluster) 
+                  namingClient := namingpb.NewPolarisGRPCClient(network.ToGRPCConn(conn.Conn))
+                  reqProto := heartbeatRequestToProto(req) // 心跳上报数据组装：namingpb.Instance 类型
+                  pbResp, err := namingClient.Heartbeat(ctx, reqProto) // grpc调用更新心跳数据
+            // 如果心跳上报失败，根据以下条件判断是否需要重新注册
+            needRegis := errCnt &gt; _maxHeartbeatErrorCount &amp;&amp; time.Since(state.lastRegisterTime) &gt; minInterval
+            // 如果 needRegis 为 true，重新注册, regis = e.doSyncRegister
+            _, err = regis(instance, CreateRegisterV2Header()) 
+</code></pre><h4 id=deregister>Deregister</h4><pre><code class=language-go>// providerAPI 调用者对外函数实现
+type providerAPI struct {
+	rawAPI api.ProviderAPI
+}
+
+// Deregister 同步反注册
+func (p *providerAPI) Deregister(instance *InstanceDeRegisterRequest) error {
+  p.rawAPI.Deregister((*api.InstanceDeRegisterRequest)(instance))
+    c.context.GetEngine().SyncDeregister(&amp;instance.InstanceDeRegisterRequest)
+      _, err := data.RetrySyncCall(&quot;deregister&quot;, ... // 带重试机制
+        e.connector.DeregisterInstance(request.(*model.InstanceDeRegisterRequest)) // serverconnector plugin
+          conn, err := g.connManager.GetConnection(opKey, config.DiscoverCluster) // 获取server连接
+          namingClient := namingpb.NewPolarisGRPCClient(network.ToGRPCConn(conn.Conn)) // grpc 客户端
+          reqProto := deregisterRequestToProto(req) // 反注册数据组装： namingpb.Instance 类型
+          pbResp, err := namingClient.DeregisterInstance(ctx, reqProto) // grpc调用反注册
+</code></pre><h2 id=consumer>consumer</h2><h3 id=实例化-consumerapi>实例化 ConsumerAPI</h3><ul><li>NewConsumerAPI() -> 根据默认配置文件<code>./polaris.yaml</code> 实例化<ul><li>api.newConsumerAPI->api.newConsumerAPIByConfig->api.InitContextByConfig-><code>&amp;consumerAPI{context}</code></li></ul></li><li>NewConsumerAPIByFile(path string) -> 根据指定配置文件实例化<ul><li>newConsumerAPIByFile->InitContextByFile->InitContextByStream->InitContextByConfig-><code>&amp;consumerAPI{context}</code></li></ul></li><li>NewConsumerAPIByConfig(cfg config.Configuration) -> 根据指定配置实例化<ul><li>api.newConsumerAPIByConfig->api.InitContextByConfig&ndash;><code>&amp;consumerAPI{context}</code></li></ul></li><li>NewConsumerAPIByContext(context api.SDKContext) -> 根据指定<code>api.SDKContext</code>实例化<ul><li>api.newConsumerAPIByContext-><code>&amp;consumerAPI{context}</code></li></ul></li><li>NewConsumerAPIByAddress(address &mldr;string) -> 根据指定 <code>polaris-server</code> 地址实例化<ul><li>api.newConsumerAPIByAddress->[config.NewDefaultConfiguration]->api.newConsumerAPIByConfig->api.InitContextByConfig-><code>&amp;consumerAPI{context}</code></li></ul></li></ul><p>以上所有方法最终都会走到<code>api.InitContextByConfig(cfg config.Configuration)</code>方法, 然后返回<code>&amp;consumerAPI{context}</code></p><h3 id=相关接口定义-1>相关接口定义</h3><pre><code class=language-go>// ConsumerAPI 主调端API方法
+type ConsumerAPI interface {
+	// GetOneInstance 获取单个服务（会执行路由链与负载均衡，获取负载均衡后的服务实例）
+	GetOneInstance(req *GetOneInstanceRequest) (*model.OneInstanceResponse, error)
+	// GetInstances 获取可用的服务列表（会执行路由链，默认去掉隔离以及不健康的服务实例）
+	GetInstances(req *GetInstancesRequest) (*model.InstancesResponse, error)
+	// GetAllInstances 获取完整的服务列表（包括隔离及不健康的服务实例）
+	GetAllInstances(req *GetAllInstancesRequest) (*model.InstancesResponse, error)
+	// GetRouteRule 同步获取服务路由规则
+	GetRouteRule(req *GetServiceRuleRequest) (*model.ServiceRuleResponse, error)
+	
+    // UpdateServiceCallResult 上报服务调用结果
+	UpdateServiceCallResult(req *ServiceCallResult) error
+	
+    
+	// WatchService 订阅服务消息
+	WatchService(req *WatchServiceRequest) (*model.WatchServiceResponse, error)
+	// GetServices 根据业务同步获取批量服务
+	GetServices(req *GetServicesRequest) (*model.ServicesResponse, error)
+	// InitCalleeService 初始化服务运行中需要的被调服务
+	InitCalleeService(req *InitCalleeServiceRequest) error
+    
+    // Destroy 销毁API，销毁后无法再进行调用
+	Destroy()
+}
+</code></pre><h3 id=实例化-apisdkcontext>实例化 api.SDKContext</h3><ul><li>NewSDKContext() -> 根据默认配置文件<code>./polaris.yaml</code>创建SDK上下文<ul><li>api.InitContextByConfig(config.NewDefaultConfigurationWithDomain())</li></ul></li><li>NewSDKContextByAddress(address &mldr;string) -> 根据address创建SDK上下文<ul><li>api.InitContextByConfig(config.NewDefaultConfiguration(address))</li></ul></li><li>NewSDKContextByConfig(cfg config.Configuration) -> 根据配置创建SDK上下文<ul><li>api.InitContextByConfig(cfg)</li></ul></li></ul><pre><code class=language-go>// SDKContext .
+// @brief SDK配置对象，每个API实例都会挂载一个context，包含：
+// 插件实例列表
+// 配置实例
+// 执行流程引擎，包括定时器等
+type SDKContext interface {
+	// Destroy
+	// @brief 销毁SDK上下文
+	Destroy()
+
+	// IsDestroyed
+	// @brief SDK上下文是否已经销毁
+	IsDestroyed() bool
+
+	// GetConfig
+	// @brief 获取全局配置信息
+	GetConfig() config.Configuration
+
+	// GetPlugins
+	// @brief 获取插件列表
+	GetPlugins() plugin.Manager
+
+	// GetEngine
+	// @brief 获取执行引擎
+	GetEngine() model.Engine
+
+	// GetValueContext
+	// @brief 获取值上下文
+	GetValueContext() model.ValueContext
+}
+</code></pre><h2 id=router>router</h2><h3 id=实例化-routerapi>实例化 RouterAPI</h3><ul><li>NewRouterAPI() -> 根据默认配置文件<code>./polaris.yaml</code> 实例化<ul><li>NewRouterAPI->NewRouterAPIByConfig->api.InitContextByConfig-><code>&amp;routerAPI{context}</code></li></ul></li><li>NewRouterAPIByFile(path string) -> 根据指定配置文件实例化<ul><li>NewRouterAPIByFile->api.InitContextByFile->api.InitContextByStream->api.InitContextByConfig-><code>&amp;routerAPI{context}</code></li></ul></li><li>NewRouterAPIByConfig(cfg config.Configuration) -> 根据指定配置实例化<ul><li>NewRouterAPIByConfig->api.InitContextByConfig-><code>&amp;routerAPI{context}</code></li></ul></li><li>NewRouterAPIByContext(context api.SDKContext) -> 根据指定<code>api.SDKContext</code>实例化<ul><li>NewRouterAPIByContext-><code>&amp;routerAPI{context}</code></li></ul></li><li>NewRouterAPIByAddress(address &mldr;string) -> 根据指定 <code>polaris-server</code> 地址实例化<ul><li>NewRouterAPIByAddress->config.NewDefaultConfiguration(address)->NewRouterAPIByConfig->api.InitContextByConfig(cfg)-><code>&amp;routerAPI{context}</code></li></ul></li></ul><p>以上所有方法最终都会走到<code>api.InitContextByConfig(cfg config.Configuration)</code>方法, 然后返回<code>&amp;routerAPI{context}</code></p><h3 id=相关接口定义-2>相关接口定义</h3><pre><code class=language-go>// RouterAPI 路由API方法
+type RouterAPI interface {
+	// ProcessRouters process routers to filter instances
+	ProcessRouters(*ProcessRoutersRequest) (*model.InstancesResponse, error)
+	// ProcessLoadBalance process load balancer to get the target instances
+	ProcessLoadBalance(*ProcessLoadBalanceRequest) (*model.OneInstanceResponse, error)
+}
+</code></pre><h2 id=limiter>limiter</h2><h3 id=实例化-limitapi>实例化 LimitAPI</h3><ul><li>NewLimitAPI() -> 根据默认配置文件<code>./polaris.yaml</code> 实例化<ul><li>api.newLimitAPI->api.newLimitAPIByConfig->api.InitContextByConfig-><code>&amp;limitAPI{context}</code></li></ul></li><li>NewLimitAPIByFile(path string) -> 根据指定配置文件实例化<ul><li>api.newLimitAPIByFile->api.InitContextByFile->api.InitContextByStream->api.InitContextByConfig-><code>&amp;limitAPI{context}</code></li></ul></li><li>NewLimitAPIByConfig(cfg config.Configuration) -> 根据指定配置实例化<ul><li>api.newLimitAPIByConfig->api.InitContextByConfig-><code>&amp;limitAPI{context}</code></li></ul></li><li>NewLimitAPIByContext(context api.SDKContext) -> 根据指定<code>api.SDKContext</code>实例化<ul><li>api.newLimitAPIByContext-><code>&amp;limitAPI{context}</code></li></ul></li><li>NewLimitAPIByAddress(address &mldr;string) -> 根据指定 <code>polaris-server</code> 地址实例化<ul><li>api.newLimitAPIByAddress->[config.NewDefaultConfiguration]->api.newLimitAPIByConfig->api.InitContextByConfig-><code>&amp;limitAPI{context}</code></li></ul></li></ul><p>以上所有方法最终都会走到<code>api.InitContextByConfig(cfg config.Configuration)</code>方法, 然后返回<code>&amp;limitAPI{context}</code></p><h3 id=相关接口定义-3>相关接口定义</h3><pre><code class=language-go>// LimitAPI 限流相关的API相关接口
+type LimitAPI interface {
+	// GetQuota 获取限流配额，一次接口只获取一个配额
+	GetQuota(request QuotaRequest) (QuotaFuture, error)
+	// Destroy 销毁API，销毁后无法再进行调用
+	Destroy()
+}
+</code></pre><h2 id=config>config</h2><h3 id=实例化-configapi>实例化 ConfigAPI</h3><ul><li>NewConfigAPI() -> 根据默认配置文件<code>./polaris.yaml</code> 实例化<ul><li>api.newConfigFileAPI->api.newConfigFileAPIByConfig->api.InitContextByConfig-><code>&amp;configAPI{rawAPI: rawAPI}</code></li></ul></li><li>NewConfigAPIByFile(path string) -> 根据指定配置文件实例化<ul><li>api.newConfigFileAPIByFile->api.InitContextByFile->api.InitContextByStream->api.InitContextByConfig-><code>&amp;configAPI{rawAPI: rawAPI}</code></li></ul></li><li>NewConfigAPIByConfig(cfg config.Configuration) -> 根据指定配置实例化<ul><li>api.newConfigFileAPIByConfig->api.InitContextByConfig-><code>&amp;configAPI{rawAPI: rawAPI}</code></li></ul></li><li>NewConfigAPIByContext(context api.SDKContext) -> 根据指定<code>api.SDKContext</code>实例化<ul><li>api.newConfigFileAPIBySDKContext-><code>&amp;configAPI{rawAPI: rawAPI}</code></li></ul></li></ul><p>以上前3个方法最终都会调用 <code>api.InitContextByConfig(cfg config.Configuration)</code> 方法初始化<code>SDKContext</code>, 然后返回<code>&amp;configAPI{rawAPI: rawAPI}</code></p><h3 id=相关接口定义-4>相关接口定义</h3><pre><code class=language-go>// ConfigAPI 配置文件的 API.
+type ConfigAPI interface {
+	// GetConfigFile 获取配置文件
+	GetConfigFile(namespace, fileGroup, fileName string) (ConfigFile, error)
+}
+
+// ConfigFile 文本类型配置文件对象
+type ConfigFile interface {
+	ConfigFileMetadata
+
+	// GetContent 获取配置文件内容
+	GetContent() string
+	// HasContent 是否有配置内容
+	HasContent() bool
+	// AddChangeListenerWithChannel 增加配置文件变更监听器
+	AddChangeListenerWithChannel(chan ConfigFileChangeEvent)
+	// AddChangeListener 增加配置文件变更监听器
+	AddChangeListener(cb OnConfigFileChange)
+}
+</code></pre></article><div class=my-4><a href=/tags/polaris/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#polaris</a></div><div class=py-2><div class="my-8 flex flex-col items-center md:flex-row"><a href=/authors/lbbniu/ class="md:me-4 text-primary-text h-24 w-24"><i class="fas fa-user-circle fa-6x"></i></a><div class="mt-4 w-full md:mt-0 md:w-auto"><a href=/authors/lbbniu/ class="mb-2 block border-b pb-1 text-lg font-bold"><h3>lbbniu</h3></a><span class="block pb-2"></span></div></div></div><div class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"><div><span class="text-primary-text block font-bold">上一页</span>
+<a href=/2023/02/13/uri-addr/ class=block>Golang语法的25个练习题：1至5题</a></div><div class="mt-4 md:mt-0 md:text-right"><span class="text-primary-text block font-bold">下一页</span>
+<a href=/2022/06/26/open-source-study/ class=block>Go 实战训练营——开源项目学习计划</a></div></div></div><div class=col-span-2><div class="bg-primary-bg
+prose sticky top-16 z-10 hidden px-6 py-4 lg:block"><h3>本页内容</h3></div><div class="sticky-toc hidden px-6 pb-6 lg:block"><nav id=TableOfContents><ul><li><a href=#provider>provider</a><ul><li><a href=#实例化providerapi>实例化ProviderAPI</a></li><li><a href=#相关接口定义>相关接口定义</a><ul><li><a href=#registerinstance>RegisterInstance</a></li><li><a href=#deregister>Deregister</a></li></ul></li></ul></li><li><a href=#consumer>consumer</a><ul><li><a href=#实例化-consumerapi>实例化 ConsumerAPI</a></li><li><a href=#相关接口定义-1>相关接口定义</a></li><li><a href=#实例化-apisdkcontext>实例化 api.SDKContext</a></li></ul></li><li><a href=#router>router</a><ul><li><a href=#实例化-routerapi>实例化 RouterAPI</a></li><li><a href=#相关接口定义-2>相关接口定义</a></li></ul></li><li><a href=#limiter>limiter</a><ul><li><a href=#实例化-limitapi>实例化 LimitAPI</a></li><li><a href=#相关接口定义-3>相关接口定义</a></li></ul></li><li><a href=#config>config</a><ul><li><a href=#实例化-configapi>实例化 ConfigAPI</a></li><li><a href=#相关接口定义-4>相关接口定义</a></li></ul></li></ul></nav></div><script>window.addEventListener("DOMContentLoaded",()=>{enableStickyToc()})</script></div></div><script>document.addEventListener("DOMContentLoaded",()=>{hljs.highlightAll()})</script></div></div></main><footer class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b"><p class="text-sm text-tertiary-text">&copy; 2021 <a href=https://blog.lbbniu.com/>lbbniu</a>
+&#183; Powered by the <a href=https://github.com/wangchucheng/hugo-eureka class=hover:text-eureka>Eureka</a> theme for <a href=https://gohugo.io class=hover:text-eureka>Hugo</a></p></div></div></footer></body></html>

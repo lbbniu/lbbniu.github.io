@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>记忆化搜索 on lbbniu</title><link>/tags/%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/</link><description>Recent content in 记忆化搜索 on lbbniu</description><generator>Hugo -- gohugo.io</generator><language>zh</language><managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor><webMaster>lbbniu@gmail.com (lbbniu)</webMaster><copyright>&amp;copy; 2021 &lt;a href="https://blog.lbbniu.com/">lbbniu&lt;/a></copyright><lastBuildDate>Tue, 20 Sep 2022 00:01:00 +0800</lastBuildDate><atom:link href="/tags/%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/index.xml" rel="self" type="application/rss+xml"/><item><title>剑指 Offer 10- I 斐波那契数列</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/fei-bo-na-qi-shu-lie-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/fei-bo-na-qi-shu-lie-lcof/</guid><description>剑指 Offer 10- I 斐波那契数列 写一个函数，输入 n ，求斐波那契（Fibonacci）数列的第 n 项（即 F(N)）。斐波那契数列的定义如下：
+F(0) = 0, F(1) = 1 F(N) = F(N - 1) + F(N - 2), 其中 N > 1. 斐波那契数列由 0 和 1 开始，之后的斐波那契数就是由之前的两数相加而得出。
+答案需要取模 1e9+7（1000000007），如计算初始结果为：1000000008，请返回 1。
+示例 1：
+输入：n = 2 输出：1 示例 2：
+输入：n = 5 输出：5 提示：
+0 &lt;= n &lt;= 100 func fib(n int) int { } LeetCode题库地址 https://leetcode.cn/problems/fei-bo-na-qi-shu-lie-lcof</description></item><item><title>剑指 Offer 10- II 青蛙跳台阶问题</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/qing-wa-tiao-tai-jie-wen-ti-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/qing-wa-tiao-tai-jie-wen-ti-lcof/</guid><description>剑指 Offer 10- II 青蛙跳台阶问题 一只青蛙一次可以跳上1级台阶，也可以跳上2级台阶。求该青蛙跳上一个 n&amp;nbsp;级的台阶总共有多少种跳法。
+答案需要取模 1e9+7（1000000007），如计算初始结果为：1000000008，请返回 1。
+示例 1：
+输入：n = 2 输出：2 示例 2：
+输入：n = 7 输出：21 示例 3：
+输入：n = 0 输出：1 提示：
+0 &amp;lt;= n &amp;lt;= 100 注意：本题与主站 70 题相同：https://leetcode-cn.com/problems/climbing-stairs/
+&amp;nbsp;
+func numWays(n int) int { } LeetCode题库地址 https://leetcode.cn/problems/qing-wa-tiao-tai-jie-wen-ti-lcof</description></item><item><title>面试题 08.01 三步问题</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/three-steps-problem-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/three-steps-problem-lcci/</guid><description>面试题 08.01 三步问题 三步问题。有个小孩正在上楼梯，楼梯有n阶台阶，小孩一次可以上1阶、2阶或3阶。实现一种方法，计算小孩有多少种上楼梯的方式。结果可能很大，你需要对结果模1000000007。
+示例1:
+输入：n = 3 输出：4 说明: 有四种走法 示例2:
+输入：n = 5 输出：13 提示:
+n范围在[1, 1000000]之间 func waysToStep(n int) int { } LeetCode题库地址 https://leetcode.cn/problems/three-steps-problem-lcci</description></item><item><title>面试题 08.14 布尔运算</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/boolean-evaluation-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/boolean-evaluation-lcci/</guid><description>面试题 08.14 布尔运算 给定一个布尔表达式和一个期望的布尔结果 result，布尔表达式由 0 (false)、1 (true)、&amp;amp; (AND)、 | (OR) 和 ^ (XOR) 符号组成。实现一个函数，算出有几种可使该表达式得出 result 值的括号方法。
+示例 1:
+输入: s = &amp;quot;1^0|0|1&amp;quot;, result = 0 输出: 2 解释:&amp;nbsp;两种可能的括号方法是 1^(0|(0|1)) 1^((0|0)|1) 示例 2:
+输入: s = &amp;quot;0&amp;amp;0&amp;amp;0&amp;amp;1^1|0&amp;quot;, result = 1 输出: 10 提示：
+运算符的数量不超过 19 个 func countEval(s string, result int) int { } LeetCode题库地址 https://leetcode.cn/problems/boolean-evaluation-lcci</description></item><item><title>剑指 Offer II 112 最长递增路径</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/fptfwp/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/fptfwp/</guid><description>剑指 Offer II 112 最长递增路径 给定一个&amp;nbsp;m x n 整数矩阵&amp;nbsp;matrix ，找出其中 最长递增路径 的长度。
+对于每个单元格，你可以往上，下，左，右四个方向移动。 不能 在 对角线 方向上移动或移动到 边界外（即不允许环绕）。
+&amp;nbsp;
+示例 1：
+输入：matrix = [[9,9,4],[6,6,8],[2,1,1]] 输出：4 解释：最长递增路径为&amp;nbsp;[1, 2, 6, 9]。 示例 2：
+输入：matrix = [[3,4,5],[3,2,6],[2,2,1]] 输出：4 解释：最长递增路径是&amp;nbsp;[3, 4, 5, 6]。注意不允许在对角线方向上移动。 示例 3：
+输入：matrix = [[1]] 输出：1 &amp;nbsp;
+提示：
+m == matrix.length n == matrix[i].length 1 &amp;lt;= m, n &amp;lt;= 200 0 &amp;lt;= matrix[i][j] &amp;lt;= 231 - 1 &amp;nbsp;
+注意：本题与主站 329&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/longest-increasing-path-in-a-matrix/
+func longestIncreasingPath(matrix [][]int) int { } LeetCode题库地址 https://leetcode.</description></item><item><title>【2022-09-20每日一题】698. 划分为k个相等的子集</title><link>/study/leetcode/partition-to-k-equal-sum-subsets/</link><pubDate>Tue, 20 Sep 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/partition-to-k-equal-sum-subsets/</guid><description>2022-09-20每日一题：698. 划分为k个相等的子集 难度：Medium
+标签：位运算 、 记忆化搜索 、 数组 、 动态规划 、 回溯 、 状态压缩
+给定一个整数数组&amp;nbsp;&amp;nbsp;nums 和一个正整数 k，找出是否有可能把这个数组分成 k 个非空子集，其总和都相等。
+&amp;nbsp;
+示例 1：
+输入： nums = [4, 3, 2, 3, 5, 2, 1], k = 4 输出： True 说明： 有可能将其分成 4 个子集（5），（1,4），（2,3），（2,3）等于总和。 示例 2:
+输入: nums = [1,2,3,4], k = 3 输出: false &amp;nbsp;
+提示：
+1 &amp;lt;= k &amp;lt;= len(nums) &amp;lt;= 16 0 &amp;lt; nums[i] &amp;lt; 10000 每个元素的频率在 [1,4] 范围内 方法一：状态压缩 + 记忆化搜索 详细思路过程见官方题解，这里只做个人刷题记录，方便后续查询阅读
+思路与算法 func canPartitionKSubsets(nums []int, k int) bool { all := 0 for _, num := range nums { all += num } // 不能整除 if all%k &amp;gt; 0 { return false } sort.</description></item></channel></rss>

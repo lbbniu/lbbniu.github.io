@@ -1,0 +1,347 @@
+<!doctype html><html lang=zh dir=ltr><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>写给Go开发者的Tars教程-通信模式 | lbbniu</title>
+<meta name=generator content="Hugo Eureka 0.9.3"><link rel=stylesheet href=/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css><script defer src=/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js></script><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" as=style onload='this.onload=null,this.rel="stylesheet"'><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/github.min.css media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/php.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/java.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/go.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/python.min.js crossorigin></script><link rel=stylesheet href=/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css media=print onload='this.media="all",this.onload=null'><script defer type=text/javascript src=/js/fontawesome.min.35973bea57658ef0dd22ad59ea4642b6c8c67af62bed8659ac326d284ef285a6657cdbcf57d3b2910e7e992f2b20426e.js></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css integrity=sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js integrity=sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY crossorigin></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script><script defer src=https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js integrity=sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0 crossorigin></script><link rel=icon type=image/png sizes=32x32 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_32x32_fill_box_center_3.png><link rel=apple-touch-icon sizes=180x180 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_180x180_fill_box_center_3.png><meta name=description content="写给Go开发者的Tars教程-通信模式"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"文章列表","item":"/post/"},{"@type":"ListItem","position":2,"name":"写给Go开发者的Tars教程-通信模式","item":"/2023/06/18/tarsgo-rpc/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/2023/06/18/tarsgo-rpc/"},"headline":"写给Go开发者的Tars教程-通信模式 | lbbniu","datePublished":"2023-06-18T15:20:00+08:00","dateModified":"2023-06-18T15:20:00+08:00","wordCount":1015,"author":{"@type":"Person","name":["lbbniu"]},"publisher":{"@type":"Person","name":"lbbniu","logo":{"@type":"ImageObject","url":"/images/icon.gif"}},"description":"写给Go开发者的Tars教程-通信模式"}</script><meta property="og:title" content="写给Go开发者的Tars教程-通信模式 | lbbniu"><meta property="og:type" content="article"><meta property="og:image" content="/images/icon.png"><meta property="og:url" content="/2023/06/18/tarsgo-rpc/"><meta property="og:description" content="写给Go开发者的Tars教程-通信模式"><meta property="og:locale" content="zh"><meta property="og:site_name" content="lbbniu"><meta property="article:published_time" content="2023-06-18T15:20:00+08:00"><meta property="article:modified_time" content="2023-06-18T15:20:00+08:00"><meta property="article:section" content="post"><meta property="article:tag" content="Tars"><meta property="og:see_also" content="/2023/06/18/tarsgo-protocol/"><meta property="og:see_also" content="/cloud-native/tars%E5%AE%B9%E5%99%A8%E5%8C%96/"><body class="flex min-h-screen flex-col"><header class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"><div class="mx-auto w-full max-w-screen-xl"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=="Auto"||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName("html")[0].classList.add("dark")</script><nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0"><a href=/ class="me-6 text-primary-text text-xl font-bold">lbbniu</a>
+<button id=navbar-btn class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+<i class="fas fa-bars"></i></button><div id=target class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20"><div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0"><a href=/post/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">文章</a>
+<a href=/cloud-native/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">云原生</a>
+<a href=/study/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">算法学习</a>
+<a href=/docs/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">Go学习训练营</a>
+<a href=/tags/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">标签</a></div><div class=flex><div class="relative pt-4 md:pt-0"><div class="cursor-pointer hover:text-eureka" id=lightDarkMode><i class="fas fa-adjust"></i></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id=is-open></div><div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40" id=lightDarkOptions><span class="px-4 py-1 hover:text-eureka" name=Light>浅色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Dark>深色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Auto>自动</span></div></div></div></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id=is-open-mobile></div></nav><script>let element=document.getElementById("lightDarkMode");storageColorScheme==null||storageColorScheme=="Auto"?document.addEventListener("DOMContentLoaded",()=>{window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",switchDarkMode)}):storageColorScheme=="Light"?(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","sun"),element.firstElementChild.classList.add("fa-sun")):storageColorScheme=="Dark"&&(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","moon"),element.firstElementChild.classList.add("fa-moon")),document.addEventListener("DOMContentLoaded",()=>{getcolorscheme(),switchBurger()})</script></div></header><main class="grow pt-16"><div class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8"><div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12"><div class="bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"><article class=prose><h1 class=mb-4>写给Go开发者的Tars教程-通信模式</h1><div class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"><div class="me-6 my-2"><i class="fas fa-calendar me-1"></i>
+<span>2023-06-18</span></div><div class="me-6 my-2"><i class="fas fa-clock me-1"></i>
+<span>5分钟阅读时长</span></div><div class="me-6 my-2"><i class="fas fa-folder me-1"></i>
+<a href=/categories/tarsgo/ class=hover:text-eureka>tarsgo</a></div></div><p>本篇为【写给Go开发者的Tars教程系列】第二篇</p><ul><li>第一篇：<a href=./%e5%86%99%e7%bb%99go%e5%bc%80%e5%8f%91%e8%80%85%e7%9a%84Tars%e6%95%99%e7%a8%8b-tars%e5%9f%ba%e7%a1%80.md>Tars协议基础</a></li><li>第二篇：通信模式</li></ul><hr><p>上一篇介绍了如何编写 Tars 的 idl，并使用 idl 生成了 TarsGo RPC 的代码，现在来看看如何编写客户端和服务端的代码</p><h2 id=tars-示例-idl>Tars 示例 IDL</h2><pre><code class=language-apl>module order {
+    struct Order {
+        1 require string id;
+        2 optional vector&lt;string&gt; items;
+        3 optional string description;
+        4 require float price;
+        5 optional string destination;
+    };
+    
+    interface OrderManagement {
+        Order getOrder(string orderId);
+    };
+};
+</code></pre><h3 id=生成-go-协议编解码代码>生成 go 协议编解码代码</h3><pre><code class=language-bash>tars2go -outdir=. \
+	-module=github.com/lbbniu/TarsGo-tutorial \
+	proto/order.tars
+</code></pre><pre><code class=language-bash>order
+├── order.go
+└── OrderManagement.tars.go
+proto
+└── order.tars
+</code></pre><h2 id=server-实现>server 实现</h2><h3 id=服务端开发>服务端开发</h3><p>1、由 Tars 文件生成的 Go 代码中包含了 interface 的接口定义，它和我们定义的 idl 是吻合的</p><pre><code class=language-apl>interface OrderManagement {
+    Order getOrder(string orderId);
+};
+</code></pre><pre><code class=language-go>type OrderManagementServant interface {
+	GetOrder(orderId string) (ret Order, err error)
+}
+type OrderManagementServantWithContext interface {
+	GetOrder(tarsCtx context.Context, orderId string) (ret Order, err error)
+}
+</code></pre><p>2、我们的业务逻辑就是实现这个接口</p><pre><code class=language-go>package servant
+
+import (
+	&quot;context&quot;
+	&quot;net/http&quot;
+
+	&quot;github.com/TarsCloud/TarsGo/tars&quot;
+
+	&quot;github.com/lbbniu/TarsGo-tutorial/order&quot;
+)
+
+var orders = make(map[string]order.Order)
+
+type OrderCtx struct {
+}
+
+// 有context.Context实现服务端
+var _ order.OrderManagementServantWithContext = (*OrderCtx)(nil)
+
+func NewOrderCtx() *OrderCtx {
+	o := &amp;OrderCtx{}
+	o.init()
+	return o
+}
+
+func (o *OrderCtx) init() {
+	orders[&quot;1&quot;] = order.Order{
+		Id:          &quot;1&quot;,
+		Price:       100,
+		Items:       []string{&quot;iPhone 11&quot;, &quot;MacBook Pro&quot;},
+		Description: &quot;MacBook Pro&quot;,
+		Destination: &quot;Beijing&quot;,
+	}
+}
+
+func (o *OrderCtx) GetOrder(tarsCtx context.Context, orderId string) (ret order.Order, err error) {
+	ord, exists := orders[orderId]
+	if exists {
+		return ord, nil
+	}
+
+	return ord, tars.Errorf(http.StatusNotFound, &quot;Order does not exist. : &quot;, orderId)
+}
+
+</code></pre><p>3、在实现完业务逻辑之后，我们可以创建并启动服务</p><pre><code class=language-go>package main
+
+import (
+	&quot;github.com/TarsCloud/TarsGo/tars&quot;
+
+	&quot;github.com/lbbniu/TarsGo-tutorial/internal/servant&quot;
+	&quot;github.com/lbbniu/TarsGo-tutorial/order&quot;
+)
+
+func main() {
+	cfg := tars.GetServerConfig()
+	imp := new(servant.Order)
+	app := new(order.OrderManagement)
+	app.AddServantWithContext(imp, cfg.App+&quot;.&quot;+cfg.Server+&quot;.orderObj&quot;)
+	tars.Run()
+}
+</code></pre><h3 id=服务端配置详解>服务端配置详解</h3><p><code>tars.GetServerConfig()</code>返回服务端配置，其定义如下:</p><pre><code class=language-go>type adapterConfig struct {
+	Endpoint endpoint.Endpoint
+	Protocol string
+	Obj      string
+	Threads  int
+}
+
+type serverConfig struct {
+	Node     string
+	App      string
+	Server   string
+	LogPath  string
+	LogSize  uint64
+	LogNum   uint64
+	LogLevel string
+	Version  string
+	LocalIP  string
+	Local    string
+	BasePath string
+	DataPath string
+	Config   string
+	Notify   string
+	Log      string
+	Adapters map[string]adapterConfig
+
+	Container   string
+	Isdocker    bool
+	Enableset   bool
+	Setdivision string
+	// add server timeout
+	AcceptTimeout time.Duration
+	ReadTimeout   time.Duration
+	WriteTimeout  time.Duration
+	HandleTimeout time.Duration
+	IdleTimeout   time.Duration
+	ZombieTimeout time.Duration
+	QueueCap      int
+	// add tcp config
+	TCPReadBuffer  int
+	TCPWriteBuffer int
+	TCPNoDelay     bool
+	// add routine number
+	MaxInvoke int32
+	// add adapter &amp; report config
+	PropertyReportInterval  time.Duration
+	StatReportInterval      time.Duration
+	MainLoopTicker          time.Duration
+	StatReportChannelBufLen int32
+	MaxPackageLength        int
+	GracedownTimeout        time.Duration
+
+	// tls
+	CA           string
+	Cert         string
+	Key          string
+	VerifyClient bool
+	Ciphers      string
+
+	SampleRate     float64
+	SampleType     string
+	SampleAddress  string
+	SampleEncoding string
+}
+</code></pre><h4 id=核心配置说明>核心配置说明</h4><ul><li>Node: 本地 tarsnode 地址，只有你使用 tars 平台部署才会使用这个参数.</li><li>APP: 应用名.</li><li>Server: 服务名.</li><li>LogPath: 保存日志的目录.</li><li>LogSize: 轮换日志的大小.</li><li>LogLevel: 轮换日志的级别.</li><li>Version: Tarsg 的版本.</li><li>LocalIP: 本地 ip 地址.</li><li>BasePath: 二进制文件的基本路径.</li><li>DataPath: 一些缓存文件存储路径.</li><li>Config: 获取配置的配置中心，如 tars.tarsconfig.ConfigObj</li><li>Notify： 上报通知报告的通知中心，如 tars.tarsnotify.NotifyObj</li><li>Log： 远程日志中心，如 tars.tarslog.LogObj</li><li>Adapters: 每个 adapter 适配器的指定配置.</li><li>Contianer: 保留供以后使用，用于存储容器名称.</li><li>Isdocker: 保留供以后使用，用于指定服务是否在容器内运行.</li><li>Enableset: 如果使用了 set，则为 True.</li><li>Setdivision: 指定哪个 set，如 gray.sz.*</li></ul><h3 id=编写启动配置文件configconfigconf>编写启动配置文件<code>config/config.conf</code></h3><pre><code class=language-conf>&lt;tars&gt;
+    &lt;application&gt;
+        &lt;server&gt;
+            app=Test
+            server=OrderServer
+            local=tcp -h 127.0.0.1 -p 10027 -t 30000
+            logpath=/tmp
+            &lt;Test.OrderServer.OrderObjAdapter&gt;
+                allow
+                endpoint=tcp -h 127.0.0.1 -p 8080 -t 60000
+                handlegroup=Test.OrderServer.OrderObjAdapter
+                maxconns=200000
+                protocol=tars
+                queuecap=10000
+                queuetimeout=60000
+                servant=Test.OrderServer.OrderObj
+                shmcap=0
+                shmkey=0
+                threads=1
+            &lt;/Test.OrderServer.OrderObjAdapter&gt;
+        &lt;/server&gt;
+    &lt;/application&gt;
+&lt;/tars&gt;
+</code></pre><p><code>Test.OrderServer.OrderObjAdapter</code>配置段为适配器对象绑定 ip 和端口，在服务端代码实现的例子中， <code>app.AddServantWithContext(imp, cfg.App+"."+cfg.Server+".orderObj")</code>完成 OrderObj 的适配器配置和实现的绑定。</p><h3 id=服务端启动>服务端启动</h3><pre><code class=language-bash>go build -o OrderServer
+./OrderServer --config=config/config.conf
+</code></pre><h2 id=client-实现>client 实现</h2><p>用户可以轻松编写客户端代码，而无需编写任何指定协议的通信代码.</p><h3 id=无contextcontent调用>无<code>context.Content</code>调用</h3><pre><code class=language-go>package main
+
+import (
+	&quot;fmt&quot;
+	
+	&quot;github.com/TarsCloud/TarsGo/tars&quot;
+
+	&quot;github.com/lbbniu/TarsGo-tutorial/order&quot;
+)
+
+func main() {
+	comm := tars.GetCommunicator()
+	client := new(order.OrderManagement)
+    obj := &quot;Test.OrderServer.OrderObj@tcp -h 127.0.0.1 -p 8080 -t 60000&quot;
+	comm.StringToProxy(obj, client)
+
+	noCtxCall(client)
+}
+
+func noCtxCall(client *order.OrderManagement) {
+	order, err := client.GetOrder(&quot;1&quot;)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Printf(&quot;noctx: %+v\n&quot;, order)
+}
+</code></pre><ul><li><code>github.com/lbbniu/TarsGo-tutorial/order</code> 包是由 tars2go 工具使用 tars 协议文件生成的</li><li>comm: Communicator 用于与服务端进行通信，它应该只初始化一次并且是全局的。</li><li>obj: 对象名称，用于指定服务端的 ip 和端口。通常在"@&ldquo;符号之前我们只需要对象名称。</li><li>client: 与 tars 文件中的接口关联的应用程序。 在本例中它是 <code>order.OrderManagement</code>。</li><li>StringToProxy：StringToProxy 方法用于绑定对象名称和应用程序，如果不这样做，通信器将不知道谁与应用程序通信 。</li><li><code>client.GetOrder</code> 用于调用 tars 文件中定义的方法，并返回 order 和 err。</li></ul><h4 id=客户端通信器>客户端通信器</h4><p>通信器是为客户端发送和接收包的一组资源，其最终管理每个对象的 socket 通信。在一个程序中你只需要一个通信器。</p><pre><code class=language-go>comm := tars.NewCommunicator()
+comm.SetProperty(&quot;property&quot;, &quot;tars.tarsproperty.PropertyObj&quot;)
+comm.SetLocator(&quot;locator&quot;, &quot;tars.tarsregistry.QueryObj@tcp -h ... -p ...&quot;)
+</code></pre><p>描述:</p><blockquote><ul><li>通信器配置文件的格式将在后面描述</li><li>可以在没有配置文件的情况下配置通信器，并且所有参数都具有默认值</li><li>通信器也可以通过“SetProperty”方法直接初始化</li><li>如果您不需要配置文件，则必须自己设置 locator 参数</li></ul></blockquote><p>客户端配置文件go定义</p><pre><code class=language-go>type clientConfig struct {
+	Locator                 string
+	Stat                    string
+	Property                string
+	ModuleName              string
+	RefreshEndpointInterval int
+	ReportInterval          int
+	CheckStatusInterval     int
+	KeepAliveInterval       int
+	AsyncInvokeTimeout      int
+    SyncInvokeTimeout      int
+	// add client timeout
+	ClientQueueLen     int
+	ClientIdleTimeout  time.Duration
+	ClientReadTimeout  time.Duration
+	ClientWriteTimeout time.Duration
+	ClientDialTimeout  time.Duration
+	ReqDefaultTimeout  int32
+	ObjQueueMax        int32
+}
+</code></pre><p>客户端通信器核心属性描述:</p><blockquote><ul><li>Locator：主控服务的地址必须采用“ip port”格式。 如果你不需要主控来查找服务，则无需配置此项.</li><li>AsyncInvokeTimeout：客户端异步调用的最大超时时间（以毫秒为单位），此配置的默认值为 5000.</li><li>SyncInvokeTimeout：客户端同步调用的最大超时时间（以毫秒为单位），此配置的默认值为 3000，现在没用于 tarsgo，后续会支持异步回调模式。</li><li>RefreshEndpointInterval：定期访问主控以获取信息的时间间隔（以毫秒为单位），此配置的默认值为一分钟.</li><li>Stat：在模块之间调用的服务的地址。 如果未配置此项，则表示将直接丢弃上报的数据.</li><li>Property：服务上报其属性的地址。 如果未配置，则表示将直接丢弃上报的数据.</li><li>ReportInterval：现在TarsGo中配置无效，后续会支持此参数。</li><li>ModuleName: 模块名称，默认值是可执行程序的名称。</li></ul></blockquote><p>通信器配置文件的格式如下：</p><pre><code class=language-xml>&lt;tars&gt;
+  &lt;application&gt;
+    #The configuration required by the proxy
+    &lt;client&gt;
+        #address
+        locator = tars.tarsregistry.QueryObj@tcp -h 127.0.0.1 -p 17890
+        #The maximum timeout (in milliseconds) for synchronous calls.
+        sync-invoke-timeout         = 3000
+        #The maximum timeout (in milliseconds) for asynchronous calls.
+        async-invoke-timeout        = 5000
+        #The maximum timeout (in milliseconds) for synchronous calls.
+        refresh-endpoint-interval   = 60000
+        #Used for inter-module calls
+        stat                        = tars.tarsstat.StatObj
+        #Address used for attribute reporting
+        property                    = tars.tarsproperty.PropertyObj
+        #report time interval
+        report-interval             = 60000
+        #The module name
+        modulename                  = Test.OrderServer
+    &lt;/client&gt;
+  &lt;/application&gt;
+&lt;/tars&gt;
+</code></pre><h3 id=有contextcontent调用>有<code>context.Content</code>调用</h3><pre><code class=language-go>func ctxCall(client *order.OrderManagement) {
+	order, err := client.GetOrderWithContext(context.Background(), &quot;1&quot;)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Printf(&quot;ctx: %+v\n&quot;, order)
+}
+</code></pre><h3 id=单向调用oneway>单向调用（OneWay）</h3><pre><code class=language-go>// 单向调用，无返回值，目前函数前面会有返回值，后续tars2go中会去掉
+func oneWayCall(client *order.OrderManagement) {
+	_, err := client.GetOrderOneWayWithContext(context.Background(), &quot;1&quot;)
+	if err != nil {
+		panic(err)
+	}
+    fmt.Println(&quot;oneway&quot;)
+}
+</code></pre><h3 id=取模哈希调用>取模哈希调用</h3><pre><code class=language-go>// 取模调用
+func modHashCall(client *order.OrderManagement) {
+	ctx := current.ContextWithClientCurrent(context.Background())
+	var hashCode uint32 = 1
+	current.SetClientHash(ctx, int(tars.ModHash), hashCode)
+	order, err := client.GetOrderWithContext(context.Background(), &quot;1&quot;)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Printf(&quot;ModHash: %+v\n&quot;, order)
+}
+</code></pre><h3 id=一致性哈希调用>一致性哈希调用</h3><pre><code class=language-go>// 一致性哈希调用
+func consistentHashCall(client *order.OrderManagement) {
+	ctx := current.ContextWithClientCurrent(context.Background())
+	var hashCode uint32 = 1
+	current.SetClientHash(ctx, int(tars.ConsistentHash), hashCode)
+	order, err := client.GetOrderWithContext(context.Background(), &quot;1&quot;)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Printf(&quot;ConsistentHash: %+v\n&quot;, order)
+}
+</code></pre><h2 id=小结>小结</h2><p>经过上面的学习，我们一步步完成了协议、服务端、客户端的编写，现在可以轻松完成TarsGo项目的开发了。</p><p>不过上面手动创建项目的骨架结构的过程完全可以自动化，TarsGo提供了<code>tarsgo</code>脚手架一键创建项目。下面进行演示。</p><h3 id=安装>安装</h3><pre><code class=language-bash>go install github.com/TarsCloud/TarsGo/tars/tools/tarsgo@latest
+</code></pre><ul><li>注意这里安装的是<code>tarsgo</code>脚手架，并非<code>tars2go</code>协议处理工具</li><li>截止目前最新版本为 v1.3.6</li></ul><h3 id=帮助>帮助</h3><p>直接执行<code>tarsgo</code></p><pre><code class=language-bash>tarsgo: An elegant toolkit for Go microservices.
+
+Usage:
+  tarsgo [command]
+
+Available Commands:
+  cmake       Create a service cmake template
+  completion  Generate the autocompletion script for the specified shell
+  help        Help about any command
+  make        Create a server make template
+  upgrade     Auto upgrade tarsgo and tars2go
+
+Flags:
+  -h, --help      help for tarsgo
+  -v, --version   version for tarsgo
+
+Use &quot;tarsgo [command] --help&quot; for more information about a command.
+</code></pre><p><code>tarsgo</code>可以已创建<code>cmake</code>和<code>make</code>管理的项目，下面只展示<code>make</code>管理项目的创建演示，因为<code>cmake</code>也类似。</p><h3 id=创建项目>创建项目</h3><h3 id=命令>命令</h3><pre><code>tarsgo make Test HelloGo Hello github.com/lbbniu/TarsGo-tutorial/HelloGo
+</code></pre><h4 id=执行结果>执行结果</h4><pre><code class=language-bash>🚀 Creating server Test.HelloGo, please wait a moment.
+
+go: creating new go.mod: module github.com/lbbniu/TarsGo-tutorial/HelloGo
+go: to add module requirements and sums:
+	go mod tidy
+
+CREATED HelloGo/Hello.tars (165 bytes)
+CREATED HelloGo/Hello_imp.go (602 bytes)
+CREATED HelloGo/Makefile (154 bytes)
+CREATED HelloGo/client/client.go (450 bytes)
+CREATED HelloGo/config/config.conf (689 bytes)
+CREATED HelloGo/debugtool/dumpstack.go (406 bytes)
+CREATED HelloGo/go.mod (58 bytes)
+CREATED HelloGo/main.go (520 bytes)
+CREATED HelloGo/scripts/makefile.tars.gomod.mk (6308 bytes)
+CREATED HelloGo/start.sh (63 bytes)
+
+&gt;&gt;&gt; Great！Done! You can jump in HelloGo
+&gt;&gt;&gt; Tips: After editing the Tars file, execute the following cmd to automatically generate golang files.
+&gt;&gt;&gt;       /bin/tars2go *.tars
+$ cd HelloGo
+$ ./start.sh
+🤝 Thanks for using TarsGo
+📚 Tutorial: https://doc.tarsyun.com/
+</code></pre><ul><li>现在可以进入<code>HelloGo</code>目录执行<code>./start.sh</code>启动服务端程序了，是不是很简单啊。</li><li>后续脚手架会优化骨架项目结构。</li></ul><h2 id=示例代码>示例代码</h2><p><a href=https://github.com/lbbniu/TarsGo-tutorial.git target=_blank rel=noopener>https://github.com/lbbniu/TarsGo-tutorial.git</a></p><p><img src=https://gitee.com/lbbniu/typora/raw/master/qrcode_for_gh_4ab47aa64a20_258.jpg alt=公众号：刘兵兵></p></article><div class=my-4><a href=/tags/tars/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#Tars</a></div><div class=py-2><div class="my-8 flex flex-col items-center md:flex-row"><a href=/authors/lbbniu/ class="md:me-4 text-primary-text h-24 w-24"><i class="fas fa-user-circle fa-6x"></i></a><div class="mt-4 w-full md:mt-0 md:w-auto"><a href=/authors/lbbniu/ class="mb-2 block border-b pb-1 text-lg font-bold"><h3>lbbniu</h3></a><span class="block pb-2"></span></div></div></div><div class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"><div><span class="text-primary-text block font-bold">上一页</span>
+<a href=/2023/06/18/tarsgo-protocol/ class=block>写给go开发者的Tars教程-Tars协议基础</a></div><div class="mt-4 md:mt-0 md:text-right"><span class="text-primary-text block font-bold">下一页</span>
+<a href=/2023/03/26/redis-cluster-vs-codis-slot-rebalance-%E7%AE%97%E6%B3%95/ class=block>Redis Cluster vs Codis Slot Rebalance 算法</a></div></div></div><div class=col-span-2><div class="bg-primary-bg
+prose sticky top-16 z-10 hidden px-6 py-4 lg:block"><h3>本页内容</h3></div><div class="sticky-toc hidden px-6 pb-6 lg:block"><nav id=TableOfContents><ul><li><a href=#tars-示例-idl>Tars 示例 IDL</a><ul><li><a href=#生成-go-协议编解码代码>生成 go 协议编解码代码</a></li></ul></li><li><a href=#server-实现>server 实现</a><ul><li><a href=#服务端开发>服务端开发</a></li><li><a href=#服务端配置详解>服务端配置详解</a><ul><li><a href=#核心配置说明>核心配置说明</a></li></ul></li><li><a href=#编写启动配置文件configconfigconf>编写启动配置文件<code>config/config.conf</code></a></li><li><a href=#服务端启动>服务端启动</a></li></ul></li><li><a href=#client-实现>client 实现</a><ul><li><a href=#无contextcontent调用>无<code>context.Content</code>调用</a><ul><li><a href=#客户端通信器>客户端通信器</a></li></ul></li><li><a href=#有contextcontent调用>有<code>context.Content</code>调用</a></li><li><a href=#单向调用oneway>单向调用（OneWay）</a></li><li><a href=#取模哈希调用>取模哈希调用</a></li><li><a href=#一致性哈希调用>一致性哈希调用</a></li></ul></li><li><a href=#小结>小结</a><ul><li><a href=#安装>安装</a></li><li><a href=#帮助>帮助</a></li><li><a href=#创建项目>创建项目</a></li><li><a href=#命令>命令</a><ul><li><a href=#执行结果>执行结果</a></li></ul></li></ul></li><li><a href=#示例代码>示例代码</a></li></ul></nav></div><script>window.addEventListener("DOMContentLoaded",()=>{enableStickyToc()})</script></div><div class="bg-secondary-bg prose col-span-2 rounded p-6 lg:col-span-6"><h3>相关</h3><a href=/2023/06/18/tarsgo-protocol/ class=no-underline>写给go开发者的Tars教程-Tars协议基础</a><br><a href=/cloud-native/tars%E5%AE%B9%E5%99%A8%E5%8C%96/ class=no-underline>Tars服务容器化</a><br></div></div><script>document.addEventListener("DOMContentLoaded",()=>{hljs.highlightAll()})</script></div></div></main><footer class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b"><p class="text-sm text-tertiary-text">&copy; 2021 <a href=https://blog.lbbniu.com/>lbbniu</a>
+&#183; Powered by the <a href=https://github.com/wangchucheng/hugo-eureka class=hover:text-eureka>Eureka</a> theme for <a href=https://gohugo.io class=hover:text-eureka>Hugo</a></p></div></div></footer></body></html>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>并查集 on lbbniu</title><link>/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/</link><description>Recent content in 并查集 on lbbniu</description><generator>Hugo -- gohugo.io</generator><language>zh</language><managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor><webMaster>lbbniu@gmail.com (lbbniu)</webMaster><copyright>&amp;copy; 2021 &lt;a href="https://blog.lbbniu.com/">lbbniu&lt;/a></copyright><lastBuildDate>Mon, 19 Dec 2022 00:01:00 +0800</lastBuildDate><atom:link href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/index.xml" rel="self" type="application/rss+xml"/><item><title>面试题 16.19 水域大小</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/pond-sizes-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/pond-sizes-lcci/</guid><description>面试题 16.19 水域大小 你有一个用于表示一片土地的整数矩阵land，该矩阵中每个点的值代表对应地点的海拔高度。若值为0则表示水域。由垂直、水平或对角连接的水域为池塘。池塘的大小是指相连接的水域的个数。编写一个方法来计算矩阵中所有池塘的大小，返回值需要从小到大排序。
+示例：
+输入： [ [0,2,1,0], [0,1,0,1], [1,1,0,1], [0,1,0,1] ] 输出： [1,2,4] 提示：
+0 &lt; len(land) &lt;= 1000 0 &lt; len(land[i]) &lt;= 1000 func pondSizes(land [][]int) []int { } LeetCode题库地址 https://leetcode.cn/problems/pond-sizes-lcci</description></item><item><title>面试题 17.07 婴儿名字</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/baby-names-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/baby-names-lcci/</guid><description>面试题 17.07 婴儿名字 每年，政府都会公布一万个最常见的婴儿名字和它们出现的频率，也就是同名婴儿的数量。有些名字有多种拼法，例如，John 和 Jon 本质上是相同的名字，但被当成了两个名字公布出来。给定两个列表，一个是名字及对应的频率，另一个是本质相同的名字对。设计一个算法打印出每个真实名字的实际频率。注意，如果 John 和 Jon 是相同的，并且 Jon 和 Johnny 相同，则 John 与 Johnny 也相同，即它们有传递和对称性。
+在结果列表中，选择 字典序最小 的名字作为真实名字。
+示例：
+输入：names = ["John(15)","Jon(12)","Chris(13)","Kris(4)","Christopher(19)"], synonyms = ["(Jon,John)","(John,Johnny)","(Chris,Kris)","(Chris,Christopher)"] 输出：["John(27)","Chris(36)"] 提示：
+names.length &lt;= 100000 func trulyMostPopular(names []string, synonyms []string) []string { } LeetCode题库地址 https://leetcode.cn/problems/baby-names-lcci</description></item><item><title>剑指 Offer II 105 岛屿的最大面积</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/zl6zan/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/zl6zan/</guid><description>剑指 Offer II 105 岛屿的最大面积 给定一个由&amp;nbsp;0 和 1 组成的非空二维数组&amp;nbsp;grid&amp;nbsp;，用来表示海洋岛屿地图。
+一个&amp;nbsp;岛屿&amp;nbsp;是由一些相邻的&amp;nbsp;1&amp;nbsp;(代表土地) 构成的组合，这里的「相邻」要求两个 1 必须在水平或者竖直方向上相邻。你可以假设&amp;nbsp;grid 的四个边缘都被 0（代表水）包围着。
+找到给定的二维数组中最大的岛屿面积。如果没有岛屿，则返回面积为 0 。
+&amp;nbsp;
+示例 1:
+输入: grid = [[0,0,1,0,0,0,0,1,0,0,0,0,0],[0,0,0,0,0,0,0,1,1,1,0,0,0],[0,1,1,0,1,0,0,0,0,0,0,0,0],[0,1,0,0,1,1,0,0,1,0,1,0,0],[0,1,0,0,1,1,0,0,1,1,1,0,0],[0,0,0,0,0,0,0,0,0,0,1,0,0],[0,0,0,0,0,0,0,1,1,1,0,0,0],[0,0,0,0,0,0,0,1,1,0,0,0,0]] 输出: 6 解释: 对于上面这个给定矩阵应返回&amp;nbsp;6。注意答案不应该是 11 ，因为岛屿只能包含水平或垂直的四个方向的 1 。 示例 2:
+输入: grid = [[0,0,0,0,0,0,0,0]] 输出: 0 &amp;nbsp;
+提示：
+m == grid.length n == grid[i].length 1 &amp;lt;= m, n &amp;lt;= 50 grid[i][j] is either 0 or 1 &amp;nbsp;
+注意：本题与主站 695&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/max-area-of-island/
+func maxAreaOfIsland(grid [][]int) int { } LeetCode题库地址 https://leetcode.cn/problems/ZL6zAn</description></item><item><title>剑指 Offer II 106 二分图</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/veab3k/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/veab3k/</guid><description>剑指 Offer II 106 二分图 存在一个 无向图 ，图中有 n 个节点。其中每个节点都有一个介于 0 到 n - 1 之间的唯一编号。
+给定一个二维数组 graph&amp;nbsp;，表示图，其中 graph[u] 是一个节点数组，由节点 u 的邻接节点组成。形式上，对于&amp;nbsp;graph[u] 中的每个 v ，都存在一条位于节点 u 和节点 v 之间的无向边。该无向图同时具有以下属性：
+不存在自环（graph[u] 不包含 u）。 不存在平行边（graph[u] 不包含重复值）。 如果 v 在 graph[u] 内，那么 u 也应该在 graph[v] 内（该图是无向图） 这个图可能不是连通图，也就是说两个节点 u 和 v 之间可能不存在一条连通彼此的路径。 二分图 定义：如果能将一个图的节点集合分割成两个独立的子集 A 和 B ，并使图中的每一条边的两个节点一个来自 A 集合，一个来自 B 集合，就将这个图称为 二分图 。
+如果图是二分图，返回 true ；否则，返回 false 。
+&amp;nbsp;
+示例 1：
+输入：graph = [[1,2,3],[0,2],[0,1,3],[0,2]] 输出：false 解释：不能将节点分割成两个独立的子集，以使每条边都连通一个子集中的一个节点与另一个子集中的一个节点。 示例 2：</description></item><item><title>剑指 Offer II 111 计算除法</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/vlzxql/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/vlzxql/</guid><description>剑指 Offer II 111 计算除法 给定一个变量对数组 equations 和一个实数值数组 values 作为已知条件，其中 equations[i] = [Ai, Bi] 和 values[i] 共同表示等式 Ai / Bi = values[i] 。每个 Ai 或 Bi 是一个表示单个变量的字符串。
+另有一些以数组 queries 表示的问题，其中 queries[j] = [Cj, Dj] 表示第 j 个问题，请你根据已知条件找出 Cj / Dj = ? 的结果作为答案。
+返回 所有问题的答案 。如果存在某个无法确定的答案，则用 -1.0 替代这个答案。如果问题中出现了给定的已知条件中没有出现的字符串，也需要用 -1.0 替代这个答案。
+注意：输入总是有效的。可以假设除法运算中不会出现除数为 0 的情况，且不存在任何矛盾的结果。
+&amp;nbsp;
+示例 1：
+输入：equations = [[&amp;quot;a&amp;quot;,&amp;quot;b&amp;quot;],[&amp;quot;b&amp;quot;,&amp;quot;c&amp;quot;]], values = [2.0,3.0], queries = [[&amp;quot;a&amp;quot;,&amp;quot;c&amp;quot;],[&amp;quot;b&amp;quot;,&amp;quot;a&amp;quot;],[&amp;quot;a&amp;quot;,&amp;quot;e&amp;quot;],[&amp;quot;a&amp;quot;,&amp;quot;a&amp;quot;],[&amp;quot;x&amp;quot;,&amp;quot;x&amp;quot;]] 输出：[6.00000,0.50000,-1.00000,1.00000,-1.00000] 解释： 条件：a / b = 2.0, b / c = 3.</description></item><item><title>剑指 Offer II 116 省份数量</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/blyhh0/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/blyhh0/</guid><description>剑指 Offer II 116 省份数量 有 n 个城市，其中一些彼此相连，另一些没有相连。如果城市 a 与城市 b 直接相连，且城市 b 与城市 c 直接相连，那么城市 a 与城市 c 间接相连。
+省份 是一组直接或间接相连的城市，组内不含其他没有相连的城市。
+给你一个 n x n 的矩阵 isConnected ，其中 isConnected[i][j] = 1 表示第 i 个城市和第 j 个城市直接相连，而 isConnected[i][j] = 0 表示二者不直接相连。
+返回矩阵中 省份 的数量。
+&amp;nbsp;
+示例 1：
+输入：isConnected = [[1,1,0],[1,1,0],[0,0,1]] 输出：2 示例 2：
+输入：isConnected = [[1,0,0],[0,1,0],[0,0,1]] 输出：3 &amp;nbsp;
+提示：
+1 &amp;lt;= n &amp;lt;= 200 n == isConnected.length n == isConnected[i].length isConnected[i][j] 为 1 或 0 isConnected[i][i] == 1 isConnected[i][j] == isConnected[j][i] &amp;nbsp;</description></item><item><title>剑指 Offer II 117 相似的字符串</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/h6lpxb/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/h6lpxb/</guid><description>剑指 Offer II 117 相似的字符串 如果交换字符串&amp;nbsp;X 中的两个不同位置的字母，使得它和字符串&amp;nbsp;Y 相等，那么称 X 和 Y 两个字符串相似。如果这两个字符串本身是相等的，那它们也是相似的。
+例如，&amp;quot;tars&amp;quot; 和 &amp;quot;rats&amp;quot; 是相似的 (交换 0 与 2 的位置)；&amp;nbsp;&amp;quot;rats&amp;quot; 和 &amp;quot;arts&amp;quot; 也是相似的，但是 &amp;quot;star&amp;quot; 不与 &amp;quot;tars&amp;quot;，&amp;quot;rats&amp;quot;，或 &amp;quot;arts&amp;quot; 相似。
+总之，它们通过相似性形成了两个关联组：{&amp;quot;tars&amp;quot;, &amp;quot;rats&amp;quot;, &amp;quot;arts&amp;quot;} 和 {&amp;quot;star&amp;quot;}。注意，&amp;quot;tars&amp;quot; 和 &amp;quot;arts&amp;quot; 是在同一组中，即使它们并不相似。形式上，对每个组而言，要确定一个单词在组中，只需要这个词和该组中至少一个单词相似。
+给定一个字符串列表 strs。列表中的每个字符串都是 strs 中其它所有字符串的一个&amp;nbsp;字母异位词&amp;nbsp;。请问 strs 中有多少个相似字符串组？
+字母异位词（anagram），一种把某个字符串的字母的位置（顺序）加以改换所形成的新词。
+&amp;nbsp;
+示例 1：
+输入：strs = [&amp;quot;tars&amp;quot;,&amp;quot;rats&amp;quot;,&amp;quot;arts&amp;quot;,&amp;quot;star&amp;quot;] 输出：2 示例 2：
+输入：strs = [&amp;quot;omv&amp;quot;,&amp;quot;ovm&amp;quot;] 输出：1 &amp;nbsp;
+提示：
+1 &amp;lt;= strs.length &amp;lt;= 300 1 &amp;lt;= strs[i].length &amp;lt;= 300 strs[i] 只包含小写字母。 strs 中的所有单词都具有相同的长度，且是彼此的字母异位词。 &amp;nbsp; &amp;nbsp;</description></item><item><title>剑指 Offer II 118 多余的边</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/7lpjuw/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/7lpjuw/</guid><description>剑指 Offer II 118 多余的边 树可以看成是一个连通且 无环&amp;nbsp;的&amp;nbsp;无向&amp;nbsp;图。
+给定往一棵&amp;nbsp;n 个节点 (节点值&amp;nbsp;1～n) 的树中添加一条边后的图。添加的边的两个顶点包含在 1 到 n&amp;nbsp;中间，且这条附加的边不属于树中已存在的边。图的信息记录于长度为 n 的二维数组 edges&amp;nbsp;，edges[i] = [ai, bi]&amp;nbsp;表示图中在 ai 和 bi 之间存在一条边。
+请找出一条可以删去的边，删除后可使得剩余部分是一个有着 n 个节点的树。如果有多个答案，则返回数组&amp;nbsp;edges&amp;nbsp;中最后出现的边。
+&amp;nbsp;
+示例 1：
+输入: edges = [[1,2],[1,3],[2,3]] 输出: [2,3] 示例 2：
+输入: edges = [[1,2],[2,3],[3,4],[1,4],[1,5]] 输出: [1,4] &amp;nbsp;
+提示:
+n == edges.length 3 &amp;lt;= n &amp;lt;= 1000 edges[i].length == 2 1 &amp;lt;= ai&amp;nbsp;&amp;lt; bi&amp;nbsp;&amp;lt;= edges.length ai != bi edges 中无重复元素 给定的图是连通的&amp;nbsp; &amp;nbsp;
+注意：本题与主站 684&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/redundant-connection/
+func findRedundantConnection(edges [][]int) []int { } LeetCode题库地址 https://leetcode.</description></item><item><title>剑指 Offer II 119 最长连续序列</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/whswhi/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/whswhi/</guid><description>剑指 Offer II 119 最长连续序列 给定一个未排序的整数数组 nums ，找出数字连续的最长序列（不要求序列元素在原数组中连续）的长度。
+&amp;nbsp;
+示例 1：
+输入：nums = [100,4,200,1,3,2] 输出：4 解释：最长数字连续序列是 [1, 2, 3, 4]。它的长度为 4。 示例 2：
+输入：nums = [0,3,7,2,5,8,4,6,0,1] 输出：9 &amp;nbsp;
+提示：
+0 &amp;lt;= nums.length &amp;lt;= 104 -109 &amp;lt;= nums[i] &amp;lt;= 109 &amp;nbsp;
+进阶：可以设计并实现时间复杂度为&amp;nbsp;O(n) 的解决方案吗？
+&amp;nbsp;
+注意：本题与主站 128&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/longest-consecutive-sequence/
+func longestConsecutive(nums []int) int { } LeetCode题库地址 https://leetcode.cn/problems/WhsWhI</description></item><item><title>【2022-12-19每日一题】1971. 寻找图中是否存在路径[Easy]</title><link>/study/leetcode/find-if-path-exists-in-graph/</link><pubDate>Mon, 19 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/find-if-path-exists-in-graph/</guid><description>2022-12-19每日一题：1971. 寻找图中是否存在路径 难度：Easy
+标签：深度优先搜索 、 广度优先搜索 、 并查集 、 图
+有一个具有 n 个顶点的 双向 图，其中每个顶点标记从 0 到 n - 1（包含 0 和 n - 1）。图中的边用一个二维整数数组 edges 表示，其中 edges[i] = [ui, vi] 表示顶点 ui 和顶点 vi 之间的双向边。 每个顶点对由 最多一条 边连接，并且没有顶点存在与自身相连的边。
+请你确定是否存在从顶点 source 开始，到顶点 destination 结束的 有效路径 。
+给你数组 edges 和整数 n、source 和 destination，如果从 source 到 destination 存在 有效路径 ，则返回 true，否则返回 false 。
+&amp;nbsp;
+示例 1：
+输入：n = 3, edges = [[0,1],[1,2],[2,0]], source = 0, destination = 2 输出：true 解释：存在由顶点 0 到顶点 2 的路径: - 0 → 1 → 2 - 0 → 2 示例 2：</description></item><item><title>【2022-12-14每日一题】1697. 检查边长度限制的路径是否存在[Hard]</title><link>/study/leetcode/checking-existence-of-edge-length-limited-paths/</link><pubDate>Wed, 14 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/checking-existence-of-edge-length-limited-paths/</guid><description>2022-12-14每日一题：1697. 检查边长度限制的路径是否存在 难度：Hard
+标签：并查集 、 图 、 数组 、 排序
+给你一个 n 个点组成的无向图边集 edgeList ，其中 edgeList[i] = [ui, vi, disi] 表示点 ui 和点 vi 之间有一条长度为 disi 的边。请注意，两个点之间可能有 超过一条边 。
+给你一个查询数组queries ，其中 queries[j] = [pj, qj, limitj] ，你的任务是对于每个查询 queries[j] ，判断是否存在从 pj 到 qj 的路径，且这条路径上的每一条边都 严格小于 limitj 。
+请你返回一个 布尔数组 answer ，其中 answer.length == queries.length ，当 queries[j] 的查询结果为 true 时， answer 第 j 个值为 true ，否则为 false 。
+示例 1：
+输入：n = 3, edgeList = [[0,1,2],[1,2,4],[2,0,8],[1,0,16]], queries = [[0,1,2],[0,2,5]] 输出：[false,true] 解释：上图为给定的输入数据。注意到 0 和 1 之间有两条重边，分别为 2 和 16 。 对于第一个查询，0 和 1 之间没有小于 2 的边，所以我们返回 false 。 对于第二个查询，有一条路径（0 -> 1 -> 2）两条边都小于 5 ，所以这个查询我们返回 true 。 示例 2：</description></item><item><title>【2022-10-16每日一题】886. 可能的二分法[Medium]</title><link>/study/leetcode/possible-bipartition/</link><pubDate>Sun, 16 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/possible-bipartition/</guid><description>2022-10-16每日一题：886. 可能的二分法 难度：Medium
+标签：深度优先搜索 、 广度优先搜索 、 并查集 、 图
+给定一组&amp;nbsp;n&amp;nbsp;人（编号为&amp;nbsp;1, 2, ..., n），&amp;nbsp;我们想把每个人分进任意大小的两组。每个人都可能不喜欢其他人，那么他们不应该属于同一组。
+给定整数 n&amp;nbsp;和数组 dislikes&amp;nbsp;，其中&amp;nbsp;dislikes[i] = [ai, bi]&amp;nbsp;，表示不允许将编号为 ai&amp;nbsp;和&amp;nbsp;&amp;nbsp;bi的人归入同一组。当可以用这种方法将所有人分进两组时，返回 true；否则返回 false。
+&amp;nbsp;
+示例 1：
+输入：n = 4, dislikes = [[1,2],[1,3],[2,4]] 输出：true 解释：group1 [1,4], group2 [2,3] 示例 2：
+输入：n = 3, dislikes = [[1,2],[1,3],[2,3]] 输出：false 示例 3：
+输入：n = 5, dislikes = [[1,2],[2,3],[3,4],[4,5],[1,5]] 输出：false &amp;nbsp;
+提示：
+1 &amp;lt;= n &amp;lt;= 2000 0 &amp;lt;= dislikes.length &amp;lt;= 104 dislikes[i].length == 2 1 &amp;lt;= dislikes[i][j] &amp;lt;= n ai&amp;nbsp;&amp;lt; bi dislikes&amp;nbsp;中每一组都 不同 &amp;nbsp;</description></item><item><title>【2022-09-18每日一题】827. 最大人工岛</title><link>/study/leetcode/making-a-large-island/</link><pubDate>Sun, 18 Sep 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/making-a-large-island/</guid><description>2022-09-18每日一题：827. 最大人工岛 难度：Hard
+标签：深度优先搜索 、 广度优先搜索 、 并查集 、 数组 、 矩阵
+给你一个大小为 n x n 二进制矩阵 grid 。最多 只能将一格 0 变成 1 。
+返回执行此操作后，grid 中最大的岛屿面积是多少？
+岛屿 由一组上、下、左、右四个方向相连的 1 形成。
+示例 1:
+输入: grid = [[1, 0], [0, 1]] 输出: 3 解释: 将一格0变成1，最终连通两个小岛得到面积为 3 的岛屿。 示例 2:
+输入: grid = [[1, 1], [1, 0]] 输出: 4 解释: 将一格0变成1，岛屿的面积扩大为 4。 示例 3:
+输入: grid = [[1, 1], [1, 1]] 输出: 4 解释: 没有0可以让我们变成1，面积依然为 4。 提示：
+n == grid.</description></item></channel></rss>

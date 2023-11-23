@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>滑动窗口 on lbbniu</title><link>/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/</link><description>Recent content in 滑动窗口 on lbbniu</description><generator>Hugo -- gohugo.io</generator><language>zh</language><managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor><webMaster>lbbniu@gmail.com (lbbniu)</webMaster><copyright>&amp;copy; 2021 &lt;a href="https://blog.lbbniu.com/">lbbniu&lt;/a></copyright><lastBuildDate>Sat, 07 Jan 2023 00:01:00 +0800</lastBuildDate><atom:link href="/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/index.xml" rel="self" type="application/rss+xml"/><item><title>剑指 Offer II 008 和大于等于 target 的最短子数组</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/2vg8kg/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/2vg8kg/</guid><description>剑指 Offer II 008 和大于等于 target 的最短子数组 给定一个含有&amp;nbsp;n&amp;nbsp;个正整数的数组和一个正整数 target 。
+找出该数组中满足其和 &amp;ge; target 的长度最小的 连续子数组&amp;nbsp;[numsl, numsl+1, ..., numsr-1, numsr] ，并返回其长度。如果不存在符合条件的子数组，返回 0 。
+&amp;nbsp;
+示例 1：
+输入：target = 7, nums = [2,3,1,2,4,3] 输出：2 解释：子数组&amp;nbsp;[4,3]&amp;nbsp;是该条件下的长度最小的子数组。 示例 2：
+输入：target = 4, nums = [1,4,4] 输出：1 示例 3：
+输入：target = 11, nums = [1,1,1,1,1,1,1,1] 输出：0 &amp;nbsp;
+提示：
+1 &amp;lt;= target &amp;lt;= 109 1 &amp;lt;= nums.length &amp;lt;= 105 1 &amp;lt;= nums[i] &amp;lt;= 105 &amp;nbsp;
+进阶：
+如果你已经实现 O(n) 时间复杂度的解法, 请尝试设计一个 O(n log(n)) 时间复杂度的解法。 &amp;nbsp;</description></item><item><title>剑指 Offer II 009 乘积小于 K 的子数组</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/zvavxx/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/zvavxx/</guid><description>剑指 Offer II 009 乘积小于 K 的子数组 给定一个正整数数组&amp;nbsp;nums和整数 k&amp;nbsp;，请找出该数组内乘积小于&amp;nbsp;k&amp;nbsp;的连续的子数组的个数。
+&amp;nbsp;
+示例 1:
+输入: nums = [10,5,2,6], k = 100 输出: 8 解释: 8 个乘积小于 100 的子数组分别为: [10], [5], [2], [6], [10,5], [5,2], [2,6], [5,2,6]。 需要注意的是 [10,5,2] 并不是乘积小于100的子数组。 示例 2:
+输入: nums = [1,2,3], k = 0 输出: 0 &amp;nbsp;
+提示:&amp;nbsp;
+1 &amp;lt;= nums.length &amp;lt;= 3 * 104 1 &amp;lt;= nums[i] &amp;lt;= 1000 0 &amp;lt;= k &amp;lt;= 106 &amp;nbsp;
+注意：本题与主站 713&amp;nbsp;题相同：https://leetcode-cn.com/problems/subarray-product-less-than-k/&amp;nbsp;
+func numSubarrayProductLessThanK(nums []int, k int) int { } LeetCode题库地址 https://leetcode.</description></item><item><title>剑指 Offer II 014 字符串中的变位词</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/mpnail/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/mpnail/</guid><description>剑指 Offer II 014 字符串中的变位词 给定两个字符串&amp;nbsp;s1&amp;nbsp;和&amp;nbsp;s2，写一个函数来判断 s2 是否包含 s1&amp;nbsp;的某个变位词。
+换句话说，第一个字符串的排列之一是第二个字符串的 子串 。
+&amp;nbsp;
+示例 1：
+输入: s1 = &amp;quot;ab&amp;quot; s2 = &amp;quot;eidbaooo&amp;quot; 输出: True 解释: s2 包含 s1 的排列之一 (&amp;quot;ba&amp;quot;). 示例 2：
+输入: s1= &amp;quot;ab&amp;quot; s2 = &amp;quot;eidboaoo&amp;quot; 输出: False &amp;nbsp;
+提示：
+1 &amp;lt;= s1.length, s2.length &amp;lt;= 104 s1 和 s2 仅包含小写字母 &amp;nbsp;
+注意：本题与主站 567&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/permutation-in-string/
+func checkInclusion(s1 string, s2 string) bool { } LeetCode题库地址 https://leetcode.cn/problems/MPnaiL</description></item><item><title>剑指 Offer II 015 字符串中的所有变位词</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/vabmrr/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/vabmrr/</guid><description>剑指 Offer II 015 字符串中的所有变位词 给定两个字符串&amp;nbsp;s&amp;nbsp;和&amp;nbsp;p，找到&amp;nbsp;s&amp;nbsp;中所有 p 的&amp;nbsp;变位词&amp;nbsp;的子串，返回这些子串的起始索引。不考虑答案输出的顺序。
+变位词 指字母相同，但排列不同的字符串。
+&amp;nbsp;
+示例&amp;nbsp;1：
+输入: s = &amp;quot;cbaebabacd&amp;quot;, p = &amp;quot;abc&amp;quot; 输出: [0,6] 解释: 起始索引等于 0 的子串是 &amp;quot;cba&amp;quot;, 它是 &amp;quot;abc&amp;quot; 的变位词。 起始索引等于 6 的子串是 &amp;quot;bac&amp;quot;, 它是 &amp;quot;abc&amp;quot; 的变位词。 &amp;nbsp;示例 2：
+输入: s = &amp;quot;abab&amp;quot;, p = &amp;quot;ab&amp;quot; 输出: [0,1,2] 解释: 起始索引等于 0 的子串是 &amp;quot;ab&amp;quot;, 它是 &amp;quot;ab&amp;quot; 的变位词。 起始索引等于 1 的子串是 &amp;quot;ba&amp;quot;, 它是 &amp;quot;ab&amp;quot; 的变位词。 起始索引等于 2 的子串是 &amp;quot;ab&amp;quot;, 它是 &amp;quot;ab&amp;quot; 的变位词。 &amp;nbsp;
+提示:
+1 &amp;lt;= s.length, p.length &amp;lt;= 3 * 104 s&amp;nbsp;和 p 仅包含小写字母 &amp;nbsp;</description></item><item><title>剑指 Offer II 016 不含重复字符的最长子字符串</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/wtcae1/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/wtcae1/</guid><description>剑指 Offer II 016 不含重复字符的最长子字符串 给定一个字符串 s ，请你找出其中不含有重复字符的&amp;nbsp;最长连续子字符串&amp;nbsp;的长度。
+&amp;nbsp;
+示例&amp;nbsp;1:
+输入: s = &amp;quot;abcabcbb&amp;quot; 输出: 3 解释: 因为无重复字符的最长子字符串是 &amp;quot;abc&amp;quot;，所以其长度为 3。 示例 2:
+输入: s = &amp;quot;bbbbb&amp;quot; 输出: 1 解释: 因为无重复字符的最长子字符串是 &amp;quot;b&amp;quot;，所以其长度为 1。 示例 3:
+输入: s = &amp;quot;pwwkew&amp;quot; 输出: 3 解释: 因为无重复字符的最长子串是&amp;nbsp;&amp;quot;wke&amp;quot;，所以其长度为 3。 &amp;nbsp; 请注意，你的答案必须是 子串 的长度，&amp;quot;pwke&amp;quot;&amp;nbsp;是一个子序列，不是子串。 示例 4:
+输入: s = &amp;quot;&amp;quot; 输出: 0 &amp;nbsp;
+提示：
+0 &amp;lt;= s.length &amp;lt;= 5 * 104 s&amp;nbsp;由英文字母、数字、符号和空格组成 &amp;nbsp;
+注意：本题与主站 3&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
+func lengthOfLongestSubstring(s string) int { } LeetCode题库地址 https://leetcode.</description></item><item><title>剑指 Offer II 017 含有所有字符的最短字符串</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/m1oytv/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/m1oytv/</guid><description>剑指 Offer II 017 含有所有字符的最短字符串 给定两个字符串 s 和&amp;nbsp;t 。返回 s 中包含&amp;nbsp;t&amp;nbsp;的所有字符的最短子字符串。如果 s 中不存在符合条件的子字符串，则返回空字符串 &amp;quot;&amp;quot; 。
+如果 s 中存在多个符合条件的子字符串，返回任意一个。
+&amp;nbsp;
+注意： 对于 t 中重复字符，我们寻找的子字符串中该字符数量必须不少于 t 中该字符数量。
+&amp;nbsp;
+示例 1：
+输入：s = &amp;quot;ADOBECODEBANC&amp;quot;, t = &amp;quot;ABC&amp;quot; 输出：&amp;quot;BANC&amp;quot; 解释：最短子字符串 &amp;quot;BANC&amp;quot; 包含了字符串 t 的所有字符 &amp;#39;A&amp;#39;、&amp;#39;B&amp;#39;、&amp;#39;C&amp;#39; 示例 2：
+输入：s = &amp;quot;a&amp;quot;, t = &amp;quot;a&amp;quot; 输出：&amp;quot;a&amp;quot; 示例 3：
+输入：s = &amp;quot;a&amp;quot;, t = &amp;quot;aa&amp;quot; 输出：&amp;quot;&amp;quot; 解释：t 中两个字符 &amp;#39;a&amp;#39; 均应包含在 s 的子串中，因此没有符合条件的子字符串，返回空字符串。 &amp;nbsp;
+提示：
+1 &amp;lt;= s.length, t.length &amp;lt;= 105 s 和 t 由英文字母组成 &amp;nbsp;</description></item><item><title>剑指 Offer 48 最长不含重复字符的子字符串</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/zui-chang-bu-han-zhong-fu-zi-fu-de-zi-zi-fu-chuan-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/zui-chang-bu-han-zhong-fu-zi-fu-de-zi-zi-fu-chuan-lcof/</guid><description>剑指 Offer 48 最长不含重复字符的子字符串 请从字符串中找出一个最长的不包含重复字符的子字符串，计算该最长子字符串的长度。
+&amp;nbsp;
+示例&amp;nbsp;1:
+输入: &amp;quot;abcabcbb&amp;quot; 输出: 3 解释: 因为无重复字符的最长子串是 &amp;quot;abc&amp;quot;，所以其长度为 3。 示例 2:
+输入: &amp;quot;bbbbb&amp;quot; 输出: 1 解释: 因为无重复字符的最长子串是 &amp;quot;b&amp;quot;，所以其长度为 1。 示例 3:
+输入: &amp;quot;pwwkew&amp;quot; 输出: 3 解释: 因为无重复字符的最长子串是&amp;nbsp;&amp;quot;wke&amp;quot;，所以其长度为 3。 &amp;nbsp; 请注意，你的答案必须是 子串 的长度，&amp;quot;pwke&amp;quot;&amp;nbsp;是一个子序列，不是子串。 &amp;nbsp;
+提示：
+s.length &amp;lt;= 40000 注意：本题与主站 3 题相同：https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
+func lengthOfLongestSubstring(s string) int { } LeetCode题库地址 https://leetcode.cn/problems/zui-chang-bu-han-zhong-fu-zi-fu-de-zi-zi-fu-chuan-lcof</description></item><item><title>剑指 Offer II 057 值和下标之差都在给定的范围内</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/7wqedu/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/7wqedu/</guid><description>剑指 Offer II 057 值和下标之差都在给定的范围内 给你一个整数数组 nums 和两个整数&amp;nbsp;k 和 t 。请你判断是否存在 两个不同下标 i 和 j，使得&amp;nbsp;abs(nums[i] - nums[j]) &amp;lt;= t ，同时又满足 abs(i - j) &amp;lt;= k 。
+如果存在则返回 true，不存在返回 false。
+&amp;nbsp;
+示例&amp;nbsp;1：
+输入：nums = [1,2,3,1], k = 3, t = 0 输出：true 示例 2：
+输入：nums = [1,0,1,1], k = 1, t = 2 输出：true 示例 3：
+输入：nums = [1,5,9,1,5,9], k = 2, t = 3 输出：false &amp;nbsp;
+提示：
+0 &amp;lt;= nums.length &amp;lt;= 2 * 104 -231 &amp;lt;= nums[i] &amp;lt;= 231 - 1 0 &amp;lt;= k &amp;lt;= 104 0 &amp;lt;= t &amp;lt;= 231 - 1 &amp;nbsp;</description></item><item><title>剑指 Offer 59 - I 滑动窗口的最大值</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/hua-dong-chuang-kou-de-zui-da-zhi-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/hua-dong-chuang-kou-de-zui-da-zhi-lcof/</guid><description>剑指 Offer 59 - I 滑动窗口的最大值 给定一个数组 nums 和滑动窗口的大小 k，请找出所有滑动窗口里的最大值。
+示例:
+输入: nums = [1,3,-1,-3,5,3,6,7], 和 k = 3 输出: [3,3,5,5,6,7] 解释: 滑动窗口的位置 最大值 --------------- ----- [1 3 -1] -3 5 3 6 7 3 1 [3 -1 -3] 5 3 6 7 3 1 3 [-1 -3 5] 3 6 7 5 1 3 -1 [-3 5 3] 6 7 5 1 3 -1 -3 [5 3 6] 7 6 1 3 -1 -3 5 [3 6 7] 7 &amp;nbsp;</description></item><item><title>面试题 17.17 多次搜索</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/multi-search-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/multi-search-lcci/</guid><description>面试题 17.17 多次搜索 给定一个较长字符串big和一个包含较短字符串的数组smalls，设计一个方法，根据smalls中的每一个较短字符串，对big进行搜索。输出smalls中的字符串在big里出现的所有位置positions，其中positions[i]为smalls[i]出现的所有位置。
+示例：
+输入： big = &amp;quot;mississippi&amp;quot; smalls = [&amp;quot;is&amp;quot;,&amp;quot;ppi&amp;quot;,&amp;quot;hi&amp;quot;,&amp;quot;sis&amp;quot;,&amp;quot;i&amp;quot;,&amp;quot;ssippi&amp;quot;] 输出： [[1,4],[8],[],[3],[1,4,7,10],[5]] 提示：
+0 &amp;lt;= len(big) &amp;lt;= 1000 0 &amp;lt;= len(smalls[i]) &amp;lt;= 1000 smalls的总字符数不会超过 100000。 你可以认为smalls中没有重复字符串。 所有出现的字符均为英文小写字母。 func multiSearch(big string, smalls []string) [][]int { } LeetCode题库地址 https://leetcode.cn/problems/multi-search-lcci</description></item><item><title>面试题 17.18 最短超串</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/shortest-supersequence-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/shortest-supersequence-lcci/</guid><description>面试题 17.18 最短超串 假设你有两个数组，一个长一个短，短的元素均不相同。找到长数组中包含短数组所有的元素的最短子数组，其出现顺序无关紧要。
+返回最短子数组的左端点和右端点，如有多个满足条件的子数组，返回左端点最小的一个。若不存在，返回空数组。
+示例 1:
+输入: big = [7,5,9,0,2,1,3,5,7,9,1,1,5,8,8,9,7] small = [1,5,9] 输出: [7,10] 示例 2:
+输入: big = [1,2,3] small = [4] 输出: [] 提示：
+big.length&amp;nbsp;&amp;lt;= 100000 1 &amp;lt;= small.length&amp;nbsp;&amp;lt;= 100000 func shortestSeq(big []int, small []int) []int { } LeetCode题库地址 https://leetcode.cn/problems/shortest-supersequence-lcci</description></item><item><title>【2023-01-07每日一题】1658. 将 x 减到 0 的最小操作数[Medium]</title><link>/study/leetcode/minimum-operations-to-reduce-x-to-zero/</link><pubDate>Sat, 07 Jan 2023 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/minimum-operations-to-reduce-x-to-zero/</guid><description>2023-01-07每日一题：1658. 将 x 减到 0 的最小操作数 难度：Medium
+标签：数组 、 哈希表 、 二分查找 、 前缀和 、 滑动窗口
+给你一个整数数组 nums 和一个整数 x 。每一次操作时，你应当移除数组 nums 最左边或最右边的元素，然后从 x 中减去该元素的值。请注意，需要 修改 数组以供接下来的操作使用。
+如果可以将 x 恰好 减到 0 ，返回 最小操作数 ；否则，返回 -1 。
+示例 1：
+输入：nums = [1,1,4,2,3], x = 5 输出：2 解释：最佳解决方案是移除后两个元素，将 x 减到 0 。 示例 2：
+输入：nums = [5,6,7,8,9], x = 4 输出：-1 示例 3：
+输入：nums = [3,2,20,1,1,3], x = 10 输出：5 解释：最佳解决方案是移除后三个元素和前两个元素（总共 5 次操作），将 x 减到 0 。 提示：</description></item><item><title>【2022-12-18每日一题】1703. 得到连续 K 个 1 的最少相邻交换次数[Hard]</title><link>/study/leetcode/minimum-adjacent-swaps-for-k-consecutive-ones/</link><pubDate>Sun, 18 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/minimum-adjacent-swaps-for-k-consecutive-ones/</guid><description>2022-12-18每日一题：1703. 得到连续 K 个 1 的最少相邻交换次数 难度：Hard
+标签：贪心 、 数组 、 前缀和 、 滑动窗口
+给你一个整数数组 nums 和一个整数 k 。 nums 仅包含 0 和 1 。每一次移动，你可以选择 相邻 两个数字并将它们交换。
+请你返回使 nums 中包含 k 个 连续 1 的 最少 交换次数。
+示例 1：
+输入：nums = [1,0,0,1,0,1], k = 2 输出：1 解释：在第一次操作时，nums 可以变成 [1,0,0,0,1,1] 得到连续两个 1 。 示例 2：
+输入：nums = [1,0,0,0,0,0,1,1], k = 3 输出：5 解释：通过 5 次操作，最左边的 1 可以移到右边直到 nums 变为 [0,0,0,0,0,1,1,1] 。 示例 3：
+输入：nums = [1,1,0,1], k = 2 输出：0 解释：nums 已经有连续 2 个 1 了。 提示：</description></item><item><title>【2022-10-26每日一题】862. 和至少为 K 的最短子数组[Hard]</title><link>/study/leetcode/shortest-subarray-with-sum-at-least-k/</link><pubDate>Wed, 26 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/shortest-subarray-with-sum-at-least-k/</guid><description>2022-10-26每日一题：862. 和至少为 K 的最短子数组 难度：Hard
+标签：队列 、 数组 、 二分查找 、 前缀和 、 滑动窗口 、 单调队列 、 堆（优先队列）
+给你一个整数数组 nums 和一个整数 k ，找出 nums 中和至少为 k 的 最短非空子数组 ，并返回该子数组的长度。如果不存在这样的 子数组 ，返回 -1 。
+子数组 是数组中 连续 的一部分。
+&amp;nbsp;
+示例 1：
+输入：nums = [1], k = 1 输出：1 示例 2：
+输入：nums = [1,2], k = 4 输出：-1 示例 3：
+输入：nums = [2,-1,2], k = 3 输出：3 &amp;nbsp;
+提示：
+1 &amp;lt;= nums.length &amp;lt;= 105 -105 &amp;lt;= nums[i] &amp;lt;= 105 1 &amp;lt;= k &amp;lt;= 109 方法一：前缀和 + 单调双端队列 推荐题解 func shortestSubarray(nums []int, k int) int { n := len(nums) preSum := make([]int, n+1) for i, num := range nums { preSum[i+1] = preSum[i] + num // 计算前缀和 } ans := n + 1 q := []int{} for i, curSum := range preSum { for len(q) &amp;gt; 0 &amp;amp;&amp;amp; curSum - preSum[q[0]] &amp;gt;= k { ans = min(ans, i-q[0]) q = q[1:] // 上面计算后 q[0] 没有用了，直接移除 } for len(q) &amp;gt;0 &amp;amp;&amp;amp; preSum[q[len(q)-1]] &amp;gt;= curSum { q = q[:len(q)-1] // 移除队列中大约等于当前数的元素 } q = append(q, i) } if ans &amp;lt; n + 1 { return ans } return -1 } func min(a, b int) int { if a &amp;lt; b { return a } return b } 复杂度分析 LeetCode题库地址 https://leetcode.</description></item><item><title>【2022-10-17每日一题】904. 水果成篮[Medium]</title><link>/study/leetcode/fruit-into-baskets/</link><pubDate>Mon, 17 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/fruit-into-baskets/</guid><description>2022-10-17每日一题：904. 水果成篮 难度：Medium
+标签：数组 、 哈希表 、 滑动窗口
+你正在探访一家农场，农场从左到右种植了一排果树。这些树用一个整数数组 fruits 表示，其中 fruits[i] 是第 i 棵树上的水果 种类 。
+你想要尽可能多地收集水果。然而，农场的主人设定了一些严格的规矩，你必须按照要求采摘水果：
+你只有 两个 篮子，并且每个篮子只能装 单一类型 的水果。每个篮子能够装的水果总量没有限制。 你可以选择任意一棵树开始采摘，你必须从 每棵 树（包括开始采摘的树）上 恰好摘一个水果 。采摘的水果应当符合篮子中的水果类型。每采摘一次，你将会向右移动到下一棵树，并继续采摘。 一旦你走到某棵树前，但水果不符合篮子的水果类型，那么就必须停止采摘。 给你一个整数数组 fruits ，返回你可以收集的水果的 最大 数目。
+&amp;nbsp;
+示例 1：
+输入：fruits = [1,2,1] 输出：3 解释：可以采摘全部 3 棵树。 示例 2：
+输入：fruits = [0,1,2,2] 输出：3 解释：可以采摘 [1,2,2] 这三棵树。 如果从第一棵树开始采摘，则只能采摘 [0,1] 这两棵树。 示例 3：
+输入：fruits = [1,2,3,2,2] 输出：4 解释：可以采摘 [2,3,2,2] 这四棵树。 如果从第一棵树开始采摘，则只能采摘 [1,2] 这两棵树。 示例 4：
+输入：fruits = [3,3,3,1,2,1,1,2,3,3,4] 输出：5 解释：可以采摘 [1,2,1,1,2] 这五棵树。 &amp;nbsp;</description></item></channel></rss>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>有序集合 on lbbniu</title><link>/tags/%E6%9C%89%E5%BA%8F%E9%9B%86%E5%90%88/</link><description>Recent content in 有序集合 on lbbniu</description><generator>Hugo -- gohugo.io</generator><language>zh</language><managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor><webMaster>lbbniu@gmail.com (lbbniu)</webMaster><copyright>&amp;copy; 2021 &lt;a href="https://blog.lbbniu.com/">lbbniu&lt;/a></copyright><lastBuildDate>Wed, 18 Jan 2023 00:01:00 +0800</lastBuildDate><atom:link href="/tags/%E6%9C%89%E5%BA%8F%E9%9B%86%E5%90%88/index.xml" rel="self" type="application/rss+xml"/><item><title>剑指 Offer 51 数组中的逆序对</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/shu-zu-zhong-de-ni-xu-dui-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/shu-zu-zhong-de-ni-xu-dui-lcof/</guid><description>剑指 Offer 51 数组中的逆序对 在数组中的两个数字，如果前面一个数字大于后面的数字，则这两个数字组成一个逆序对。输入一个数组，求出这个数组中的逆序对的总数。
+&amp;nbsp;
+示例 1:
+输入: [7,5,6,4] 输出: 5 &amp;nbsp;
+限制：
+0 &amp;lt;= 数组长度 &amp;lt;= 50000
+func reversePairs(nums []int) int { } LeetCode题库地址 https://leetcode.cn/problems/shu-zu-zhong-de-ni-xu-dui-lcof</description></item><item><title>剑指 Offer II 057 值和下标之差都在给定的范围内</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/7wqedu/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/7wqedu/</guid><description>剑指 Offer II 057 值和下标之差都在给定的范围内 给你一个整数数组 nums 和两个整数&amp;nbsp;k 和 t 。请你判断是否存在 两个不同下标 i 和 j，使得&amp;nbsp;abs(nums[i] - nums[j]) &amp;lt;= t ，同时又满足 abs(i - j) &amp;lt;= k 。
+如果存在则返回 true，不存在返回 false。
+&amp;nbsp;
+示例&amp;nbsp;1：
+输入：nums = [1,2,3,1], k = 3, t = 0 输出：true 示例 2：
+输入：nums = [1,0,1,1], k = 1, t = 2 输出：true 示例 3：
+输入：nums = [1,5,9,1,5,9], k = 2, t = 3 输出：false &amp;nbsp;
+提示：
+0 &amp;lt;= nums.length &amp;lt;= 2 * 104 -231 &amp;lt;= nums[i] &amp;lt;= 231 - 1 0 &amp;lt;= k &amp;lt;= 104 0 &amp;lt;= t &amp;lt;= 231 - 1 &amp;nbsp;</description></item><item><title>剑指 Offer II 058 日程表</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/fi9suh/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/fi9suh/</guid><description>剑指 Offer II 058 日程表 请实现一个 MyCalendar 类来存放你的日程安排。如果要添加的时间内没有其他安排，则可以存储这个新的日程安排。
+MyCalendar 有一个 book(int start, int end)方法。它意味着在 start 到 end 时间内增加一个日程安排，注意，这里的时间是半开区间，即 [start, end), 实数&amp;nbsp;x 的范围为， &amp;nbsp;start &amp;lt;= x &amp;lt; end。
+当两个日程安排有一些时间上的交叉时（例如两个日程安排都在同一时间内），就会产生重复预订。
+每次调用 MyCalendar.book方法时，如果可以将日程安排成功添加到日历中而不会导致重复预订，返回 true。否则，返回 false&amp;nbsp;并且不要将该日程安排添加到日历中。
+请按照以下步骤调用 MyCalendar 类: MyCalendar cal = new MyCalendar(); MyCalendar.book(start, end)
+&amp;nbsp;
+示例:
+输入: [&amp;quot;MyCalendar&amp;quot;,&amp;quot;book&amp;quot;,&amp;quot;book&amp;quot;,&amp;quot;book&amp;quot;] [[],[10,20],[15,25],[20,30]] 输出: [null,true,false,true] 解释: MyCalendar myCalendar = new MyCalendar(); MyCalendar.book(10, 20); // returns true MyCalendar.book(15, 25); // returns false ，第二个日程安排不能添加到日历中，因为时间 15 已经被第一个日程安排预定了 MyCalendar.book(20, 30); // returns true ，第三个日程安排可以添加到日历中，因为第一个日程安排并不包含时间 20 &amp;nbsp;</description></item><item><title>【2023-01-18每日一题】1825. 求出 MK 平均值[Hard]</title><link>/study/leetcode/finding-mk-average/</link><pubDate>Wed, 18 Jan 2023 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/finding-mk-average/</guid><description>2023-01-18每日一题：1825. 求出 MK 平均值 难度：Hard
+标签：设计 、 队列 、 数据流 、 有序集合 、 堆（优先队列）
+给你两个整数&amp;nbsp;m&amp;nbsp;和&amp;nbsp;k&amp;nbsp;，以及数据流形式的若干整数。你需要实现一个数据结构，计算这个数据流的 MK 平均值&amp;nbsp;。
+MK 平均值&amp;nbsp;按照如下步骤计算：
+如果数据流中的整数少于 m&amp;nbsp;个，MK 平均值&amp;nbsp;为 -1&amp;nbsp;，否则将数据流中最后 m&amp;nbsp;个元素拷贝到一个独立的容器中。 从这个容器中删除最小的 k&amp;nbsp;个数和最大的 k&amp;nbsp;个数。 计算剩余元素的平均值，并 向下取整到最近的整数&amp;nbsp;。 请你实现&amp;nbsp;MKAverage&amp;nbsp;类：
+MKAverage(int m, int k)&amp;nbsp;用一个空的数据流和两个整数 m&amp;nbsp;和 k&amp;nbsp;初始化&amp;nbsp;MKAverage&amp;nbsp;对象。 void addElement(int num)&amp;nbsp;往数据流中插入一个新的元素&amp;nbsp;num&amp;nbsp;。 int calculateMKAverage()&amp;nbsp;对当前的数据流计算并返回 MK 平均数&amp;nbsp;，结果需 向下取整到最近的整数 。 &amp;nbsp;
+示例 1：
+输入： ["MKAverage", "addElement", "addElement", "calculateMKAverage", "addElement", "calculateMKAverage", "addElement", "addElement", "addElement", "calculateMKAverage"] [[3, 1], [3], [1], [], [10], [], [5], [5], [5], []] 输出： [null, null, null, -1, null, 3, null, null, null, 5] 解释： MKAverage obj = new MKAverage(3, 1); obj.</description></item><item><title>【2022-12-30每日一题】855. 考场就座[Medium]</title><link>/study/leetcode/exam-room/</link><pubDate>Fri, 30 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/exam-room/</guid><description>2022-12-30每日一题：855. 考场就座 难度：Medium
+标签：设计 、 有序集合 、 堆（优先队列）
+在考场里，一排有&amp;nbsp;N&amp;nbsp;个座位，分别编号为&amp;nbsp;0, 1, 2, ..., N-1&amp;nbsp;。
+当学生进入考场后，他必须坐在能够使他与离他最近的人之间的距离达到最大化的座位上。如果有多个这样的座位，他会坐在编号最小的座位上。(另外，如果考场里没有人，那么学生就坐在 0 号座位上。)
+返回&amp;nbsp;ExamRoom(int N)&amp;nbsp;类，它有两个公开的函数：其中，函数&amp;nbsp;ExamRoom.seat()&amp;nbsp;会返回一个&amp;nbsp;int&amp;nbsp;（整型数据），代表学生坐的位置；函数&amp;nbsp;ExamRoom.leave(int p)&amp;nbsp;代表坐在座位 p 上的学生现在离开了考场。每次调用&amp;nbsp;ExamRoom.leave(p)&amp;nbsp;时都保证有学生坐在座位&amp;nbsp;p&amp;nbsp;上。
+&amp;nbsp;
+示例：
+输入：[&amp;quot;ExamRoom&amp;quot;,&amp;quot;seat&amp;quot;,&amp;quot;seat&amp;quot;,&amp;quot;seat&amp;quot;,&amp;quot;seat&amp;quot;,&amp;quot;leave&amp;quot;,&amp;quot;seat&amp;quot;], [[10],[],[],[],[],[4],[]] 输出：[null,0,9,4,2,null,5] 解释： ExamRoom(10) -&amp;gt; null seat() -&amp;gt; 0，没有人在考场里，那么学生坐在 0 号座位上。 seat() -&amp;gt; 9，学生最后坐在 9 号座位上。 seat() -&amp;gt; 4，学生最后坐在 4 号座位上。 seat() -&amp;gt; 2，学生最后坐在 2 号座位上。 leave(4) -&amp;gt; null seat() -&amp;gt; 5，学生最后坐在 5 号座位上。 &amp;nbsp;
+提示：
+1 &amp;lt;= N &amp;lt;= 10^9 在所有的测试样例中&amp;nbsp;ExamRoom.seat()&amp;nbsp;和&amp;nbsp;ExamRoom.leave()&amp;nbsp;最多被调用&amp;nbsp;10^4&amp;nbsp;次。 保证在调用&amp;nbsp;ExamRoom.leave(p)&amp;nbsp;时有学生正坐在座位 p 上。 方法一： 详细思路过程见官方题解，这里只做个人刷题记录，方便后续查询阅读
+type ExamRoom struct { } func Constructor(n int) ExamRoom { } func (this *ExamRoom) Seat() int { } func (this *ExamRoom) Leave(p int) { } /** * Your ExamRoom object will be instantiated and called as such: * obj := Constructor(n); * param_1 := obj.</description></item><item><title>【2022-11-30每日一题】895. 最大频率栈[Hard]</title><link>/study/leetcode/maximum-frequency-stack/</link><pubDate>Wed, 30 Nov 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/maximum-frequency-stack/</guid><description>2022-11-30每日一题：895. 最大频率栈 难度：Hard
+标签：栈 、 设计 、 哈希表 、 有序集合
+设计一个类似堆栈的数据结构，将元素推入堆栈，并从堆栈中弹出出现频率最高的元素。
+实现 FreqStack&amp;nbsp;类:
+FreqStack()&amp;nbsp;构造一个空的堆栈。 void push(int val)&amp;nbsp;将一个整数&amp;nbsp;val&amp;nbsp;压入栈顶。 int pop()&amp;nbsp;删除并返回堆栈中出现频率最高的元素。 如果出现频率最高的元素不只一个，则移除并返回最接近栈顶的元素。 &amp;nbsp;
+示例 1：
+输入： ["FreqStack","push","push","push","push","push","push","pop","pop","pop","pop"], [[],[5],[7],[5],[7],[4],[5],[],[],[],[]] 输出：[null,null,null,null,null,null,null,5,7,5,4] 解释： FreqStack = new FreqStack(); freqStack.push (5);//堆栈为 [5] freqStack.push (7);//堆栈是 [5,7] freqStack.push (5);//堆栈是 [5,7,5] freqStack.push (7);//堆栈是 [5,7,5,7] freqStack.push (4);//堆栈是 [5,7,5,7,4] freqStack.push (5);//堆栈是 [5,7,5,7,4,5] freqStack.pop ();//返回 5 ，因为 5 出现频率最高。堆栈变成 [5,7,5,7,4]。 freqStack.pop ();//返回 7 ，因为 5 和 7 出现频率最高，但7最接近顶部。堆栈变成 [5,7,5,4]。 freqStack.pop ();//返回 5 ，因为 5 出现频率最高。堆栈变成 [5,7,4]。 freqStack.pop ();//返回 4 ，因为 4, 5 和 7 出现频率最高，但 4 是最接近顶部的。堆栈变成 [5,7]。 &amp;nbsp;</description></item><item><title>【2022-09-16每日一题】850. 矩形面积 II</title><link>/study/leetcode/rectangle-area-ii/</link><pubDate>Fri, 16 Sep 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/rectangle-area-ii/</guid><description>2022-09-16每日一题：850. 矩形面积 II 难度：Hard 标签：线段树 、 数组 、 有序集合 、 扫描线 我们给出了一个（轴对齐的）二维矩形列表&amp;nbsp;rectangles&amp;nbsp;。 对于&amp;nbsp;rectangle[i] = [x1, y1, x2, y2]，其中（x1，y1）是矩形&amp;nbsp;i&amp;nbsp;左下角的坐标，&amp;nbsp;(xi1, yi1)&amp;nbsp;是该矩形 左下角 的坐标，&amp;nbsp;(xi2, yi2)&amp;nbsp;是该矩形&amp;nbsp;右上角 的坐标。
+计算平面中所有&amp;nbsp;rectangles&amp;nbsp;所覆盖的 总面积 。任何被两个或多个矩形覆盖的区域应只计算 一次 。
+返回 总面积 。因为答案可能太大，返回&amp;nbsp;109&amp;nbsp;+ 7 的&amp;nbsp;模&amp;nbsp;。
+&amp;nbsp;
+示例 1：
+输入：rectangles = [[0,0,2,2],[1,0,2,3],[1,0,3,1]] 输出：6 解释：如图所示，三个矩形覆盖了总面积为6的区域。 从(1,1)到(2,2)，绿色矩形和红色矩形重叠。 从(1,0)到(2,3)，三个矩形都重叠。 示例 2：
+输入：rectangles = [[0,0,1000000000,1000000000]] 输出：49 解释：答案是 1018 对 (109 + 7) 取模的结果， 即 49 。 &amp;nbsp;
+提示：
+1 &amp;lt;= rectangles.length &amp;lt;= 200 rectanges[i].length = 4 0 &amp;lt;= xi1, yi1, xi2, yi2&amp;nbsp;&amp;lt;= 109 矩形叠加覆盖后的总面积不会超越&amp;nbsp;2^63 - 1&amp;nbsp;，这意味着可以用一个&amp;nbsp;64 位有符号整数来保存面积结果。 方法一： 详细思路过程见宫水三叶题解，这里只做个人刷题记录，方便后续查询阅读</description></item></channel></rss>

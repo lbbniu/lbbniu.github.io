@@ -1,0 +1,321 @@
+<!doctype html><html lang=zh dir=ltr><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>第8周 位运算、布隆过滤器和LRU缓存、排序算法 | Go 算法练习 | lbbniu</title>
+<meta name=generator content="Hugo Eureka 0.9.3"><link rel=stylesheet href=/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css><script defer src=/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js></script><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" as=style onload='this.onload=null,this.rel="stylesheet"'><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/github.min.css media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/php.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/java.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/go.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/python.min.js crossorigin></script><link rel=stylesheet href=/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css media=print onload='this.media="all",this.onload=null'><script defer type=text/javascript src=/js/fontawesome.min.35973bea57658ef0dd22ad59ea4642b6c8c67af62bed8659ac326d284ef285a6657cdbcf57d3b2910e7e992f2b20426e.js></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css integrity=sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js integrity=sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY crossorigin></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script><script defer src=https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js integrity=sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0 crossorigin></script><link rel=icon type=image/png sizes=32x32 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_32x32_fill_box_center_3.png><link rel=apple-touch-icon sizes=180x180 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_180x180_fill_box_center_3.png><meta name=description content="第16课 | 位运算，第17课 | 布隆过滤器和LRU缓存，第18课 | 排序算法"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"算法学习","item":"/study/"},{"@type":"ListItem","position":2,"name":"极客时间算法训练营2020版","item":"/study/algorithm/"},{"@type":"ListItem","position":3,"name":"Go 算法练习","item":"/study/algorithm/go/"},{"@type":"ListItem","position":4,"name":"第8周 位运算、布隆过滤器和LRU缓存、排序算法","item":"/study/algorithm/go/week08/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/study/algorithm/go/week08/"},"headline":"第8周 位运算、布隆过滤器和LRU缓存、排序算法 | Go 算法练习 | lbbniu","datePublished":"2021-12-20T22:42:54+08:00","dateModified":"2023-11-23T18:27:23+08:00","wordCount":1290,"author":{"@type":"Person","name":["lbbniu"]},"publisher":{"@type":"Person","name":"lbbniu","logo":{"@type":"ImageObject","url":"/images/icon.gif"}},"description":"第16课 | 位运算，第17课 | 布隆过滤器和LRU缓存，第18课 | 排序算法"}</script><meta property="og:title" content="第8周 位运算、布隆过滤器和LRU缓存、排序算法 | Go 算法练习 | lbbniu"><meta property="og:type" content="article"><meta property="og:image" content="/images/icon.png"><meta property="og:url" content="/study/algorithm/go/week08/"><meta property="og:description" content="第16课 | 位运算，第17课 | 布隆过滤器和LRU缓存，第18课 | 排序算法"><meta property="og:locale" content="zh"><meta property="og:site_name" content="lbbniu"><meta property="article:published_time" content="2021-12-20T22:42:54+08:00"><meta property="article:modified_time" content="2023-11-23T18:27:23+08:00"><meta property="article:section" content="study"><body class="flex min-h-screen flex-col"><header class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"><div class="mx-auto w-full max-w-screen-xl"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=="Auto"||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName("html")[0].classList.add("dark")</script><nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0"><a href=/ class="me-6 text-primary-text text-xl font-bold">lbbniu</a>
+<button id=navbar-btn class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+<i class="fas fa-bars"></i></button><div id=target class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20"><div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0"><a href=/post/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">文章</a>
+<a href=/cloud-native/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">云原生</a>
+<a href=/study/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 selected-menu-item me-4">算法学习</a>
+<a href=/docs/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">Go学习训练营</a>
+<a href=/tags/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">标签</a></div><div class=flex><div class="relative pt-4 md:pt-0"><div class="cursor-pointer hover:text-eureka" id=lightDarkMode><i class="fas fa-adjust"></i></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id=is-open></div><div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40" id=lightDarkOptions><span class="px-4 py-1 hover:text-eureka" name=Light>浅色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Dark>深色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Auto>自动</span></div></div></div></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id=is-open-mobile></div></nav><script>let element=document.getElementById("lightDarkMode");storageColorScheme==null||storageColorScheme=="Auto"?document.addEventListener("DOMContentLoaded",()=>{window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",switchDarkMode)}):storageColorScheme=="Light"?(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","sun"),element.firstElementChild.classList.add("fa-sun")):storageColorScheme=="Dark"&&(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","moon"),element.firstElementChild.classList.add("fa-moon")),document.addEventListener("DOMContentLoaded",()=>{getcolorscheme(),switchBurger()})</script></div></header><main class="grow pt-16"><div class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8"><div class=lg:pt-12><div class="flex flex-col md:flex-row bg-secondary-bg rounded"><div class="md:w-1/4 lg:w-1/5 border-e"><div class="sticky top-16 pt-6"><div id=sidebar-title class="md:hidden mx-4 px-2 pt-4 pb-2 md:border-b text-tertiary-text md:text-primary-text"><span class=font-semibold>目录</span>
+<i class='fas fa-caret-right ms-1'></i></div><div id=sidebar-toc class="hidden md:block overflow-y-auto mx-6 md:mx-0 pe-6 pt-2 md:max-h-doc-sidebar bg-primary-bg md:bg-transparent"><div class="flex flex-wrap ms-4 -me-2 p-2 bg-secondary-bg md:bg-primary-bg rounded"><a class=hover:text-eureka href=/study/algorithm/go/>Go 算法练习</a></div><ul class=ps-6><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week00/>预习</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week01/>第1周 数组、链表、跳表</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week02/>第2周 栈、队列、哈希表</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week03/>第3周 树、递归、分治、回溯</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week04/>第4周 DFS、BFS、贪心、二分查找</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week05/>第5周 期中考试</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week06/>第6周 动态规划</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week07/>第7周 字典树和并查集、高级搜索、红黑树和AVL树</a></div></li><li class=py-2><div><a class="text-eureka hover:text-eureka" href=/study/algorithm/go/week08/>第8周 位运算、布隆过滤器和LRU缓存、排序算法</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week09/>第9周 高级动态规划、字符串算法</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week10/>第10周 期末串讲、期末考试、毕业刷题路线</a></div></li></ul></div></div></div><div class="w-full md:w-3/4 lg:w-4/5 pb-8 pt-2 md:pt-8"><div class=flex><div class="w-full lg:w-3/4 px-6"><article class=prose><h1 class=mb-4>第8周 位运算、布隆过滤器和LRU缓存、排序算法</h1><div class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"><div class="me-6 my-2"><i class="fas fa-calendar me-1"></i>
+<span>2021-12-20</span></div><div class="me-6 my-2"><i class="fas fa-clock me-1"></i>
+<span>7分钟阅读时长</span></div></div><p>题目数量：12</p><h2 id=第16课--位运算>第16课 | 位运算</h2><h3 id=1-位运算基础及实战要点>1. 位运算基础及实战要点</h3><h4 id=参考链接>参考链接</h4><ul><li><a href=https://zh.wikihow.com/%e4%bb%8e%e5%8d%81%e8%bf%9b%e5%88%b6%e8%bd%ac%e6%8d%a2%e4%b8%ba%e4%ba%8c%e8%bf%9b%e5%88%b6 target=_blank rel=noopener>如何从十进制转换为二进制</a></li></ul><h3 id=2-位运算实战题目解析>2. 位运算实战题目解析</h3><h4 id=参考链接-1>参考链接</h4><ul><li><a href=https://shimo.im/docs/rHTyt8hcpT6D9Tj8/ target=_blank rel=noopener>N 皇后位运算代码示例</a></li></ul><h4 id=实战题目--课后作业>实战题目 / 课后作业</h4><ul><li><a href=https://leetcode-cn.com/problems/number-of-1-bits/ target=_blank rel=noopener>191. 位1的个数</a></li></ul><pre><code class=language-go>// 最优写法
+func hammingWeight(num uint32) (cnt int) {
+    for num &gt; 0 {
+        cnt++
+        num &amp;= num - 1
+    }
+    return cnt
+}
+
+// O(n) n = 32
+func hammingWeight(num uint32) (cnt int) {
+    for num &gt; 0 {
+        cnt += int(num &amp; 1)
+        num &gt;&gt;= 1
+    }
+    return cnt
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/power-of-two/ target=_blank rel=noopener>231. 2的幂</a></li></ul><pre><code class=language-go>func isPowerOfTwo(n int) bool {
+    return n &gt; 0 &amp;&amp; n &amp; (n - 1) == 0
+}
+// 没有上面运行快
+func isPowerOfTwo(n int) bool {
+    return n &gt; 0 &amp;&amp; n &amp; -n == n
+}
+//方案二： 判断是否为最大 22 的幂的约数
+func isPowerOfTwo(n int) bool {
+    const big = 1 &lt;&lt; 30
+    return n &gt; 0 &amp;&amp; big%n == 0
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/reverse-bits/ target=_blank rel=noopener>190. 颠倒二进制位</a></li></ul><pre><code class=language-go>// 写法一：
+func reverseBits(n uint32) (ans uint32) {
+    pos := 31
+    for n &gt; 0 {
+        if n &amp; 1 == 1 {
+            ans |= 1 &lt;&lt; pos
+        }
+        pos -= 1
+        n &gt;&gt;= 1
+    }
+    return ans
+}
+// 写法二：
+func reverseBits1(n uint32) (ans uint32) {
+    for i := 0; i &lt; 32; i++ {
+        ans |= (n &amp; 1) &lt;&lt; (31 - i)
+        n &gt;&gt;= 1
+    }
+    return ans
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/n-queens/ target=_blank rel=noopener>51. N皇后</a></li></ul><pre><code class=language-go>func solveNQueens(n int) (res [][]string) {
+    size := 1 &lt;&lt; n - 1
+    var solve func(row, cols, pie, na int, queens []int)
+    solve = func(row, cols, pie, na int, queens []int) {
+        if row == n {
+            ans := make([]string, n)
+            for i := 0; i &lt; n; i++ {
+                c := &quot;&quot;
+                for j := 0; j &lt; n; j++ {
+                    if queens[i] &amp; (1 &lt;&lt; j) &gt; 0 {
+                        c += &quot;Q&quot;
+                    } else {
+                        c += &quot;.&quot;
+                    }
+                }
+                ans[i] = c
+            }
+            res = append(res, ans)
+            return
+        }
+        bits := size &amp; (^(cols | pie | na))
+        for bits &gt; 0 {
+            p := bits &amp; -bits
+            queens = append(queens, p)
+            solve(row + 1, cols | p, (pie | p) &lt;&lt; 1, (na | p) &gt;&gt; 1, queens)
+            queens = queens[:len(queens) - 1]
+            bits &amp;= bits - 1
+        }
+    }
+    solve(0, 0, 0, 0, []int{})
+    return res
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/n-queens-ii/ target=_blank rel=noopener>52. N皇后 II</a></li></ul><pre><code class=language-go>func totalNQueens(n int) (cnt int) {
+    size := 1 &lt;&lt; n - 1
+    var slove func(int, int, int, int)
+    slove = func(row, cols, pie, na int) {
+        if row == n {
+            cnt++
+            return
+        }
+        bits := size &amp; (^(cols | pie | na))
+        for bits &gt; 0 {
+            p := bits &amp; (-bits)
+            bits &amp;= bits - 1
+            slove(row + 1, cols | p, (pie | p) &lt;&lt; 1, (na | p) &gt;&gt; 1)
+        }
+    }
+    slove(0 , 0, 0, 0)
+    return cnt
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/counting-bits/ target=_blank rel=noopener>338. 比特位计数</a>
+重点练习记忆理解</li></ul><pre><code class=language-go>// 方法一：Brian Kernighan 算法 等于暴力 计算每个数
+// 方法二：动态规划——最高有效位
+// 方法三：动态规划——最低有效位
+func countBits(n int) []int {
+    bits := make([]int, n + 1)
+    for i := 1; i &lt;= n; i++ {
+        bits[i] = bits[i &gt;&gt; 1] + (i &amp; 1)
+    }
+    return bits
+}
+// 方法四：动态规划——最低设置位
+func countBits(n int) []int {
+    bits := make([]int, n + 1)
+    for i := 1; i &lt;= n; i++ {
+        bits[i] = bits[i &amp; (i - 1)] + 1
+    }
+    return bits
+}
+</code></pre><h2 id=第17课--布隆过滤器和lru缓存>第17课 | 布隆过滤器和LRU缓存</h2><h3 id=1-布隆过滤器的实现及应用>1. 布隆过滤器的实现及应用</h3><h4 id=参考链接-2>参考链接</h4><ul><li><a href=https://www.cnblogs.com/cpselvis/p/6265825.html target=_blank rel=noopener>布隆过滤器的原理和实现</a></li><li><a href=https://blog.csdn.net/tianyaleixiaowu/article/details/74721877 target=_blank rel=noopener>使用布隆过滤器解决缓存击穿、垃圾邮件识别、集合判重</a></li><li><a href=https://shimo.im/docs/xKwrcwrDxRv3QpKG/ target=_blank rel=noopener>布隆过滤器 Python 代码示例</a></li><li><a href=https://www.geeksforgeeks.org/bloom-filters-introduction-and-python-implementation/ target=_blank rel=noopener>布隆过滤器 Python 实现示例</a></li><li><a href=https://github.com/jhgg/pybloof target=_blank rel=noopener>高性能布隆过滤器 Python 实现示例</a></li><li><a href=https://github.com/lovasoa/bloomfilter/blob/master/src/main/java/BloomFilter.java target=_blank rel=noopener>布隆过滤器 Java 实现示例 1</a></li><li><a href=https://github.com/Baqend/Orestes-Bloomfilter target=_blank rel=noopener>布隆过滤器 Java 实现示例 2</a></li></ul><h3 id=2-lru-cache的实现应用和题解>2. LRU Cache的实现、应用和题解</h3><h4 id=参考链接-3>参考链接</h4><ul><li><a href=https://www.sqlpassion.at/archive/2018/01/06/understanding-the-meltdown-exploit-in-my-own-simple-words/ target=_blank rel=noopener>Understanding the Meltdown exploit</a></li><li><a href=https://en.wikipedia.org/wiki/Cache_replacement_policies target=_blank rel=noopener>替换算法总揽</a></li><li><a href=https://shimo.im/docs/tTxRkGwJpXG6WkGY/ target=_blank rel=noopener>LRU Cache Python 代码示例</a></li></ul><h4 id=实战题目--课后作业-1>实战题目 / 课后作业</h4><ul><li><a href=https://leetcode-cn.com/problems/lru-cache/ target=_blank rel=noopener>146. LRU缓存机制</a>
+重点练习</li></ul><pre><code class=language-go>func init() { debug.SetGCPercent(-1) } // 提升速度为 288ms， 没有开启之前为：516ms
+type cacheNode struct {
+    key int
+    val int
+    pre *cacheNode
+    next *cacheNode
+}
+
+type LRUCache struct {
+    capacity int
+    mp map[int]*cacheNode
+    head *cacheNode
+    tail *cacheNode
+}
+
+
+func Constructor(capacity int) LRUCache {
+    lru := LRUCache{
+        capacity: capacity,
+        mp: make(map[int]*cacheNode, capacity),
+        head: &amp;cacheNode{},
+        tail: &amp;cacheNode{},
+    }
+    lru.head.next = lru.tail
+    lru.tail.pre = lru.head
+    return lru
+}
+
+
+func (this *LRUCache) Get(key int) int {
+    if node, ok := this.mp[key]; ok {
+        this.moveToTail(node, node.val)
+        return node.val
+    }
+    return -1
+}
+
+
+func (this *LRUCache) Put(key int, value int)  {
+    if node, ok := this.mp[key]; ok {
+        this.moveToTail(node, value)
+    } else {
+        if len(this.mp) == this.capacity {
+            delNode := this.head.next
+            this.deleteNode(delNode)
+            delete(this.mp, delNode.key)
+        }
+        node = &amp;cacheNode{key:key, val:value}
+        this.addToTail(node)
+        this.mp[key] = node
+    }
+}
+
+func (this *LRUCache) moveToTail(node *cacheNode, value int) {
+    this.deleteNode(node)
+
+    node.val = value
+    this.addToTail(node)
+}
+
+func (this *LRUCache) deleteNode(node *cacheNode) {
+    node.next.pre = node.pre
+    node.pre.next = node.next
+}
+
+func (this *LRUCache) addToTail(node *cacheNode) {
+    this.tail.pre.next = node
+    node.next = this.tail
+    node.pre = this.tail.pre
+    this.tail.pre = node
+}
+
+/**
+ * Your LRUCache object will be instantiated and called as such:
+ * obj := Constructor(capacity);
+ * param_1 := obj.Get(key);
+ * obj.Put(key,value);
+ */
+</code></pre><h2 id=第8周-第18课--排序算法>第8周 第18课 | 排序算法</h2><h3 id=1-初级排序和高级排序的实现和特性>1. 初级排序和高级排序的实现和特性</h3><h4 id=参考链接-4>参考链接</h4><ul><li><a href=https://www.cnblogs.com/onepixel/p/7674659.html target=_blank rel=noopener>十大经典排序算法</a></li><li><a href=https://shimo.im/docs/98KjvGwwGpTpYGKy/ target=_blank rel=noopener>快速排序代码示例</a></li><li><a href=https://shimo.im/docs/YqgG6vtdKwkXJkWx/ target=_blank rel=noopener>归并排序代码示例</a></li><li><a href=https://shimo.im/docs/6kRVHRphpgjHgCtx/ target=_blank rel=noopener>堆排序代码示例</a></li></ul><h4 id=课后作业>课后作业</h4><p>用自己熟悉的编程语言，手写各种初级排序代码，提交到第 8 周学习总结中。</p><h3 id=2-特殊排序及实战题目详解>2. 特殊排序及实战题目详解</h3><h4 id=参考链接-5>参考链接</h4><ul><li><a href=https://www.cnblogs.com/onepixel/p/7674659.html target=_blank rel=noopener>十大经典排序算法</a></li><li><a href=https://www.bilibili.com/video/av25136272 target=_blank rel=noopener>9 种经典排序算法可视化动画</a></li><li><a href=https://www.bilibili.com/video/av63851336 target=_blank rel=noopener>6 分钟看完 15 种排序算法动画展示</a></li></ul><h4 id=实战题目--课后作业-2>实战题目 / 课后作业</h4><ul><li><a href=https://leetcode-cn.com/problems/relative-sort-array/ target=_blank rel=noopener>1122. 数组的相对排序</a></li></ul><pre><code class=language-go>// 自定义排序 sort.Slice()
+// 计数排序
+func relativeSortArray(arr1 []int, arr2 []int) []int {
+    ans := make([]int, 0, len(arr1))
+    cnt := make([]int, 1001)
+    for _, n := range arr1 {
+        cnt[n]++
+    }
+    for _, n := range arr2 {
+        for cnt[n] &gt; 0 {
+            ans = append(ans, n)
+            cnt[n]--
+        }
+    }
+    for i := 0; i &lt; 1001; i++ {
+        for cnt[i] &gt; 0 {
+            ans = append(ans, i)
+            cnt[i]--
+        }
+    }
+    return ans
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/valid-anagram/ target=_blank rel=noopener>242. 有效的字母异位词</a></li></ul><pre><code class=language-go>// 方法一：对s, t进行排序比较
+func isAnagram(s, t string) bool {
+    s1, s2 := []byte(s), []byte(t)
+    sort.Slice(s1, func(i, j int) bool { return s1[i] &lt; s1[j] })
+    sort.Slice(s2, func(i, j int) bool { return s2[i] &lt; s2[j] })
+    return string(s1) == string(s2)
+}
+// 方法二：hash计数
+func isAnagram(s string, t string) bool {
+    if len(s) != len(t) {
+        return false
+    }
+    mp := make([]int, 26)
+    for i, c := range s {
+        mp[c - 'a']++
+        mp[t[i] - 'a']--
+    }
+    for _, v := range mp {
+        if v != 0 {
+            return false
+        }
+    }
+    return true
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/design-a-leaderboard/ target=_blank rel=noopener>1244. Design A Leaderboard 解题思路分析</a></li></ul><p><a href=https://hwchang0417.wordpress.com/2019/11/04/leetcode-1244-design-a-leaderboard/ target=_blank rel=noopener>https://hwchang0417.wordpress.com/2019/11/04/leetcode-1244-design-a-leaderboard/</a></p><p><a href=https://leetcode.jp/leetcode-1244-design-a-leaderboard-%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E5%88%86%E6%9E%90/ target=_blank rel=noopener>题目说明地址</a></p><ul><li><a href=https://leetcode-cn.com/problems/merge-intervals/ target=_blank rel=noopener>56. 合并区间</a></li></ul><pre><code class=language-go>func merge(intervals [][]int) (res [][]int) {
+    if len(intervals) &lt; 2 {
+        return intervals
+    }
+    sort.Slice(intervals, func(i, j int) bool {
+        return intervals[i][0] &lt; intervals[j][0]
+    })
+    res = append(res, intervals[0])
+    for i, j := 1, 0; i &lt; len(intervals); i++ {
+        if res[j][1] &lt; intervals[i][0] {
+            j++
+            res = append(res, intervals[i])
+        } else {
+            res[j][1] = max(res[j][1], intervals[i][1])
+        }
+    }
+    return res
+}
+func max(a, b int) int {
+    if a &gt; b {
+        return a
+    }
+    return b
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/reverse-pairs/ target=_blank rel=noopener>493. 翻转对</a>
+重点练习</li></ul><pre><code class=language-go>// 方法一：归并排序
+func reversePairs(nums []int) int {
+    return mergeSort(nums, 0, len(nums) - 1)
+}
+func mergeSort(nums []int, left int, right int) int {
+    if left &gt;= right {
+        return 0
+    }
+    mid := left + (right - left) &gt;&gt; 1
+    cnt := mergeSort(nums, left, mid) + mergeSort(nums, mid + 1, right)
+    // 计算翻转对，并归并
+    cache := make([]int, right - left + 1)
+    c, i, l := 0, left, left
+    for j := mid + 1; j &lt;= right; j, c = j + 1, c + 1 {
+        for i &lt;= mid &amp;&amp; nums[i] &lt;= nums[j] * 2 {
+            i++
+        }
+        for ; l &lt;= mid &amp;&amp; nums[l] &lt; nums[j]; l, c = l + 1, c + 1 {
+            cache[c] = nums[l]
+        }
+        cache[c] = nums[j]
+        cnt += mid - i + 1 // l -&gt; mid 是 ok 的
+    }
+    for ; l &lt;= mid; l, c = l + 1, c + 1 {
+        cache[c] = nums[l]
+    }
+    // 合并
+    for i, n := 0, right - left + 1; i &lt; n; i++ {
+        nums[left + i] = cache[i]
+    }
+    return cnt
+}
+// 方法二：树状数组
+</code></pre><h2 id=本周作业及下周预习>本周作业及下周预习</h2><h3 id=本周作业>本周作业</h3><h4 id=简单>简单</h4><ul><li><p><a href=https://leetcode-cn.com/problems/number-of-1-bits/ target=_blank rel=noopener>191. 位1的个数</a></p></li><li><p><a href=https://leetcode-cn.com/problems/power-of-two/ target=_blank rel=noopener>231. 2的幂</a></p></li><li><p><a href=https://leetcode-cn.com/problems/reverse-bits/ target=_blank rel=noopener>190. 颠倒二进制位</a></p></li><li><p>用自己熟悉的编程语言，手写各种初级排序代码，提交到第 8 周学习总结中。</p></li><li><p><a href=https://leetcode-cn.com/problems/relative-sort-array/ target=_blank rel=noopener>1122. 数组的相对排序</a></p></li><li><p><a href=https://leetcode-cn.com/problems/valid-anagram/ target=_blank rel=noopener>242. 有效的字母异位词</a></p></li></ul><h4 id=中等>中等</h4><ul><li><a href=https://leetcode-cn.com/problems/lru-cache/ target=_blank rel=noopener>146. LRU 缓存机制</a></li><li><a href=https://leetcode-cn.com/problems/design-a-leaderboard/ target=_blank rel=noopener>https://leetcode-cn.com/problems/design-a-leaderboard/</a>
+vip题目</li><li><a href=https://leetcode-cn.com/problems/merge-intervals/ target=_blank rel=noopener>56. 合并区间</a></li></ul><h4 id=困难>困难</h4><ul><li><p><a href=https://leetcode-cn.com/problems/n-queens/ target=_blank rel=noopener>51. N皇后</a></p></li><li><p><a href=https://leetcode-cn.com/problems/n-queens-ii/ target=_blank rel=noopener>52. N皇后 II</a></p></li><li><p><a href=https://leetcode-cn.com/problems/reverse-pairs/ target=_blank rel=noopener>493. 翻转对</a></p></li></ul><h3 id=下周预习>下周预习</h3><h4 id=预习知识点>预习知识点：</h4><ul><li><a href=http://time.geekbang.org/column/article/71187 target=_blank rel=noopener>字符串匹配基础：如何借助哈希算法实现高效字符串匹配？</a></li><li><a href=http://time.geekbang.org/column/article/71525 target=_blank rel=noopener>字符串匹配基础：如何实现文本编辑器中的查找功能？</a></li><li><a href=http://time.geekbang.org/column/article/71845 target=_blank rel=noopener>字符串匹配基础：如何借助 BM 算法轻松理解 KMP 算法？</a></li></ul><h4 id=预习题目>预习题目：</h4><ul><li><a href=http://leetcode-cn.com/problems/unique-paths/ target=_blank rel=noopener>不同路径</a></li><li><a href=http://leetcode-cn.com/problems/minimum-path-sum/ target=_blank rel=noopener>最小路径和</a></li></ul></article><div class=py-2><div class="my-8 flex flex-col items-center md:flex-row"><a href=/authors/lbbniu/ class="md:me-4 text-primary-text h-24 w-24"><i class="fas fa-user-circle fa-6x"></i></a><div class="mt-4 w-full md:mt-0 md:w-auto"><a href=/authors/lbbniu/ class="mb-2 block border-b pb-1 text-lg font-bold"><h3>lbbniu</h3></a><span class="block pb-2"></span></div></div></div><div class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"><div><span class="text-primary-text block font-bold">上一页</span>
+<a href=/study/algorithm/go/week07/ class=block>第7周 字典树和并查集、高级搜索、红黑树和AVL树</a></div><div class="mt-4 md:mt-0 md:text-right"><span class="text-primary-text block font-bold">下一页</span>
+<a href=/study/algorithm/go/week09/ class=block>第9周 高级动态规划、字符串算法</a></div></div></div><div class="hidden lg:block lg:w-1/4"><div class="bg-secondary-bg
+prose sticky top-16 z-10 hidden px-6 py-4 lg:block"><h3>本页内容</h3></div><div class="sticky-toc
+border-s
+hidden px-6 pb-6 lg:block"><nav id=TableOfContents><ul><li><a href=#第16课--位运算>第16课 | 位运算</a><ul><li><a href=#1-位运算基础及实战要点>1. 位运算基础及实战要点</a><ul><li><a href=#参考链接>参考链接</a></li></ul></li><li><a href=#2-位运算实战题目解析>2. 位运算实战题目解析</a><ul><li><a href=#参考链接-1>参考链接</a></li><li><a href=#实战题目--课后作业>实战题目 / 课后作业</a></li></ul></li></ul></li><li><a href=#第17课--布隆过滤器和lru缓存>第17课 | 布隆过滤器和LRU缓存</a><ul><li><a href=#1-布隆过滤器的实现及应用>1. 布隆过滤器的实现及应用</a><ul><li><a href=#参考链接-2>参考链接</a></li></ul></li><li><a href=#2-lru-cache的实现应用和题解>2. LRU Cache的实现、应用和题解</a><ul><li><a href=#参考链接-3>参考链接</a></li><li><a href=#实战题目--课后作业-1>实战题目 / 课后作业</a></li></ul></li></ul></li><li><a href=#第8周-第18课--排序算法>第8周 第18课 | 排序算法</a><ul><li><a href=#1-初级排序和高级排序的实现和特性>1. 初级排序和高级排序的实现和特性</a><ul><li><a href=#参考链接-4>参考链接</a></li><li><a href=#课后作业>课后作业</a></li></ul></li><li><a href=#2-特殊排序及实战题目详解>2. 特殊排序及实战题目详解</a><ul><li><a href=#参考链接-5>参考链接</a></li><li><a href=#实战题目--课后作业-2>实战题目 / 课后作业</a></li></ul></li></ul></li><li><a href=#本周作业及下周预习>本周作业及下周预习</a><ul><li><a href=#本周作业>本周作业</a><ul><li><a href=#简单>简单</a></li><li><a href=#中等>中等</a></li><li><a href=#困难>困难</a></li></ul></li><li><a href=#下周预习>下周预习</a><ul><li><a href=#预习知识点>预习知识点：</a></li><li><a href=#预习题目>预习题目：</a></li></ul></li></ul></li></ul></nav></div><script>window.addEventListener("DOMContentLoaded",()=>{enableStickyToc()})</script></div></div></div></div></div><script>document.addEventListener("DOMContentLoaded",()=>{hljs.highlightAll(),changeSidebarHeight(),switchDocToc()})</script></div></div></main><footer class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b"><p class="text-sm text-tertiary-text">&copy; 2021 <a href=https://blog.lbbniu.com/>lbbniu</a>
+&#183; Powered by the <a href=https://github.com/wangchucheng/hugo-eureka class=hover:text-eureka>Eureka</a> theme for <a href=https://gohugo.io class=hover:text-eureka>Hugo</a></p></div></div></footer></body></html>

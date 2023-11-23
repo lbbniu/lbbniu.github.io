@@ -1,676 +1,438 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-<head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <link rel="stylesheet" href="http://fonts.useso.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-  <title>LeetCode  &middot; lbbniu</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-<meta name="description" content="这里是lbbniu的个人博客" />
-
-<meta name="keywords" content="">
-
-
-<meta property="og:title" content="LeetCode  &middot; lbbniu ">
-<meta property="og:site_name" content="lbbniu"/>
-<meta property="og:url" content="https://blog.lbbniu.com/study/leetcode/leetcode/" />
-<meta property="og:locale" content="en-us">
-
-
-<meta property="og:type" content="article" />
-<meta property="og:description" content=""/>
-<meta property="og:article:published_time" content="2021-11-20T17:18:16&#43;08:00" />
-<meta property="og:article:modified_time" content="2021-11-20T17:18:16&#43;08:00" />
-
-  
-
-  
-
-<script type="application/ld+json">
-  {
-    "@context": "http://schema.org",
-    "@type": "Article",
-    "headline": "LeetCode",
-    "author": {
-      "@type": "Person",
-      "name": "lbbniu"
-    },
-    "datePublished": "2021-11-20",
-    "description": "",
-    "wordCount":  1175 
-  }
-</script>
-
-
-
-<link rel="canonical" href="https://blog.lbbniu.com/study/leetcode/leetcode/" />
-
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://blog.lbbniu.com/touch-icon-144-precomposed.png">
-<link href="https://blog.lbbniu.com/favicon.png" rel="icon">
-
-<meta name="generator" content="Hugo 0.89.4" />
-
-  <!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
-
-<link href='https://fonts.googleapis.com/css?family=Merriweather:300%7CRaleway%7COpen+Sans' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="/css/font-awesome.min.css">
-<link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="/css/highlight/default.css">
-
-  
-  
-</head>
-<body>
-  <main id="main-wrapper" class="container main_wrapper has-sidebar">
-    <header id="main-header" class="container main_header">
-  <div class="container brand">
-  <div class="container title h1-like">
-  <a class="baselink" href="https://blog.lbbniu.com/">
-  lbbniu
-
-</a>
-
-</div>
-
-  
-<div class="container topline">
-  
-  学无止境，然则问可少耶?
-
-
-</div>
-
-
-</div>
-
-  <nav class="container nav primary no-print">
-  
-
-<a class="homelink" href="https://blog.lbbniu.com/">首页</a>
-
-
-  
-<a href="https://blog.lbbniu.com/post" title="Show list of posts">列表</a>
-
-<a href="https://blog.lbbniu.com/golang" title="Show list of tags">Golang</a>
-
-<a href="https://blog.lbbniu.com/k8s" title="Show list of tags">Kubernetes</a>
-
-<a href="https://blog.lbbniu.com/tags" title="Show list of tags">标签</a>
-
-<a href="https://blog.lbbniu.com/about">关于</a>
-
-
-</nav>
-
-<div class="container nav secondary no-print">
-  
-<a id="contact-link-email" class="contact_link" rel="me" aria-label="Email" href="mailto:lbbniu@gmail.com">
-  <span class="fa fa-envelope-square"></span></a>
-
-
-
-<a id="contact-link-github" class="contact_link" rel="me" aria-label="Github" href="https://github.com/lbbniu">
-  <span class="fa fa-github-square"></span></a>
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-
-
-  
-
-</header>
-
-
-<article id="main-content" class="container main_content single">
-  <header class="container hat">
-  <h1>LeetCode
-</h1>
-
-</header>
-
-  <div class="container content">
-  <h3 id="数组和链表">数组和链表</h3>
-<h4 id="206-反转链表httpsleetcode-cncomproblemsreverse-linked-list"><a href="https://leetcode-cn.com/problems/reverse-linked-list/">206. 反转链表</a></h4>
-<h4 id="24-两两交换链表中的节点httpsleetcode-cncomproblemsswap-nodes-in-pairs"><a href="https://leetcode-cn.com/problems/swap-nodes-in-pairs/">24. 两两交换链表中的节点</a></h4>
-<h4 id="141-环形链表httpsleetcode-cncomproblemslinked-list-cycle"><a href="https://leetcode-cn.com/problems/linked-list-cycle/">141. 环形链表</a></h4>
-<h4 id="142-环形链表-iihttpsleetcode-cncomproblemslinked-list-cycle-ii"><a href="https://leetcode-cn.com/problems/linked-list-cycle-ii/">142. 环形链表 II</a></h4>
-<h4 id="24-两两交换链表中的节点httpsleetcode-cncomproblemsswap-nodes-in-pairs-1"><a href="https://leetcode-cn.com/problems/swap-nodes-in-pairs/">24. 两两交换链表中的节点</a></h4>
-<hr>
-<h4 id="21-合并两个有序链表httpsleetcode-cncomproblemsmerge-two-sorted-lists"><a href="https://leetcode-cn.com/problems/merge-two-sorted-lists/">21. 合并两个有序链表</a></h4>
-<h4 id="25k-个一组翻转链表httpsleetcode-cncomproblemsreverse-nodes-in-k-group"><a href="https://leetcode-cn.com/problems/reverse-nodes-in-k-group/">25.K 个一组翻转链表</a></h4>
-<h4 id="86分隔链表httpsleetcode-cncomproblemspartition-list"><a href="https://leetcode-cn.com/problems/partition-list/">86.分隔链表</a></h4>
-<h4 id="92反转链表-iihttpsleetcode-cncomproblemsreverse-linked-list-ii"><a href="https://leetcode-cn.com/problems/reverse-linked-list-ii/">92.反转链表 II</a></h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">/**
-</span><span style="color:#75715e"> * Definition for singly-linked list.
-</span><span style="color:#75715e"> * struct ListNode {
-</span><span style="color:#75715e"> *     int val;
-</span><span style="color:#75715e"> *     ListNode *next;
-</span><span style="color:#75715e"> *     ListNode(int x) : val(x), next(NULL) {}
-</span><span style="color:#75715e"> * };
-</span><span style="color:#75715e"> */</span>
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
-<span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
-    ListNode<span style="color:#f92672">*</span> reverseBetween(ListNode<span style="color:#f92672">*</span> head, <span style="color:#66d9ef">int</span> m, <span style="color:#66d9ef">int</span> n) {
-        <span style="color:#66d9ef">int</span> change_len <span style="color:#f92672">=</span> n <span style="color:#f92672">-</span> m <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
-        ListNode <span style="color:#f92672">*</span>pre_head <span style="color:#f92672">=</span> NULL;
-        ListNode <span style="color:#f92672">*</span>result <span style="color:#f92672">=</span> head;
-        <span style="color:#66d9ef">while</span> (head <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">--</span>m) {
-            pre_head <span style="color:#f92672">=</span> head;
-            head <span style="color:#f92672">=</span> head<span style="color:#f92672">-&gt;</span>next;
+<!doctype html><html lang=zh dir=ltr><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>LeetCode | LeetCode算法刷题记录 | lbbniu</title>
+<meta name=generator content="Hugo Eureka 0.9.3"><link rel=stylesheet href=/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css><script defer src=/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js></script><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" as=style onload='this.onload=null,this.rel="stylesheet"'><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/github.min.css media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/php.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/java.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/go.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/python.min.js crossorigin></script><link rel=stylesheet href=/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css media=print onload='this.media="all",this.onload=null'><script defer type=text/javascript src=/js/fontawesome.min.35973bea57658ef0dd22ad59ea4642b6c8c67af62bed8659ac326d284ef285a6657cdbcf57d3b2910e7e992f2b20426e.js></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css integrity=sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js integrity=sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY crossorigin></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script><script defer src=https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js integrity=sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0 crossorigin></script><link rel=icon type=image/png sizes=32x32 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_32x32_fill_box_center_3.png><link rel=apple-touch-icon sizes=180x180 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_180x180_fill_box_center_3.png><meta name=description content="数组和链表 206. 反转链表 24. 两两交换链表中的节点 141. 环形链表 142. 环形链表 II 24. 两两交换链表中的节点 21. 合并两个有序链表 25.K 个一组翻转链表 86.分隔链表 92.反转链表 II /** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: ListNode* reverseBetween(ListNode* head, int m, int n) { int change_len = n - m + 1; ListNode *pre_head = NULL; ListNode *result = head; while (head && --m) { pre_head = head; head = head->next; } ListNode *modify_list_tail = head; ListNode *new_head = NULL; while (head && change_len--) { ListNode *next = head->next; head->next = new_head; new_head = head; head = next; } //连接为翻转部分 modify_list_tail->next = head; if (pre_head) { pre_head->next = new_head; } else { result = new_head; } return result; } }; /** * Definition for a singly-linked list."><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"算法学习","item":"/study/"},{"@type":"ListItem","position":2,"name":"LeetCode算法刷题记录","item":"/study/leetcode/"},{"@type":"ListItem","position":3,"name":"LeetCode","item":"/study/leetcode/leetcode/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/study/leetcode/leetcode/"},"headline":"LeetCode | LeetCode算法刷题记录 | lbbniu","datePublished":"2021-11-20T17:18:16+08:00","dateModified":"2023-11-23T18:27:23+08:00","wordCount":1182,"publisher":{"@type":"Person","name":"lbbniu","logo":{"@type":"ImageObject","url":"/images/icon.gif"}},"description":"数组和链表 206. 反转链表 24. 两两交换链表中的节点 141. 环形链表 142. 环形链表 II 24. 两两交换链表中的节点 21. 合并两个有序链表 25.K 个一组翻转链表 86.分隔链表 92.反转链表 II \/** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; *\/ class Solution { public: ListNode* reverseBetween(ListNode* head, int m, int n) { int change_len = n - m \u002b 1; ListNode *pre_head = NULL; ListNode *result = head; while (head \u0026amp;\u0026amp; --m) { pre_head = head; head = head-\u0026gt;next; } ListNode *modify_list_tail = head; ListNode *new_head = NULL; while (head \u0026amp;\u0026amp; change_len--) { ListNode *next = head-\u0026gt;next; head-\u0026gt;next = new_head; new_head = head; head = next; } \/\/连接为翻转部分 modify_list_tail-\u0026gt;next = head; if (pre_head) { pre_head-\u0026gt;next = new_head; } else { result = new_head; } return result; } }; \/** * Definition for a singly-linked list."}</script><meta property="og:title" content="LeetCode | LeetCode算法刷题记录 | lbbniu"><meta property="og:type" content="article"><meta property="og:image" content="/images/icon.png"><meta property="og:url" content="/study/leetcode/leetcode/"><meta property="og:description" content="数组和链表 206. 反转链表 24. 两两交换链表中的节点 141. 环形链表 142. 环形链表 II 24. 两两交换链表中的节点 21. 合并两个有序链表 25.K 个一组翻转链表 86.分隔链表 92.反转链表 II /** * Definition for singly-linked list. * struct ListNode { * int val; * ListNode *next; * ListNode(int x) : val(x), next(NULL) {} * }; */ class Solution { public: ListNode* reverseBetween(ListNode* head, int m, int n) { int change_len = n - m + 1; ListNode *pre_head = NULL; ListNode *result = head; while (head && --m) { pre_head = head; head = head->next; } ListNode *modify_list_tail = head; ListNode *new_head = NULL; while (head && change_len--) { ListNode *next = head->next; head->next = new_head; new_head = head; head = next; } //连接为翻转部分 modify_list_tail->next = head; if (pre_head) { pre_head->next = new_head; } else { result = new_head; } return result; } }; /** * Definition for a singly-linked list."><meta property="og:locale" content="zh"><meta property="og:site_name" content="lbbniu"><meta property="article:published_time" content="2021-11-20T17:18:16+08:00"><meta property="article:modified_time" content="2023-11-23T18:27:23+08:00"><meta property="article:section" content="study"><meta property="article:tag" content="算法"><meta property="article:tag" content="leetcode"><meta property="og:see_also" content="/study/algorithm/go/week10/"><meta property="og:see_also" content="/study/algorithm/php/01%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%B8%80%E5%91%A8/"><meta property="og:see_also" content="/study/algorithm/go/week01/"><meta property="og:see_also" content="/study/algorithm/php/02%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%BA%8C%E5%91%A8/"><meta property="og:see_also" content="/study/algorithm/go/week02/"><meta property="og:see_also" content="/study/algorithm/php/03%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%B8%89%E5%91%A8/"><body class="flex min-h-screen flex-col"><header class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"><div class="mx-auto w-full max-w-screen-xl"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=="Auto"||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName("html")[0].classList.add("dark")</script><nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0"><a href=/ class="me-6 text-primary-text text-xl font-bold">lbbniu</a>
+<button id=navbar-btn class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+<i class="fas fa-bars"></i></button><div id=target class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20"><div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0"><a href=/post/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">文章</a>
+<a href=/cloud-native/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">云原生</a>
+<a href=/study/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 selected-menu-item me-4">算法学习</a>
+<a href=/docs/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">Go学习训练营</a>
+<a href=/tags/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">标签</a></div><div class=flex><div class="relative pt-4 md:pt-0"><div class="cursor-pointer hover:text-eureka" id=lightDarkMode><i class="fas fa-adjust"></i></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id=is-open></div><div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40" id=lightDarkOptions><span class="px-4 py-1 hover:text-eureka" name=Light>浅色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Dark>深色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Auto>自动</span></div></div></div></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id=is-open-mobile></div></nav><script>let element=document.getElementById("lightDarkMode");storageColorScheme==null||storageColorScheme=="Auto"?document.addEventListener("DOMContentLoaded",()=>{window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",switchDarkMode)}):storageColorScheme=="Light"?(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","sun"),element.firstElementChild.classList.add("fa-sun")):storageColorScheme=="Dark"&&(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","moon"),element.firstElementChild.classList.add("fa-moon")),document.addEventListener("DOMContentLoaded",()=>{getcolorscheme(),switchBurger()})</script></div></header><main class="grow pt-16"><div class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8"><div class=lg:pt-12><div class="flex flex-col md:flex-row bg-secondary-bg rounded"><div class="md:w-1/4 lg:w-1/5 border-e"><div class="sticky top-16 pt-6"><div id=sidebar-title class="md:hidden mx-4 px-2 pt-4 pb-2 md:border-b text-tertiary-text md:text-primary-text"><span class=font-semibold>目录</span>
+<i class='fas fa-caret-right ms-1'></i></div><div id=sidebar-toc class="hidden md:block overflow-y-auto mx-6 md:mx-0 pe-6 pt-2 md:max-h-doc-sidebar bg-primary-bg md:bg-transparent"><div class="flex flex-wrap ms-4 -me-2 p-2 bg-secondary-bg md:bg-primary-bg rounded"><a class=hover:text-eureka href=/study/leetcode/>LeetCode算法刷题记录</a></div><ul class=ps-6><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E9%A2%98/>面试中算法题目</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/strong-password-checker-ii/>【2023-01-19每日一题】2299. 强密码检验器 II[Easy]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/finding-mk-average/>【2023-01-18每日一题】1825. 求出 MK 平均值[Hard]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/count-nice-pairs-in-an-array/>【2023-01-17每日一题】1814. 统计一个数组中好对子的数目[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/sentence-similarity-iii/>【2023-01-16每日一题】1813. 句子相似性 III[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/min-max-game/>【2023-01-15每日一题】2293. 极大极小游戏[Easy]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/number-of-different-subsequences-gcds/>【2023-01-14每日一题】1819. 序列中不同最大公约数的数目[Hard]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/rearrange-characters-to-make-target-string/>【2023-01-13每日一题】2287. 重排字符形成目标字符串[Easy]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/evaluate-the-bracket-pairs-of-a-string/>【2023-01-12每日一题】1807. 替换字符串中的括号内容[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/check-if-number-has-equal-digit-count-and-digit-value/>【2023-01-11每日一题】2283. 判断一个数的数字计数是否等于数位的值[Easy]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/cracking-the-safe/>【2023-01-10每日一题】753. 破解保险箱[Hard]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/minimum-number-of-operations-to-reinitialize-a-permutation/>【2023-01-09每日一题】1806. 还原排列的最少操作步数[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/counting-words-with-a-given-prefix/>【2023-01-08每日一题】2185. 统计包含给定前缀的字符串[Easy]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/minimum-operations-to-reduce-x-to-zero/>【2023-01-07每日一题】1658. 将 x 减到 0 的最小操作数[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/count-integers-with-even-digit-sum/>【2023-01-06每日一题】2180. 统计各位数字之和为偶数的整数个数[Easy]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/count-pairs-with-xor-in-a-range/>【2023-01-05每日一题】1803. 统计异或值在范围内的数对有多少[Hard]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/maximum-value-at-a-given-index-in-a-bounded-array/>【2023-01-04每日一题】1802. 有界数组中指定下标处的最大值[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/check-if-numbers-are-ascending-in-a-sentence/>【2023-01-03每日一题】2042. 检查句子中的数字是否递增[Easy]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/number-of-orders-in-the-backlog/>【2023-01-02每日一题】1801. 积压订单中的订单总数[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/first-letter-to-appear-twice/>【2023-01-01每日一题】2351. 第一个出现两次的字母[Easy]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/minimum-number-of-moves-to-seat-everyone/>【2022-12-31每日一题】2037. 使每位学生都有座位的最少移动次数[Easy]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/exam-room/>【2022-12-30每日一题】855. 考场就座[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/two-out-of-three/>【2022-12-29每日一题】2032. 至少在两个数组中出现的值[Easy]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/minimum-length-of-string-after-deleting-similar-ends/>【2022-12-28每日一题】1750. 删除字符串两端相同字符后的最短长度[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/minimum-moves-to-convert-string/>【2022-12-27每日一题】2027. 转换字符串的最少操作次数[Easy]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/count-number-of-homogenous-substrings/>【2022-12-26每日一题】1759. 统计同构子字符串的数目[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/building-boxes/>【2022-12-25每日一题】1739. 放置盒子[Hard]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/largest-merge-of-two-strings/>【2022-12-24每日一题】1754. 构造字典序最大的合并字符串[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/final-value-of-variable-after-performing-operations/>【2022-12-23每日一题】2011. 执行操作后的变量值[Easy]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/maximize-score-after-n-operations/>【2022-12-22每日一题】1799. N 次操作后的最大分数和[Hard]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/maximum-score-from-removing-stones/>【2022-12-21每日一题】1753. 移除石子的最大得分[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/minimum-limit-of-balls-in-a-bag/>【2022-12-20每日一题】1760. 袋子里最少数目的球[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/find-if-path-exists-in-graph/>【2022-12-19每日一题】1971. 寻找图中是否存在路径[Easy]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/minimum-adjacent-swaps-for-k-consecutive-ones/>【2022-12-18每日一题】1703. 得到连续 K 个 1 的最少相邻交换次数[Hard]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/form-array-by-concatenating-subarrays-of-another-array/>【2022-12-17每日一题】1764. 通过连接另一个数组的子数组得到一个数组[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/minimum-elements-to-add-to-form-a-given-sum/>【2022-12-16每日一题】1785. 构成特定和需要添加的最少元素[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/sum-of-digits-of-string-after-convert/>【2022-12-15每日一题】1945. 字符串转化后的各位数字之和[Easy]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/checking-existence-of-edge-length-limited-paths/>【2022-12-14每日一题】1697. 检查边长度限制的路径是否存在[Hard]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/check-if-the-sentence-is-pangram/>【2022-12-13每日一题】1832. 判断句子是否为全字母句[Easy]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/sum-of-beauty-of-all-substrings/>【2022-12-12每日一题】1781. 所有子字符串美丽值之和[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/minimum-operations-to-make-the-array-increasing/>【2022-12-11每日一题】1827. 最少操作使数组递增[Easy]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/maximum-height-by-stacking-cuboids/>【2022-12-10每日一题】1691. 堆叠长方体的最大高度[Hard]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/check-if-number-is-a-sum-of-powers-of-three/>【2022-12-09每日一题】1780. 判断一个数字是否可以表示成三的幂的和[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/determine-color-of-a-chessboard-square/>【2022-12-08每日一题】1812. 判断国际象棋棋盘中一个格子的颜色[Easy]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/equal-sum-arrays-with-minimum-number-of-operations/>【2022-12-07每日一题】1775. 通过最少操作次数使数组的和相等[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/number-of-different-integers-in-a-string/>【2022-12-06每日一题】1805. 字符串中不同整数的数目[Easy]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/delivering-boxes-from-storage-to-ports/>【2022-12-05每日一题】1687. 从仓库到码头运输箱子[Hard]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/closest-dessert-cost/>【2022-12-04每日一题】1774. 最接近目标价格的甜点成本[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/second-largest-digit-in-a-string/>【2022-12-03每日一题】1796. 字符串中第二大的数字[Easy]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/minimum-number-of-operations-to-move-all-balls-to-each-box/>【2022-12-02每日一题】1769. 移动所有球到每个盒子所需的最小操作数[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/find-nearest-point-that-has-the-same-x-or-y-coordinate/>【2022-12-01每日一题】1779. 找到最近的有相同 X 或 Y 坐标的点[Easy]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/maximum-frequency-stack/>【2022-11-30每日一题】895. 最大频率栈[Hard]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/minimum-changes-to-make-alternating-binary-string/>【2022-11-29每日一题】1758. 生成交替二进制字符串的最少操作数[Easy]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/largest-sum-of-averages/>【2022-11-28每日一题】813. 最大平均值和的分组[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/check-if-array-is-sorted-and-rotated/>【2022-11-27每日一题】1752. 检查数组是否经排序和轮转得到[Easy]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/reachable-nodes-in-subdivided-graph/>【2022-11-26每日一题】882. 细分图中的可到达节点[Hard]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/expressive-words/>【2022-11-25每日一题】809. 情感丰富的文字[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/number-of-subarrays-with-bounded-maximum/>【2022-11-24每日一题】795. 区间子数组个数[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/maximum-number-of-balls-in-a-box/>【2022-11-23每日一题】1742. 盒子中小球的最大数量[Easy]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/nth-magical-number/>【2022-11-22每日一题】878. 第 N 个神奇数字[Hard]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/soup-servings/>【2022-11-21每日一题】808. 分汤[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/champagne-tower/>【2022-11-20每日一题】799. 香槟塔[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/find-the-highest-altitude/>【2022-11-19每日一题】1732. 找到最高海拔[Easy]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/sum-of-subsequence-widths/>【2022-11-18每日一题】891. 子序列宽度之和[Hard]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/number-of-matching-subsequences/>【2022-11-17每日一题】792. 匹配子序列的单词数[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/global-and-local-inversions/>【2022-11-16每日一题】775. 全局倒置与局部倒置[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/maximum-units-on-a-truck/>【2022-11-15每日一题】1710. 卡车上的最大单元数[Easy]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/split-array-with-same-average/>【2022-11-14每日一题】805. 数组的均值分割[Hard]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/custom-sort-string/>【2022-11-13每日一题】791. 自定义字符串排序[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/domino-and-tromino-tiling/>【2022-11-12每日一题】790. 多米诺和托米诺平铺[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/determine-if-string-halves-are-alike/>【2022-11-11每日一题】1704. 判断字符串的两半是否相似[Easy]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/shortest-path-to-get-all-keys/>【2022-11-10每日一题】864. 获取所有钥匙的最短路径[Hard]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/largest-plus-sign/>【2022-11-09每日一题】764. 最大加号标志[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/count-the-number-of-consistent-strings/>【2022-11-08每日一题】1684. 统计一致字符串的数目[Easy]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/ambiguous-coordinates/>【2022-11-07每日一题】816. 模糊坐标[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/yuan-quan-zhong-zui-hou-sheng-xia-de-shu-zi-lcof/>【2022-11-06 加练约瑟夫环】剑指 Offer 62. 圆圈中最后剩下的数字[Easy]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/goal-parser-interpretation/>【2022-11-06每日一题】1678. 设计 Goal 解析器[Easy]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/parsing-a-boolean-expression/>【2022-11-05每日一题】1106. 解析布尔表达式[Hard]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/reach-a-number/>【2022-11-04每日一题】754. 到达终点数字[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/maximum-repeating-substring/>【2022-11-03每日一题】1668. 最大重复子字符串[Easy]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/coordinate-with-maximum-network-quality/>【2022-11-02每日一题】1620. 网络信号最好的坐标[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/check-if-two-string-arrays-are-equivalent/>【2022-11-01每日一题】1662. 检查两个字符串数组是否相等[Easy]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/magical-string/>【2022-10-31每日一题】481. 神奇字符串[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/letter-case-permutation/>【2022-10-30每日一题】784. 字母大小写全排列[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/count-items-matching-a-rule/>【2022-10-29每日一题】1773. 统计匹配检索规则的物品数量[Easy]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/sum-of-subarray-minimums/>【2022-10-28每日一题】907. 子数组的最小值之和[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/sign-of-the-product-of-an-array/>【2022-10-27每日一题】1822. 数组元素积的符号[Easy]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/shortest-subarray-with-sum-at-least-k/>【2022-10-26每日一题】862. 和至少为 K 的最短子数组[Hard]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/shortest-bridge/>【2022-10-25每日一题】934. 最短的桥[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/partition-array-into-disjoint-intervals/>【2022-10-24每日一题】915. 分割数组[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/merge-strings-alternately/>【2022-10-23每日一题】1768. 交替合并字符串[Easy]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/maximum-profit-in-job-scheduling/>【2022-10-22每日一题】1235. 规划兼职工作[Hard]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/online-stock-span/>【2022-10-21每日一题】901. 股票价格跨度[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/k-th-symbol-in-grammar/>【2022-10-20每日一题】779. 第K个语法符号[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/number-of-students-unable-to-eat-lunch/>【2022-10-19每日一题】1700. 无法吃午餐的学生数量[Easy]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/numbers-at-most-n-given-digit-set/>【2022-10-18每日一题】902. 最大为 N 的数字组合[Hard]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/fruit-into-baskets/>【2022-10-17每日一题】904. 水果成篮[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/possible-bipartition/>【2022-10-16每日一题】886. 可能的二分法[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/build-an-array-with-stack-operations/>【2022-10-15每日一题】1441. 用栈操作构建数组[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/distinct-subsequences-ii/>【2022-10-14每日一题】940. 不同的子序列 II[Hard]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/max-chunks-to-make-sorted/>【2022-10-13每日一题】769. 最多能完成排序的块[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/linked-list-components/>【2022-10-12每日一题】817. 链表组件[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/check-if-one-string-swap-can-make-strings-equal/>【2022-10-11每日一题】1790. 仅执行一次字符串交换能否使两个字符串相等[Easy]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/minimum-swaps-to-make-sequences-increasing/>【2022-10-10每日一题】801. 使序列递增的最小交换次数[Hard]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/score-of-parentheses/>【2022-10-09每日一题】856. 括号的分数[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/advantage-shuffle/>【2022-10-08每日一题】870. 优势洗牌[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/maximum-ascending-subarray-sum/>【2022-10-07每日一题】1800. 最大升序子数组和[Easy]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/three-equal-parts/>【2022-10-06每日一题】927. 三等分[Hard]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/subdomain-visit-count/>【2022-10-05每日一题】811. 子域名访问计数[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/minimum-add-to-make-parentheses-valid/>【2022-10-04每日一题】921. 使括号有效的最少添加[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/check-if-binary-string-has-at-most-one-segment-of-ones/>【2022-10-03每日一题】1784. 检查二进制字符串字段[Easy]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/swap-adjacent-in-lr-string/>【2022-10-02每日一题】777. 在LR字符串中交换相邻字符[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/reformat-phone-number/>【2022-10-01每日一题】1694. 重新格式化电话号码[Easy]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/zero-matrix-lcci/>【2022-09-30每日一题】面试题 01.08. 零矩阵[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/string-rotation-lcci/>【2022-09-29每日一题】面试题 01.09. 字符串轮转[Easy]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/get-kth-magic-number-lcci/>【2022-09-28每日一题】面试题 17.09. 第 k 个数[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/check-permutation-lcci/>【2022-09-27每日一题】面试题 01.02. 判定是否互为字符重排[Easy]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/missing-two-lcci/>【2022-09-26每日一题】面试题 17.19. 消失的两个数字[Hard]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/rotated-digits/>【2022-09-25每日一题】788. 旋转数字[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/defuse-the-bomb/>【2022-09-24每日一题】1652. 拆炸弹[Easy]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/design-linked-list/>【2022-09-23每日一题】707. 设计链表[Medium]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/check-array-formation-through-concatenation/>【2022-09-22每日一题】1640. 能否连接形成数组[Easy]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/k-similar-strings/>【2022-09-21每日一题】854. 相似度为 K 的字符串[Hard]</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/partition-to-k-equal-sum-subsets/>【2022-09-20每日一题】698. 划分为k个相等的子集</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/sort-array-by-increasing-frequency/>【2022-09-19每日一题】1636. 按照频率将数组升序排序</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/making-a-large-island/>【2022-09-18每日一题】827. 最大人工岛</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/largest-substring-between-two-equal-characters/>【2022-09-17每日一题】1624. 两个相同字符之间的最长子字符串</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/rectangle-area-ii/>【2022-09-16每日一题】850. 矩形面积 II</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/bulb-switcher-ii/>【2022-09-15每日一题】672. 灯泡开关 Ⅱ</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/mean-of-array-after-removing-some-elements/>【2022-09-14每日一题】1619. 删除某些元素后的数组均值</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/maximum-swap/>【2022-09-13每日一题】670. 最大交换</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/special-array-with-x-elements-greater-than-or-equal-x/>【2022-09-12每日一题】1608. 特殊数组的特征值</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/minimum-cost-to-hire-k-workers/>【2022-09-11每日一题】：857. 雇佣 K 名工人的最低成本</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/trim-a-binary-search-tree/>【2022-09-10每日一题】669. 修剪二叉搜索树</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/crawler-log-folder/>【2022-09-09每日一题】1598. 文件夹操作日志搜集器</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/beautiful-arrangement-ii/>【2022-09-08每日一题】667. 优美的排列 II</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/rearrange-spaces-between-words/>【2022-09-07每日一题】1592. 重新排列单词间的空格</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/count-unique-characters-of-all-substrings-of-a-given-string/>【2022-09-06每日一题】828. 统计子串中的唯一字符</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/find-duplicate-subtrees/>【2022-09-05每日一题】652. 寻找重复的子树</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/special-positions-in-a-binary-matrix/>【2022-09-04每日一题】1582. 二进制矩阵中的特殊位置</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/maximum-length-of-pair-chain/>【2022-09-03每日一题】646. 最长数对链</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/longest-univalue-path/>【2022-09-02每日一题】687. 最长同值路径</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/final-prices-with-a-special-discount-in-a-shop/>【2022-09-01每日一题】1475. 商品折扣后的最终价格</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/validate-stack-sequences/>【2022-08-31每日一题】946. 验证栈序列</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/maximum-binary-tree-ii/>【2022-08-30每日一题】998. 最大二叉树 II</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/shuffle-the-array/>【2022-08-29每日一题】1470. 重新排列数组</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/preimage-size-of-factorial-zeroes-function/>【2022-08-28每日一题】793. 阶乘函数后 K 个零</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/maximum-width-of-binary-tree/>【2022-08-27每日一题】662. 二叉树最大宽度</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/maximum-product-of-two-elements-in-an-array/>【2022-08-26每日一题】1464. 数组中两元素的最大乘积</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/find-k-closest-elements/>【2022-08-25每日一题】658. 找到 K 个最接近的元素</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/make-two-arrays-equal-by-reversing-sub-arrays/>【2022-08-24每日一题】1460. 通过翻转子数组使两个数组相等</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/transform-to-chessboard/>【2022-08-23每日一题】782. 变为棋盘</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/print-binary-tree/>【2022-08-22每日一题】655. 输出二叉树</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/check-if-a-word-occurs-as-a-prefix-of-any-word-in-a-sentence/>【2022-08-21每日一题】1455. 检查单词是否为句中其他单词的前缀</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/maximum-binary-tree/>【2022-08-20每日一题】654. 最大二叉树</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/number-of-students-doing-homework-at-a-given-time/>【2022-08-19每日一题】1450. 在既定时间做作业的学生人数</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/maximum-equal-frequency/>【2022-08-18每日一题】1224. 最大相等频率</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/deepest-leaves-sum/>【2022-08-17每日一题】1302. 层数最深叶子节点的和</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/design-an-ordered-stream/>【2022-08-16每日一题】1656. 设计有序流</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/design-circular-deque/>【2022-08-15每日一题】641. 设计循环双端队列</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/maximum-score-after-splitting-a-string/>【2022-08-14每日一题】1422. 分割字符串的最大得分</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/max-chunks-to-make-sorted-ii/>【2022-08-13每日一题】768. 最多能完成排序的块 II</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/group-the-people-given-the-group-size-they-belong-to/>【2022-08-12每日一题】1282. 用户分组</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/solve-the-equation/>【2022-08-10每日一题】640. 求解方程</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/minimum-value-to-get-positive-step-by-step-sum/>【2022-08-09每日一题】1413. 逐步求和得到正数的最小值</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/special-binary-string/>【2022-08-08每日一题】761. 特殊的二进制序列</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/exclusive-time-of-functions/>【2022-08-07每日一题】636. 函数的独占时间</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/string-matching-in-an-array/>【2022-08-06每日一题】1408. 数组中的字符串匹配</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/add-one-row-to-tree/>2022-08-05每日一题：623. 在二叉树中增加一行</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/minimum-subsequence-in-non-increasing-order/>2022-08-04每日一题：1403. 非递增顺序的最小子序列</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/orderly-queue/>2022-08-03每日一题：899. 有序队列</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/design-circular-queue/>2022-08-01每日一题：622 设计循环队列</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/generate-a-string-with-characters-that-have-odd-counts/>2022-08-01每日一题：1374 生成每种字符都是奇数个的字符串</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/leetcode-palindromic/>LeetCode 回文串系列</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/2022-03-04-leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/>LeetCode每日一题</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/leetcode/2022-02-00-leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/>2022年02月LeetCode每日一题</a></div></li><li class=py-2><div><a class="text-eureka hover:text-eureka" href=/study/leetcode/leetcode/>LeetCode</a></div></li></ul></div></div></div><div class="w-full md:w-3/4 lg:w-4/5 pb-8 pt-2 md:pt-8"><div class=flex><div class="w-full lg:w-3/4 px-6"><article class=prose><h1 class=mb-4>LeetCode</h1><div class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"><div class="me-6 my-2"><i class="fas fa-calendar me-1"></i>
+<span>2021-11-20</span></div><div class="me-6 my-2"><i class="fas fa-clock me-1"></i>
+<span>6分钟阅读时长</span></div></div><h3 id=数组和链表>数组和链表</h3><h4 id=206-反转链表httpsleetcode-cncomproblemsreverse-linked-list><a href=https://leetcode-cn.com/problems/reverse-linked-list/ target=_blank rel=noopener>206. 反转链表</a></h4><h4 id=24-两两交换链表中的节点httpsleetcode-cncomproblemsswap-nodes-in-pairs><a href=https://leetcode-cn.com/problems/swap-nodes-in-pairs/ target=_blank rel=noopener>24. 两两交换链表中的节点</a></h4><h4 id=141-环形链表httpsleetcode-cncomproblemslinked-list-cycle><a href=https://leetcode-cn.com/problems/linked-list-cycle/ target=_blank rel=noopener>141. 环形链表</a></h4><h4 id=142-环形链表-iihttpsleetcode-cncomproblemslinked-list-cycle-ii><a href=https://leetcode-cn.com/problems/linked-list-cycle-ii/ target=_blank rel=noopener>142. 环形链表 II</a></h4><h4 id=24-两两交换链表中的节点httpsleetcode-cncomproblemsswap-nodes-in-pairs-1><a href=https://leetcode-cn.com/problems/swap-nodes-in-pairs/ target=_blank rel=noopener>24. 两两交换链表中的节点</a></h4><hr><h4 id=21-合并两个有序链表httpsleetcode-cncomproblemsmerge-two-sorted-lists><a href=https://leetcode-cn.com/problems/merge-two-sorted-lists/ target=_blank rel=noopener>21. 合并两个有序链表</a></h4><h4 id=25k-个一组翻转链表httpsleetcode-cncomproblemsreverse-nodes-in-k-group><a href=https://leetcode-cn.com/problems/reverse-nodes-in-k-group/ target=_blank rel=noopener>25.K 个一组翻转链表</a></h4><h4 id=86分隔链表httpsleetcode-cncomproblemspartition-list><a href=https://leetcode-cn.com/problems/partition-list/ target=_blank rel=noopener>86.分隔链表</a></h4><h4 id=92反转链表-iihttpsleetcode-cncomproblemsreverse-linked-list-ii><a href=https://leetcode-cn.com/problems/reverse-linked-list-ii/ target=_blank rel=noopener>92.反转链表 II</a></h4><pre><code class=language-c++>/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode* reverseBetween(ListNode* head, int m, int n) {
+        int change_len = n - m + 1;
+        ListNode *pre_head = NULL;
+        ListNode *result = head;
+        while (head &amp;&amp; --m) {
+            pre_head = head;
+            head = head-&gt;next;
         }
-        ListNode <span style="color:#f92672">*</span>modify_list_tail <span style="color:#f92672">=</span> head;
-        ListNode <span style="color:#f92672">*</span>new_head <span style="color:#f92672">=</span> NULL;
-        <span style="color:#66d9ef">while</span> (head <span style="color:#f92672">&amp;&amp;</span> change_len<span style="color:#f92672">--</span>) {
-            ListNode <span style="color:#f92672">*</span>next <span style="color:#f92672">=</span> head<span style="color:#f92672">-&gt;</span>next;
-            head<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> new_head;
-            new_head <span style="color:#f92672">=</span> head;
-            head <span style="color:#f92672">=</span> next;
+        ListNode *modify_list_tail = head;
+        ListNode *new_head = NULL;
+        while (head &amp;&amp; change_len--) {
+            ListNode *next = head-&gt;next;
+            head-&gt;next = new_head;
+            new_head = head;
+            head = next;
         }
-        <span style="color:#75715e">//连接为翻转部分
-</span><span style="color:#75715e"></span>        modify_list_tail<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> head;
-        <span style="color:#66d9ef">if</span> (pre_head) {
-            pre_head<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> new_head;
-        } <span style="color:#66d9ef">else</span> {
-            result <span style="color:#f92672">=</span> new_head;
+        //连接为翻转部分
+        modify_list_tail-&gt;next = head;
+        if (pre_head) {
+            pre_head-&gt;next = new_head;
+        } else {
+            result = new_head;
         }
-        <span style="color:#66d9ef">return</span> result;
+        return result;
     }
 };
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#e6db74">/**
-</span><span style="color:#e6db74"> * Definition for a singly-linked list.
-</span><span style="color:#e6db74"> * class ListNode {
-</span><span style="color:#e6db74"> *     public $val = 0;
-</span><span style="color:#e6db74"> *     public $next = null;
-</span><span style="color:#e6db74"> *     function __construct($val) { $this-&gt;val = $val; }
-</span><span style="color:#e6db74"> * }
-</span><span style="color:#e6db74"> */</span>
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+</code></pre><pre><code class=language-php>/**
+ * Definition for a singly-linked list.
+ * class ListNode {
+ *     public $val = 0;
+ *     public $next = null;
+ *     function __construct($val) { $this-&gt;val = $val; }
+ * }
+ */
+class Solution {
 
-    <span style="color:#e6db74">/**
-</span><span style="color:#e6db74">     * @param ListNode $head
-</span><span style="color:#e6db74">     * @param Integer $m
-</span><span style="color:#e6db74">     * @param Integer $n
-</span><span style="color:#e6db74">     * @return ListNode
-</span><span style="color:#e6db74">     */</span>
-    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">reverseBetween</span>($head, $m, $n) {
-        <span style="color:#75715e">//计算翻转部分的长度
-</span><span style="color:#75715e"></span>        $change_len <span style="color:#f92672">=</span> $n <span style="color:#f92672">-</span> $m <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
-        $pre_head <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>; <span style="color:#75715e">//记录翻转区间的前驱节点
-</span><span style="color:#75715e"></span>        $result <span style="color:#f92672">=</span> $head;
-        <span style="color:#66d9ef">while</span> ($head <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">--</span>$m) {
-            $pre_head <span style="color:#f92672">=</span> $head;
-            $head <span style="color:#f92672">=</span> $head<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">next</span>;
+    /**
+     * @param ListNode $head
+     * @param Integer $m
+     * @param Integer $n
+     * @return ListNode
+     */
+    function reverseBetween($head, $m, $n) {
+        //计算翻转部分的长度
+        $change_len = $n - $m + 1;
+        $pre_head = null; //记录翻转区间的前驱节点
+        $result = $head;
+        while ($head &amp;&amp; --$m) {
+            $pre_head = $head;
+            $head = $head-&gt;next;
         }
-        <span style="color:#75715e">//开始翻转
-</span><span style="color:#75715e"></span>        $change_tail <span style="color:#f92672">=</span> $head;<span style="color:#75715e">//记录翻转后的尾节点
-</span><span style="color:#75715e"></span>        $new_head <span style="color:#f92672">=</span><span style="color:#66d9ef">null</span>; <span style="color:#75715e">//翻转后新的头节点
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">while</span> ($head <span style="color:#f92672">&amp;&amp;</span> $change_len<span style="color:#f92672">--</span>) {
-            $next <span style="color:#f92672">=</span> $head<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">next</span>;
-            $head<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">next</span> <span style="color:#f92672">=</span> $new_head;
-            $new_head <span style="color:#f92672">=</span> $head;
-            $head <span style="color:#f92672">=</span> $next;
+        //开始翻转
+        $change_tail = $head;//记录翻转后的尾节点
+        $new_head =null; //翻转后新的头节点
+        while ($head &amp;&amp; $change_len--) {
+            $next = $head-&gt;next;
+            $head-&gt;next = $new_head;
+            $new_head = $head;
+            $head = $next;
         }
-        <span style="color:#75715e">//连接未翻转部分
-</span><span style="color:#75715e"></span>        $change_tail<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">next</span> <span style="color:#f92672">=</span> $head;
-        <span style="color:#66d9ef">if</span> ($pre_head) {
-            $pre_head<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">next</span> <span style="color:#f92672">=</span> $new_head;
-        } <span style="color:#66d9ef">else</span> {
-            <span style="color:#75715e">//如果m为0，新的头结点
-</span><span style="color:#75715e"></span>            $result <span style="color:#f92672">=</span> $new_head; 
+        //连接未翻转部分
+        $change_tail-&gt;next = $head;
+        if ($pre_head) {
+            $pre_head-&gt;next = $new_head;
+        } else {
+            //如果m为0，新的头结点
+            $result = $new_head; 
         }
-        <span style="color:#66d9ef">return</span> $result;
+        return $result;
     }
 }
-</code></pre></div><h4 id="-160相交链表httpsleetcode-cncomproblemsintersection-of-two-linked-lists"><a href="https://leetcode-cn.com/problems/intersection-of-two-linked-lists/"> 160.相交链表</a></h4>
-<h4 id="35复杂链表的复制httpsleetcode-cncomproblemsfu-za-lian-biao-de-fu-zhi-lcof"><a href="https://leetcode-cn.com/problems/fu-za-lian-biao-de-fu-zhi-lcof/">35.复杂链表的复制</a></h4>
-<h4 id="面试题52-两个链表的第一个公共节点httpsleetcode-cncomproblemsliang-ge-lian-biao-de-di-yi-ge-gong-gong-jie-dian-lcof"><a href="https://leetcode-cn.com/problems/liang-ge-lian-biao-de-di-yi-ge-gong-gong-jie-dian-lcof/">面试题52. 两个链表的第一个公共节点</a></h4>
-<h4 id="面试题-0204-分割链表httpsleetcode-cncomproblemspartition-list-lcci"><a href="https://leetcode-cn.com/problems/partition-list-lcci/">面试题 02.04. 分割链表</a></h4>
-<h3 id="栈队列">栈&amp;队列</h3>
-<h4 id="20-有效的括号httpsleetcode-cncomproblemsvalid-parentheses"><a href="https://leetcode-cn.com/problems/valid-parentheses/">20. 有效的括号</a></h4>
-<h4 id="232-用栈实现队列httpsleetcode-cncomproblemsimplement-queue-using-stacks"><a href="https://leetcode-cn.com/problems/implement-queue-using-stacks/">232. 用栈实现队列</a></h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">//方法一
-</span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stack&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyQueue</span>{
-  <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</code></pre><h4 id=-160相交链表httpsleetcode-cncomproblemsintersection-of-two-linked-lists><a href=https://leetcode-cn.com/problems/intersection-of-two-linked-lists/ target=_blank rel=noopener>160.相交链表</a></h4><h4 id=35复杂链表的复制httpsleetcode-cncomproblemsfu-za-lian-biao-de-fu-zhi-lcof><a href=https://leetcode-cn.com/problems/fu-za-lian-biao-de-fu-zhi-lcof/ target=_blank rel=noopener>35.复杂链表的复制</a></h4><h4 id=面试题52-两个链表的第一个公共节点httpsleetcode-cncomproblemsliang-ge-lian-biao-de-di-yi-ge-gong-gong-jie-dian-lcof><a href=https://leetcode-cn.com/problems/liang-ge-lian-biao-de-di-yi-ge-gong-gong-jie-dian-lcof/ target=_blank rel=noopener>面试题52. 两个链表的第一个公共节点</a></h4><h4 id=面试题-0204-分割链表httpsleetcode-cncomproblemspartition-list-lcci><a href=https://leetcode-cn.com/problems/partition-list-lcci/ target=_blank rel=noopener>面试题 02.04. 分割链表</a></h4><h3 id=栈队列>栈&队列</h3><h4 id=20-有效的括号httpsleetcode-cncomproblemsvalid-parentheses><a href=https://leetcode-cn.com/problems/valid-parentheses/ target=_blank rel=noopener>20. 有效的括号</a></h4><h4 id=232-用栈实现队列httpsleetcode-cncomproblemsimplement-queue-using-stacks><a href=https://leetcode-cn.com/problems/implement-queue-using-stacks/ target=_blank rel=noopener>232. 用栈实现队列</a></h4><pre><code class=language-c++>//方法一
+#include &lt;stack&gt;
+class MyQueue{
+  public:
   	MyQueue(){}
-  	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">push</span>(<span style="color:#66d9ef">int</span> x){
-      std<span style="color:#f92672">::</span>stack<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> temp_stack; 
-      <span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span>_data.empty()) {
+  	void push(int x){
+      std::stack&lt;int&gt; temp_stack; 
+      while (!_data.empty()) {
         temp_stack.push(_data.top());
         _data.pop();
       }
       temp_stack.push(x);
-      <span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span>temp_stack.empty()) {
+      while (!temp_stack.empty()) {
         _data.push(temp_stack.top());
         temp_stack.pop();
       }
     }
-  	<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">pop</span>(){
-      <span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> _data.top();
+  	int pop(){
+      int x = _data.top();
       _data.pop();
-      <span style="color:#66d9ef">return</span> x;
+      return x;
     }
-  	<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">peek</span>(){
-      <span style="color:#66d9ef">return</span> _data.top();
+  	int peek(){
+      return _data.top();
     }
-  	<span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">empty</span>(){
-      <span style="color:#66d9ef">return</span> _data.empty();
+  	bool empty(){
+      return _data.empty();
     }
-  <span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
-  	std<span style="color:#f92672">::</span>stack<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> _data;
+  private:
+  	std::stack&lt;int&gt; _data;
 };
 
-<span style="color:#75715e">//方法二
-</span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stack&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyQueue</span>{
-  <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+//方法二
+#include &lt;stack&gt;
+class MyQueue{
+  public:
   	MyQueue(){}
-  	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">push</span>(<span style="color:#66d9ef">int</span> x) {
+  	void push(int x) {
       _input.push(x);
     }
-  	<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">pop</span>() {
+  	int pop() {
       adjust();
-      <span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> _output.top();
+      int x = _output.top();
       _output.pop();
-      <span style="color:#66d9ef">return</span> x;
+      return x;
     }
-  	<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">peek</span>() {
+  	int peek() {
       adjust();
-      <span style="color:#66d9ef">return</span> _output.top();
+      return _output.top();
     }
-  	<span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">empty</span>() {
-      <span style="color:#66d9ef">return</span> _input.empty() <span style="color:#f92672">&amp;&amp;</span> _output.empty();
+  	bool empty() {
+      return _input.empty() &amp;&amp; _output.empty();
     }
-  <span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
-  	<span style="color:#66d9ef">void</span> adjust() {
-      <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>_output.empty()) {
-        <span style="color:#66d9ef">return</span>;
+  private:
+  	void adjust() {
+      if (!_output.empty()) {
+        return;
       }
-      <span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span>_input.empty()) {
+      while (!_input.empty()) {
         _output.push(_input.top());
         _input.pop();
       }
     }
-  	std<span style="color:#f92672">::</span>stack<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> _input;
-  	std<span style="color:#f92672">::</span>stack<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> _output;
+  	std::stack&lt;int&gt; _input;
+  	std::stack&lt;int&gt; _output;
 };
-</code></pre></div><h4 id="225-用队列实现栈httpsleetcode-cncomproblemsimplement-stack-using-queues"><a href="https://leetcode-cn.com/problems/implement-stack-using-queues/">225. 用队列实现栈</a></h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;queue&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyStack</span> {
-  <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</code></pre><h4 id=225-用队列实现栈httpsleetcode-cncomproblemsimplement-stack-using-queues><a href=https://leetcode-cn.com/problems/implement-stack-using-queues/ target=_blank rel=noopener>225. 用队列实现栈</a></h4><pre><code class=language-c++>#include &lt;queue&gt;
+class MyStack {
+  public:
   	MyStack(){}
-  	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">push</span>(<span style="color:#66d9ef">int</span> x) {
-      std<span style="color:#f92672">::</span>queue<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> temp_queue;
+  	void push(int x) {
+      std::queue&lt;int&gt; temp_queue;
       temp_queue.push(x);
-      <span style="color:#66d9ef">while</span>(<span style="color:#f92672">!</span>_data.empty()){
+      while(!_data.empty()){
         temp_queue.push(_data.front());
         _data.pop();
       }
-      <span style="color:#66d9ef">while</span>(<span style="color:#f92672">!</span>temp_queue.empty()){
+      while(!temp_queue.empty()){
         _data.push(temp_queue.front());
         temp_queue.pop();
       }
     }
-    <span style="color:#75715e">/*void push(int x) {
-</span><span style="color:#75715e">        _data.push(x);
-</span><span style="color:#75715e">        for (int i=1; i&lt;_data.size(); i++) {
-</span><span style="color:#75715e">            _data.push(_data.front());
-</span><span style="color:#75715e">            _data.pop();
-</span><span style="color:#75715e">        }
-</span><span style="color:#75715e">    }*/</span>
-  	<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">pop</span>() {
-      <span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> _data.front();
+    /*void push(int x) {
+        _data.push(x);
+        for (int i=1; i&lt;_data.size(); i++) {
+            _data.push(_data.front());
+            _data.pop();
+        }
+    }*/
+  	int pop() {
+      int x = _data.front();
       _data.pop();
-      <span style="color:#66d9ef">return</span> x;
+      return x;
     }
-  	<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">top</span>() {
-      <span style="color:#66d9ef">return</span> _data.front();
+  	int top() {
+      return _data.front();
     }
-  	<span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">empty</span>() {
-      <span style="color:#66d9ef">return</span> _data.empty();
+  	bool empty() {
+      return _data.empty();
     }
-  <span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
-  	std<span style="color:#f92672">::</span>queue<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> _data;
+  private:
+  	std::queue&lt;int&gt; _data;
   
 };
-</code></pre></div><h4 id="155-最小栈httpsleetcode-cncomproblemsmin-stack"><a href="https://leetcode-cn.com/problems/min-stack/">155. 最小栈</a></h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MinStack</span> {
-<span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
-    <span style="color:#75715e">/** initialize your data structure here. */</span>
+</code></pre><h4 id=155-最小栈httpsleetcode-cncomproblemsmin-stack><a href=https://leetcode-cn.com/problems/min-stack/ target=_blank rel=noopener>155. 最小栈</a></h4><pre><code class=language-c++>class MinStack {
+public:
+    /** initialize your data structure here. */
     MinStack() {}
-    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">push</span>(<span style="color:#66d9ef">int</span> x) {
-			_data.push(x);<span style="color:#75715e">//将数据压入数据栈
-</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">if</span> (_min.empty()) {
-        <span style="color:#75715e">//如果最小值栈空，直接将数据压入栈
-</span><span style="color:#75715e"></span>        _min.push(x);
-      } <span style="color:#66d9ef">else</span> {
-        <span style="color:#75715e">//比较当前数据与最小值栈顶数据大小，选择较小的压入最小值栈
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (x <span style="color:#f92672">&gt;</span> _min.top()){
-          x <span style="color:#f92672">=</span> _min.top();
+    void push(int x) {
+			_data.push(x);//将数据压入数据栈
+      if (_min.empty()) {
+        //如果最小值栈空，直接将数据压入栈
+        _min.push(x);
+      } else {
+        //比较当前数据与最小值栈顶数据大小，选择较小的压入最小值栈
+        if (x &gt; _min.top()){
+          x = _min.top();
         }
         _min.push(x);
       }
     }
-    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">pop</span>() {
-      <span style="color:#75715e">//数据栈和最小值栈同时出栈
-</span><span style="color:#75715e"></span>			_data.pop();
+    void pop() {
+      //数据栈和最小值栈同时出栈
+			_data.pop();
       _min.pop();
     }
-    <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">top</span>() {
-      <span style="color:#75715e">//获取数据栈栈顶
-</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">return</span> _data.top();
+    int top() {
+      //获取数据栈栈顶
+			return _data.top();
     }
-    <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getMin</span>() {
-      <span style="color:#75715e">//获取最小值栈栈顶
-</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">return</span> _min.top();
+    int getMin() {
+      //获取最小值栈栈顶
+			return _min.top();
     }
-  <span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
-  	std<span style="color:#f92672">::</span>stack<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> _data;<span style="color:#75715e">//数据栈
-</span><span style="color:#75715e"></span>  	std<span style="color:#f92672">::</span>stack<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> _min;<span style="color:#75715e">//最小值栈
-</span><span style="color:#75715e"></span>};
-</code></pre></div><h4 id="poj-1363-合法的出栈序列">poj 1363 合法的出栈序列</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stack&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;queue&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span><span style="color:#75715e">//检测序列存储在队列中
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">check_is_valid_order</span>(std<span style="color:#f92672">::</span>queue<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">&amp;</span>order) {
-	std<span style="color:#f92672">::</span>stack<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> S;<span style="color:#75715e">//S为模拟栈
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">int</span> n <span style="color:#f92672">=</span> queue.size();<span style="color:#75715e">//n 为序列长度， 讲1-n按顺序入栈
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;=</span> n; i<span style="color:#f92672">++</span>) {
-    S.push(i);<span style="color:#75715e">//将元素i压入栈
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">//如果栈不为空，栈顶和队列头部元素相等，即弹出元素
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span>S.empty() <span style="color:#f92672">&amp;&amp;</span> S.top() <span style="color:#f92672">==</span> order.front()) {
+  private:
+  	std::stack&lt;int&gt; _data;//数据栈
+  	std::stack&lt;int&gt; _min;//最小值栈
+};
+</code></pre><h4 id=poj-1363-合法的出栈序列>poj 1363 合法的出栈序列</h4><pre><code class=language-c++>#include &lt;stack&gt;
+#include &lt;queue&gt;
+//检测序列存储在队列中
+bool check_is_valid_order(std::queue&lt;int&gt; &amp;order) {
+	std::stack&lt;int&gt; S;//S为模拟栈
+  int n = queue.size();//n 为序列长度， 讲1-n按顺序入栈
+  for (int i = 1; i &lt;= n; i++) {
+    S.push(i);//将元素i压入栈
+    //如果栈不为空，栈顶和队列头部元素相等，即弹出元素
+    while (!S.empty() &amp;&amp; S.top() == order.front()) {
       S.pop();
       order.pop();
     }
   }
-  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>s.empty()) {
-    <span style="color:#66d9ef">return</span> false;
+  if (!s.empty()) {
+    return false;
   }
-  <span style="color:#66d9ef">return</span> true;
+  return true;
 } 
-</code></pre></div><h3 id="优先级队列堆">优先级队列（堆）</h3>
-<h4 id="703-数据流中的第k大元素httpsleetcode-cncomproblemskth-largest-element-in-a-stream"><a href="https://leetcode-cn.com/problems/kth-largest-element-in-a-stream/">703. 数据流中的第K大元素</a></h4>
-<h4 id="239-滑动窗口最大值httpsleetcode-cncomproblemssliding-window-maximum"><a href="https://leetcode-cn.com/problems/sliding-window-maximum/">239. 滑动窗口最大值</a></h4>
-<h4 id="215-数组中的第k个最大元素httpsleetcode-cncomproblemskth-largest-element-in-an-array"><a href="https://leetcode-cn.com/problems/kth-largest-element-in-an-array/">215. 数组中的第K个最大元素</a></h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;queue&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
-<span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
-    <span style="color:#66d9ef">int</span> findKthLargest(vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&amp;</span> nums, <span style="color:#66d9ef">int</span> k) {
-      <span style="color:#75715e">//最小堆
-</span><span style="color:#75715e"></span>      std<span style="color:#f92672">::</span>priority_queue<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span>, std<span style="color:#f92672">::</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span>, std<span style="color:#f92672">::</span>greater<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;</span> Q;
-      <span style="color:#75715e">//遍历nums数组
-</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> nums.size(); i<span style="color:#f92672">++</span>){
-        <span style="color:#66d9ef">if</span> (Q.size() <span style="color:#f92672">&lt;</span> k) {
+</code></pre><h3 id=优先级队列堆>优先级队列（堆）</h3><h4 id=703-数据流中的第k大元素httpsleetcode-cncomproblemskth-largest-element-in-a-stream><a href=https://leetcode-cn.com/problems/kth-largest-element-in-a-stream/ target=_blank rel=noopener>703. 数据流中的第K大元素</a></h4><h4 id=239-滑动窗口最大值httpsleetcode-cncomproblemssliding-window-maximum><a href=https://leetcode-cn.com/problems/sliding-window-maximum/ target=_blank rel=noopener>239. 滑动窗口最大值</a></h4><h4 id=215-数组中的第k个最大元素httpsleetcode-cncomproblemskth-largest-element-in-an-array><a href=https://leetcode-cn.com/problems/kth-largest-element-in-an-array/ target=_blank rel=noopener>215. 数组中的第K个最大元素</a></h4><pre><code class=language-c++>#include &lt;vector&gt;
+#include &lt;queue&gt;
+class Solution {
+public:
+    int findKthLargest(vector&lt;int&gt;&amp; nums, int k) {
+      //最小堆
+      std::priority_queue&lt;int, std::vector&lt;int&gt;, std::greater&lt;int&gt;&gt; Q;
+      //遍历nums数组
+      for (int i = 0; i &lt; nums.size(); i++){
+        if (Q.size() &lt; k) {
           Q.push(nums[i]);
-        } <span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span> (nums[i] <span style="color:#f92672">&gt;</span> Q.top()) {
+        } else if (nums[i] &gt; Q.top()) {
           Q.pop();
           Q.push(nums[i]);
         }
       }
-      <span style="color:#66d9ef">return</span> Q.top();<span style="color:#75715e">//返回堆顶
-</span><span style="color:#75715e"></span>    }
+      return Q.top();//返回堆顶
+    }
 };
-</code></pre></div><h4 id="295-数据流的中位数httpsleetcode-cncomproblemsfind-median-from-data-stream"><a href="https://leetcode-cn.com/problems/find-median-from-data-stream/">295. 数据流的中位数</a></h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MedianFinder</span> {
-<span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
-    <span style="color:#75715e">/** initialize your data structure here. */</span>
+</code></pre><h4 id=295-数据流的中位数httpsleetcode-cncomproblemsfind-median-from-data-stream><a href=https://leetcode-cn.com/problems/find-median-from-data-stream/ target=_blank rel=noopener>295. 数据流的中位数</a></h4><pre><code class=language-c++>class MedianFinder {
+public:
+    /** initialize your data structure here. */
     MedianFinder() {
     } 
-    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">addNum</span>(<span style="color:#66d9ef">int</span> num) {
-      <span style="color:#66d9ef">if</span> (big_queue.empty()) {
+    void addNum(int num) {
+      if (big_queue.empty()) {
         big_queue.push(num);
-        <span style="color:#66d9ef">return</span>;
+        return;
       }
-			<span style="color:#66d9ef">if</span> (big_queue.size() <span style="color:#f92672">==</span> small_queue.size()) {
-        <span style="color:#66d9ef">if</span> (num <span style="color:#f92672">&lt;</span> big_queue.top()) {
+			if (big_queue.size() == small_queue.size()) {
+        if (num &lt; big_queue.top()) {
           big_queue.push(num);
-        } <span style="color:#66d9ef">else</span> {
+        } else {
           small_queue.push(num);
         }
-      }  <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (big_queue.size() <span style="color:#f92672">&gt;</span> small_queue.size()){
-        <span style="color:#66d9ef">if</span> (num <span style="color:#f92672">&gt;</span> big_queue.top()) {
+      }  else if (big_queue.size() &gt; small_queue.size()){
+        if (num &gt; big_queue.top()) {
           small_queue.push(num); 
-        } <span style="color:#66d9ef">else</span> {
+        } else {
           small_queue.push(big_queue.top());
           big_queue.pop();
           big_queue.push(num);
         }
-      } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (big_queue.size() <span style="color:#f92672">&lt;</span> small_queue.size()) {
-       	<span style="color:#66d9ef">if</span> (num <span style="color:#f92672">&lt;</span> small_queue.top()) {
+      } else if (big_queue.size() &lt; small_queue.size()) {
+       	if (num &lt; small_queue.top()) {
           big_queue.push(num);
-        } <span style="color:#66d9ef">else</span> {
+        } else {
           big_queue.push(small_queue.top());
           small_queue.pop();
           small_queue.push(num);
         }
       }
     }
-    <span style="color:#66d9ef">double</span> <span style="color:#a6e22e">findMedian</span>() {
-			<span style="color:#66d9ef">if</span> (big_queue.size() <span style="color:#f92672">==</span> small_queue.size()) {
-        <span style="color:#66d9ef">return</span> (big_queue.top() <span style="color:#f92672">+</span> small_queue.top()) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>;
-      } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (big_queue.size() <span style="color:#f92672">&lt;</span> small_queue.size()) {
-        <span style="color:#66d9ef">return</span> small_queue.top();
-      } <span style="color:#66d9ef">else</span> {
-        <span style="color:#66d9ef">return</span> big_queue.top();
+    double findMedian() {
+			if (big_queue.size() == small_queue.size()) {
+        return (big_queue.top() + small_queue.top()) / 2;
+      } else if (big_queue.size() &lt; small_queue.size()) {
+        return small_queue.top();
+      } else {
+        return big_queue.top();
       }
     }
-<span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
-  std<span style="color:#f92672">::</span>priority_queue<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">double</span><span style="color:#f92672">&gt;</span> big_queue;<span style="color:#75715e">//最大堆
-</span><span style="color:#75715e"></span>  std<span style="color:#f92672">::</span>priority_queue<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">double</span>, std<span style="color:#f92672">::</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">double</span><span style="color:#f92672">&gt;</span>, std<span style="color:#f92672">::</span>greater<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">double</span><span style="color:#f92672">&gt;&gt;</span> small_queue;<span style="color:#75715e">//最小堆
-</span><span style="color:#75715e"></span>};
-</code></pre></div><h3 id="哈希表">哈希表</h3>
-<h4 id="1-两数之和httpsleetcode-cncomproblemstwo-sum"><a href="https://leetcode-cn.com/problems/two-sum/">1. 两数之和</a></h4>
-<h4 id="15-三数之和httpsleetcode-cncomproblems3sum"><a href="https://leetcode-cn.com/problems/3sum/">15. 三数之和</a></h4>
-<h3 id="树二叉树二叉搜索树">树&amp;二叉树&amp;二叉搜索树</h3>
-<h4 id="98-验证二叉搜索树httpsleetcode-cncomproblemsvalidate-binary-search-tree"><a href="https://leetcode-cn.com/problems/validate-binary-search-tree/">98. 验证二叉搜索树</a></h4>
-<h4 id="236-二叉树的最近公共祖先httpsleetcode-cncomproblemslowest-common-ancestor-of-a-binary-tree"><a href="https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/">236. 二叉树的最近公共祖先</a></h4>
-<h4 id="235-二叉搜索树的最近公共祖先httpsleetcode-cncomproblemslowest-common-ancestor-of-a-binary-search-tree"><a href="https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/">235. 二叉搜索树的最近公共祖先</a></h4>
-<h4 id="543-二叉树的直径httpsleetcode-cncomproblemsdiameter-of-binary-tree"><a href="https://leetcode-cn.com/problems/diameter-of-binary-tree/">543. 二叉树的直径</a></h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">/**
-</span><span style="color:#75715e"> * Definition for a binary tree node.
-</span><span style="color:#75715e"> * struct TreeNode {
-</span><span style="color:#75715e"> *     int val;
-</span><span style="color:#75715e"> *     TreeNode *left;
-</span><span style="color:#75715e"> *     TreeNode *right;
-</span><span style="color:#75715e"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
-</span><span style="color:#75715e"> * };
-</span><span style="color:#75715e"> */</span>
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
-<span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
-    <span style="color:#66d9ef">int</span> diameterOfBinaryTree(TreeNode<span style="color:#f92672">*</span> root) {
+private:
+  std::priority_queue&lt;double&gt; big_queue;//最大堆
+  std::priority_queue&lt;double, std::vector&lt;double&gt;, std::greater&lt;double&gt;&gt; small_queue;//最小堆
+};
+</code></pre><h3 id=哈希表>哈希表</h3><h4 id=1-两数之和httpsleetcode-cncomproblemstwo-sum><a href=https://leetcode-cn.com/problems/two-sum/ target=_blank rel=noopener>1. 两数之和</a></h4><h4 id=15-三数之和httpsleetcode-cncomproblems3sum><a href=https://leetcode-cn.com/problems/3sum/ target=_blank rel=noopener>15. 三数之和</a></h4><h3 id=树二叉树二叉搜索树>树&二叉树&二叉搜索树</h3><h4 id=98-验证二叉搜索树httpsleetcode-cncomproblemsvalidate-binary-search-tree><a href=https://leetcode-cn.com/problems/validate-binary-search-tree/ target=_blank rel=noopener>98. 验证二叉搜索树</a></h4><h4 id=236-二叉树的最近公共祖先httpsleetcode-cncomproblemslowest-common-ancestor-of-a-binary-tree><a href=https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/ target=_blank rel=noopener>236. 二叉树的最近公共祖先</a></h4><h4 id=235-二叉搜索树的最近公共祖先httpsleetcode-cncomproblemslowest-common-ancestor-of-a-binary-search-tree><a href=https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/ target=_blank rel=noopener>235. 二叉搜索树的最近公共祖先</a></h4><h4 id=543-二叉树的直径httpsleetcode-cncomproblemsdiameter-of-binary-tree><a href=https://leetcode-cn.com/problems/diameter-of-binary-tree/ target=_blank rel=noopener>543. 二叉树的直径</a></h4><pre><code class=language-c++>/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    int diameterOfBinaryTree(TreeNode* root) {
         dept(root);
-        <span style="color:#66d9ef">return</span> ans;
+        return ans;
     }
-<span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
-    <span style="color:#66d9ef">int</span> ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-    <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">dept</span>(TreeNode<span style="color:#f92672">*</span> root) {
-        <span style="color:#66d9ef">if</span> (root <span style="color:#f92672">==</span> NULL) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
-        <span style="color:#66d9ef">int</span> l <span style="color:#f92672">=</span> dept(root<span style="color:#f92672">-&gt;</span>left);
-        <span style="color:#66d9ef">int</span> r <span style="color:#f92672">=</span> dept(root<span style="color:#f92672">-&gt;</span>right);
-        ans <span style="color:#f92672">=</span> max(ans, l <span style="color:#f92672">+</span> r);
-      	<span style="color:#66d9ef">return</span> max(l, r) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+private:
+    int ans = 0;
+    int dept(TreeNode* root) {
+        if (root == NULL) return 0;
+        int l = dept(root-&gt;left);
+        int r = dept(root-&gt;right);
+        ans = max(ans, l + r);
+      	return max(l, r) + 1;
     }
 };
-</code></pre></div><hr>
-<h4 id="695-岛屿的最大面积-03-15httpsleetcode-cncomproblemsmax-area-of-island"><a href="https://leetcode-cn.com/problems/max-area-of-island/">695. 岛屿的最大面积 03-15</a></h4>
-<h4 id="365-水壶问题httpsleetcode-cncomproblemswater-and-jug-problem"><a href="https://leetcode-cn.com/problems/water-and-jug-problem/">365. 水壶问题</a></h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+</code></pre><hr><h4 id=695-岛屿的最大面积-03-15httpsleetcode-cncomproblemsmax-area-of-island><a href=https://leetcode-cn.com/problems/max-area-of-island/ target=_blank rel=noopener>695. 岛屿的最大面积 03-15</a></h4><h4 id=365-水壶问题httpsleetcode-cncomproblemswater-and-jug-problem><a href=https://leetcode-cn.com/problems/water-and-jug-problem/ target=_blank rel=noopener>365. 水壶问题</a></h4><pre><code class=language-php>class Solution {
 
-    <span style="color:#e6db74">/**
-</span><span style="color:#e6db74">     * @param Integer $x
-</span><span style="color:#e6db74">     * @param Integer $y
-</span><span style="color:#e6db74">     * @param Integer $z
-</span><span style="color:#e6db74">     * @return Boolean
-</span><span style="color:#e6db74">     */</span>
-    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">canMeasureWater</span>($x, $y, $z) {
-        <span style="color:#66d9ef">return</span> $z <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> $z <span style="color:#f92672">&lt;=</span> $x <span style="color:#f92672">+</span> $y <span style="color:#f92672">&amp;&amp;</span> $z <span style="color:#f92672">%</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">gcd</span>($x, $y) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>;
+    /**
+     * @param Integer $x
+     * @param Integer $y
+     * @param Integer $z
+     * @return Boolean
+     */
+    function canMeasureWater($x, $y, $z) {
+        return $z == 0 || $z &lt;= $x + $y &amp;&amp; $z % $this-&gt;gcd($x, $y) == 0;
     }
-    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">gcd</span>($x, $y) {
-        <span style="color:#66d9ef">return</span> $y <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">?</span> $x <span style="color:#f92672">:</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">gcd</span>($y, $x <span style="color:#f92672">%</span> $y);
+    function gcd($x, $y) {
+        return $y == 0 ? $x : $this-&gt;gcd($y, $x % $y);
     }
 }
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> collections
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span>(object):
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">canMeasureWater1</span>(self, x, y, z):
-        <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">        :type x: int
-</span><span style="color:#e6db74">        :type y: int
-</span><span style="color:#e6db74">        :type z: int
-</span><span style="color:#e6db74">        :rtype: bool
-</span><span style="color:#e6db74">        &#34;&#34;&#34;</span>
-        <span style="color:#66d9ef">if</span> x <span style="color:#f92672">+</span> y <span style="color:#f92672">&lt;</span> z:
-            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
-        <span style="color:#66d9ef">if</span> x <span style="color:#f92672">==</span><span style="color:#ae81ff">0</span> <span style="color:#f92672">or</span> y <span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>:
-            <span style="color:#66d9ef">return</span> z <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">or</span> x <span style="color:#f92672">+</span> y <span style="color:#f92672">==</span>z
-        <span style="color:#66d9ef">return</span> z <span style="color:#f92672">%</span> math<span style="color:#f92672">.</span>gcd(x, y) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">canMeasureWater2</span>(self, x, y, z):
-        <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">        :type x: int
-</span><span style="color:#e6db74">        :type y: int
-</span><span style="color:#e6db74">        :type z: int
-</span><span style="color:#e6db74">        :rtype: bool
-</span><span style="color:#e6db74">        &#34;&#34;&#34;</span>
-        <span style="color:#66d9ef">if</span> z <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">or</span> x <span style="color:#f92672">+</span> y <span style="color:#f92672">&lt;</span> z: <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
-        q <span style="color:#f92672">=</span> collections<span style="color:#f92672">.</span>deque([(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>)])
-        visited <span style="color:#f92672">=</span> {(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>)}
-        <span style="color:#66d9ef">while</span> len(q):
-            a, b <span style="color:#f92672">=</span> q<span style="color:#f92672">.</span>popleft()
-            <span style="color:#66d9ef">if</span> a <span style="color:#f92672">==</span> z <span style="color:#f92672">or</span> b <span style="color:#f92672">==</span> z <span style="color:#f92672">or</span> a <span style="color:#f92672">+</span> b <span style="color:#f92672">==</span> z:
-                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">True</span>
-            states <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>_gen_states(a, b, x ,y)
-            <span style="color:#66d9ef">for</span> state <span style="color:#f92672">in</span> states:
-                <span style="color:#66d9ef">if</span> state <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> visited:
-                    q<span style="color:#f92672">.</span>append(state)
-                    visited<span style="color:#f92672">.</span>add(state)
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">_gen_states</span>(self, a, b, x, y):
-        states <span style="color:#f92672">=</span> []
-        <span style="color:#75715e"># 清空</span>
-        states<span style="color:#f92672">.</span>append((<span style="color:#ae81ff">0</span>, b))
-        states<span style="color:#f92672">.</span>append((a, <span style="color:#ae81ff">0</span>))
-        <span style="color:#75715e">#填满水</span>
-        states<span style="color:#f92672">.</span>append((x, b))
-        states<span style="color:#f92672">.</span>append((a, y))
+</code></pre><pre><code class=language-python>import collections
+class Solution(object):
+    def canMeasureWater1(self, x, y, z):
+        &quot;&quot;&quot;
+        :type x: int
+        :type y: int
+        :type z: int
+        :rtype: bool
+        &quot;&quot;&quot;
+        if x + y &lt; z:
+            return False
+        if x ==0 or y ==0:
+            return z == 0 or x + y ==z
+        return z % math.gcd(x, y) == 0
+    def canMeasureWater2(self, x, y, z):
+        &quot;&quot;&quot;
+        :type x: int
+        :type y: int
+        :type z: int
+        :rtype: bool
+        &quot;&quot;&quot;
+        if z &lt; 0 or x + y &lt; z: return False
+        q = collections.deque([(0, 0)])
+        visited = {(0, 0)}
+        while len(q):
+            a, b = q.popleft()
+            if a == z or b == z or a + b == z:
+                return True
+            states = self._gen_states(a, b, x ,y)
+            for state in states:
+                if state not in visited:
+                    q.append(state)
+                    visited.add(state)
+    def _gen_states(self, a, b, x, y):
+        states = []
+        # 清空
+        states.append((0, b))
+        states.append((a, 0))
+        #填满水
+        states.append((x, b))
+        states.append((a, y))
         
-        <span style="color:#75715e"># a -&gt; b </span>
-        <span style="color:#66d9ef">if</span> a <span style="color:#f92672">+</span> b <span style="color:#f92672">&lt;</span> y:
-            states<span style="color:#f92672">.</span>append((<span style="color:#ae81ff">0</span>, a <span style="color:#f92672">+</span> b))
-        <span style="color:#66d9ef">else</span>:
-            states<span style="color:#f92672">.</span>append((a <span style="color:#f92672">+</span> b <span style="color:#f92672">-</span> y, y))
-		<span style="color:#75715e"># b -&gt; a</span>
-        <span style="color:#66d9ef">if</span> a <span style="color:#f92672">+</span> b <span style="color:#f92672">&lt;</span> x:
-            states<span style="color:#f92672">.</span>append((a <span style="color:#f92672">+</span> b, <span style="color:#ae81ff">0</span>))
-		<span style="color:#66d9ef">else</span>:
-            states<span style="color:#f92672">.</span>append((x, a <span style="color:#f92672">+</span> b <span style="color:#f92672">-</span>y))
-        <span style="color:#66d9ef">return</span> states
-     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">canMeasureWater3</span>(self, x, y, z):
-        <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">        :type x: int
-</span><span style="color:#e6db74">        :type y: int
-</span><span style="color:#e6db74">        :type z: int
-</span><span style="color:#e6db74">        :rtype: bool
-</span><span style="color:#e6db74">        &#34;&#34;&#34;</span>
-        <span style="color:#66d9ef">if</span> z <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">or</span> x <span style="color:#f92672">+</span> y <span style="color:#f92672">&lt;</span> z: <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
-        q <span style="color:#f92672">=</span> collections<span style="color:#f92672">.</span>deque(<span style="color:#ae81ff">0</span>)
-        visited <span style="color:#f92672">=</span> {<span style="color:#ae81ff">0</span>}
-        <span style="color:#66d9ef">while</span> len(q):
-            sum <span style="color:#f92672">=</span> q<span style="color:#f92672">.</span>pop()
-            <span style="color:#66d9ef">if</span> sum <span style="color:#f92672">==</span> z:
-                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">True</span>
-            states <span style="color:#f92672">=</span> [
-                sum <span style="color:#f92672">+</span> x ,
-                sum <span style="color:#f92672">+</span> y ,
-                sum <span style="color:#f92672">-</span> x ,
-                sum <span style="color:#f92672">-</span> y ,
+        # a -&gt; b 
+        if a + b &lt; y:
+            states.append((0, a + b))
+        else:
+            states.append((a + b - y, y))
+		# b -&gt; a
+        if a + b &lt; x:
+            states.append((a + b, 0))
+		else:
+            states.append((x, a + b -y))
+        return states
+     def canMeasureWater3(self, x, y, z):
+        &quot;&quot;&quot;
+        :type x: int
+        :type y: int
+        :type z: int
+        :rtype: bool
+        &quot;&quot;&quot;
+        if z &lt; 0 or x + y &lt; z: return False
+        q = collections.deque(0)
+        visited = {0}
+        while len(q):
+            sum = q.pop()
+            if sum == z:
+                return True
+            states = [
+                sum + x ,
+                sum + y ,
+                sum - x ,
+                sum - y ,
             ]
-            <span style="color:#66d9ef">for</span> state <span style="color:#f92672">in</span> states:
-                <span style="color:#66d9ef">if</span> state <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> visited:
-                    q<span style="color:#f92672">.</span>append(state)
-                    visited<span style="color:#f92672">.</span>add(state)
-        <span style="color:#66d9ef">return</span> false
-</code></pre></div>
-</div>
-
-
-  
-</article>
-      <footer id="main-footer" class="container main_footer">
-  
-
-  <div class="container nav foot no-print">
-  
-<a href="https://blog.lbbniu.com/license">license</a>
-
-
-  <a class="toplink" href="#">back to top</a>
-
-</div>
-
-  <div class="container credits">
-  
-<div class="container footline">
-  
-  code with <!-- raw HTML omitted --><!-- raw HTML omitted -->
-
-
-</div>
-
-
-  
-<div class="container copyright">
-  
-  (c) 2021 lbbniu.
-
-
-</div>
-
-
-</div>
-
-</footer>
-
-    </main>
-    
-
-
-<script src="/js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-
-
-
-    
-  </body>
-</html>
-
+            for state in states:
+                if state not in visited:
+                    q.append(state)
+                    visited.add(state)
+        return false
+</code></pre></article><div class=my-4><a href=/tags/%E7%AE%97%E6%B3%95/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#算法</a>
+<a href=/tags/leetcode/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#leetcode</a></div><div class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"><div><span class="text-primary-text block font-bold">上一页</span>
+<a href=/study/leetcode/2022-02-00-leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/ class=block>2022年02月LeetCode每日一题</a></div><div class="mt-4 md:mt-0 md:text-right"></div></div></div></div></div></div></div><script>document.addEventListener("DOMContentLoaded",()=>{hljs.highlightAll(),changeSidebarHeight(),switchDocToc()})</script></div></div></main><footer class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b"><p class="text-sm text-tertiary-text">&copy; 2021 <a href=https://blog.lbbniu.com/>lbbniu</a>
+&#183; Powered by the <a href=https://github.com/wangchucheng/hugo-eureka class=hover:text-eureka>Eureka</a> theme for <a href=https://gohugo.io class=hover:text-eureka>Hugo</a></p></div></div></footer></body></html>

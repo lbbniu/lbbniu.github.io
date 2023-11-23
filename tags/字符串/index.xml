@@ -1,0 +1,949 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>字符串 on lbbniu</title><link>/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/</link><description>Recent content in 字符串 on lbbniu</description><generator>Hugo -- gohugo.io</generator><language>zh</language><managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor><webMaster>lbbniu@gmail.com (lbbniu)</webMaster><copyright>&amp;copy; 2021 &lt;a href="https://blog.lbbniu.com/">lbbniu&lt;/a></copyright><lastBuildDate>Thu, 19 Jan 2023 00:01:00 +0800</lastBuildDate><atom:link href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/index.xml" rel="self" type="application/rss+xml"/><item><title>面试题 01.01 判定字符是否唯一</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/is-unique-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/is-unique-lcci/</guid><description>面试题 01.01 判定字符是否唯一 实现一个算法，确定一个字符串 s 的所有字符是否全都不同。
+示例 1：
+输入: s = "leetcode" 输出: false 示例 2：
+输入: s = "abc" 输出: true 限制：
+0 &amp;lt;= len(s) &amp;lt;= 100 s[i]仅包含小写字母 如果你不使用额外的数据结构，会很加分。 func isUnique(astr string) bool { } LeetCode题库地址 https://leetcode.cn/problems/is-unique-lcci</description></item><item><title>剑指 Offer II 002 二进制加法</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/jfetk5/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/jfetk5/</guid><description>剑指 Offer II 002 二进制加法 给定两个 01 字符串&amp;nbsp;a&amp;nbsp;和&amp;nbsp;b&amp;nbsp;，请计算它们的和，并以二进制字符串的形式输出。
+输入为 非空 字符串且只包含数字&amp;nbsp;1&amp;nbsp;和&amp;nbsp;0。
+&amp;nbsp;
+示例&amp;nbsp;1:
+输入: a = &amp;quot;11&amp;quot;, b = &amp;quot;10&amp;quot; 输出: &amp;quot;101&amp;quot; 示例&amp;nbsp;2:
+输入: a = &amp;quot;1010&amp;quot;, b = &amp;quot;1011&amp;quot; 输出: &amp;quot;10101&amp;quot; &amp;nbsp;
+提示：
+每个字符串仅由字符 &amp;#39;0&amp;#39; 或 &amp;#39;1&amp;#39; 组成。 1 &amp;lt;= a.length, b.length &amp;lt;= 10^4 字符串如果不是 &amp;quot;0&amp;quot; ，就都不含前导零。 &amp;nbsp;
+注意：本题与主站 67&amp;nbsp;题相同：https://leetcode-cn.com/problems/add-binary/
+func addBinary(a string, b string) string { } LeetCode题库地址 https://leetcode.cn/problems/JFETK5</description></item><item><title>面试题 01.02 判定是否互为字符重排</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/check-permutation-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/check-permutation-lcci/</guid><description>面试题 01.02 判定是否互为字符重排 给定两个字符串 s1 和 s2，请编写一个程序，确定其中一个字符串的字符重新排列后，能否变成另一个字符串。
+示例 1：
+输入: s1 = &amp;quot;abc&amp;quot;, s2 = &amp;quot;bca&amp;quot; 输出: true 示例 2：
+输入: s1 = &amp;quot;abc&amp;quot;, s2 = &amp;quot;bad&amp;quot; 输出: false 说明：
+0 &amp;lt;= len(s1) &amp;lt;= 100 0 &amp;lt;= len(s2) &amp;lt;= 100 func CheckPermutation(s1 string, s2 string) bool { } LeetCode题库地址 https://leetcode.cn/problems/check-permutation-lcci</description></item><item><title>剑指 Offer 05 替换空格</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/ti-huan-kong-ge-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/ti-huan-kong-ge-lcof/</guid><description>剑指 Offer 05 替换空格 请实现一个函数，把字符串 s 中的每个空格替换成&amp;quot;%20&amp;quot;。
+&amp;nbsp;
+示例 1：
+输入：s = &amp;quot;We are happy.&amp;quot; 输出：&amp;quot;We%20are%20happy.&amp;quot; &amp;nbsp;
+限制：
+0 &amp;lt;= s 的长度 &amp;lt;= 10000
+func replaceSpace(s string) string { } LeetCode题库地址 https://leetcode.cn/problems/ti-huan-kong-ge-lcof</description></item><item><title>面试题 01.03 URL化</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/string-to-url-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/string-to-url-lcci/</guid><description>面试题 01.03 URL化 URL化。编写一种方法，将字符串中的空格全部替换为%20。假定该字符串尾部有足够的空间存放新增字符，并且知道字符串的“真实”长度。（注：用Java实现的话，请使用字符数组实现，以便直接在数组上操作。）
+示例 1：
+输入："Mr John Smith ", 13 输出："Mr%20John%20Smith" 示例 2：
+输入：" ", 5 输出："%20%20%20%20%20" 提示：
+字符串长度在 [0, 500000] 范围内。 func replaceSpaces(S string, length int) string { } LeetCode题库地址 https://leetcode.cn/problems/string-to-url-lcci</description></item><item><title>面试题 01.04 回文排列</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/palindrome-permutation-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/palindrome-permutation-lcci/</guid><description>面试题 01.04 回文排列 给定一个字符串，编写一个函数判定其是否为某个回文串的排列之一。
+回文串是指正反两个方向都一样的单词或短语。排列是指字母的重新排列。
+回文串不一定是字典当中的单词。
+&amp;nbsp;
+示例1：
+输入：&amp;quot;tactcoa&amp;quot; 输出：true（排列有&amp;quot;tacocat&amp;quot;、&amp;quot;atcocta&amp;quot;，等等） &amp;nbsp;
+func canPermutePalindrome(s string) bool { } LeetCode题库地址 https://leetcode.cn/problems/palindrome-permutation-lcci</description></item><item><title>剑指 Offer II 005 单词长度的最大乘积</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/asey1i/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/asey1i/</guid><description>剑指 Offer II 005 单词长度的最大乘积 给定一个字符串数组&amp;nbsp;words，请计算当两个字符串 words[i] 和 words[j] 不包含相同字符时，它们长度的乘积的最大值。假设字符串中只包含英语的小写字母。如果没有不包含相同字符的一对字符串，返回 0。
+&amp;nbsp;
+示例&amp;nbsp;1:
+输入: words = [&amp;quot;abcw&amp;quot;,&amp;quot;baz&amp;quot;,&amp;quot;foo&amp;quot;,&amp;quot;bar&amp;quot;,&amp;quot;fxyz&amp;quot;,&amp;quot;abcdef&amp;quot;] 输出: 16 解释: 这两个单词为 &amp;quot;abcw&amp;quot;, &amp;quot;fxyz&amp;quot;。它们不包含相同字符，且长度的乘积最大。 示例 2:
+输入: words = [&amp;quot;a&amp;quot;,&amp;quot;ab&amp;quot;,&amp;quot;abc&amp;quot;,&amp;quot;d&amp;quot;,&amp;quot;cd&amp;quot;,&amp;quot;bcd&amp;quot;,&amp;quot;abcd&amp;quot;] 输出: 4 解释: 这两个单词为 &amp;quot;ab&amp;quot;, &amp;quot;cd&amp;quot;。 示例 3:
+输入: words = [&amp;quot;a&amp;quot;,&amp;quot;aa&amp;quot;,&amp;quot;aaa&amp;quot;,&amp;quot;aaaa&amp;quot;] 输出: 0 解释: 不存在这样的两个单词。 &amp;nbsp;
+提示：
+2 &amp;lt;= words.length &amp;lt;= 1000 1 &amp;lt;= words[i].length &amp;lt;= 1000 words[i]&amp;nbsp;仅包含小写字母 &amp;nbsp;
+注意：本题与主站 318&amp;nbsp;题相同：https://leetcode-cn.com/problems/maximum-product-of-word-lengths/
+func maxProduct(words []string) int { } LeetCode题库地址 https://leetcode.cn/problems/aseY1I</description></item><item><title>面试题 01.05 一次编辑</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/one-away-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/one-away-lcci/</guid><description>面试题 01.05 一次编辑 字符串有三种编辑操作:插入一个英文字符、删除一个英文字符或者替换一个英文字符。 给定两个字符串，编写一个函数判定它们是否只需要一次(或者零次)编辑。
+&amp;nbsp;
+示例&amp;nbsp;1:
+输入: first = "pale" second = "ple" 输出: True &amp;nbsp;
+示例&amp;nbsp;2:
+输入: first = "pales" second = "pal" 输出: False func oneEditAway(first string, second string) bool { } LeetCode题库地址 https://leetcode.cn/problems/one-away-lcci</description></item><item><title>面试题 01.06 字符串压缩</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/compress-string-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/compress-string-lcci/</guid><description>面试题 01.06 字符串压缩 字符串压缩。利用字符重复出现的次数，编写一种方法，实现基本的字符串压缩功能。比如，字符串aabcccccaaa会变为a2b1c5a3。若“压缩”后的字符串没有变短，则返回原先的字符串。你可以假设字符串中只包含大小写英文字母（a至z）。
+示例1:
+输入："aabcccccaaa" 输出："a2b1c5a3" 示例2:
+输入："abbccd" 输出："abbccd" 解释："abbccd"压缩后为"a1b2c2d1"，比原字符串长度更长。 提示：
+字符串长度在[0, 50000]范围内。 func compressString(S string) string { } LeetCode题库地址 https://leetcode.cn/problems/compress-string-lcci</description></item><item><title>面试题 01.09 字符串轮转</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/string-rotation-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/string-rotation-lcci/</guid><description>面试题 01.09 字符串轮转 字符串轮转。给定两个字符串s1和s2，请编写代码检查s2是否为s1旋转而成（比如，waterbottle是erbottlewat旋转后的字符串）。
+示例1:
+输入：s1 = &amp;quot;waterbottle&amp;quot;, s2 = &amp;quot;erbottlewat&amp;quot; 输出：True 示例2:
+输入：s1 = &amp;quot;aa&amp;quot;, s2 = &amp;quot;aba&amp;quot; 输出：False 提示：
+字符串长度在[0, 100000]范围内。 说明:
+你能只调用一次检查子串的方法吗？ func isFlipedString(s1 string, s2 string) bool { } LeetCode题库地址 https://leetcode.cn/problems/string-rotation-lcci</description></item><item><title>剑指 Offer II 014 字符串中的变位词</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/mpnail/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/mpnail/</guid><description>剑指 Offer II 014 字符串中的变位词 给定两个字符串&amp;nbsp;s1&amp;nbsp;和&amp;nbsp;s2，写一个函数来判断 s2 是否包含 s1&amp;nbsp;的某个变位词。
+换句话说，第一个字符串的排列之一是第二个字符串的 子串 。
+&amp;nbsp;
+示例 1：
+输入: s1 = &amp;quot;ab&amp;quot; s2 = &amp;quot;eidbaooo&amp;quot; 输出: True 解释: s2 包含 s1 的排列之一 (&amp;quot;ba&amp;quot;). 示例 2：
+输入: s1= &amp;quot;ab&amp;quot; s2 = &amp;quot;eidboaoo&amp;quot; 输出: False &amp;nbsp;
+提示：
+1 &amp;lt;= s1.length, s2.length &amp;lt;= 104 s1 和 s2 仅包含小写字母 &amp;nbsp;
+注意：本题与主站 567&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/permutation-in-string/
+func checkInclusion(s1 string, s2 string) bool { } LeetCode题库地址 https://leetcode.cn/problems/MPnaiL</description></item><item><title>剑指 Offer II 015 字符串中的所有变位词</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/vabmrr/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/vabmrr/</guid><description>剑指 Offer II 015 字符串中的所有变位词 给定两个字符串&amp;nbsp;s&amp;nbsp;和&amp;nbsp;p，找到&amp;nbsp;s&amp;nbsp;中所有 p 的&amp;nbsp;变位词&amp;nbsp;的子串，返回这些子串的起始索引。不考虑答案输出的顺序。
+变位词 指字母相同，但排列不同的字符串。
+&amp;nbsp;
+示例&amp;nbsp;1：
+输入: s = &amp;quot;cbaebabacd&amp;quot;, p = &amp;quot;abc&amp;quot; 输出: [0,6] 解释: 起始索引等于 0 的子串是 &amp;quot;cba&amp;quot;, 它是 &amp;quot;abc&amp;quot; 的变位词。 起始索引等于 6 的子串是 &amp;quot;bac&amp;quot;, 它是 &amp;quot;abc&amp;quot; 的变位词。 &amp;nbsp;示例 2：
+输入: s = &amp;quot;abab&amp;quot;, p = &amp;quot;ab&amp;quot; 输出: [0,1,2] 解释: 起始索引等于 0 的子串是 &amp;quot;ab&amp;quot;, 它是 &amp;quot;ab&amp;quot; 的变位词。 起始索引等于 1 的子串是 &amp;quot;ba&amp;quot;, 它是 &amp;quot;ab&amp;quot; 的变位词。 起始索引等于 2 的子串是 &amp;quot;ab&amp;quot;, 它是 &amp;quot;ab&amp;quot; 的变位词。 &amp;nbsp;
+提示:
+1 &amp;lt;= s.length, p.length &amp;lt;= 3 * 104 s&amp;nbsp;和 p 仅包含小写字母 &amp;nbsp;</description></item><item><title>剑指 Offer II 016 不含重复字符的最长子字符串</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/wtcae1/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/wtcae1/</guid><description>剑指 Offer II 016 不含重复字符的最长子字符串 给定一个字符串 s ，请你找出其中不含有重复字符的&amp;nbsp;最长连续子字符串&amp;nbsp;的长度。
+&amp;nbsp;
+示例&amp;nbsp;1:
+输入: s = &amp;quot;abcabcbb&amp;quot; 输出: 3 解释: 因为无重复字符的最长子字符串是 &amp;quot;abc&amp;quot;，所以其长度为 3。 示例 2:
+输入: s = &amp;quot;bbbbb&amp;quot; 输出: 1 解释: 因为无重复字符的最长子字符串是 &amp;quot;b&amp;quot;，所以其长度为 1。 示例 3:
+输入: s = &amp;quot;pwwkew&amp;quot; 输出: 3 解释: 因为无重复字符的最长子串是&amp;nbsp;&amp;quot;wke&amp;quot;，所以其长度为 3。 &amp;nbsp; 请注意，你的答案必须是 子串 的长度，&amp;quot;pwke&amp;quot;&amp;nbsp;是一个子序列，不是子串。 示例 4:
+输入: s = &amp;quot;&amp;quot; 输出: 0 &amp;nbsp;
+提示：
+0 &amp;lt;= s.length &amp;lt;= 5 * 104 s&amp;nbsp;由英文字母、数字、符号和空格组成 &amp;nbsp;
+注意：本题与主站 3&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
+func lengthOfLongestSubstring(s string) int { } LeetCode题库地址 https://leetcode.</description></item><item><title>剑指 Offer II 017 含有所有字符的最短字符串</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/m1oytv/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/m1oytv/</guid><description>剑指 Offer II 017 含有所有字符的最短字符串 给定两个字符串 s 和&amp;nbsp;t 。返回 s 中包含&amp;nbsp;t&amp;nbsp;的所有字符的最短子字符串。如果 s 中不存在符合条件的子字符串，则返回空字符串 &amp;quot;&amp;quot; 。
+如果 s 中存在多个符合条件的子字符串，返回任意一个。
+&amp;nbsp;
+注意： 对于 t 中重复字符，我们寻找的子字符串中该字符数量必须不少于 t 中该字符数量。
+&amp;nbsp;
+示例 1：
+输入：s = &amp;quot;ADOBECODEBANC&amp;quot;, t = &amp;quot;ABC&amp;quot; 输出：&amp;quot;BANC&amp;quot; 解释：最短子字符串 &amp;quot;BANC&amp;quot; 包含了字符串 t 的所有字符 &amp;#39;A&amp;#39;、&amp;#39;B&amp;#39;、&amp;#39;C&amp;#39; 示例 2：
+输入：s = &amp;quot;a&amp;quot;, t = &amp;quot;a&amp;quot; 输出：&amp;quot;a&amp;quot; 示例 3：
+输入：s = &amp;quot;a&amp;quot;, t = &amp;quot;aa&amp;quot; 输出：&amp;quot;&amp;quot; 解释：t 中两个字符 &amp;#39;a&amp;#39; 均应包含在 s 的子串中，因此没有符合条件的子字符串，返回空字符串。 &amp;nbsp;
+提示：
+1 &amp;lt;= s.length, t.length &amp;lt;= 105 s 和 t 由英文字母组成 &amp;nbsp;</description></item><item><title>剑指 Offer 19 正则表达式匹配</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/zheng-ze-biao-da-shi-pi-pei-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/zheng-ze-biao-da-shi-pi-pei-lcof/</guid><description>剑指 Offer 19 正则表达式匹配 请实现一个函数用来匹配包含&amp;#39;. &amp;#39;和&amp;#39;*&amp;#39;的正则表达式。模式中的字符&amp;#39;.&amp;#39;表示任意一个字符，而&amp;#39;*&amp;#39;表示它前面的字符可以出现任意次（含0次）。在本题中，匹配是指字符串的所有字符匹配整个模式。例如，字符串&amp;quot;aaa&amp;quot;与模式&amp;quot;a.a&amp;quot;和&amp;quot;ab*ac*a&amp;quot;匹配，但与&amp;quot;aa.a&amp;quot;和&amp;quot;ab*a&amp;quot;均不匹配。
+示例 1:
+输入: s = &amp;quot;aa&amp;quot; p = &amp;quot;a&amp;quot; 输出: false 解释: &amp;quot;a&amp;quot; 无法匹配 &amp;quot;aa&amp;quot; 整个字符串。 示例 2:
+输入: s = &amp;quot;aa&amp;quot; p = &amp;quot;a*&amp;quot; 输出: true 解释:&amp;nbsp;因为 &amp;#39;*&amp;#39; 代表可以匹配零个或多个前面的那一个元素, 在这里前面的元素就是 &amp;#39;a&amp;#39;。因此，字符串 &amp;quot;aa&amp;quot; 可被视为 &amp;#39;a&amp;#39; 重复了一次。 示例&amp;nbsp;3:
+输入: s = &amp;quot;ab&amp;quot; p = &amp;quot;.*&amp;quot; 输出: true 解释:&amp;nbsp;&amp;quot;.*&amp;quot; 表示可匹配零个或多个（&amp;#39;*&amp;#39;）任意字符（&amp;#39;.&amp;#39;）。 示例 4:
+输入: s = &amp;quot;aab&amp;quot; p = &amp;quot;c*a*b&amp;quot; 输出: true 解释:&amp;nbsp;因为 &amp;#39;*&amp;#39; 表示零个或多个，这里 &amp;#39;c&amp;#39; 为 0 个, &amp;#39;a&amp;#39; 被重复一次。因此可以匹配字符串 &amp;quot;aab&amp;quot;。 示例 5:</description></item><item><title>剑指 Offer II 018 有效的回文</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/xltzeq/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/xltzeq/</guid><description>剑指 Offer II 018 有效的回文 给定一个字符串 s ，验证 s&amp;nbsp;是否是&amp;nbsp;回文串&amp;nbsp;，只考虑字母和数字字符，可以忽略字母的大小写。
+本题中，将空字符串定义为有效的&amp;nbsp;回文串&amp;nbsp;。
+&amp;nbsp;
+示例 1:
+输入: s = &amp;quot;A man, a plan, a canal: Panama&amp;quot; 输出: true 解释：&amp;quot;amanaplanacanalpanama&amp;quot; 是回文串 示例 2:
+输入: s = &amp;quot;race a car&amp;quot; 输出: false 解释：&amp;quot;raceacar&amp;quot; 不是回文串 &amp;nbsp;
+提示：
+1 &amp;lt;= s.length &amp;lt;= 2 * 105 字符串 s 由 ASCII 字符组成 &amp;nbsp;
+注意：本题与主站 125&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/valid-palindrome/
+func isPalindrome(s string) bool { } LeetCode题库地址 https://leetcode.cn/problems/XltzEq</description></item><item><title>剑指 Offer 20 表示数值的字符串</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/biao-shi-shu-zhi-de-zi-fu-chuan-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/biao-shi-shu-zhi-de-zi-fu-chuan-lcof/</guid><description>剑指 Offer 20 表示数值的字符串 请实现一个函数用来判断字符串是否表示数值（包括整数和小数）。
+数值（按顺序）可以分成以下几个部分：
+若干空格 一个 小数 或者 整数 （可选）一个 'e' 或 'E' ，后面跟着一个 整数 若干空格 小数（按顺序）可以分成以下几个部分：
+（可选）一个符号字符（'+' 或 '-'） 下述格式之一： 至少一位数字，后面跟着一个点 '.' 至少一位数字，后面跟着一个点 '.' ，后面再跟着至少一位数字 一个点 '.' ，后面跟着至少一位数字 整数（按顺序）可以分成以下几个部分：
+（可选）一个符号字符（'+' 或 '-'） 至少一位数字 部分数值列举如下：
+["+100", "5e2", "-123", "3.1416", "-1E-16", "0123"] 部分非数值列举如下：
+["12e", "1a3.14", "1.2.3", "+-5", "12e+5.4"] 示例 1：
+输入：s = "0" 输出：true 示例 2：
+输入：s = "e" 输出：false 示例 3：
+输入：s = "." 输出：false 示例 4：
+输入：s = " .1 " 输出：true 提示：</description></item><item><title>剑指 Offer II 019 最多删除一个字符得到回文</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/rqku0d/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/rqku0d/</guid><description>剑指 Offer II 019 最多删除一个字符得到回文 给定一个非空字符串&amp;nbsp;s，请判断如果&amp;nbsp;最多 从字符串中删除一个字符能否得到一个回文字符串。
+&amp;nbsp;
+示例 1:
+输入: s = &amp;quot;aba&amp;quot; 输出: true 示例 2:
+输入: s = &amp;quot;abca&amp;quot; 输出: true 解释: 可以删除 &amp;quot;c&amp;quot; 字符 或者 &amp;quot;b&amp;quot; 字符 示例 3:
+输入: s = &amp;quot;abc&amp;quot; 输出: false &amp;nbsp;
+提示:
+1 &amp;lt;= s.length &amp;lt;= 105 s 由小写英文字母组成 &amp;nbsp;
+注意：本题与主站 680&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/valid-palindrome-ii/
+func validPalindrome(s string) bool { } LeetCode题库地址 https://leetcode.cn/problems/RQku0D</description></item><item><title>剑指 Offer II 020 回文子字符串的个数</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/a7vohd/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/a7vohd/</guid><description>剑指 Offer II 020 回文子字符串的个数 给定一个字符串 s ，请计算这个字符串中有多少个回文子字符串。
+具有不同开始位置或结束位置的子串，即使是由相同的字符组成，也会被视作不同的子串。
+&amp;nbsp;
+示例 1：
+输入：s = "abc" 输出：3 解释：三个回文子串: "a", "b", "c" 示例 2：
+输入：s = "aaa" 输出：6 解释：6个回文子串: "a", "a", "a", "aa", "aa", "aaa" &amp;nbsp;
+提示：
+1 &amp;lt;= s.length &amp;lt;= 1000 s 由小写英文字母组成 &amp;nbsp;
+注意：本题与主站 647 题相同：https://leetcode-cn.com/problems/palindromic-substrings/&amp;nbsp;
+func countSubstrings(s string) int { } LeetCode题库地址 https://leetcode.cn/problems/a7VOhD</description></item><item><title>剑指 Offer II 032 有效的变位词</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/dkk3p7/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/dkk3p7/</guid><description>剑指 Offer II 032 有效的变位词 给定两个字符串 s 和 t ，编写一个函数来判断它们是不是一组变位词（字母异位词）。
+注意：若&amp;nbsp;s 和 t&amp;nbsp;中每个字符出现的次数都相同且字符顺序不完全相同，则称&amp;nbsp;s 和 t&amp;nbsp;互为变位词（字母异位词）。
+&amp;nbsp;
+示例&amp;nbsp;1:
+输入: s = &amp;quot;anagram&amp;quot;, t = &amp;quot;nagaram&amp;quot; 输出: true 示例 2:
+输入: s = &amp;quot;rat&amp;quot;, t = &amp;quot;car&amp;quot; 输出: false 示例 3:
+输入: s = &amp;quot;a&amp;quot;, t = &amp;quot;a&amp;quot; 输出: false &amp;nbsp;
+提示:
+1 &amp;lt;= s.length, t.length &amp;lt;= 5 * 104 s&amp;nbsp;and&amp;nbsp;t&amp;nbsp;仅包含小写字母 &amp;nbsp;
+进阶:&amp;nbsp;如果输入字符串包含 unicode 字符怎么办？你能否调整你的解法来应对这种情况？
+&amp;nbsp;
+注意：本题与主站 242&amp;nbsp;题相似（字母异位词定义不同）：https://leetcode-cn.com/problems/valid-anagram/
+func isAnagram(s string, t string) bool { } LeetCode题库地址 https://leetcode.</description></item><item><title>剑指 Offer II 033 变位词组</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/sfvd7v/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/sfvd7v/</guid><description>剑指 Offer II 033 变位词组 给定一个字符串数组 strs ，将&amp;nbsp;变位词&amp;nbsp;组合在一起。 可以按任意顺序返回结果列表。
+注意：若两个字符串中每个字符出现的次数都相同，则称它们互为变位词。
+&amp;nbsp;
+示例 1:
+输入: strs = [&amp;quot;eat&amp;quot;, &amp;quot;tea&amp;quot;, &amp;quot;tan&amp;quot;, &amp;quot;ate&amp;quot;, &amp;quot;nat&amp;quot;, &amp;quot;bat&amp;quot;] 输出: [[&amp;quot;bat&amp;quot;],[&amp;quot;nat&amp;quot;,&amp;quot;tan&amp;quot;],[&amp;quot;ate&amp;quot;,&amp;quot;eat&amp;quot;,&amp;quot;tea&amp;quot;]] 示例 2:
+输入: strs = [&amp;quot;&amp;quot;] 输出: [[&amp;quot;&amp;quot;]] 示例 3:
+输入: strs = [&amp;quot;a&amp;quot;] 输出: [[&amp;quot;a&amp;quot;]] &amp;nbsp;
+提示：
+1 &amp;lt;= strs.length &amp;lt;= 104 0 &amp;lt;= strs[i].length &amp;lt;= 100 strs[i]&amp;nbsp;仅包含小写字母 &amp;nbsp;
+注意：本题与主站 49&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/group-anagrams/
+func groupAnagrams(strs []string) [][]string { } LeetCode题库地址 https://leetcode.cn/problems/sfvd7V</description></item><item><title>剑指 Offer II 034 外星语言是否排序</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/lwyvbb/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/lwyvbb/</guid><description>剑指 Offer II 034 外星语言是否排序 某种外星语也使用英文小写字母，但可能顺序 order 不同。字母表的顺序（order）是一些小写字母的排列。
+给定一组用外星语书写的单词 words，以及其字母表的顺序 order，只有当给定的单词在这种外星语中按字典序排列时，返回 true；否则，返回 false。
+&amp;nbsp;
+示例 1：
+输入：words = [&amp;quot;hello&amp;quot;,&amp;quot;leetcode&amp;quot;], order = &amp;quot;hlabcdefgijkmnopqrstuvwxyz&amp;quot; 输出：true 解释：在该语言的字母表中，&amp;#39;h&amp;#39; 位于 &amp;#39;l&amp;#39; 之前，所以单词序列是按字典序排列的。 示例 2：
+输入：words = [&amp;quot;word&amp;quot;,&amp;quot;world&amp;quot;,&amp;quot;row&amp;quot;], order = &amp;quot;worldabcefghijkmnpqstuvxyz&amp;quot; 输出：false 解释：在该语言的字母表中，&amp;#39;d&amp;#39; 位于 &amp;#39;l&amp;#39; 之后，那么 words[0] &amp;gt; words[1]，因此单词序列不是按字典序排列的。 示例 3：
+输入：words = [&amp;quot;apple&amp;quot;,&amp;quot;app&amp;quot;], order = &amp;quot;abcdefghijklmnopqrstuvwxyz&amp;quot; 输出：false 解释：当前三个字符 &amp;quot;app&amp;quot; 匹配时，第二个字符串相对短一些，然后根据词典编纂规则 &amp;quot;apple&amp;quot; &amp;gt; &amp;quot;app&amp;quot;，因为 &amp;#39;l&amp;#39; &amp;gt; &amp;#39;&amp;empty;&amp;#39;，其中 &amp;#39;&amp;empty;&amp;#39; 是空白字符，定义为比任何其他字符都小（更多信息）。 &amp;nbsp;
+提示：
+1 &amp;lt;= words.length &amp;lt;= 100 1 &amp;lt;= words[i].length &amp;lt;= 20 order.</description></item><item><title>剑指 Offer II 035 最小时间差</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/569nqc/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/569nqc/</guid><description>剑指 Offer II 035 最小时间差 给定一个 24 小时制（小时:分钟 &amp;quot;HH:MM&amp;quot;）的时间列表，找出列表中任意两个时间的最小时间差并以分钟数表示。
+&amp;nbsp;
+示例 1：
+输入：timePoints = [&amp;quot;23:59&amp;quot;,&amp;quot;00:00&amp;quot;] 输出：1 示例 2：
+输入：timePoints = [&amp;quot;00:00&amp;quot;,&amp;quot;23:59&amp;quot;,&amp;quot;00:00&amp;quot;] 输出：0 &amp;nbsp;
+提示：
+2 &amp;lt;= timePoints &amp;lt;= 2 * 104 timePoints[i] 格式为 &amp;quot;HH:MM&amp;quot; &amp;nbsp;
+注意：本题与主站 539&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/minimum-time-difference/
+func findMinDifference(timePoints []string) int { } LeetCode题库地址 https://leetcode.cn/problems/569nqc</description></item><item><title>面试题 05.02 二进制数转字符串</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/bianry-number-to-string-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/bianry-number-to-string-lcci/</guid><description>面试题 05.02 二进制数转字符串 二进制数转字符串。给定一个介于0和1之间的实数（如0.72），类型为double，打印它的二进制表达式。如果该数字无法精确地用32位以内的二进制表示，则打印“ERROR”。
+示例1:
+输入：0.625 输出："0.101" 示例2:
+输入：0.1 输出："ERROR" 提示：0.1无法被二进制准确表示 &amp;nbsp;
+提示：
+32位包括输出中的 "0." 这两位。 题目保证输入用例的小数位数最多只有 6 位 func printBin(num float64) string { } LeetCode题库地址 https://leetcode.cn/problems/bianry-number-to-string-lcci</description></item><item><title>剑指 Offer 37 序列化二叉树</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/xu-lie-hua-er-cha-shu-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/xu-lie-hua-er-cha-shu-lcof/</guid><description>剑指 Offer 37 序列化二叉树 请实现两个函数，分别用来序列化和反序列化二叉树。
+你需要设计一个算法来实现二叉树的序列化与反序列化。这里不限定你的序列 / 反序列化算法执行逻辑，你只需要保证一个二叉树可以被序列化为一个字符串并且将这个字符串反序列化为原始的树结构。
+提示：输入输出格式与 LeetCode 目前使用的方式一致，详情请参阅&amp;nbsp;LeetCode 序列化二叉树的格式。你并非必须采取这种方式，你也可以采用其他的方法解决这个问题。
+&amp;nbsp;
+示例：
+输入：root = [1,2,3,null,null,4,5] 输出：[1,2,3,null,null,4,5] &amp;nbsp;
+注意：本题与主站 297 题相同：https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/
+LeetCode题库地址 https://leetcode.cn/problems/xu-lie-hua-er-cha-shu-lcof</description></item><item><title>剑指 Offer 38 字符串的排列</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/zi-fu-chuan-de-pai-lie-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/zi-fu-chuan-de-pai-lie-lcof/</guid><description>剑指 Offer 38 字符串的排列 输入一个字符串，打印出该字符串中字符的所有排列。
+&amp;nbsp;
+你可以以任意顺序返回这个字符串数组，但里面不能有重复元素。
+&amp;nbsp;
+示例:
+输入：s = &amp;quot;abc&amp;quot; 输出：[&amp;quot;abc&amp;quot;,&amp;quot;acb&amp;quot;,&amp;quot;bac&amp;quot;,&amp;quot;bca&amp;quot;,&amp;quot;cab&amp;quot;,&amp;quot;cba&amp;quot;] &amp;nbsp;
+限制：
+1 &amp;lt;= s 的长度 &amp;lt;= 8
+func permutation(s string) []string { } LeetCode题库地址 https://leetcode.cn/problems/zi-fu-chuan-de-pai-lie-lcof</description></item><item><title>剑指 Offer 45 把数组排成最小的数</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/ba-shu-zu-pai-cheng-zui-xiao-de-shu-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/ba-shu-zu-pai-cheng-zui-xiao-de-shu-lcof/</guid><description>剑指 Offer 45 把数组排成最小的数 输入一个非负整数数组，把数组里所有数字拼接起来排成一个数，打印能拼接出的所有数字中最小的一个。
+&amp;nbsp;
+示例 1:
+输入: [10,2] 输出: &amp;quot;102&amp;quot; 示例&amp;nbsp;2:
+输入: [3,30,34,5,9] 输出: &amp;quot;3033459&amp;quot; &amp;nbsp;
+提示:
+0 &amp;lt; nums.length &amp;lt;= 100 说明: 输出结果可能非常大，所以你需要返回一个字符串而不是整数 拼接起来的数字可能会有前导 0，最后结果不需要去掉前导 0 func minNumber(nums []int) string { } LeetCode题库地址 https://leetcode.cn/problems/ba-shu-zu-pai-cheng-zui-xiao-de-shu-lcof</description></item><item><title>剑指 Offer 46 把数字翻译成字符串</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/ba-shu-zi-fan-yi-cheng-zi-fu-chuan-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/ba-shu-zi-fan-yi-cheng-zi-fu-chuan-lcof/</guid><description>剑指 Offer 46 把数字翻译成字符串 给定一个数字，我们按照如下规则把它翻译为字符串：0 翻译成 &amp;ldquo;a&amp;rdquo; ，1 翻译成 &amp;ldquo;b&amp;rdquo;，&amp;hellip;&amp;hellip;，11 翻译成 &amp;ldquo;l&amp;rdquo;，&amp;hellip;&amp;hellip;，25 翻译成 &amp;ldquo;z&amp;rdquo;。一个数字可能有多个翻译。请编程实现一个函数，用来计算一个数字有多少种不同的翻译方法。
+&amp;nbsp;
+示例 1:
+输入: 12258 输出: 5 解释: 12258有5种不同的翻译，分别是&amp;quot;bccfi&amp;quot;, &amp;quot;bwfi&amp;quot;, &amp;quot;bczi&amp;quot;, &amp;quot;mcfi&amp;quot;和&amp;quot;mzi&amp;quot; &amp;nbsp;
+提示：
+0 &amp;lt;= num &amp;lt; 231 func translateNum(num int) int { } LeetCode题库地址 https://leetcode.cn/problems/ba-shu-zi-fan-yi-cheng-zi-fu-chuan-lcof</description></item><item><title>面试题 08.07 无重复字符串的排列组合</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/permutation-i-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/permutation-i-lcci/</guid><description>面试题 08.07 无重复字符串的排列组合 无重复字符串的排列组合。编写一种方法，计算某字符串的所有排列组合，字符串每个字符均不相同。
+示例1:
+输入：S = "qwe" 输出：["qwe", "qew", "wqe", "weq", "ewq", "eqw"] 示例2:
+输入：S = "ab" 输出：["ab", "ba"] 提示:
+字符都是英文字母。 字符串长度在[1, 9]之间。 func permutation(S string) []string { } LeetCode题库地址 https://leetcode.cn/problems/permutation-i-lcci</description></item><item><title>剑指 Offer 48 最长不含重复字符的子字符串</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/zui-chang-bu-han-zhong-fu-zi-fu-de-zi-zi-fu-chuan-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/zui-chang-bu-han-zhong-fu-zi-fu-de-zi-zi-fu-chuan-lcof/</guid><description>剑指 Offer 48 最长不含重复字符的子字符串 请从字符串中找出一个最长的不包含重复字符的子字符串，计算该最长子字符串的长度。
+&amp;nbsp;
+示例&amp;nbsp;1:
+输入: &amp;quot;abcabcbb&amp;quot; 输出: 3 解释: 因为无重复字符的最长子串是 &amp;quot;abc&amp;quot;，所以其长度为 3。 示例 2:
+输入: &amp;quot;bbbbb&amp;quot; 输出: 1 解释: 因为无重复字符的最长子串是 &amp;quot;b&amp;quot;，所以其长度为 1。 示例 3:
+输入: &amp;quot;pwwkew&amp;quot; 输出: 3 解释: 因为无重复字符的最长子串是&amp;nbsp;&amp;quot;wke&amp;quot;，所以其长度为 3。 &amp;nbsp; 请注意，你的答案必须是 子串 的长度，&amp;quot;pwke&amp;quot;&amp;nbsp;是一个子序列，不是子串。 &amp;nbsp;
+提示：
+s.length &amp;lt;= 40000 注意：本题与主站 3 题相同：https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
+func lengthOfLongestSubstring(s string) int { } LeetCode题库地址 https://leetcode.cn/problems/zui-chang-bu-han-zhong-fu-zi-fu-de-zi-zi-fu-chuan-lcof</description></item><item><title>剑指 Offer II 048 序列化与反序列化二叉树</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/h54ybf/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/h54ybf/</guid><description>剑指 Offer II 048 序列化与反序列化二叉树 序列化是将一个数据结构或者对象转换为连续的比特位的操作，进而可以将转换后的数据存储在一个文件或者内存中，同时也可以通过网络传输到另一个计算机环境，采取相反方式重构得到原数据。
+请设计一个算法来实现二叉树的序列化与反序列化。这里不限定你的序列 / 反序列化算法执行逻辑，只需要保证一个二叉树可以被序列化为一个字符串并且将这个字符串反序列化为原始的树结构。
+&amp;nbsp;
+示例 1：
+输入：root = [1,2,3,null,null,4,5] 输出：[1,2,3,null,null,4,5] 示例 2：
+输入：root = [] 输出：[] 示例 3：
+输入：root = [1] 输出：[1] 示例 4：
+输入：root = [1,2] 输出：[1,2] &amp;nbsp;
+提示：
+输入输出格式与 LeetCode 目前使用的方式一致，详情请参阅&amp;nbsp;LeetCode 序列化二叉树的格式。你并非必须采取这种方式，也可以采用其他的方法解决这个问题。 树中结点数在范围 [0, 104] 内 -1000 &amp;lt;= Node.val &amp;lt;= 1000 &amp;nbsp;
+注意：本题与主站 297&amp;nbsp;题相同：https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/&amp;nbsp;
+/** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ type Codec struct { } func Constructor() Codec { } // Serializes a tree to a single string.</description></item><item><title>面试题 08.08 有重复字符串的排列组合</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/permutation-ii-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/permutation-ii-lcci/</guid><description>面试题 08.08 有重复字符串的排列组合 有重复字符串的排列组合。编写一种方法，计算某字符串的所有排列组合。
+示例1:
+输入：S = &amp;quot;qqe&amp;quot; 输出：[&amp;quot;eqq&amp;quot;,&amp;quot;qeq&amp;quot;,&amp;quot;qqe&amp;quot;] 示例2:
+输入：S = &amp;quot;ab&amp;quot; 输出：[&amp;quot;ab&amp;quot;, &amp;quot;ba&amp;quot;] 提示:
+字符都是英文字母。 字符串长度在[1, 9]之间。 func permutation(S string) []string { } LeetCode题库地址 https://leetcode.cn/problems/permutation-ii-lcci</description></item><item><title>面试题 08.09 括号</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/bracket-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/bracket-lcci/</guid><description>面试题 08.09 括号 括号。设计一种算法，打印n对括号的所有合法的（例如，开闭一一对应）组合。
+说明：解集不能包含重复的子集。
+例如，给出 n = 3，生成结果为：
+[ "((()))", "(()())", "(())()", "()(())", "()()()" ] func generateParenthesis(n int) []string { } LeetCode题库地址 https://leetcode.cn/problems/bracket-lcci</description></item><item><title>剑指 Offer 50 第一个只出现一次的字符</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/di-yi-ge-zhi-chu-xian-yi-ci-de-zi-fu-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/di-yi-ge-zhi-chu-xian-yi-ci-de-zi-fu-lcof/</guid><description>剑指 Offer 50 第一个只出现一次的字符 在字符串 s 中找出第一个只出现一次的字符。如果没有，返回一个单空格。 s 只包含小写字母。
+示例 1:
+输入：s = "abaccdeff" 输出：'b' 示例 2:
+输入：s = "" 输出：' ' &amp;nbsp;
+限制：
+0 &amp;lt;= s 的长度 &amp;lt;= 50000
+func firstUniqChar(s string) byte { } LeetCode题库地址 https://leetcode.cn/problems/di-yi-ge-zhi-chu-xian-yi-ci-de-zi-fu-lcof</description></item><item><title>面试题 08.14 布尔运算</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/boolean-evaluation-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/boolean-evaluation-lcci/</guid><description>面试题 08.14 布尔运算 给定一个布尔表达式和一个期望的布尔结果 result，布尔表达式由 0 (false)、1 (true)、&amp;amp; (AND)、 | (OR) 和 ^ (XOR) 符号组成。实现一个函数，算出有几种可使该表达式得出 result 值的括号方法。
+示例 1:
+输入: s = &amp;quot;1^0|0|1&amp;quot;, result = 0 输出: 2 解释:&amp;nbsp;两种可能的括号方法是 1^(0|(0|1)) 1^((0|0)|1) 示例 2:
+输入: s = &amp;quot;0&amp;amp;0&amp;amp;0&amp;amp;1^1|0&amp;quot;, result = 1 输出: 10 提示：
+运算符的数量不超过 19 个 func countEval(s string, result int) int { } LeetCode题库地址 https://leetcode.cn/problems/boolean-evaluation-lcci</description></item><item><title>面试题 10.02 变位词组</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/group-anagrams-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/group-anagrams-lcci/</guid><description>面试题 10.02 变位词组 编写一种方法，对字符串数组进行排序，将所有变位词组合在一起。变位词是指字母相同，但排列不同的字符串。
+注意：本题相对原题稍作修改
+示例:
+输入: [&amp;quot;eat&amp;quot;, &amp;quot;tea&amp;quot;, &amp;quot;tan&amp;quot;, &amp;quot;ate&amp;quot;, &amp;quot;nat&amp;quot;, &amp;quot;bat&amp;quot;], 输出: [ [&amp;quot;ate&amp;quot;,&amp;quot;eat&amp;quot;,&amp;quot;tea&amp;quot;], [&amp;quot;nat&amp;quot;,&amp;quot;tan&amp;quot;], [&amp;quot;bat&amp;quot;] ] 说明：
+所有输入均为小写字母。 不考虑答案输出的顺序。 func groupAnagrams(strs []string) [][]string { } LeetCode题库地址 https://leetcode.cn/problems/group-anagrams-lcci</description></item><item><title>面试题 10.05 稀疏数组搜索</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/sparse-array-search-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/sparse-array-search-lcci/</guid><description>面试题 10.05 稀疏数组搜索 稀疏数组搜索。有个排好序的字符串数组，其中散布着一些空字符串，编写一种方法，找出给定字符串的位置。
+示例1:
+输入: words = [&amp;quot;at&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;ball&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;car&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;,&amp;quot;dad&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;], s = &amp;quot;ta&amp;quot; 输出：-1 说明: 不存在返回-1。 示例2:
+输入：words = [&amp;quot;at&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;ball&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;car&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;,&amp;quot;dad&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;], s = &amp;quot;ball&amp;quot; 输出：4 提示:
+words的长度在[1, 1000000]之间 func findString(words []string, s string) int { } LeetCode题库地址 https://leetcode.cn/problems/sparse-array-search-lcci</description></item><item><title>剑指 Offer 58 - I 翻转单词顺序</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/fan-zhuan-dan-ci-shun-xu-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/fan-zhuan-dan-ci-shun-xu-lcof/</guid><description>剑指 Offer 58 - I 翻转单词顺序 输入一个英文句子，翻转句子中单词的顺序，但单词内字符的顺序不变。为简单起见，标点符号和普通字母一样处理。例如输入字符串&amp;quot;I am a student. &amp;quot;，则输出&amp;quot;student. a am I&amp;quot;。
+&amp;nbsp;
+示例 1：
+输入: &amp;quot;the sky is blue&amp;quot; 输出:&amp;nbsp;&amp;quot;blue is sky the&amp;quot; 示例 2：
+输入: &amp;quot; &amp;nbsp;hello world! &amp;nbsp;&amp;quot; 输出:&amp;nbsp;&amp;quot;world! hello&amp;quot; 解释: 输入字符串可以在前面或者后面包含多余的空格，但是反转后的字符不能包括。 示例 3：
+输入: &amp;quot;a good &amp;nbsp; example&amp;quot; 输出:&amp;nbsp;&amp;quot;example good a&amp;quot; 解释: 如果两个单词间有多余的空格，将反转后单词间的空格减少到只含一个。 &amp;nbsp;
+说明：
+无空格字符构成一个单词。 输入字符串可以在前面或者后面包含多余的空格，但是反转后的字符不能包括。 如果两个单词间有多余的空格，将反转后单词间的空格减少到只含一个。 注意：本题与主站 151 题相同：https://leetcode-cn.com/problems/reverse-words-in-a-string/
+注意：此题对比原题有改动
+func reverseWords(s string) string { } LeetCode题库地址 https://leetcode.cn/problems/fan-zhuan-dan-ci-shun-xu-lcof</description></item><item><title>剑指 Offer II 062 实现前缀树</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/qc3q1f/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/qc3q1f/</guid><description>剑指 Offer II 062 实现前缀树 Trie（发音类似 &amp;quot;try&amp;quot;）或者说 前缀树 是一种树形数据结构，用于高效地存储和检索字符串数据集中的键。这一数据结构有相当多的应用情景，例如自动补完和拼写检查。
+请你实现 Trie 类：
+Trie() 初始化前缀树对象。 void insert(String word) 向前缀树中插入字符串 word 。 boolean search(String word) 如果字符串 word 在前缀树中，返回 true（即，在检索之前已经插入）；否则，返回 false 。 boolean startsWith(String prefix) 如果之前已经插入的字符串&amp;nbsp;word 的前缀之一为 prefix ，返回 true ；否则，返回 false 。 &amp;nbsp;
+示例：
+输入 inputs = [&amp;quot;Trie&amp;quot;, &amp;quot;insert&amp;quot;, &amp;quot;search&amp;quot;, &amp;quot;search&amp;quot;, &amp;quot;startsWith&amp;quot;, &amp;quot;insert&amp;quot;, &amp;quot;search&amp;quot;] inputs = [[], [&amp;quot;apple&amp;quot;], [&amp;quot;apple&amp;quot;], [&amp;quot;app&amp;quot;], [&amp;quot;app&amp;quot;], [&amp;quot;app&amp;quot;], [&amp;quot;app&amp;quot;]] 输出 [null, null, true, false, true, null, true] 解释 Trie trie = new Trie(); trie.</description></item><item><title>剑指 Offer 58 - II 左旋转字符串</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/zuo-xuan-zhuan-zi-fu-chuan-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/zuo-xuan-zhuan-zi-fu-chuan-lcof/</guid><description>剑指 Offer 58 - II 左旋转字符串 字符串的左旋转操作是把字符串前面的若干个字符转移到字符串的尾部。请定义一个函数实现字符串左旋转操作的功能。比如，输入字符串&amp;quot;abcdefg&amp;quot;和数字2，该函数将返回左旋转两位得到的结果&amp;quot;cdefgab&amp;quot;。
+&amp;nbsp;
+示例 1：
+输入: s = &amp;quot;abcdefg&amp;quot;, k = 2 输出:&amp;nbsp;&amp;quot;cdefgab&amp;quot; 示例 2：
+输入: s = &amp;quot;lrloseumgh&amp;quot;, k = 6 输出:&amp;nbsp;&amp;quot;umghlrlose&amp;quot; &amp;nbsp;
+限制：
+1 &amp;lt;= k &amp;lt; s.length &amp;lt;= 10000 func reverseLeftWords(s string, n int) string { } LeetCode题库地址 https://leetcode.cn/problems/zuo-xuan-zhuan-zi-fu-chuan-lcof</description></item><item><title>剑指 Offer II 063 替换单词</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/uhwrsj/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/uhwrsj/</guid><description>剑指 Offer II 063 替换单词 在英语中，有一个叫做&amp;nbsp;词根(root) 的概念，它可以跟着其他一些词组成另一个较长的单词&amp;mdash;&amp;mdash;我们称这个词为&amp;nbsp;继承词(successor)。例如，词根an，跟随着单词&amp;nbsp;other(其他)，可以形成新的单词&amp;nbsp;another(另一个)。
+现在，给定一个由许多词根组成的词典和一个句子，需要将句子中的所有继承词用词根替换掉。如果继承词有许多可以形成它的词根，则用最短的词根替换它。
+需要输出替换之后的句子。
+&amp;nbsp;
+示例 1：
+输入：dictionary = [&amp;quot;cat&amp;quot;,&amp;quot;bat&amp;quot;,&amp;quot;rat&amp;quot;], sentence = &amp;quot;the cattle was rattled by the battery&amp;quot; 输出：&amp;quot;the cat was rat by the bat&amp;quot; 示例 2：
+输入：dictionary = [&amp;quot;a&amp;quot;,&amp;quot;b&amp;quot;,&amp;quot;c&amp;quot;], sentence = &amp;quot;aadsfasf absbs bbab cadsfafs&amp;quot; 输出：&amp;quot;a a b c&amp;quot; 示例 3：
+输入：dictionary = [&amp;quot;a&amp;quot;, &amp;quot;aa&amp;quot;, &amp;quot;aaa&amp;quot;, &amp;quot;aaaa&amp;quot;], sentence = &amp;quot;a aa a aaaa aaa aaa aaa aaaaaa bbb baba ababa&amp;quot; 输出：&amp;quot;a a a a a a a a bbb baba a&amp;quot; 示例 4：</description></item><item><title>面试题 16.02 单词频率</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/words-frequency-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/words-frequency-lcci/</guid><description>面试题 16.02 单词频率 设计一个方法，找出任意指定单词在一本书中的出现频率。
+你的实现应该支持如下操作：
+WordsFrequency(book)构造函数，参数为字符串数组构成的一本书 get(word)查询指定单词在书中出现的频率 示例：
+WordsFrequency wordsFrequency = new WordsFrequency({&amp;quot;i&amp;quot;, &amp;quot;have&amp;quot;, &amp;quot;an&amp;quot;, &amp;quot;apple&amp;quot;, &amp;quot;he&amp;quot;, &amp;quot;have&amp;quot;, &amp;quot;a&amp;quot;, &amp;quot;pen&amp;quot;}); wordsFrequency.get(&amp;quot;you&amp;quot;); //返回0，&amp;quot;you&amp;quot;没有出现过 wordsFrequency.get(&amp;quot;have&amp;quot;); //返回2，&amp;quot;have&amp;quot;出现2次 wordsFrequency.get(&amp;quot;an&amp;quot;); //返回1 wordsFrequency.get(&amp;quot;apple&amp;quot;); //返回1 wordsFrequency.get(&amp;quot;pen&amp;quot;); //返回1 提示：
+book[i]中只包含小写字母 1 &amp;lt;= book.length &amp;lt;= 100000 1 &amp;lt;= book[i].length &amp;lt;= 10 get函数的调用次数不会超过100000 type WordsFrequency struct { } func Constructor(book []string) WordsFrequency { } func (this *WordsFrequency) Get(word string) int { } /** * Your WordsFrequency object will be instantiated and called as such: * obj := Constructor(book); * param_1 := obj.</description></item><item><title>剑指 Offer II 064 神奇的字典</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/us1pgt/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/us1pgt/</guid><description>剑指 Offer II 064 神奇的字典 设计一个使用单词列表进行初始化的数据结构，单词列表中的单词 互不相同 。 如果给出一个单词，请判定能否只将这个单词中一个字母换成另一个字母，使得所形成的新单词存在于已构建的神奇字典中。
+实现 MagicDictionary 类：
+MagicDictionary() 初始化对象 void buildDict(String[]&amp;nbsp;dictionary) 使用字符串数组&amp;nbsp;dictionary 设定该数据结构，dictionary 中的字符串互不相同 bool search(String searchWord) 给定一个字符串 searchWord ，判定能否只将字符串中 一个 字母换成另一个字母，使得所形成的新字符串能够与字典中的任一字符串匹配。如果可以，返回 true ；否则，返回 false 。 &amp;nbsp;
+示例：
+输入 inputs = [&amp;quot;MagicDictionary&amp;quot;, &amp;quot;buildDict&amp;quot;, &amp;quot;search&amp;quot;, &amp;quot;search&amp;quot;, &amp;quot;search&amp;quot;, &amp;quot;search&amp;quot;] inputs = [[], [[&amp;quot;hello&amp;quot;, &amp;quot;leetcode&amp;quot;]], [&amp;quot;hello&amp;quot;], [&amp;quot;hhllo&amp;quot;], [&amp;quot;hell&amp;quot;], [&amp;quot;leetcoded&amp;quot;]] 输出 [null, null, false, true, false, false] 解释 MagicDictionary magicDictionary = new MagicDictionary(); magicDictionary.buildDict([&amp;quot;hello&amp;quot;, &amp;quot;leetcode&amp;quot;]); magicDictionary.search(&amp;quot;hello&amp;quot;); // 返回 False magicDictionary.search(&amp;quot;hhllo&amp;quot;); // 将第二个 &amp;#39;h&amp;#39; 替换为 &amp;#39;e&amp;#39; 可以匹配 &amp;quot;hello&amp;quot; ，所以返回 True magicDictionary.</description></item><item><title>剑指 Offer II 065 最短的单词编码</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/iswd2y/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/iswd2y/</guid><description>剑指 Offer II 065 最短的单词编码 单词数组&amp;nbsp;words 的 有效编码 由任意助记字符串 s 和下标数组 indices 组成，且满足：
+words.length == indices.length 助记字符串 s 以 &amp;#39;#&amp;#39; 字符结尾 对于每个下标 indices[i] ，s 的一个从 indices[i] 开始、到下一个 &amp;#39;#&amp;#39; 字符结束（但不包括 &amp;#39;#&amp;#39;）的 子字符串 恰好与 words[i] 相等 给定一个单词数组&amp;nbsp;words ，返回成功对 words 进行编码的最小助记字符串 s 的长度 。
+&amp;nbsp;
+示例 1：
+输入：words = [&amp;quot;time&amp;quot;, &amp;quot;me&amp;quot;, &amp;quot;bell&amp;quot;] 输出：10 解释：一组有效编码为 s = &amp;quot;time#bell#&amp;quot; 和 indices = [0, 2, 5] 。 words[0] = &amp;quot;time&amp;quot; ，s 开始于 indices[0] = 0 到下一个 &amp;#39;#&amp;#39; 结束的子字符串，如加粗部分所示 &amp;quot;time#bell#&amp;quot; words[1] = &amp;quot;me&amp;quot; ，s 开始于 indices[1] = 2 到下一个 &amp;#39;#&amp;#39; 结束的子字符串，如加粗部分所示 &amp;quot;time#bell#&amp;quot; words[2] = &amp;quot;bell&amp;quot; ，s 开始于 indices[2] = 5 到下一个 &amp;#39;#&amp;#39; 结束的子字符串，如加粗部分所示 &amp;quot;time#bell#&amp;quot; 示例 2：</description></item><item><title>剑指 Offer II 066 单词之和</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/z1r5dt/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/z1r5dt/</guid><description>剑指 Offer II 066 单词之和 实现一个 MapSum 类，支持两个方法，insert&amp;nbsp;和&amp;nbsp;sum：
+MapSum() 初始化 MapSum 对象 void insert(String key, int val) 插入 key-val 键值对，字符串表示键 key ，整数表示值 val 。如果键 key 已经存在，那么原来的键值对将被替代成新的键值对。 int sum(string prefix) 返回所有以该前缀 prefix 开头的键 key 的值的总和。 &amp;nbsp;
+示例：
+输入： inputs = [&amp;quot;MapSum&amp;quot;, &amp;quot;insert&amp;quot;, &amp;quot;sum&amp;quot;, &amp;quot;insert&amp;quot;, &amp;quot;sum&amp;quot;] inputs = [[], [&amp;quot;apple&amp;quot;, 3], [&amp;quot;ap&amp;quot;], [&amp;quot;app&amp;quot;, 2], [&amp;quot;ap&amp;quot;]] 输出： [null, null, 3, null, 5] 解释： MapSum mapSum = new MapSum(); mapSum.insert(&amp;quot;apple&amp;quot;, 3); mapSum.sum(&amp;quot;ap&amp;quot;); // return 3 (apple = 3) mapSum.insert(&amp;quot;app&amp;quot;, 2); mapSum.</description></item><item><title>面试题 16.08 整数的英语表示</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/english-int-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/english-int-lcci/</guid><description>面试题 16.08 整数的英语表示 给定一个整数，打印该整数的英文描述。
+示例 1:
+输入: 123 输出: "One Hundred Twenty Three" 示例 2:
+输入: 12345 输出: "Twelve Thousand Three Hundred Forty Five" 示例 3:
+输入: 1234567 输出: "One Million Two Hundred Thirty Four Thousand Five Hundred Sixty Seven" 示例 4:
+输入: 1234567891 输出: "One Billion Two Hundred Thirty Four Million Five Hundred Sixty Seven Thousand Eight Hundred Ninety One" 注意：本题与 273 题相同：https://leetcode-cn.com/problems/integer-to-english-words/
+func numberToWords(num int) string { } LeetCode题库地址 https://leetcode.cn/problems/english-int-lcci</description></item><item><title>剑指 Offer 67 把字符串转换成整数</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/ba-zi-fu-chuan-zhuan-huan-cheng-zheng-shu-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/ba-zi-fu-chuan-zhuan-huan-cheng-zheng-shu-lcof/</guid><description>剑指 Offer 67 把字符串转换成整数 写一个函数 StrToInt，实现把字符串转换成整数这个功能。不能使用 atoi 或者其他类似的库函数。
+&amp;nbsp;
+首先，该函数会根据需要丢弃无用的开头空格字符，直到寻找到第一个非空格的字符为止。
+当我们寻找到的第一个非空字符为正或者负号时，则将该符号与之后面尽可能多的连续数字组合起来，作为该整数的正负号；假如第一个非空字符是数字，则直接将其与之后连续的数字字符组合起来，形成整数。
+该字符串除了有效的整数部分之后也可能会存在多余的字符，这些字符可以被忽略，它们对于函数不应该造成影响。
+注意：假如该字符串中的第一个非空格字符不是一个有效整数字符、字符串为空或字符串仅包含空白字符时，则你的函数不需要进行转换。
+在任何情况下，若函数不能进行有效的转换时，请返回 0。
+说明：
+假设我们的环境只能存储 32 位大小的有符号整数，那么其数值范围为&amp;nbsp;[&amp;minus;231,&amp;nbsp; 231&amp;nbsp;&amp;minus; 1]。如果数值超过这个范围，请返回 &amp;nbsp;INT_MAX (231&amp;nbsp;&amp;minus; 1) 或&amp;nbsp;INT_MIN (&amp;minus;231) 。
+示例&amp;nbsp;1:
+输入: &amp;quot;42&amp;quot; 输出: 42 示例&amp;nbsp;2:
+输入: &amp;quot; -42&amp;quot; 输出: -42 解释: 第一个非空白字符为 &amp;#39;-&amp;#39;, 它是一个负号。 &amp;nbsp; 我们尽可能将负号与后面所有连续出现的数字组合起来，最后得到 -42 。 示例&amp;nbsp;3:
+输入: &amp;quot;4193 with words&amp;quot; 输出: 4193 解释: 转换截止于数字 &amp;#39;3&amp;#39; ，因为它的下一个字符不为数字。 示例&amp;nbsp;4:
+输入: &amp;quot;words and 987&amp;quot; 输出: 0 解释: 第一个非空字符是 &amp;#39;w&amp;#39;, 但它不是数字或正、负号。 因此无法执行有效的转换。 示例&amp;nbsp;5:
+输入: &amp;quot;-91283472332&amp;quot; 输出: -2147483648 解释: 数字 &amp;quot;-91283472332&amp;quot; 超过 32 位有符号整数范围。 &amp;nbsp; 因此返回 INT_MIN (&amp;minus;231) 。 &amp;nbsp;</description></item><item><title>面试题 16.15 珠玑妙算</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/master-mind-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/master-mind-lcci/</guid><description>面试题 16.15 珠玑妙算 珠玑妙算游戏（the game of master mind）的玩法如下。
+计算机有4个槽，每个槽放一个球，颜色可能是红色（R）、黄色（Y）、绿色（G）或蓝色（B）。例如，计算机可能有RGGB 4种（槽1为红色，槽2、3为绿色，槽4为蓝色）。作为用户，你试图猜出颜色组合。打个比方，你可能会猜YRGB。要是猜对某个槽的颜色，则算一次“猜中”；要是只猜对颜色但槽位猜错了，则算一次“伪猜中”。注意，“猜中”不能算入“伪猜中”。
+给定一种颜色组合solution和一个猜测guess，编写一个方法，返回猜中和伪猜中的次数answer，其中answer[0]为猜中的次数，answer[1]为伪猜中的次数。
+示例：
+输入： solution="RGBY",guess="GGRR" 输出： [1,1] 解释： 猜中1次，伪猜中1次。 提示：
+len(solution) = len(guess) = 4 solution和guess仅包含"R","G","B","Y"这4种字符 func masterMind(solution string, guess string) []int { } LeetCode题库地址 https://leetcode.cn/problems/master-mind-lcci</description></item><item><title>面试题 16.18 模式匹配</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/pattern-matching-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/pattern-matching-lcci/</guid><description>面试题 16.18 模式匹配 你有两个字符串，即pattern和value。 pattern字符串由字母&amp;quot;a&amp;quot;和&amp;quot;b&amp;quot;组成，用于描述字符串中的模式。例如，字符串&amp;quot;catcatgocatgo&amp;quot;匹配模式&amp;quot;aabab&amp;quot;（其中&amp;quot;cat&amp;quot;是&amp;quot;a&amp;quot;，&amp;quot;go&amp;quot;是&amp;quot;b&amp;quot;），该字符串也匹配像&amp;quot;a&amp;quot;、&amp;quot;ab&amp;quot;和&amp;quot;b&amp;quot;这样的模式。但需注意&amp;quot;a&amp;quot;和&amp;quot;b&amp;quot;不能同时表示相同的字符串。编写一个方法判断value字符串是否匹配pattern字符串。
+示例 1：
+输入： pattern = &amp;quot;abba&amp;quot;, value = &amp;quot;dogcatcatdog&amp;quot; 输出： true 示例 2：
+输入： pattern = &amp;quot;abba&amp;quot;, value = &amp;quot;dogcatcatfish&amp;quot; 输出： false 示例 3：
+输入： pattern = &amp;quot;aaaa&amp;quot;, value = &amp;quot;dogcatcatdog&amp;quot; 输出： false 示例 4：
+输入： pattern = &amp;quot;abba&amp;quot;, value = &amp;quot;dogdogdogdog&amp;quot; 输出： true 解释： &amp;quot;a&amp;quot;=&amp;quot;dogdog&amp;quot;,b=&amp;quot;&amp;quot;，反之也符合规则 提示：
+1 &amp;lt;= len(pattern) &amp;lt;= 1000 0 &amp;lt;= len(value) &amp;lt;= 1000 你可以假设pattern只包含字母&amp;quot;a&amp;quot;和&amp;quot;b&amp;quot;，value仅包含小写字母。 func patternMatching(pattern string, value string) bool { } LeetCode题库地址 https://leetcode.cn/problems/pattern-matching-lcci</description></item><item><title>面试题 16.20 T9键盘</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/t9-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/t9-lcci/</guid><description>面试题 16.20 T9键盘 在老式手机上，用户通过数字键盘输入，手机将提供与这些数字相匹配的单词列表。每个数字映射到0至4个字母。给定一个数字序列，实现一个算法来返回匹配单词的列表。你会得到一张含有有效单词的列表。映射如下图所示：
+示例 1:
+输入: num = &amp;quot;8733&amp;quot;, words = [&amp;quot;tree&amp;quot;, &amp;quot;used&amp;quot;] 输出: [&amp;quot;tree&amp;quot;, &amp;quot;used&amp;quot;] 示例 2:
+输入: num = &amp;quot;2&amp;quot;, words = [&amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;c&amp;quot;, &amp;quot;d&amp;quot;] 输出: [&amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;c&amp;quot;] 提示：
+num.length &amp;lt;= 1000 words.length &amp;lt;= 500 words[i].length == num.length num中不会出现 0, 1 这两个数字 func getValidT9Words(num string, words []string) []string { } LeetCode题库地址 https://leetcode.cn/problems/t9-lcci</description></item><item><title>面试题 16.22 兰顿蚂蚁</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/langtons-ant-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/langtons-ant-lcci/</guid><description>面试题 16.22 兰顿蚂蚁 一只蚂蚁坐在由白色和黑色方格构成的无限网格上。开始时，网格全白，蚂蚁面向右侧。每行走一步，蚂蚁执行以下操作。
+(1) 如果在白色方格上，则翻转方格的颜色，向右(顺时针)转 90 度，并向前移动一个单位。
+(2) 如果在黑色方格上，则翻转方格的颜色，向左(逆时针方向)转 90 度，并向前移动一个单位。
+编写程序来模拟蚂蚁执行的前 K 个动作，并返回最终的网格。
+网格由数组表示，每个元素是一个字符串，代表网格中的一行，黑色方格由&amp;nbsp;&amp;#39;X&amp;#39;&amp;nbsp;表示，白色方格由&amp;nbsp;&amp;#39;_&amp;#39;&amp;nbsp;表示，蚂蚁所在的位置由&amp;nbsp;&amp;#39;L&amp;#39;, &amp;#39;U&amp;#39;, &amp;#39;R&amp;#39;, &amp;#39;D&amp;#39;&amp;nbsp;表示，分别表示蚂蚁&amp;nbsp;左、上、右、下 的朝向。只需要返回能够包含蚂蚁走过的所有方格的最小矩形。
+示例 1:
+输入: 0 输出: [&amp;quot;R&amp;quot;] 示例 2:
+输入: 2 输出: [ &amp;nbsp; &amp;quot;_X&amp;quot;, &amp;nbsp; &amp;quot;LX&amp;quot; ] 示例 3:
+输入: 5 输出: [ &amp;nbsp; &amp;quot;_U&amp;quot;, &amp;nbsp; &amp;quot;X_&amp;quot;, &amp;nbsp; &amp;quot;XX&amp;quot; ] 说明：
+K &amp;lt;= 100000 func printKMoves(K int) []string { } LeetCode题库地址 https://leetcode.cn/problems/langtons-ant-lcci</description></item><item><title>剑指 Offer II 085 生成匹配的括号</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/idbivt/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/idbivt/</guid><description>剑指 Offer II 085 生成匹配的括号 正整数&amp;nbsp;n&amp;nbsp;代表生成括号的对数，请设计一个函数，用于能够生成所有可能的并且 有效的 括号组合。
+&amp;nbsp;
+示例 1：
+输入：n = 3 输出：[&amp;quot;((()))&amp;quot;,&amp;quot;(()())&amp;quot;,&amp;quot;(())()&amp;quot;,&amp;quot;()(())&amp;quot;,&amp;quot;()()()&amp;quot;] 示例 2：
+输入：n = 1 输出：[&amp;quot;()&amp;quot;] &amp;nbsp;
+提示：
+1 &amp;lt;= n &amp;lt;= 8 &amp;nbsp;
+注意：本题与主站 22&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/generate-parentheses/
+func generateParenthesis(n int) []string { } LeetCode题库地址 https://leetcode.cn/problems/IDBivT</description></item><item><title>面试题 16.26 计算器</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/calculator-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/calculator-lcci/</guid><description>面试题 16.26 计算器 给定一个包含正整数、加(+)、减(-)、乘(*)、除(/)的算数表达式(括号除外)，计算其结果。
+表达式仅包含非负整数，+， - ，*，/ 四种运算符和空格&amp;nbsp;&amp;nbsp;。 整数除法仅保留整数部分。
+示例&amp;nbsp;1:
+输入: &amp;quot;3+2*2&amp;quot; 输出: 7 示例 2:
+输入: &amp;quot; 3/2 &amp;quot; 输出: 1 示例 3:
+输入: &amp;quot; 3+5 / 2 &amp;quot; 输出: 5 说明：
+你可以假设所给定的表达式都是有效的。 请不要使用内置的库函数 eval。 func calculate(s string) int { } LeetCode题库地址 https://leetcode.cn/problems/calculator-lcci</description></item><item><title>剑指 Offer II 087 复原 IP</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/0on3un/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/0on3un/</guid><description>剑指 Offer II 087 复原 IP 给定一个只包含数字的字符串 s ，用以表示一个 IP 地址，返回所有可能从&amp;nbsp;s 获得的 有效 IP 地址 。你可以按任何顺序返回答案。
+有效 IP 地址 正好由四个整数（每个整数位于 0 到 255 之间组成，且不能含有前导 0），整数之间用 &amp;#39;.&amp;#39; 分隔。
+例如：&amp;quot;0.1.2.201&amp;quot; 和 &amp;quot;192.168.1.1&amp;quot; 是 有效 IP 地址，但是 &amp;quot;0.011.255.245&amp;quot;、&amp;quot;192.168.1.312&amp;quot; 和 &amp;quot;192.168@1.1&amp;quot; 是 无效 IP 地址。
+&amp;nbsp;
+示例 1：
+输入：s = &amp;quot;25525511135&amp;quot; 输出：[&amp;quot;255.255.11.135&amp;quot;,&amp;quot;255.255.111.35&amp;quot;] 示例 2：
+输入：s = &amp;quot;0000&amp;quot; 输出：[&amp;quot;0.0.0.0&amp;quot;] 示例 3：
+输入：s = &amp;quot;1111&amp;quot; 输出：[&amp;quot;1.1.1.1&amp;quot;] 示例 4：
+输入：s = &amp;quot;010010&amp;quot; 输出：[&amp;quot;0.10.0.10&amp;quot;,&amp;quot;0.100.1.0&amp;quot;] 示例 5：
+输入：s = &amp;quot;10203040&amp;quot; 输出：[&amp;quot;10.20.30.40&amp;quot;,&amp;quot;102.0.30.40&amp;quot;,&amp;quot;10.203.0.40&amp;quot;] &amp;nbsp;
+提示：
+0 &amp;lt;= s.</description></item><item><title>面试题 17.07 婴儿名字</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/baby-names-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/baby-names-lcci/</guid><description>面试题 17.07 婴儿名字 每年，政府都会公布一万个最常见的婴儿名字和它们出现的频率，也就是同名婴儿的数量。有些名字有多种拼法，例如，John 和 Jon 本质上是相同的名字，但被当成了两个名字公布出来。给定两个列表，一个是名字及对应的频率，另一个是本质相同的名字对。设计一个算法打印出每个真实名字的实际频率。注意，如果 John 和 Jon 是相同的，并且 Jon 和 Johnny 相同，则 John 与 Johnny 也相同，即它们有传递和对称性。
+在结果列表中，选择 字典序最小 的名字作为真实名字。
+示例：
+输入：names = ["John(15)","Jon(12)","Chris(13)","Kris(4)","Christopher(19)"], synonyms = ["(Jon,John)","(John,Johnny)","(Chris,Kris)","(Chris,Christopher)"] 输出：["John(27)","Chris(36)"] 提示：
+names.length &lt;= 100000 func trulyMostPopular(names []string, synonyms []string) []string { } LeetCode题库地址 https://leetcode.cn/problems/baby-names-lcci</description></item><item><title>剑指 Offer II 092 翻转字符</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/cyjerh/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/cyjerh/</guid><description>剑指 Offer II 092 翻转字符 如果一个由&amp;nbsp;&amp;#39;0&amp;#39; 和 &amp;#39;1&amp;#39;&amp;nbsp;组成的字符串，是以一些 &amp;#39;0&amp;#39;（可能没有 &amp;#39;0&amp;#39;）后面跟着一些 &amp;#39;1&amp;#39;（也可能没有 &amp;#39;1&amp;#39;）的形式组成的，那么该字符串是&amp;nbsp;单调递增&amp;nbsp;的。
+我们给出一个由字符 &amp;#39;0&amp;#39; 和 &amp;#39;1&amp;#39;&amp;nbsp;组成的字符串 s，我们可以将任何&amp;nbsp;&amp;#39;0&amp;#39; 翻转为&amp;nbsp;&amp;#39;1&amp;#39;&amp;nbsp;或者将&amp;nbsp;&amp;#39;1&amp;#39;&amp;nbsp;翻转为&amp;nbsp;&amp;#39;0&amp;#39;。
+返回使 s&amp;nbsp;单调递增&amp;nbsp;的最小翻转次数。
+&amp;nbsp;
+示例 1：
+输入：s = &amp;quot;00110&amp;quot; 输出：1 解释：我们翻转最后一位得到 00111. 示例 2：
+输入：s = &amp;quot;010110&amp;quot; 输出：2 解释：我们翻转得到 011111，或者是 000111。 示例 3：
+输入：s = &amp;quot;00011000&amp;quot; 输出：2 解释：我们翻转得到 00000000。 &amp;nbsp;
+提示：
+1 &amp;lt;= s.length &amp;lt;= 20000 s 中只包含字符&amp;nbsp;&amp;#39;0&amp;#39;&amp;nbsp;和&amp;nbsp;&amp;#39;1&amp;#39; &amp;nbsp;
+注意：本题与主站 926&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/flip-string-to-monotone-increasing/
+func minFlipsMonoIncr(s string) int { } LeetCode题库地址 https://leetcode.cn/problems/cyJERH</description></item><item><title>剑指 Offer II 094 最少回文分割</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/omkaoa/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/omkaoa/</guid><description>剑指 Offer II 094 最少回文分割 给定一个字符串 s，请将 s 分割成一些子串，使每个子串都是回文串。
+返回符合要求的 最少分割次数 。
+&amp;nbsp;
+示例 1：
+输入：s = &amp;quot;aab&amp;quot; 输出：1 解释：只需一次分割就可将&amp;nbsp;s 分割成 [&amp;quot;aa&amp;quot;,&amp;quot;b&amp;quot;] 这样两个回文子串。 示例 2：
+输入：s = &amp;quot;a&amp;quot; 输出：0 示例 3：
+输入：s = &amp;quot;ab&amp;quot; 输出：1 &amp;nbsp;
+提示：
+1 &amp;lt;= s.length &amp;lt;= 2000 s 仅由小写英文字母组成 &amp;nbsp;
+注意：本题与主站 132&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/palindrome-partitioning-ii/
+func minCut(s string) int { } LeetCode题库地址 https://leetcode.cn/problems/omKAoA</description></item><item><title>面试题 17.11 单词距离</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/find-closest-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/find-closest-lcci/</guid><description>面试题 17.11 单词距离 有个内含单词的超大文本文件，给定任意两个不同的单词，找出在这个文件中这两个单词的最短距离(相隔单词数)。如果寻找过程在这个文件中会重复多次，而每次寻找的单词不同，你能对此优化吗?
+示例：
+输入：words = ["I","am","a","student","from","a","university","in","a","city"], word1 = "a", word2 = "student" 输出：1 提示：
+words.length &amp;lt;= 100000 func findClosest(words []string, word1 string, word2 string) int { } LeetCode题库地址 https://leetcode.cn/problems/find-closest-lcci</description></item><item><title>剑指 Offer II 095 最长公共子序列</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/qjnos7/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/qjnos7/</guid><description>剑指 Offer II 095 最长公共子序列 给定两个字符串&amp;nbsp;text1 和&amp;nbsp;text2，返回这两个字符串的最长 公共子序列 的长度。如果不存在 公共子序列 ，返回 0 。
+一个字符串的&amp;nbsp;子序列&amp;nbsp;是指这样一个新的字符串：它是由原字符串在不改变字符的相对顺序的情况下删除某些字符（也可以不删除任何字符）后组成的新字符串。
+例如，&amp;quot;ace&amp;quot; 是 &amp;quot;abcde&amp;quot; 的子序列，但 &amp;quot;aec&amp;quot; 不是 &amp;quot;abcde&amp;quot; 的子序列。 两个字符串的 公共子序列 是这两个字符串所共同拥有的子序列。
+&amp;nbsp;
+示例 1：
+输入：text1 = &amp;quot;abcde&amp;quot;, text2 = &amp;quot;ace&amp;quot; 输出：3 解释：最长公共子序列是 &amp;quot;ace&amp;quot; ，它的长度为 3 。 示例 2：
+输入：text1 = &amp;quot;abc&amp;quot;, text2 = &amp;quot;abc&amp;quot; 输出：3 解释：最长公共子序列是 &amp;quot;abc&amp;quot; ，它的长度为 3 。 示例 3：
+输入：text1 = &amp;quot;abc&amp;quot;, text2 = &amp;quot;def&amp;quot; 输出：0 解释：两个字符串没有公共子序列，返回 0 。 &amp;nbsp;
+提示：
+1 &amp;lt;= text1.length, text2.length &amp;lt;= 1000 text1 和&amp;nbsp;text2 仅由小写英文字符组成。 &amp;nbsp;</description></item><item><title>剑指 Offer II 096 字符串交织</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/iy6buf/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/iy6buf/</guid><description>剑指 Offer II 096 字符串交织 给定三个字符串&amp;nbsp;s1、s2、s3，请判断&amp;nbsp;s3&amp;nbsp;能不能由&amp;nbsp;s1&amp;nbsp;和&amp;nbsp;s2&amp;nbsp;交织（交错）&amp;nbsp;组成。
+两个字符串 s 和 t 交织&amp;nbsp;的定义与过程如下，其中每个字符串都会被分割成若干 非空 子字符串：
+s = s1 + s2 + ... + sn t = t1 + t2 + ... + tm |n - m| &amp;lt;= 1 交织 是 s1 + t1 + s2 + t2 + s3 + t3 + ... 或者 t1 + s1 + t2 + s2 + t3 + s3 + ... 提示：a + b 意味着字符串 a 和 b 连接。
+&amp;nbsp;
+示例 1：</description></item><item><title>面试题 17.13 恢复空格</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/re-space-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/re-space-lcci/</guid><description>面试题 17.13 恢复空格 哦，不！你不小心把一个长篇文章中的空格、标点都删掉了，并且大写也弄成了小写。像句子&amp;quot;I reset the computer. It still didn&amp;rsquo;t boot!&amp;quot;已经变成了&amp;quot;iresetthecomputeritstilldidntboot&amp;quot;。在处理标点符号和大小写之前，你得先把它断成词语。当然了，你有一本厚厚的词典dictionary，不过，有些词没在词典里。假设文章用sentence表示，设计一个算法，把文章断开，要求未识别的字符最少，返回未识别的字符数。
+注意：本题相对原题稍作改动，只需返回未识别的字符数
+&amp;nbsp;
+示例：
+输入： dictionary = [&amp;quot;looked&amp;quot;,&amp;quot;just&amp;quot;,&amp;quot;like&amp;quot;,&amp;quot;her&amp;quot;,&amp;quot;brother&amp;quot;] sentence = &amp;quot;jesslookedjustliketimherbrother&amp;quot; 输出： 7 解释： 断句后为&amp;quot;jess looked just like tim her brother&amp;quot;，共7个未识别字符。 提示：
+0 &amp;lt;= len(sentence) &amp;lt;= 1000 dictionary中总字符数不超过 150000。 你可以认为dictionary和sentence中只包含小写字母。 func respace(dictionary []string, sentence string) int { } LeetCode题库地址 https://leetcode.cn/problems/re-space-lcci</description></item><item><title>剑指 Offer II 097 子序列的数目</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/21dk04/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/21dk04/</guid><description>剑指 Offer II 097 子序列的数目 给定一个字符串 s 和一个字符串 t ，计算在 s 的子序列中 t 出现的个数。
+字符串的一个 子序列 是指，通过删除一些（也可以不删除）字符且不干扰剩余字符相对位置所组成的新字符串。（例如，&amp;quot;ACE&amp;quot;&amp;nbsp;是&amp;nbsp;&amp;quot;ABCDE&amp;quot;&amp;nbsp;的一个子序列，而&amp;nbsp;&amp;quot;AEC&amp;quot;&amp;nbsp;不是）
+题目数据保证答案符合 32 位带符号整数范围。
+&amp;nbsp;
+示例&amp;nbsp;1：
+输入：s = &amp;quot;rabbbit&amp;quot;, t = &amp;quot;rabbit&amp;quot; 输出：3 解释： 如下图所示, 有 3 种可以从 s 中得到 &amp;quot;rabbit&amp;quot; 的方案。 rabbbit rabbbit rabbbit 示例&amp;nbsp;2：
+输入：s = &amp;quot;babgbag&amp;quot;, t = &amp;quot;bag&amp;quot; 输出：5 解释： 如下图所示, 有 5 种可以从 s 中得到 &amp;quot;bag&amp;quot; 的方案。 babgbag babgbag babgbag babgbag babgbag &amp;nbsp;
+提示：
+0 &amp;lt;= s.length, t.length &amp;lt;= 1000 s 和 t 由英文字母组成 &amp;nbsp;</description></item><item><title>面试题 17.15 最长单词</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/longest-word-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/longest-word-lcci/</guid><description>面试题 17.15 最长单词 给定一组单词words，编写一个程序，找出其中的最长单词，且该单词由这组单词中的其他单词组合而成。若有多个长度相同的结果，返回其中字典序最小的一项，若没有符合要求的单词则返回空字符串。
+示例：
+输入： [&amp;quot;cat&amp;quot;,&amp;quot;banana&amp;quot;,&amp;quot;dog&amp;quot;,&amp;quot;nana&amp;quot;,&amp;quot;walk&amp;quot;,&amp;quot;walker&amp;quot;,&amp;quot;dogwalker&amp;quot;] 输出： &amp;quot;dogwalker&amp;quot; 解释： &amp;quot;dogwalker&amp;quot;可由&amp;quot;dog&amp;quot;和&amp;quot;walker&amp;quot;组成。 提示：
+0 &amp;lt;= len(words) &amp;lt;= 200 1 &amp;lt;= len(words[i]) &amp;lt;= 100 func longestWord(words []string) string { } LeetCode题库地址 https://leetcode.cn/problems/longest-word-lcci</description></item><item><title>面试题 17.17 多次搜索</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/multi-search-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/multi-search-lcci/</guid><description>面试题 17.17 多次搜索 给定一个较长字符串big和一个包含较短字符串的数组smalls，设计一个方法，根据smalls中的每一个较短字符串，对big进行搜索。输出smalls中的字符串在big里出现的所有位置positions，其中positions[i]为smalls[i]出现的所有位置。
+示例：
+输入： big = &amp;quot;mississippi&amp;quot; smalls = [&amp;quot;is&amp;quot;,&amp;quot;ppi&amp;quot;,&amp;quot;hi&amp;quot;,&amp;quot;sis&amp;quot;,&amp;quot;i&amp;quot;,&amp;quot;ssippi&amp;quot;] 输出： [[1,4],[8],[],[3],[1,4,7,10],[5]] 提示：
+0 &amp;lt;= len(big) &amp;lt;= 1000 0 &amp;lt;= len(smalls[i]) &amp;lt;= 1000 smalls的总字符数不会超过 100000。 你可以认为smalls中没有重复字符串。 所有出现的字符均为英文小写字母。 func multiSearch(big string, smalls []string) [][]int { } LeetCode题库地址 https://leetcode.cn/problems/multi-search-lcci</description></item><item><title>剑指 Offer II 101 分割等和子集</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/nupfpr/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/nupfpr/</guid><description>剑指 Offer II 101 分割等和子集 给定一个非空的正整数数组 nums ，请判断能否将这些数字分成元素和相等的两部分。
+&amp;nbsp;
+示例&amp;nbsp;1：
+输入：nums = [1,5,11,5] 输出：true 解释：nums 可以分割成 [1, 5, 5] 和 [11] 。 示例&amp;nbsp;2：
+输入：nums = [1,2,3,5] 输出：false 解释：nums 不可以分为和相等的两部分 &amp;nbsp;
+提示：
+1 &amp;lt;= nums.length &amp;lt;= 200 1 &amp;lt;= nums[i] &amp;lt;= 100 &amp;nbsp;
+注意：本题与主站 416&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/partition-equal-subset-sum/
+func canPartition(nums []int) bool { } LeetCode题库地址 https://leetcode.cn/problems/NUPfPr</description></item><item><title>面试题 17.22 单词转换</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/word-transformer-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/word-transformer-lcci/</guid><description>面试题 17.22 单词转换 给定字典中的两个词，长度相等。写一个方法，把一个词转换成另一个词， 但是一次只能改变一个字符。每一步得到的新词都必须能在字典中找到。
+编写一个程序，返回一个可能的转换序列。如有多个可能的转换序列，你可以返回任何一个。
+示例 1:
+输入: beginWord = &amp;quot;hit&amp;quot;, endWord = &amp;quot;cog&amp;quot;, wordList = [&amp;quot;hot&amp;quot;,&amp;quot;dot&amp;quot;,&amp;quot;dog&amp;quot;,&amp;quot;lot&amp;quot;,&amp;quot;log&amp;quot;,&amp;quot;cog&amp;quot;] 输出: [&amp;quot;hit&amp;quot;,&amp;quot;hot&amp;quot;,&amp;quot;dot&amp;quot;,&amp;quot;lot&amp;quot;,&amp;quot;log&amp;quot;,&amp;quot;cog&amp;quot;] 示例 2:
+输入: beginWord = &amp;quot;hit&amp;quot; endWord = &amp;quot;cog&amp;quot; wordList = [&amp;quot;hot&amp;quot;,&amp;quot;dot&amp;quot;,&amp;quot;dog&amp;quot;,&amp;quot;lot&amp;quot;,&amp;quot;log&amp;quot;] 输出: [] 解释:&amp;nbsp;endWord &amp;quot;cog&amp;quot; 不在字典中，所以不存在符合要求的转换序列。 func findLadders(beginWord string, endWord string, wordList []string) []string { } LeetCode题库地址 https://leetcode.cn/problems/word-transformer-lcci</description></item><item><title>剑指 Offer II 108 单词演变</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/om3rec/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/om3rec/</guid><description>剑指 Offer II 108 单词演变 在字典（单词列表）&amp;nbsp;wordList 中，从单词 beginWord&amp;nbsp;和 endWord 的 转换序列 是一个按下述规格形成的序列：
+序列中第一个单词是 beginWord 。 序列中最后一个单词是 endWord 。 每次转换只能改变一个字母。 转换过程中的中间单词必须是字典&amp;nbsp;wordList 中的单词。 给定两个长度相同但内容不同的单词 beginWord&amp;nbsp;和 endWord 和一个字典 wordList ，找到从&amp;nbsp;beginWord 到&amp;nbsp;endWord 的 最短转换序列 中的 单词数目 。如果不存在这样的转换序列，返回 0。
+&amp;nbsp;
+示例 1：
+输入：beginWord = &amp;quot;hit&amp;quot;, endWord = &amp;quot;cog&amp;quot;, wordList = [&amp;quot;hot&amp;quot;,&amp;quot;dot&amp;quot;,&amp;quot;dog&amp;quot;,&amp;quot;lot&amp;quot;,&amp;quot;log&amp;quot;,&amp;quot;cog&amp;quot;] 输出：5 解释：一个最短转换序列是 &amp;quot;hit&amp;quot; -&amp;gt; &amp;quot;hot&amp;quot; -&amp;gt; &amp;quot;dot&amp;quot; -&amp;gt; &amp;quot;dog&amp;quot; -&amp;gt; &amp;quot;cog&amp;quot;, 返回它的长度 5。 示例 2：
+输入：beginWord = &amp;quot;hit&amp;quot;, endWord = &amp;quot;cog&amp;quot;, wordList = [&amp;quot;hot&amp;quot;,&amp;quot;dot&amp;quot;,&amp;quot;dog&amp;quot;,&amp;quot;lot&amp;quot;,&amp;quot;log&amp;quot;] 输出：0 解释：endWord &amp;quot;cog&amp;quot; 不在字典中，所以无法进行转换。 &amp;nbsp;</description></item><item><title>面试题 17.25 单词矩阵</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/word-rectangle-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/word-rectangle-lcci/</guid><description>面试题 17.25 单词矩阵 给定一份单词的清单，设计一个算法，创建由字母组成的面积最大的矩形，其中每一行组成一个单词(自左向右)，每一列也组成一个单词(自上而下)。不要求这些单词在清单里连续出现，但要求所有行等长，所有列等高。
+如果有多个面积最大的矩形，输出任意一个均可。一个单词可以重复使用。
+示例 1:
+输入: [&amp;quot;this&amp;quot;, &amp;quot;real&amp;quot;, &amp;quot;hard&amp;quot;, &amp;quot;trh&amp;quot;, &amp;quot;hea&amp;quot;, &amp;quot;iar&amp;quot;, &amp;quot;sld&amp;quot;] 输出: [ &amp;nbsp; &amp;quot;this&amp;quot;, &amp;nbsp; &amp;quot;real&amp;quot;, &amp;nbsp; &amp;quot;hard&amp;quot; ] 示例 2:
+输入: [&amp;quot;aa&amp;quot;] 输出: [&amp;quot;aa&amp;quot;,&amp;quot;aa&amp;quot;] 说明：
+words.length &amp;lt;= 1000 words[i].length &amp;lt;= 100 数据保证单词足够随机 func maxRectangle(words []string) []string { } LeetCode题库地址 https://leetcode.cn/problems/word-rectangle-lcci</description></item><item><title>剑指 Offer II 109 开密码锁</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/zldjc7/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/zldjc7/</guid><description>剑指 Offer II 109 开密码锁 一个密码锁由 4&amp;nbsp;个环形拨轮组成，每个拨轮都有 10 个数字： &amp;#39;0&amp;#39;, &amp;#39;1&amp;#39;, &amp;#39;2&amp;#39;, &amp;#39;3&amp;#39;, &amp;#39;4&amp;#39;, &amp;#39;5&amp;#39;, &amp;#39;6&amp;#39;, &amp;#39;7&amp;#39;, &amp;#39;8&amp;#39;, &amp;#39;9&amp;#39; 。每个拨轮可以自由旋转：例如把 &amp;#39;9&amp;#39; 变为&amp;nbsp;&amp;#39;0&amp;#39;，&amp;#39;0&amp;#39; 变为 &amp;#39;9&amp;#39; 。每次旋转都只能旋转一个拨轮的一位数字。
+锁的初始数字为 &amp;#39;0000&amp;#39; ，一个代表四个拨轮的数字的字符串。
+列表 deadends 包含了一组死亡数字，一旦拨轮的数字和列表里的任何一个元素相同，这个锁将会被永久锁定，无法再被旋转。
+字符串 target 代表可以解锁的数字，请给出解锁需要的最小旋转次数，如果无论如何不能解锁，返回 -1 。
+&amp;nbsp;
+示例 1:
+输入：deadends = [&amp;quot;0201&amp;quot;,&amp;quot;0101&amp;quot;,&amp;quot;0102&amp;quot;,&amp;quot;1212&amp;quot;,&amp;quot;2002&amp;quot;], target = &amp;quot;0202&amp;quot; 输出：6 解释： 可能的移动序列为 &amp;quot;0000&amp;quot; -&amp;gt; &amp;quot;1000&amp;quot; -&amp;gt; &amp;quot;1100&amp;quot; -&amp;gt; &amp;quot;1200&amp;quot; -&amp;gt; &amp;quot;1201&amp;quot; -&amp;gt; &amp;quot;1202&amp;quot; -&amp;gt; &amp;quot;0202&amp;quot;。 注意 &amp;quot;0000&amp;quot; -&amp;gt; &amp;quot;0001&amp;quot; -&amp;gt; &amp;quot;0002&amp;quot; -&amp;gt; &amp;quot;0102&amp;quot; -&amp;gt; &amp;quot;0202&amp;quot; 这样的序列是不能解锁的，因为当拨动到 &amp;quot;0102&amp;quot; 时这个锁就会被锁定。 示例 2:</description></item><item><title>剑指 Offer II 114 外星文字典</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/jf1jut/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/jf1jut/</guid><description>剑指 Offer II 114 外星文字典 现有一种使用英语字母的外星文语言，这门语言的字母顺序与英语顺序不同。
+给定一个字符串列表 words ，作为这门语言的词典，words 中的字符串已经 按这门新语言的字母顺序进行了排序 。
+请你根据该词典还原出此语言中已知的字母顺序，并 按字母递增顺序 排列。若不存在合法字母顺序，返回 &amp;quot;&amp;quot; 。若存在多种可能的合法字母顺序，返回其中 任意一种 顺序即可。
+字符串 s 字典顺序小于 字符串 t 有两种情况：
+在第一个不同字母处，如果 s 中的字母在这门外星语言的字母顺序中位于 t 中字母之前，那么&amp;nbsp;s 的字典顺序小于 t 。 如果前面 min(s.length, t.length) 字母都相同，那么 s.length &amp;lt; t.length 时，s 的字典顺序也小于 t 。 &amp;nbsp;
+示例 1：
+输入：words = [&amp;quot;wrt&amp;quot;,&amp;quot;wrf&amp;quot;,&amp;quot;er&amp;quot;,&amp;quot;ett&amp;quot;,&amp;quot;rftt&amp;quot;] 输出：&amp;quot;wertf&amp;quot; 示例 2：
+输入：words = [&amp;quot;z&amp;quot;,&amp;quot;x&amp;quot;] 输出：&amp;quot;zx&amp;quot; 示例 3：
+输入：words = [&amp;quot;z&amp;quot;,&amp;quot;x&amp;quot;,&amp;quot;z&amp;quot;] 输出：&amp;quot;&amp;quot; 解释：不存在合法字母顺序，因此返回 &amp;quot;&amp;quot; 。 &amp;nbsp;
+提示：
+1 &amp;lt;= words.length &amp;lt;= 100 1 &amp;lt;= words[i].</description></item><item><title>剑指 Offer II 117 相似的字符串</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/h6lpxb/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/h6lpxb/</guid><description>剑指 Offer II 117 相似的字符串 如果交换字符串&amp;nbsp;X 中的两个不同位置的字母，使得它和字符串&amp;nbsp;Y 相等，那么称 X 和 Y 两个字符串相似。如果这两个字符串本身是相等的，那它们也是相似的。
+例如，&amp;quot;tars&amp;quot; 和 &amp;quot;rats&amp;quot; 是相似的 (交换 0 与 2 的位置)；&amp;nbsp;&amp;quot;rats&amp;quot; 和 &amp;quot;arts&amp;quot; 也是相似的，但是 &amp;quot;star&amp;quot; 不与 &amp;quot;tars&amp;quot;，&amp;quot;rats&amp;quot;，或 &amp;quot;arts&amp;quot; 相似。
+总之，它们通过相似性形成了两个关联组：{&amp;quot;tars&amp;quot;, &amp;quot;rats&amp;quot;, &amp;quot;arts&amp;quot;} 和 {&amp;quot;star&amp;quot;}。注意，&amp;quot;tars&amp;quot; 和 &amp;quot;arts&amp;quot; 是在同一组中，即使它们并不相似。形式上，对每个组而言，要确定一个单词在组中，只需要这个词和该组中至少一个单词相似。
+给定一个字符串列表 strs。列表中的每个字符串都是 strs 中其它所有字符串的一个&amp;nbsp;字母异位词&amp;nbsp;。请问 strs 中有多少个相似字符串组？
+字母异位词（anagram），一种把某个字符串的字母的位置（顺序）加以改换所形成的新词。
+&amp;nbsp;
+示例 1：
+输入：strs = [&amp;quot;tars&amp;quot;,&amp;quot;rats&amp;quot;,&amp;quot;arts&amp;quot;,&amp;quot;star&amp;quot;] 输出：2 示例 2：
+输入：strs = [&amp;quot;omv&amp;quot;,&amp;quot;ovm&amp;quot;] 输出：1 &amp;nbsp;
+提示：
+1 &amp;lt;= strs.length &amp;lt;= 300 1 &amp;lt;= strs[i].length &amp;lt;= 300 strs[i] 只包含小写字母。 strs 中的所有单词都具有相同的长度，且是彼此的字母异位词。 &amp;nbsp; &amp;nbsp;</description></item><item><title>【2023-01-19每日一题】2299. 强密码检验器 II[Easy]</title><link>/study/leetcode/strong-password-checker-ii/</link><pubDate>Thu, 19 Jan 2023 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/strong-password-checker-ii/</guid><description>2023-01-19每日一题：2299. 强密码检验器 II 难度：Easy
+标签：字符串
+如果一个密码满足以下所有条件，我们称它是一个 强&amp;nbsp;密码：
+它有至少 8&amp;nbsp;个字符。 至少包含 一个小写英文&amp;nbsp;字母。 至少包含 一个大写英文&amp;nbsp;字母。 至少包含 一个数字&amp;nbsp;。 至少包含 一个特殊字符&amp;nbsp;。特殊字符为："!@#$%^&amp;amp;*()-+"&amp;nbsp;中的一个。 它 不&amp;nbsp;包含&amp;nbsp;2&amp;nbsp;个连续相同的字符（比方说&amp;nbsp;"aab"&amp;nbsp;不符合该条件，但是&amp;nbsp;"aba"&amp;nbsp;符合该条件）。 给你一个字符串&amp;nbsp;password&amp;nbsp;，如果它是一个&amp;nbsp;强&amp;nbsp;密码，返回&amp;nbsp;true，否则返回&amp;nbsp;false&amp;nbsp;。
+&amp;nbsp;
+示例 1：
+输入：password = "IloveLe3tcode!" 输出：true 解释：密码满足所有的要求，所以我们返回 true 。 示例 2：
+输入：password = "Me+You--IsMyDream" 输出：false 解释：密码不包含数字，且包含 2 个连续相同的字符。所以我们返回 false 。 示例 3：
+输入：password = "1aB!" 输出：false 解释：密码不符合长度要求。所以我们返回 false 。 &amp;nbsp;
+提示：
+1 &amp;lt;= password.length &amp;lt;= 100 password&amp;nbsp;包含字母，数字和&amp;nbsp;"!@#$%^&amp;amp;*()-+"&amp;nbsp;这些特殊字符。 方法一： 详细思路过程见官方题解，这里只做个人刷题记录，方便后续查询阅读
+func strongPasswordCheckerII(password string) bool { } 复杂度分析 LeetCode题库地址 https://leetcode.cn/problems/strong-password-checker-ii</description></item><item><title>【2023-01-16每日一题】1813. 句子相似性 III[Medium]</title><link>/study/leetcode/sentence-similarity-iii/</link><pubDate>Mon, 16 Jan 2023 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/sentence-similarity-iii/</guid><description>2023-01-16每日一题：1813. 句子相似性 III 难度：Medium
+标签：数组 、 双指针 、 字符串
+一个句子是由一些单词与它们之间的单个空格组成，且句子的开头和结尾没有多余空格。比方说，"Hello World" ，"HELLO" ，"hello world hello world" 都是句子。每个单词都 只 包含大写和小写英文字母。
+如果两个句子 sentence1 和 sentence2 ，可以通过往其中一个句子插入一个任意的句子（可以是空句子）而得到另一个句子，那么我们称这两个句子是 相似的 。比方说，sentence1 = "Hello my name is Jane" 且 sentence2 = "Hello Jane" ，我们可以往 sentence2 中 "Hello" 和 "Jane" 之间插入 "my name is" 得到 sentence1 。
+给你两个句子 sentence1 和 sentence2 ，如果 sentence1 和 sentence2 是相似的，请你返回 true ，否则返回 false 。
+示例 1：
+输入：sentence1 = "My name is Haley", sentence2 = "My Haley" 输出：true 解释：可以往 sentence2 中 "</description></item><item><title>【2023-01-13每日一题】2287. 重排字符形成目标字符串[Easy]</title><link>/study/leetcode/rearrange-characters-to-make-target-string/</link><pubDate>Fri, 13 Jan 2023 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/rearrange-characters-to-make-target-string/</guid><description>2023-01-13每日一题：2287. 重排字符形成目标字符串 难度：Easy
+标签：哈希表 、 字符串 、 计数
+给你两个下标从 0 开始的字符串 s 和 target 。你可以从 s 取出一些字符并将其重排，得到若干新的字符串。
+从 s 中取出字符并重新排列，返回可以形成 target 的 最大 副本数。
+&amp;nbsp;
+示例 1：
+输入：s = "ilovecodingonleetcode", target = "code" 输出：2 解释： 对于 "code" 的第 1 个副本，选取下标为 4 、5 、6 和 7 的字符。 对于 "code" 的第 2 个副本，选取下标为 17 、18 、19 和 20 的字符。 形成的字符串分别是 "ecod" 和 "code" ，都可以重排为 "code" 。 可以形成最多 2 个 "code" 的副本，所以返回 2 。 示例 2：
+输入：s = "</description></item><item><title>【2023-01-12每日一题】1807. 替换字符串中的括号内容[Medium]</title><link>/study/leetcode/evaluate-the-bracket-pairs-of-a-string/</link><pubDate>Thu, 12 Jan 2023 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/evaluate-the-bracket-pairs-of-a-string/</guid><description>2023-01-12每日一题：1807. 替换字符串中的括号内容 难度：Medium
+标签：数组 、 哈希表 、 字符串
+给你一个字符串&amp;nbsp;s&amp;nbsp;，它包含一些括号对，每个括号中包含一个 非空&amp;nbsp;的键。
+比方说，字符串&amp;nbsp;"(name)is(age)yearsold"&amp;nbsp;中，有&amp;nbsp;两个&amp;nbsp;括号对，分别包含键&amp;nbsp;"name" 和&amp;nbsp;"age"&amp;nbsp;。 你知道许多键对应的值，这些关系由二维字符串数组&amp;nbsp;knowledge&amp;nbsp;表示，其中&amp;nbsp;knowledge[i] = [keyi, valuei]&amp;nbsp;，表示键&amp;nbsp;keyi&amp;nbsp;对应的值为&amp;nbsp;valuei&amp;nbsp;。
+你需要替换 所有&amp;nbsp;的括号对。当你替换一个括号对，且它包含的键为&amp;nbsp;keyi&amp;nbsp;时，你需要：
+将&amp;nbsp;keyi&amp;nbsp;和括号用对应的值&amp;nbsp;valuei&amp;nbsp;替换。 如果从 knowledge&amp;nbsp;中无法得知某个键对应的值，你需要将&amp;nbsp;keyi&amp;nbsp;和括号用问号&amp;nbsp;"?"&amp;nbsp;替换（不需要引号）。 knowledge&amp;nbsp;中每个键最多只会出现一次。s&amp;nbsp;中不会有嵌套的括号。
+请你返回替换 所有&amp;nbsp;括号对后的结果字符串。
+&amp;nbsp;
+示例 1：
+输入：s = "(name)is(age)yearsold", knowledge = [["name","bob"],["age","two"]] 输出："bobistwoyearsold" 解释： 键 "name" 对应的值为 "bob" ，所以将 "(name)" 替换为 "bob" 。 键 "age" 对应的值为 "two" ，所以将 "(age)" 替换为 "two" 。 示例 2：
+输入：s = "hi(name)", knowledge = [["a","b"]] 输出："hi?" 解释：由于不知道键 "name" 对应的值，所以用 "?" 替换 "(name)" 。 示例 3：
+输入：s = "(a)(a)(a)aaa", knowledge = [["</description></item><item><title>【2023-01-11每日一题】2283. 判断一个数的数字计数是否等于数位的值[Easy]</title><link>/study/leetcode/check-if-number-has-equal-digit-count-and-digit-value/</link><pubDate>Wed, 11 Jan 2023 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/check-if-number-has-equal-digit-count-and-digit-value/</guid><description>2023-01-11每日一题：2283. 判断一个数的数字计数是否等于数位的值 难度：Easy
+标签：哈希表 、 字符串 、 计数
+给你一个下标从 0&amp;nbsp;开始长度为 n&amp;nbsp;的字符串&amp;nbsp;num&amp;nbsp;，它只包含数字。
+如果对于 每个&amp;nbsp;0 &amp;lt;= i &amp;lt; n&amp;nbsp;的下标&amp;nbsp;i&amp;nbsp;，都满足数位&amp;nbsp;i&amp;nbsp;在 num&amp;nbsp;中出现了&amp;nbsp;num[i]次，那么请你返回&amp;nbsp;true&amp;nbsp;，否则返回&amp;nbsp;false&amp;nbsp;。
+&amp;nbsp;
+示例 1：
+输入：num = "1210" 输出：true 解释： num[0] = '1' 。数字 0 在 num 中出现了一次。 num[1] = '2' 。数字 1 在 num 中出现了两次。 num[2] = '1' 。数字 2 在 num 中出现了一次。 num[3] = '0' 。数字 3 在 num 中出现了零次。 "1210" 满足题目要求条件，所以返回 true 。 示例 2：
+输入：num = "030" 输出：false 解释： num[0] = '0' 。数字 0 应该出现 0 次，但是在 num 中出现了一次。 num[1] = '3' 。数字 1 应该出现 3 次，但是在 num 中出现了零次。 num[2] = '0' 。数字 2 在 num 中出现了 0 次。 下标 0 和 1 都违反了题目要求，所以返回 false 。 &amp;nbsp;</description></item><item><title>【2023-01-08每日一题】2185. 统计包含给定前缀的字符串[Easy]</title><link>/study/leetcode/counting-words-with-a-given-prefix/</link><pubDate>Sun, 08 Jan 2023 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/counting-words-with-a-given-prefix/</guid><description>2023-01-08每日一题：2185. 统计包含给定前缀的字符串 难度：Easy
+标签：数组 、 字符串
+给你一个字符串数组 words 和一个字符串 pref 。
+返回 words 中以 pref 作为 前缀 的字符串的数目。
+字符串 s 的 前缀 就是&amp;nbsp; s 的任一前导连续字符串。
+&amp;nbsp;
+示例 1：
+输入：words = ["pay","attention","practice","attend"], pref = "at" 输出：2 解释：以 "at" 作为前缀的字符串有两个，分别是："attention" 和 "attend" 。 示例 2：
+输入：words = ["leetcode","win","loops","success"], pref = "code" 输出：0 解释：不存在以 "code" 作为前缀的字符串。 &amp;nbsp;
+提示：
+1 &amp;lt;= words.length &amp;lt;= 100 1 &amp;lt;= words[i].length, pref.length &amp;lt;= 100 words[i] 和 pref 由小写英文字母组成 方法一： 详细思路过程见官方题解，这里只做个人刷题记录，方便后续查询阅读
+func prefixCount(words []string, pref string) int { } 复杂度分析 LeetCode题库地址 https://leetcode.</description></item><item><title>【2023-01-03每日一题】2042. 检查句子中的数字是否递增[Easy]</title><link>/study/leetcode/check-if-numbers-are-ascending-in-a-sentence/</link><pubDate>Tue, 03 Jan 2023 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/check-if-numbers-are-ascending-in-a-sentence/</guid><description>2023-01-03每日一题：2042. 检查句子中的数字是否递增 难度：Easy
+标签：字符串
+句子是由若干 token 组成的一个列表，token 间用 单个 空格分隔，句子没有前导或尾随空格。每个 token 要么是一个由数字 0-9 组成的不含前导零的 正整数&amp;nbsp;，要么是一个由小写英文字母组成的 单词 。
+示例，"a puppy has 2 eyes 4 legs" 是一个由 7 个 token 组成的句子："2" 和 "4" 是数字，其他像&amp;nbsp;"puppy" 这样的 tokens 属于单词。 给你一个表示句子的字符串 s ，你需要检查 s 中的 全部 数字是否从左到右严格递增（即，除了最后一个数字，s 中的 每个 数字都严格小于它 右侧 的数字）。
+如果满足题目要求，返回 true&amp;nbsp;，否则，返回 false 。
+&amp;nbsp;
+示例 1：
+输入：s = "1 box has 3 blue 4 red 6 green and 12 yellow marbles" 输出：true 解释：句子中的数字是：1, 3, 4, 6, 12 。 这些数字是按从左到右严格递增的 1 &amp;lt; 3 &amp;lt; 4 &amp;lt; 6 &amp;lt; 12 。 示例 2：</description></item><item><title>【2023-01-01每日一题】2351. 第一个出现两次的字母[Easy]</title><link>/study/leetcode/first-letter-to-appear-twice/</link><pubDate>Sun, 01 Jan 2023 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/first-letter-to-appear-twice/</guid><description>2023-01-01每日一题：2351. 第一个出现两次的字母 难度：Easy
+标签：哈希表 、 字符串 、 计数
+给你一个由小写英文字母组成的字符串 s ，请你找出并返回第一个出现 两次 的字母。
+注意：
+如果 a 的 第二次 出现比 b 的 第二次 出现在字符串中的位置更靠前，则认为字母 a 在字母 b 之前出现两次。 s 包含至少一个出现两次的字母。 &amp;nbsp;
+示例 1：
+输入：s = "abccbaacz" 输出："c" 解释： 字母 'a' 在下标 0 、5 和 6 处出现。 字母 'b' 在下标 1 和 4 处出现。 字母 'c' 在下标 2 、3 和 7 处出现。 字母 'z' 在下标 8 处出现。 字母 'c' 是第一个出现两次的字母，因为在所有字母中，'c' 第二次出现的下标是最小的。 示例 2：
+输入：s = "abcdd" 输出："d" 解释： 只有字母 'd' 出现两次，所以返回 'd' 。 &amp;nbsp;</description></item><item><title>【2022-12-28每日一题】1750. 删除字符串两端相同字符后的最短长度[Medium]</title><link>/study/leetcode/minimum-length-of-string-after-deleting-similar-ends/</link><pubDate>Wed, 28 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/minimum-length-of-string-after-deleting-similar-ends/</guid><description>2022-12-28每日一题：1750. 删除字符串两端相同字符后的最短长度 难度：Medium
+标签：双指针 、 字符串
+给你一个只包含字符 'a'，'b' 和 'c' 的字符串 s ，你可以执行下面这个操作（5 个步骤）任意次：
+选择字符串 s 一个 非空 的前缀，这个前缀的所有字符都相同。 选择字符串 s 一个 非空 的后缀，这个后缀的所有字符都相同。 前缀和后缀在字符串中任意位置都不能有交集。 前缀和后缀包含的所有字符都要相同。 同时删除前缀和后缀。 请你返回对字符串 s 执行上面操作任意次以后（可能 0 次），能得到的 最短长度 。
+示例 1：
+输入：s = "ca" 输出：2 解释：你没法删除任何一个字符，所以字符串长度仍然保持不变。 示例 2：
+输入：s = "cabaabac" 输出：0 解释：最优操作序列为： - 选择前缀 "c" 和后缀 "c" 并删除它们，得到 s = "abaaba" 。 - 选择前缀 "a" 和后缀 "a" 并删除它们，得到 s = "baab" 。 - 选择前缀 "b" 和后缀 "b" 并删除它们，得到 s = "</description></item><item><title>【2022-12-27每日一题】2027. 转换字符串的最少操作次数[Easy]</title><link>/study/leetcode/minimum-moves-to-convert-string/</link><pubDate>Tue, 27 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/minimum-moves-to-convert-string/</guid><description>2022-12-27每日一题：2027. 转换字符串的最少操作次数 难度：Easy
+标签：贪心 、 字符串
+给你一个字符串 s ，由 n 个字符组成，每个字符不是 'X' 就是 'O' 。
+一次 操作 定义为从 s 中选出 三个连续字符 并将选中的每个字符都转换为 'O' 。注意，如果字符已经是 'O' ，只需要保持 不变 。
+返回将 s 中所有字符均转换为 'O' 需要执行的&amp;nbsp;最少&amp;nbsp;操作次数。
+&amp;nbsp;
+示例 1：
+输入：s = "XXX" 输出：1 解释：XXX -&amp;gt; OOO 一次操作，选中全部 3 个字符，并将它们转换为 'O' 。 示例 2：
+输入：s = "XXOX" 输出：2 解释：XXOX -&amp;gt; OOOX -&amp;gt; OOOO 第一次操作，选择前 3 个字符，并将这些字符转换为 'O' 。 然后，选中后 3 个字符，并执行转换。最终得到的字符串全由字符 'O' 组成。 示例 3：
+输入：s = "OOOO" 输出：0 解释：s 中不存在需要转换的 'X' 。 &amp;nbsp;</description></item><item><title>【2022-12-26每日一题】1759. 统计同构子字符串的数目[Medium]</title><link>/study/leetcode/count-number-of-homogenous-substrings/</link><pubDate>Mon, 26 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/count-number-of-homogenous-substrings/</guid><description>2022-12-26每日一题：1759. 统计同构子字符串的数目 难度：Medium
+标签：数学 、 字符串
+给你一个字符串 s ，返回 s 中 同构子字符串 的数目。由于答案可能很大，只需返回对 109 + 7 取余 后的结果。
+同构字符串 的定义为：如果一个字符串中的所有字符都相同，那么该字符串就是同构字符串。
+子字符串 是字符串中的一个连续字符序列。
+示例 1：
+输入：s = "abbcccaa" 输出：13 解释：同构子字符串如下所列： "a" 出现 3 次。 "aa" 出现 1 次。 "b" 出现 2 次。 "bb" 出现 1 次。 "c" 出现 3 次。 "cc" 出现 2 次。 "ccc" 出现 1 次。 3 + 1 + 2 + 1 + 3 + 2 + 1 = 13 示例 2：
+输入：s = "</description></item><item><title>【2022-12-24每日一题】1754. 构造字典序最大的合并字符串[Medium]</title><link>/study/leetcode/largest-merge-of-two-strings/</link><pubDate>Sat, 24 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/largest-merge-of-two-strings/</guid><description>2022-12-24每日一题：1754. 构造字典序最大的合并字符串 难度：Medium
+标签：贪心 、 双指针 、 字符串
+给你两个字符串 word1 和 word2 。你需要按下述方式构造一个新字符串 merge ：如果 word1 或 word2 非空，选择 下面选项之一 继续操作：
+如果 word1 非空，将 word1 中的第一个字符附加到 merge 的末尾，并将其从 word1 中移除。 &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;例如，&amp;lt;code&amp;gt;word1 = &amp;quot;abc&amp;quot; &amp;lt;/code&amp;gt;且 &amp;lt;code&amp;gt;merge = &amp;quot;dv&amp;quot;&amp;lt;/code&amp;gt; ，在执行此选项操作之后，&amp;lt;code&amp;gt;word1 = &amp;quot;bc&amp;quot;&amp;lt;/code&amp;gt; ，同时 &amp;lt;code&amp;gt;merge = &amp;quot;dva&amp;quot;&amp;lt;/code&amp;gt; 。&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;如果 &amp;lt;code&amp;gt;word2&amp;lt;/code&amp;gt; 非空，将 &amp;lt;code&amp;gt;word2&amp;lt;/code&amp;gt; 中的第一个字符附加到 &amp;lt;code&amp;gt;merge&amp;lt;/code&amp;gt; 的末尾，并将其从 &amp;lt;code&amp;gt;word2&amp;lt;/code&amp;gt; 中移除。 &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;例如，&amp;lt;code&amp;gt;word2 = &amp;quot;abc&amp;quot; &amp;lt;/code&amp;gt;且 &amp;lt;code&amp;gt;merge = &amp;quot;&amp;quot;&amp;lt;/code&amp;gt; ，在执行此选项操作之后，&amp;lt;code&amp;gt;word2 = &amp;quot;bc&amp;quot;&amp;lt;/code&amp;gt; ，同时 &amp;lt;code&amp;gt;merge = &amp;quot;a&amp;quot;&amp;lt;/code&amp;gt; 。&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;/li&amp;gt; 返回你可以构造的字典序 最大 的合并字符串 merge 。</description></item><item><title>【2022-12-23每日一题】2011. 执行操作后的变量值[Easy]</title><link>/study/leetcode/final-value-of-variable-after-performing-operations/</link><pubDate>Fri, 23 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/final-value-of-variable-after-performing-operations/</guid><description>2022-12-23每日一题：2011. 执行操作后的变量值 难度：Easy
+标签：数组 、 字符串 、 模拟
+存在一种仅支持 4 种操作和 1 个变量 X 的编程语言：
+++X 和 X++ 使变量 X 的值 加 1 --X 和 X-- 使变量 X 的值 减 1 最初，X 的值是 0
+给你一个字符串数组 operations ，这是由操作组成的一个列表，返回执行所有操作后， X 的 最终值 。
+&amp;nbsp;
+示例 1：
+输入：operations = ["--X","X++","X++"] 输出：1 解释：操作按下述步骤执行： 最初，X = 0 --X：X 减 1 ，X = 0 - 1 = -1 X++：X 加 1 ，X = -1 + 1 = 0 X++：X 加 1 ，X = 0 + 1 = 1 示例 2：</description></item><item><title>【2022-12-15每日一题】1945. 字符串转化后的各位数字之和[Easy]</title><link>/study/leetcode/sum-of-digits-of-string-after-convert/</link><pubDate>Thu, 15 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/sum-of-digits-of-string-after-convert/</guid><description>2022-12-15每日一题：1945. 字符串转化后的各位数字之和 难度：Easy
+标签：字符串 、 模拟
+给你一个由小写字母组成的字符串 s ，以及一个整数 k 。
+首先，用字母在字母表中的位置替换该字母，将 s 转化 为一个整数（也就是，'a' 用 1 替换，'b' 用 2 替换，... 'z' 用 26 替换）。接着，将整数 转换 为其 各位数字之和 。共重复 转换 操作 k 次 。
+例如，如果 s = "zbax" 且 k = 2 ，那么执行下述步骤后得到的结果是整数 8 ：
+转化："zbax" ➝ "(26)(2)(1)(24)" ➝ "262124" ➝ 262124 转换 #1：262124&amp;nbsp;➝ 2 + 6 + 2 + 1 + 2 + 4&amp;nbsp;➝ 17 转换 #2：17 ➝ 1 + 7 ➝ 8 返回执行上述操作后得到的结果整数。</description></item><item><title>【2022-12-13每日一题】1832. 判断句子是否为全字母句[Easy]</title><link>/study/leetcode/check-if-the-sentence-is-pangram/</link><pubDate>Tue, 13 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/check-if-the-sentence-is-pangram/</guid><description>2022-12-13每日一题：1832. 判断句子是否为全字母句 难度：Easy
+标签：哈希表 、 字符串
+全字母句 指包含英语字母表中每个字母至少一次的句子。
+给你一个仅由小写英文字母组成的字符串 sentence ，请你判断 sentence 是否为 全字母句 。
+如果是，返回 true ；否则，返回 false 。
+示例 1：
+输入：sentence = "thequickbrownfoxjumpsoverthelazydog" 输出：true 解释：sentence 包含英语字母表中每个字母至少一次。 示例 2：
+输入：sentence = "leetcode" 输出：false 提示：
+1 &lt;= sentence.length &lt;= 1000 sentence 由小写英语字母组成 方法一：哈希表 func checkIfPangram(sentence string) bool { if len(sentence) &amp;lt; 26 { return false } exist := [26]bool{} for _, c := range sentence { exist[c-'a'] = true } for _, v := range exist { if !</description></item><item><title>【2022-12-12每日一题】1781. 所有子字符串美丽值之和[Medium]</title><link>/study/leetcode/sum-of-beauty-of-all-substrings/</link><pubDate>Mon, 12 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/sum-of-beauty-of-all-substrings/</guid><description>2022-12-12每日一题：1781. 所有子字符串美丽值之和 难度：Medium
+标签：哈希表 、 字符串 、 计数
+一个字符串的 美丽值 定义为：出现频率最高字符与出现频率最低字符的出现次数之差。
+比方说，"abaacc" 的美丽值为 3 - 1 = 2 。 给你一个字符串 s ，请你返回它所有子字符串的 美丽值 之和。
+示例 1：
+输入：s = "aabcb" 输出：5 解释：美丽值不为零的字符串包括 ["aab","aabc","aabcb","abcb","bcb"] ，每一个字符串的美丽值都为 1 。 示例 2：
+输入：s = "aabcbaa" 输出：17 提示：
+1 &lt;= s.length &lt;= 500 s 只包含小写英文字母。 方法一：暴力枚举+计数 func beautySum(s string) (ans int) { for i := 0; i &amp;lt; len(s); i++ { cnt, mx := [26]int{}, 0 for j := i; j &amp;lt; len(s); j++ { cnt[s[j]-'a']++ mx = max(mx, cnt[s[j]-'a']) mi := len(s) for _, c := range cnt { if c &amp;gt; 0 { mi = min(mi, c) } } ans += mx-mi } } return ans } func min(a, b int) int { if a &amp;lt; b { return a } return b } func max(a, b int) int { if a &amp;gt; b { return a } return b } 复杂度分析 时间复杂度：$O(C×n^2)$，其中 C 是 s 的元素种类，n 是 s 的长度。</description></item><item><title>【2022-12-08每日一题】1812. 判断国际象棋棋盘中一个格子的颜色[Easy]</title><link>/study/leetcode/determine-color-of-a-chessboard-square/</link><pubDate>Thu, 08 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/determine-color-of-a-chessboard-square/</guid><description>2022-12-08每日一题：1812. 判断国际象棋棋盘中一个格子的颜色 难度：Easy
+标签：数学 、 字符串
+给你一个坐标 coordinates ，它是一个字符串，表示国际象棋棋盘中一个格子的坐标。下图是国际象棋棋盘示意图。
+如果所给格子的颜色是白色，请你返回 true，如果是黑色，请返回 false 。
+给定坐标一定代表国际象棋棋盘上一个存在的格子。坐标第一个字符是字母，第二个字符是数字。
+示例 1：
+输入：coordinates = "a1" 输出：false 解释：如上图棋盘所示，"a1" 坐标的格子是黑色的，所以返回 false 。 示例 2：
+输入：coordinates = "h3" 输出：true 解释：如上图棋盘所示，"h3" 坐标的格子是白色的，所以返回 true 。 示例 3：
+输入：coordinates = "c7" 输出：false 提示：
+coordinates.length == 2 'a' &lt;= coordinates[0] &lt;= 'h' '1' &lt;= coordinates[1] &lt;= '8' 方法一：找规律 可以换算成2x2格子，行列相同为黑色返回false，不同为白色返回true
+func squareIsWhite(coordinates string) bool { r := int(coordinates[1]-'1') % 2 c := int(coordinates[0]-'a') % 2 if r == c { return false } return true } 复杂度分析 时间复杂度：O(1)。仅使用常数时间。 空间复杂度：O(1)。仅使用常数空间。 方法二：数学 思路 经过观察可以发现，从左下角开始，棋盘的行数和列数（均从 1 开始计数）之和如果为奇数，则为白色格子，如果和为偶数，则为黑色格子。可以根据这个结论判断格子颜色。</description></item><item><title>【2022-12-06每日一题】1805. 字符串中不同整数的数目[Easy]</title><link>/study/leetcode/number-of-different-integers-in-a-string/</link><pubDate>Tue, 06 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/number-of-different-integers-in-a-string/</guid><description>2022-12-06每日一题：1805. 字符串中不同整数的数目 难度：Easy
+标签：哈希表 、 字符串
+给你一个字符串 word ，该字符串由数字和小写英文字母组成。
+请你用空格替换每个不是数字的字符。例如，"a123bc34d8ef34" 将会变成 " 123 34 8 34" 。注意，剩下的这些整数为（相邻彼此至少有一个空格隔开）："123"、"34"、"8" 和 "34" 。
+返回对 word 完成替换后形成的 不同 整数的数目。
+只有当两个整数的 不含前导零 的十进制表示不同， 才认为这两个整数也不同。
+示例 1：
+输入：word = "a123bc34d8ef34" 输出：3 解释：不同的整数有 "123"、"34" 和 "8" 。注意，"34" 只计数一次。 示例 2：
+输入：word = "leet1234code234" 输出：2 示例 3：
+输入：word = "a1b01c001" 输出：1 解释："1"、"01" 和 "001" 视为同一个整数的十进制表示，因为在比较十进制值时会忽略前导零的存在。 提示：
+1 &lt;= word.length &lt;= 1000 word 由数字和小写英文字母组成 方法一：哈希表（自己） 详细思路过程见官方题解，这里只做个人刷题记录，方便后续查询阅读
+func numDifferentIntegers(word string) int { nums := make(map[int]bool) num, valid := 0, false for _, c := range word { if c &amp;gt;= '0' &amp;amp;&amp;amp; c &amp;lt;= '9' { num += num*10+int(c-'0') valid = true } else if valid { nums[num] = true num, valid = 0, false } } if valid { nums[num] = true } return len(nums) } 复杂度分析 时间复杂度: O(n)。 空间复杂度: O(n)。 方法二：双指针+模拟 写法一 func numDifferentIntegers(word string) int { s, n := map[string]struct{}{}, len(word) for i := 0; i &amp;lt; n; i++ { if word[i] &amp;gt;= '0' &amp;amp;&amp;amp; word[i] &amp;lt;= '9' { // 跳过前缀0 for i &amp;lt; n &amp;amp;&amp;amp; word[i] == '0' { i++ } // 查找数字结束位置 j := i for j &amp;lt; n &amp;amp;&amp;amp; word[j] &amp;gt;= '0' &amp;amp;&amp;amp; word[j] &amp;lt;= '9' { j++ } s[word[i:j]] = struct{}{} // a000，此时word[i:j]为空字符串 i = j } } return len(s) } 写法二 func numDifferentIntegers(word string) int { s, n := map[string]bool{}, len(word) p1 := 0 for { // 查找开始位置 for p1 &amp;lt; n &amp;amp;&amp;amp; !</description></item><item><title>【2022-12-03每日一题】1796. 字符串中第二大的数字[Easy]</title><link>/study/leetcode/second-largest-digit-in-a-string/</link><pubDate>Sat, 03 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/second-largest-digit-in-a-string/</guid><description>2022-12-03每日一题：1796. 字符串中第二大的数字 难度：Easy
+标签：哈希表 、 字符串
+给你一个混合字符串 s ，请你返回 s 中 第二大 的数字，如果不存在第二大的数字，请你返回 -1 。
+混合字符串 由小写英文字母和数字组成。
+示例 1：
+输入：s = "dfa12321afd" 输出：2 解释：出现在 s 中的数字包括 [1, 2, 3] 。第二大的数字是 2 。 示例 2：
+输入：s = "abc1111" 输出：-1 解释：出现在 s 中的数字只包含 [1] 。没有第二大的数字。 提示：
+1 &lt;= s.length &lt;= 500 s 只包含小写英文字母和（或）数字。 方法一：直接遍历+双指针 详细思路过程见官方题解，这里只做个人刷题记录，方便后续查询阅读
+func secondHighest(s string) int { first, second := -1, -1 for _, c := range s { if unicode.IsDigit(c) { num := int(c - '0') if num &amp;gt; first { first, second = num, first } else if second &amp;lt; num &amp;amp;&amp;amp; num &amp;lt; first { // num &amp;lt; first 防止second 与 first 重复 second = num } } } return second } 复杂度分析 时间复杂度：O(n)，其中 n 表示字符串的长度。我们只需遍历一遍字符串即可。</description></item><item><title>【2022-12-02每日一题】1769. 移动所有球到每个盒子所需的最小操作数[Medium]</title><link>/study/leetcode/minimum-number-of-operations-to-move-all-balls-to-each-box/</link><pubDate>Fri, 02 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/minimum-number-of-operations-to-move-all-balls-to-each-box/</guid><description>2022-12-02每日一题：1769. 移动所有球到每个盒子所需的最小操作数 难度：Medium
+标签：数组 、 字符串
+有 n 个盒子。给你一个长度为 n 的二进制字符串 boxes ，其中 boxes[i] 的值为 '0' 表示第 i 个盒子是 空 的，而 boxes[i] 的值为 '1' 表示盒子里有 一个 小球。
+在一步操作中，你可以将 一个 小球从某个盒子移动到一个与之相邻的盒子中。第 i 个盒子和第 j 个盒子相邻需满足 abs(i - j) == 1 。注意，操作执行后，某些盒子中可能会存在不止一个小球。
+返回一个长度为 n 的数组 answer ，其中 answer[i] 是将所有小球移动到第 i 个盒子所需的 最小 操作数。
+每个 answer[i] 都需要根据盒子的 初始状态 进行计算。
+示例 1：
+输入：boxes = "110" 输出：[1,1,3] 解释：每个盒子对应的最小操作数如下： 1) 第 1 个盒子：将一个小球从第 2 个盒子移动到第 1 个盒子，需要 1 步操作。 2) 第 2 个盒子：将一个小球从第 1 个盒子移动到第 2 个盒子，需要 1 步操作。 3) 第 3 个盒子：将一个小球从第 1 个盒子移动到第 3 个盒子，需要 2 步操作。将一个小球从第 2 个盒子移动到第 3 个盒子，需要 1 步操作。共计 3 步操作。 示例 2：</description></item><item><title>【2022-11-29每日一题】1758. 生成交替二进制字符串的最少操作数[Easy]</title><link>/study/leetcode/minimum-changes-to-make-alternating-binary-string/</link><pubDate>Tue, 29 Nov 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/minimum-changes-to-make-alternating-binary-string/</guid><description>2022-11-29每日一题：1758. 生成交替二进制字符串的最少操作数 难度：Easy
+标签：字符串
+给你一个仅由字符 '0' 和 '1' 组成的字符串 s 。一步操作中，你可以将任一 '0' 变成 '1' ，或者将 '1' 变成 '0' 。
+交替字符串 定义为：如果字符串中不存在相邻两个字符相等的情况，那么该字符串就是交替字符串。例如，字符串 "010" 是交替字符串，而字符串 "0100" 不是。
+返回使 s 变成 交替字符串 所需的 最少 操作数。
+示例 1：
+输入：s = "0100" 输出：1 解释：如果将最后一个字符变为 '1' ，s 就变成 "0101" ，即符合交替字符串定义。 示例 2：
+输入：s = "10" 输出：0 解释：s 已经是交替字符串。 示例 3：
+输入：s = "1111" 输出：2 解释：需要 2 步操作得到 "0101" 或 "1010" 。 提示：
+1 &amp;lt;= s.length &amp;lt;= 104 s[i] 是 '0' 或 '1' 方法一：模拟 思路 根据题意，经过多次操作，sss 可能会变成两种不同的交替二进制字符串，即：</description></item><item><title>【2022-11-25每日一题】809. 情感丰富的文字[Medium]</title><link>/study/leetcode/expressive-words/</link><pubDate>Fri, 25 Nov 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/expressive-words/</guid><description>2022-11-25每日一题：809. 情感丰富的文字 难度：Medium
+标签：数组 、 双指针 、 字符串
+有时候人们会用重复写一些字母来表示额外的感受，比如 "hello" -&amp;gt; "heeellooo", "hi" -&amp;gt; "hiii"。我们将相邻字母都相同的一串字符定义为相同字母组，例如："h", "eee", "ll", "ooo"。
+对于一个给定的字符串 S ，如果另一个单词能够通过将一些字母组扩张从而使其和 S 相同，我们将这个单词定义为可扩张的（stretchy）。扩张操作定义如下：选择一个字母组（包含字母&amp;nbsp;c&amp;nbsp;），然后往其中添加相同的字母&amp;nbsp;c&amp;nbsp;使其长度达到 3 或以上。
+例如，以&amp;nbsp;"hello" 为例，我们可以对字母组&amp;nbsp;"o" 扩张得到 "hellooo"，但是无法以同样的方法得到 "helloo" 因为字母组 "oo" 长度小于&amp;nbsp;3。此外，我们可以进行另一种扩张 "ll" -&amp;gt; "lllll" 以获得&amp;nbsp;"helllllooo"。如果&amp;nbsp;s = "helllllooo"，那么查询词&amp;nbsp;"hello" 是可扩张的，因为可以对它执行这两种扩张操作使得&amp;nbsp;query = "hello" -&amp;gt; "hellooo" -&amp;gt;&amp;nbsp;"helllllooo" = s。
+输入一组查询单词，输出其中可扩张的单词数量。
+&amp;nbsp;
+示例：
+输入： s = "heeellooo" words = ["hello", "hi", "helo"] 输出：1 解释： 我们能通过扩张 "hello" 的 "e" 和 "o" 来得到 "heeellooo"。 我们不能通过扩张 "helo" 来得到 "heeellooo" 因为 "ll" 的长度小于 3 。 &amp;nbsp;</description></item><item><title>【2022-11-17每日一题】792. 匹配子序列的单词数[Medium]</title><link>/study/leetcode/number-of-matching-subsequences/</link><pubDate>Thu, 17 Nov 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/number-of-matching-subsequences/</guid><description>2022-11-17每日一题：792. 匹配子序列的单词数 难度：Medium
+标签：字典树 、 哈希表 、 字符串 、 排序
+给定字符串 s&amp;nbsp;和字符串数组&amp;nbsp;words, 返回&amp;nbsp;&amp;nbsp;words[i]&amp;nbsp;中是s的子序列的单词个数&amp;nbsp;。
+字符串的 子序列 是从原始字符串中生成的新字符串，可以从中删去一些字符(可以是none)，而不改变其余字符的相对顺序。
+例如， “ace” 是 “abcde” 的子序列。 &amp;nbsp;
+示例 1:
+输入: s = "abcde", words = ["a","bb","acd","ace"] 输出: 3 解释: 有三个是&amp;nbsp;s 的子序列的单词: "a", "acd", "ace"。 Example 2:
+输入: s = "dsahjpjauf", words = ["ahjpjau","ja","ahbwzgqnuk","tnmlanowax"] 输出: 2 &amp;nbsp;
+提示:
+1 &amp;lt;= s.length &amp;lt;= 5 * 104 1 &amp;lt;= words.length &amp;lt;= 5000 1 &amp;lt;= words[i].length &amp;lt;= 50 words[i]和 s&amp;nbsp;都只由小写字母组成。 ​​​​ 方法一：分桶 详细解释 func numMatchingSubseq(s string, words []string) (ans int) { d := [26][]string{} for _, w := range words { d[w[0]-'a'] = append(d[w[0]-'a'], w) // 按首字母分桶 } for _, c := range s { q := d[c-'a'] d[c-'a'] = nil for _, t := range q { if len(t) == 1 { // 长度加一 ans++ } else { d[t[1]-'a'] = append(d[t[1]-'a'], t[1:]) // 按第二个字母继续分桶 } } } return ans } 复杂度分析 方法二：分桶优化（多指针） // 写法一： func numMatchingSubseq(s string, words []string) (ans int) { type pair struct { i, j int } d := [26][]pair{} for i, w := range words { d[w[0]-'a'] = append(d[w[0]-'a'], pair{i, 0}) } for _, c := range s { q := d[c-'a'] d[c-'a'] = []pair{} for _, p := range q { i, j := p.</description></item><item><title>【2022-11-13每日一题】791. 自定义字符串排序[Medium]</title><link>/study/leetcode/custom-sort-string/</link><pubDate>Sun, 13 Nov 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/custom-sort-string/</guid><description>2022-11-13每日一题：791. 自定义字符串排序 难度：Medium
+标签：哈希表 、 字符串 、 排序
+给定两个字符串 order 和 s 。order 的所有单词都是 唯一 的，并且以前按照一些自定义的顺序排序。
+对 s 的字符进行置换，使其与排序的&amp;nbsp;order&amp;nbsp;相匹配。更具体地说，如果在&amp;nbsp;order&amp;nbsp;中的字符 x 出现字符 y 之前，那么在排列后的字符串中， x&amp;nbsp;也应该出现在 y 之前。
+返回 满足这个性质的 s 的任意排列&amp;nbsp;。
+&amp;nbsp;
+示例 1:
+输入: order = "cba", s = "abcd" 输出: "cbad" 解释: “a”、“b”、“c”是按顺序出现的，所以“a”、“b”、“c”的顺序应该是“c”、“b”、“a”。 因为“d”不是按顺序出现的，所以它可以在返回的字符串中的任何位置。“dcba”、“cdba”、“cbda”也是有效的输出。 示例 2:
+输入: order = "cbafg", s = "abcd" 输出: "cbad" &amp;nbsp;
+提示:
+1 &amp;lt;= order.length &amp;lt;= 26 1 &amp;lt;= s.length &amp;lt;= 200 order&amp;nbsp;和&amp;nbsp;s&amp;nbsp;由小写英文字母组成 order&amp;nbsp;中的所有字符都 不同 方法一：哈希表 + 按字母索引排序 // 写法一 func customSortString(order string, s string) string { n := len(order) ht := make(map[byte]int, n) // 此处可以用 [26]int{} 代替 for i := 0; i &amp;lt; n; i++ { ht[order[i]] = i } ss := []byte(s) sort.</description></item><item><title>【2022-11-11每日一题】1704. 判断字符串的两半是否相似[Easy]</title><link>/study/leetcode/determine-if-string-halves-are-alike/</link><pubDate>Fri, 11 Nov 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/determine-if-string-halves-are-alike/</guid><description>2022-11-11每日一题：1704. 判断字符串的两半是否相似 难度：Easy
+标签：字符串 、 计数
+给你一个偶数长度的字符串 s 。将其拆分成长度相同的两半，前一半为 a ，后一半为 b 。
+两个字符串 相似 的前提是它们都含有相同数目的元音（'a'，'e'，'i'，'o'，'u'，'A'，'E'，'I'，'O'，'U'）。注意，s 可能同时含有大写和小写字母。
+如果 a 和 b 相似，返回 true ；否则，返回 false 。
+&amp;nbsp;
+示例 1：
+输入：s = "book" 输出：true 解释：a = "bo" 且 b = "ok" 。a 中有 1 个元音，b 也有 1 个元音。所以，a 和 b 相似。 示例 2：
+输入：s = "textbook" 输出：false 解释：a = "text" 且 b = "book" 。a 中有 1 个元音，b 中有 2 个元音。因此，a 和 b 不相似。 注意，元音 o 在 b 中出现两次，记为 2 个。 &amp;nbsp;</description></item><item><title>【2022-11-08每日一题】1684. 统计一致字符串的数目[Easy]</title><link>/study/leetcode/count-the-number-of-consistent-strings/</link><pubDate>Tue, 08 Nov 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/count-the-number-of-consistent-strings/</guid><description>2022-11-08每日一题：1684. 统计一致字符串的数目 难度：Easy
+标签：位运算 、 数组 、 哈希表 、 字符串
+给你一个由不同字符组成的字符串 allowed 和一个字符串数组 words 。如果一个字符串的每一个字符都在 allowed 中，就称这个字符串是 一致字符串 。
+请你返回 words 数组中 一致字符串 的数目。
+示例 1：
+输入：allowed = "ab", words = ["ad","bd","aaab","baa","badab"] 输出：2 解释：字符串 "aaab" 和 "baa" 都是一致字符串，因为它们只包含字符 'a' 和 'b' 。 示例 2：
+输入：allowed = "abc", words = ["a","b","c","ab","ac","bc","abc"] 输出：7 解释：所有字符串都是一致的。 示例 3：
+输入：allowed = "cad", words = ["cc","acd","b","ba","bac","bad","ac","d"] 输出：4 解释：字符串 "cc"，"acd"，"ac" 和 "d" 是一致字符串。 提示：
+1 &lt;= words.length &lt;= 104 1 &lt;= allowed.length &lt;= 26 1 &lt;= words[i].</description></item><item><title>【2022-11-07每日一题】816. 模糊坐标[Medium]</title><link>/study/leetcode/ambiguous-coordinates/</link><pubDate>Mon, 07 Nov 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/ambiguous-coordinates/</guid><description>2022-11-07每日一题：816. 模糊坐标 难度：Medium
+标签：字符串 、 回溯
+我们有一些二维坐标，如&amp;nbsp;&amp;quot;(1, 3)&amp;quot;&amp;nbsp;或&amp;nbsp;&amp;quot;(2, 0.5)&amp;quot;，然后我们移除所有逗号，小数点和空格，得到一个字符串S。返回所有可能的原始字符串到一个列表中。
+原始的坐标表示法不会存在多余的零，所以不会出现类似于&amp;quot;00&amp;quot;, &amp;quot;0.0&amp;quot;, &amp;quot;0.00&amp;quot;, &amp;quot;1.0&amp;quot;, &amp;quot;001&amp;quot;, &amp;quot;00.01&amp;quot;或一些其他更小的数来表示坐标。此外，一个小数点前至少存在一个数，所以也不会出现&amp;ldquo;.1&amp;rdquo;形式的数字。
+最后返回的列表可以是任意顺序的。而且注意返回的两个数字中间（逗号之后）都有一个空格。
+&amp;nbsp;
+示例 1: 输入: &amp;quot;(123)&amp;quot; 输出: [&amp;quot;(1, 23)&amp;quot;, &amp;quot;(12, 3)&amp;quot;, &amp;quot;(1.2, 3)&amp;quot;, &amp;quot;(1, 2.3)&amp;quot;] 示例 2: 输入: &amp;quot;(00011)&amp;quot; 输出: &amp;nbsp;[&amp;quot;(0.001, 1)&amp;quot;, &amp;quot;(0, 0.011)&amp;quot;] 解释: 0.0, 00, 0001 或 00.01 是不被允许的。 示例 3: 输入: &amp;quot;(0123)&amp;quot; 输出: [&amp;quot;(0, 123)&amp;quot;, &amp;quot;(0, 12.3)&amp;quot;, &amp;quot;(0, 1.23)&amp;quot;, &amp;quot;(0.1, 23)&amp;quot;, &amp;quot;(0.1, 2.3)&amp;quot;, &amp;quot;(0.12, 3)&amp;quot;] 示例 4: 输入: &amp;quot;(100)&amp;quot; 输出: [(10, 0)] 解释: 1.0 是不被允许的。 &amp;nbsp;
+提示: 4 &amp;lt;= S.</description></item><item><title>【2022-11-06每日一题】1678. 设计 Goal 解析器[Easy]</title><link>/study/leetcode/goal-parser-interpretation/</link><pubDate>Sun, 06 Nov 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/goal-parser-interpretation/</guid><description>2022-11-06每日一题：1678. 设计 Goal 解析器 难度：Easy
+标签：字符串
+请你设计一个可以解释字符串 command 的 Goal 解析器 。command 由 "G"、"()" 和/或 "(al)" 按某种顺序组成。Goal 解析器会将 "G" 解释为字符串 "G"、"()" 解释为字符串 "o" ，"(al)" 解释为字符串 "al" 。然后，按原顺序将经解释得到的字符串连接成一个字符串。
+给你字符串 command ，返回 Goal 解析器 对 command 的解释结果。
+示例 1：
+输入：command = "G()(al)" 输出："Goal" 解释：Goal 解析器解释命令的步骤如下所示： G -&amp;gt; G () -&amp;gt; o (al) -&amp;gt; al 最后连接得到的结果是 "Goal" 示例 2：
+输入：command = "G()()()()(al)" 输出："Gooooal" 示例 3：
+输入：command = "(al)G(al)()()G" 输出："alGalooG" 提示：
+1 &amp;lt;= command.length &amp;lt;= 100 command 由 "G"、"()" 和/或 "</description></item><item><title>【2022-11-05每日一题】1106. 解析布尔表达式[Hard]</title><link>/study/leetcode/parsing-a-boolean-expression/</link><pubDate>Sat, 05 Nov 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/parsing-a-boolean-expression/</guid><description>2022-11-05每日一题：1106. 解析布尔表达式 难度：Hard
+标签：栈 、 递归 、 字符串
+给你一个以字符串形式表述的&amp;nbsp;布尔表达式（boolean） expression，返回该式的运算结果。
+有效的表达式需遵循以下约定：
+&amp;quot;t&amp;quot;，运算结果为 True &amp;quot;f&amp;quot;，运算结果为 False &amp;quot;!(expr)&amp;quot;，运算过程为对内部表达式 expr 进行逻辑 非的运算（NOT） &amp;quot;&amp;amp;(expr1,expr2,...)&amp;quot;，运算过程为对 2 个或以上内部表达式 expr1, expr2, ... 进行逻辑 与的运算（AND） &amp;quot;|(expr1,expr2,...)&amp;quot;，运算过程为对 2 个或以上内部表达式 expr1, expr2, ... 进行逻辑 或的运算（OR） &amp;nbsp;
+示例 1：
+输入：expression = &amp;quot;!(f)&amp;quot; 输出：true 示例 2：
+输入：expression = &amp;quot;|(f,t)&amp;quot; 输出：true 示例 3：
+输入：expression = &amp;quot;&amp;amp;(t,f)&amp;quot; 输出：false 示例 4：
+输入：expression = &amp;quot;|(&amp;amp;(t,f,t),!(t))&amp;quot; 输出：false &amp;nbsp;
+提示：
+1 &amp;lt;= expression.length &amp;lt;= 20000 expression[i] 由 {&amp;#39;(&amp;#39;, &amp;#39;)&amp;#39;, &amp;#39;&amp;amp;&amp;#39;, &amp;#39;|&amp;#39;, &amp;#39;!&amp;#39;, &amp;#39;t&amp;#39;, &amp;#39;f&amp;#39;, &amp;#39;,&amp;#39;} 中的字符组成。 expression 是以上述形式给出的有效表达式，表示一个布尔值。 方法一： 详细思路过程见官方题解，这里只做个人刷题记录，方便后续查询阅读</description></item><item><title>【2022-11-03每日一题】1668. 最大重复子字符串[Easy]</title><link>/study/leetcode/maximum-repeating-substring/</link><pubDate>Thu, 03 Nov 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/maximum-repeating-substring/</guid><description>2022-11-03每日一题：1668. 最大重复子字符串 难度：Easy
+标签：字符串 、 字符串匹配
+给你一个字符串 sequence ，如果字符串 word 连续重复 k 次形成的字符串是 sequence 的一个子字符串，那么单词 word 的 重复值为 k 。单词 word 的 最大重复值 是单词 word 在 sequence 中最大的重复值。如果 word 不是 sequence 的子串，那么重复值 k 为 0 。
+给你一个字符串 sequence 和 word ，请你返回 最大重复值 k 。
+示例 1：
+输入：sequence = "ababc", word = "ab" 输出：2 解释："abab" 是 "ababc" 的子字符串。 示例 2：
+输入：sequence = "ababc", word = "ba" 输出：1 解释："ba" 是 "ababc" 的子字符串，但 "baba" 不是 "ababc" 的子字符串。 示例 3：</description></item><item><title>【2022-11-01每日一题】1662. 检查两个字符串数组是否相等[Easy]</title><link>/study/leetcode/check-if-two-string-arrays-are-equivalent/</link><pubDate>Tue, 01 Nov 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/check-if-two-string-arrays-are-equivalent/</guid><description>2022-11-01每日一题：1662. 检查两个字符串数组是否相等 难度：Easy
+标签：数组 、 字符串
+给你两个字符串数组 word1 和 word2 。如果两个数组表示的字符串相同，返回 true ；否则，返回 false 。
+数组表示的字符串 是由数组中的所有元素 按顺序 连接形成的字符串。
+示例 1：
+输入：word1 = ["ab", "c"], word2 = ["a", "bc"] 输出：true 解释： word1 表示的字符串为 "ab" + "c" -> "abc" word2 表示的字符串为 "a" + "bc" -> "abc" 两个字符串相同，返回 true 示例 2：
+输入：word1 = ["a", "cb"], word2 = ["ab", "c"] 输出：false 示例 3：
+输入：word1 = ["abc", "d", "defg"], word2 = ["abcddefg"] 输出：true 提示：
+1 &lt;= word1.length, word2.length &lt;= 103 1 &lt;= word1[i].</description></item><item><title>【2022-10-31每日一题】481. 神奇字符串[Medium]</title><link>/study/leetcode/magical-string/</link><pubDate>Mon, 31 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/magical-string/</guid><description>2022-10-31每日一题：481. 神奇字符串 难度：Medium
+标签：双指针 、 字符串
+神奇字符串 s 仅由 '1' 和 '2' 组成，并需要遵守下面的规则：
+神奇字符串 s 的神奇之处在于，串联字符串中 '1' 和 '2' 的连续出现次数可以生成该字符串。 s 的前几个元素是 s = "1221121221221121122……" 。如果将 s 中连续的若干 1 和 2 进行分组，可以得到 "1 22 11 2 1 22 1 22 11 2 11 22 ......" 。每组中 1 或者 2 的出现次数分别是 "1 2 2 1 1 2 1 2 2 1 2 2 ......" 。上面的出现次数正是 s 自身。
+给你一个整数 n ，返回在神奇字符串 s 的前 n 个数字中 1 的数目。</description></item><item><title>【2022-10-30每日一题】784. 字母大小写全排列[Medium]</title><link>/study/leetcode/letter-case-permutation/</link><pubDate>Sun, 30 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/letter-case-permutation/</guid><description>2022-10-30每日一题：784. 字母大小写全排列 难度：Medium
+标签：位运算 、 字符串 、 回溯
+给定一个字符串&amp;nbsp;s&amp;nbsp;，通过将字符串&amp;nbsp;s&amp;nbsp;中的每个字母转变大小写，我们可以获得一个新的字符串。
+返回 所有可能得到的字符串集合 。以 任意顺序 返回输出。
+&amp;nbsp;
+示例 1：
+输入：s = "a1b2" 输出：["a1b2", "a1B2", "A1b2", "A1B2"] 示例 2:
+输入: s = "3z4" 输出: ["3z4","3Z4"] &amp;nbsp;
+提示:
+1 &amp;lt;= s.length &amp;lt;= 12 s&amp;nbsp;由小写英文字母、大写英文字母和数字组成 方法一：回溯 个人写法 func letterCasePermutation(s string) (ans []string) { n := len(s) sb := []byte(s) var dfs func (i int) dfs = func(i int) { if i == n { ans = append(ans, string(sb)) return } dfs(i+1) if sb[i] &amp;lt; '0' || sb[i] &amp;gt; '9' { sb[i] ^= 32 dfs(i+1) sb[i] ^= 32 } } dfs(0) return ans } 官方优化 func letterCasePermutation(s string) (ans []string) { n, sb := len(s), []byte(s) var dfs func (i int) dfs = func(i int) { // 跳过数字 for i &amp;lt; n &amp;amp;&amp;amp; unicode.</description></item><item><title>【2022-10-29每日一题】1773. 统计匹配检索规则的物品数量[Easy]</title><link>/study/leetcode/count-items-matching-a-rule/</link><pubDate>Sat, 29 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/count-items-matching-a-rule/</guid><description>2022-10-29每日一题：1773. 统计匹配检索规则的物品数量 难度：Easy
+标签：数组 、 字符串
+给你一个数组 items ，其中 items[i] = [typei, colori, namei] ，描述第 i 件物品的类型、颜色以及名称。
+另给你一条由两个字符串 ruleKey 和 ruleValue 表示的检索规则。
+如果第 i 件物品能满足下述条件之一，则认为该物品与给定的检索规则 匹配 ：
+ruleKey == "type" 且 ruleValue == typei 。 ruleKey == "color" 且 ruleValue == colori 。 ruleKey == "name" 且 ruleValue == namei 。 统计并返回 匹配检索规则的物品数量 。
+示例 1：
+输入：items = [["phone","blue","pixel"],["computer","silver","lenovo"],["phone","gold","iphone"]], ruleKey = "color", ruleValue = "silver" 输出：1 解释：只有一件物品匹配检索规则，这件物品是 ["computer","silver","lenovo"] 。 示例 2：
+输入：items = [["phone","blue","pixel"],["computer","silver","phone"],["phone","gold","iphone"]], ruleKey = "</description></item><item><title>【2022-10-23每日一题】1768. 交替合并字符串[Easy]</title><link>/study/leetcode/merge-strings-alternately/</link><pubDate>Sun, 23 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/merge-strings-alternately/</guid><description>2022-10-23每日一题：1768. 交替合并字符串 难度：Easy
+标签：双指针 、 字符串
+给你两个字符串 word1 和 word2 。请你从 word1 开始，通过交替添加字母来合并字符串。如果一个字符串比另一个字符串长，就将多出来的字母追加到合并后字符串的末尾。
+返回 合并后的字符串 。
+示例 1：
+输入：word1 = "abc", word2 = "pqr" 输出："apbqcr" 解释：字符串合并情况如下所示： word1： a b c word2： p q r 合并后： a p b q c r 示例 2：
+输入：word1 = "ab", word2 = "pqrs" 输出："apbqrs" 解释：注意，word2 比 word1 长，"rs" 需要追加到合并后字符串的末尾。 word1： a b word2： p q r s 合并后： a p b q r s 示例 3：
+输入：word1 = "abcd", word2 = "</description></item><item><title>【2022-10-18每日一题】902. 最大为 N 的数字组合[Hard]</title><link>/study/leetcode/numbers-at-most-n-given-digit-set/</link><pubDate>Tue, 18 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/numbers-at-most-n-given-digit-set/</guid><description>2022-10-18每日一题：902. 最大为 N 的数字组合 难度：Hard
+标签：数组 、 数学 、 字符串 、 二分查找 、 动态规划
+给定一个按&amp;nbsp;非递减顺序&amp;nbsp;排列的数字数组&amp;nbsp;digits&amp;nbsp;。你可以用任意次数&amp;nbsp;digits[i]&amp;nbsp;来写的数字。例如，如果&amp;nbsp;digits = ['1','3','5']，我们可以写数字，如&amp;nbsp;'13',&amp;nbsp;'551', 和&amp;nbsp;'1351315'。
+返回 可以生成的小于或等于给定整数 n 的正整数的个数&amp;nbsp;。
+&amp;nbsp;
+示例 1：
+输入：digits = ["1","3","5","7"], n = 100 输出：20 解释： 可写出的 20 个数字是： 1, 3, 5, 7, 11, 13, 15, 17, 31, 33, 35, 37, 51, 53, 55, 57, 71, 73, 75, 77. 示例 2：
+输入：digits = ["1","4","9"], n = 1000000000 输出：29523 解释： 我们可以写 3 个一位数字，9 个两位数字，27 个三位数字， 81 个四位数字，243 个五位数字，729 个六位数字， 2187 个七位数字，6561 个八位数字和 19683 个九位数字。 总共，可以使用D中的数字写出 29523 个整数。 示例 3:</description></item><item><title>【2022-10-14每日一题】940. 不同的子序列 II[Hard]</title><link>/study/leetcode/distinct-subsequences-ii/</link><pubDate>Fri, 14 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/distinct-subsequences-ii/</guid><description>2022-10-14每日一题：940. 不同的子序列 II 难度：Hard
+标签：字符串 、 动态规划
+给定一个字符串 s，计算 s 的 不同非空子序列 的个数。因为结果可能很大，所以返回答案需要对 10^9 + 7 取余 。
+字符串的 子序列 是经由原字符串删除一些（也可能不删除）字符但不改变剩余字符相对位置的一个新字符串。
+例如，"ace" 是 "abcde" 的一个子序列，但 "aec" 不是。 &amp;nbsp;
+示例 1：
+输入：s = "abc" 输出：7 解释：7 个不同的子序列分别是 "a", "b", "c", "ab", "ac", "bc", 以及 "abc"。 示例 2：
+输入：s = "aba" 输出：6 解释：6 个不同的子序列分别是 "a", "b", "ab", "ba", "aa" 以及 "aba"。 示例 3：
+输入：s = "aaa" 输出：3 解释：3 个不同的子序列分别是 "a", "aa" 以及 "aaa"。 &amp;nbsp;
+提示：
+1 &amp;lt;= s.</description></item><item><title>【2022-10-11每日一题】1790. 仅执行一次字符串交换能否使两个字符串相等[Easy]</title><link>/study/leetcode/check-if-one-string-swap-can-make-strings-equal/</link><pubDate>Tue, 11 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/check-if-one-string-swap-can-make-strings-equal/</guid><description>2022-10-11每日一题：1790. 仅执行一次字符串交换能否使两个字符串相等 难度：Easy
+标签：哈希表 、 字符串 、 计数
+给你长度相等的两个字符串 s1 和 s2 。一次 字符串交换 操作的步骤如下：选出某个字符串中的两个下标（不必不同），并交换这两个下标所对应的字符。
+如果对 其中一个字符串 执行 最多一次字符串交换 就可以使两个字符串相等，返回 true ；否则，返回 false 。
+示例 1：
+输入：s1 = "bank", s2 = "kanb" 输出：true 解释：例如，交换 s2 中的第一个和最后一个字符可以得到 "bank" 示例 2：
+输入：s1 = "attack", s2 = "defend" 输出：false 解释：一次字符串交换无法使两个字符串相等 示例 3：
+输入：s1 = "kelb", s2 = "kelb" 输出：true 解释：两个字符串已经相等，所以不需要进行字符串交换 示例 4：
+输入：s1 = "abcd", s2 = "dcba" 输出：false 提示：
+1 &amp;lt;= s1.length, s2.length &amp;lt;= 100 s1.length == s2.</description></item><item><title>【2022-10-09每日一题】856. 括号的分数[Medium]</title><link>/study/leetcode/score-of-parentheses/</link><pubDate>Sun, 09 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/score-of-parentheses/</guid><description>2022-10-09每日一题：856. 括号的分数 难度：Medium
+标签：栈 、 字符串
+给定一个平衡括号字符串&amp;nbsp;S，按下述规则计算该字符串的分数：
+() 得 1 分。 AB 得&amp;nbsp;A + B&amp;nbsp;分，其中 A 和 B 是平衡括号字符串。 (A) 得&amp;nbsp;2 * A&amp;nbsp;分，其中 A 是平衡括号字符串。 &amp;nbsp;
+示例 1：
+输入： &amp;quot;()&amp;quot; 输出： 1 示例 2：
+输入： &amp;quot;(())&amp;quot; 输出： 2 示例&amp;nbsp;3：
+输入： &amp;quot;()()&amp;quot; 输出： 2 示例&amp;nbsp;4：
+输入： &amp;quot;(()(()))&amp;quot; 输出： 6 &amp;nbsp;
+提示：
+S&amp;nbsp;是平衡括号字符串，且只含有&amp;nbsp;(&amp;nbsp;和&amp;nbsp;)&amp;nbsp;。 2 &amp;lt;= S.length &amp;lt;= 50 方法一：栈 核心思想 把平衡字符串 s 看作是一个空字符串加上 s 本身，并且定义空字符串的分数为 0。使用栈 st 记录平衡字符串的分数，在开始之前要压入分数 0，表示空字符串的分数。
+在遍历字符串 s 的过程中：
+遇到左括号，那么我们需要计算该左括号内部的子平衡括号字符串A 的分数，我们也要先压入分数 0，表示 A 前面的空字符串的分数。</description></item><item><title>【2022-10-05每日一题】811. 子域名访问计数[Medium]</title><link>/study/leetcode/subdomain-visit-count/</link><pubDate>Wed, 05 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/subdomain-visit-count/</guid><description>2022-10-05每日一题：811. 子域名访问计数 难度：Medium
+标签：数组 、 哈希表 、 字符串 、 计数
+网站域名 "discuss.leetcode.com" 由多个子域名组成。顶级域名为 "com" ，二级域名为 "leetcode.com" ，最低一级为 "discuss.leetcode.com" 。当访问域名 "discuss.leetcode.com" 时，同时也会隐式访问其父域名 "leetcode.com" 以及 "com" 。
+计数配对域名 是遵循 "rep d1.d2.d3" 或 "rep d1.d2" 格式的一个域名表示，其中 rep 表示访问域名的次数，d1.d2.d3 为域名本身。
+例如，"9001 discuss.leetcode.com" 就是一个 计数配对域名 ，表示 discuss.leetcode.com 被访问了 9001 次。 给你一个 计数配对域名 组成的数组 cpdomains ，解析得到输入中每个子域名对应的&amp;nbsp;计数配对域名 ，并以数组形式返回。可以按 任意顺序 返回答案。
+&amp;nbsp;
+示例 1：
+输入：cpdomains = ["9001 discuss.leetcode.com"] 输出：["9001 leetcode.com","9001 discuss.leetcode.com","9001 com"] 解释：例子中仅包含一个网站域名："discuss.leetcode.com"。 按照前文描述，子域名 "leetcode.com" 和 "com" 都会被访问，所以它们都被访问了 9001 次。 示例 2：
+输入：cpdomains = ["</description></item><item><title>【2022-10-04每日一题】921. 使括号有效的最少添加[Medium]</title><link>/study/leetcode/minimum-add-to-make-parentheses-valid/</link><pubDate>Tue, 04 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/minimum-add-to-make-parentheses-valid/</guid><description>2022-10-04每日一题：921. 使括号有效的最少添加 难度：Medium
+标签：栈 、 贪心 、 字符串
+只有满足下面几点之一，括号字符串才是有效的：
+它是一个空字符串，或者 它可以被写成&amp;nbsp;AB&amp;nbsp;（A&amp;nbsp;与&amp;nbsp;B&amp;nbsp;连接）, 其中&amp;nbsp;A 和&amp;nbsp;B&amp;nbsp;都是有效字符串，或者 它可以被写作&amp;nbsp;(A)，其中&amp;nbsp;A&amp;nbsp;是有效字符串。 给定一个括号字符串 s ，移动N次，你就可以在字符串的任何位置插入一个括号。
+例如，如果 s = "()))" ，你可以插入一个开始括号为 "(()))" 或结束括号为 "())))" 。 返回 为使结果字符串 s 有效而必须添加的最少括号数。
+&amp;nbsp;
+示例 1：
+输入：s = "())" 输出：1 示例 2：
+输入：s = "(((" 输出：3 &amp;nbsp;
+提示：
+1 &amp;lt;= s.length &amp;lt;= 1000 s 只包含&amp;nbsp;'(' 和&amp;nbsp;')'&amp;nbsp;字符。 方法一： 详细思路过程见官方题解，这里只做个人刷题记录，方便后续查询阅读
+从左到右遍历字符串，在遍历过程中维护左括号的个数以及添加次数。
+如果遇到左括号，则将左括号的个数加 1。
+如果遇到右括号，则需要和前面的左括号进行匹配，具体做法如下：
+如果左括号的个数大于 0，则前面有左括号可以匹配，因此将左括号的个数减 1，表示有一个左括号和当前右括号匹配；
+如果左括号的个数等于 0，则前面没有左括号可以匹配，需要添加一个左括号才能匹配，因此将添加次数加 1。
+遍历结束后，需要检查左括号的个数是否为 0
+func minAddToMakeValid(s string) int { left, ans := 0, 0 for _, ch := range s { if ch == '(' { left++ } else if left &amp;gt; 0 { left-- } else { ans++ } } return left + ans } 复杂度分析 时间复杂度：O(n)，其中 n 是字符串的长度。遍历字符串一次。 空间复杂度：O(1)。只需要维护常量的额外空间。 LeetCode题库地址 https://leetcode.</description></item><item><title>【2022-10-03每日一题】1784. 检查二进制字符串字段[Easy]</title><link>/study/leetcode/check-if-binary-string-has-at-most-one-segment-of-ones/</link><pubDate>Mon, 03 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/check-if-binary-string-has-at-most-one-segment-of-ones/</guid><description>2022-10-03每日一题：1784. 检查二进制字符串字段 难度：Easy
+标签：字符串
+给你一个二进制字符串 s ，该字符串 不含前导零 。
+如果 s 包含 零个或一个由连续的 '1' 组成的字段 ，返回 true​​​ 。否则，返回 false 。
+如果 s&amp;nbsp;中&amp;nbsp;由连续若干个&amp;nbsp;'1' 组成的字段&amp;nbsp;数量不超过 1，返回 true​​​ 。否则，返回 false 。
+&amp;nbsp;
+示例 1：
+输入：s = "1001" 输出：false 解释：由连续若干个&amp;nbsp;'1' 组成的字段数量为 2，返回 false 示例 2：
+输入：s = "110" 输出：true &amp;nbsp;
+提示：
+1 &amp;lt;= s.length &amp;lt;= 100 s[i]​​​​ 为 '0' 或 '1' s[0] 为 '1' 方法一： 详细思路过程见官方题解，这里只做个人刷题记录，方便后续查询阅读
+思路与算法 题目给定一个长度为 n 的二进制字符串 s，并满足该字符串不含前导零。现在我们需要判断字符串中是否只包含零个或一个由连续 1 组成的字段。首先我们依次分析这两种情况：
+字符串 s 中包含零个由连续 1 组成的字段，那么整个串的表示为 00⋯00。 字符串 s 中只包含一个由连续 1 组成的字段，因为已知字符串 s 不包含前导零，所以整个串的表示为 1⋯100⋯00。 那么可以看到两种情况中都不包含 01 串。且不包含的 01 串的一个二进制字符串也有且仅有上面两种情况。所以我们可以通过原字符串中是否有 01 串来判断字符串中是否只包含零个或一个由连续 1 组成的字段。如果有 01 串则说明该情况不满足，否则即满足该情况条件。</description></item><item><title>【2022-10-02每日一题】777. 在LR字符串中交换相邻字符[Medium]</title><link>/study/leetcode/swap-adjacent-in-lr-string/</link><pubDate>Sun, 02 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/swap-adjacent-in-lr-string/</guid><description>2022-10-02每日一题：777. 在LR字符串中交换相邻字符 难度：Medium
+标签：双指针 、 字符串
+在一个由 &amp;#39;L&amp;#39; , &amp;#39;R&amp;#39; 和 &amp;#39;X&amp;#39; 三个字符组成的字符串（例如&amp;quot;RXXLRXRXL&amp;quot;）中进行移动操作。一次移动操作指用一个&amp;quot;LX&amp;quot;替换一个&amp;quot;XL&amp;quot;，或者用一个&amp;quot;XR&amp;quot;替换一个&amp;quot;RX&amp;quot;。现给定起始字符串start和结束字符串end，请编写代码，当且仅当存在一系列移动操作使得start可以转换成end时， 返回True。
+&amp;nbsp;
+示例 :
+输入: start = &amp;quot;RXXLRXRXL&amp;quot;, end = &amp;quot;XRLXXRRLX&amp;quot; 输出: True 解释: 我们可以通过以下几步将start转换成end: RXXLRXRXL -&amp;gt; XRXLRXRXL -&amp;gt; XRLXRXRXL -&amp;gt; XRLXXRRXL -&amp;gt; XRLXXRRLX &amp;nbsp;
+提示：
+1 &amp;lt;= len(start) = len(end) &amp;lt;= 10000。 start和end中的字符串仅限于&amp;#39;L&amp;#39;, &amp;#39;R&amp;#39;和&amp;#39;X&amp;#39;。 方法一： 详细思路过程见官方题解，这里只做个人刷题记录，方便后续查询阅读
+每次移动操作将 “XL&amp;quot; 替换成 “LX&amp;quot;，或将 “RX&amp;quot; 替换成“XR&amp;quot;，等价于如下操作：
+如果一个字符 ‘L’ 左侧的相邻字符是 ‘X’，则将字符 ‘L’ 向左移动一位，将其左侧的 ‘X’ 向右移动一位；
+如果一个字符 ‘R’ 右侧的相邻字符是 ‘X’，则将字符 ‘R’ 向右移动一位，将其右侧的 ‘X’ 向左移动一位。
+// 写法一 func canTransform(start, end string) bool { i, j, n := 0, 0, len(start) for i &amp;lt; n &amp;amp;&amp;amp; j &amp;lt; n { for i &amp;lt; n &amp;amp;&amp;amp; start[i] == 'X' { i++ } for j &amp;lt; n &amp;amp;&amp;amp; end[j] == 'X' { j++ } if i &amp;lt; n &amp;amp;&amp;amp; j &amp;lt; n { if start[i] !</description></item><item><title>【2022-10-01每日一题】1694. 重新格式化电话号码[Easy]</title><link>/study/leetcode/reformat-phone-number/</link><pubDate>Sat, 01 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/reformat-phone-number/</guid><description>2022-10-01每日一题：1694. 重新格式化电话号码 难度：Easy
+标签：字符串
+给你一个字符串形式的电话号码 number 。number 由数字、空格 ' '、和破折号 '-' 组成。
+请你按下述方式重新格式化电话号码。
+首先，删除 所有的空格和破折号。 其次，将数组从左到右 每 3 个一组 分块，直到 剩下 4 个或更少数字。剩下的数字将按下述规定再分块： 2 个数字：单个含 2 个数字的块。 3 个数字：单个含 3 个数字的块。 4 个数字：两个分别含 2 个数字的块。 最后用破折号将这些块连接起来。注意，重新格式化过程中 不应该 生成仅含 1 个数字的块，并且 最多 生成两个含 2 个数字的块。
+返回格式化后的电话号码。
+示例 1：
+输入：number = "1-23-45 6" 输出："123-456" 解释：数字是 "123456" 步骤 1：共有超过 4 个数字，所以先取 3 个数字分为一组。第 1 个块是 "123" 。 步骤 2：剩下 3 个数字，将它们放入单个含 3 个数字的块。第 2 个块是 "456" 。 连接这些块后得到 "</description></item><item><title>【2022-09-29每日一题】面试题 01.09. 字符串轮转[Easy]</title><link>/study/leetcode/string-rotation-lcci/</link><pubDate>Thu, 29 Sep 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/string-rotation-lcci/</guid><description>2022-09-29每日一题：面试题 01.09. 字符串轮转 难度：Easy
+标签：字符串 、 字符串匹配
+字符串轮转。给定两个字符串s1和s2，请编写代码检查s2是否为s1旋转而成（比如，waterbottle是erbottlewat旋转后的字符串）。
+示例1:
+输入：s1 = &amp;quot;waterbottle&amp;quot;, s2 = &amp;quot;erbottlewat&amp;quot; 输出：True 示例2:
+输入：s1 = &amp;quot;aa&amp;quot;, s2 = &amp;quot;aba&amp;quot; 输出：False 提示：
+字符串长度在[0, 100000]范围内。 说明:
+你能只调用一次检查子串的方法吗？ 方法一：模拟 详细思路过程见官方题解，这里只做个人刷题记录，方便后续查询阅读
+func isFlipedString(s1 string, s2 string) bool { n := len(s1) if n != len(s2) { return false } if n == 0 { return true } next: for i := 0; i &amp;lt; n; i++ { for j := 0; j &amp;lt; n; j++ { if s1[(i+j)%n] !</description></item><item><title>【2022-09-27每日一题】面试题 01.02. 判定是否互为字符重排[Easy]</title><link>/study/leetcode/check-permutation-lcci/</link><pubDate>Tue, 27 Sep 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/check-permutation-lcci/</guid><description>2022-09-27每日一题：面试题 01.02. 判定是否互为字符重排 难度：Easy
+标签：哈希表 、 字符串 、 排序
+给定两个字符串 s1 和 s2，请编写一个程序，确定其中一个字符串的字符重新排列后，能否变成另一个字符串。
+示例 1：
+输入: s1 = &amp;quot;abc&amp;quot;, s2 = &amp;quot;bca&amp;quot; 输出: true 示例 2：
+输入: s1 = &amp;quot;abc&amp;quot;, s2 = &amp;quot;bad&amp;quot; 输出: false 说明：
+0 &amp;lt;= len(s1) &amp;lt;= 100 0 &amp;lt;= len(s2) &amp;lt;= 100 方法一：排序 详细思路过程见官方题解，这里只做个人刷题记录，方便后续查询阅读
+func CheckPermutation(s1 string, s2 string) bool { b1, b2 := []byte(s1), []byte(s2) sort.Slice(b1, func(i, j int) bool {return b1[i] &amp;lt; b1[j]}) sort.Slice(b2, func(i, j int) bool {return b2[i] &amp;lt; b2[j]}) // return reflect.</description></item><item><title>【2022-09-21每日一题】854. 相似度为 K 的字符串[Hard]</title><link>/study/leetcode/k-similar-strings/</link><pubDate>Wed, 21 Sep 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/k-similar-strings/</guid><description>2022-09-21每日一题：854. 相似度为 K 的字符串 难度：Hard
+标签：广度优先搜索 、 字符串
+对于某些非负整数 k ，如果交换 s1 中两个字母的位置恰好 k 次，能够使结果字符串等于 s2 ，则认为字符串 s1 和 s2 的 相似度为 k 。
+给你两个字母异位词 s1 和 s2 ，返回 s1 和 s2 的相似度 k 的最小值。
+&amp;nbsp;
+示例 1：
+输入：s1 = "ab", s2 = "ba" 输出：1 示例 2：
+输入：s1 = "abc", s2 = "bca" 输出：2 &amp;nbsp;
+提示：
+1 &amp;lt;= s1.length &amp;lt;= 20 s2.length == s1.length s1&amp;nbsp;和&amp;nbsp;s2&amp;nbsp;&amp;nbsp;只包含集合&amp;nbsp;{'a', 'b', 'c', 'd', 'e', 'f'}&amp;nbsp;中的小写字母 s2 是 s1 的一个字母异位词 方法一：广度优先搜索 详细思路过程见官方题解，这里只做个人刷题记录，方便后续查询阅读</description></item><item><title>【2022-09-17每日一题】1624. 两个相同字符之间的最长子字符串</title><link>/study/leetcode/largest-substring-between-two-equal-characters/</link><pubDate>Sat, 17 Sep 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/largest-substring-between-two-equal-characters/</guid><description>2022-09-17每日一题：1624. 两个相同字符之间的最长子字符串 难度：Easy 标签：哈希表 、 字符串 给你一个字符串 s，请你返回 两个相同字符之间的最长子字符串的长度 ，计算长度时不含这两个字符。如果不存在这样的子字符串，返回 -1 。
+子字符串 是字符串中的一个连续字符序列。
+示例 1：
+输入：s = "aa" 输出：0 解释：最优的子字符串是两个 'a' 之间的空子字符串。 示例 2：
+输入：s = "abca" 输出：2 解释：最优的子字符串是 "bc" 。 示例 3：
+输入：s = "cbzxy" 输出：-1 解释：s 中不存在出现出现两次的字符，所以返回 -1 。 示例 4：
+输入：s = "cabbac" 输出：4 解释：最优的子字符串是 "abba" ，其他的非最优解包括 "bb" 和 "" 。 提示：
+1 &amp;lt;= s.length &amp;lt;= 300 s 只含小写英文字母 方法一：哈希表 详细思路过程见官方题解，这里只做个人刷题记录，方便后续查询阅读
+直接使用map func maxLengthBetweenEqualCharacters(s string) int { mp, ans := make(map[rune]int), -1 for i, c := range s { if j, ok := mp[c]; ok { ans = max(ans, i - j -1) } else { mp[c] = i } } return ans } func max(a, b int) int { if a &amp;gt; b { return a } return b } 复杂度分析 时间复杂度：O(n)，其中 n 表示字符串的长度。我们只需遍历一遍字符串即可。</description></item><item><title>【2022-09-09每日一题】1598. 文件夹操作日志搜集器</title><link>/study/leetcode/crawler-log-folder/</link><pubDate>Fri, 09 Sep 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/crawler-log-folder/</guid><description>2022-09-09每日一题：1598. 文件夹操作日志搜集器 难度：Easy 标签：栈 、 数组 、 字符串 每当用户执行变更文件夹操作时，LeetCode 文件系统都会保存一条日志记录。
+下面给出对变更操作的说明：
+&amp;quot;../&amp;quot; ：移动到当前文件夹的父文件夹。如果已经在主文件夹下，则 继续停留在当前文件夹 。 &amp;quot;./&amp;quot; ：继续停留在当前文件夹。 &amp;quot;x/&amp;quot; ：移动到名为 x 的子文件夹中。题目数据 保证总是存在文件夹 x 。 给你一个字符串列表 logs ，其中 logs[i] 是用户在 ith 步执行的操作。
+文件系统启动时位于主文件夹，然后执行 logs 中的操作。
+执行完所有变更文件夹操作后，请你找出 返回主文件夹所需的最小步数 。
+&amp;nbsp;
+示例 1：
+输入：logs = [&amp;quot;d1/&amp;quot;,&amp;quot;d2/&amp;quot;,&amp;quot;../&amp;quot;,&amp;quot;d21/&amp;quot;,&amp;quot;./&amp;quot;] 输出：2 解释：执行 &amp;quot;../&amp;quot; 操作变更文件夹 2 次，即可回到主文件夹 示例 2：
+输入：logs = [&amp;quot;d1/&amp;quot;,&amp;quot;d2/&amp;quot;,&amp;quot;./&amp;quot;,&amp;quot;d3/&amp;quot;,&amp;quot;../&amp;quot;,&amp;quot;d31/&amp;quot;] 输出：3 示例 3：
+输入：logs = [&amp;quot;d1/&amp;quot;,&amp;quot;../&amp;quot;,&amp;quot;../&amp;quot;,&amp;quot;../&amp;quot;] 输出：0 &amp;nbsp;
+提示：
+1 &amp;lt;= logs.length &amp;lt;= 103 2 &amp;lt;= logs[i].length &amp;lt;= 10 logs[i] 包含小写英文字母，数字，&amp;#39;.&amp;#39; 和 &amp;#39;/&amp;#39; logs[i] 符合语句中描述的格式 文件夹名称由小写英文字母和数字组成 ### 方法一：用栈模拟过程 func minOperations(logs []string) int { stack := []string{} for _, log := range logs { if log == &amp;quot;.</description></item><item><title>【2022-09-07每日一题】1592. 重新排列单词间的空格</title><link>/study/leetcode/rearrange-spaces-between-words/</link><pubDate>Wed, 07 Sep 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/rearrange-spaces-between-words/</guid><description>2022-09-07每日一题：1592. 重新排列单词间的空格 难度：Easy 标签：字符串 给你一个字符串 text ，该字符串由若干被空格包围的单词组成。每个单词由一个或者多个小写英文字母组成，并且两个单词之间至少存在一个空格。题目测试用例保证 text 至少包含一个单词 。
+请你重新排列空格，使每对相邻单词之间的空格数目都 相等 ，并尽可能 最大化 该数目。如果不能重新平均分配所有空格，请 将多余的空格放置在字符串末尾 ，这也意味着返回的字符串应当与原 text 字符串的长度相等。
+返回 重新排列空格后的字符串 。
+&amp;nbsp;
+示例 1：
+输入：text = &amp;quot; this is a sentence &amp;quot; 输出：&amp;quot;this is a sentence&amp;quot; 解释：总共有 9 个空格和 4 个单词。可以将 9 个空格平均分配到相邻单词之间，相邻单词间空格数为：9 / (4-1) = 3 个。 示例 2：
+输入：text = &amp;quot; practice makes perfect&amp;quot; 输出：&amp;quot;practice makes perfect &amp;quot; 解释：总共有 7 个空格和 3 个单词。7 / (3-1) = 3 个空格加上 1 个多余的空格。多余的空格需要放在字符串的末尾。 示例 3：</description></item><item><title>【2022-09-06每日一题】828. 统计子串中的唯一字符</title><link>/study/leetcode/count-unique-characters-of-all-substrings-of-a-given-string/</link><pubDate>Tue, 06 Sep 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/count-unique-characters-of-all-substrings-of-a-given-string/</guid><description>2022-09-06每日一题：828. 统计子串中的唯一字符 难度：Hard 标签：哈希表 、 字符串 、 动态规划 我们定义了一个函数 countUniqueChars(s) 来统计字符串 s 中的唯一字符，并返回唯一字符的个数。
+例如：s = "LEETCODE" ，则其中 "L", "T","C","O","D" 都是唯一字符，因为它们只出现一次，所以 countUniqueChars(s) = 5 。
+本题将会给你一个字符串 s ，我们需要返回 countUniqueChars(t) 的总和，其中 t 是 s 的子字符串。输入用例保证返回值为&amp;nbsp;32 位整数。
+注意，某些子字符串可能是重复的，但你统计时也必须算上这些重复的子字符串（也就是说，你必须统计 s 的所有子字符串中的唯一字符）。
+&amp;nbsp;
+示例 1：
+输入: s = "ABC" 输出: 10 解释: 所有可能的子串为："A","B","C","AB","BC" 和 "ABC"。 其中，每一个子串都由独特字符构成。 所以其长度总和为：1 + 1 + 1 + 2 + 2 + 3 = 10 示例 2：
+输入: s = "ABA" 输出: 8 解释: 除了 countUniqueChars("ABA") = 1 之外，其余与示例 1 相同。 示例 3：</description></item><item><title>【2022-08-21每日一题】1455. 检查单词是否为句中其他单词的前缀</title><link>/study/leetcode/check-if-a-word-occurs-as-a-prefix-of-any-word-in-a-sentence/</link><pubDate>Sun, 21 Aug 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/check-if-a-word-occurs-as-a-prefix-of-any-word-in-a-sentence/</guid><description>2022-08-21每日一题：1455. 检查单词是否为句中其他单词的前缀 难度：Easy 标签：字符串 、 字符串匹配 给你一个字符串 sentence 作为句子并指定检索词为 searchWord ，其中句子由若干用 单个空格 分隔的单词组成。请你检查检索词 searchWord 是否为句子 sentence 中任意单词的前缀。
+如果&amp;nbsp;searchWord 是某一个单词的前缀，则返回句子&amp;nbsp;sentence 中该单词所对应的下标（下标从 1 开始）。如果 searchWord 是多个单词的前缀，则返回匹配的第一个单词的下标（最小下标）。如果 searchWord 不是任何单词的前缀，则返回 -1 。
+字符串 s 的 前缀 是 s 的任何前导连续子字符串。
+&amp;nbsp;
+示例 1：
+输入：sentence = "i love eating burger", searchWord = "burg" 输出：4 解释："burg" 是 "burger" 的前缀，而 "burger" 是句子中第 4 个单词。 示例 2：
+输入：sentence = "this problem is an easy problem", searchWord = "pro" 输出：2 解释："pro" 是 "problem" 的前缀，而 "problem" 是句子中第 2 个也是第 6 个单词，但是应该返回最小下标 2 。 示例 3：</description></item><item><title>【2022-08-14每日一题】1422. 分割字符串的最大得分</title><link>/study/leetcode/maximum-score-after-splitting-a-string/</link><pubDate>Sun, 14 Aug 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/maximum-score-after-splitting-a-string/</guid><description>2022-08-14每日一题：1422. 分割字符串的最大得分 难度：Easy 标签：字符串 给你一个由若干 0 和 1 组成的字符串 s ，请你计算并返回将该字符串分割成两个 非空 子字符串（即&amp;nbsp;左 子字符串和 右 子字符串）所能获得的最大得分。
+「分割字符串的得分」为 左 子字符串中 0 的数量加上 右 子字符串中 1 的数量。
+&amp;nbsp;
+示例 1：
+输入：s = &amp;quot;011101&amp;quot; 输出：5 解释： 将字符串 s 划分为两个非空子字符串的可行方案有： 左子字符串 = &amp;quot;0&amp;quot; 且 右子字符串 = &amp;quot;11101&amp;quot;，得分 = 1 + 4 = 5 左子字符串 = &amp;quot;01&amp;quot; 且 右子字符串 = &amp;quot;1101&amp;quot;，得分 = 1 + 3 = 4 左子字符串 = &amp;quot;011&amp;quot; 且 右子字符串 = &amp;quot;101&amp;quot;，得分 = 1 + 2 = 3 左子字符串 = &amp;quot;0111&amp;quot; 且 右子字符串 = &amp;quot;01&amp;quot;，得分 = 1 + 1 = 2 左子字符串 = &amp;quot;01110&amp;quot; 且 右子字符串 = &amp;quot;1&amp;quot;，得分 = 2 + 1 = 3 示例 2：</description></item><item><title>【2022-08-10每日一题】640. 求解方程</title><link>/study/leetcode/solve-the-equation/</link><pubDate>Wed, 10 Aug 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/solve-the-equation/</guid><description>2022-08-10每日一题：640. 求解方程 难度：Medium 标签：数学 、 字符串 、 模拟 求解一个给定的方程，将x以字符串 "x=#value"&amp;nbsp;的形式返回。该方程仅包含 '+' ， '-' 操作，变量&amp;nbsp;x&amp;nbsp;和其对应系数。
+如果方程没有解，请返回&amp;nbsp;"No solution"&amp;nbsp;。如果方程有无限解，则返回 “Infinite solutions” 。
+如果方程中只有一个解，要保证返回值 'x'&amp;nbsp;是一个整数。
+&amp;nbsp;
+示例 1：
+输入: equation = &amp;quot;x+5-3+x=6+x-2&amp;quot; 输出: &amp;quot;x=2&amp;quot; 示例 2:
+输入: equation = &amp;quot;x=x&amp;quot; 输出: &amp;quot;Infinite solutions&amp;quot; 示例 3:
+输入: equation = &amp;quot;2x=x&amp;quot; 输出: &amp;quot;x=0&amp;quot; &amp;nbsp;
+&amp;nbsp;
+提示:
+3 &amp;lt;= equation.length &amp;lt;= 1000 equation&amp;nbsp;只有一个&amp;nbsp;'='. equation&amp;nbsp;方程由整数组成，其绝对值在&amp;nbsp;[0, 100]&amp;nbsp;范围内，不含前导零和变量 'x' 。&amp;nbsp;​​​ ### 方法一：模拟 根据题意进行模拟即可，设factor表示合并同类项的x的系数，val表示合并数字的值
+首先我们对方程左右两边的表达式进行合并同类项 遍历左表达式，默认为正号 若字符是x，加到factor上 若字符是+或者-，改变符号位 若字符是数字，则判断后边有没有跟x，有则加到factor上，没有加到val上 遍历右表达式，默认为负号，相当于右边的表达式移动到左边（解析同上只是符号相反） 若factor == 0，判断val是否为0，为0则表示无穷解，不为0表示没有解 若factor != 0,直接解方程即可，现在的方程变为factor * x = -val,则x = (-val / factor) func solveEquation(equation string) string { factor, val := 0, 0 i, n, sign := 0, len(equation), 1 // 等式左边默认系数为正 for i &amp;lt; n { if equation[i] == '=' { sign = -1 // 等式右边默认系数为负 i++ continue } s := sign if equation[i] == '+' { // 去掉前面的符号 i++ } else if equation[i] == '-' { s = -s i++ } num, valid := 0, false for i &amp;lt; n &amp;amp;&amp;amp; unicode.</description></item><item><title>【2022-08-08每日一题】761. 特殊的二进制序列</title><link>/study/leetcode/special-binary-string/</link><pubDate>Mon, 08 Aug 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/special-binary-string/</guid><description>2022-08-08每日一题：761. 特殊的二进制序列 难度：Hard
+标签：递归 、 字符串
+特殊的二进制序列是具有以下两个性质的二进制序列：
+0 的数量与 1 的数量相等。 二进制序列的每一个前缀码中 1 的数量要大于等于 0 的数量。 给定一个特殊的二进制序列&amp;nbsp;S，以字符串形式表示。定义一个操作 为首先选择&amp;nbsp;S&amp;nbsp;的两个连续且非空的特殊的子串，然后将它们交换。（两个子串为连续的当且仅当第一个子串的最后一个字符恰好为第二个子串的第一个字符的前一个字符。)
+在任意次数的操作之后，交换后的字符串按照字典序排列的最大的结果是什么？
+示例 1:
+输入: S = &amp;quot;11011000&amp;quot; 输出: &amp;quot;11100100&amp;quot; 解释: 将子串 &amp;quot;10&amp;quot; （在S[1]出现） 和 &amp;quot;1100&amp;quot; （在S[3]出现）进行交换。 这是在进行若干次操作后按字典序排列最大的结果。 说明:
+S&amp;nbsp;的长度不超过&amp;nbsp;50。 S&amp;nbsp;保证为一个满足上述定义的特殊 的二进制序列。 ### 解题 此题可以看成是有效的括号，将 1 看成左括号 (，0 看成右括号 )，比如，&amp;ldquo;1100&amp;rdquo; 可以看做是 &amp;ldquo;(())&amp;quot;，这样就比较好理解。也就是说最后我们需要通过一系列操作（有效的括号子串交换位置）之后让左括号尽量在右括号前面，比如，对于 &amp;ldquo;(()(()))&amp;quot;，我们可以把中间 &amp;ldquo;()&amp;rdquo; 和 &amp;ldquo;(())&amp;rdquo; 交换之后变成 &amp;ldquo;((())())&amp;quot;。
+那么，代码就比较容易写了，我们可以遍历整个字符串，找到它的有效子串，再把这些子串降序排个序就完事了，当然，这里在找到这些子串之后，子串内部也可以使用相同的规则去做处理，所以，我们可以使用递归来搞。
+func makeLargestSpecial(s string) string { if len(s) &amp;lt;= 2 { return s } subs := sort.StringSlice{} cnt, left := 0, 0 for i, ch := range s { if ch == '1' { cnt++ } else if cnt--; cnt == 0 { subs = append(subs, &amp;quot;1&amp;quot;+makeLargestSpecial(s[left+1:i])+&amp;quot;0&amp;quot;) left = i + 1 } } sort.</description></item><item><title>【2022-08-06每日一题】1408. 数组中的字符串匹配</title><link>/study/leetcode/string-matching-in-an-array/</link><pubDate>Sat, 06 Aug 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/string-matching-in-an-array/</guid><description>2022-08-06每日一题：1408. 数组中的字符串匹配 给你一个字符串数组 words ，数组中的每个字符串都可以看作是一个单词。请你按 任意 顺序返回 words 中是其他单词的子字符串的所有单词。
+如果你可以删除 words[j]&amp;nbsp;最左侧和/或最右侧的若干字符得到 words[i] ，那么字符串 words[i] 就是 words[j] 的一个子字符串。
+&amp;nbsp;
+示例 1：
+输入：words = [&amp;quot;mass&amp;quot;,&amp;quot;as&amp;quot;,&amp;quot;hero&amp;quot;,&amp;quot;superhero&amp;quot;] 输出：[&amp;quot;as&amp;quot;,&amp;quot;hero&amp;quot;] 解释：&amp;quot;as&amp;quot; 是 &amp;quot;mass&amp;quot; 的子字符串，&amp;quot;hero&amp;quot; 是 &amp;quot;superhero&amp;quot; 的子字符串。 [&amp;quot;hero&amp;quot;,&amp;quot;as&amp;quot;] 也是有效的答案。 示例 2：
+输入：words = [&amp;quot;leetcode&amp;quot;,&amp;quot;et&amp;quot;,&amp;quot;code&amp;quot;] 输出：[&amp;quot;et&amp;quot;,&amp;quot;code&amp;quot;] 解释：&amp;quot;et&amp;quot; 和 &amp;quot;code&amp;quot; 都是 &amp;quot;leetcode&amp;quot; 的子字符串。 示例 3：
+输入：words = [&amp;quot;blue&amp;quot;,&amp;quot;green&amp;quot;,&amp;quot;bu&amp;quot;] 输出：[] &amp;nbsp;
+提示：
+1 &amp;lt;= words.length &amp;lt;= 100 1 &amp;lt;= words[i].length &amp;lt;= 30 words[i] 仅包含小写英文字母。 题目数据 保证 每个 words[i] 都是独一无二的。 方法一：穷举， 暴力双层循环 func stringMatching(words []string) []string { ans := []string{} for i, wordi := range words { for j, wordj := range words { if i !</description></item><item><title>2022-08-03每日一题：899. 有序队列</title><link>/study/leetcode/orderly-queue/</link><pubDate>Wed, 03 Aug 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/orderly-queue/</guid><description>2022-08-03每日一题：899. 有序队列 给定一个字符串 s 和一个整数 k&amp;nbsp;。你可以从 s 的前 k 个字母中选择一个，并把它加到字符串的末尾。
+返回 在应用上述步骤的任意数量的移动后，字典上最小的字符串&amp;nbsp;。
+&amp;nbsp;
+示例 1：
+输入：s = "cba", k = 1 输出："acb" 解释： 在第一步中，我们将第一个字符（“c”）移动到最后，获得字符串 “bac”。 在第二步中，我们将第一个字符（“b”）移动到最后，获得最终结果 “acb”。 示例 2：
+输入：s = "baaca", k = 3 输出："aaabc" 解释： 在第一步中，我们将第一个字符（“b”）移动到最后，获得字符串 “aacab”。 在第二步中，我们将第三个字符（“c”）移动到最后，获得最终结果 “aaabc”。 &amp;nbsp;
+提示：
+1 &amp;lt;= k&amp;nbsp;&amp;lt;= S.length&amp;nbsp;&amp;lt;= 1000 s&amp;nbsp;只由小写字母组成。 func orderlyQueue(s string, k int) string { if k == 1 { // 当k = 1时，共有 n 种候选方案, 遍历求其最小的字典序 ans := s for i := 1; i &amp;lt; len(s); i++ { s = s[1:] + s[:1] if s &amp;lt; ans { ans = s } } return ans } // 当k &amp;gt; 1时，经过不断的变换，我们总能让序列有序，直接对字符串进行字典序排序即可 t := []byte(s) sort.</description></item><item><title>2022-08-01每日一题：1374 生成每种字符都是奇数个的字符串</title><link>/study/leetcode/generate-a-string-with-characters-that-have-odd-counts/</link><pubDate>Mon, 01 Aug 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/generate-a-string-with-characters-that-have-odd-counts/</guid><description>1374 生成每种字符都是奇数个的字符串 给你一个整数 n，请你返回一个含 n 个字符的字符串，其中每种字符在该字符串中都恰好出现 奇数次 。
+返回的字符串必须只含小写英文字母。如果存在多个满足题目要求的字符串，则返回其中任意一个即可。
+&amp;nbsp;
+示例 1：
+输入：n = 4 输出：&amp;quot;pppz&amp;quot; 解释：&amp;quot;pppz&amp;quot; 是一个满足题目要求的字符串，因为 &amp;#39;p&amp;#39; 出现 3 次，且 &amp;#39;z&amp;#39; 出现 1 次。当然，还有很多其他字符串也满足题目要求，比如：&amp;quot;ohhh&amp;quot; 和 &amp;quot;love&amp;quot;。 示例 2：
+输入：n = 2 输出：&amp;quot;xy&amp;quot; 解释：&amp;quot;xy&amp;quot; 是一个满足题目要求的字符串，因为 &amp;#39;x&amp;#39; 和 &amp;#39;y&amp;#39; 各出现 1 次。当然，还有很多其他字符串也满足题目要求，比如：&amp;quot;ag&amp;quot; 和 &amp;quot;ur&amp;quot;。 示例 3：
+输入：n = 7 输出：&amp;quot;holasss&amp;quot; &amp;nbsp;
+提示：
+1 &amp;lt;= n &amp;lt;= 500 ### 方法一：分类讨论 解题思路 n为奇数时可以用一个字符即可，本身就是奇数次；
+n为偶数时可以用两个字符，奇+奇=偶
+go func generateTheString(n int) string { if n%2 == 0 { return strings.Repeat(&amp;quot;l&amp;quot;, n-1) + &amp;quot;b&amp;quot; } return strings.</description></item></channel></rss>

@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Easy on lbbniu</title><link>/tags/easy/</link><description>Recent content in Easy on lbbniu</description><generator>Hugo -- gohugo.io</generator><language>zh</language><managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor><webMaster>lbbniu@gmail.com (lbbniu)</webMaster><copyright>&amp;copy; 2021 &lt;a href="https://blog.lbbniu.com/">lbbniu&lt;/a></copyright><lastBuildDate>Thu, 19 Jan 2023 00:01:00 +0800</lastBuildDate><atom:link href="/tags/easy/index.xml" rel="self" type="application/rss+xml"/><item><title>【2023-01-19每日一题】2299. 强密码检验器 II[Easy]</title><link>/study/leetcode/strong-password-checker-ii/</link><pubDate>Thu, 19 Jan 2023 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/strong-password-checker-ii/</guid><description>2023-01-19每日一题：2299. 强密码检验器 II 难度：Easy
+标签：字符串
+如果一个密码满足以下所有条件，我们称它是一个 强&amp;nbsp;密码：
+它有至少 8&amp;nbsp;个字符。 至少包含 一个小写英文&amp;nbsp;字母。 至少包含 一个大写英文&amp;nbsp;字母。 至少包含 一个数字&amp;nbsp;。 至少包含 一个特殊字符&amp;nbsp;。特殊字符为："!@#$%^&amp;amp;*()-+"&amp;nbsp;中的一个。 它 不&amp;nbsp;包含&amp;nbsp;2&amp;nbsp;个连续相同的字符（比方说&amp;nbsp;"aab"&amp;nbsp;不符合该条件，但是&amp;nbsp;"aba"&amp;nbsp;符合该条件）。 给你一个字符串&amp;nbsp;password&amp;nbsp;，如果它是一个&amp;nbsp;强&amp;nbsp;密码，返回&amp;nbsp;true，否则返回&amp;nbsp;false&amp;nbsp;。
+&amp;nbsp;
+示例 1：
+输入：password = "IloveLe3tcode!" 输出：true 解释：密码满足所有的要求，所以我们返回 true 。 示例 2：
+输入：password = "Me+You--IsMyDream" 输出：false 解释：密码不包含数字，且包含 2 个连续相同的字符。所以我们返回 false 。 示例 3：
+输入：password = "1aB!" 输出：false 解释：密码不符合长度要求。所以我们返回 false 。 &amp;nbsp;
+提示：
+1 &amp;lt;= password.length &amp;lt;= 100 password&amp;nbsp;包含字母，数字和&amp;nbsp;"!@#$%^&amp;amp;*()-+"&amp;nbsp;这些特殊字符。 方法一： 详细思路过程见官方题解，这里只做个人刷题记录，方便后续查询阅读
+func strongPasswordCheckerII(password string) bool { } 复杂度分析 LeetCode题库地址 https://leetcode.cn/problems/strong-password-checker-ii</description></item><item><title>【2023-01-15每日一题】2293. 极大极小游戏[Easy]</title><link>/study/leetcode/min-max-game/</link><pubDate>Sun, 15 Jan 2023 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/min-max-game/</guid><description>2023-01-15每日一题：2293. 极大极小游戏 难度：Easy
+标签：数组 、 模拟
+给你一个下标从 0 开始的整数数组 nums ，其长度是 2 的幂。
+对 nums 执行下述算法：
+设 n 等于 nums 的长度，如果 n == 1 ，终止 算法过程。否则，创建 一个新的整数数组&amp;nbsp;newNums ，新数组长度为 n / 2 ，下标从 0 开始。 对于满足&amp;nbsp;0 &amp;lt;= i &amp;lt; n / 2 的每个 偶数 下标 i ，将 newNums[i] 赋值 为 min(nums[2 * i], nums[2 * i + 1]) 。 对于满足&amp;nbsp;0 &amp;lt;= i &amp;lt; n / 2 的每个 奇数 下标 i ，将 newNums[i] 赋值 为 max(nums[2 * i], nums[2 * i + 1]) 。 用 newNums 替换 nums 。 从步骤 1 开始 重复 整个过程。 执行算法后，返回 nums 中剩下的那个数字。</description></item><item><title>【2023-01-13每日一题】2287. 重排字符形成目标字符串[Easy]</title><link>/study/leetcode/rearrange-characters-to-make-target-string/</link><pubDate>Fri, 13 Jan 2023 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/rearrange-characters-to-make-target-string/</guid><description>2023-01-13每日一题：2287. 重排字符形成目标字符串 难度：Easy
+标签：哈希表 、 字符串 、 计数
+给你两个下标从 0 开始的字符串 s 和 target 。你可以从 s 取出一些字符并将其重排，得到若干新的字符串。
+从 s 中取出字符并重新排列，返回可以形成 target 的 最大 副本数。
+&amp;nbsp;
+示例 1：
+输入：s = "ilovecodingonleetcode", target = "code" 输出：2 解释： 对于 "code" 的第 1 个副本，选取下标为 4 、5 、6 和 7 的字符。 对于 "code" 的第 2 个副本，选取下标为 17 、18 、19 和 20 的字符。 形成的字符串分别是 "ecod" 和 "code" ，都可以重排为 "code" 。 可以形成最多 2 个 "code" 的副本，所以返回 2 。 示例 2：
+输入：s = "</description></item><item><title>【2023-01-11每日一题】2283. 判断一个数的数字计数是否等于数位的值[Easy]</title><link>/study/leetcode/check-if-number-has-equal-digit-count-and-digit-value/</link><pubDate>Wed, 11 Jan 2023 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/check-if-number-has-equal-digit-count-and-digit-value/</guid><description>2023-01-11每日一题：2283. 判断一个数的数字计数是否等于数位的值 难度：Easy
+标签：哈希表 、 字符串 、 计数
+给你一个下标从 0&amp;nbsp;开始长度为 n&amp;nbsp;的字符串&amp;nbsp;num&amp;nbsp;，它只包含数字。
+如果对于 每个&amp;nbsp;0 &amp;lt;= i &amp;lt; n&amp;nbsp;的下标&amp;nbsp;i&amp;nbsp;，都满足数位&amp;nbsp;i&amp;nbsp;在 num&amp;nbsp;中出现了&amp;nbsp;num[i]次，那么请你返回&amp;nbsp;true&amp;nbsp;，否则返回&amp;nbsp;false&amp;nbsp;。
+&amp;nbsp;
+示例 1：
+输入：num = "1210" 输出：true 解释： num[0] = '1' 。数字 0 在 num 中出现了一次。 num[1] = '2' 。数字 1 在 num 中出现了两次。 num[2] = '1' 。数字 2 在 num 中出现了一次。 num[3] = '0' 。数字 3 在 num 中出现了零次。 "1210" 满足题目要求条件，所以返回 true 。 示例 2：
+输入：num = "030" 输出：false 解释： num[0] = '0' 。数字 0 应该出现 0 次，但是在 num 中出现了一次。 num[1] = '3' 。数字 1 应该出现 3 次，但是在 num 中出现了零次。 num[2] = '0' 。数字 2 在 num 中出现了 0 次。 下标 0 和 1 都违反了题目要求，所以返回 false 。 &amp;nbsp;</description></item><item><title>【2023-01-08每日一题】2185. 统计包含给定前缀的字符串[Easy]</title><link>/study/leetcode/counting-words-with-a-given-prefix/</link><pubDate>Sun, 08 Jan 2023 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/counting-words-with-a-given-prefix/</guid><description>2023-01-08每日一题：2185. 统计包含给定前缀的字符串 难度：Easy
+标签：数组 、 字符串
+给你一个字符串数组 words 和一个字符串 pref 。
+返回 words 中以 pref 作为 前缀 的字符串的数目。
+字符串 s 的 前缀 就是&amp;nbsp; s 的任一前导连续字符串。
+&amp;nbsp;
+示例 1：
+输入：words = ["pay","attention","practice","attend"], pref = "at" 输出：2 解释：以 "at" 作为前缀的字符串有两个，分别是："attention" 和 "attend" 。 示例 2：
+输入：words = ["leetcode","win","loops","success"], pref = "code" 输出：0 解释：不存在以 "code" 作为前缀的字符串。 &amp;nbsp;
+提示：
+1 &amp;lt;= words.length &amp;lt;= 100 1 &amp;lt;= words[i].length, pref.length &amp;lt;= 100 words[i] 和 pref 由小写英文字母组成 方法一： 详细思路过程见官方题解，这里只做个人刷题记录，方便后续查询阅读
+func prefixCount(words []string, pref string) int { } 复杂度分析 LeetCode题库地址 https://leetcode.</description></item><item><title>【2023-01-06每日一题】2180. 统计各位数字之和为偶数的整数个数[Easy]</title><link>/study/leetcode/count-integers-with-even-digit-sum/</link><pubDate>Fri, 06 Jan 2023 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/count-integers-with-even-digit-sum/</guid><description>2023-01-06每日一题：2180. 统计各位数字之和为偶数的整数个数 难度：Easy
+标签：数学 、 模拟
+给你一个正整数 num ，请你统计并返回 小于或等于 num 且各位数字之和为 偶数 的正整数的数目。
+正整数的 各位数字之和 是其所有位上的对应数字相加的结果。
+&amp;nbsp;
+示例 1：
+输入：num = 4 输出：2 解释： 只有 2 和 4 满足小于等于 4 且各位数字之和为偶数。 示例 2：
+输入：num = 30 输出：14 解释： 只有 14 个整数满足小于等于 30 且各位数字之和为偶数，分别是： 2、4、6、8、11、13、15、17、19、20、22、24、26 和 28 。 &amp;nbsp;
+提示：
+1 &amp;lt;= num &amp;lt;= 1000 方法一： 详细思路过程见官方题解，这里只做个人刷题记录，方便后续查询阅读
+func countEven(num int) int { } 复杂度分析 LeetCode题库地址 https://leetcode.cn/problems/count-integers-with-even-digit-sum</description></item><item><title>【2023-01-03每日一题】2042. 检查句子中的数字是否递增[Easy]</title><link>/study/leetcode/check-if-numbers-are-ascending-in-a-sentence/</link><pubDate>Tue, 03 Jan 2023 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/check-if-numbers-are-ascending-in-a-sentence/</guid><description>2023-01-03每日一题：2042. 检查句子中的数字是否递增 难度：Easy
+标签：字符串
+句子是由若干 token 组成的一个列表，token 间用 单个 空格分隔，句子没有前导或尾随空格。每个 token 要么是一个由数字 0-9 组成的不含前导零的 正整数&amp;nbsp;，要么是一个由小写英文字母组成的 单词 。
+示例，"a puppy has 2 eyes 4 legs" 是一个由 7 个 token 组成的句子："2" 和 "4" 是数字，其他像&amp;nbsp;"puppy" 这样的 tokens 属于单词。 给你一个表示句子的字符串 s ，你需要检查 s 中的 全部 数字是否从左到右严格递增（即，除了最后一个数字，s 中的 每个 数字都严格小于它 右侧 的数字）。
+如果满足题目要求，返回 true&amp;nbsp;，否则，返回 false 。
+&amp;nbsp;
+示例 1：
+输入：s = "1 box has 3 blue 4 red 6 green and 12 yellow marbles" 输出：true 解释：句子中的数字是：1, 3, 4, 6, 12 。 这些数字是按从左到右严格递增的 1 &amp;lt; 3 &amp;lt; 4 &amp;lt; 6 &amp;lt; 12 。 示例 2：</description></item><item><title>【2023-01-01每日一题】2351. 第一个出现两次的字母[Easy]</title><link>/study/leetcode/first-letter-to-appear-twice/</link><pubDate>Sun, 01 Jan 2023 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/first-letter-to-appear-twice/</guid><description>2023-01-01每日一题：2351. 第一个出现两次的字母 难度：Easy
+标签：哈希表 、 字符串 、 计数
+给你一个由小写英文字母组成的字符串 s ，请你找出并返回第一个出现 两次 的字母。
+注意：
+如果 a 的 第二次 出现比 b 的 第二次 出现在字符串中的位置更靠前，则认为字母 a 在字母 b 之前出现两次。 s 包含至少一个出现两次的字母。 &amp;nbsp;
+示例 1：
+输入：s = "abccbaacz" 输出："c" 解释： 字母 'a' 在下标 0 、5 和 6 处出现。 字母 'b' 在下标 1 和 4 处出现。 字母 'c' 在下标 2 、3 和 7 处出现。 字母 'z' 在下标 8 处出现。 字母 'c' 是第一个出现两次的字母，因为在所有字母中，'c' 第二次出现的下标是最小的。 示例 2：
+输入：s = "abcdd" 输出："d" 解释： 只有字母 'd' 出现两次，所以返回 'd' 。 &amp;nbsp;</description></item><item><title>【2022-12-31每日一题】2037. 使每位学生都有座位的最少移动次数[Easy]</title><link>/study/leetcode/minimum-number-of-moves-to-seat-everyone/</link><pubDate>Sat, 31 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/minimum-number-of-moves-to-seat-everyone/</guid><description>2022-12-31每日一题：2037. 使每位学生都有座位的最少移动次数 难度：Easy
+标签：数组 、 排序
+一个房间里有 n&amp;nbsp;个座位和 n&amp;nbsp;名学生，房间用一个数轴表示。给你一个长度为 n&amp;nbsp;的数组&amp;nbsp;seats&amp;nbsp;，其中&amp;nbsp;seats[i] 是第 i&amp;nbsp;个座位的位置。同时给你一个长度为 n&amp;nbsp;的数组&amp;nbsp;students&amp;nbsp;，其中&amp;nbsp;students[j]&amp;nbsp;是第 j&amp;nbsp;位学生的位置。
+你可以执行以下操作任意次：
+增加或者减少第&amp;nbsp;i&amp;nbsp;位学生的位置，每次变化量为 1&amp;nbsp;（也就是将第 i&amp;nbsp;位学生从位置 x&amp;nbsp;移动到 x + 1&amp;nbsp;或者 x - 1） 请你返回使所有学生都有座位坐的 最少移动次数&amp;nbsp;，并确保没有两位学生的座位相同。
+请注意，初始时有可能有多个座位或者多位学生在 同一&amp;nbsp;位置。
+&amp;nbsp;
+示例 1：
+输入：seats = [3,1,5], students = [2,7,4] 输出：4 解释：学生移动方式如下： - 第一位学生从位置 2 移动到位置 1 ，移动 1 次。 - 第二位学生从位置 7 移动到位置 5 ，移动 2 次。 - 第三位学生从位置 4 移动到位置 3 ，移动 1 次。 总共 1 + 2 + 1 = 4 次移动。 示例 2：</description></item><item><title>【2022-12-29每日一题】2032. 至少在两个数组中出现的值[Easy]</title><link>/study/leetcode/two-out-of-three/</link><pubDate>Thu, 29 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/two-out-of-three/</guid><description>2022-12-29每日一题：2032. 至少在两个数组中出现的值 难度：Easy
+标签：数组 、 哈希表
+给你三个整数数组 nums1、nums2 和 nums3 ，请你构造并返回一个 元素各不相同的 数组，且由 至少 在 两个 数组中出现的所有值组成。数组中的元素可以按 任意 顺序排列。
+&amp;nbsp;
+示例 1：
+输入：nums1 = [1,1,3,2], nums2 = [2,3], nums3 = [3] 输出：[3,2] 解释：至少在两个数组中出现的所有值为： - 3 ，在全部三个数组中都出现过。 - 2 ，在数组 nums1 和 nums2 中出现过。 示例 2：
+输入：nums1 = [3,1], nums2 = [2,3], nums3 = [1,2] 输出：[2,3,1] 解释：至少在两个数组中出现的所有值为： - 2 ，在数组 nums2 和 nums3 中出现过。 - 3 ，在数组 nums1 和 nums2 中出现过。 - 1 ，在数组 nums1 和 nums3 中出现过。 示例 3：</description></item><item><title>【2022-12-27每日一题】2027. 转换字符串的最少操作次数[Easy]</title><link>/study/leetcode/minimum-moves-to-convert-string/</link><pubDate>Tue, 27 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/minimum-moves-to-convert-string/</guid><description>2022-12-27每日一题：2027. 转换字符串的最少操作次数 难度：Easy
+标签：贪心 、 字符串
+给你一个字符串 s ，由 n 个字符组成，每个字符不是 'X' 就是 'O' 。
+一次 操作 定义为从 s 中选出 三个连续字符 并将选中的每个字符都转换为 'O' 。注意，如果字符已经是 'O' ，只需要保持 不变 。
+返回将 s 中所有字符均转换为 'O' 需要执行的&amp;nbsp;最少&amp;nbsp;操作次数。
+&amp;nbsp;
+示例 1：
+输入：s = "XXX" 输出：1 解释：XXX -&amp;gt; OOO 一次操作，选中全部 3 个字符，并将它们转换为 'O' 。 示例 2：
+输入：s = "XXOX" 输出：2 解释：XXOX -&amp;gt; OOOX -&amp;gt; OOOO 第一次操作，选择前 3 个字符，并将这些字符转换为 'O' 。 然后，选中后 3 个字符，并执行转换。最终得到的字符串全由字符 'O' 组成。 示例 3：
+输入：s = "OOOO" 输出：0 解释：s 中不存在需要转换的 'X' 。 &amp;nbsp;</description></item><item><title>【2022-12-23每日一题】2011. 执行操作后的变量值[Easy]</title><link>/study/leetcode/final-value-of-variable-after-performing-operations/</link><pubDate>Fri, 23 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/final-value-of-variable-after-performing-operations/</guid><description>2022-12-23每日一题：2011. 执行操作后的变量值 难度：Easy
+标签：数组 、 字符串 、 模拟
+存在一种仅支持 4 种操作和 1 个变量 X 的编程语言：
+++X 和 X++ 使变量 X 的值 加 1 --X 和 X-- 使变量 X 的值 减 1 最初，X 的值是 0
+给你一个字符串数组 operations ，这是由操作组成的一个列表，返回执行所有操作后， X 的 最终值 。
+&amp;nbsp;
+示例 1：
+输入：operations = ["--X","X++","X++"] 输出：1 解释：操作按下述步骤执行： 最初，X = 0 --X：X 减 1 ，X = 0 - 1 = -1 X++：X 加 1 ，X = -1 + 1 = 0 X++：X 加 1 ，X = 0 + 1 = 1 示例 2：</description></item><item><title>【2022-12-19每日一题】1971. 寻找图中是否存在路径[Easy]</title><link>/study/leetcode/find-if-path-exists-in-graph/</link><pubDate>Mon, 19 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/find-if-path-exists-in-graph/</guid><description>2022-12-19每日一题：1971. 寻找图中是否存在路径 难度：Easy
+标签：深度优先搜索 、 广度优先搜索 、 并查集 、 图
+有一个具有 n 个顶点的 双向 图，其中每个顶点标记从 0 到 n - 1（包含 0 和 n - 1）。图中的边用一个二维整数数组 edges 表示，其中 edges[i] = [ui, vi] 表示顶点 ui 和顶点 vi 之间的双向边。 每个顶点对由 最多一条 边连接，并且没有顶点存在与自身相连的边。
+请你确定是否存在从顶点 source 开始，到顶点 destination 结束的 有效路径 。
+给你数组 edges 和整数 n、source 和 destination，如果从 source 到 destination 存在 有效路径 ，则返回 true，否则返回 false 。
+&amp;nbsp;
+示例 1：
+输入：n = 3, edges = [[0,1],[1,2],[2,0]], source = 0, destination = 2 输出：true 解释：存在由顶点 0 到顶点 2 的路径: - 0 → 1 → 2 - 0 → 2 示例 2：</description></item><item><title>【2022-12-15每日一题】1945. 字符串转化后的各位数字之和[Easy]</title><link>/study/leetcode/sum-of-digits-of-string-after-convert/</link><pubDate>Thu, 15 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/sum-of-digits-of-string-after-convert/</guid><description>2022-12-15每日一题：1945. 字符串转化后的各位数字之和 难度：Easy
+标签：字符串 、 模拟
+给你一个由小写字母组成的字符串 s ，以及一个整数 k 。
+首先，用字母在字母表中的位置替换该字母，将 s 转化 为一个整数（也就是，'a' 用 1 替换，'b' 用 2 替换，... 'z' 用 26 替换）。接着，将整数 转换 为其 各位数字之和 。共重复 转换 操作 k 次 。
+例如，如果 s = "zbax" 且 k = 2 ，那么执行下述步骤后得到的结果是整数 8 ：
+转化："zbax" ➝ "(26)(2)(1)(24)" ➝ "262124" ➝ 262124 转换 #1：262124&amp;nbsp;➝ 2 + 6 + 2 + 1 + 2 + 4&amp;nbsp;➝ 17 转换 #2：17 ➝ 1 + 7 ➝ 8 返回执行上述操作后得到的结果整数。</description></item><item><title>【2022-12-13每日一题】1832. 判断句子是否为全字母句[Easy]</title><link>/study/leetcode/check-if-the-sentence-is-pangram/</link><pubDate>Tue, 13 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/check-if-the-sentence-is-pangram/</guid><description>2022-12-13每日一题：1832. 判断句子是否为全字母句 难度：Easy
+标签：哈希表 、 字符串
+全字母句 指包含英语字母表中每个字母至少一次的句子。
+给你一个仅由小写英文字母组成的字符串 sentence ，请你判断 sentence 是否为 全字母句 。
+如果是，返回 true ；否则，返回 false 。
+示例 1：
+输入：sentence = "thequickbrownfoxjumpsoverthelazydog" 输出：true 解释：sentence 包含英语字母表中每个字母至少一次。 示例 2：
+输入：sentence = "leetcode" 输出：false 提示：
+1 &lt;= sentence.length &lt;= 1000 sentence 由小写英语字母组成 方法一：哈希表 func checkIfPangram(sentence string) bool { if len(sentence) &amp;lt; 26 { return false } exist := [26]bool{} for _, c := range sentence { exist[c-'a'] = true } for _, v := range exist { if !</description></item><item><title>【2022-12-11每日一题】1827. 最少操作使数组递增[Easy]</title><link>/study/leetcode/minimum-operations-to-make-the-array-increasing/</link><pubDate>Sun, 11 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/minimum-operations-to-make-the-array-increasing/</guid><description>2022-12-11每日一题：1827. 最少操作使数组递增 难度：Easy
+标签：贪心 、 数组
+给你一个整数数组 nums （下标从 0 开始）。每一次操作中，你可以选择数组中一个元素，并将它增加 1 。
+比方说，如果 nums = [1,2,3] ，你可以选择增加 nums[1] 得到 nums = [1,3,3] 。 请你返回使 nums 严格递增 的 最少 操作次数。
+我们称数组 nums 是 严格递增的 ，当它满足对于所有的 0 &amp;lt;= i &amp;lt; nums.length - 1 都有 nums[i] &amp;lt; nums[i+1] 。一个长度为 1 的数组是严格递增的一种特殊情况。
+示例 1：
+输入：nums = [1,1,1] 输出：3 解释：你可以进行如下操作： 1) 增加 nums[2] ，数组变为 [1,1,2] 。 2) 增加 nums[1] ，数组变为 [1,2,2] 。 3) 增加 nums[2] ，数组变为 [1,2,3] 。 示例 2：</description></item><item><title>【2022-12-08每日一题】1812. 判断国际象棋棋盘中一个格子的颜色[Easy]</title><link>/study/leetcode/determine-color-of-a-chessboard-square/</link><pubDate>Thu, 08 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/determine-color-of-a-chessboard-square/</guid><description>2022-12-08每日一题：1812. 判断国际象棋棋盘中一个格子的颜色 难度：Easy
+标签：数学 、 字符串
+给你一个坐标 coordinates ，它是一个字符串，表示国际象棋棋盘中一个格子的坐标。下图是国际象棋棋盘示意图。
+如果所给格子的颜色是白色，请你返回 true，如果是黑色，请返回 false 。
+给定坐标一定代表国际象棋棋盘上一个存在的格子。坐标第一个字符是字母，第二个字符是数字。
+示例 1：
+输入：coordinates = "a1" 输出：false 解释：如上图棋盘所示，"a1" 坐标的格子是黑色的，所以返回 false 。 示例 2：
+输入：coordinates = "h3" 输出：true 解释：如上图棋盘所示，"h3" 坐标的格子是白色的，所以返回 true 。 示例 3：
+输入：coordinates = "c7" 输出：false 提示：
+coordinates.length == 2 'a' &lt;= coordinates[0] &lt;= 'h' '1' &lt;= coordinates[1] &lt;= '8' 方法一：找规律 可以换算成2x2格子，行列相同为黑色返回false，不同为白色返回true
+func squareIsWhite(coordinates string) bool { r := int(coordinates[1]-'1') % 2 c := int(coordinates[0]-'a') % 2 if r == c { return false } return true } 复杂度分析 时间复杂度：O(1)。仅使用常数时间。 空间复杂度：O(1)。仅使用常数空间。 方法二：数学 思路 经过观察可以发现，从左下角开始，棋盘的行数和列数（均从 1 开始计数）之和如果为奇数，则为白色格子，如果和为偶数，则为黑色格子。可以根据这个结论判断格子颜色。</description></item><item><title>【2022-12-06每日一题】1805. 字符串中不同整数的数目[Easy]</title><link>/study/leetcode/number-of-different-integers-in-a-string/</link><pubDate>Tue, 06 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/number-of-different-integers-in-a-string/</guid><description>2022-12-06每日一题：1805. 字符串中不同整数的数目 难度：Easy
+标签：哈希表 、 字符串
+给你一个字符串 word ，该字符串由数字和小写英文字母组成。
+请你用空格替换每个不是数字的字符。例如，"a123bc34d8ef34" 将会变成 " 123 34 8 34" 。注意，剩下的这些整数为（相邻彼此至少有一个空格隔开）："123"、"34"、"8" 和 "34" 。
+返回对 word 完成替换后形成的 不同 整数的数目。
+只有当两个整数的 不含前导零 的十进制表示不同， 才认为这两个整数也不同。
+示例 1：
+输入：word = "a123bc34d8ef34" 输出：3 解释：不同的整数有 "123"、"34" 和 "8" 。注意，"34" 只计数一次。 示例 2：
+输入：word = "leet1234code234" 输出：2 示例 3：
+输入：word = "a1b01c001" 输出：1 解释："1"、"01" 和 "001" 视为同一个整数的十进制表示，因为在比较十进制值时会忽略前导零的存在。 提示：
+1 &lt;= word.length &lt;= 1000 word 由数字和小写英文字母组成 方法一：哈希表（自己） 详细思路过程见官方题解，这里只做个人刷题记录，方便后续查询阅读
+func numDifferentIntegers(word string) int { nums := make(map[int]bool) num, valid := 0, false for _, c := range word { if c &amp;gt;= '0' &amp;amp;&amp;amp; c &amp;lt;= '9' { num += num*10+int(c-'0') valid = true } else if valid { nums[num] = true num, valid = 0, false } } if valid { nums[num] = true } return len(nums) } 复杂度分析 时间复杂度: O(n)。 空间复杂度: O(n)。 方法二：双指针+模拟 写法一 func numDifferentIntegers(word string) int { s, n := map[string]struct{}{}, len(word) for i := 0; i &amp;lt; n; i++ { if word[i] &amp;gt;= '0' &amp;amp;&amp;amp; word[i] &amp;lt;= '9' { // 跳过前缀0 for i &amp;lt; n &amp;amp;&amp;amp; word[i] == '0' { i++ } // 查找数字结束位置 j := i for j &amp;lt; n &amp;amp;&amp;amp; word[j] &amp;gt;= '0' &amp;amp;&amp;amp; word[j] &amp;lt;= '9' { j++ } s[word[i:j]] = struct{}{} // a000，此时word[i:j]为空字符串 i = j } } return len(s) } 写法二 func numDifferentIntegers(word string) int { s, n := map[string]bool{}, len(word) p1 := 0 for { // 查找开始位置 for p1 &amp;lt; n &amp;amp;&amp;amp; !</description></item><item><title>【2022-12-03每日一题】1796. 字符串中第二大的数字[Easy]</title><link>/study/leetcode/second-largest-digit-in-a-string/</link><pubDate>Sat, 03 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/second-largest-digit-in-a-string/</guid><description>2022-12-03每日一题：1796. 字符串中第二大的数字 难度：Easy
+标签：哈希表 、 字符串
+给你一个混合字符串 s ，请你返回 s 中 第二大 的数字，如果不存在第二大的数字，请你返回 -1 。
+混合字符串 由小写英文字母和数字组成。
+示例 1：
+输入：s = "dfa12321afd" 输出：2 解释：出现在 s 中的数字包括 [1, 2, 3] 。第二大的数字是 2 。 示例 2：
+输入：s = "abc1111" 输出：-1 解释：出现在 s 中的数字只包含 [1] 。没有第二大的数字。 提示：
+1 &lt;= s.length &lt;= 500 s 只包含小写英文字母和（或）数字。 方法一：直接遍历+双指针 详细思路过程见官方题解，这里只做个人刷题记录，方便后续查询阅读
+func secondHighest(s string) int { first, second := -1, -1 for _, c := range s { if unicode.IsDigit(c) { num := int(c - '0') if num &amp;gt; first { first, second = num, first } else if second &amp;lt; num &amp;amp;&amp;amp; num &amp;lt; first { // num &amp;lt; first 防止second 与 first 重复 second = num } } } return second } 复杂度分析 时间复杂度：O(n)，其中 n 表示字符串的长度。我们只需遍历一遍字符串即可。</description></item><item><title>【2022-12-01每日一题】1779. 找到最近的有相同 X 或 Y 坐标的点[Easy]</title><link>/study/leetcode/find-nearest-point-that-has-the-same-x-or-y-coordinate/</link><pubDate>Thu, 01 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/find-nearest-point-that-has-the-same-x-or-y-coordinate/</guid><description>2022-12-01每日一题：1779. 找到最近的有相同 X 或 Y 坐标的点 难度：Easy
+标签：数组
+给你两个整数&amp;nbsp;x 和&amp;nbsp;y&amp;nbsp;，表示你在一个笛卡尔坐标系下的&amp;nbsp;(x, y)&amp;nbsp;处。同时，在同一个坐标系下给你一个数组&amp;nbsp;points&amp;nbsp;，其中&amp;nbsp;points[i] = [ai, bi]&amp;nbsp;表示在&amp;nbsp;(ai, bi)&amp;nbsp;处有一个点。当一个点与你所在的位置有相同的 x 坐标或者相同的 y 坐标时，我们称这个点是 有效的&amp;nbsp;。
+请返回距离你当前位置&amp;nbsp;曼哈顿距离&amp;nbsp;最近的&amp;nbsp;有效&amp;nbsp;点的下标（下标从 0 开始）。如果有多个最近的有效点，请返回下标&amp;nbsp;最小&amp;nbsp;的一个。如果没有有效点，请返回&amp;nbsp;-1&amp;nbsp;。
+两个点 (x1, y1)&amp;nbsp;和 (x2, y2)&amp;nbsp;之间的 曼哈顿距离&amp;nbsp;为&amp;nbsp;abs(x1 - x2) + abs(y1 - y2)&amp;nbsp;。
+&amp;nbsp;
+示例 1：
+输入：x = 3, y = 4, points = [[1,2],[3,1],[2,4],[2,3],[4,4]] 输出：2 解释：所有点中，[3,1]，[2,4] 和 [4,4] 是有效点。有效点中，[2,4] 和 [4,4] 距离你当前位置的曼哈顿距离最小，都为 1 。[2,4] 的下标最小，所以返回 2 。 示例 2：
+输入：x = 3, y = 4, points = [[3,4]] 输出：0 提示：答案可以与你当前所在位置坐标相同。 示例 3：</description></item><item><title>【2022-11-29每日一题】1758. 生成交替二进制字符串的最少操作数[Easy]</title><link>/study/leetcode/minimum-changes-to-make-alternating-binary-string/</link><pubDate>Tue, 29 Nov 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/minimum-changes-to-make-alternating-binary-string/</guid><description>2022-11-29每日一题：1758. 生成交替二进制字符串的最少操作数 难度：Easy
+标签：字符串
+给你一个仅由字符 '0' 和 '1' 组成的字符串 s 。一步操作中，你可以将任一 '0' 变成 '1' ，或者将 '1' 变成 '0' 。
+交替字符串 定义为：如果字符串中不存在相邻两个字符相等的情况，那么该字符串就是交替字符串。例如，字符串 "010" 是交替字符串，而字符串 "0100" 不是。
+返回使 s 变成 交替字符串 所需的 最少 操作数。
+示例 1：
+输入：s = "0100" 输出：1 解释：如果将最后一个字符变为 '1' ，s 就变成 "0101" ，即符合交替字符串定义。 示例 2：
+输入：s = "10" 输出：0 解释：s 已经是交替字符串。 示例 3：
+输入：s = "1111" 输出：2 解释：需要 2 步操作得到 "0101" 或 "1010" 。 提示：
+1 &amp;lt;= s.length &amp;lt;= 104 s[i] 是 '0' 或 '1' 方法一：模拟 思路 根据题意，经过多次操作，sss 可能会变成两种不同的交替二进制字符串，即：</description></item><item><title>【2022-11-27每日一题】1752. 检查数组是否经排序和轮转得到[Easy]</title><link>/study/leetcode/check-if-array-is-sorted-and-rotated/</link><pubDate>Sun, 27 Nov 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/check-if-array-is-sorted-and-rotated/</guid><description>2022-11-27每日一题：1752. 检查数组是否经排序和轮转得到 难度：Easy
+标签：数组
+给你一个数组 nums 。nums 的源数组中，所有元素与 nums 相同，但按非递减顺序排列。
+如果&amp;nbsp;nums 能够由源数组轮转若干位置（包括 0 个位置）得到，则返回 true ；否则，返回 false 。
+源数组中可能存在 重复项 。
+注意：我们称数组 A 在轮转 x 个位置后得到长度相同的数组 B ，当它们满足 A[i] == B[(i+x) % A.length] ，其中 % 为取余运算。
+&amp;nbsp;
+示例 1：
+输入：nums = [3,4,5,1,2] 输出：true 解释：[1,2,3,4,5] 为有序的源数组。 可以轮转 x = 3 个位置，使新数组从值为 3 的元素开始：[3,4,5,1,2] 。 示例 2：
+输入：nums = [2,1,3,4] 输出：false 解释：源数组无法经轮转得到 nums 。 示例 3：
+输入：nums = [1,2,3] 输出：true 解释：[1,2,3] 为有序的源数组。 可以轮转 x = 0 个位置（即不轮转）得到 nums 。 &amp;nbsp;</description></item><item><title>【2022-11-23每日一题】1742. 盒子中小球的最大数量[Easy]</title><link>/study/leetcode/maximum-number-of-balls-in-a-box/</link><pubDate>Wed, 23 Nov 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/maximum-number-of-balls-in-a-box/</guid><description>2022-11-23每日一题：1742. 盒子中小球的最大数量 难度：Easy
+标签：哈希表 、 数学 、 计数
+你在一家生产小球的玩具厂工作，有 n 个小球，编号从 lowLimit 开始，到 highLimit 结束（包括 lowLimit 和 highLimit ，即 n == highLimit - lowLimit + 1）。另有无限数量的盒子，编号从 1 到 infinity 。
+你的工作是将每个小球放入盒子中，其中盒子的编号应当等于小球编号上每位数字的和。例如，编号 321 的小球应当放入编号 3 + 2 + 1 = 6 的盒子，而编号 10 的小球应当放入编号 1 + 0 = 1 的盒子。
+给你两个整数 lowLimit 和 highLimit ，返回放有最多小球的盒子中的小球数量。如果有多个盒子都满足放有最多小球，只需返回其中任一盒子的小球数量。
+示例 1：
+输入：lowLimit = 1, highLimit = 10 输出：2 解释： 盒子编号：1 2 3 4 5 6 7 8 9 10 11 .</description></item><item><title>【2022-11-19每日一题】1732. 找到最高海拔[Easy]</title><link>/study/leetcode/find-the-highest-altitude/</link><pubDate>Sat, 19 Nov 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/find-the-highest-altitude/</guid><description>2022-11-19每日一题：1732. 找到最高海拔 难度：Easy
+标签：数组 、 前缀和
+有一个自行车手打算进行一场公路骑行，这条路线总共由 n + 1 个不同海拔的点组成。自行车手从海拔为 0 的点 0 开始骑行。
+给你一个长度为 n 的整数数组 gain ，其中 gain[i] 是点 i 和点 i + 1 的 净海拔高度差（0 &lt;= i &lt; n）。请你返回 最高点的海拔 。
+示例 1：
+输入：gain = [-5,1,5,0,-7] 输出：1 解释：海拔高度依次为 [0,-5,-4,1,1,-6] 。最高海拔为 1 。 示例 2：
+输入：gain = [-4,-3,-2,-1,4,3,2] 输出：0 解释：海拔高度依次为 [0,-4,-7,-9,-10,-6,-3,-1] 。最高海拔为 0 。 提示：
+n == gain.length 1 &lt;= n &lt;= 100 -100 &lt;= gain[i] &lt;= 100 方法一：一次遍历，前缀和（差分数组） golang func largestAltitude(gain []int) int { ans, sum := 0, 0 for _, v := range gain { sum += v // 前缀和 ans = max(ans, sum) // 维护最大值 } return ans } func max(a, b int) int { if a &amp;gt; b { return a } return b } // 省略max函数写法 func largestAltitude(gain []int) int { ans, sum := 0, 0 for _, v := range gain { sum += v // 前缀和 // 维护最大值 if ans &amp;lt; sum { ans = sum } } return ans } php class Solution { /** * @param Integer[] $gain * @return Integer */ function largestAltitude($gain) { $ans = $total = 0; foreach($gain as $g) { $total += $g; $ans = max($ans, $total); } return $ans; } } 复杂度分析 时间复杂度：O(n)。 空间复杂度：O(1)。 LeetCode题库地址 https://leetcode.</description></item><item><title>【2022-11-15每日一题】1710. 卡车上的最大单元数[Easy]</title><link>/study/leetcode/maximum-units-on-a-truck/</link><pubDate>Tue, 15 Nov 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/maximum-units-on-a-truck/</guid><description>2022-11-15每日一题：1710. 卡车上的最大单元数 难度：Easy
+标签：贪心 、 数组 、 排序
+请你将一些箱子装在 一辆卡车 上。给你一个二维数组 boxTypes ，其中 boxTypes[i] = [numberOfBoxesi, numberOfUnitsPerBoxi] ：
+numberOfBoxesi 是类型 i 的箱子的数量。 numberOfUnitsPerBoxi 是类型 i 每个箱子可以装载的单元数量。 整数 truckSize 表示卡车上可以装载 箱子 的 最大数量 。只要箱子数量不超过 truckSize ，你就可以选择任意箱子装到卡车上。
+返回卡车可以装载 单元 的 最大 总数。
+示例 1：
+输入：boxTypes = [[1,3],[2,2],[3,1]], truckSize = 4 输出：8 解释：箱子的情况如下： - 1 个第一类的箱子，里面含 3 个单元。 - 2 个第二类的箱子，每个里面含 2 个单元。 - 3 个第三类的箱子，每个里面含 1 个单元。 可以选择第一类和第二类的所有箱子，以及第三类的一个箱子。 单元总数 = (1 * 3) + (2 * 2) + (1 * 1) = 8 示例 2：</description></item><item><title>【2022-11-11每日一题】1704. 判断字符串的两半是否相似[Easy]</title><link>/study/leetcode/determine-if-string-halves-are-alike/</link><pubDate>Fri, 11 Nov 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/determine-if-string-halves-are-alike/</guid><description>2022-11-11每日一题：1704. 判断字符串的两半是否相似 难度：Easy
+标签：字符串 、 计数
+给你一个偶数长度的字符串 s 。将其拆分成长度相同的两半，前一半为 a ，后一半为 b 。
+两个字符串 相似 的前提是它们都含有相同数目的元音（'a'，'e'，'i'，'o'，'u'，'A'，'E'，'I'，'O'，'U'）。注意，s 可能同时含有大写和小写字母。
+如果 a 和 b 相似，返回 true ；否则，返回 false 。
+&amp;nbsp;
+示例 1：
+输入：s = "book" 输出：true 解释：a = "bo" 且 b = "ok" 。a 中有 1 个元音，b 也有 1 个元音。所以，a 和 b 相似。 示例 2：
+输入：s = "textbook" 输出：false 解释：a = "text" 且 b = "book" 。a 中有 1 个元音，b 中有 2 个元音。因此，a 和 b 不相似。 注意，元音 o 在 b 中出现两次，记为 2 个。 &amp;nbsp;</description></item><item><title>【2022-11-08每日一题】1684. 统计一致字符串的数目[Easy]</title><link>/study/leetcode/count-the-number-of-consistent-strings/</link><pubDate>Tue, 08 Nov 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/count-the-number-of-consistent-strings/</guid><description>2022-11-08每日一题：1684. 统计一致字符串的数目 难度：Easy
+标签：位运算 、 数组 、 哈希表 、 字符串
+给你一个由不同字符组成的字符串 allowed 和一个字符串数组 words 。如果一个字符串的每一个字符都在 allowed 中，就称这个字符串是 一致字符串 。
+请你返回 words 数组中 一致字符串 的数目。
+示例 1：
+输入：allowed = "ab", words = ["ad","bd","aaab","baa","badab"] 输出：2 解释：字符串 "aaab" 和 "baa" 都是一致字符串，因为它们只包含字符 'a' 和 'b' 。 示例 2：
+输入：allowed = "abc", words = ["a","b","c","ab","ac","bc","abc"] 输出：7 解释：所有字符串都是一致的。 示例 3：
+输入：allowed = "cad", words = ["cc","acd","b","ba","bac","bad","ac","d"] 输出：4 解释：字符串 "cc"，"acd"，"ac" 和 "d" 是一致字符串。 提示：
+1 &lt;= words.length &lt;= 104 1 &lt;= allowed.length &lt;= 26 1 &lt;= words[i].</description></item><item><title>【2022-11-06 加练约瑟夫环】剑指 Offer 62. 圆圈中最后剩下的数字[Easy]</title><link>/study/leetcode/yuan-quan-zhong-zui-hou-sheng-xia-de-shu-zi-lcof/</link><pubDate>Sun, 06 Nov 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/yuan-quan-zhong-zui-hou-sheng-xia-de-shu-zi-lcof/</guid><description>加练：剑指 Offer 62. 圆圈中最后剩下的数字 难度：Easy
+标签：递归 、 数学
+0,1,···,n-1这n个数字排成一个圆圈，从数字0开始，每次从这个圆圈里删除第m个数字（删除后从下一个数字开始计数）。求出这个圆圈里剩下的最后一个数字。
+例如，0、1、2、3、4这5个数字组成一个圆圈，从数字0开始每次删除第3个数字，则删除的前4个数字依次是2、0、4、1，因此最后剩下的数字是3。
+示例 1：
+输入: n = 5, m = 3 输出: 3 示例 2：
+输入: n = 10, m = 17 输出: 2 限制：
+1 &lt;= n &lt;= 10^5 1 &lt;= m &lt;= 10^6 方法一：递归 详细题解 核心思想：f(10,3)的结果就可以转化为f(9,3)的表达,后面也是同理：
+f(10,3)=(f(9,3)+3)%10 f(9,3)=(f(8,3)+3)%9 …… f(2,3)=(f(1,3)+3)%2 f(1,3)=0 代码 func lastRemaining(n int, m int) int { if n == 1 { return 0 } return (lastRemaining(n-1, m) + m) % n } 复杂度分析 时间复杂度：O(n)。 空间复杂度：O(n)。 方法二：迭代 func lastRemaining(n int, m int) int { ans := 0 for i := 1; i &amp;lt;= n; i++ { ans = (ans + m) % i } return ans } 复杂度分析 时间复杂度：O(n)。 空间复杂度：O(1)。 LeetCode题库地址 https://leetcode.</description></item><item><title>【2022-11-06每日一题】1678. 设计 Goal 解析器[Easy]</title><link>/study/leetcode/goal-parser-interpretation/</link><pubDate>Sun, 06 Nov 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/goal-parser-interpretation/</guid><description>2022-11-06每日一题：1678. 设计 Goal 解析器 难度：Easy
+标签：字符串
+请你设计一个可以解释字符串 command 的 Goal 解析器 。command 由 "G"、"()" 和/或 "(al)" 按某种顺序组成。Goal 解析器会将 "G" 解释为字符串 "G"、"()" 解释为字符串 "o" ，"(al)" 解释为字符串 "al" 。然后，按原顺序将经解释得到的字符串连接成一个字符串。
+给你字符串 command ，返回 Goal 解析器 对 command 的解释结果。
+示例 1：
+输入：command = "G()(al)" 输出："Goal" 解释：Goal 解析器解释命令的步骤如下所示： G -&amp;gt; G () -&amp;gt; o (al) -&amp;gt; al 最后连接得到的结果是 "Goal" 示例 2：
+输入：command = "G()()()()(al)" 输出："Gooooal" 示例 3：
+输入：command = "(al)G(al)()()G" 输出："alGalooG" 提示：
+1 &amp;lt;= command.length &amp;lt;= 100 command 由 "G"、"()" 和/或 "</description></item><item><title>【2022-11-03每日一题】1668. 最大重复子字符串[Easy]</title><link>/study/leetcode/maximum-repeating-substring/</link><pubDate>Thu, 03 Nov 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/maximum-repeating-substring/</guid><description>2022-11-03每日一题：1668. 最大重复子字符串 难度：Easy
+标签：字符串 、 字符串匹配
+给你一个字符串 sequence ，如果字符串 word 连续重复 k 次形成的字符串是 sequence 的一个子字符串，那么单词 word 的 重复值为 k 。单词 word 的 最大重复值 是单词 word 在 sequence 中最大的重复值。如果 word 不是 sequence 的子串，那么重复值 k 为 0 。
+给你一个字符串 sequence 和 word ，请你返回 最大重复值 k 。
+示例 1：
+输入：sequence = "ababc", word = "ab" 输出：2 解释："abab" 是 "ababc" 的子字符串。 示例 2：
+输入：sequence = "ababc", word = "ba" 输出：1 解释："ba" 是 "ababc" 的子字符串，但 "baba" 不是 "ababc" 的子字符串。 示例 3：</description></item><item><title>【2022-11-01每日一题】1662. 检查两个字符串数组是否相等[Easy]</title><link>/study/leetcode/check-if-two-string-arrays-are-equivalent/</link><pubDate>Tue, 01 Nov 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/check-if-two-string-arrays-are-equivalent/</guid><description>2022-11-01每日一题：1662. 检查两个字符串数组是否相等 难度：Easy
+标签：数组 、 字符串
+给你两个字符串数组 word1 和 word2 。如果两个数组表示的字符串相同，返回 true ；否则，返回 false 。
+数组表示的字符串 是由数组中的所有元素 按顺序 连接形成的字符串。
+示例 1：
+输入：word1 = ["ab", "c"], word2 = ["a", "bc"] 输出：true 解释： word1 表示的字符串为 "ab" + "c" -> "abc" word2 表示的字符串为 "a" + "bc" -> "abc" 两个字符串相同，返回 true 示例 2：
+输入：word1 = ["a", "cb"], word2 = ["ab", "c"] 输出：false 示例 3：
+输入：word1 = ["abc", "d", "defg"], word2 = ["abcddefg"] 输出：true 提示：
+1 &lt;= word1.length, word2.length &lt;= 103 1 &lt;= word1[i].</description></item><item><title>【2022-10-29每日一题】1773. 统计匹配检索规则的物品数量[Easy]</title><link>/study/leetcode/count-items-matching-a-rule/</link><pubDate>Sat, 29 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/count-items-matching-a-rule/</guid><description>2022-10-29每日一题：1773. 统计匹配检索规则的物品数量 难度：Easy
+标签：数组 、 字符串
+给你一个数组 items ，其中 items[i] = [typei, colori, namei] ，描述第 i 件物品的类型、颜色以及名称。
+另给你一条由两个字符串 ruleKey 和 ruleValue 表示的检索规则。
+如果第 i 件物品能满足下述条件之一，则认为该物品与给定的检索规则 匹配 ：
+ruleKey == "type" 且 ruleValue == typei 。 ruleKey == "color" 且 ruleValue == colori 。 ruleKey == "name" 且 ruleValue == namei 。 统计并返回 匹配检索规则的物品数量 。
+示例 1：
+输入：items = [["phone","blue","pixel"],["computer","silver","lenovo"],["phone","gold","iphone"]], ruleKey = "color", ruleValue = "silver" 输出：1 解释：只有一件物品匹配检索规则，这件物品是 ["computer","silver","lenovo"] 。 示例 2：
+输入：items = [["phone","blue","pixel"],["computer","silver","phone"],["phone","gold","iphone"]], ruleKey = "</description></item><item><title>【2022-10-27每日一题】1822. 数组元素积的符号[Easy]</title><link>/study/leetcode/sign-of-the-product-of-an-array/</link><pubDate>Thu, 27 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/sign-of-the-product-of-an-array/</guid><description>2022-10-27每日一题：1822. 数组元素积的符号 难度：Easy
+标签：数组 、 数学
+已知函数 signFunc(x) 将会根据 x 的正负返回特定值：
+如果 x 是正数，返回 1 。 如果 x 是负数，返回 -1 。 如果 x 是等于 0 ，返回 0 。 给你一个整数数组 nums 。令 product 为数组 nums 中所有元素值的乘积。
+返回 signFunc(product) 。
+示例 1：
+输入：nums = [-1,-2,-3,-4,3,2,1] 输出：1 解释：数组中所有值的乘积是 144 ，且 signFunc(144) = 1 示例 2：
+输入：nums = [1,5,0,2,-3] 输出：0 解释：数组中所有值的乘积是 0 ，且 signFunc(0) = 0 示例 3：
+输入：nums = [-1,1,-1,1,-1] 输出：-1 解释：数组中所有值的乘积是 -1 ，且 signFunc(-1) = -1 提示：</description></item><item><title>【2022-10-23每日一题】1768. 交替合并字符串[Easy]</title><link>/study/leetcode/merge-strings-alternately/</link><pubDate>Sun, 23 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/merge-strings-alternately/</guid><description>2022-10-23每日一题：1768. 交替合并字符串 难度：Easy
+标签：双指针 、 字符串
+给你两个字符串 word1 和 word2 。请你从 word1 开始，通过交替添加字母来合并字符串。如果一个字符串比另一个字符串长，就将多出来的字母追加到合并后字符串的末尾。
+返回 合并后的字符串 。
+示例 1：
+输入：word1 = "abc", word2 = "pqr" 输出："apbqcr" 解释：字符串合并情况如下所示： word1： a b c word2： p q r 合并后： a p b q c r 示例 2：
+输入：word1 = "ab", word2 = "pqrs" 输出："apbqrs" 解释：注意，word2 比 word1 长，"rs" 需要追加到合并后字符串的末尾。 word1： a b word2： p q r s 合并后： a p b q r s 示例 3：
+输入：word1 = "abcd", word2 = "</description></item><item><title>【2022-10-19每日一题】1700. 无法吃午餐的学生数量[Easy]</title><link>/study/leetcode/number-of-students-unable-to-eat-lunch/</link><pubDate>Wed, 19 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/number-of-students-unable-to-eat-lunch/</guid><description>2022-10-19每日一题：1700. 无法吃午餐的学生数量 难度：Easy
+标签：栈 、 队列 、 数组 、 模拟
+学校的自助午餐提供圆形和方形的三明治，分别用数字 0 和 1 表示。所有学生站在一个队列里，每个学生要么喜欢圆形的要么喜欢方形的。
+餐厅里三明治的数量与学生的数量相同。所有三明治都放在一个 栈 里，每一轮：
+如果队列最前面的学生 喜欢 栈顶的三明治，那么会 拿走它 并离开队列。 否则，这名学生会 放弃这个三明治 并回到队列的尾部。 这个过程会一直持续到队列里所有学生都不喜欢栈顶的三明治为止。
+给你两个整数数组 students 和 sandwiches ，其中 sandwiches[i] 是栈里面第 i​​​​​​ 个三明治的类型（i = 0 是栈的顶部）， students[j] 是初始队列里第 j​​​​​​ 名学生对三明治的喜好（j = 0 是队列的最开始位置）。请你返回无法吃午餐的学生数量。
+示例 1：
+输入：students = [1,1,0,0], sandwiches = [0,1,0,1] 输出：0 解释： - 最前面的学生放弃最顶上的三明治，并回到队列的末尾，学生队列变为 students = [1,0,0,1]。 - 最前面的学生放弃最顶上的三明治，并回到队列的末尾，学生队列变为 students = [0,0,1,1]。 - 最前面的学生拿走最顶上的三明治，剩余学生队列为 students = [0,1,1]，三明治栈为 sandwiches = [1,0,1]。 - 最前面的学生放弃最顶上的三明治，并回到队列的末尾，学生队列变为 students = [1,1,0]。 - 最前面的学生拿走最顶上的三明治，剩余学生队列为 students = [1,0]，三明治栈为 sandwiches = [0,1]。 - 最前面的学生放弃最顶上的三明治，并回到队列的末尾，学生队列变为 students = [0,1]。 - 最前面的学生拿走最顶上的三明治，剩余学生队列为 students = [1]，三明治栈为 sandwiches = [1]。 - 最前面的学生拿走最顶上的三明治，剩余学生队列为 students = []，三明治栈为 sandwiches = []。 所以所有学生都有三明治吃。 示例 2：</description></item><item><title>【2022-10-11每日一题】1790. 仅执行一次字符串交换能否使两个字符串相等[Easy]</title><link>/study/leetcode/check-if-one-string-swap-can-make-strings-equal/</link><pubDate>Tue, 11 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/check-if-one-string-swap-can-make-strings-equal/</guid><description>2022-10-11每日一题：1790. 仅执行一次字符串交换能否使两个字符串相等 难度：Easy
+标签：哈希表 、 字符串 、 计数
+给你长度相等的两个字符串 s1 和 s2 。一次 字符串交换 操作的步骤如下：选出某个字符串中的两个下标（不必不同），并交换这两个下标所对应的字符。
+如果对 其中一个字符串 执行 最多一次字符串交换 就可以使两个字符串相等，返回 true ；否则，返回 false 。
+示例 1：
+输入：s1 = "bank", s2 = "kanb" 输出：true 解释：例如，交换 s2 中的第一个和最后一个字符可以得到 "bank" 示例 2：
+输入：s1 = "attack", s2 = "defend" 输出：false 解释：一次字符串交换无法使两个字符串相等 示例 3：
+输入：s1 = "kelb", s2 = "kelb" 输出：true 解释：两个字符串已经相等，所以不需要进行字符串交换 示例 4：
+输入：s1 = "abcd", s2 = "dcba" 输出：false 提示：
+1 &amp;lt;= s1.length, s2.length &amp;lt;= 100 s1.length == s2.</description></item><item><title>【2022-10-07每日一题】1800. 最大升序子数组和[Easy]</title><link>/study/leetcode/maximum-ascending-subarray-sum/</link><pubDate>Fri, 07 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/maximum-ascending-subarray-sum/</guid><description>2022-10-07每日一题：1800. 最大升序子数组和 难度：Easy
+标签：数组
+给你一个正整数组成的数组 nums ，返回 nums 中一个 升序 子数组的最大可能元素和。
+子数组是数组中的一个连续数字序列。
+已知子数组 [numsl, numsl+1, ..., numsr-1, numsr] ，若对所有 i（l &lt;= i &lt; r），numsi &lt; numsi+1 都成立，则称这一子数组为 升序 子数组。注意，大小为 1 的子数组也视作 升序 子数组。
+示例 1：
+输入：nums = [10,20,30,5,10,50] 输出：65 解释：[5,10,50] 是元素和最大的升序子数组，最大元素和为 65 。 示例 2：
+输入：nums = [10,20,30,40,50] 输出：150 解释：[10,20,30,40,50] 是元素和最大的升序子数组，最大元素和为 150 。 示例 3：
+输入：nums = [12,17,15,13,10,11,12] 输出：33 解释：[10,11,12] 是元素和最大的升序子数组，最大元素和为 33 。 示例 4：
+输入：nums = [100,10,1] 输出：100 提示：
+1 &lt;= nums.length &lt;= 100 1 &lt;= nums[i] &lt;= 100 方法一： 详细思路过程见官方题解，这里只做个人刷题记录，方便后续查询阅读</description></item><item><title>【2022-10-03每日一题】1784. 检查二进制字符串字段[Easy]</title><link>/study/leetcode/check-if-binary-string-has-at-most-one-segment-of-ones/</link><pubDate>Mon, 03 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/check-if-binary-string-has-at-most-one-segment-of-ones/</guid><description>2022-10-03每日一题：1784. 检查二进制字符串字段 难度：Easy
+标签：字符串
+给你一个二进制字符串 s ，该字符串 不含前导零 。
+如果 s 包含 零个或一个由连续的 '1' 组成的字段 ，返回 true​​​ 。否则，返回 false 。
+如果 s&amp;nbsp;中&amp;nbsp;由连续若干个&amp;nbsp;'1' 组成的字段&amp;nbsp;数量不超过 1，返回 true​​​ 。否则，返回 false 。
+&amp;nbsp;
+示例 1：
+输入：s = "1001" 输出：false 解释：由连续若干个&amp;nbsp;'1' 组成的字段数量为 2，返回 false 示例 2：
+输入：s = "110" 输出：true &amp;nbsp;
+提示：
+1 &amp;lt;= s.length &amp;lt;= 100 s[i]​​​​ 为 '0' 或 '1' s[0] 为 '1' 方法一： 详细思路过程见官方题解，这里只做个人刷题记录，方便后续查询阅读
+思路与算法 题目给定一个长度为 n 的二进制字符串 s，并满足该字符串不含前导零。现在我们需要判断字符串中是否只包含零个或一个由连续 1 组成的字段。首先我们依次分析这两种情况：
+字符串 s 中包含零个由连续 1 组成的字段，那么整个串的表示为 00⋯00。 字符串 s 中只包含一个由连续 1 组成的字段，因为已知字符串 s 不包含前导零，所以整个串的表示为 1⋯100⋯00。 那么可以看到两种情况中都不包含 01 串。且不包含的 01 串的一个二进制字符串也有且仅有上面两种情况。所以我们可以通过原字符串中是否有 01 串来判断字符串中是否只包含零个或一个由连续 1 组成的字段。如果有 01 串则说明该情况不满足，否则即满足该情况条件。</description></item><item><title>【2022-10-01每日一题】1694. 重新格式化电话号码[Easy]</title><link>/study/leetcode/reformat-phone-number/</link><pubDate>Sat, 01 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/reformat-phone-number/</guid><description>2022-10-01每日一题：1694. 重新格式化电话号码 难度：Easy
+标签：字符串
+给你一个字符串形式的电话号码 number 。number 由数字、空格 ' '、和破折号 '-' 组成。
+请你按下述方式重新格式化电话号码。
+首先，删除 所有的空格和破折号。 其次，将数组从左到右 每 3 个一组 分块，直到 剩下 4 个或更少数字。剩下的数字将按下述规定再分块： 2 个数字：单个含 2 个数字的块。 3 个数字：单个含 3 个数字的块。 4 个数字：两个分别含 2 个数字的块。 最后用破折号将这些块连接起来。注意，重新格式化过程中 不应该 生成仅含 1 个数字的块，并且 最多 生成两个含 2 个数字的块。
+返回格式化后的电话号码。
+示例 1：
+输入：number = "1-23-45 6" 输出："123-456" 解释：数字是 "123456" 步骤 1：共有超过 4 个数字，所以先取 3 个数字分为一组。第 1 个块是 "123" 。 步骤 2：剩下 3 个数字，将它们放入单个含 3 个数字的块。第 2 个块是 "456" 。 连接这些块后得到 "</description></item><item><title>【2022-09-29每日一题】面试题 01.09. 字符串轮转[Easy]</title><link>/study/leetcode/string-rotation-lcci/</link><pubDate>Thu, 29 Sep 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/string-rotation-lcci/</guid><description>2022-09-29每日一题：面试题 01.09. 字符串轮转 难度：Easy
+标签：字符串 、 字符串匹配
+字符串轮转。给定两个字符串s1和s2，请编写代码检查s2是否为s1旋转而成（比如，waterbottle是erbottlewat旋转后的字符串）。
+示例1:
+输入：s1 = &amp;quot;waterbottle&amp;quot;, s2 = &amp;quot;erbottlewat&amp;quot; 输出：True 示例2:
+输入：s1 = &amp;quot;aa&amp;quot;, s2 = &amp;quot;aba&amp;quot; 输出：False 提示：
+字符串长度在[0, 100000]范围内。 说明:
+你能只调用一次检查子串的方法吗？ 方法一：模拟 详细思路过程见官方题解，这里只做个人刷题记录，方便后续查询阅读
+func isFlipedString(s1 string, s2 string) bool { n := len(s1) if n != len(s2) { return false } if n == 0 { return true } next: for i := 0; i &amp;lt; n; i++ { for j := 0; j &amp;lt; n; j++ { if s1[(i+j)%n] !</description></item><item><title>【2022-09-27每日一题】面试题 01.02. 判定是否互为字符重排[Easy]</title><link>/study/leetcode/check-permutation-lcci/</link><pubDate>Tue, 27 Sep 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/check-permutation-lcci/</guid><description>2022-09-27每日一题：面试题 01.02. 判定是否互为字符重排 难度：Easy
+标签：哈希表 、 字符串 、 排序
+给定两个字符串 s1 和 s2，请编写一个程序，确定其中一个字符串的字符重新排列后，能否变成另一个字符串。
+示例 1：
+输入: s1 = &amp;quot;abc&amp;quot;, s2 = &amp;quot;bca&amp;quot; 输出: true 示例 2：
+输入: s1 = &amp;quot;abc&amp;quot;, s2 = &amp;quot;bad&amp;quot; 输出: false 说明：
+0 &amp;lt;= len(s1) &amp;lt;= 100 0 &amp;lt;= len(s2) &amp;lt;= 100 方法一：排序 详细思路过程见官方题解，这里只做个人刷题记录，方便后续查询阅读
+func CheckPermutation(s1 string, s2 string) bool { b1, b2 := []byte(s1), []byte(s2) sort.Slice(b1, func(i, j int) bool {return b1[i] &amp;lt; b1[j]}) sort.Slice(b2, func(i, j int) bool {return b2[i] &amp;lt; b2[j]}) // return reflect.</description></item><item><title>【2022-09-24每日一题】1652. 拆炸弹[Easy]</title><link>/study/leetcode/defuse-the-bomb/</link><pubDate>Sat, 24 Sep 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/defuse-the-bomb/</guid><description>2022-09-24每日一题：1652. 拆炸弹 难度：Easy
+标签：数组
+你有一个炸弹需要拆除，时间紧迫！你的情报员会给你一个长度为 n 的 循环 数组 code 以及一个密钥 k 。
+为了获得正确的密码，你需要替换掉每一个数字。所有数字会 同时 被替换。
+如果 k > 0 ，将第 i 个数字用 接下来 k 个数字之和替换。 如果 k &lt; 0 ，将第 i 个数字用 之前 k 个数字之和替换。 如果 k == 0 ，将第 i 个数字用 0 替换。 由于 code 是循环的， code[n-1] 下一个元素是 code[0] ，且 code[0] 前一个元素是 code[n-1] 。
+给你 循环 数组 code 和整数密钥 k ，请你返回解密后的结果来拆除炸弹！
+示例 1：
+输入：code = [5,7,1,4], k = 3 输出：[12,10,16,13] 解释：每个数字都被接下来 3 个数字之和替换。解密后的密码为 [7+1+4, 1+4+5, 4+5+7, 5+7+1]。注意到数组是循环连接的。 示例 2：</description></item><item><title>【2022-09-22每日一题】1640. 能否连接形成数组[Easy]</title><link>/study/leetcode/check-array-formation-through-concatenation/</link><pubDate>Thu, 22 Sep 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/check-array-formation-through-concatenation/</guid><description>2022-09-22每日一题：1640. 能否连接形成数组 难度：Easy
+标签：数组 、 哈希表
+给你一个整数数组 arr ，数组中的每个整数 互不相同 。另有一个由整数数组构成的数组 pieces，其中的整数也 互不相同 。请你以 任意顺序 连接 pieces 中的数组以形成 arr 。但是，不允许 对每个数组 pieces[i] 中的整数重新排序。
+如果可以连接 pieces 中的数组形成 arr ，返回 true ；否则，返回 false 。
+&amp;nbsp;
+示例 1：
+输入：arr = [15,88], pieces = [[88],[15]] 输出：true 解释：依次连接 [15] 和 [88] 示例 2：
+输入：arr = [49,18,16], pieces = [[16,18,49]] 输出：false 解释：即便数字相符，也不能重新排列 pieces[0] 示例 3：
+输入：arr = [91,4,64,78], pieces = [[78],[4,64],[91]] 输出：true 解释：依次连接 [91]、[4,64] 和 [78] &amp;nbsp;
+提示：
+1 &amp;lt;= pieces.length &amp;lt;= arr.</description></item><item><title>【2022-09-19每日一题】1636. 按照频率将数组升序排序</title><link>/study/leetcode/sort-array-by-increasing-frequency/</link><pubDate>Mon, 19 Sep 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/sort-array-by-increasing-frequency/</guid><description>2022-09-19每日一题：1636. 按照频率将数组升序排序 难度：Easy
+标签：数组 、 哈希表 、 排序
+给你一个整数数组 nums ，请你将数组按照每个值的频率 升序 排序。如果有多个值的频率相同，请你按照数值本身将它们 降序 排序。 请你返回排序后的数组。
+示例 1：
+输入：nums = [1,1,2,2,2,3] 输出：[3,1,1,2,2,2] 解释：'3' 频率为 1，'1' 频率为 2，'2' 频率为 3 。 示例 2：
+输入：nums = [2,3,1,3,2] 输出：[1,3,3,2,2] 解释：'2' 和 '3' 频率都为 2 ，所以它们之间按照数值本身降序排序。 示例 3：
+输入：nums = [-1,1,-6,4,5,-6,1,4,1] 输出：[5,-1,4,4,-6,-6,1,1,1] 提示：
+1 &amp;lt;= nums.length &amp;lt;= 100 -100 &amp;lt;= nums[i] &amp;lt;= 100 方法一：模拟 func frequencySort(nums []int) []int { mp := make(map[int]int) for _, num := range nums { mp[num]++ } slice := make([][2]int, 0, len(mp)) for num, count := range mp { slice = append(slice, [2]int{count, num}) } sort.</description></item><item><title>【2022-09-17每日一题】1624. 两个相同字符之间的最长子字符串</title><link>/study/leetcode/largest-substring-between-two-equal-characters/</link><pubDate>Sat, 17 Sep 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/largest-substring-between-two-equal-characters/</guid><description>2022-09-17每日一题：1624. 两个相同字符之间的最长子字符串 难度：Easy 标签：哈希表 、 字符串 给你一个字符串 s，请你返回 两个相同字符之间的最长子字符串的长度 ，计算长度时不含这两个字符。如果不存在这样的子字符串，返回 -1 。
+子字符串 是字符串中的一个连续字符序列。
+示例 1：
+输入：s = "aa" 输出：0 解释：最优的子字符串是两个 'a' 之间的空子字符串。 示例 2：
+输入：s = "abca" 输出：2 解释：最优的子字符串是 "bc" 。 示例 3：
+输入：s = "cbzxy" 输出：-1 解释：s 中不存在出现出现两次的字符，所以返回 -1 。 示例 4：
+输入：s = "cabbac" 输出：4 解释：最优的子字符串是 "abba" ，其他的非最优解包括 "bb" 和 "" 。 提示：
+1 &amp;lt;= s.length &amp;lt;= 300 s 只含小写英文字母 方法一：哈希表 详细思路过程见官方题解，这里只做个人刷题记录，方便后续查询阅读
+直接使用map func maxLengthBetweenEqualCharacters(s string) int { mp, ans := make(map[rune]int), -1 for i, c := range s { if j, ok := mp[c]; ok { ans = max(ans, i - j -1) } else { mp[c] = i } } return ans } func max(a, b int) int { if a &amp;gt; b { return a } return b } 复杂度分析 时间复杂度：O(n)，其中 n 表示字符串的长度。我们只需遍历一遍字符串即可。</description></item></channel></rss>

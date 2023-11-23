@@ -1,0 +1,733 @@
+<!doctype html><html lang=zh dir=ltr><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>第1周 | PHP算法练习 | lbbniu</title>
+<meta name=generator content="Hugo Eureka 0.9.3"><link rel=stylesheet href=/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css><script defer src=/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js></script><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" as=style onload='this.onload=null,this.rel="stylesheet"'><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/github.min.css media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/php.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/java.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/go.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/python.min.js crossorigin></script><link rel=stylesheet href=/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css media=print onload='this.media="all",this.onload=null'><script defer type=text/javascript src=/js/fontawesome.min.35973bea57658ef0dd22ad59ea4642b6c8c67af62bed8659ac326d284ef285a6657cdbcf57d3b2910e7e992f2b20426e.js></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css integrity=sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js integrity=sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY crossorigin></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script><script defer src=https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js integrity=sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0 crossorigin></script><link rel=icon type=image/png sizes=32x32 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_32x32_fill_box_center_3.png><link rel=apple-touch-icon sizes=180x180 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_180x180_fill_box_center_3.png><meta name=description content="第一周 第三课|数组、链表、跳表 参考链接 Java 源码分析（ArrayList） Linked List 的标准实现代码 [Linked List 示例代码](http://www.cs.cmu.edu/~adamchik/15-121/lectures/Linked Lists/code/LinkedList.java) Java 源码分析（LinkedList） LRU Cache - Linked list： LRU 缓存机制 Redis - Skip List：跳跃表 、为啥 Redis 使用跳表（Skip List）而不是使用 Red-Black？ Array 实战题目 11. 盛最多水的容器 //方法一： 暴力求解 双循环 class Solution { /** * @param Integer[] $height * @return Integer */ function maxArea($height) { $max = 0; $len = count($height); for ($i = 0; $i < $len - 1; $i++) { for ($j = $i + 1; $j < $len; $j++) { $area = ($j - $i) * min($height[$i], $height[$j]); $max = $area < $max ?"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"算法学习","item":"/study/"},{"@type":"ListItem","position":2,"name":"极客时间算法训练营2020版","item":"/study/algorithm/"},{"@type":"ListItem","position":3,"name":"PHP算法练习","item":"/study/algorithm/php/"},{"@type":"ListItem","position":4,"name":"第1周","item":"/study/algorithm/php/01%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%B8%80%E5%91%A8/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/study/algorithm/php/01%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%B8%80%E5%91%A8/"},"headline":"第1周 | PHP算法练习 | lbbniu","datePublished":"2021-11-20T17:18:16+08:00","dateModified":"2021-11-20T17:18:16+08:00","wordCount":2417,"publisher":{"@type":"Person","name":"lbbniu","logo":{"@type":"ImageObject","url":"/images/icon.gif"}},"description":"第一周 第三课|数组、链表、跳表 参考链接 Java 源码分析（ArrayList） Linked List 的标准实现代码 [Linked List 示例代码](http:\/\/www.cs.cmu.edu\/~adamchik\/15-121\/lectures\/Linked Lists\/code\/LinkedList.java) Java 源码分析（LinkedList） LRU Cache - Linked list： LRU 缓存机制 Redis - Skip List：跳跃表 、为啥 Redis 使用跳表（Skip List）而不是使用 Red-Black？ Array 实战题目 11. 盛最多水的容器 \/\/方法一： 暴力求解 双循环 class Solution { \/** * @param Integer[] $height * @return Integer *\/ function maxArea($height) { $max = 0; $len = count($height); for ($i = 0; $i \u0026lt; $len - 1; $i\u002b\u002b) { for ($j = $i \u002b 1; $j \u0026lt; $len; $j\u002b\u002b) { $area = ($j - $i) * min($height[$i], $height[$j]); $max = $area \u0026lt; $max ?"}</script><meta property="og:title" content="第1周 | PHP算法练习 | lbbniu"><meta property="og:type" content="article"><meta property="og:image" content="/images/icon.png"><meta property="og:url" content="/study/algorithm/php/01%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%B8%80%E5%91%A8/"><meta property="og:description" content="第一周 第三课|数组、链表、跳表 参考链接 Java 源码分析（ArrayList） Linked List 的标准实现代码 [Linked List 示例代码](http://www.cs.cmu.edu/~adamchik/15-121/lectures/Linked Lists/code/LinkedList.java) Java 源码分析（LinkedList） LRU Cache - Linked list： LRU 缓存机制 Redis - Skip List：跳跃表 、为啥 Redis 使用跳表（Skip List）而不是使用 Red-Black？ Array 实战题目 11. 盛最多水的容器 //方法一： 暴力求解 双循环 class Solution { /** * @param Integer[] $height * @return Integer */ function maxArea($height) { $max = 0; $len = count($height); for ($i = 0; $i < $len - 1; $i++) { for ($j = $i + 1; $j < $len; $j++) { $area = ($j - $i) * min($height[$i], $height[$j]); $max = $area < $max ?"><meta property="og:locale" content="zh"><meta property="og:site_name" content="lbbniu"><meta property="article:published_time" content="2021-11-20T17:18:16+08:00"><meta property="article:modified_time" content="2021-11-20T17:18:16+08:00"><meta property="article:section" content="study"><meta property="article:tag" content="算法"><meta property="article:tag" content="leetcode"><meta property="og:see_also" content="/study/leetcode/leetcode/"><meta property="og:see_also" content="/study/algorithm/go/week10/"><meta property="og:see_also" content="/study/algorithm/go/week01/"><meta property="og:see_also" content="/study/algorithm/php/02%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%BA%8C%E5%91%A8/"><meta property="og:see_also" content="/study/algorithm/go/week02/"><meta property="og:see_also" content="/study/algorithm/php/03%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%B8%89%E5%91%A8/"><body class="flex min-h-screen flex-col"><header class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"><div class="mx-auto w-full max-w-screen-xl"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=="Auto"||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName("html")[0].classList.add("dark")</script><nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0"><a href=/ class="me-6 text-primary-text text-xl font-bold">lbbniu</a>
+<button id=navbar-btn class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+<i class="fas fa-bars"></i></button><div id=target class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20"><div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0"><a href=/post/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">文章</a>
+<a href=/cloud-native/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">云原生</a>
+<a href=/study/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 selected-menu-item me-4">算法学习</a>
+<a href=/docs/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">Go学习训练营</a>
+<a href=/tags/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">标签</a></div><div class=flex><div class="relative pt-4 md:pt-0"><div class="cursor-pointer hover:text-eureka" id=lightDarkMode><i class="fas fa-adjust"></i></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id=is-open></div><div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40" id=lightDarkOptions><span class="px-4 py-1 hover:text-eureka" name=Light>浅色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Dark>深色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Auto>自动</span></div></div></div></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id=is-open-mobile></div></nav><script>let element=document.getElementById("lightDarkMode");storageColorScheme==null||storageColorScheme=="Auto"?document.addEventListener("DOMContentLoaded",()=>{window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",switchDarkMode)}):storageColorScheme=="Light"?(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","sun"),element.firstElementChild.classList.add("fa-sun")):storageColorScheme=="Dark"&&(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","moon"),element.firstElementChild.classList.add("fa-moon")),document.addEventListener("DOMContentLoaded",()=>{getcolorscheme(),switchBurger()})</script></div></header><main class="grow pt-16"><div class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8"><div class=lg:pt-12><div class="flex flex-col md:flex-row bg-secondary-bg rounded"><div class="md:w-1/4 lg:w-1/5 border-e"><div class="sticky top-16 pt-6"><div id=sidebar-title class="md:hidden mx-4 px-2 pt-4 pb-2 md:border-b text-tertiary-text md:text-primary-text"><span class=font-semibold>目录</span>
+<i class='fas fa-caret-right ms-1'></i></div><div id=sidebar-toc class="hidden md:block overflow-y-auto mx-6 md:mx-0 pe-6 pt-2 md:max-h-doc-sidebar bg-primary-bg md:bg-transparent"><div class="flex flex-wrap ms-4 -me-2 p-2 bg-secondary-bg md:bg-primary-bg rounded"><a class=hover:text-eureka href=/study/algorithm/php/>PHP算法练习</a></div><ul class=ps-6><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/php/00%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E9%A2%84%E4%B9%A0/>预习</a></div></li><li class=py-2><div><a class="text-eureka hover:text-eureka" href=/study/algorithm/php/01%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%B8%80%E5%91%A8/>第1周</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/php/02%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%BA%8C%E5%91%A8/>第2周</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/php/03%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%B8%89%E5%91%A8/>第3周</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/php/04%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E5%9B%9B%E5%91%A8/>第4周</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/php/04%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E5%9B%9B%E5%91%A8%E6%80%BB%E7%BB%93/>第4周总结</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/php/06%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E5%85%AD%E5%91%A8/>第6周</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/php/07%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%B8%83%E5%91%A8/>第7周</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/php/08%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E5%85%AB%E5%91%A8/>第8周</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/php/09%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%B9%9D%E5%91%A8/>第9周</a></div></li></ul></div></div></div><div class="w-full md:w-3/4 lg:w-4/5 pb-8 pt-2 md:pt-8"><div class=flex><div class="w-full lg:w-3/4 px-6"><article class=prose><h1 class=mb-4>第1周</h1><div class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"><div class="me-6 my-2"><i class="fas fa-calendar me-1"></i>
+<span>2021-11-20</span></div><div class="me-6 my-2"><i class="fas fa-clock me-1"></i>
+<span>12分钟阅读时长</span></div></div><h1 id=第一周-第三课数组链表跳表>第一周 第三课|数组、链表、跳表</h1><h2 id=参考链接>参考链接</h2><ul><li><a href=http://developer.classpath.org/doc/java/util/ArrayList-source.html target=_blank rel=noopener>Java 源码分析（ArrayList）</a></li><li><a href=http://www.geeksforgeeks.org/implementing-a-linked-list-in-java-using-class/ target=_blank rel=noopener>Linked List 的标准实现代码</a></li><li>[Linked List 示例代码](<a href=http://www.cs.cmu.edu/~adamchik/15-121/lectures/Linked target=_blank rel=noopener>http://www.cs.cmu.edu/~adamchik/15-121/lectures/Linked</a>
+Lists/code/LinkedList.java)</li><li><a href=http://developer.classpath.org/doc/java/util/LinkedList-source.html target=_blank rel=noopener>Java 源码分析（LinkedList）</a></li><li>LRU Cache - Linked list：<a href=http://leetcode-cn.com/problems/lru-cache target=_blank rel=noopener> LRU 缓存机制</a></li><li>Redis - Skip List：<a href=http://redisbook.readthedocs.io/en/latest/internal-datastruct/skiplist.html target=_blank rel=noopener>跳跃表</a>
+、<a href=http://www.zhihu.com/question/20202931 target=_blank rel=noopener>为啥 Redis 使用跳表（Skip List）而不是使用 Red-Black？</a></li></ul><h2 id=array-实战题目>Array 实战题目</h2><h4 id=11-盛最多水的容器httpsleetcode-cncomproblemscontainer-with-most-water><a href=https://leetcode-cn.com/problems/container-with-most-water/ target=_blank rel=noopener>11. 盛最多水的容器</a></h4><pre><code class=language-php>//方法一： 暴力求解 双循环
+class Solution {
+    /**
+     * @param Integer[] $height
+     * @return Integer
+     */
+    function maxArea($height) {
+      $max = 0;
+      $len = count($height);
+      for ($i = 0; $i &lt; $len - 1; $i++) {
+        for ($j = $i + 1; $j &lt; $len; $j++) {
+          $area = ($j - $i) * min($height[$i], $height[$j]);
+          $max = $area &lt; $max ? $max : $area;
+        }
+      }
+      return $max;
+    }
+}
+
+//方法二：双指针法
+class Solution {
+    /**
+     * @param Integer[] $height
+     * @return Integer
+     */
+    function maxArea($nums) {
+      $max = 0;
+      for ($i = 0, $j = count($nums) - 1; $i &lt; $j;) {
+        $width = $j - $i;//计算宽度
+        $height = $nums[$i] &lt; $nums[$j] ? $nums[$i++] : $nums[$j--];//获取最小高度
+        $max = max($max, $width * $height);
+      }
+      return $max;
+    }
+}
+</code></pre><pre><code class=language-java>//java 双指针
+class Solution {
+    public int maxArea(int[] height) {
+      int max = 0;
+      for (i = 0, j = height.length - 1; i &lt; j;) {
+        int minHeight = height[i] &lt; height[j] ? height[i++] : height[j--];
+        int area = (j - i + 1) * minHeight;
+        max = Math.max(max, area);
+      }
+      return max;
+    }
+}
+</code></pre><h4 id=283-移动零httpsleetcode-cncomproblemsmove-zeroes><a href=https://leetcode-cn.com/problems/move-zeroes/ target=_blank rel=noopener>283. 移动零</a></h4><pre><code class=language-php>//方法一
+class Solution {
+    /**
+     * @param Integer[] $nums
+     * @return NULL
+     */
+    function moveZeroes(&amp;$nums) {
+		for ($lastNonZeroe = 0, $i = 0; $i &lt; count($nums); $i++) {
+            //如果为0，交换两个数的值
+            if ($nums[$i] != 0) {
+              $tmp = $nums[$i];
+              $nums[$i] = $nums[$lastNonZeroe];
+              $nums[$lastNonZeroe++] = $tmp;
+            } 
+      	}
+    }
+}
+//方法二 谭超写法
+class Solution {
+    /**
+     * @param Integer[] $nums
+     * @return NULL
+     */
+    function moveZeroes(&amp;$nums) {
+		for ($lastNonZeroe = 0, $i = 0; $i &lt; count($nums); $i++) {
+            //如果为0，交换两个数的值
+            if ($nums[$i] != 0) {
+                 $nums[$lastNonZeroe] = $nums[$i];
+                 if ($i != $lastNonZeroe){
+                      $nums[$i] = 0;
+                 }
+                 $lastNonZeroe++;
+            }
+      	}
+    }
+}
+</code></pre><h4 id=70-爬楼梯httpsleetcode-cncomproblemsclimbing-stairs><a href=https://leetcode-cn.com/problems/climbing-stairs/ target=_blank rel=noopener>70. 爬楼梯</a></h4><pre><code class=language-c++>class Solution {
+public:
+    int climbStairs(int n) {
+      if (n &lt;= 2) return n;
+      //一次迭代法
+      int first = 1, second = 2;
+      for (int i = 3; i &lt;= n; i++) {
+        int tmp = first + second;
+        first = second;
+        second = tmp;
+      }
+	  return second;
+    }
+};
+//方法二：递归
+
+//方法三：递归 + 剪支
+</code></pre><h4 id=15-三数之和httpsleetcode-cncomproblems3sum高频老题><a href=https://leetcode-cn.com/problems/3sum/ target=_blank rel=noopener>15. 三数之和</a>
+(高频老题）</h4><pre><code class=language-php>//方法一： 暴力， 三层循环
+
+//方法二：hash表
+class Solution {
+    /**
+     * @param Integer[] $nums
+     * @return Integer[][]
+     */
+    function threeSum($nums) {
+        $len = count($nums);
+        $res = [];
+        sort($nums);
+        for ($i = 0; $i &lt; $len; $i++) {
+            if ($i &gt; 0 &amp;&amp; $nums[$i] == $nums[$i - 1]) continue;
+            $d = [];
+            for ($j = $i + 1; $j &lt; $len; $j++) {
+                if (!$d[$nums[$j]]) {
+                    $d[- $nums[$i] - $nums[$j]] = 1;
+                } else if ($d[$nums[$j]] == 1) {
+                    $d[$nums[$j]] = 2;
+                    $res[] = [$nums[$i], -$nums[$i]-$nums[$j], $nums[$j]];
+                }
+            }
+        }
+        return $res;
+    }
+}
+//方法三：排序 + 双指针
+class Solution {
+    /**
+     * @param Integer[] $nums
+     * @return Integer[][]
+     */
+    function threeSum($nums) {
+        sort($nums);//排序 O(NlogN)
+      	$res = [];
+      	for ($k = 0; $k &lt; count($nums) - 2 &amp;&amp; $nums[$k] &lt; 1; $k++) {
+          //如果k大于0，过滤重复数字
+          if($k &gt; 0 &amp;&amp; $nums[$k-1] == $nums[$k]) continue;
+          for ($i = $k + 1, $j = count($nums) - 1; $i &lt; $j;) {
+            $sum = $nums[$k] + $nums[$i] + $nums[$j];
+           	if ($sum &lt; 0) {
+               while ($i &lt; $j &amp;&amp; $nums[$i] == $nums[++$i]);
+            } else if ($sum &gt; 0) {
+               while ($i &lt; $j &amp;&amp; $nums[$j] == $nums[--$j]);
+            } else {
+              //相等
+              $res[] = [$nums[$k], $nums[$i], $nums[$j]];
+              //过滤重复解
+              while ($i &lt; $j &amp;&amp; $nums[$i] == $nums[++$i]);
+              while ($i &lt; $j &amp;&amp; $nums[$j] == $nums[--$j]);
+            }
+          }
+        }
+        return $res;
+    }
+}
+</code></pre><h2 id=linked-list-实战题目>Linked List 实战题目</h2><h4 id=206-反转链表httpsleetcode-cncomproblemsreverse-linked-list><a href=https://leetcode-cn.com/problems/reverse-linked-list/ target=_blank rel=noopener>206. 反转链表</a></h4><pre><code class=language-php>//方法一：迭代 （就地逆置法）
+/**
+ * Definition for a singly-linked list.
+ * class ListNode {
+ *     public $val = 0;
+ *     public $next = null;
+ *     function __construct($val) { $this-&gt;val = $val; }
+ * }
+ */
+class Solution {
+    /**
+     * @param ListNode $head
+     * @return ListNode
+     */
+    function reverseList($head) {
+		$pre = null;
+        $cur = $head;
+        while ($cur) {
+            $next = $cur-&gt;next;
+            $cur-&gt;next = $pre;
+            $pre = $cur;
+            $cur = $next;
+        }
+        return $pre;
+    }
+}
+//方法二：头插法
+class Solution {
+    /**
+     * @param ListNode $head
+     * @return ListNode
+     */
+    function reverseList($head) {
+        $tmp_head = new ListNode(0);
+        while ($head) {
+            $tmp = $head-&gt;next;
+            $head-&gt;next = $tmp_head-&gt;next;
+            $tmp_head-&gt;next = $head;
+            $head = $tmp;
+        }
+        return $tmp_head-&gt;next;
+    }
+}
+//方法三：递归
+class Solution {
+    /**
+     * @param ListNode $head
+     * @return ListNode
+     */
+    function reverseList($head) {
+        if ($head == null || $head-&gt;next == null) return $head;
+        $p = $this-&gt;reverseList($head-&gt;next);
+        $head-&gt;next-&gt;next = $head;
+        $head-&gt;next = null;
+				return $p;//$this-&gt;reverse($head);
+    }
+    function reverse($head) {
+        if ($head == null || $head-&gt;next == null) {
+            return $head;
+        }
+        $rhead = $this-&gt;reverse($head);
+        $head-&gt;next-&gt;next = $head;
+        $head-&gt;next = null;
+        return $rhead;
+    }
+}
+</code></pre><h4 id=24-两两交换链表中的节点httpsleetcode-cncomproblemsswap-nodes-in-pairs><a href=https://leetcode-cn.com/problems/swap-nodes-in-pairs/ target=_blank rel=noopener>24. 两两交换链表中的节点</a></h4><pre><code class=language-php>/**
+ * Definition for a singly-linked list.
+ * class ListNode {
+ *     public $val = 0;
+ *     public $next = null;
+ *     function __construct($val) { $this-&gt;val = $val; }
+ * }
+ */
+class Solution {
+
+    /**
+     * @param ListNode $head
+     * @return ListNode
+     */
+    function swapPairs($head) {
+        $dummy = new ListNode(0);
+        $dummy-&gt;next = $head;
+		$pre = $dummy;
+        while ($pre-&gt;next) {
+            $a = $pre-&gt;next;
+            $b = $a-&gt;next;
+            //记录b指向的节点
+            $next = $a-&gt;next-&gt;next;
+            //交换位置
+            $b-&gt;next = $a;
+            $pre-&gt;next = $b;
+            //连接后面节点
+            $a-&gt;next = $next;
+            $pre = $a;//移动头节点
+        }
+        return $dummy-&gt;next;
+    }
+}
+//方法二：递归
+class Solution {
+
+    /**
+     * @param ListNode $head
+     * @return ListNode
+     */
+    function swapPairs($head) {
+        if ($head == null || $head-&gt;next == null) return $head;
+        $second = $head-&gt;next;
+        $head-&gt;next = $this-&gt;swapPairs($second-&gt;next);
+        $second-&gt;next = $head;
+        return $second;
+    }
+}
+</code></pre><h4 id=141-环形链表httpsleetcode-cncomproblemslinked-list-cycle><a href=https://leetcode-cn.com/problems/linked-list-cycle/ target=_blank rel=noopener>141. 环形链表</a></h4><pre><code class=language-c++>//方法一：hash表
+//方法二：快慢指针方法
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    bool hasCycle(ListNode *head) {
+        ListNode *slow = head, *fast = head;
+        while (fast &amp;&amp; fast-&gt;next) {
+            slow = slow-&gt;next;
+            fast = fast-&gt;next-&gt;next;
+            if (slow == fast) {
+                return true;
+            }
+        }
+        return false;
+    }
+};
+</code></pre><h4 id=142-环形链表-iihttpsleetcode-cncomproblemslinked-list-cycle-ii><a href=https://leetcode-cn.com/problems/linked-list-cycle-ii/ target=_blank rel=noopener>142. 环形链表 II</a></h4><pre><code class=language-php>//给定一个链表，返回链表开始入环的第一个节点。 如果链表无环，则返回 null。
+//方法一：hash表
+//方法二：快慢指针方法
+class Solution {
+public:
+    ListNode *detectCycle(ListNode *head) {
+        ListNode *slow = head, *fast = head;
+        while (fast &amp;&amp; fast-&gt;next) {
+            slow = slow-&gt;next;
+            fast = fast-&gt;next-&gt;next;
+            if (slow == fast) {
+                slow = head;
+                while (slow != fast) {
+                    slow = slow-&gt;next;
+                    fast = fast-&gt;next;
+                }
+                return slow;
+            }
+        }
+        return NULL;
+    }
+};
+</code></pre><h4 id=25-k-个一组翻转链表httpsleetcode-cncomproblemsreverse-nodes-in-k-group><a href=https://leetcode-cn.com/problems/reverse-nodes-in-k-group/ target=_blank rel=noopener>25. K 个一组翻转链表</a></h4><pre><code class=language-php>/**
+ * Definition for a singly-linked list.
+ * class ListNode {
+ *     public $val = 0;
+ *     public $next = null;
+ *     function __construct($val) { $this-&gt;val = $val; }
+ * }
+ */
+class Solution {
+
+    /**
+     * @param ListNode $head
+     * @param Integer $k
+     * @return ListNode
+     */
+    function reverseKGroup($head, $k) {
+        $dummy = new ListNode(0);
+        $dummy-&gt;next = $head;
+        $pre = $dummy;
+        $tail = $dummy;
+        while ($pre-&gt;next) {
+            for($i = 0; $i &lt; $k &amp;&amp; $tail; $i++) $tail = $tail-&gt;next;
+            if (!$tail) break;
+            //记录翻转后的尾部节点
+            $head = $pre-&gt;next;
+            //尾插法
+            while($pre-&gt;next != $tail){
+                $cur = $pre-&gt;next;
+                $pre-&gt;next = $cur-&gt;next;
+                //插入尾部
+                $cur-&gt;next = $tail-&gt;next;
+                $tail-&gt;next = $cur;
+            }
+            $pre = $tail = $head;
+        }
+        return $dummy-&gt;next;
+    }
+    //方法二
+    function reverseKGroup2($head, $k) {
+     	$dummy = new ListNode(0);
+        $dummy-&gt;next = $head;
+        $pre = $end = $dummy;
+        while ($end) {
+            for ($i = 1; $i &lt;= $k &amp;&amp; $end; $i++) $end = $end-&gt;next;
+            if (!$end) break;
+            $start = $pre-&gt;next;
+            $next = $end-&gt;next;
+            $end-&gt;next = null;
+            //翻转
+            $pre-&gt;next = $this-&gt;reverse($start);
+            $start-&gt;next = $next;
+            $end = $pre = $start;
+        }
+        return $dummy-&gt;next;
+    }
+    
+    //头插法
+    function reverse($head) {
+        $tmp_head = new ListNode(0);
+        while ($head) {
+            $tmp = $head-&gt;next;
+            $head-&gt;next = $tmp_head-&gt;next;
+            $tmp_head-&gt;next = $head;
+            $head = $tmp;
+        }
+        return $tmp_head-&gt;next;
+    }
+    
+    //递归
+    function reverseKGroup($head, $k) {
+        $curr = $head;
+        $count = 0;
+        while ($count != $k &amp;&amp; $curr) {
+            $curr = $curr-&gt;next;
+            $count++;
+        }
+        if ($count == $k) {
+            $curr = $this-&gt;reverseKGroup($curr, $k);
+            //尾插法 反转
+            while ($count-- &gt; 0) {
+                $next = $head-&gt;next;
+                $head-&gt;next = $curr;
+                $curr = $head;
+                $head = $next;
+            }
+            $head = $curr;
+        }
+        return $head;
+    }
+}
+</code></pre><h2 id=课后作业>课后作业</h2><h4 id=26-删除排序数组中的重复项httpsleetcode-cncomproblemsremove-duplicates-from-sorted-array><a href=https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/ target=_blank rel=noopener>26. 删除排序数组中的重复项</a></h4><pre><code class=language-php>//双指针
+class Solution {
+
+    /**
+     * @param Integer[] $nums
+     * @return Integer
+     */
+    function removeDuplicates(&amp;$nums) {
+        if (count($nums) &lt; 2) return 0;//异常情况
+        $num = 0;
+        for ($i = 1; $i &lt; count($nums); $i++) {
+            if ($nums[$num] != $nums[$i]) {
+                $nums[++$num] = $nums[$i];
+            }
+        }
+		return $num + 1;
+    }
+    
+    function removeDuplicates1(&amp;$nums) {
+        $i = 0;
+        foreach ($nums as $num) {
+            if ($i == 0 || $num &gt; $nums[$i - 1]) {
+                $nums[$i++] = $num;
+            }
+        }
+        return $i;
+    }
+}
+</code></pre><pre><code class=language-c++>//双指针
+class Solution {
+public:
+    int removeDuplicates(vector&lt;int&gt;&amp; nums) {
+        if (nums.size() == 0) return 0;
+        int len = 0;
+        for (int i = 0; i &lt; nums.size(); i++) {
+            if (nums[len] != nums[i]) {
+                nums[++len] = nums[i];
+            }
+        }
+        return len + 1;
+    }
+};
+</code></pre><h4 id=189-旋转数组httpsleetcode-cncomproblemsrotate-array><a href=https://leetcode-cn.com/problems/rotate-array/ target=_blank rel=noopener>189. 旋转数组</a></h4><pre><code class=language-php>//方法一：暴力（执行超时）
+class Solution {
+
+    /**
+     * @param Integer[] $nums
+     * @param Integer $k
+     * @return NULL
+     */
+    function rotate(&amp;$nums, $k) {
+        $tail = count($nums) - 1;
+        while ($k--) {
+            $last = $nums[$tail];
+            for ($i = $tail - 1; $i &gt;=0; $i--) {
+                $nums[$i+1] = $nums[$i];
+            }
+            $nums[0] = $last;
+        }
+    }
+}
+//方法二：借助新数组，直接将元素放到对应位置 (i + k) % 数组长度
+//方法三：使用环状替换
+class Solution {
+
+    /**
+     * @param Integer[] $nums
+     * @param Integer $k
+     * @return NULL
+     */
+    function rotate(&amp;$nums, $k) {
+        $len = count($nums);
+        $k %= $len;
+        for ($start = 0, $count = 0; $count &lt; $len; $start++) {
+            $current = $start; //记录当前位置
+            $pre_num = $nums[$start]; //记录当前元素
+            do {
+                //计算移动到位置
+                $next = ($current + $k) % $len;
+                $next_num = $nums[$next]; //暂存移动到位置的元素
+                $nums[$next] = $pre_num;
+                //重复上述过程， 直到current 与 start 相等 停止本次移动
+                $current = $next;
+                $pre_num = $next_num;
+                $count++;
+            } while ($current != $start);
+        }
+    }
+}
+//方法四：三次翻转
+class Solution {
+
+    /**
+     * @param Integer[] $nums
+     * @param Integer $k
+     * @return NULL
+     */
+    function rotate(&amp;$nums, $k) {
+        $len = count($nums);
+        //异常判断
+        if ($len == 0) return;
+        $k %= $len;
+        $this-&gt;reverse($nums, 0, $len - 1);
+        $this-&gt;reverse($nums, 0, $k - 1);
+        $this-&gt;reverse($nums, $k, $len - 1);
+    }
+    function reverse(&amp;$nums, $start, $end) {
+        while ($start &lt; $end) {
+            $tmp = $nums[$end];
+            $nums[$end--] = $nums[$start];
+            $nums[$start++] = $tmp;
+        }
+    }
+}
+</code></pre><h4 id=21-合并两个有序链表httpsleetcode-cncomproblemsmerge-two-sorted-lists><a href=https://leetcode-cn.com/problems/merge-two-sorted-lists/ target=_blank rel=noopener>21. 合并两个有序链表</a></h4><pre><code class=language-php>/**
+ * Definition for a singly-linked list.
+ * class ListNode {
+ *     public $val = 0;
+ *     public $next = null;
+ *     function __construct($val) { $this-&gt;val = $val; }
+ * }
+ */
+class Solution {
+    /**
+     * @param ListNode $l1
+     * @param ListNode $l2
+     * @return ListNode
+     */
+    function mergeTwoLists($l1, $l2) {
+        $head = new ListNode(0);
+        $pre = $head;
+        while ($l1 &amp;&amp; $l2) {
+            if ($l1-&gt;val &lt; $l2-&gt;val) {
+                $pre-&gt;next = $l1;
+                $l1 = $l1-&gt;next;
+            } else {
+                $pre-&gt;next = $l2;
+                $l2 = $l2-&gt;next;
+            }
+            $pre = $pre-&gt;next;
+        }
+        if ($l1) {
+            $pre-&gt;next = $l1;
+        } else {
+            $pre-&gt;next = $l2;
+        }
+		return $head-&gt;next;
+    }
+}
+</code></pre><h4 id=88-合并两个有序数组httpsleetcode-cncomproblemsmerge-sorted-array><a href=https://leetcode-cn.com/problems/merge-sorted-array/ target=_blank rel=noopener>88. 合并两个有序数组</a></h4><pre><code class=language-php>//方法一 : 合并后排序
+//方法二 : 双指针 / 从前往后 (需要使用临时数组保存$nums1元素)
+//方法三 : 双指针 / 从后往前
+//while(n&gt;0) A[m+n-1] = (m==0||B[n-1] &gt; A[m-1]) ? B[--n] : A[--m];
+class Solution {
+
+    /**
+     * @param Integer[] $nums1
+     * @param Integer $m
+     * @param Integer[] $nums2
+     * @param Integer $n
+     * @return NULL
+     */
+    function merge(&amp;$nums1, $m, $nums2, $n) {
+        $right = $m + $n - 1;
+        $p1 = $m - 1;
+        $p2 = $n - 1;
+        while ($p1 &gt;= 0 &amp;&amp; $p2 &gt;= 0) {
+            //这里可以改为 ?: 三元运算符
+            //$nums1[$right--] = $nums1[$p1] &lt; $nums2[$p2] ? $nums2[$p2--] : $nums1[$p1--];
+        	if ($nums1[$p1] &lt; $nums2[$p2]){
+                $nums1[$right--] = $nums2[$p2--];
+            } else {
+                $nums1[$right--] = $nums1[$p1--];
+            }
+        }
+        while ($p2 &gt;= 0) {
+            $nums1[$right--] = $nums2[$p2--];
+        }
+    }
+}
+</code></pre><pre><code class=language-cpp>class Solution {
+public:
+    void merge(vector&lt;int&gt;&amp; nums1, int m, vector&lt;int&gt;&amp; nums2, int n) {
+        int i = m - 1, j = n - 1, tar = m + n - 1;
+        while (j &gt;= 0) {
+            nums1[tar--] = i &gt;= 0 &amp;&amp; nums1[i] &gt; nums2[j] ? nums1[i--] : nums2[j--];
+        }
+    }
+};
+</code></pre><h4 id=1-两数之和httpsleetcode-cncomproblemstwo-sum><a href=https://leetcode-cn.com/problems/two-sum/ target=_blank rel=noopener>1. 两数之和</a></h4><pre><code class=language-php>// 方法一：暴力 两层循环
+class Solution {
+
+    /**
+     * @param Integer[] $nums
+     * @param Integer $target
+     * @return Integer[]
+     */
+    function twoSum($nums, $target) {
+        $len = count($nums);
+        for ($i = 0; $i &lt; $len - 1; $i++) {
+            for ($j = $i + 1; $j &lt; $len; $j++) {
+                if ($nums[$i] + $nums[$j] == $target) {
+                    return [$i, $j];
+                }
+            }
+        }
+        return null;
+    }
+}
+//方法二：hash表
+class Solution {
+
+    /**
+     * @param Integer[] $nums
+     * @param Integer $target
+     * @return Integer[]
+     */
+    function twoSum($nums, $target) {
+        $hash = [];
+        $hash[$nums[0]] = 0;
+        for ($i = 1; $i &lt; count($nums); $i++) {
+            $diff = $target - $nums[$i];
+            if (isset($hash[$diff])) {
+             	return [$hash[$diff], $i];
+            }
+            $hash[$nums[$i]] = $i;
+        }
+        return null;
+    }
+}
+</code></pre><h4 id=283-移动零httpsleetcode-cncomproblemsmove-zeroes-1><a href=https://leetcode-cn.com/problems/move-zeroes/ target=_blank rel=noopener>283. 移动零</a></h4><pre><code class=language-php>//方法一：一次遍历，双指针
+class Solution {
+    /**
+     * @param Integer[] $nums
+     * @return NULL
+     */
+    function moveZeroes(&amp;$nums) {
+        for ($i = 0, $j = 0; $i &lt; count($nums); $i++) {
+            if ($nums[$i] != 0) {
+                if ($i != $j) {
+                    $nums[$j] = $nums[$i];
+                    $nums[$i] = 0;
+                }
+                $j++;
+            }
+        }
+    }
+}
+//方法二：
+class Solution {
+    /**
+     * @param Integer[] $nums
+     * @return NULL
+     * @ 思路：
+     *   双指针方法，
+     *    ① 变量&quot;cur&quot;表示快速指针，处理新元素。如果新找到的元素不是0，就在最后找到的非0元素之后记录它。
+     *    ② 最后找到的非0元素的位置，由慢指针&quot;lastnonzerofoundat&quot;变量表示。当不断发现新的非0元素时，
+     *      只是在&quot;lastnonzerofoundat+1&quot;第个索引处覆盖它们。此覆盖不会导致任何数据丢失，因为已经处理了
+     *      其中的内容（如果是非0，则已经写入了相应的索引，或者如果是0，则稍后将进行处理）。
+     *    ③ 在&quot;cur&quot;索引到达数组的末尾之后，现在知道所有非0元素，都已按原始顺序移动到数组的开头。
+     *    ④ 将所有0移动到末尾，现在只需要在&quot;lastnonzerofoundat&quot;索引之后，用0填充所有索引。
+     */
+    function moveZeroes(&amp;$nums) {
+        // 最后找到的非零元素位置
+        $lastnonzerofoundat = 0;
+        
+        // 找出所有非零元素，并按照原顺序放入数组
+        for ($i = 0; $i &lt; count($nums); $i++) {
+            if ($nums[$i] != 0) {
+                $nums[$lastnonzerofoundat] = $nums[$i];
+                $lastnonzerofoundat++;
+            }
+        }
+        // 从非零位置的末尾补充0的个数
+        for ($i = $lastnonzerofoundat; $i &lt; count($nums); $i++) {
+            $nums[$i] = 0;
+        }
+    }
+}
+</code></pre><h4 id=66-加一httpsleetcode-cncomproblemsplus-one><a href=https://leetcode-cn.com/problems/plus-one/ target=_blank rel=noopener>66. 加一</a></h4><pre><code class=language-php>//三种情况 [1] [499] [99]
+class Solution {
+    /**
+     * @param Integer[] $digits
+     * @return Integer[]
+     */
+    function plusOne($digits) {
+        for ($len = count($digits) -1; $len &gt;= 0; $len--) {
+            $digits[$len] = ($digits[$len] + 1) % 10;
+            if ($digits[$len] != 0) {
+                return $digits;
+            }
+        }
+        array_unshift($digits, 1);
+        return $digits;
+    }
+}
+</code></pre><h2 id=总结>总结</h2><h4 id=1-两数之和httpsleetcode-cncomproblemstwo-sum-1><a href=https://leetcode-cn.com/problems/two-sum/ target=_blank rel=noopener>1. 两数之和</a></h4><p>方法一：暴力法（两层循环）时间复杂度：O(n^2) ，空间复杂度O(1)</p><p>方法二：两遍哈希表（第一遍构造哈希表，第二遍找答案），时间复杂度：O(n) 空间复杂度O(n)</p><p>方法三：一遍哈希表（最优解）时间复杂度：O(n) ，空间复杂度O(n)</p><h4 id=11-盛最多水的容器httpsleetcode-cncomproblemscontainer-with-most-water-1><a href=https://leetcode-cn.com/problems/container-with-most-water/ target=_blank rel=noopener>11. 盛最多水的容器</a></h4><p>方法一：暴力法（两层循环）时间复杂度：O(n^2) ，空间复杂度：O(1)</p><p>方法二：双指针法（前后两个指针向中间移动，最优解）时间复杂度：O(n) ，空间复杂度：O(1)</p><h4 id=15-三数之和httpsleetcode-cncomproblems3sum><a href=https://leetcode-cn.com/problems/3sum/ target=_blank rel=noopener>15. 三数之和</a></h4><p>方法一：暴力法（三层循环），时间复杂度：O(n^3) ，空间复杂度：O(1)</p><p>方法二：哈希表（排序+两层循环），时间复杂度：O(n^2) ，空间复杂度：O(1)</p><p>方法三：排序+双指针，时间复杂度：O(n^2) ，空间复杂度：O(1)</p><h4 id=21-合并两个有序链表httpsleetcode-cncomproblemsmerge-two-sorted-lists-1><a href=https://leetcode-cn.com/problems/merge-two-sorted-lists/ target=_blank rel=noopener>21. 合并两个有序链表</a></h4><p>方法一：迭代，时间复杂度：O(m+n) ，空间复杂度：O(1)</p><p>方法二：递归（没看明白），时间复杂度：O(m+n) ，空间复杂度：O(m+n)</p><h4 id=24-两两交换链表中的节点httpsleetcode-cncomproblemsswap-nodes-in-pairs-1><a href=https://leetcode-cn.com/problems/swap-nodes-in-pairs/ target=_blank rel=noopener>24. 两两交换链表中的节点</a></h4><p>方法一：迭代， 时间复杂度：O(n) ，空间复杂度：O(1)</p><p>方法二：递归，时间复杂度：O(n) ，空间复杂度：O(n)</p><h4 id=25-k-个一组翻转链表httpsleetcode-cncomproblemsreverse-nodes-in-k-group-1><a href=https://leetcode-cn.com/problems/reverse-nodes-in-k-group/ target=_blank rel=noopener>25. K 个一组翻转链表</a></h4><p>方法一：迭代+就地逆置法， 时间复杂度：O(n) ，空间复杂度：O(1)</p><p>方法二：迭代+尾插法， 时间复杂度：O(n) ，空间复杂度：O(1)</p><p>方式三：递归</p><h4 id=26-删除排序数组中的重复项httpsleetcode-cncomproblemsremove-duplicates-from-sorted-array-1><a href=https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/ target=_blank rel=noopener>26. 删除排序数组中的重复项</a></h4><p>方法一：双指针， 时间复杂度：O(n) ，空间复杂度：O(1)</p><h4 id=66-加一httpsleetcode-cncomproblemsplus-one-1><a href=https://leetcode-cn.com/problems/plus-one/ target=_blank rel=noopener>66. 加一</a></h4><ol><li>末位无进位，则末位加一即可，因为末位无进位，前面也不可能产生进位，比如 45 => 46</li><li>末位有进位，在中间位置进位停止，则需要找到进位的典型标志，即为当前位 %10后为 0，则前一位加 1，直到不为 0 为止，比如 499 => 500</li><li>末位有进位，并且一直进位到最前方导致结果多出一位，对于这种情况，需要在第 2 种情况遍历结束的基础上，进行单独处理，比如 999 => 1000</li></ol><p>时间复杂度：O(n) ，空间复杂度：O(1)</p><h4 id=70-爬楼梯httpsleetcode-cncomproblemsclimbing-stairs-1><a href=https://leetcode-cn.com/problems/climbing-stairs/ target=_blank rel=noopener>70. 爬楼梯</a></h4><p>方法一：暴力递归， 时间复杂度：O(2^n) ，空间复杂度：O(n)</p><p>方法二：记忆化递归，时间复杂度：O(n) ，空间复杂度：O(n)</p><p>方法三：动态规划（dp[i] = dp[i-1]+dp[i-2]），时间复杂度：O(n) ，空间复杂度：O(n)</p><p>方法四：斐波那契数列 ，时间复杂度：O(n) ，空间复杂度：O(1)</p><p>方法五：Binets 方法(矩阵相乘)，时间复杂度：O(logn) ，空间复杂度：O(1)</p><p>方法六：斐波那契公式，时间复杂度：O(logn) ，空间复杂度：O(1)</p><pre><code class=language-java>public class Solution {
+    public int climbStairs(int n) {
+        double sqrt5=Math.sqrt(5);
+        double fibn=Math.pow((1+sqrt5)/2,n+1)-Math.pow((1-sqrt5)/2,n+1);
+        return (int)(fibn/sqrt5);
+    }
+}
+</code></pre><h4 id=88-合并两个有序数组httpsleetcode-cncomproblemsmerge-sorted-array-1><a href=https://leetcode-cn.com/problems/merge-sorted-array/ target=_blank rel=noopener>88. 合并两个有序数组</a></h4><p>方法一：合并排序，时间复杂度：O((m+n)log(m+n)) ，空间复杂度：O(1)</p><p>方法二：双指针从前往后，时间复杂度：O(m+n) ，空间复杂度：O(m)</p><p>方法三：双指针从后往前，时间复杂度：O(m+n) ，空间复杂度：O(1)</p><h4 id=141-环形链表httpsleetcode-cncomproblemslinked-list-cycle-1><a href=https://leetcode-cn.com/problems/linked-list-cycle/ target=_blank rel=noopener>141. 环形链表</a></h4><p>方法一：哈希表（set） ，时间复杂度：O(n) ，空间复杂度：O(n)</p><p>方法二：快慢指针，时间复杂度：O(n) ，空间复杂度：O(1)</p><h4 id=142-环形链表-iihttpsleetcode-cncomproblemslinked-list-cycle-ii-1><a href=https://leetcode-cn.com/problems/linked-list-cycle-ii/ target=_blank rel=noopener>142. 环形链表 II</a></h4><p>方法一：哈希表（set） ，时间复杂度：O(n) ，空间复杂度：O(n)</p><p>方法二：快慢指针，时间复杂度：O(n) ，空间复杂度：O(1)</p><h4 id=189-旋转数组httpsleetcode-cncomproblemsrotate-array-1><a href=https://leetcode-cn.com/problems/rotate-array/ target=_blank rel=noopener>189. 旋转数组</a></h4><p>方法一：暴力法（嵌套循环），时间复杂度：O(n*k) ，空间复杂度：O(1)</p><p>方法二：使用额外空间存储旋转后的数据，时间复杂度：O(n) ，空间复杂度：O(n)</p><p>方法三：使用环状替换（最优解），时间复杂度：O(n) ，空间复杂度：O(1)</p><p>方法四：三次反转，时间复杂度：O(n) ，空间复杂度：O(1)</p><p>方法五：Python切片，（nums[:] = nums[n-k:] + nums[:n-k] ）</p><h4 id=206-反转链表httpsleetcode-cncomproblemsreverse-linked-list-1><a href=https://leetcode-cn.com/problems/reverse-linked-list/ target=_blank rel=noopener>206. 反转链表</a></h4><p>方法一：就地逆置法， 时间复杂度：O(n) ，空间复杂度：O(1)</p><p>方法二：头插法， 时间复杂度：O(n) ，空间复杂度：O(1)</p><p>方法三：递归，时间复杂度：O(n) ，空间复杂度：O(n)</p><h4 id=283-移动零httpsleetcode-cncomproblemsmove-zeroes-2><a href=https://leetcode-cn.com/problems/move-zeroes/ target=_blank rel=noopener>283. 移动零</a></h4><p>最优解：双指针法（快慢指针，慢指针前都是非0，慢指针和当前指针之间都是0），时间复杂度：O(n) ，空间复杂度：O(1)</p><h2 id=下周预习>下周预习</h2><h3 id=预习知识点>预习知识点</h3><ul><li><a href=http://time.geekbang.org/column/article/41222 target=_blank rel=noopener>栈：如何实现浏览器的前进和后退功能？</a></li><li><a href=http://time.geekbang.org/column/article/41330 target=_blank rel=noopener>队列：队列在线程池等有限资源池中的应用</a></li><li><a href=http://time.geekbang.org/column/article/64233 target=_blank rel=noopener>散列表（上）：Word 文档中的单词拼写检查功能是如何实现的？</a></li><li><a href=http://time.geekbang.org/column/article/64586 target=_blank rel=noopener>散列表（中）：如何打造一个工业级水平的散列表？</a></li><li><a href=http://time.geekbang.org/column/article/64858 target=_blank rel=noopener>散列表（下）：为什么散列表和链表经常会一起使用？</a></li><li><a href=http://time.geekbang.org/column/article/65312 target=_blank rel=noopener>哈希算法（上）：如何防止数据库中的用户信息被脱库？</a></li><li><a href=http://time.geekbang.org/column/article/67388 target=_blank rel=noopener>哈希算法（下）：哈希算法在分布式系统中有哪些应用？</a></li></ul><h3 id=预习题目>预习题目</h3><ul><li><a href=https://leetcode-cn.com/problems/valid-parentheses/ target=_blank rel=noopener>有效的括号</a></li><li><a href=https://leetcode-cn.com/problems/min-stack/ target=_blank rel=noopener>最小栈</a></li></ul></article><div class=my-4><a href=/tags/%E7%AE%97%E6%B3%95/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#算法</a>
+<a href=/tags/leetcode/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#leetcode</a></div><div class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"><div><span class="text-primary-text block font-bold">上一页</span>
+<a href=/study/algorithm/php/00%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E9%A2%84%E4%B9%A0/ class=block>预习</a></div><div class="mt-4 md:mt-0 md:text-right"><span class="text-primary-text block font-bold">下一页</span>
+<a href=/study/algorithm/php/02%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%BA%8C%E5%91%A8/ class=block>第2周</a></div></div></div><div class="hidden lg:block lg:w-1/4"><div class="bg-secondary-bg
+prose sticky top-16 z-10 hidden px-6 py-4 lg:block"><h3>本页内容</h3></div><div class="sticky-toc
+border-s
+hidden px-6 pb-6 lg:block"><nav id=TableOfContents><ul><li><a href=#参考链接>参考链接</a></li><li><a href=#array-实战题目>Array 实战题目</a><ul><li><ul><li><a href=#11-盛最多水的容器httpsleetcode-cncomproblemscontainer-with-most-water><a href=https://leetcode-cn.com/problems/container-with-most-water/>11. 盛最多水的容器</a></a></li><li><a href=#283-移动零httpsleetcode-cncomproblemsmove-zeroes><a href=https://leetcode-cn.com/problems/move-zeroes/>283. 移动零</a></a></li><li><a href=#70-爬楼梯httpsleetcode-cncomproblemsclimbing-stairs><a href=https://leetcode-cn.com/problems/climbing-stairs/>70. 爬楼梯</a></a></li><li><a href=#15-三数之和httpsleetcode-cncomproblems3sum高频老题><a href=https://leetcode-cn.com/problems/3sum/>15. 三数之和</a>(高频老题）</a></li></ul></li></ul></li><li><a href=#linked-list-实战题目>Linked List 实战题目</a><ul><li><ul><li><a href=#206-反转链表httpsleetcode-cncomproblemsreverse-linked-list><a href=https://leetcode-cn.com/problems/reverse-linked-list/>206. 反转链表</a></a></li><li><a href=#24-两两交换链表中的节点httpsleetcode-cncomproblemsswap-nodes-in-pairs><a href=https://leetcode-cn.com/problems/swap-nodes-in-pairs/>24. 两两交换链表中的节点</a></a></li><li><a href=#141-环形链表httpsleetcode-cncomproblemslinked-list-cycle><a href=https://leetcode-cn.com/problems/linked-list-cycle/>141. 环形链表</a></a></li><li><a href=#142-环形链表-iihttpsleetcode-cncomproblemslinked-list-cycle-ii><a href=https://leetcode-cn.com/problems/linked-list-cycle-ii/>142. 环形链表 II</a></a></li><li><a href=#25-k-个一组翻转链表httpsleetcode-cncomproblemsreverse-nodes-in-k-group><a href=https://leetcode-cn.com/problems/reverse-nodes-in-k-group/>25. K 个一组翻转链表</a></a></li></ul></li></ul></li><li><a href=#课后作业>课后作业</a><ul><li><ul><li><a href=#26-删除排序数组中的重复项httpsleetcode-cncomproblemsremove-duplicates-from-sorted-array><a href=https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/>26. 删除排序数组中的重复项</a></a></li><li><a href=#189-旋转数组httpsleetcode-cncomproblemsrotate-array><a href=https://leetcode-cn.com/problems/rotate-array/>189. 旋转数组</a></a></li><li><a href=#21-合并两个有序链表httpsleetcode-cncomproblemsmerge-two-sorted-lists><a href=https://leetcode-cn.com/problems/merge-two-sorted-lists/>21. 合并两个有序链表</a></a></li><li><a href=#88-合并两个有序数组httpsleetcode-cncomproblemsmerge-sorted-array><a href=https://leetcode-cn.com/problems/merge-sorted-array/>88. 合并两个有序数组</a></a></li><li><a href=#1-两数之和httpsleetcode-cncomproblemstwo-sum><a href=https://leetcode-cn.com/problems/two-sum/>1. 两数之和</a></a></li><li><a href=#283-移动零httpsleetcode-cncomproblemsmove-zeroes-1><a href=https://leetcode-cn.com/problems/move-zeroes/>283. 移动零</a></a></li><li><a href=#66-加一httpsleetcode-cncomproblemsplus-one><a href=https://leetcode-cn.com/problems/plus-one/>66. 加一</a></a></li></ul></li></ul></li><li><a href=#总结>总结</a><ul><li><ul><li><a href=#1-两数之和httpsleetcode-cncomproblemstwo-sum-1><a href=https://leetcode-cn.com/problems/two-sum/>1. 两数之和</a></a></li><li><a href=#11-盛最多水的容器httpsleetcode-cncomproblemscontainer-with-most-water-1><a href=https://leetcode-cn.com/problems/container-with-most-water/>11. 盛最多水的容器</a></a></li><li><a href=#15-三数之和httpsleetcode-cncomproblems3sum><a href=https://leetcode-cn.com/problems/3sum/>15. 三数之和</a></a></li><li><a href=#21-合并两个有序链表httpsleetcode-cncomproblemsmerge-two-sorted-lists-1><a href=https://leetcode-cn.com/problems/merge-two-sorted-lists/>21. 合并两个有序链表</a></a></li><li><a href=#24-两两交换链表中的节点httpsleetcode-cncomproblemsswap-nodes-in-pairs-1><a href=https://leetcode-cn.com/problems/swap-nodes-in-pairs/>24. 两两交换链表中的节点</a></a></li><li><a href=#25-k-个一组翻转链表httpsleetcode-cncomproblemsreverse-nodes-in-k-group-1><a href=https://leetcode-cn.com/problems/reverse-nodes-in-k-group/>25. K 个一组翻转链表</a></a></li><li><a href=#26-删除排序数组中的重复项httpsleetcode-cncomproblemsremove-duplicates-from-sorted-array-1><a href=https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/>26. 删除排序数组中的重复项</a></a></li><li><a href=#66-加一httpsleetcode-cncomproblemsplus-one-1><a href=https://leetcode-cn.com/problems/plus-one/>66. 加一</a></a></li><li><a href=#70-爬楼梯httpsleetcode-cncomproblemsclimbing-stairs-1><a href=https://leetcode-cn.com/problems/climbing-stairs/>70. 爬楼梯</a></a></li><li><a href=#88-合并两个有序数组httpsleetcode-cncomproblemsmerge-sorted-array-1><a href=https://leetcode-cn.com/problems/merge-sorted-array/>88. 合并两个有序数组</a></a></li><li><a href=#141-环形链表httpsleetcode-cncomproblemslinked-list-cycle-1><a href=https://leetcode-cn.com/problems/linked-list-cycle/>141. 环形链表</a></a></li><li><a href=#142-环形链表-iihttpsleetcode-cncomproblemslinked-list-cycle-ii-1><a href=https://leetcode-cn.com/problems/linked-list-cycle-ii/>142. 环形链表 II</a></a></li><li><a href=#189-旋转数组httpsleetcode-cncomproblemsrotate-array-1><a href=https://leetcode-cn.com/problems/rotate-array/>189. 旋转数组</a></a></li><li><a href=#206-反转链表httpsleetcode-cncomproblemsreverse-linked-list-1><a href=https://leetcode-cn.com/problems/reverse-linked-list/>206. 反转链表</a></a></li><li><a href=#283-移动零httpsleetcode-cncomproblemsmove-zeroes-2><a href=https://leetcode-cn.com/problems/move-zeroes/>283. 移动零</a></a></li></ul></li></ul></li><li><a href=#下周预习>下周预习</a><ul><li><a href=#预习知识点>预习知识点</a></li><li><a href=#预习题目>预习题目</a></li></ul></li></ul></nav></div><script>window.addEventListener("DOMContentLoaded",()=>{enableStickyToc()})</script></div></div></div></div></div><script>document.addEventListener("DOMContentLoaded",()=>{hljs.highlightAll(),changeSidebarHeight(),switchDocToc()})</script></div></div></main><footer class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b"><p class="text-sm text-tertiary-text">&copy; 2021 <a href=https://blog.lbbniu.com/>lbbniu</a>
+&#183; Powered by the <a href=https://github.com/wangchucheng/hugo-eureka class=hover:text-eureka>Eureka</a> theme for <a href=https://gohugo.io class=hover:text-eureka>Hugo</a></p></div></div></footer></body></html>

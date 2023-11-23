@@ -1,0 +1,221 @@
+<!doctype html><html lang=zh dir=ltr><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>【腾讯云 Finops Crane 集训营】EHPA控制器核心源码分析 | lbbniu</title>
+<meta name=generator content="Hugo Eureka 0.9.3"><link rel=stylesheet href=/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css><script defer src=/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js></script><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" as=style onload='this.onload=null,this.rel="stylesheet"'><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/github.min.css media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/php.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/java.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/go.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/python.min.js crossorigin></script><link rel=stylesheet href=/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css media=print onload='this.media="all",this.onload=null'><script defer type=text/javascript src=/js/fontawesome.min.35973bea57658ef0dd22ad59ea4642b6c8c67af62bed8659ac326d284ef285a6657cdbcf57d3b2910e7e992f2b20426e.js></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css integrity=sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js integrity=sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY crossorigin></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script><script defer src=https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js integrity=sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0 crossorigin></script><link rel=icon type=image/png sizes=32x32 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_32x32_fill_box_center_3.png><link rel=apple-touch-icon sizes=180x180 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_180x180_fill_box_center_3.png><meta name=description content="描述"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"文章列表","item":"/post/"},{"@type":"ListItem","position":2,"name":"【腾讯云 Finops Crane 集训营】EHPA控制器核心源码分析","item":"/2022/02/15/crane-ehpa-code/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/2022/02/15/crane-ehpa-code/"},"headline":"【腾讯云 Finops Crane 集训营】EHPA控制器核心源码分析 | lbbniu","datePublished":"2022-02-15T15:20:00+08:00","dateModified":"2023-11-23T18:27:23+08:00","wordCount":776,"author":{"@type":"Person","name":["lbbniu"]},"publisher":{"@type":"Person","name":"lbbniu","logo":{"@type":"ImageObject","url":"/images/icon.gif"}},"description":"描述"}</script><meta property="og:title" content="【腾讯云 Finops Crane 集训营】EHPA控制器核心源码分析 | lbbniu"><meta property="og:type" content="article"><meta property="og:image" content="/images/icon.png"><meta property="og:url" content="/2022/02/15/crane-ehpa-code/"><meta property="og:description" content="描述"><meta property="og:locale" content="zh"><meta property="og:site_name" content="lbbniu"><meta property="article:published_time" content="2022-02-15T15:20:00+08:00"><meta property="article:modified_time" content="2023-11-23T18:27:23+08:00"><meta property="article:section" content="post"><meta property="article:tag" content="finops"><meta property="article:tag" content="crane"><body class="flex min-h-screen flex-col"><header class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"><div class="mx-auto w-full max-w-screen-xl"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=="Auto"||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName("html")[0].classList.add("dark")</script><nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0"><a href=/ class="me-6 text-primary-text text-xl font-bold">lbbniu</a>
+<button id=navbar-btn class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+<i class="fas fa-bars"></i></button><div id=target class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20"><div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0"><a href=/post/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">文章</a>
+<a href=/cloud-native/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">云原生</a>
+<a href=/study/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">算法学习</a>
+<a href=/docs/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">Go学习训练营</a>
+<a href=/tags/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">标签</a></div><div class=flex><div class="relative pt-4 md:pt-0"><div class="cursor-pointer hover:text-eureka" id=lightDarkMode><i class="fas fa-adjust"></i></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id=is-open></div><div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40" id=lightDarkOptions><span class="px-4 py-1 hover:text-eureka" name=Light>浅色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Dark>深色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Auto>自动</span></div></div></div></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id=is-open-mobile></div></nav><script>let element=document.getElementById("lightDarkMode");storageColorScheme==null||storageColorScheme=="Auto"?document.addEventListener("DOMContentLoaded",()=>{window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",switchDarkMode)}):storageColorScheme=="Light"?(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","sun"),element.firstElementChild.classList.add("fa-sun")):storageColorScheme=="Dark"&&(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","moon"),element.firstElementChild.classList.add("fa-moon")),document.addEventListener("DOMContentLoaded",()=>{getcolorscheme(),switchBurger()})</script></div></header><main class="grow pt-16"><div class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8"><div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12"><div class="bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"><article class=prose><h1 class=mb-4>【腾讯云 Finops Crane 集训营】EHPA控制器核心源码分析</h1><div class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"><div class="me-6 my-2"><i class="fas fa-calendar me-1"></i>
+<span>2022-02-15</span></div><div class="me-6 my-2"><i class="fas fa-clock me-1"></i>
+<span>4分钟阅读时长</span></div><div class="me-6 my-2"><i class="fas fa-folder me-1"></i>
+<a href=/categories/%E4%BA%91%E5%8E%9F%E7%94%9F/ class=hover:text-eureka>云原生</a></div></div><blockquote><p>官方文档：<a href=https://gocrane.io/ target=_blank rel=noopener>https://gocrane.io/</a></p><p>Github： <a href=https://github.com/gocrane/crane target=_blank rel=noopener>https://github.com/gocrane/crane</a></p></blockquote><h2 id=启动流程>启动流程</h2><h3 id=main-函数>main 函数</h3><p>craned 启动入口在<code>cmd/craned/main.go</code>文件中，<code>main</code>方法代码如下</p><pre><code class=language-go>func main() {
+	logs.InitLogs()
+	defer logs.FlushLogs()
+
+	ctx := signals.SetupSignalHandler()
+
+	if err := app.NewManagerCommand(ctx).Execute(); err != nil {
+		fmt.Fprintf(os.Stderr, &quot;%v\n&quot;, err)
+		os.Exit(1)
+	}
+}
+</code></pre><p>下面进行逐行分析：</p><ul><li>2~3 行初始化日志，历史defer在程序退出前刷新缓存区</li><li>5行通过<code>controller-runtime</code>包获取信号监听可取消的context</li><li>7行创建<code>cobra.Command</code>命令行实例并直接调用<code>Execute</code>方法启动应用，如果出错退出程序</li></ul><p><code>app.NewManagerCommand</code>方法在<code>cmd/craned/app/manager.go</code>文件中，函数中主要是创建<code>Options</code>和<code>cobra.Command</code>，并初始化命令行参数选项。<code>cobra.Command</code>在执行的时候回调用<code>cmd/craned/app/manager.go</code>文件中的<code>Run</code>函数。</p><h3 id=run-函数>Run 函数</h3><p>下面来重点分析下<code>Run</code>函数。代码如下：</p><pre><code class=language-go>// Run runs the craned with options. This should never exit.
+func Run(ctx context.Context, opts *options.Options) error {
+	config := ctrl.GetConfigOrDie()
+	config.QPS = float32(opts.ApiQps)
+	config.Burst = opts.ApiBurst
+
+	ctrlOptions := ctrl.Options{
+		Scheme:                  scheme,
+		MetricsBindAddress:      opts.MetricsAddr,
+		Port:                    9443,
+		HealthProbeBindAddress:  opts.BindAddr,
+		LeaderElection:          opts.LeaderElection.LeaderElect,
+		LeaderElectionID:        &quot;craned&quot;,
+		LeaderElectionNamespace: known.CraneSystemNamespace,
+	}
+	if opts.CacheUnstructured {
+		ctrlOptions.NewClient = NewCacheUnstructuredClient
+	}
+
+	mgr, err := ctrl.NewManager(config, ctrlOptions)
+	if err != nil {
+		klog.ErrorS(err, &quot;unable to start crane manager&quot;)
+		return err
+	}
+
+	if err := mgr.AddHealthzCheck(&quot;ping&quot;, healthz.Ping); err != nil {
+		klog.ErrorS(err, &quot;failed to add health check endpoint&quot;)
+		return err
+	}
+	// initialize data sources and predictor
+	realtimeDataSources, historyDataSources, dataSourceProviders := initDataSources(mgr, opts)
+	predictorMgr := initPredictorManager(opts, realtimeDataSources, historyDataSources)
+
+	initScheme()
+	initFieldIndexer(mgr)
+	initWebhooks(mgr, opts)
+
+	podOOMRecorder := &amp;oom.PodOOMRecorder{
+		Client:             mgr.GetClient(),
+		OOMRecordMaxNumber: opts.OOMRecordMaxNumber,
+	}
+	if err := podOOMRecorder.SetupWithManager(mgr); err != nil {
+		klog.Exit(err, &quot;Unable to create controller&quot;, &quot;PodOOMRecorder&quot;)
+	}
+	go func() {
+		if err := podOOMRecorder.Run(ctx.Done()); err != nil {
+			klog.Warningf(&quot;Run oom recorder failed: %v&quot;, err)
+		}
+	}()
+
+	recommenderMgr := initRecommenderManager(opts, podOOMRecorder, realtimeDataSources, historyDataSources)
+	initControllers(podOOMRecorder, mgr, opts, predictorMgr, recommenderMgr, historyDataSources[providers.PrometheusDataSource])
+	// initialize custom collector metrics
+	initMetricCollector(mgr)
+	runAll(ctx, mgr, predictorMgr, dataSourceProviders[providers.PrometheusDataSource], opts)
+
+	return nil
+}
+</code></pre><p>逐行分析：</p><ul><li>7-18行根据命令行参数初始化<code>ctrl.Options</code>实例，主要参数有metrics地址、健康检查地址、LeaderElection等</li><li>20~29行创建<strong>控制器管理器</strong>实例，并配置健康检查地址和对应的函数</li><li>31行初始化历史指标查询数据源</li><li>32行初始化预测算法管理器</li><li>34行根据配置启动<code>feature</code></li><li>35行初始化工作节点名索引器</li><li>36行初始化k8s自定义crd的webhook服务</li><li>38~49行实例化Pod OOM控制器获取Pod OOM的事件记录</li><li>51行初始化推荐框架管理器</li><li>52行初始化自定义crd的控制器，比如ehpa、evpa、rr(推荐规则)等k8s控制器</li><li>54行初始化自定义指标收集器</li><li>55行传递相关参数调用<code>runAll</code>函数启动服务，在<code>runAll</code>中利用<code>errorgroup</code>启动了预测管理、容器运行时管理、crane的dashboard接口服务。</li></ul><p>如果对初始化阶段调用的各个函数感兴趣的话，可以自行深入去通读相关源码，启动分析到此结束，下面把主要精力放在ehpa控制源码的分析上面。</p><h2 id=ehpa-核心源码>EHPA 核心源码</h2><h3 id=初始化>初始化</h3><p>ehpa 控制器初始化，并启动控制器循环机制的代码逻辑在<code>cmd/craned/app/manager.go</code>文件中，更具体点是在<code>initControllers</code>函数中，代码如下：</p><pre><code class=language-go>var ehpaController = &amp;ehpa.EffectiveHPAController{
+    Client:      mgr.GetClient(),
+    Scheme:      mgr.GetScheme(),
+    RestMapper:  mgr.GetRESTMapper(),
+    Recorder:    mgr.GetEventRecorderFor(&quot;effective-hpa-controller&quot;),
+    ScaleClient: scaleClient,
+    Config:      opts.EhpaControllerConfig,
+}
+
+if err := (ehpaController).SetupWithManager(mgr); err != nil {
+    klog.Exit(err, &quot;unable to create controller&quot;, &quot;controller&quot;, &quot;EffectiveHPAController&quot;)
+}
+</code></pre><p>逐行分析：</p><ul><li>2~7行给控制器核心字段赋值<ul><li>Client是k8s apisever的客户端，客户端可以对 Kubernetes 对象执行 CRUD 操作。</li><li>Scheme 定义了序列化和反序列化 API 对象的方法，一个类型
+用于在 Go 之间转换组、版本和种类信息的注册表模式，以及不同版本的 Go 模式之间的映射。 一个方案是随着时间的推移，版本化 API 和版本化配置的基础。</li><li>RestMapper 允许客户端将资源映射到种类，并映射种类和版本到用于操作这些对象的接口。</li><li>Recorder 事件上报客户端</li><li>ScaleClient 副本数控制客户端</li><li>Config ehpa的核心配置，主要配置是创建hpa时要向下传递的Label和Annotation，它们都有根据前缀匹配ehpa的配置和直接根据配置向下传播的配置</li></ul></li><li>10行调用<code>SetupWithManager</code>启动ehpa控制，其中最核心的一行代码如下。</li></ul><pre><code class=language-go>return ctrl.NewControllerManagedBy(mgr).
+    For(&amp;autoscalingapi.EffectiveHorizontalPodAutoscaler{}, builder.WithPredicates(predicate.GenerationChangedPredicate{})).
+    Owns(&amp;autoscalingv2.HorizontalPodAutoscaler{}).
+    Owns(&amp;predictionapi.TimeSeriesPrediction{}).
+    Complete(c)
+</code></pre><h3 id=控制循环-reconcile>控制循环 Reconcile</h3><pre><code class=language-go>func (c *EffectiveHPAController) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.Result, error) {
+	klog.V(4).Infof(&quot;Got ehpa %s&quot;, req.NamespacedName)
+
+	ehpa := &amp;autoscalingapi.EffectiveHorizontalPodAutoscaler{}
+	err := c.Client.Get(ctx, req.NamespacedName, ehpa)
+	if err != nil {
+		return ctrl.Result{}, client.IgnoreNotFound(err)
+	}
+
+	RecordMetrics(ehpa)
+	...
+}
+</code></pre><ul><li>4~8 行更加参数 ctrl.Request 获取 EHPA 配置数据，如果已经删除直接退出本次后续逻辑</li><li>10 行记录metrics数据，主要记录副本数统计数据</li></ul><pre><code class=language-go>func (c *EffectiveHPAController) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.Result, error) {
+	...
+    newStatus := ehpa.Status.DeepCopy()
+
+	scale, mapping, err := utils.GetScale(ctx, c.RestMapper, c.ScaleClient, ehpa.Namespace, ehpa.Spec.ScaleTargetRef)
+	if err != nil {
+		c.Recorder.Event(ehpa, v1.EventTypeWarning, &quot;FailedGetScale&quot;, err.Error())
+		klog.Errorf(&quot;Failed to get scale, ehpa %s&quot;, klog.KObj(ehpa))
+		setCondition(newStatus, autoscalingapi.Ready, metav1.ConditionFalse, &quot;FailedGetScale&quot;, &quot;Failed to get scale&quot;)
+		c.UpdateStatus(ctx, ehpa, newStatus)
+		return ctrl.Result{}, err
+	}
+
+	if scale.Spec.Replicas == 0 &amp;&amp; *ehpa.Spec.MinReplicas != 0 {
+		newStatus.CurrentReplicas = &amp;scale.Spec.Replicas
+		setCondition(newStatus, autoscalingapi.Ready, metav1.ConditionFalse, &quot;ScalingDisabled&quot;, &quot;scaling is disabled since the replica count of the target is zero&quot;)
+		c.UpdateStatus(ctx, ehpa, newStatus)
+		return ctrl.Result{}, err
+	}
+    ...
+}
+</code></pre><ul><li>5~12行 判断ehpa目标资源是否支持扩缩容，如果不支持，记录状态数据后，退出后续逻辑</li><li>14~19行判断副本数配置，如果配置异常，记录状态数据后，退出后续逻辑</li></ul><pre><code class=language-go>func (c *EffectiveHPAController) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.Result, error) {
+	...
+	var substitute *autoscalingapi.Substitute
+	if ehpa.Spec.ScaleStrategy == autoscalingapi.ScaleStrategyPreview {
+		substitute, err = c.ReconcileSubstitute(ctx, ehpa, scale)
+		if err != nil {
+			setCondition(newStatus, autoscalingapi.Ready, metav1.ConditionFalse, &quot;FailedReconcileSubstitute&quot;, &quot;Failed to reconcile substitute&quot;)
+			c.UpdateStatus(ctx, ehpa, newStatus)
+			return ctrl.Result{}, err
+		}
+	}
+
+	// reconcile prediction if enabled
+	var tsp *predictionapi.TimeSeriesPrediction
+	if utils.IsEHPAPredictionEnabled(ehpa) &amp;&amp; utils.IsEHPAHasPredictionMetric(ehpa) {
+		tsp, err = c.ReconcilePredication(ctx, ehpa)
+		if err != nil {
+			setCondition(newStatus, autoscalingapi.Ready, metav1.ConditionFalse, &quot;FailedReconcilePrediction&quot;, err.Error())
+			c.UpdateStatus(ctx, ehpa, newStatus)
+			return ctrl.Result{}, err
+		}
+		setPredictionCondition(newStatus, tsp.Status.Conditions)
+	}
+
+	hpa, err := c.ReconcileHPA(ctx, ehpa, substitute, tsp)
+	if err != nil {
+		setCondition(newStatus, autoscalingapi.Ready, metav1.ConditionFalse, &quot;FailedReconcileHPA&quot;, err.Error())
+		c.UpdateStatus(ctx, ehpa, newStatus)
+		return ctrl.Result{}, err
+	}
+
+	newStatus.ExpectReplicas = &amp;hpa.Status.DesiredReplicas
+	newStatus.CurrentReplicas = &amp;hpa.Status.CurrentReplicas
+
+	if hpa.Status.LastScaleTime != nil &amp;&amp; newStatus.LastScaleTime != nil &amp;&amp; hpa.Status.LastScaleTime.After(newStatus.LastScaleTime.Time) {
+		newStatus.LastScaleTime = hpa.Status.LastScaleTime
+	}
+
+	setHPACondition(newStatus, hpa.Status.Conditions)
+
+	// sync custom metric to annotations
+	if hpa.Status.CurrentMetrics != nil {
+		var currentMetrics string
+		if ehpa.Annotations == nil {
+			ehpa.Annotations = map[string]string{}
+		}
+		currentMetrics = ehpa.Annotations[known.EffectiveHorizontalPodAutoscalerCurrentMetricsAnnotation]
+
+		valueBytes, err := yaml.Marshal(hpa.Status.CurrentMetrics)
+		if err == nil &amp;&amp; currentMetrics != string(valueBytes) {
+			ehpa.Annotations[known.EffectiveHorizontalPodAutoscalerCurrentMetricsAnnotation] = string(valueBytes)
+			klog.V(4).Infof(&quot;Updating ehpa %s current metrics: %s.&quot;, klog.KObj(ehpa), string(valueBytes))
+			err := c.Client.Update(ctx, ehpa)
+			if err != nil {
+				klog.Errorf(&quot;Failed to update current metrics for ehpa %s: %v&quot;, klog.KObj(ehpa), err)
+			}
+			klog.Infof(&quot;Updated ehpa %s current metrics: %s.&quot;, klog.KObj(ehpa), string(valueBytes))
+		}
+	}
+
+	// scale target to its specific replicas for Preview strategy
+	if ehpa.Spec.ScaleStrategy == autoscalingapi.ScaleStrategyPreview &amp;&amp; ehpa.Spec.SpecificReplicas != nil &amp;&amp; *ehpa.Spec.SpecificReplicas != scale.Status.Replicas {
+		scale.Spec.Replicas = *ehpa.Spec.SpecificReplicas
+		updatedScale, err := c.ScaleClient.Scales(scale.Namespace).Update(ctx, mapping.Resource.GroupResource(), scale, metav1.UpdateOptions{})
+		if err != nil {
+			c.Recorder.Event(ehpa, v1.EventTypeWarning, &quot;FailedManualScale&quot;, err.Error())
+			msg := fmt.Sprintf(&quot;Failed to manual scale target to specific replicas, ehpa %s replicas %d&quot;, klog.KObj(ehpa), *ehpa.Spec.SpecificReplicas)
+			klog.Error(err, msg)
+			setCondition(newStatus, autoscalingapi.Ready, metav1.ConditionFalse, &quot;FailedScale&quot;, msg)
+			c.UpdateStatus(ctx, ehpa, newStatus)
+			return ctrl.Result{}, err
+		}
+
+		klog.Infof(&quot;Manual scale target to specific replicas, ehpa %s replicas %d&quot;, klog.KObj(ehpa), *ehpa.Spec.SpecificReplicas)
+		now := metav1.Now()
+		newStatus.LastScaleTime = &amp;now
+		newStatus.CurrentReplicas = &amp;updatedScale.Status.Replicas
+	}
+
+	setCondition(newStatus, autoscalingapi.Ready, metav1.ConditionTrue, &quot;EffectiveHorizontalPodAutoscalerReady&quot;, &quot;Effective HPA is ready&quot;)
+	c.UpdateStatus(ctx, ehpa, newStatus)
+	return ctrl.Result{}, nil
+}
+</code></pre><ul><li>3~11行判断EHPA是不是预览(Preview)模式，如果是预览模式的话，控制器会创建或者更新<code>Substitute</code>资源对象</li><li>13~23行判断EHPA是否开启，如果开启则创建或者更新对应的<code>TimeSeriesPrediction</code>资源对象</li><li>25~30行创建对应的<code>HPA</code>资源对象</li><li>32~39行更新当前EHPA状态数据</li><li>42~59行根据HPA的状态数据给当前EHPA增加注解数据</li><li>62~81行更新状态数据和<code>scale</code>副本数配置</li></ul><p>从上面的分析我们可以看到EHPA控制器会创建<code>TimeSeriesPrediction</code>资源，创建<code>TimeSeriesPrediction</code>资源后，<code>TimeSeriesPrediction</code>控制器就开始工作，会驱动对应的预测算法获取历史监控数据，进行副本数预测，病生成预测数据，<strong>metric-adapter</strong>会读取最终的预测数据，给HPA提供指标数据，从而干预影响workload的的扩缩容。</p><p>作者能力有限，如果有理解不正确的还请大佬们指出。</p></article><div class=my-4><a href=/tags/finops/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#finops</a>
+<a href=/tags/crane/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#crane</a></div><div class=py-2><div class="my-8 flex flex-col items-center md:flex-row"><a href=/authors/lbbniu/ class="md:me-4 text-primary-text h-24 w-24"><i class="fas fa-user-circle fa-6x"></i></a><div class="mt-4 w-full md:mt-0 md:w-auto"><a href=/authors/lbbniu/ class="mb-2 block border-b pb-1 text-lg font-bold"><h3>lbbniu</h3></a><span class="block pb-2"></span></div></div></div><div class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"><div><span class="text-primary-text block font-bold">上一页</span>
+<a href=/2022/06/26/open-source-study/ class=block>Go 实战训练营——开源项目学习计划</a></div><div class="mt-4 md:mt-0 md:text-right"><span class="text-primary-text block font-bold">下一页</span>
+<a href=/2022/02/15/pushgateway-group%E6%B8%85%E7%90%86/ class=block>pushgateway group清理</a></div></div></div><div class=col-span-2><div class="bg-primary-bg
+prose sticky top-16 z-10 hidden px-6 py-4 lg:block"><h3>本页内容</h3></div><div class="sticky-toc hidden px-6 pb-6 lg:block"><nav id=TableOfContents><ul><li><a href=#启动流程>启动流程</a><ul><li><a href=#main-函数>main 函数</a></li><li><a href=#run-函数>Run 函数</a></li></ul></li><li><a href=#ehpa-核心源码>EHPA 核心源码</a><ul><li><a href=#初始化>初始化</a></li><li><a href=#控制循环-reconcile>控制循环 Reconcile</a></li></ul></li></ul></nav></div><script>window.addEventListener("DOMContentLoaded",()=>{enableStickyToc()})</script></div></div><script>document.addEventListener("DOMContentLoaded",()=>{hljs.highlightAll()})</script></div></div></main><footer class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b"><p class="text-sm text-tertiary-text">&copy; 2021 <a href=https://blog.lbbniu.com/>lbbniu</a>
+&#183; Powered by the <a href=https://github.com/wangchucheng/hugo-eureka class=hover:text-eureka>Eureka</a> theme for <a href=https://gohugo.io class=hover:text-eureka>Hugo</a></p></div></div></footer></body></html>

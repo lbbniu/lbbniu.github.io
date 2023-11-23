@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>单调栈 on lbbniu</title><link>/tags/%E5%8D%95%E8%B0%83%E6%A0%88/</link><description>Recent content in 单调栈 on lbbniu</description><generator>Hugo -- gohugo.io</generator><language>zh</language><managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor><webMaster>lbbniu@gmail.com (lbbniu)</webMaster><copyright>&amp;copy; 2021 &lt;a href="https://blog.lbbniu.com/">lbbniu&lt;/a></copyright><lastBuildDate>Fri, 28 Oct 2022 00:01:00 +0800</lastBuildDate><atom:link href="/tags/%E5%8D%95%E8%B0%83%E6%A0%88/index.xml" rel="self" type="application/rss+xml"/><item><title>面试题 03.05 栈排序</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/sort-of-stacks-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/sort-of-stacks-lcci/</guid><description>面试题 03.05 栈排序 栈排序。 编写程序，对栈进行排序使最小元素位于栈顶。最多只能使用一个其他的临时栈存放数据，但不得将元素复制到别的数据结构（如数组）中。该栈支持如下操作：push、pop、peek 和 isEmpty。当栈为空时，peek&amp;nbsp;返回 -1。
+示例1:
+输入： [&amp;quot;SortedStack&amp;quot;, &amp;quot;push&amp;quot;, &amp;quot;push&amp;quot;, &amp;quot;peek&amp;quot;, &amp;quot;pop&amp;quot;, &amp;quot;peek&amp;quot;] [[], [1], [2], [], [], []] 输出： [null,null,null,1,null,2] 示例2:
+输入： [&amp;quot;SortedStack&amp;quot;, &amp;quot;pop&amp;quot;, &amp;quot;pop&amp;quot;, &amp;quot;push&amp;quot;, &amp;quot;pop&amp;quot;, &amp;quot;isEmpty&amp;quot;] [[], [], [], [1], [], []] 输出： [null,null,null,null,null,true] 说明:
+栈中的元素数目在[0, 5000]范围内。 type SortedStack struct { } func Constructor() SortedStack { } func (this *SortedStack) Push(val int) { } func (this *SortedStack) Pop() { } func (this *SortedStack) Peek() int { } func (this *SortedStack) IsEmpty() bool { } /** * Your SortedStack object will be instantiated and called as such: * obj := Constructor(); * obj.</description></item><item><title>剑指 Offer 33 二叉搜索树的后序遍历序列</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof/</guid><description>剑指 Offer 33 二叉搜索树的后序遍历序列 输入一个整数数组，判断该数组是不是某二叉搜索树的后序遍历结果。如果是则返回&amp;nbsp;true，否则返回&amp;nbsp;false。假设输入的数组的任意两个数字都互不相同。
+&amp;nbsp;
+参考以下这颗二叉搜索树：
+5 / \ 2 6 / \ 1 3 示例 1：
+输入: [1,6,3,2,5] 输出: false 示例 2：
+输入: [1,3,2,6,5] 输出: true &amp;nbsp;
+提示：
+数组长度 &amp;lt;= 1000 func verifyPostorder(postorder []int) bool { } LeetCode题库地址 https://leetcode.cn/problems/er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof</description></item><item><title>剑指 Offer II 038 每日温度</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/iiqa4i/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/iiqa4i/</guid><description>剑指 Offer II 038 每日温度 请根据每日 气温 列表 temperatures&amp;nbsp;，重新生成一个列表，要求其对应位置的输出为：要想观测到更高的气温，至少需要等待的天数。如果气温在这之后都不会升高，请在该位置用&amp;nbsp;0 来代替。
+&amp;nbsp;
+示例 1:
+输入: temperatures = [73,74,75,71,69,72,76,73] 输出:&amp;nbsp;[1,1,4,2,1,1,0,0] 示例 2:
+输入: temperatures = [30,40,50,60] 输出:&amp;nbsp;[1,1,1,0] 示例 3:
+输入: temperatures = [30,60,90] 输出: [1,1,0] &amp;nbsp;
+提示：
+1 &amp;lt;=&amp;nbsp;temperatures.length &amp;lt;= 105 30 &amp;lt;=&amp;nbsp;temperatures[i]&amp;nbsp;&amp;lt;= 100 &amp;nbsp;
+注意：本题与主站 739&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/daily-temperatures/
+func dailyTemperatures(temperatures []int) []int { } LeetCode题库地址 https://leetcode.cn/problems/iIQa4I</description></item><item><title>剑指 Offer II 039 直方图最大矩形面积</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/0ynmmm/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/0ynmmm/</guid><description>剑指 Offer II 039 直方图最大矩形面积 给定非负整数数组 heights&amp;nbsp;，数组中的数字用来表示柱状图中各个柱子的高度。每个柱子彼此相邻，且宽度为 1 。
+求在该柱状图中，能够勾勒出来的矩形的最大面积。
+&amp;nbsp;
+示例 1:
+输入：heights = [2,1,5,6,2,3] 输出：10 解释：最大的矩形为图中红色区域，面积为 10 示例 2：
+输入： heights = [2,4] 输出： 4 &amp;nbsp;
+提示：
+1 &amp;lt;= heights.length &amp;lt;=105 0 &amp;lt;= heights[i] &amp;lt;= 104 &amp;nbsp;
+注意：本题与主站 84&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/largest-rectangle-in-histogram/
+func largestRectangleArea(heights []int) int { } LeetCode题库地址 https://leetcode.cn/problems/0ynMMM</description></item><item><title>剑指 Offer II 040 矩阵中最大的矩形</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/plyxkq/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/plyxkq/</guid><description>剑指 Offer II 040 矩阵中最大的矩形 给定一个由&amp;nbsp;0 和 1&amp;nbsp;组成的矩阵 matrix&amp;nbsp;，找出只包含 1 的最大矩形，并返回其面积。
+注意：此题 matrix&amp;nbsp;输入格式为一维 01 字符串数组。
+&amp;nbsp;
+示例 1：
+输入：matrix = ["10100","10111","11111","10010"] 输出：6 解释：最大矩形如上图所示。 示例 2：
+输入：matrix = [] 输出：0 示例 3：
+输入：matrix = ["0"] 输出：0 示例 4：
+输入：matrix = ["1"] 输出：1 示例 5：
+输入：matrix = ["00"] 输出：0 &amp;nbsp;
+提示：
+rows == matrix.length cols == matrix[0].length 0 &amp;lt;= row, cols &amp;lt;= 200 matrix[i][j] 为 '0' 或 '1' &amp;nbsp;
+注意：本题与主站 85 题相同（输入参数格式不同）：&amp;nbsp;https://leetcode-cn.com/problems/maximal-rectangle/
+func maximalRectangle(matrix []string) int { } LeetCode题库地址 https://leetcode.</description></item><item><title>面试题 16.16 部分排序</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/sub-sort-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/sub-sort-lcci/</guid><description>面试题 16.16 部分排序 给定一个整数数组，编写一个函数，找出索引m和n，只要将索引区间[m,n]的元素排好序，整个数组就是有序的。注意：n-m尽量最小，也就是说，找出符合条件的最短序列。函数返回值为[m,n]，若不存在这样的m和n（例如整个数组是有序的），请返回[-1,-1]。
+示例：
+输入： [1,2,4,7,10,11,7,12,6,7,16,18,19] 输出： [3,9] 提示：
+0 &lt;= len(array) &lt;= 1000000 func subSort(array []int) []int { } LeetCode题库地址 https://leetcode.cn/problems/sub-sort-lcci</description></item><item><title>面试题 17.21 直方图的水量</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/volume-of-histogram-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/volume-of-histogram-lcci/</guid><description>面试题 17.21 直方图的水量 给定一个直方图(也称柱状图)，假设有人从上面源源不断地倒水，最后直方图能存多少水量?直方图的宽度为 1。
+上面是由数组 [0,1,0,2,1,0,1,3,2,1,2,1] 表示的直方图，在这种情况下，可以接 6 个单位的水（蓝色部分表示水）。&amp;nbsp;感谢 Marcos 贡献此图。
+示例:
+输入: [0,1,0,2,1,0,1,3,2,1,2,1] 输出: 6 func trap(height []int) int { } LeetCode题库地址 https://leetcode.cn/problems/volume-of-histogram-lcci</description></item><item><title>【2022-10-28每日一题】907. 子数组的最小值之和[Medium]</title><link>/study/leetcode/sum-of-subarray-minimums/</link><pubDate>Fri, 28 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/sum-of-subarray-minimums/</guid><description>2022-10-28每日一题：907. 子数组的最小值之和 难度：Medium
+标签：栈 、 数组 、 动态规划 、 单调栈
+给定一个整数数组 arr，找到 min(b) 的总和，其中 b 的范围为 arr 的每个（连续）子数组。
+由于答案可能很大，因此 返回答案模 10^9 + 7 。
+示例 1：
+输入：arr = [3,1,2,4] 输出：17 解释： 子数组为 [3]，[1]，[2]，[4]，[3,1]，[1,2]，[2,4]，[3,1,2]，[1,2,4]，[3,1,2,4]。 最小值为 3，1，2，4，1，1，2，1，1，1，和为 17。 示例 2：
+输入：arr = [11,81,94,43,3] 输出：444 提示：
+1 &lt;= arr.length &lt;= 3 * 104 1 &lt;= arr[i] &lt;= 3 * 104 方法一：单调栈 官方优化版 const mod int = 1e9+7 func sumSubarrayMins(arr []int) int { n := len(arr) left, right := make([]int, n), make([]int, n) stack := []int{-1} // -1 为哨兵 for i := 0; i &amp;lt; n; i++ { for len(stack) &amp;gt; 1 &amp;amp;&amp;amp; arr[stack[len(stack)-1]] &amp;gt;= arr[i] { stack = stack[:len(stack)-1] } left[i] = i - stack[len(stack)-1] stack = append(stack, i) } stack = []int{n} for i := n - 1; i &amp;gt;= 0; i-- { for len(stack) &amp;gt; 1 &amp;amp;&amp;amp; arr[stack[len(stack)-1]] &amp;gt; arr[i] { stack = stack[:len(stack)-1] } right[i] = stack[len(stack)-1] - i stack = append(stack, i) } ans := 0 for i, x := range arr { ans = (ans + x * left[i] * right[i]) % mod } return ans } 延迟计算宽度 const mod int = 1e9+7 func sumSubarrayMins(arr []int) int { n := len(arr) left, right := make([]int, n), make([]int, n) stack := []int{-1} // -1 为哨兵 for i := 0; i &amp;lt; n; i++ { for len(stack) &amp;gt; 1 &amp;amp;&amp;amp; arr[stack[len(stack)-1]] &amp;gt;= arr[i] { stack = stack[:len(stack)-1] } left[i] = stack[len(stack)-1] stack = append(stack, i) } stack = []int{n} for i := n - 1; i &amp;gt;= 0; i-- { for len(stack) &amp;gt; 1 &amp;amp;&amp;amp; arr[stack[len(stack)-1]] &amp;gt; arr[i] { stack = stack[:len(stack)-1] } right[i] = stack[len(stack)-1] stack = append(stack, i) } ans := 0 for i, x := range arr { ans = (ans + x * (i - left[i]) * (right[i]-i)) % mod } return ans } 二次遍历变形 func sumSubarrayMins(arr []int) (ans int) { n := len(arr) left := make([]int, n) right := make([]int, n) for i := range right { right[i] = n } st := []int{-1} // -1 为哨兵，方便计算赋值 for i, x := range arr { for len(st) &amp;gt; 1 &amp;amp;&amp;amp; arr[st[len(st)-1]] &amp;gt;= x { right[st[len(st)-1]] = i // i 恰好是栈顶的右边界 st = st[:len(st)-1] } left[i] = st[len(st)-1] // 可以直接计算 i - st[len(st)-1] st = append(st, i) } for i, x := range arr { ans += x * (i - left[i]) * (right[i] - i) // 累加贡献 } return ans % (1e9 + 7) } 优化版本：一次遍历 func sumSubarrayMins(arr []int) (ans int) { arr = append(arr, -1) st := []int{-1} // 哨兵 for r, x := range arr { for len(st) &amp;gt; 1 &amp;amp;&amp;amp; arr[st[len(st)-1]] &amp;gt;= x { i := st[len(st)-1] st = st[:len(st)-1] ans += arr[i] * (i - st[len(st)-1]) * (r - i) // 累加贡献 } st = append(st, r) } return ans % (1e9 + 7) } 复杂度分析 时间复杂度：O(n)。 空间复杂度：O(n)。 方法二：动态规划 const mod int = 1e9 + 7 func sumSubarrayMins(arr []int) (ans int) { n := len(arr) dp := make([]int, n) stack := []int{} // 栈中保持数组索引 for i, x := range arr { // 移除栈顶比当前数大的所有数 for len(stack) &amp;gt; 0 &amp;amp;&amp;amp; arr[stack[len(stack)-1]] &amp;gt; x { stack = stack[:len(stack)-1] } k := i + 1 // 栈为空的k值 if len(stack) &amp;gt; 0 { k = i - stack[len(stack)-1] } dp[i] = k * x if len(stack) &amp;gt; 0 { dp[i] += dp[i-k] } ans = (ans+dp[i]) % mod stack = append(stack, i) } return ans } 复杂度分析 时间复杂度：O(n)。 空间复杂度：O(n)。 LeetCode题库地址 https://leetcode.</description></item><item><title>【2022-10-21每日一题】901. 股票价格跨度[Medium]</title><link>/study/leetcode/online-stock-span/</link><pubDate>Fri, 21 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/online-stock-span/</guid><description>2022-10-21每日一题：901. 股票价格跨度 难度：Medium
+标签：栈 、 设计 、 数据流 、 单调栈
+编写一个 StockSpanner 类，它收集某些股票的每日报价，并返回该股票当日价格的跨度。
+今天股票价格的跨度被定义为股票价格小于或等于今天价格的最大连续日数（从今天开始往回数，包括今天）。
+例如，如果未来7天股票的价格是 [100, 80, 60, 70, 60, 75, 85]，那么股票跨度将是 [1, 1, 1, 2, 1, 4, 6]。
+&amp;nbsp;
+示例：
+输入：[&amp;quot;StockSpanner&amp;quot;,&amp;quot;next&amp;quot;,&amp;quot;next&amp;quot;,&amp;quot;next&amp;quot;,&amp;quot;next&amp;quot;,&amp;quot;next&amp;quot;,&amp;quot;next&amp;quot;,&amp;quot;next&amp;quot;], [[],[100],[80],[60],[70],[60],[75],[85]] 输出：[null,1,1,1,2,1,4,6] 解释： 首先，初始化 S = StockSpanner()，然后： S.next(100) 被调用并返回 1， S.next(80) 被调用并返回 1， S.next(60) 被调用并返回 1， S.next(70) 被调用并返回 2， S.next(60) 被调用并返回 1， S.next(75) 被调用并返回 4， S.next(85) 被调用并返回 6。 注意 (例如) S.next(75) 返回 4，因为截至今天的最后 4 个价格 (包括今天的价格 75) 小于或等于今天的价格。 &amp;nbsp;
+提示：
+调用&amp;nbsp;StockSpanner.next(int price)&amp;nbsp;时，将有&amp;nbsp;1 &amp;lt;= price &amp;lt;= 10^5。 每个测试用例最多可以调用&amp;nbsp; 10000 次 StockSpanner.</description></item><item><title>【2022-10-13每日一题】769. 最多能完成排序的块[Medium]</title><link>/study/leetcode/max-chunks-to-make-sorted/</link><pubDate>Thu, 13 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/max-chunks-to-make-sorted/</guid><description>2022-10-13每日一题：769. 最多能完成排序的块 难度：Medium
+标签：栈 、 贪心 、 数组 、 排序 、 单调栈
+给定一个长度为 n 的整数数组 arr ，它表示在 [0, n - 1] 范围内的整数的排列。
+我们将 arr 分割成若干 块 (即分区)，并对每个块单独排序。将它们连接起来后，使得连接的结果和按升序排序后的原数组相同。
+返回数组能分成的最多块数量。
+&amp;nbsp;
+示例 1:
+输入: arr = [4,3,2,1,0] 输出: 1 解释: 将数组分成2块或者更多块，都无法得到所需的结果。 例如，分成 [4, 3], [2, 1, 0] 的结果是 [3, 4, 0, 1, 2]，这不是有序的数组。 示例 2:
+输入: arr = [1,0,2,3,4] 输出: 4 解释: 我们可以把它分成两块，例如 [1, 0], [2, 3, 4]。 然而，分成 [1, 0], [2], [3], [4] 可以得到最多的块数。 &amp;nbsp;
+提示:</description></item><item><title>【2022-09-01每日一题】1475. 商品折扣后的最终价格</title><link>/study/leetcode/final-prices-with-a-special-discount-in-a-shop/</link><pubDate>Thu, 01 Sep 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/final-prices-with-a-special-discount-in-a-shop/</guid><description>2022-09-01每日一题：1475. 商品折扣后的最终价格 难度：Easy 标签：栈 、 数组 、 单调栈 给你一个数组&amp;nbsp;prices&amp;nbsp;，其中&amp;nbsp;prices[i]&amp;nbsp;是商店里第&amp;nbsp;i&amp;nbsp;件商品的价格。
+商店里正在进行促销活动，如果你要买第&amp;nbsp;i&amp;nbsp;件商品，那么你可以得到与 prices[j] 相等的折扣，其中&amp;nbsp;j&amp;nbsp;是满足&amp;nbsp;j &amp;gt; i&amp;nbsp;且&amp;nbsp;prices[j] &amp;lt;= prices[i]&amp;nbsp;的&amp;nbsp;最小下标&amp;nbsp;，如果没有满足条件的&amp;nbsp;j&amp;nbsp;，你将没有任何折扣。
+请你返回一个数组，数组中第&amp;nbsp;i&amp;nbsp;个元素是折扣后你购买商品 i&amp;nbsp;最终需要支付的价格。
+&amp;nbsp;
+示例 1：
+输入：prices = [8,4,6,2,3] 输出：[4,2,4,2,3] 解释： 商品 0 的价格为 price[0]=8 ，你将得到 prices[1]=4 的折扣，所以最终价格为 8 - 4 = 4 。 商品 1 的价格为 price[1]=4 ，你将得到 prices[3]=2 的折扣，所以最终价格为 4 - 2 = 2 。 商品 2 的价格为 price[2]=6 ，你将得到 prices[3]=2 的折扣，所以最终价格为 6 - 2 = 4 。 商品 3 和 4 都没有折扣。 示例 2：
+输入：prices = [1,2,3,4,5] 输出：[1,2,3,4,5] 解释：在这个例子中，所有商品都没有折扣。 示例 3：</description></item><item><title>【2022-08-20每日一题】654. 最大二叉树</title><link>/study/leetcode/maximum-binary-tree/</link><pubDate>Sat, 20 Aug 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/maximum-binary-tree/</guid><description>2022-08-20每日一题：654. 最大二叉树 难度：Medium 标签：栈 、 树 、 数组 、 分治 、 二叉树 、 单调栈 给定一个不重复的整数数组&amp;nbsp;nums 。&amp;nbsp;最大二叉树&amp;nbsp;可以用下面的算法从&amp;nbsp;nums 递归地构建:
+创建一个根节点，其值为&amp;nbsp;nums 中的最大值。 递归地在最大值&amp;nbsp;左边&amp;nbsp;的&amp;nbsp;子数组前缀上&amp;nbsp;构建左子树。 递归地在最大值 右边 的&amp;nbsp;子数组后缀上&amp;nbsp;构建右子树。 返回&amp;nbsp;nums 构建的 最大二叉树 。
+&amp;nbsp;
+示例 1：
+输入：nums = [3,2,1,6,0,5] 输出：[6,3,5,null,2,0,null,null,1] 解释：递归调用如下所示： - [3,2,1,6,0,5] 中的最大值是 6 ，左边部分是 [3,2,1] ，右边部分是 [0,5] 。 - [3,2,1] 中的最大值是 3 ，左边部分是 [] ，右边部分是 [2,1] 。 - 空数组，无子节点。 - [2,1] 中的最大值是 2 ，左边部分是 [] ，右边部分是 [1] 。 - 空数组，无子节点。 - 只有一个元素，所以子节点是一个值为 1 的节点。 - [0,5] 中的最大值是 5 ，左边部分是 [0] ，右边部分是 [] 。 - 只有一个元素，所以子节点是一个值为 0 的节点。 - 空数组，无子节点。 示例 2：</description></item><item><title>【2022-08-13每日一题】768. 最多能完成排序的块 II</title><link>/study/leetcode/max-chunks-to-make-sorted-ii/</link><pubDate>Sat, 13 Aug 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/max-chunks-to-make-sorted-ii/</guid><description>2022-08-13每日一题：768. 最多能完成排序的块 II 难度：Hard 标签：栈 、 贪心 、 数组 、 排序 、 单调栈 这个问题和&amp;ldquo;最多能完成排序的块&amp;rdquo;相似，但给定数组中的元素可以重复，输入数组最大长度为2000，其中的元素最大为10**8。
+arr是一个可能包含重复元素的整数数组，我们将这个数组分割成几个&amp;ldquo;块&amp;rdquo;，并将这些块分别进行排序。之后再连接起来，使得连接的结果和按升序排序后的原数组相同。
+我们最多能将数组分成多少块？
+示例&amp;nbsp;1:
+输入: arr = [5,4,3,2,1] 输出: 1 解释: 将数组分成2块或者更多块，都无法得到所需的结果。 例如，分成 [5, 4], [3, 2, 1] 的结果是 [4, 5, 1, 2, 3]，这不是有序的数组。 示例 2:
+输入: arr = [2,1,3,4,4] 输出: 4 解释: 我们可以把它分成两块，例如 [2, 1], [3, 4, 4]。 然而，分成 [2, 1], [3], [4], [4] 可以得到最多的块数。 注意:
+arr的长度在[1, 2000]之间。 arr[i]的大小在[0, 10**8]之间。 ### 方法一：单调栈 思路 对于已经分好块的数组，若块数大于 1，则可以得到以下结论：右边的块的所有数字均大于或等于左边的块的所有数字。考虑这个问题：对于已经分好块的数组，若在其末尾添加一个数字，如何求得新数组的分块方式？
+新添加的数字可能会改变原数组的分块方式。如果新添加的数字大于或等于原数组最后一个块的最大值，则这个新添加的数字可以自己形成一个块。如果新添加的数字小于原数组最后一个块的最大值，则它必须融入最后一个块。如果它大于或等于原数组倒数第二个块（如果有）的最大值，那么这个过程可以停止，新数组的分块方式已经求得。否则，它将继续融合原数组倒数第二个块，直到遇到一个块，使得该块的最大值小于或等于这个新添加的数，或者这个数字已经融合了所有块。
+上述分析过程中，我们只用到了块的最大值来进行比较，比较过程又是从右到左，符合栈的思想，因此可以用类似单调栈的数据结构来存储块的最大值。
+代码 func maxChunksToSorted(arr []int) int { st := []int{} for _, x := range arr { if len(st) == 0 || x &amp;gt;= st[len(st)-1] { st = append(st, x) } else { mx := st[len(st)-1] st = st[:len(st)-1] for len(st) &amp;gt; 0 &amp;amp;&amp;amp; st[len(st)-1] &amp;gt; x { st = st[:len(st)-1] } st = append(st, mx) } } return len(st) } 复杂度分析 时间复杂度：O(n)，其中 n 是输入数组 arr 的长度。需要遍历一遍数组，入栈的操作最多为 n 次。</description></item></channel></rss>

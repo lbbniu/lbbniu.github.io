@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>脑筋急转弯 on lbbniu</title><link>/tags/%E8%84%91%E7%AD%8B%E6%80%A5%E8%BD%AC%E5%BC%AF/</link><description>Recent content in 脑筋急转弯 on lbbniu</description><generator>Hugo -- gohugo.io</generator><language>zh</language><managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor><webMaster>lbbniu@gmail.com (lbbniu)</webMaster><copyright>&amp;copy; 2021 &lt;a href="https://blog.lbbniu.com/">lbbniu&lt;/a></copyright><lastBuildDate>Thu, 28 Jul 2022 22:00:00 +0800</lastBuildDate><atom:link href="/tags/%E8%84%91%E7%AD%8B%E6%80%A5%E8%BD%AC%E5%BC%AF/index.xml" rel="self" type="application/rss+xml"/><item><title>面试题 16.07 最大数值</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/maximum-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/maximum-lcci/</guid><description>面试题 16.07 最大数值 编写一个方法，找出两个数字a和b中最大的那一个。不得使用if-else或其他比较运算符。
+示例：
+输入： a = 1, b = 2 输出： 2 func maximum(a int, b int) int { } LeetCode题库地址 https://leetcode.cn/problems/maximum-lcci</description></item><item><title>剑指 Offer 64 求1+2+…+n</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/qiu-12n-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/qiu-12n-lcof/</guid><description>剑指 Offer 64 求1+2+…+n 求 1+2+...+n ，要求不能使用乘除法、for、while、if、else、switch、case等关键字及条件判断语句（A?B:C）。
+&amp;nbsp;
+示例 1：
+输入: n = 3 输出:&amp;nbsp;6 示例 2：
+输入: n = 9 输出:&amp;nbsp;45 &amp;nbsp;
+限制：
+1 &amp;lt;= n&amp;nbsp;&amp;lt;= 10000 func sumNums(n int) int { } LeetCode题库地址 https://leetcode.cn/problems/qiu-12n-lcof</description></item></channel></rss>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>回溯 on lbbniu</title><link>/tags/%E5%9B%9E%E6%BA%AF/</link><description>Recent content in 回溯 on lbbniu</description><generator>Hugo -- gohugo.io</generator><language>zh</language><managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor><webMaster>lbbniu@gmail.com (lbbniu)</webMaster><copyright>&amp;copy; 2021 &lt;a href="https://blog.lbbniu.com/">lbbniu&lt;/a></copyright><lastBuildDate>Thu, 22 Dec 2022 00:01:00 +0800</lastBuildDate><atom:link href="/tags/%E5%9B%9E%E6%BA%AF/index.xml" rel="self" type="application/rss+xml"/><item><title>剑指 Offer 12 矩阵中的路径</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/ju-zhen-zhong-de-lu-jing-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/ju-zhen-zhong-de-lu-jing-lcof/</guid><description>剑指 Offer 12 矩阵中的路径 给定一个&amp;nbsp;m x n 二维字符网格&amp;nbsp;board 和一个字符串单词&amp;nbsp;word 。如果&amp;nbsp;word 存在于网格中，返回 true ；否则，返回 false 。
+单词必须按照字母顺序，通过相邻的单元格内的字母构成，其中“相邻”单元格是那些水平相邻或垂直相邻的单元格。同一个单元格内的字母不允许被重复使用。
+&amp;nbsp;
+例如，在下面的 3×4 的矩阵中包含单词 "ABCCED"（单词中的字母已标出）。
+&amp;nbsp;
+示例 1：
+输入：board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], word = "ABCCED" 输出：true 示例 2：
+输入：board = [["a","b"],["c","d"]], word = "abcd" 输出：false &amp;nbsp;
+提示：
+m == board.length n = board[i].length 1 &amp;lt;= m, n &amp;lt;= 6 1 &amp;lt;= word.length &amp;lt;= 15 board 和 word 仅由大小写英文字母组成 注意：本题与主站 79 题相同：https://leetcode-cn.com/problems/word-search/
+func exist(board [][]byte, word string) bool { } LeetCode题库地址 https://leetcode.</description></item><item><title>面试题 04.09 二叉搜索树序列</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/bst-sequences-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/bst-sequences-lcci/</guid><description>面试题 04.09 二叉搜索树序列 从左向右遍历一个数组，通过不断将其中的元素插入树中可以逐步地生成一棵二叉搜索树。
+给定一个由不同节点组成的二叉搜索树 root，输出所有可能生成此树的数组。
+&amp;nbsp;
+示例 1:
+输入: root = [2,1,3] 输出: [[2,1,3],[2,3,1]] 解释: 数组 [2,1,3]、[2,3,1] 均可以通过从左向右遍历元素插入树中形成以下二叉搜索树 &amp;nbsp; 2 &amp;nbsp; / \ &amp;nbsp; 1 3 示例&amp;nbsp;2:
+输入: root = [4,1,null,null,3,2] 输出: [[4,1,3,2]] &amp;nbsp;
+提示：
+二叉搜索树中的节点数在&amp;nbsp;[0, 1000]&amp;nbsp;的范围内 1 &amp;lt;= 节点值&amp;nbsp;&amp;lt;= 10^6 用例保证符合要求的数组数量不超过 5000
+/** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ func BSTSequences(root *TreeNode) [][]int { } LeetCode题库地址 https://leetcode.</description></item><item><title>剑指 Offer 34 二叉树中和为某一值的路径</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/er-cha-shu-zhong-he-wei-mou-yi-zhi-de-lu-jing-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/er-cha-shu-zhong-he-wei-mou-yi-zhi-de-lu-jing-lcof/</guid><description>剑指 Offer 34 二叉树中和为某一值的路径 给你二叉树的根节点 root 和一个整数目标和 targetSum ，找出所有 从根节点到叶子节点 路径总和等于给定目标和的路径。
+叶子节点 是指没有子节点的节点。
+&amp;nbsp;
+示例 1：
+输入：root = [5,4,8,11,null,13,4,7,2,null,null,5,1], targetSum = 22 输出：[[5,4,11,2],[5,8,4,5]] 示例 2：
+输入：root = [1,2,3], targetSum = 5 输出：[] 示例 3：
+输入：root = [1,2], targetSum = 0 输出：[] &amp;nbsp;
+提示：
+树中节点总数在范围 [0, 5000] 内 -1000 &amp;lt;= Node.val &amp;lt;= 1000 -1000 &amp;lt;= targetSum &amp;lt;= 1000 注意：本题与主站 113&amp;nbsp;题相同：https://leetcode-cn.com/problems/path-sum-ii/
+/** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ func pathSum(root *TreeNode, target int) [][]int { } LeetCode题库地址 https://leetcode.</description></item><item><title>剑指 Offer 38 字符串的排列</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/zi-fu-chuan-de-pai-lie-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/zi-fu-chuan-de-pai-lie-lcof/</guid><description>剑指 Offer 38 字符串的排列 输入一个字符串，打印出该字符串中字符的所有排列。
+&amp;nbsp;
+你可以以任意顺序返回这个字符串数组，但里面不能有重复元素。
+&amp;nbsp;
+示例:
+输入：s = &amp;quot;abc&amp;quot; 输出：[&amp;quot;abc&amp;quot;,&amp;quot;acb&amp;quot;,&amp;quot;bac&amp;quot;,&amp;quot;bca&amp;quot;,&amp;quot;cab&amp;quot;,&amp;quot;cba&amp;quot;] &amp;nbsp;
+限制：
+1 &amp;lt;= s 的长度 &amp;lt;= 8
+func permutation(s string) []string { } LeetCode题库地址 https://leetcode.cn/problems/zi-fu-chuan-de-pai-lie-lcof</description></item><item><title>面试题 08.02 迷路的机器人</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/robot-in-a-grid-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/robot-in-a-grid-lcci/</guid><description>面试题 08.02 迷路的机器人 设想有个机器人坐在一个网格的左上角，网格 r 行 c 列。机器人只能向下或向右移动，但不能走到一些被禁止的网格（有障碍物）。设计一种算法，寻找机器人从左上角移动到右下角的路径。
+网格中的障碍物和空位置分别用 1 和 0 来表示。
+返回一条可行的路径，路径由经过的网格的行号和列号组成。左上角为 0 行 0 列。如果没有可行的路径，返回空数组。
+示例&amp;nbsp;1:
+输入: [ &amp;nbsp; [0,0,0], &amp;nbsp; [0,1,0], &amp;nbsp; [0,0,0] ] 输出: [[0,0],[0,1],[0,2],[1,2],[2,2]] 解释: 输入中标粗的位置即为输出表示的路径，即 0行0列（左上角） -&amp;gt; 0行1列 -&amp;gt; 0行2列 -&amp;gt; 1行2列 -&amp;gt; 2行2列（右下角） 说明：r&amp;nbsp;和 c 的值均不超过 100。
+func pathWithObstacles(obstacleGrid [][]int) [][]int { } LeetCode题库地址 https://leetcode.cn/problems/robot-in-a-grid-lcci</description></item><item><title>面试题 08.04 幂集</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/power-set-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/power-set-lcci/</guid><description>面试题 08.04 幂集 幂集。编写一种方法，返回某集合的所有子集。集合中不包含重复的元素。
+说明：解集不能包含重复的子集。
+示例:
+输入： nums = [1,2,3] 输出： [ [3], &amp;nbsp; [1], &amp;nbsp; [2], &amp;nbsp; [1,2,3], &amp;nbsp; [1,3], &amp;nbsp; [2,3], &amp;nbsp; [1,2], &amp;nbsp; [] ] func subsets(nums []int) [][]int { } LeetCode题库地址 https://leetcode.cn/problems/power-set-lcci</description></item><item><title>面试题 08.07 无重复字符串的排列组合</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/permutation-i-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/permutation-i-lcci/</guid><description>面试题 08.07 无重复字符串的排列组合 无重复字符串的排列组合。编写一种方法，计算某字符串的所有排列组合，字符串每个字符均不相同。
+示例1:
+输入：S = "qwe" 输出：["qwe", "qew", "wqe", "weq", "ewq", "eqw"] 示例2:
+输入：S = "ab" 输出：["ab", "ba"] 提示:
+字符都是英文字母。 字符串长度在[1, 9]之间。 func permutation(S string) []string { } LeetCode题库地址 https://leetcode.cn/problems/permutation-i-lcci</description></item><item><title>面试题 08.08 有重复字符串的排列组合</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/permutation-ii-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/permutation-ii-lcci/</guid><description>面试题 08.08 有重复字符串的排列组合 有重复字符串的排列组合。编写一种方法，计算某字符串的所有排列组合。
+示例1:
+输入：S = &amp;quot;qqe&amp;quot; 输出：[&amp;quot;eqq&amp;quot;,&amp;quot;qeq&amp;quot;,&amp;quot;qqe&amp;quot;] 示例2:
+输入：S = &amp;quot;ab&amp;quot; 输出：[&amp;quot;ab&amp;quot;, &amp;quot;ba&amp;quot;] 提示:
+字符都是英文字母。 字符串长度在[1, 9]之间。 func permutation(S string) []string { } LeetCode题库地址 https://leetcode.cn/problems/permutation-ii-lcci</description></item><item><title>面试题 08.09 括号</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/bracket-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/bracket-lcci/</guid><description>面试题 08.09 括号 括号。设计一种算法，打印n对括号的所有合法的（例如，开闭一一对应）组合。
+说明：解集不能包含重复的子集。
+例如，给出 n = 3，生成结果为：
+[ "((()))", "(()())", "(())()", "()(())", "()()()" ] func generateParenthesis(n int) []string { } LeetCode题库地址 https://leetcode.cn/problems/bracket-lcci</description></item><item><title>面试题 08.12 八皇后</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/eight-queens-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/eight-queens-lcci/</guid><description>面试题 08.12 八皇后 设计一种算法，打印 N 皇后在 N &amp;times; N 棋盘上的各种摆法，其中每个皇后都不同行、不同列，也不在对角线上。这里的&amp;ldquo;对角线&amp;rdquo;指的是所有的对角线，不只是平分整个棋盘的那两条对角线。
+注意：本题相对原题做了扩展
+示例:
+输入：4 输出：[[&amp;quot;.Q..&amp;quot;,&amp;quot;...Q&amp;quot;,&amp;quot;Q...&amp;quot;,&amp;quot;..Q.&amp;quot;],[&amp;quot;..Q.&amp;quot;,&amp;quot;Q...&amp;quot;,&amp;quot;...Q&amp;quot;,&amp;quot;.Q..&amp;quot;]] 解释: 4 皇后问题存在如下两个不同的解法。 [ &amp;nbsp;[&amp;quot;.Q..&amp;quot;, &amp;nbsp;// 解法 1 &amp;nbsp; &amp;quot;...Q&amp;quot;, &amp;nbsp; &amp;quot;Q...&amp;quot;, &amp;nbsp; &amp;quot;..Q.&amp;quot;], &amp;nbsp;[&amp;quot;..Q.&amp;quot;, &amp;nbsp;// 解法 2 &amp;nbsp; &amp;quot;Q...&amp;quot;, &amp;nbsp; &amp;quot;...Q&amp;quot;, &amp;nbsp; &amp;quot;.Q..&amp;quot;] ] func solveNQueens(n int) [][]string { } LeetCode题库地址 https://leetcode.cn/problems/eight-queens-lcci</description></item><item><title>面试题 16.18 模式匹配</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/pattern-matching-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/pattern-matching-lcci/</guid><description>面试题 16.18 模式匹配 你有两个字符串，即pattern和value。 pattern字符串由字母&amp;quot;a&amp;quot;和&amp;quot;b&amp;quot;组成，用于描述字符串中的模式。例如，字符串&amp;quot;catcatgocatgo&amp;quot;匹配模式&amp;quot;aabab&amp;quot;（其中&amp;quot;cat&amp;quot;是&amp;quot;a&amp;quot;，&amp;quot;go&amp;quot;是&amp;quot;b&amp;quot;），该字符串也匹配像&amp;quot;a&amp;quot;、&amp;quot;ab&amp;quot;和&amp;quot;b&amp;quot;这样的模式。但需注意&amp;quot;a&amp;quot;和&amp;quot;b&amp;quot;不能同时表示相同的字符串。编写一个方法判断value字符串是否匹配pattern字符串。
+示例 1：
+输入： pattern = &amp;quot;abba&amp;quot;, value = &amp;quot;dogcatcatdog&amp;quot; 输出： true 示例 2：
+输入： pattern = &amp;quot;abba&amp;quot;, value = &amp;quot;dogcatcatfish&amp;quot; 输出： false 示例 3：
+输入： pattern = &amp;quot;aaaa&amp;quot;, value = &amp;quot;dogcatcatdog&amp;quot; 输出： false 示例 4：
+输入： pattern = &amp;quot;abba&amp;quot;, value = &amp;quot;dogdogdogdog&amp;quot; 输出： true 解释： &amp;quot;a&amp;quot;=&amp;quot;dogdog&amp;quot;,b=&amp;quot;&amp;quot;，反之也符合规则 提示：
+1 &amp;lt;= len(pattern) &amp;lt;= 1000 0 &amp;lt;= len(value) &amp;lt;= 1000 你可以假设pattern只包含字母&amp;quot;a&amp;quot;和&amp;quot;b&amp;quot;，value仅包含小写字母。 func patternMatching(pattern string, value string) bool { } LeetCode题库地址 https://leetcode.cn/problems/pattern-matching-lcci</description></item><item><title>剑指 Offer II 079 所有子集</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/tvdhkn/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/tvdhkn/</guid><description>剑指 Offer II 079 所有子集 给定一个整数数组&amp;nbsp;nums ，数组中的元素 互不相同 。返回该数组所有可能的子集（幂集）。
+解集 不能 包含重复的子集。你可以按 任意顺序 返回解集。
+&amp;nbsp;
+示例 1：
+输入：nums = [1,2,3] 输出：[[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]] 示例 2：
+输入：nums = [0] 输出：[[],[0]] &amp;nbsp;
+提示：
+1 &amp;lt;= nums.length &amp;lt;= 10 -10 &amp;lt;= nums[i] &amp;lt;= 10 nums 中的所有元素 互不相同 &amp;nbsp;
+注意：本题与主站 78&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/subsets/
+func subsets(nums []int) [][]int { } LeetCode题库地址 https://leetcode.cn/problems/TVdhkn</description></item><item><title>剑指 Offer II 080 含有 k 个元素的组合</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/uusw3b/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/uusw3b/</guid><description>剑指 Offer II 080 含有 k 个元素的组合 给定两个整数 n 和 k，返回 1 ... n 中所有可能的 k 个数的组合。
+&amp;nbsp;
+示例 1:
+输入:&amp;nbsp;n = 4, k = 2 输出: [ [2,4], [3,4], [2,3], [1,2], [1,3], [1,4], ] 示例 2:
+输入:&amp;nbsp;n = 1, k = 1 输出: [[1]] &amp;nbsp;
+提示:
+1 &amp;lt;= n &amp;lt;= 20 1 &amp;lt;= k &amp;lt;= n &amp;nbsp;
+注意：本题与主站 77&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/combinations/
+func combine(n int, k int) [][]int { } LeetCode题库地址 https://leetcode.cn/problems/uUsW3B</description></item><item><title>剑指 Offer II 081 允许重复选择元素的组合</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/ygoe9j/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/ygoe9j/</guid><description>剑指 Offer II 081 允许重复选择元素的组合 给定一个无重复元素的正整数数组&amp;nbsp;candidates&amp;nbsp;和一个正整数&amp;nbsp;target&amp;nbsp;，找出&amp;nbsp;candidates&amp;nbsp;中所有可以使数字和为目标数&amp;nbsp;target&amp;nbsp;的唯一组合。
+candidates&amp;nbsp;中的数字可以无限制重复被选取。如果至少一个所选数字数量不同，则两种组合是不同的。&amp;nbsp;
+对于给定的输入，保证和为&amp;nbsp;target 的唯一组合数少于 150 个。
+&amp;nbsp;
+示例&amp;nbsp;1：
+输入: candidates = [2,3,6,7], target = 7 输出: [[7],[2,2,3]] 示例&amp;nbsp;2：
+输入: candidates = [2,3,5], target = 8 输出: [[2,2,2,2],[2,3,3],[3,5]] 示例 3：
+输入: candidates = [2], target = 1 输出: [] 示例 4：
+输入: candidates = [1], target = 1 输出: [[1]] 示例 5：
+输入: candidates = [1], target = 2 输出: [[1,1]] &amp;nbsp;
+提示：
+1 &amp;lt;= candidates.length &amp;lt;= 30 1 &amp;lt;= candidates[i] &amp;lt;= 200 candidate 中的每个元素都是独一无二的。 1 &amp;lt;= target &amp;lt;= 500 &amp;nbsp;</description></item><item><title>剑指 Offer II 082 含有重复元素集合的组合</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/4sjjuc/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/4sjjuc/</guid><description>剑指 Offer II 082 含有重复元素集合的组合 给定一个可能有重复数字的整数数组&amp;nbsp;candidates&amp;nbsp;和一个目标数&amp;nbsp;target&amp;nbsp;，找出&amp;nbsp;candidates&amp;nbsp;中所有可以使数字和为&amp;nbsp;target&amp;nbsp;的组合。
+candidates&amp;nbsp;中的每个数字在每个组合中只能使用一次，解集不能包含重复的组合。&amp;nbsp;
+&amp;nbsp;
+示例&amp;nbsp;1:
+输入: candidates =&amp;nbsp;[10,1,2,7,6,1,5], target =&amp;nbsp;8, 输出: [ [1,1,6], [1,2,5], [1,7], [2,6] ] 示例&amp;nbsp;2:
+输入: candidates =&amp;nbsp;[2,5,2,1,2], target =&amp;nbsp;5, 输出: [ [1,2,2], [5] ] &amp;nbsp;
+提示:
+1 &amp;lt;=&amp;nbsp;candidates.length &amp;lt;= 100 1 &amp;lt;=&amp;nbsp;candidates[i] &amp;lt;= 50 1 &amp;lt;= target &amp;lt;= 30 &amp;nbsp;
+注意：本题与主站 40&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/combination-sum-ii/
+func combinationSum2(candidates []int, target int) [][]int { } LeetCode题库地址 https://leetcode.cn/problems/4sjJUc</description></item><item><title>剑指 Offer II 083 没有重复元素集合的全排列</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/vvjkup/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/vvjkup/</guid><description>剑指 Offer II 083 没有重复元素集合的全排列 给定一个不含重复数字的整数数组 nums ，返回其 所有可能的全排列 。可以 按任意顺序 返回答案。
+&amp;nbsp;
+示例 1：
+输入：nums = [1,2,3] 输出：[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]] 示例 2：
+输入：nums = [0,1] 输出：[[0,1],[1,0]] 示例 3：
+输入：nums = [1] 输出：[[1]] &amp;nbsp;
+提示：
+1 &amp;lt;= nums.length &amp;lt;= 6 -10 &amp;lt;= nums[i] &amp;lt;= 10 nums 中的所有整数 互不相同 &amp;nbsp;
+注意：本题与主站 46&amp;nbsp;题相同：https://leetcode-cn.com/problems/permutations/&amp;nbsp;
+func permute(nums []int) [][]int { } LeetCode题库地址 https://leetcode.cn/problems/VvJkup</description></item><item><title>剑指 Offer II 084 含有重复元素集合的全排列</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/7p8l0z/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/7p8l0z/</guid><description>剑指 Offer II 084 含有重复元素集合的全排列 给定一个可包含重复数字的整数集合&amp;nbsp;nums ，按任意顺序 返回它所有不重复的全排列。
+&amp;nbsp;
+示例 1：
+输入：nums = [1,1,2] 输出： [[1,1,2], [1,2,1], [2,1,1]] 示例 2：
+输入：nums = [1,2,3] 输出：[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]] &amp;nbsp;
+提示：
+1 &amp;lt;= nums.length &amp;lt;= 8 -10 &amp;lt;= nums[i] &amp;lt;= 10 &amp;nbsp;
+注意：本题与主站 47&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/permutations-ii/
+func permuteUnique(nums []int) [][]int { } LeetCode题库地址 https://leetcode.cn/problems/7p8L0Z</description></item><item><title>剑指 Offer II 085 生成匹配的括号</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/idbivt/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/idbivt/</guid><description>剑指 Offer II 085 生成匹配的括号 正整数&amp;nbsp;n&amp;nbsp;代表生成括号的对数，请设计一个函数，用于能够生成所有可能的并且 有效的 括号组合。
+&amp;nbsp;
+示例 1：
+输入：n = 3 输出：[&amp;quot;((()))&amp;quot;,&amp;quot;(()())&amp;quot;,&amp;quot;(())()&amp;quot;,&amp;quot;()(())&amp;quot;,&amp;quot;()()()&amp;quot;] 示例 2：
+输入：n = 1 输出：[&amp;quot;()&amp;quot;] &amp;nbsp;
+提示：
+1 &amp;lt;= n &amp;lt;= 8 &amp;nbsp;
+注意：本题与主站 22&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/generate-parentheses/
+func generateParenthesis(n int) []string { } LeetCode题库地址 https://leetcode.cn/problems/IDBivT</description></item><item><title>剑指 Offer II 087 复原 IP</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/0on3un/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/0on3un/</guid><description>剑指 Offer II 087 复原 IP 给定一个只包含数字的字符串 s ，用以表示一个 IP 地址，返回所有可能从&amp;nbsp;s 获得的 有效 IP 地址 。你可以按任何顺序返回答案。
+有效 IP 地址 正好由四个整数（每个整数位于 0 到 255 之间组成，且不能含有前导 0），整数之间用 &amp;#39;.&amp;#39; 分隔。
+例如：&amp;quot;0.1.2.201&amp;quot; 和 &amp;quot;192.168.1.1&amp;quot; 是 有效 IP 地址，但是 &amp;quot;0.011.255.245&amp;quot;、&amp;quot;192.168.1.312&amp;quot; 和 &amp;quot;192.168@1.1&amp;quot; 是 无效 IP 地址。
+&amp;nbsp;
+示例 1：
+输入：s = &amp;quot;25525511135&amp;quot; 输出：[&amp;quot;255.255.11.135&amp;quot;,&amp;quot;255.255.111.35&amp;quot;] 示例 2：
+输入：s = &amp;quot;0000&amp;quot; 输出：[&amp;quot;0.0.0.0&amp;quot;] 示例 3：
+输入：s = &amp;quot;1111&amp;quot; 输出：[&amp;quot;1.1.1.1&amp;quot;] 示例 4：
+输入：s = &amp;quot;010010&amp;quot; 输出：[&amp;quot;0.10.0.10&amp;quot;,&amp;quot;0.100.1.0&amp;quot;] 示例 5：
+输入：s = &amp;quot;10203040&amp;quot; 输出：[&amp;quot;10.20.30.40&amp;quot;,&amp;quot;102.0.30.40&amp;quot;,&amp;quot;10.203.0.40&amp;quot;] &amp;nbsp;
+提示：
+0 &amp;lt;= s.</description></item><item><title>剑指 Offer II 102 加减的目标值</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/yavdxd/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/yavdxd/</guid><description>剑指 Offer II 102 加减的目标值 给定一个正整数数组 nums 和一个整数 target 。
+向数组中的每个整数前添加&amp;nbsp;&amp;#39;+&amp;#39; 或 &amp;#39;-&amp;#39; ，然后串联起所有整数，可以构造一个 表达式 ：
+例如，nums = [2, 1] ，可以在 2 之前添加 &amp;#39;+&amp;#39; ，在 1 之前添加 &amp;#39;-&amp;#39; ，然后串联起来得到表达式 &amp;quot;+2-1&amp;quot; 。 返回可以通过上述方法构造的、运算结果等于 target 的不同 表达式 的数目。
+&amp;nbsp;
+示例 1：
+输入：nums = [1,1,1,1,1], target = 3 输出：5 解释：一共有 5 种方法让最终目标和为 3 。 -1 + 1 + 1 + 1 + 1 = 3 +1 - 1 + 1 + 1 + 1 = 3 +1 + 1 - 1 + 1 + 1 = 3 +1 + 1 + 1 - 1 + 1 = 3 +1 + 1 + 1 + 1 - 1 = 3 示例 2：</description></item><item><title>面试题 17.22 单词转换</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/word-transformer-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/word-transformer-lcci/</guid><description>面试题 17.22 单词转换 给定字典中的两个词，长度相等。写一个方法，把一个词转换成另一个词， 但是一次只能改变一个字符。每一步得到的新词都必须能在字典中找到。
+编写一个程序，返回一个可能的转换序列。如有多个可能的转换序列，你可以返回任何一个。
+示例 1:
+输入: beginWord = &amp;quot;hit&amp;quot;, endWord = &amp;quot;cog&amp;quot;, wordList = [&amp;quot;hot&amp;quot;,&amp;quot;dot&amp;quot;,&amp;quot;dog&amp;quot;,&amp;quot;lot&amp;quot;,&amp;quot;log&amp;quot;,&amp;quot;cog&amp;quot;] 输出: [&amp;quot;hit&amp;quot;,&amp;quot;hot&amp;quot;,&amp;quot;dot&amp;quot;,&amp;quot;lot&amp;quot;,&amp;quot;log&amp;quot;,&amp;quot;cog&amp;quot;] 示例 2:
+输入: beginWord = &amp;quot;hit&amp;quot; endWord = &amp;quot;cog&amp;quot; wordList = [&amp;quot;hot&amp;quot;,&amp;quot;dot&amp;quot;,&amp;quot;dog&amp;quot;,&amp;quot;lot&amp;quot;,&amp;quot;log&amp;quot;] 输出: [] 解释:&amp;nbsp;endWord &amp;quot;cog&amp;quot; 不在字典中，所以不存在符合要求的转换序列。 func findLadders(beginWord string, endWord string, wordList []string) []string { } LeetCode题库地址 https://leetcode.cn/problems/word-transformer-lcci</description></item><item><title>面试题 17.25 单词矩阵</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/word-rectangle-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/word-rectangle-lcci/</guid><description>面试题 17.25 单词矩阵 给定一份单词的清单，设计一个算法，创建由字母组成的面积最大的矩形，其中每一行组成一个单词(自左向右)，每一列也组成一个单词(自上而下)。不要求这些单词在清单里连续出现，但要求所有行等长，所有列等高。
+如果有多个面积最大的矩形，输出任意一个均可。一个单词可以重复使用。
+示例 1:
+输入: [&amp;quot;this&amp;quot;, &amp;quot;real&amp;quot;, &amp;quot;hard&amp;quot;, &amp;quot;trh&amp;quot;, &amp;quot;hea&amp;quot;, &amp;quot;iar&amp;quot;, &amp;quot;sld&amp;quot;] 输出: [ &amp;nbsp; &amp;quot;this&amp;quot;, &amp;nbsp; &amp;quot;real&amp;quot;, &amp;nbsp; &amp;quot;hard&amp;quot; ] 示例 2:
+输入: [&amp;quot;aa&amp;quot;] 输出: [&amp;quot;aa&amp;quot;,&amp;quot;aa&amp;quot;] 说明：
+words.length &amp;lt;= 1000 words[i].length &amp;lt;= 100 数据保证单词足够随机 func maxRectangle(words []string) []string { } LeetCode题库地址 https://leetcode.cn/problems/word-rectangle-lcci</description></item><item><title>剑指 Offer II 110 所有路径</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/bp4bmd/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/bp4bmd/</guid><description>剑指 Offer II 110 所有路径 给定一个有&amp;nbsp;n&amp;nbsp;个节点的有向无环图，用二维数组&amp;nbsp;graph&amp;nbsp;表示，请找到所有从&amp;nbsp;0&amp;nbsp;到&amp;nbsp;n-1&amp;nbsp;的路径并输出（不要求按顺序）。
+graph&amp;nbsp;的第 i 个数组中的单元都表示有向图中 i&amp;nbsp;号节点所能到达的下一些结点（译者注：有向图是有方向的，即规定了 a&amp;rarr;b 你就不能从 b&amp;rarr;a ），若为空，就是没有下一个节点了。
+&amp;nbsp;
+示例 1：
+输入：graph = [[1,2],[3],[3],[]] 输出：[[0,1,3],[0,2,3]] 解释：有两条路径 0 -&amp;gt; 1 -&amp;gt; 3 和 0 -&amp;gt; 2 -&amp;gt; 3 示例 2：
+输入：graph = [[4,3,1],[3,2,4],[3],[4],[]] 输出：[[0,4],[0,3,4],[0,1,3,4],[0,1,2,3,4],[0,1,4]] 示例 3：
+输入：graph = [[1],[]] 输出：[[0,1]] 示例 4：
+输入：graph = [[1,2,3],[2],[3],[]] 输出：[[0,1,2,3],[0,2,3],[0,3]] 示例 5：
+输入：graph = [[1,3],[2],[3],[]] 输出：[[0,1,2,3],[0,3]] &amp;nbsp;
+提示：
+n == graph.length 2 &amp;lt;= n &amp;lt;= 15 0 &amp;lt;= graph[i][j] &amp;lt; n graph[i][j] != i&amp;nbsp; 保证输入为有向无环图 (GAD) &amp;nbsp;</description></item><item><title>【2022-12-22每日一题】1799. N 次操作后的最大分数和[Hard]</title><link>/study/leetcode/maximize-score-after-n-operations/</link><pubDate>Thu, 22 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/maximize-score-after-n-operations/</guid><description>2022-12-22每日一题：1799. N 次操作后的最大分数和 难度：Hard
+标签：位运算 、 数组 、 数学 、 动态规划 、 回溯 、 状态压缩 、 数论
+给你 nums ，它是一个大小为 2 * n 的正整数数组。你必须对这个数组执行 n 次操作。
+在第 i 次操作时（操作编号从 1 开始），你需要：
+选择两个元素 x 和 y 。 获得分数 i * gcd(x, y) 。 将 x 和 y 从 nums 中删除。 请你返回 n 次操作后你能获得的分数和最大为多少。
+函数 gcd(x, y) 是 x 和 y 的最大公约数。
+示例 1：
+输入：nums = [1,2] 输出：1 解释：最优操作是： (1 * gcd(1, 2)) = 1 示例 2：</description></item><item><title>【2022-12-04每日一题】1774. 最接近目标价格的甜点成本[Medium]</title><link>/study/leetcode/closest-dessert-cost/</link><pubDate>Sun, 04 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/closest-dessert-cost/</guid><description>2022-12-04每日一题：1774. 最接近目标价格的甜点成本 难度：Medium
+标签：数组 、 动态规划 、 回溯
+你打算做甜点，现在需要购买配料。目前共有 n 种冰激凌基料和 m 种配料可供选购。而制作甜点需要遵循以下几条规则：
+必须选择 一种 冰激凌基料。 可以添加 一种或多种 配料，也可以不添加任何配料。 每种类型的配料 最多两份 。 给你以下三个输入：
+baseCosts ，一个长度为 n 的整数数组，其中每个 baseCosts[i] 表示第 i 种冰激凌基料的价格。 toppingCosts，一个长度为 m 的整数数组，其中每个 toppingCosts[i] 表示 一份 第 i 种冰激凌配料的价格。 target ，一个整数，表示你制作甜点的目标价格。 你希望自己做的甜点总成本尽可能接近目标价格 target 。
+返回最接近 target 的甜点成本。如果有多种方案，返回 成本相对较低 的一种。
+示例 1：
+输入：baseCosts = [1,7], toppingCosts = [3,4], target = 10 输出：10 解释：考虑下面的方案组合（所有下标均从 0 开始）： - 选择 1 号基料：成本 7 - 选择 1 份 0 号配料：成本 1 x 3 = 3 - 选择 0 份 1 号配料：成本 0 x 4 = 0 总成本：7 + 3 + 0 = 10 。 示例 2：</description></item><item><title>【2022-11-07每日一题】816. 模糊坐标[Medium]</title><link>/study/leetcode/ambiguous-coordinates/</link><pubDate>Mon, 07 Nov 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/ambiguous-coordinates/</guid><description>2022-11-07每日一题：816. 模糊坐标 难度：Medium
+标签：字符串 、 回溯
+我们有一些二维坐标，如&amp;nbsp;&amp;quot;(1, 3)&amp;quot;&amp;nbsp;或&amp;nbsp;&amp;quot;(2, 0.5)&amp;quot;，然后我们移除所有逗号，小数点和空格，得到一个字符串S。返回所有可能的原始字符串到一个列表中。
+原始的坐标表示法不会存在多余的零，所以不会出现类似于&amp;quot;00&amp;quot;, &amp;quot;0.0&amp;quot;, &amp;quot;0.00&amp;quot;, &amp;quot;1.0&amp;quot;, &amp;quot;001&amp;quot;, &amp;quot;00.01&amp;quot;或一些其他更小的数来表示坐标。此外，一个小数点前至少存在一个数，所以也不会出现&amp;ldquo;.1&amp;rdquo;形式的数字。
+最后返回的列表可以是任意顺序的。而且注意返回的两个数字中间（逗号之后）都有一个空格。
+&amp;nbsp;
+示例 1: 输入: &amp;quot;(123)&amp;quot; 输出: [&amp;quot;(1, 23)&amp;quot;, &amp;quot;(12, 3)&amp;quot;, &amp;quot;(1.2, 3)&amp;quot;, &amp;quot;(1, 2.3)&amp;quot;] 示例 2: 输入: &amp;quot;(00011)&amp;quot; 输出: &amp;nbsp;[&amp;quot;(0.001, 1)&amp;quot;, &amp;quot;(0, 0.011)&amp;quot;] 解释: 0.0, 00, 0001 或 00.01 是不被允许的。 示例 3: 输入: &amp;quot;(0123)&amp;quot; 输出: [&amp;quot;(0, 123)&amp;quot;, &amp;quot;(0, 12.3)&amp;quot;, &amp;quot;(0, 1.23)&amp;quot;, &amp;quot;(0.1, 23)&amp;quot;, &amp;quot;(0.1, 2.3)&amp;quot;, &amp;quot;(0.12, 3)&amp;quot;] 示例 4: 输入: &amp;quot;(100)&amp;quot; 输出: [(10, 0)] 解释: 1.0 是不被允许的。 &amp;nbsp;
+提示: 4 &amp;lt;= S.</description></item><item><title>【2022-10-30每日一题】784. 字母大小写全排列[Medium]</title><link>/study/leetcode/letter-case-permutation/</link><pubDate>Sun, 30 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/letter-case-permutation/</guid><description>2022-10-30每日一题：784. 字母大小写全排列 难度：Medium
+标签：位运算 、 字符串 、 回溯
+给定一个字符串&amp;nbsp;s&amp;nbsp;，通过将字符串&amp;nbsp;s&amp;nbsp;中的每个字母转变大小写，我们可以获得一个新的字符串。
+返回 所有可能得到的字符串集合 。以 任意顺序 返回输出。
+&amp;nbsp;
+示例 1：
+输入：s = "a1b2" 输出：["a1b2", "a1B2", "A1b2", "A1B2"] 示例 2:
+输入: s = "3z4" 输出: ["3z4","3Z4"] &amp;nbsp;
+提示:
+1 &amp;lt;= s.length &amp;lt;= 12 s&amp;nbsp;由小写英文字母、大写英文字母和数字组成 方法一：回溯 个人写法 func letterCasePermutation(s string) (ans []string) { n := len(s) sb := []byte(s) var dfs func (i int) dfs = func(i int) { if i == n { ans = append(ans, string(sb)) return } dfs(i+1) if sb[i] &amp;lt; '0' || sb[i] &amp;gt; '9' { sb[i] ^= 32 dfs(i+1) sb[i] ^= 32 } } dfs(0) return ans } 官方优化 func letterCasePermutation(s string) (ans []string) { n, sb := len(s), []byte(s) var dfs func (i int) dfs = func(i int) { // 跳过数字 for i &amp;lt; n &amp;amp;&amp;amp; unicode.</description></item><item><title>【2022-09-20每日一题】698. 划分为k个相等的子集</title><link>/study/leetcode/partition-to-k-equal-sum-subsets/</link><pubDate>Tue, 20 Sep 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/partition-to-k-equal-sum-subsets/</guid><description>2022-09-20每日一题：698. 划分为k个相等的子集 难度：Medium
+标签：位运算 、 记忆化搜索 、 数组 、 动态规划 、 回溯 、 状态压缩
+给定一个整数数组&amp;nbsp;&amp;nbsp;nums 和一个正整数 k，找出是否有可能把这个数组分成 k 个非空子集，其总和都相等。
+&amp;nbsp;
+示例 1：
+输入： nums = [4, 3, 2, 3, 5, 2, 1], k = 4 输出： True 说明： 有可能将其分成 4 个子集（5），（1,4），（2,3），（2,3）等于总和。 示例 2:
+输入: nums = [1,2,3,4], k = 3 输出: false &amp;nbsp;
+提示：
+1 &amp;lt;= k &amp;lt;= len(nums) &amp;lt;= 16 0 &amp;lt; nums[i] &amp;lt; 10000 每个元素的频率在 [1,4] 范围内 方法一：状态压缩 + 记忆化搜索 详细思路过程见官方题解，这里只做个人刷题记录，方便后续查询阅读
+思路与算法 func canPartitionKSubsets(nums []int, k int) bool { all := 0 for _, num := range nums { all += num } // 不能整除 if all%k &amp;gt; 0 { return false } sort.</description></item></channel></rss>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>模拟 on lbbniu</title><link>/tags/%E6%A8%A1%E6%8B%9F/</link><description>Recent content in 模拟 on lbbniu</description><generator>Hugo -- gohugo.io</generator><language>zh</language><managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor><webMaster>lbbniu@gmail.com (lbbniu)</webMaster><copyright>&amp;copy; 2021 &lt;a href="https://blog.lbbniu.com/">lbbniu&lt;/a></copyright><lastBuildDate>Sun, 15 Jan 2023 00:01:00 +0800</lastBuildDate><atom:link href="/tags/%E6%A8%A1%E6%8B%9F/index.xml" rel="self" type="application/rss+xml"/><item><title>剑指 Offer II 002 二进制加法</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/jfetk5/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/jfetk5/</guid><description>剑指 Offer II 002 二进制加法 给定两个 01 字符串&amp;nbsp;a&amp;nbsp;和&amp;nbsp;b&amp;nbsp;，请计算它们的和，并以二进制字符串的形式输出。
+输入为 非空 字符串且只包含数字&amp;nbsp;1&amp;nbsp;和&amp;nbsp;0。
+&amp;nbsp;
+示例&amp;nbsp;1:
+输入: a = &amp;quot;11&amp;quot;, b = &amp;quot;10&amp;quot; 输出: &amp;quot;101&amp;quot; 示例&amp;nbsp;2:
+输入: a = &amp;quot;1010&amp;quot;, b = &amp;quot;1011&amp;quot; 输出: &amp;quot;10101&amp;quot; &amp;nbsp;
+提示：
+每个字符串仅由字符 &amp;#39;0&amp;#39; 或 &amp;#39;1&amp;#39; 组成。 1 &amp;lt;= a.length, b.length &amp;lt;= 10^4 字符串如果不是 &amp;quot;0&amp;quot; ，就都不含前导零。 &amp;nbsp;
+注意：本题与主站 67&amp;nbsp;题相同：https://leetcode-cn.com/problems/add-binary/
+func addBinary(a string, b string) string { } LeetCode题库地址 https://leetcode.cn/problems/JFETK5</description></item><item><title>剑指 Offer 29 顺时针打印矩阵</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/shun-shi-zhen-da-yin-ju-zhen-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/shun-shi-zhen-da-yin-ju-zhen-lcof/</guid><description>剑指 Offer 29 顺时针打印矩阵 输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字。
+&amp;nbsp;
+示例 1：
+输入：matrix = [[1,2,3],[4,5,6],[7,8,9]] 输出：[1,2,3,6,9,8,7,4,5] 示例 2：
+输入：matrix =&amp;nbsp;[[1,2,3,4],[5,6,7,8],[9,10,11,12]] 输出：[1,2,3,4,8,12,11,10,9,5,6,7] &amp;nbsp;
+限制：
+0 &amp;lt;= matrix.length &amp;lt;= 100 0 &amp;lt;= matrix[i].length&amp;nbsp;&amp;lt;= 100 注意：本题与主站 54 题相同：https://leetcode-cn.com/problems/spiral-matrix/
+func spiralOrder(matrix [][]int) []int { } LeetCode题库地址 https://leetcode.cn/problems/shun-shi-zhen-da-yin-ju-zhen-lcof</description></item><item><title>剑指 Offer 31 栈的压入、弹出序列</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/zhan-de-ya-ru-dan-chu-xu-lie-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/zhan-de-ya-ru-dan-chu-xu-lie-lcof/</guid><description>剑指 Offer 31 栈的压入、弹出序列 输入两个整数序列，第一个序列表示栈的压入顺序，请判断第二个序列是否为该栈的弹出顺序。假设压入栈的所有数字均不相等。例如，序列 {1,2,3,4,5} 是某栈的压栈序列，序列 {4,5,3,2,1} 是该压栈序列对应的一个弹出序列，但 {4,3,5,1,2} 就不可能是该压栈序列的弹出序列。
+&amp;nbsp;
+示例 1：
+输入：pushed = [1,2,3,4,5], popped = [4,5,3,2,1] 输出：true 解释：我们可以按以下顺序执行： push(1), push(2), push(3), push(4), pop() -&amp;gt; 4, push(5), pop() -&amp;gt; 5, pop() -&amp;gt; 3, pop() -&amp;gt; 2, pop() -&amp;gt; 1 示例 2：
+输入：pushed = [1,2,3,4,5], popped = [4,3,5,1,2] 输出：false 解释：1 不能在 2 之前弹出。 &amp;nbsp;
+提示：
+0 &amp;lt;= pushed.length == popped.length &amp;lt;= 1000 0 &amp;lt;= pushed[i], popped[i] &amp;lt; 1000 pushed&amp;nbsp;是&amp;nbsp;popped&amp;nbsp;的排列。 注意：本题与主站 946 题相同：https://leetcode-cn.com/problems/validate-stack-sequences/
+func validateStackSequences(pushed []int, popped []int) bool { } LeetCode题库地址 https://leetcode.</description></item><item><title>面试题 16.22 兰顿蚂蚁</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/langtons-ant-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/langtons-ant-lcci/</guid><description>面试题 16.22 兰顿蚂蚁 一只蚂蚁坐在由白色和黑色方格构成的无限网格上。开始时，网格全白，蚂蚁面向右侧。每行走一步，蚂蚁执行以下操作。
+(1) 如果在白色方格上，则翻转方格的颜色，向右(顺时针)转 90 度，并向前移动一个单位。
+(2) 如果在黑色方格上，则翻转方格的颜色，向左(逆时针方向)转 90 度，并向前移动一个单位。
+编写程序来模拟蚂蚁执行的前 K 个动作，并返回最终的网格。
+网格由数组表示，每个元素是一个字符串，代表网格中的一行，黑色方格由&amp;nbsp;&amp;#39;X&amp;#39;&amp;nbsp;表示，白色方格由&amp;nbsp;&amp;#39;_&amp;#39;&amp;nbsp;表示，蚂蚁所在的位置由&amp;nbsp;&amp;#39;L&amp;#39;, &amp;#39;U&amp;#39;, &amp;#39;R&amp;#39;, &amp;#39;D&amp;#39;&amp;nbsp;表示，分别表示蚂蚁&amp;nbsp;左、上、右、下 的朝向。只需要返回能够包含蚂蚁走过的所有方格的最小矩形。
+示例 1:
+输入: 0 输出: [&amp;quot;R&amp;quot;] 示例 2:
+输入: 2 输出: [ &amp;nbsp; &amp;quot;_X&amp;quot;, &amp;nbsp; &amp;quot;LX&amp;quot; ] 示例 3:
+输入: 5 输出: [ &amp;nbsp; &amp;quot;_U&amp;quot;, &amp;nbsp; &amp;quot;X_&amp;quot;, &amp;nbsp; &amp;quot;XX&amp;quot; ] 说明：
+K &amp;lt;= 100000 func printKMoves(K int) []string { } LeetCode题库地址 https://leetcode.cn/problems/langtons-ant-lcci</description></item><item><title>剑指 Offer II 101 分割等和子集</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/nupfpr/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/nupfpr/</guid><description>剑指 Offer II 101 分割等和子集 给定一个非空的正整数数组 nums ，请判断能否将这些数字分成元素和相等的两部分。
+&amp;nbsp;
+示例&amp;nbsp;1：
+输入：nums = [1,5,11,5] 输出：true 解释：nums 可以分割成 [1, 5, 5] 和 [11] 。 示例&amp;nbsp;2：
+输入：nums = [1,2,3,5] 输出：false 解释：nums 不可以分为和相等的两部分 &amp;nbsp;
+提示：
+1 &amp;lt;= nums.length &amp;lt;= 200 1 &amp;lt;= nums[i] &amp;lt;= 100 &amp;nbsp;
+注意：本题与主站 416&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/partition-equal-subset-sum/
+func canPartition(nums []int) bool { } LeetCode题库地址 https://leetcode.cn/problems/NUPfPr</description></item><item><title>【2023-01-15每日一题】2293. 极大极小游戏[Easy]</title><link>/study/leetcode/min-max-game/</link><pubDate>Sun, 15 Jan 2023 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/min-max-game/</guid><description>2023-01-15每日一题：2293. 极大极小游戏 难度：Easy
+标签：数组 、 模拟
+给你一个下标从 0 开始的整数数组 nums ，其长度是 2 的幂。
+对 nums 执行下述算法：
+设 n 等于 nums 的长度，如果 n == 1 ，终止 算法过程。否则，创建 一个新的整数数组&amp;nbsp;newNums ，新数组长度为 n / 2 ，下标从 0 开始。 对于满足&amp;nbsp;0 &amp;lt;= i &amp;lt; n / 2 的每个 偶数 下标 i ，将 newNums[i] 赋值 为 min(nums[2 * i], nums[2 * i + 1]) 。 对于满足&amp;nbsp;0 &amp;lt;= i &amp;lt; n / 2 的每个 奇数 下标 i ，将 newNums[i] 赋值 为 max(nums[2 * i], nums[2 * i + 1]) 。 用 newNums 替换 nums 。 从步骤 1 开始 重复 整个过程。 执行算法后，返回 nums 中剩下的那个数字。</description></item><item><title>【2023-01-09每日一题】1806. 还原排列的最少操作步数[Medium]</title><link>/study/leetcode/minimum-number-of-operations-to-reinitialize-a-permutation/</link><pubDate>Mon, 09 Jan 2023 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/minimum-number-of-operations-to-reinitialize-a-permutation/</guid><description>2023-01-09每日一题：1806. 还原排列的最少操作步数 难度：Medium
+标签：数组 、 数学 、 模拟
+给你一个偶数 n​​​​​​ ，已知存在一个长度为 n 的排列 perm ，其中 perm[i] == i​（下标 从 0 开始 计数）。
+一步操作中，你将创建一个新数组 arr ，对于每个 i ：
+如果 i % 2 == 0 ，那么 arr[i] = perm[i / 2] 如果 i % 2 == 1 ，那么 arr[i] = perm[n / 2 + (i - 1) / 2] 然后将 arr​​ 赋值​​给 perm 。
+要想使 perm 回到排列初始值，至少需要执行多少步操作？返回最小的 非零 操作步数。
+示例 1：
+输入：n = 2 输出：1 解释：最初，perm = [0,1] 第 1 步操作后，perm = [0,1] 所以，仅需执行 1 步操作 示例 2：</description></item><item><title>【2023-01-06每日一题】2180. 统计各位数字之和为偶数的整数个数[Easy]</title><link>/study/leetcode/count-integers-with-even-digit-sum/</link><pubDate>Fri, 06 Jan 2023 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/count-integers-with-even-digit-sum/</guid><description>2023-01-06每日一题：2180. 统计各位数字之和为偶数的整数个数 难度：Easy
+标签：数学 、 模拟
+给你一个正整数 num ，请你统计并返回 小于或等于 num 且各位数字之和为 偶数 的正整数的数目。
+正整数的 各位数字之和 是其所有位上的对应数字相加的结果。
+&amp;nbsp;
+示例 1：
+输入：num = 4 输出：2 解释： 只有 2 和 4 满足小于等于 4 且各位数字之和为偶数。 示例 2：
+输入：num = 30 输出：14 解释： 只有 14 个整数满足小于等于 30 且各位数字之和为偶数，分别是： 2、4、6、8、11、13、15、17、19、20、22、24、26 和 28 。 &amp;nbsp;
+提示：
+1 &amp;lt;= num &amp;lt;= 1000 方法一： 详细思路过程见官方题解，这里只做个人刷题记录，方便后续查询阅读
+func countEven(num int) int { } 复杂度分析 LeetCode题库地址 https://leetcode.cn/problems/count-integers-with-even-digit-sum</description></item><item><title>【2023-01-02每日一题】1801. 积压订单中的订单总数[Medium]</title><link>/study/leetcode/number-of-orders-in-the-backlog/</link><pubDate>Mon, 02 Jan 2023 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/number-of-orders-in-the-backlog/</guid><description>2023-01-02每日一题：1801. 积压订单中的订单总数 难度：Medium
+标签：数组 、 模拟 、 堆（优先队列）
+给你一个二维整数数组 orders ，其中每个 orders[i] = [pricei, amounti, orderTypei] 表示有 amounti 笔类型为 orderTypei 、价格为 pricei 的订单。
+订单类型 orderTypei 可以分为两种：
+0 表示这是一批采购订单 buy 1 表示这是一批销售订单 sell 注意，orders[i] 表示一批共计 amounti 笔的独立订单，这些订单的价格和类型相同。对于所有有效的 i ，由 orders[i] 表示的所有订单提交时间均早于 orders[i+1] 表示的所有订单。
+存在由未执行订单组成的 积压订单 。积压订单最初是空的。提交订单时，会发生以下情况：
+如果该订单是一笔采购订单 buy ，则可以查看积压订单中价格 最低 的销售订单 sell 。如果该销售订单 sell 的价格 低于或等于 当前采购订单 buy 的价格，则匹配并执行这两笔订单，并将销售订单 sell 从积压订单中删除。否则，采购订单 buy 将会添加到积压订单中。 反之亦然，如果该订单是一笔销售订单 sell ，则可以查看积压订单中价格 最高 的采购订单 buy 。如果该采购订单 buy 的价格 高于或等于 当前销售订单 sell 的价格，则匹配并执行这两笔订单，并将采购订单 buy 从积压订单中删除。否则，销售订单 sell 将会添加到积压订单中。 输入所有订单后，返回积压订单中的 订单总数 。由于数字可能很大，所以需要返回对 109 + 7 取余的结果。</description></item><item><title>【2022-12-23每日一题】2011. 执行操作后的变量值[Easy]</title><link>/study/leetcode/final-value-of-variable-after-performing-operations/</link><pubDate>Fri, 23 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/final-value-of-variable-after-performing-operations/</guid><description>2022-12-23每日一题：2011. 执行操作后的变量值 难度：Easy
+标签：数组 、 字符串 、 模拟
+存在一种仅支持 4 种操作和 1 个变量 X 的编程语言：
+++X 和 X++ 使变量 X 的值 加 1 --X 和 X-- 使变量 X 的值 减 1 最初，X 的值是 0
+给你一个字符串数组 operations ，这是由操作组成的一个列表，返回执行所有操作后， X 的 最终值 。
+&amp;nbsp;
+示例 1：
+输入：operations = ["--X","X++","X++"] 输出：1 解释：操作按下述步骤执行： 最初，X = 0 --X：X 减 1 ，X = 0 - 1 = -1 X++：X 加 1 ，X = -1 + 1 = 0 X++：X 加 1 ，X = 0 + 1 = 1 示例 2：</description></item><item><title>【2022-12-15每日一题】1945. 字符串转化后的各位数字之和[Easy]</title><link>/study/leetcode/sum-of-digits-of-string-after-convert/</link><pubDate>Thu, 15 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/sum-of-digits-of-string-after-convert/</guid><description>2022-12-15每日一题：1945. 字符串转化后的各位数字之和 难度：Easy
+标签：字符串 、 模拟
+给你一个由小写字母组成的字符串 s ，以及一个整数 k 。
+首先，用字母在字母表中的位置替换该字母，将 s 转化 为一个整数（也就是，'a' 用 1 替换，'b' 用 2 替换，... 'z' 用 26 替换）。接着，将整数 转换 为其 各位数字之和 。共重复 转换 操作 k 次 。
+例如，如果 s = "zbax" 且 k = 2 ，那么执行下述步骤后得到的结果是整数 8 ：
+转化："zbax" ➝ "(26)(2)(1)(24)" ➝ "262124" ➝ 262124 转换 #1：262124&amp;nbsp;➝ 2 + 6 + 2 + 1 + 2 + 4&amp;nbsp;➝ 17 转换 #2：17 ➝ 1 + 7 ➝ 8 返回执行上述操作后得到的结果整数。</description></item><item><title>【2022-10-19每日一题】1700. 无法吃午餐的学生数量[Easy]</title><link>/study/leetcode/number-of-students-unable-to-eat-lunch/</link><pubDate>Wed, 19 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/number-of-students-unable-to-eat-lunch/</guid><description>2022-10-19每日一题：1700. 无法吃午餐的学生数量 难度：Easy
+标签：栈 、 队列 、 数组 、 模拟
+学校的自助午餐提供圆形和方形的三明治，分别用数字 0 和 1 表示。所有学生站在一个队列里，每个学生要么喜欢圆形的要么喜欢方形的。
+餐厅里三明治的数量与学生的数量相同。所有三明治都放在一个 栈 里，每一轮：
+如果队列最前面的学生 喜欢 栈顶的三明治，那么会 拿走它 并离开队列。 否则，这名学生会 放弃这个三明治 并回到队列的尾部。 这个过程会一直持续到队列里所有学生都不喜欢栈顶的三明治为止。
+给你两个整数数组 students 和 sandwiches ，其中 sandwiches[i] 是栈里面第 i​​​​​​ 个三明治的类型（i = 0 是栈的顶部）， students[j] 是初始队列里第 j​​​​​​ 名学生对三明治的喜好（j = 0 是队列的最开始位置）。请你返回无法吃午餐的学生数量。
+示例 1：
+输入：students = [1,1,0,0], sandwiches = [0,1,0,1] 输出：0 解释： - 最前面的学生放弃最顶上的三明治，并回到队列的末尾，学生队列变为 students = [1,0,0,1]。 - 最前面的学生放弃最顶上的三明治，并回到队列的末尾，学生队列变为 students = [0,0,1,1]。 - 最前面的学生拿走最顶上的三明治，剩余学生队列为 students = [0,1,1]，三明治栈为 sandwiches = [1,0,1]。 - 最前面的学生放弃最顶上的三明治，并回到队列的末尾，学生队列变为 students = [1,1,0]。 - 最前面的学生拿走最顶上的三明治，剩余学生队列为 students = [1,0]，三明治栈为 sandwiches = [0,1]。 - 最前面的学生放弃最顶上的三明治，并回到队列的末尾，学生队列变为 students = [0,1]。 - 最前面的学生拿走最顶上的三明治，剩余学生队列为 students = [1]，三明治栈为 sandwiches = [1]。 - 最前面的学生拿走最顶上的三明治，剩余学生队列为 students = []，三明治栈为 sandwiches = []。 所以所有学生都有三明治吃。 示例 2：</description></item><item><title>【2022-10-15每日一题】1441. 用栈操作构建数组[Medium]</title><link>/study/leetcode/build-an-array-with-stack-operations/</link><pubDate>Sat, 15 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/build-an-array-with-stack-operations/</guid><description>2022-10-15每日一题：1441. 用栈操作构建数组 难度：Medium
+标签：栈 、 数组 、 模拟
+给你一个数组 target 和一个整数 n。每次迭代，需要从&amp;nbsp; list = { 1 , 2 , 3 ..., n } 中依次读取一个数字。
+请使用下述操作来构建目标数组 target ：
+"Push"：从 list 中读取一个新元素， 并将其推入数组中。 "Pop"：删除数组中的最后一个元素。 如果目标数组构建完成，就停止读取更多元素。 题目数据保证目标数组严格递增，并且只包含 1 到 n 之间的数字。
+请返回构建目标数组所用的操作序列。如果存在多个可行方案，返回任一即可。
+&amp;nbsp;
+示例 1：
+输入：target = [1,3], n = 3 输出：["Push","Push","Pop","Push"] 解释： 读取 1 并自动推入数组 -&amp;gt; [1] 读取 2 并自动推入数组，然后删除它 -&amp;gt; [1] 读取 3 并自动推入数组 -&amp;gt; [1,3] 示例 2：
+输入：target = [1,2,3], n = 3 输出：["Push","Push","Push"] 示例 3：</description></item><item><title>【2022-08-31每日一题】946. 验证栈序列</title><link>/study/leetcode/validate-stack-sequences/</link><pubDate>Wed, 31 Aug 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/validate-stack-sequences/</guid><description>2022-08-31每日一题：946. 验证栈序列 难度：Medium 标签：栈 、 数组 、 模拟 给定&amp;nbsp;pushed&amp;nbsp;和&amp;nbsp;popped&amp;nbsp;两个序列，每个序列中的 值都不重复，只有当它们可能是在最初空栈上进行的推入 push 和弹出 pop 操作序列的结果时，返回 true；否则，返回 false&amp;nbsp;。
+&amp;nbsp;
+示例 1：
+输入：pushed = [1,2,3,4,5], popped = [4,5,3,2,1] 输出：true 解释：我们可以按以下顺序执行： push(1), push(2), push(3), push(4), pop() -&amp;gt; 4, push(5), pop() -&amp;gt; 5, pop() -&amp;gt; 3, pop() -&amp;gt; 2, pop() -&amp;gt; 1 示例 2：
+输入：pushed = [1,2,3,4,5], popped = [4,3,5,1,2] 输出：false 解释：1 不能在 2 之前弹出。 &amp;nbsp;
+提示：
+1 &amp;lt;= pushed.length &amp;lt;= 1000 0 &amp;lt;= pushed[i] &amp;lt;= 1000 pushed 的所有元素 互不相同 popped.</description></item><item><title>【2022-08-10每日一题】640. 求解方程</title><link>/study/leetcode/solve-the-equation/</link><pubDate>Wed, 10 Aug 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/solve-the-equation/</guid><description>2022-08-10每日一题：640. 求解方程 难度：Medium 标签：数学 、 字符串 、 模拟 求解一个给定的方程，将x以字符串 "x=#value"&amp;nbsp;的形式返回。该方程仅包含 '+' ， '-' 操作，变量&amp;nbsp;x&amp;nbsp;和其对应系数。
+如果方程没有解，请返回&amp;nbsp;"No solution"&amp;nbsp;。如果方程有无限解，则返回 “Infinite solutions” 。
+如果方程中只有一个解，要保证返回值 'x'&amp;nbsp;是一个整数。
+&amp;nbsp;
+示例 1：
+输入: equation = &amp;quot;x+5-3+x=6+x-2&amp;quot; 输出: &amp;quot;x=2&amp;quot; 示例 2:
+输入: equation = &amp;quot;x=x&amp;quot; 输出: &amp;quot;Infinite solutions&amp;quot; 示例 3:
+输入: equation = &amp;quot;2x=x&amp;quot; 输出: &amp;quot;x=0&amp;quot; &amp;nbsp;
+&amp;nbsp;
+提示:
+3 &amp;lt;= equation.length &amp;lt;= 1000 equation&amp;nbsp;只有一个&amp;nbsp;'='. equation&amp;nbsp;方程由整数组成，其绝对值在&amp;nbsp;[0, 100]&amp;nbsp;范围内，不含前导零和变量 'x' 。&amp;nbsp;​​​ ### 方法一：模拟 根据题意进行模拟即可，设factor表示合并同类项的x的系数，val表示合并数字的值
+首先我们对方程左右两边的表达式进行合并同类项 遍历左表达式，默认为正号 若字符是x，加到factor上 若字符是+或者-，改变符号位 若字符是数字，则判断后边有没有跟x，有则加到factor上，没有加到val上 遍历右表达式，默认为负号，相当于右边的表达式移动到左边（解析同上只是符号相反） 若factor == 0，判断val是否为0，为0则表示无穷解，不为0表示没有解 若factor != 0,直接解方程即可，现在的方程变为factor * x = -val,则x = (-val / factor) func solveEquation(equation string) string { factor, val := 0, 0 i, n, sign := 0, len(equation), 1 // 等式左边默认系数为正 for i &amp;lt; n { if equation[i] == '=' { sign = -1 // 等式右边默认系数为负 i++ continue } s := sign if equation[i] == '+' { // 去掉前面的符号 i++ } else if equation[i] == '-' { s = -s i++ } num, valid := 0, false for i &amp;lt; n &amp;amp;&amp;amp; unicode.</description></item></channel></rss>

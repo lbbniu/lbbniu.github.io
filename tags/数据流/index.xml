@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>数据流 on lbbniu</title><link>/tags/%E6%95%B0%E6%8D%AE%E6%B5%81/</link><description>Recent content in 数据流 on lbbniu</description><generator>Hugo -- gohugo.io</generator><language>zh</language><managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor><webMaster>lbbniu@gmail.com (lbbniu)</webMaster><copyright>&amp;copy; 2021 &lt;a href="https://blog.lbbniu.com/">lbbniu&lt;/a></copyright><lastBuildDate>Wed, 18 Jan 2023 00:01:00 +0800</lastBuildDate><atom:link href="/tags/%E6%95%B0%E6%8D%AE%E6%B5%81/index.xml" rel="self" type="application/rss+xml"/><item><title>剑指 Offer 41 数据流中的中位数</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/shu-ju-liu-zhong-de-zhong-wei-shu-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/shu-ju-liu-zhong-de-zhong-wei-shu-lcof/</guid><description>剑指 Offer 41 数据流中的中位数 如何得到一个数据流中的中位数？如果从数据流中读出奇数个数值，那么中位数就是所有数值排序之后位于中间的数值。如果从数据流中读出偶数个数值，那么中位数就是所有数值排序之后中间两个数的平均值。
+例如，
+[2,3,4]&amp;nbsp;的中位数是 3
+[2,3] 的中位数是 (2 + 3) / 2 = 2.5
+设计一个支持以下两种操作的数据结构：
+void addNum(int num) - 从数据流中添加一个整数到数据结构中。 double findMedian() - 返回目前所有元素的中位数。 示例 1：
+输入： [&amp;quot;MedianFinder&amp;quot;,&amp;quot;addNum&amp;quot;,&amp;quot;addNum&amp;quot;,&amp;quot;findMedian&amp;quot;,&amp;quot;addNum&amp;quot;,&amp;quot;findMedian&amp;quot;] [[],[1],[2],[],[3],[]] 输出：[null,null,null,1.50000,null,2.00000] 示例 2：
+输入： [&amp;quot;MedianFinder&amp;quot;,&amp;quot;addNum&amp;quot;,&amp;quot;findMedian&amp;quot;,&amp;quot;addNum&amp;quot;,&amp;quot;findMedian&amp;quot;] [[],[2],[],[3],[]] 输出：[null,null,2.00000,null,2.50000] &amp;nbsp;
+限制：
+最多会对&amp;nbsp;addNum、findMedian 进行&amp;nbsp;50000&amp;nbsp;次调用。 注意：本题与主站 295 题相同：https://leetcode-cn.com/problems/find-median-from-data-stream/
+type MedianFinder struct { } /** initialize your data structure here. */ func Constructor() MedianFinder { } func (this *MedianFinder) AddNum(num int) { } func (this *MedianFinder) FindMedian() float64 { } /** * Your MedianFinder object will be instantiated and called as such: * obj := Constructor(); * obj.</description></item><item><title>剑指 Offer II 041 滑动窗口的平均值</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/qisx9u/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/qisx9u/</guid><description>剑指 Offer II 041 滑动窗口的平均值 给定一个整数数据流和一个窗口大小，根据该滑动窗口的大小，计算滑动窗口里所有数字的平均值。
+实现 MovingAverage 类：
+MovingAverage(int size) 用窗口大小 size 初始化对象。 double next(int val)&amp;nbsp;成员函数 next&amp;nbsp;每次调用的时候都会往滑动窗口增加一个整数，请计算并返回数据流中最后 size 个值的移动平均值，即滑动窗口里所有数字的平均值。 &amp;nbsp;
+示例：
+输入： inputs = [&amp;quot;MovingAverage&amp;quot;, &amp;quot;next&amp;quot;, &amp;quot;next&amp;quot;, &amp;quot;next&amp;quot;, &amp;quot;next&amp;quot;] inputs = [[3], [1], [10], [3], [5]] 输出： [null, 1.0, 5.5, 4.66667, 6.0] 解释： MovingAverage movingAverage = new MovingAverage(3); movingAverage.next(1); // 返回 1.0 = 1 / 1 movingAverage.next(10); // 返回 5.5 = (1 + 10) / 2 movingAverage.next(3); // 返回 4.66667 = (1 + 10 + 3) / 3 movingAverage.</description></item><item><title>剑指 Offer II 042 最近请求次数</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/h8086q/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/h8086q/</guid><description>剑指 Offer II 042 最近请求次数 写一个&amp;nbsp;RecentCounter&amp;nbsp;类来计算特定时间范围内最近的请求。
+请实现 RecentCounter 类：
+RecentCounter() 初始化计数器，请求数为 0 。 int ping(int t) 在时间 t 添加一个新请求，其中 t 表示以毫秒为单位的某个时间，并返回过去 3000 毫秒内发生的所有请求数（包括新请求）。确切地说，返回在 [t-3000, t] 内发生的请求数。 保证 每次对 ping 的调用都使用比之前更大的 t 值。
+&amp;nbsp;
+示例：
+输入： inputs = [&amp;quot;RecentCounter&amp;quot;, &amp;quot;ping&amp;quot;, &amp;quot;ping&amp;quot;, &amp;quot;ping&amp;quot;, &amp;quot;ping&amp;quot;] inputs = [[], [1], [100], [3001], [3002]] 输出： [null, 1, 2, 3, 3] 解释： RecentCounter recentCounter = new RecentCounter(); recentCounter.ping(1); // requests = [1]，范围是 [-2999,1]，返回 1 recentCounter.ping(100); // requests = [1, 100]，范围是 [-2900,100]，返回 2 recentCounter.</description></item><item><title>剑指 Offer II 059 数据流的第 K 大数值</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/jbjn9c/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/jbjn9c/</guid><description>剑指 Offer II 059 数据流的第 K 大数值 设计一个找到数据流中第 k 大元素的类（class）。注意是排序后的第 k 大元素，不是第 k 个不同的元素。
+请实现 KthLargest&amp;nbsp;类：
+KthLargest(int k, int[] nums) 使用整数 k 和整数流 nums 初始化对象。 int add(int val) 将 val 插入数据流 nums 后，返回当前数据流中第 k 大的元素。 &amp;nbsp;
+示例：
+输入： [&amp;quot;KthLargest&amp;quot;, &amp;quot;add&amp;quot;, &amp;quot;add&amp;quot;, &amp;quot;add&amp;quot;, &amp;quot;add&amp;quot;, &amp;quot;add&amp;quot;] [[3, [4, 5, 8, 2]], [3], [5], [10], [9], [4]] 输出： [null, 4, 5, 5, 8, 8] 解释： KthLargest kthLargest = new KthLargest(3, [4, 5, 8, 2]); kthLargest.add(3); // return 4 kthLargest.</description></item><item><title>面试题 10.10 数字流的秩</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/rank-from-stream-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/rank-from-stream-lcci/</guid><description>面试题 10.10 数字流的秩 假设你正在读取一串整数。每隔一段时间，你希望能找出数字 x 的秩(小于或等于 x 的值的个数)。请实现数据结构和算法来支持这些操作，也就是说：
+实现 track(int x)&amp;nbsp;方法，每读入一个数字都会调用该方法；
+实现 getRankOfNumber(int x) 方法，返回小于或等于 x 的值的个数。
+注意：本题相对原题稍作改动
+示例:
+输入: [&amp;quot;StreamRank&amp;quot;, &amp;quot;getRankOfNumber&amp;quot;, &amp;quot;track&amp;quot;, &amp;quot;getRankOfNumber&amp;quot;] [[], [1], [0], [0]] 输出: [null,0,null,1] 提示：
+x &amp;lt;= 50000 track&amp;nbsp;和&amp;nbsp;getRankOfNumber 方法的调用次数均不超过 2000 次 type StreamRank struct { } func Constructor() StreamRank { } func (this *StreamRank) Track(x int) { } func (this *StreamRank) GetRankOfNumber(x int) int { } /** * Your StreamRank object will be instantiated and called as such: * obj := Constructor(); * obj.</description></item><item><title>面试题 17.20 连续中值</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/continuous-median-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/continuous-median-lcci/</guid><description>面试题 17.20 连续中值 随机产生数字并传递给一个方法。你能否完成这个方法，在每次产生新值时，寻找当前所有值的中间值（中位数）并保存。
+中位数是有序列表中间的数。如果列表长度是偶数，中位数则是中间两个数的平均值。
+例如，
+[2,3,4]&amp;nbsp;的中位数是 3
+[2,3] 的中位数是 (2 + 3) / 2 = 2.5
+设计一个支持以下两种操作的数据结构：
+void addNum(int num) - 从数据流中添加一个整数到数据结构中。 double findMedian() - 返回目前所有元素的中位数。 示例：
+addNum(1) addNum(2) findMedian() -&amp;gt; 1.5 addNum(3) findMedian() -&amp;gt; 2 type MedianFinder struct { } /** initialize your data structure here. */ func Constructor() MedianFinder { } func (this *MedianFinder) AddNum(num int) { } func (this *MedianFinder) FindMedian() float64 { } /** * Your MedianFinder object will be instantiated and called as such: * obj := Constructor(); * obj.</description></item><item><title>【2023-01-18每日一题】1825. 求出 MK 平均值[Hard]</title><link>/study/leetcode/finding-mk-average/</link><pubDate>Wed, 18 Jan 2023 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/finding-mk-average/</guid><description>2023-01-18每日一题：1825. 求出 MK 平均值 难度：Hard
+标签：设计 、 队列 、 数据流 、 有序集合 、 堆（优先队列）
+给你两个整数&amp;nbsp;m&amp;nbsp;和&amp;nbsp;k&amp;nbsp;，以及数据流形式的若干整数。你需要实现一个数据结构，计算这个数据流的 MK 平均值&amp;nbsp;。
+MK 平均值&amp;nbsp;按照如下步骤计算：
+如果数据流中的整数少于 m&amp;nbsp;个，MK 平均值&amp;nbsp;为 -1&amp;nbsp;，否则将数据流中最后 m&amp;nbsp;个元素拷贝到一个独立的容器中。 从这个容器中删除最小的 k&amp;nbsp;个数和最大的 k&amp;nbsp;个数。 计算剩余元素的平均值，并 向下取整到最近的整数&amp;nbsp;。 请你实现&amp;nbsp;MKAverage&amp;nbsp;类：
+MKAverage(int m, int k)&amp;nbsp;用一个空的数据流和两个整数 m&amp;nbsp;和 k&amp;nbsp;初始化&amp;nbsp;MKAverage&amp;nbsp;对象。 void addElement(int num)&amp;nbsp;往数据流中插入一个新的元素&amp;nbsp;num&amp;nbsp;。 int calculateMKAverage()&amp;nbsp;对当前的数据流计算并返回 MK 平均数&amp;nbsp;，结果需 向下取整到最近的整数 。 &amp;nbsp;
+示例 1：
+输入： ["MKAverage", "addElement", "addElement", "calculateMKAverage", "addElement", "calculateMKAverage", "addElement", "addElement", "addElement", "calculateMKAverage"] [[3, 1], [3], [1], [], [10], [], [5], [5], [5], []] 输出： [null, null, null, -1, null, 3, null, null, null, 5] 解释： MKAverage obj = new MKAverage(3, 1); obj.</description></item><item><title>【2022-10-21每日一题】901. 股票价格跨度[Medium]</title><link>/study/leetcode/online-stock-span/</link><pubDate>Fri, 21 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/online-stock-span/</guid><description>2022-10-21每日一题：901. 股票价格跨度 难度：Medium
+标签：栈 、 设计 、 数据流 、 单调栈
+编写一个 StockSpanner 类，它收集某些股票的每日报价，并返回该股票当日价格的跨度。
+今天股票价格的跨度被定义为股票价格小于或等于今天价格的最大连续日数（从今天开始往回数，包括今天）。
+例如，如果未来7天股票的价格是 [100, 80, 60, 70, 60, 75, 85]，那么股票跨度将是 [1, 1, 1, 2, 1, 4, 6]。
+&amp;nbsp;
+示例：
+输入：[&amp;quot;StockSpanner&amp;quot;,&amp;quot;next&amp;quot;,&amp;quot;next&amp;quot;,&amp;quot;next&amp;quot;,&amp;quot;next&amp;quot;,&amp;quot;next&amp;quot;,&amp;quot;next&amp;quot;,&amp;quot;next&amp;quot;], [[],[100],[80],[60],[70],[60],[75],[85]] 输出：[null,1,1,1,2,1,4,6] 解释： 首先，初始化 S = StockSpanner()，然后： S.next(100) 被调用并返回 1， S.next(80) 被调用并返回 1， S.next(60) 被调用并返回 1， S.next(70) 被调用并返回 2， S.next(60) 被调用并返回 1， S.next(75) 被调用并返回 4， S.next(85) 被调用并返回 6。 注意 (例如) S.next(75) 返回 4，因为截至今天的最后 4 个价格 (包括今天的价格 75) 小于或等于今天的价格。 &amp;nbsp;
+提示：
+调用&amp;nbsp;StockSpanner.next(int price)&amp;nbsp;时，将有&amp;nbsp;1 &amp;lt;= price &amp;lt;= 10^5。 每个测试用例最多可以调用&amp;nbsp; 10000 次 StockSpanner.</description></item><item><title>【2022-08-16每日一题】1656. 设计有序流</title><link>/study/leetcode/design-an-ordered-stream/</link><pubDate>Tue, 16 Aug 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/design-an-ordered-stream/</guid><description>2022-08-16每日一题：1656. 设计有序流 难度：Easy 标签：设计 、 数组 、 哈希表 、 数据流 有 n 个 (id, value) 对，其中 id 是 1 到 n 之间的一个整数，value 是一个字符串。不存在 id 相同的两个 (id, value) 对。
+设计一个流，以 任意 顺序获取 n 个 (id, value) 对，并在多次调用时 按 id 递增的顺序 返回一些值。
+实现 OrderedStream 类：
+OrderedStream(int n) 构造一个能接收 n 个值的流，并将当前指针 ptr 设为 1 。 String[] insert(int id, String value) 向流中存储新的 (id, value) 对。存储后： 如果流存储有 id = ptr 的 (id, value) 对，则找出从 id = ptr 开始的 最长 id 连续递增序列 ，并 按顺序 返回与这些 id 关联的值的列表。然后，将 ptr 更新为最后那个 id + 1 。 否则，返回一个空列表。</description></item></channel></rss>

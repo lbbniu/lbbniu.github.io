@@ -1,0 +1,311 @@
+<!doctype html><html lang=zh dir=ltr><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>如何实现 Service Weaver 部署器 | lbbniu</title>
+<meta name=generator content="Hugo Eureka 0.9.3"><link rel=stylesheet href=/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css><script defer src=/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js></script><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" as=style onload='this.onload=null,this.rel="stylesheet"'><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/github.min.css media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/php.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/java.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/go.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/python.min.js crossorigin></script><link rel=stylesheet href=/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css media=print onload='this.media="all",this.onload=null'><script defer type=text/javascript src=/js/fontawesome.min.35973bea57658ef0dd22ad59ea4642b6c8c67af62bed8659ac326d284ef285a6657cdbcf57d3b2910e7e992f2b20426e.js></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css integrity=sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js integrity=sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY crossorigin></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script><script defer src=https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js integrity=sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0 crossorigin></script><link rel=icon type=image/png sizes=32x32 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_32x32_fill_box_center_3.png><link rel=apple-touch-icon sizes=180x180 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_180x180_fill_box_center_3.png><meta name=description content="如何实现 Service Weaver 部署器"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"文章列表","item":"/post/"},{"@type":"ListItem","position":2,"name":"如何实现 Service Weaver 部署器","item":"/2022/02/15/deployers/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/2022/02/15/deployers/"},"headline":"如何实现 Service Weaver 部署器 | lbbniu","datePublished":"2022-02-15T15:20:00+08:00","dateModified":"2022-02-15T15:20:00+08:00","wordCount":1371,"author":{"@type":"Person","name":["lbbniu","迈克尔·惠特克"]},"publisher":{"@type":"Person","name":"lbbniu","logo":{"@type":"ImageObject","url":"/images/icon.gif"}},"description":"如何实现 Service Weaver 部署器"}</script><meta property="og:title" content="如何实现 Service Weaver 部署器 | lbbniu"><meta property="og:type" content="article"><meta property="og:image" content="/images/icon.png"><meta property="og:url" content="/2022/02/15/deployers/"><meta property="og:description" content="如何实现 Service Weaver 部署器"><meta property="og:locale" content="zh"><meta property="og:site_name" content="lbbniu"><meta property="article:published_time" content="2022-02-15T15:20:00+08:00"><meta property="article:modified_time" content="2022-02-15T15:20:00+08:00"><meta property="article:section" content="post"><meta property="article:tag" content="Weaver"><body class="flex min-h-screen flex-col"><header class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"><div class="mx-auto w-full max-w-screen-xl"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=="Auto"||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName("html")[0].classList.add("dark")</script><nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0"><a href=/ class="me-6 text-primary-text text-xl font-bold">lbbniu</a>
+<button id=navbar-btn class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+<i class="fas fa-bars"></i></button><div id=target class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20"><div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0"><a href=/post/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">文章</a>
+<a href=/cloud-native/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">云原生</a>
+<a href=/study/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">算法学习</a>
+<a href=/docs/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">Go学习训练营</a>
+<a href=/tags/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">标签</a></div><div class=flex><div class="relative pt-4 md:pt-0"><div class="cursor-pointer hover:text-eureka" id=lightDarkMode><i class="fas fa-adjust"></i></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id=is-open></div><div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40" id=lightDarkOptions><span class="px-4 py-1 hover:text-eureka" name=Light>浅色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Dark>深色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Auto>自动</span></div></div></div></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id=is-open-mobile></div></nav><script>let element=document.getElementById("lightDarkMode");storageColorScheme==null||storageColorScheme=="Auto"?document.addEventListener("DOMContentLoaded",()=>{window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",switchDarkMode)}):storageColorScheme=="Light"?(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","sun"),element.firstElementChild.classList.add("fa-sun")):storageColorScheme=="Dark"&&(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","moon"),element.firstElementChild.classList.add("fa-moon")),document.addEventListener("DOMContentLoaded",()=>{getcolorscheme(),switchBurger()})</script></div></header><main class="grow pt-16"><div class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8"><div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12"><div class="bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"><article class=prose><h1 class=mb-4>如何实现 Service Weaver 部署器</h1><div class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"><div class="me-6 my-2"><i class="fas fa-calendar me-1"></i>
+<span>2022-02-15</span></div><div class="me-6 my-2"><i class="fas fa-clock me-1"></i>
+<span>7分钟阅读时长</span></div><div class="me-6 my-2"><i class="fas fa-folder me-1"></i>
+<a href=/categories/weaver/ class=hover:text-eureka>Weaver</a></div></div><h2 id=声明>声明</h2><p>作者能力有限，如感觉有翻译不准确的请移步原文。</p><p>原文地址：<a href=https://serviceweaver.dev/blog/deployers.html target=_blank rel=noopener>https://serviceweaver.dev/blog/deployers.html</a>
+。</p><p>Service Weaver 允许您以多种不同的方式部署应用程序。例如，您可以在<a href=https://serviceweaver.dev/docs.html#single-process target=_blank rel=noopener>单个进程</a>
+、<a href=https://serviceweaver.dev/docs.html#multiprocess target=_blank rel=noopener>跨多个进程</a>
+或<a href=https://serviceweaver.dev/docs.html#gke target=_blank rel=noopener>云</a>
+中部署应用程序。毫不奇怪，部署 Service Weaver 应用程序的代码称为<strong>deployer</strong>。这篇博文解释了部署器是什么以及如何实施部署器。我们假设您熟悉如何编写 Service Weaver 应用程序。如果不是，我们建议您阅读<a href=https://serviceweaver.dev/docs.html#step-by-step-tutorial target=_blank rel=noopener>分步教程</a>
+。</p><h2 id=概述>概述</h2><p>Service Weaver 应用程序由许多<a href=https://serviceweaver.dev/docs.html#components target=_blank rel=noopener>组件</a>
+组成。该应用程序被编译成单个应用程序二进制文件。部署者通过多次运行二进制文件来部署应用程序，通常是跨多台机器。二进制文件的每个实例都运行组件的一个子集。为了了解要运行哪些组件，二进制链接在一个称为 <strong>weavelet</strong> 的小型后台代理中，部署者使用<strong>envelope</strong>与之通信。如下图所示。</p><p><img src=https://serviceweaver.dev/blog/deployers/assets/overview.svg alt="部署器的架构图。 具有组件 A、B 和 C 的应用程序被编译成二进制文件，由部署者跨三个 weavelet 部署。"></p><p>在这篇博文中，我们提供了对<code>weavelets</code>、<code>deployers</code>和<code>envelopes</code>的高级概述。然后，我们通过完全从头开始实施多进程部署程序，深入了解它们的工作原理。</p><h2 id=weavelets>Weavelets</h2><p>要了解部署器，我们必须首先了解小波。Service Weaver 应用程序被编译成单个可执行二进制文件。链接到二进制文件中的 Service Weaver 库包括一个称为<strong>weavelet</strong>的小代理，它是在您调用 <a href=https://pkg.go.dev/github.com/ServiceWeaver/weaver#Init target=_blank rel=noopener><code>weaver.Init</code></a>
+时创建的。Weavelet 的主要职责是启动和管理一组组件。</p><p>部署 Service Weaver 应用程序时，不只有一个 weavelet。如果有只有一个，Service Weaver 应用程序就不会非常分散。相反，部署人员会多次运行您的二进制文件——在不同机器上的不同进程中以启动多个 weavelet，这些 weavelet 协同工作以执行您的分布式应用程序。</p><p>每个 weavelet 都承载一组可能不同的组件。因为组件是复制的，所以一个组件可能由多个weavelets托管。例如，考虑一个包含组件<code>A</code>、<code>B</code>和的应用程序<code>C</code>。下图显示了一个由三个weavelets组成的示例部署。weavelet 1 托管组件<code>A</code>和<code>B</code>；weavelet 2 承载组件<code>B</code>和 <code>C</code>，weavelet 3 承载组件<code>C</code>。</p><p><img src=https://serviceweaver.dev/blog/deployers/assets/weavelets.svg alt="三个 weavelet 托管组件 A、B 和 C 的不同子集。每个 weavelet 都有自己的网络地址。"></p><p>您还会注意到每个小波都有一个唯一的网络地址。Weavelets 使用这些地址来执行远程方法调用。例如，假设图中 weavelet 1上的<code>A</code>组件想要调用组件<code>C</code> 上的方法。weavelet 1 将联系地址 2.2.2.2 上的 weavelet 2 或地址 3.3.3.3 上的 weavelet 3 以执行该方法。</p><h2 id=部署者>部署者</h2><p>部署者通过启动和管理一组 weavelet 来分发 Service Weaver 应用程序。管理 weavelet 涉及与 (1) 组件、(2) 侦听器和 (3) 遥测相关的三个主要职责。</p><ol><li><strong>组件</strong>。部署者启动 weavelets 并告诉他们要托管哪些组件。部署者还确保 weavelets 知道其他 weavelets 的地址。例如，如果部署者启动了一个新的 weavelet，则部署者会通知所有其他 weavelet 新 weavelet 的存在，包括其地址和它托管的组件。相反，如果一个部署者检测到一个 weavelet 已经失败，部署者会通知所有其他 weavelet 它的失败。</li><li><strong>侦听器</strong>。当组件想要为外部流量提供服务时，它会请求网络侦听器。部署者为侦听器选择一个地址并确保侦听器可公开访问。多个 weavelet 可能共享同一个侦听器，部署者必须确保它们之间的流量平衡。这通常涉及运行或配置代理。</li><li><strong>遥测</strong>。部署者收集、聚合和导出由 weavelet 生成的所有遥测数据。这包括日志、指标、跟踪和配置文件。</li></ol><p>部署者和 weavelet 通过一对 Unix 管道交换协议缓冲区进行通信。我们将与 weavelet 通信的部署器部分称为<strong>envelope</strong>。在本文的附录中，我们描述了 envelope-weavelet 协议的底层细节，但对于大多数部署者来说，使用 ServiceWeaver 的<a href=https://pkg.go.dev/github.com/ServiceWeaver/weaver/runtime/envelope#Envelope target=_blank rel=noopener><code>Envelope</code></a>
+API 应该就足够了。</p><p>envelope和weavelet之间的通信要么是weavelet发起的，要么是envelope发起的。Weavelet 发起的通信显示为<a href=https://pkg.go.dev/github.com/ServiceWeaver/weaver/runtime/envelope#EnvelopeHandler target=_blank rel=noopener><code>EnvelopeHandler</code></a>
+对部署者实现提供的接口的方法调用。</p><pre><code class=language-go>type EnvelopeHandler interface {
+    // Components.
+    ActivateComponent(context.Context, *protos.ActivateComponentRequest) (*protos.ActivateComponentReply, error)
+
+    // Listeners.
+    GetListenerAddress(context.Context, *protos.GetListenerAddressRequest) (*protos.GetListenerAddressReply, error)
+    ExportListener(context.Context, *protos.ExportListenerRequest) (*protos.ExportListenerReply, error)
+
+    // Telemetry.
+    HandleLogEntry(context.Context, *protos.LogEntry) error
+    HandleTraceSpans(context.Context, []trace.ReadOnlySpan) error
+}
+</code></pre><p>envelope发起的通信是通过调用 上的方法来执行的 <code>Envelope</code>。</p><pre><code class=language-go>// Components.
+func (e *Envelope) UpdateRoutingInfo(routing *protos.RoutingInfo) error
+func (e *Envelope) UpdateComponents(components []string) error
+
+// Telemetry.
+func (e *Envelope) GetHealth() protos.HealthStatus
+func (e *Envelope) GetMetrics() ([]*metrics.MetricSnapshot, error)
+func (e *Envelope) GetLoad() (*protos.LoadReport, error)
+func (e *Envelope) GetProfile(req *protos.GetProfileRequest) ([]byte, error)
+</code></pre><h2 id=一个简单的多进程部署器>一个简单的多进程部署器</h2><p>在本节中，我们将实现<a href=https://github.com/ServiceWeaver/weaver/blob/main/website/blog/deployers/multi/main.go target=_blank rel=noopener>一个功能完备的多进程部署器</a>
+。我们会将我们的部署程序编译成一个名为 <code>deploy</code>. 然后我们将能够通过运行来部署 Service Weaver 二进制文件 <code>./deploy &lt;Service Weaver binary></code>。为简单起见，我们的部署人员不会共同定位或复制任何组件。每个组件都将在一个单独的 weavelet 中自行运行。我们首先为部署程序和 weavelet 声明类型。</p><pre><code class=language-go>package main
+
+import ...
+
+// deployer is a simple multiprocess deployer that doesn't implement
+// co-location or replication. That is, every component is run in its own OS
+// process, and there is only one replica of every component.
+type deployer struct {
+    mu       sync.Mutex          // guards handlers
+    handlers map[string]*handler // handlers, by component
+}
+
+// A handler handles messages from a weavelet. It implements the
+// EnvelopeHandler interface.
+type handler struct {
+    deployer *deployer          // underlying deployer
+    envelope *envelope.Envelope // envelope to the weavelet
+    address  string             // weavelet's address
+}
+
+// Check that handler implements the envelope.EnvelopeHandler interface.
+var _ envelope.EnvelopeHandler = &amp;handler{}
+</code></pre><p>接下来，我们实现一个<code>spawn</code>方法来生成一个 weavelet 来托管一个组件。</p><ol><li>为了生成 <code>weavelet</code> 并<code>Envelope</code>与它通信，我们调用该<a href=https://pkg.go.dev/github.com/ServiceWeaver/weaver/runtime/envelope#NewEnvelope target=_blank rel=noopener><code>envelope.NewEnvelope</code></a>
+函数。此函数接受 <a href=https://pkg.go.dev/github.com/ServiceWeaver/weaver/runtime/protos#EnvelopeInfo target=_blank rel=noopener><code>EnvelopeInfo</code></a>
+传递给 weavelet 的 和 <a href=https://pkg.go.dev/github.com/ServiceWeaver/weaver/runtime/protos#AppConfig target=_blank rel=noopener><code>AppConfig</code></a>
+描述应用程序的 。在子进程中<code>NewEnvelope</code>运行提供的 Service Weaver 二进制文件（在本例中）。<code>flag.Arg(0)</code>然后它返回一个<code>Envelope</code>通过一对 Unix 管道与 <code>weavelet</code> 通信的 an。</li><li>我们调用该<code>UpdateComponents</code>方法来告诉 <code>weavelet</code> 运行哪个组件。部署者应该在组件集发生变化时调用时调用<code>UpdateComponents</code>通知<code>weavelet</code>。</li><li>我们调用<code>envelope.Serve</code>来处理来自 <code>weavelet</code> 的请求。</li></ol><pre><code class=language-go>// spawn spawns a weavelet to host the provided component (if one hasn't
+// already spawned) and returns a handler to the weavelet.
+func (d *deployer) spawn(component string) (*handler, error) {
+    d.mu.Lock()
+    defer d.mu.Unlock()
+
+    // Check if a weavelet has already been spawned.
+    h, ok := d.handlers[component]
+    if ok {
+        // The weavelet has already been spawned.
+        return h, nil
+    }
+
+    // Spawn a weavelet in a subprocess to host the component.
+    info := &amp;protos.EnvelopeInfo{
+        App:           &quot;app&quot;,               // the application name
+        DeploymentId:  deploymentId,        // the deployment id
+        Id:            uuid.New().String(), // the weavelet id
+        SingleProcess: false,               // is the app a single process?
+        SingleMachine: true,                // is the app on a single machine?
+        RunMain:       component == &quot;main&quot;, // should the weavelet run main?
+    }
+    config := &amp;protos.AppConfig{
+        Name:   &quot;app&quot;,       // the application name
+        Binary: flag.Arg(0), // the application binary
+    }
+    envelope, err := envelope.NewEnvelope(context.Background(), info, config)
+    if err != nil {
+        return nil, err
+    }
+    h = &amp;handler{
+        deployer: d,
+        envelope: envelope,
+        address:  envelope.WeaveletInfo().DialAddr,
+    }
+
+    go func() {
+        // Inform the weavelet of the component it should host.
+        envelope.UpdateComponents([]string{component})
+
+        // Handle messages from the weavelet.
+        envelope.Serve(h)
+    }()
+
+    // Return the handler.
+    d.handlers[component] = h
+    return h, nil
+}
+</code></pre><p>现在，我们实现这些<code>EnvelopeHandler</code>方法，这些方法处理 weavelet 发起的与部署者的通信。</p><p>对于每种<code>EnvelopeHandler</code>方法，我们还总结了该方法的实现方式<a href=https://github.com/ServiceWeaver/weaver/blob/main/internal/tool/multi/deployer.go target=_blank rel=noopener><code>weaver multi</code></a>
+和实现方式，以便您更好地了解更高级的部署人员如何实现这些方法。 <a href=https://github.com/ServiceWeaver/weaver-gke/blob/main/internal/babysitter/babysitter.go target=_blank rel=noopener><code>weaver gke</code></a></p><h3 id=组件部分>组件部分</h3><p>首先，我们实施<code>ActivateComponent</code>. 当由 weavelet 承载的组件调用<a href=https://pkg.go.dev/github.com/ServiceWeaver/weaver#Get target=_blank rel=noopener><code>weaver.Get[T]</code></a>
+获取某个组件时<code>T</code>，weavelet 调用 <code>ActivateComponent</code>方法激活<code>T</code>。<code>ActivateComponent</code>应该启动组件——可能有多个副本——如果它还没有启动的话。</p><p>我们的处理程序调用<code>deployer.spawn</code>生成一个新的 <code>weavelet</code> 来托管组件。处理程序然后调用<code>UpdateRoutingInfo</code>以将新产生的<code>weavelet</code>地址通知所有的<code>weavelet</code>。这允许请求 weavelet 上的组件与新生成的 weavelet 上的组件执行 RPC。</p><p>以上图为例，如果组件<code>A</code>在weavelet 1 上的组件激活了 组件 <code>C</code>，那么部署者会生成 weavelet 2 和 3（如果它们尚未生成），然后告诉 weavelet 1 服务 weavelet 2 和 3 的地址。</p><p>每当 weavelet 调用 ActivateComponent 的组件的路由信息发生变化时，部署者就应该调用 UpdateRoutingInfo。例如，如果部署者检测到一个 weavelet 托管组件<code>A</code>已经崩溃，它应该在所有已调用 A 上的 ActivateComponent 的weavelet组件上调用 UpdateRoutingInfo，并使用新的路由信息省略失败的weavelet组件的地址。</p><pre><code class=language-go>// Responsibility 1: Components.
+func (h *handler) ActivateComponent(_ context.Context, req *protos.ActivateComponentRequest) (*protos.ActivateComponentReply, error) {
+    // Spawn a weavelet to host the component, if one hasn't already been
+    // spawned.
+    spawned, err := h.deployer.spawn(req.Component)
+    if err != nil {
+        return nil, err
+    }
+
+    // Tell the weavelet the address of the requested component.
+    h.envelope.UpdateRoutingInfo(&amp;protos.RoutingInfo{
+        Component: req.Component,
+        Replicas:  []string{spawned.address},
+    })
+
+    return &amp;protos.ActivateComponentReply{}, nil
+}
+</code></pre><p><a href=https://github.com/ServiceWeaver/weaver/blob/main/internal/tool/multi/deployer.go target=_blank rel=noopener><code>weaver multi</code></a>
+，就像我们的部署者一样，在子流程中生成weavelet。<a href=https://kubernetes.io/docs/concepts/workloads/controllers/deployment/ target=_blank rel=noopener>在Kubernetes 部署</a>
+<a href=https://github.com/ServiceWeaver/weaver-gke/blob/main/internal/babysitter/babysitter.go target=_blank rel=noopener><code>weaver gke</code></a>
+中生成小波。</p><h3 id=侦听器>侦听器</h3><p>接下来，我们实现侦听器方法。当组件请求网络侦听器时，<code>GetListenerAddress</code>将调用该方法。此方法返回组件应侦听的地址。我们简单的部署器总是返回 <code>"localhost:0"</code>。</p><p>在 weavelet 从 接收到地址后<code>GetListenerAddress</code>，它会在该地址上创建一个网络侦听器，并<code>ExportListener</code>使用它正在侦听的具体地址调用该方法。例如，在 weavelet <code>"localhost:0"</code>从我们的<code>GetListenerAddress</code>实现中接收后，它会监听 <code>"localhost:0"</code>. 这会产生一个可拨号地址，例如<code>"127.0.0.1:35879"</code>，然后 weavelet 将其报告给处理<code>ExportListener</code>程序。我们简单的部署器只是打印出这个地址供用户直接联系。</p><pre><code class=language-go>// Responsibility 2: Listeners.
+func (h *handler) GetListenerAddress(_ context.Context, req *protos.GetListenerAddressRequest) (*protos.GetListenerAddressReply, error) {
+    return &amp;protos.GetListenerAddressReply{Address: &quot;localhost:0&quot;}, nil
+}
+
+func (h *handler) ExportListener(_ context.Context, req *protos.ExportListenerRequest) (*protos.ExportListenerReply, error) {
+    // This simplified deployer does not proxy network traffic. Listeners
+    // should be contacted directly.
+    fmt.Printf(&quot;Weavelet listening on %s\n&quot;, req.Address)
+    return &amp;protos.ExportListenerReply{}, nil
+}
+</code></pre><p><a href=https://github.com/ServiceWeaver/weaver/blob/main/internal/tool/multi/deployer.go target=_blank rel=noopener><code>weaver multi</code></a>
+<code>GetListenerAddress</code>总是返回的实施<code>"localhost:0"</code>。它在传递给<a href=https://pkg.go.dev/github.com/ServiceWeaver/weaver#Instance target=_blank rel=noopener>Listener的</a>
+<a href=https://pkg.go.dev/github.com/ServiceWeaver/weaver#ListenerOptions target=_blank rel=noopener>ListenerOptions</a>
+字段<code>ExportListener</code>中指定的地址上运行本地 HTTP 代理。此代理平衡报告给 的侦听器地址之间的流量。通过在 Google Cloud 中配置负载平衡器来实现侦听器。 <code>LocalAddress``ExportListener</code><a href=https://github.com/ServiceWeaver/weaver-gke/blob/main/internal/babysitter/babysitter.go target=_blank rel=noopener><code>weaver gke</code></a></p><h3 id=遥测>遥测</h3><p>最后，我们实现遥测方法。该方法接收由小波产生的所有日志<code>HandleLogEntry</code>。我们的部署人员使用 Service Weaver 库中的漂亮打印机<code>logging</code>将日志打印到标准输出。类似地，小波产生的所有踪迹都被函数接收<code>HandleTraceSpans</code>。为简单起见，我们的部署者忽略了痕迹。</p><pre><code class=language-go>// Responsibility 3: Telemetry.
+func (h *handler) HandleLogEntry(_ context.Context, entry *protos.LogEntry) error {
+    pp := logging.NewPrettyPrinter(colors.Enabled())
+    fmt.Println(pp.Format(entry))
+    return nil
+}
+
+func (h *handler) HandleTraceSpans(context.Context, []trace.ReadOnlySpan) error {
+    // This simplified deployer drops traces on the floor.
+    return nil
+}
+</code></pre><p><a href=https://github.com/ServiceWeaver/weaver/blob/main/internal/tool/multi/deployer.go target=_blank rel=noopener><code>weaver multi</code></a>
+将日志和跟踪写入文件。<a href=https://github.com/ServiceWeaver/weaver-gke/blob/main/internal/babysitter/babysitter.go target=_blank rel=noopener><code>weaver gke</code></a>
+将日志和跟踪导出到<a href=https://cloud.google.com/logging target=_blank rel=noopener>Cloud Logging</a>
+和<a href=https://cloud.google.com/trace target=_blank rel=noopener>Cloud Trace</a>
+。</p><h3 id=主要的>主要的</h3><p><code>main</code>最后，我们为部署者实现一个功能。我们创建一个 <code>deployer</code>，生成主要组件，然后阻止。</p><pre><code class=language-go>func main() {
+    flag.Parse()
+    d := &amp;deployer{handlers: map[string]*handler{}}
+    d.spawn(&quot;main&quot;)
+    select {} // block forever
+}
+</code></pre><p>如果我们编译我们的部署程序，我们可以将一个 Service Weaver 二进制文件传递给它进行部署。</p><pre><code class=language-bash>$ go build -o deploy main.go       # compile the deployer
+$ ./deploy &lt;Service Weaver binary&gt; # deploy an application
+</code></pre><h2 id=高级部署程序功能>高级部署程序功能</h2><p>上一节中的多进程部署器被设计得尽可能简单。另一方面，现实世界的部署人员需要许多更高级的功能。列举和解释如何实现这些功能超出了本博文的范围，但我们将在此处总结一些高级功能。<a href=https://github.com/ServiceWeaver/weaver/blob/main/internal/tool/multi/deployer.go target=_blank rel=noopener><code>weaver multi</code></a>
+您还可以查看我们和部署者的实现<a href=https://github.com/ServiceWeaver/weaver-gke/blob/main/internal/babysitter/babysitter.go target=_blank rel=noopener><code>weaver gke</code></a>
+作为参考。</p><ul><li><strong>长寿和坚持</strong>。上一节中的多进程部署器只在它部署的应用程序存在时存在。真实世界的部署者应该是长期运行和容错的服务。<code>weaver gke</code> 例如，部署者在 Kubernetes 集群中运行一个长时间运行的控制器作业，该作业将其状态持久保存到一个高度一致的数据存储中。它还在部署应用程序的每个集群中运行一个长时间运行的从属作业。当您运行<code>weaver gke deploy</code>部署应用程序时，该应用程序将发送到控制器，控制器又将其分发给下属。</li><li><strong>故障检测</strong>。部署者应该检测一个 weavelet 何时失败并相应地通知其他 weavelet。您可以使用该 <a href=https://pkg.go.dev/github.com/ServiceWeaver/weaver/runtime/envelope#Envelope.GetHealth target=_blank rel=noopener><code>Envelope.GetHealth</code></a>
+方法检查小波的健康状况。多机部署者将不得不实施自己的健康检查以检测机器故障。</li><li><strong>路由</strong>。部署者应该通过监视路由组件上的负载并生成平衡此负载的<a href=https://pkg.go.dev/github.com/ServiceWeaver/weaver/runtime/protos#Assignment target=_blank rel=noopener>路由分配来支持</a>
+<a href=https://serviceweaver.dev/docs.html#routing target=_blank rel=noopener>路由组件。</a>
+您可以使用该 方法获取小波的负载。<a href=https://pkg.go.dev/github.com/ServiceWeaver/weaver/runtime/envelope#Envelope.GetLoad target=_blank rel=noopener><code>Envelope.GetLoad</code></a></li><li><strong>推出</strong>。部署者应该实施<a href=https://serviceweaver.dev/docs.html#versioning target=_blank rel=noopener>版本化推出</a>
+，允许推出应用程序的一个版本以替代先前运行的版本。</li><li><strong>工装</strong>。部署者应该提供工具来检查和调试应用程序的状态。<code>weaver multi status</code>、<code>weaver multi dashboard</code>和 <code>weaver multi logs</code>，例如，可用于检查使用 部署的应用程序<code>weaver multi deploy</code>。</li></ul><h2 id=附录信封-小波协议>附录：信封-小波协议</h2><p>在本附录中，我们描述了信封和小波之间的低级通信协议。大多数部署程序应该使用前面描述的高级 <a href=https://pkg.go.dev/github.com/ServiceWeaver/weaver/runtime/envelope#Envelope target=_blank rel=noopener><code>Envelope</code></a>
+API，但是如果您想完全从头开始实施部署程序（比如使用另一种编程语言），了解低级细节很重要。</p><p>信封和小波通过一对 Unix 管道相互通信。一根管道从包络线延伸到小波，另一根从小波向相反方向延伸到包络线。信封和 weavelet 通过这些管道交换<a href=https://pkg.go.dev/github.com/ServiceWeaver/weaver/runtime/protos#EnvelopeMsg target=_blank rel=noopener>EnvelopeMsg</a>
+和<a href=https://pkg.go.dev/github.com/ServiceWeaver/weaver/runtime/protos#WeaveletMsg target=_blank rel=noopener>WeaveletMsg</a>
+协议缓冲区。</p><p>当信封和小波首先建立它们的连接时，它们会执行一次 <em>握手</em>。信封发送一个<a href=https://pkg.go.dev/github.com/ServiceWeaver/weaver/runtime/protos#EnvelopeInfo target=_blank rel=noopener><code>EnvelopeInfo</code></a>
+，小波响应一个<a href=https://pkg.go.dev/github.com/ServiceWeaver/weaver/runtime/protos#WeaveletInfo target=_blank rel=noopener><code>WeaveletInfo</code></a>
+。握手后，信封和小波自由通信。存在三种通信模式。</p><ol><li>信封可以启动针对小波的 RPC。</li><li>Weavelet 可以针对信封启动 RPC。</li><li>Weavelet 可以将未确认的 RPC 发送到信封。</li></ol><p>这三种通信形式可以任意交错。例如，在信封通过管道发送 RPC 请求后，它可能会在收到 RPC 回复之前通过管道接收到许多不相关的消息。</p><p>为了使这种交互具体化，我们将实施<a href=https://github.com/ServiceWeaver/weaver/blob/main/website/blog/deployers/pipes/main.go target=_blank rel=noopener>世界上最简单的部署程序</a>
+。这个简单的部署程序启动一个 Service Weaver 二进制文件，通过管道与 weavelet 交换一些消息，然后终止。<code>main</code>我们从一个接收 Service Weaver 二进制文件作为其第一个也是唯一一个参数并将其传递给函数的函数开始<code>run</code>。</p><pre><code class=language-go>package main
+
+import ...
+
+func main() {
+    flag.Parse()
+    if err := run(context.Background(), flag.Arg(0)); err != nil {
+        fmt.Fprintln(os.Stderr, err)
+        os.Exit(1)
+    }
+}
+</code></pre><p>为了实现这个<code>run</code>功能，我们首先创建一对管道。第一条管道从<code>envelopeWriter</code>包络中延伸到<code>weaveletReader</code>小波中。第二个以相反的方向从<code>weaveletWriter</code>小波中运行到<code>envelopeReader</code>包络中。我们在子进程中启动二进制文件。<code>weaveletReader</code>管道的两端<code>weaveletWriter</code>将在子进程中作为文件描述符 3 和 4 访问（有关详细信息，请参阅<a href=https://pkg.go.dev/os/exec target=_blank rel=noopener>exec 包</a>
+）。<code>ENVELOPE_TO_WEAVELET_FD</code>在子进程中运行的 weavelet 打开存储在和 环境变量中的文件描述符<code>WEAVELET_TO_ENVELOPE_FD</code>，以建立与信封的连接。</p><pre><code class=language-go>func run(ctx context.Context, binary string) error {
+    // Step 1. Run the binary and establish the pipes between the envelope and
+    // the weavelet.
+    //
+    //              envelope               weavelet
+    //             ┌──────────────────┐   ┌───────────────────┐
+    //             │ envelopeWriter --│---│-&gt; weaveletReader  │
+    //             │ envelopeReader &lt;-│---│-- weaveletWriter  │
+    //             └──────────────────┘   └───────────────────┘
+    weaveletReader, envelopeWriter, err := os.Pipe()
+    if err != nil {
+        return err
+    }
+    envelopeReader, weaveletWriter, err := os.Pipe()
+    if err != nil {
+        return err
+    }
+
+    // ExtraFiles file descriptors begin at 3 because descriptors 0, 1, and 2
+    // are reserved for stdin, stdout, and stderr. See
+    // https://pkg.go.dev/os/exec#Cmd for details.
+    cmd := exec.Command(binary)
+    cmd.ExtraFiles = []*os.File{weaveletReader, weaveletWriter}
+    cmd.Env = []string{&quot;ENVELOPE_TO_WEAVELET_FD=3&quot;, &quot;WEAVELET_TO_ENVELOPE_FD=4&quot;}
+    if err := cmd.Start(); err != nil {
+        return err
+    }
+
+    // ...
+}
+</code></pre><p>其次，信封将<code>EnvelopeMsg</code>包含 an 的 an发送<code>EnvelopeInfo</code>到 weavelet。这是小波期望收到的第一条消息。An <code>EnvelopeInfo</code>为 weavelet 提供一组基本的元数据，包括应用程序名称、部署的唯一 ID、Weavelet 的唯一 ID 等。</p><pre><code class=language-go>func run(ctx context.Context, binary string) error {
+    // Step 1...
+
+    // Step 2. Send an EnvelopeInfo to the weavelet.
+    info := &amp;protos.EnvelopeMsg{
+        EnvelopeInfo: &amp;protos.EnvelopeInfo{
+            App:           &quot;app&quot;,               // the application name
+            DeploymentId:  uuid.New().String(), // the deployment id
+            Id:            uuid.New().String(), // the weavelet id
+            SingleProcess: false,               // is the app a single process?
+            SingleMachine: true,                // is the app on a single machine?
+            RunMain:       true,                // should the weavelet run main?
+        },
+    }
+    if err := protomsg.Write(envelopeWriter, info); err != nil {
+        return err
+    }
+
+    // ...
+}
+</code></pre><p>第三，部署者<code>WeaveletMsg</code>从 weavelet 中读取并打印 a。</p><pre><code class=language-go>func run(ctx context.Context, binary string) error {
+    // Step 1...
+    // Step 2...
+
+    // Step 3. Receive a WeaveletInfo from the weavelet.
+    var reply protos.WeaveletMsg
+    if err := protomsg.Read(envelopeReader, &amp;reply); err != nil {
+        return err
+    }
+    fmt.Println(prototext.Format(&amp;reply))
+
+    // ...
+}
+</code></pre><p>这<code>WeaveletMsg</code>包含一个<code>WeaveletInfo</code>包含有关 weavelet 的信息，特别是它的地址和 PID：</p><pre><code>weavelet_info: {
+    dial_addr: &quot;tcp://127.0.0.1:41123&quot;
+    pid: 2193420
+}
+</code></pre><p>第四，部署者发起一个 RPC 来接收 weavelet 的健康状态。<code>42</code>它为 RPC选择一个唯一的 ID 。</p><pre><code class=language-go>func run(ctx context.Context, binary string) error {
+    // Step 1...
+    // Step 2...
+    // Step 3...
+
+    // Step 4. Send a GetHealth RPC to the weavelet.
+    req := &amp;protos.EnvelopeMsg{
+        Id:               42,
+        GetHealthRequest: &amp;protos.GetHealthRequest{},
+    }
+    if err := protomsg.Write(envelopeWriter, req); err != nil {
+        return err
+    }
+
+    // ...
+}
+</code></pre><p>第五，部署者重复<code>WeaveletMsg</code>从 weavelet 中读取 s 直到它收到一个 id <code>-42</code>。每个具有正 id 的 RPC<code>x</code>都会收到一个具有负 id 的回复<code>-x</code>。请注意，在收到对其 RPC 的回复之前，部署者可能会收到来自 weavelet 的其他消息。一个真正的部署者会处理这些消息，但我们的普通部署者会简单地忽略它们。</p><pre><code class=language-go>func run(ctx context.Context, binary string) error {
+    // Step 1...
+    // Step 2...
+    // Step 3...
+    // Step 4...
+
+    // Step 5. Receive a reply to the GetHealth RPC, ignoring other messages.
+    for {
+        var reply protos.WeaveletMsg
+        if err := protomsg.Read(envelopeReader, &amp;reply); err != nil {
+            return err
+        }
+        if reply.Id == -42 {
+            fmt.Println(prototext.Format(&amp;reply))
+            break
+        }
+    }
+    return nil
+}
+</code></pre><p>回复看起来像这样：</p><pre><code>id: -42
+get_health_reply: {
+    status: HEALTHY
+}
+</code></pre><p>这个简单的部署器演示了部署器和 weavelet 如何通过一对管道发送 protobufs 进行通信。有关更多详细信息，请参阅 <a href=https://github.com/ServiceWeaver/weaver/blob/main/runtime/protos/runtime.proto target=_blank rel=noopener>runtime.proto</a>
+。</p></article><div class=my-4><a href=/tags/weaver/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#Weaver</a></div><div class=py-2><div class="my-8 flex flex-col items-center md:flex-row"><a href=/authors/lbbniu/ class="md:me-4 text-primary-text h-24 w-24"><i class="fas fa-user-circle fa-6x"></i></a><div class="mt-4 w-full md:mt-0 md:w-auto"><a href=/authors/lbbniu/ class="mb-2 block border-b pb-1 text-lg font-bold"><h3>lbbniu</h3></a><span class="block pb-2"></span></div></div><div class="my-8 flex flex-col items-center md:flex-row"><a href=/authors/%E8%BF%88%E5%85%8B%E5%B0%94%E6%83%A0%E7%89%B9%E5%85%8B/ class="md:me-4 text-primary-text h-24 w-24"><i class="fas fa-user-circle fa-6x"></i></a><div class="mt-4 w-full md:mt-0 md:w-auto"><a href=/authors/%E8%BF%88%E5%85%8B%E5%B0%94%E6%83%A0%E7%89%B9%E5%85%8B/ class="mb-2 block border-b pb-1 text-lg font-bold"><h3>迈克尔·惠特克</h3></a><span class="block pb-2"></span></div></div></div><div class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"><div><span class="text-primary-text block font-bold">上一页</span>
+<a href=/2022/02/15/uri-addr/ class=block>模板-标题</a></div><div class="mt-4 md:mt-0 md:text-right"><span class="text-primary-text block font-bold">下一页</span>
+<a href=/2022/02/15/%E4%BD%BF%E7%94%A8docker%E6%90%AD%E5%BB%BA-tars-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/ class=block>使用docker搭建 tars 开发环境</a></div></div></div><div class=col-span-2><div class="bg-primary-bg
+prose sticky top-16 z-10 hidden px-6 py-4 lg:block"><h3>本页内容</h3></div><div class="sticky-toc hidden px-6 pb-6 lg:block"><nav id=TableOfContents><ul><li><a href=#声明>声明</a></li><li><a href=#概述>概述</a></li><li><a href=#weavelets>Weavelets</a></li><li><a href=#部署者>部署者</a></li><li><a href=#一个简单的多进程部署器>一个简单的多进程部署器</a><ul><li><a href=#组件部分>组件部分</a></li><li><a href=#侦听器>侦听器</a></li><li><a href=#遥测>遥测</a></li><li><a href=#主要的>主要的</a></li></ul></li><li><a href=#高级部署程序功能>高级部署程序功能</a></li><li><a href=#附录信封-小波协议>附录：信封-小波协议</a></li></ul></nav></div><script>window.addEventListener("DOMContentLoaded",()=>{enableStickyToc()})</script></div></div><script>document.addEventListener("DOMContentLoaded",()=>{hljs.highlightAll()})</script></div></div></main><footer class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b"><p class="text-sm text-tertiary-text">&copy; 2021 <a href=https://blog.lbbniu.com/>lbbniu</a>
+&#183; Powered by the <a href=https://github.com/wangchucheng/hugo-eureka class=hover:text-eureka>Eureka</a> theme for <a href=https://gohugo.io class=hover:text-eureka>Hugo</a></p></div></div></footer></body></html>

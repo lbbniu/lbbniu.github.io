@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>枚举 on lbbniu</title><link>/tags/%E6%9E%9A%E4%B8%BE/</link><description>Recent content in 枚举 on lbbniu</description><generator>Hugo -- gohugo.io</generator><language>zh</language><managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor><webMaster>lbbniu@gmail.com (lbbniu)</webMaster><copyright>&amp;copy; 2021 &lt;a href="https://blog.lbbniu.com/">lbbniu&lt;/a></copyright><lastBuildDate>Wed, 02 Nov 2022 00:01:00 +0800</lastBuildDate><atom:link href="/tags/%E6%9E%9A%E4%B8%BE/index.xml" rel="self" type="application/rss+xml"/><item><title>剑指 Offer 57 - II 和为s的连续正数序列</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/he-wei-sde-lian-xu-zheng-shu-xu-lie-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/he-wei-sde-lian-xu-zheng-shu-xu-lie-lcof/</guid><description>剑指 Offer 57 - II 和为s的连续正数序列 输入一个正整数 target ，输出所有和为 target 的连续正整数序列（至少含有两个数）。
+序列内的数字由小到大排列，不同序列按照首个数字从小到大排列。
+&amp;nbsp;
+示例 1：
+输入：target = 9 输出：[[2,3,4],[4,5]] 示例 2：
+输入：target = 15 输出：[[1,2,3,4,5],[4,5,6],[7,8]] &amp;nbsp;
+限制：
+1 &amp;lt;= target &amp;lt;= 10^5 &amp;nbsp;
+func findContinuousSequence(target int) [][]int { } LeetCode题库地址 https://leetcode.cn/problems/he-wei-sde-lian-xu-zheng-shu-xu-lie-lcof</description></item><item><title>面试题 16.18 模式匹配</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/pattern-matching-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/pattern-matching-lcci/</guid><description>面试题 16.18 模式匹配 你有两个字符串，即pattern和value。 pattern字符串由字母&amp;quot;a&amp;quot;和&amp;quot;b&amp;quot;组成，用于描述字符串中的模式。例如，字符串&amp;quot;catcatgocatgo&amp;quot;匹配模式&amp;quot;aabab&amp;quot;（其中&amp;quot;cat&amp;quot;是&amp;quot;a&amp;quot;，&amp;quot;go&amp;quot;是&amp;quot;b&amp;quot;），该字符串也匹配像&amp;quot;a&amp;quot;、&amp;quot;ab&amp;quot;和&amp;quot;b&amp;quot;这样的模式。但需注意&amp;quot;a&amp;quot;和&amp;quot;b&amp;quot;不能同时表示相同的字符串。编写一个方法判断value字符串是否匹配pattern字符串。
+示例 1：
+输入： pattern = &amp;quot;abba&amp;quot;, value = &amp;quot;dogcatcatdog&amp;quot; 输出： true 示例 2：
+输入： pattern = &amp;quot;abba&amp;quot;, value = &amp;quot;dogcatcatfish&amp;quot; 输出： false 示例 3：
+输入： pattern = &amp;quot;aaaa&amp;quot;, value = &amp;quot;dogcatcatdog&amp;quot; 输出： false 示例 4：
+输入： pattern = &amp;quot;abba&amp;quot;, value = &amp;quot;dogdogdogdog&amp;quot; 输出： true 解释： &amp;quot;a&amp;quot;=&amp;quot;dogdog&amp;quot;,b=&amp;quot;&amp;quot;，反之也符合规则 提示：
+1 &amp;lt;= len(pattern) &amp;lt;= 1000 0 &amp;lt;= len(value) &amp;lt;= 1000 你可以假设pattern只包含字母&amp;quot;a&amp;quot;和&amp;quot;b&amp;quot;，value仅包含小写字母。 func patternMatching(pattern string, value string) bool { } LeetCode题库地址 https://leetcode.cn/problems/pattern-matching-lcci</description></item><item><title>【2022-11-02每日一题】1620. 网络信号最好的坐标[Medium]</title><link>/study/leetcode/coordinate-with-maximum-network-quality/</link><pubDate>Wed, 02 Nov 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/coordinate-with-maximum-network-quality/</guid><description>2022-11-02每日一题：1620. 网络信号最好的坐标 难度：Medium
+标签：数组 、 枚举
+给你一个数组 towers&amp;nbsp;和一个整数 radius 。
+数组&amp;nbsp; towers&amp;nbsp; 中包含一些网络信号塔，其中&amp;nbsp;towers[i] = [xi, yi, qi]&amp;nbsp;表示第&amp;nbsp;i&amp;nbsp;个网络信号塔的坐标是&amp;nbsp;(xi, yi)&amp;nbsp;且信号强度参数为&amp;nbsp;qi&amp;nbsp;。所有坐标都是在&amp;nbsp; X-Y 坐标系内的&amp;nbsp;整数&amp;nbsp;坐标。两个坐标之间的距离用 欧几里得距离&amp;nbsp;计算。
+整数&amp;nbsp;radius&amp;nbsp;表示一个塔 能到达&amp;nbsp;的 最远距离&amp;nbsp;。如果一个坐标跟塔的距离在 radius&amp;nbsp;以内，那么该塔的信号可以到达该坐标。在这个范围以外信号会很微弱，所以 radius&amp;nbsp;以外的距离该塔是 不能到达的&amp;nbsp;。
+如果第 i&amp;nbsp;个塔能到达 (x, y)&amp;nbsp;，那么该塔在此处的信号为&amp;nbsp;⌊qi / (1 + d)⌋&amp;nbsp;，其中&amp;nbsp;d&amp;nbsp;是塔跟此坐标的距离。一个坐标的 信号强度 是所有 能到达&amp;nbsp;该坐标的塔的信号强度之和。
+请你返回数组 [cx, cy] ，表示 信号强度 最大的 整数 坐标点&amp;nbsp;(cx, cy) 。如果有多个坐标网络信号一样大，请你返回字典序最小的 非负 坐标。
+注意：
+坐标&amp;nbsp;(x1, y1)&amp;nbsp;字典序比另一个坐标&amp;nbsp;(x2, y2) 小，需满足以下条件之一： &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;要么&amp;amp;nbsp;&amp;lt;code&amp;gt;x1 &amp;amp;lt; x2&amp;lt;/code&amp;gt;&amp;amp;nbsp;，&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;要么&amp;amp;nbsp;&amp;lt;code&amp;gt;x1 == x2&amp;lt;/code&amp;gt; 且&amp;amp;nbsp;&amp;lt;code&amp;gt;y1 &amp;amp;lt; y2&amp;lt;/code&amp;gt;&amp;amp;nbsp;。&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;&amp;lt;code&amp;gt;⌊val⌋&amp;lt;/code&amp;gt;&amp;amp;nbsp;表示小于等于&amp;amp;nbsp;&amp;lt;code&amp;gt;val&amp;lt;/code&amp;gt;&amp;amp;nbsp;的最大整数（向下取整函数）。&amp;lt;/li&amp;gt; &amp;nbsp;
+示例 1：
+输入：towers = [[1,2,5],[2,1,7],[3,1,9]], radius = 2 输出：[2,1] 解释： 坐标 (2, 1) 信号强度之和为 13 - 塔 (2, 1) 强度参数为 7 ，在该点强度为 ⌊7 / (1 + sqrt(0)⌋ = ⌊7⌋ = 7 - 塔 (1, 2) 强度参数为 5 ，在该点强度为 ⌊5 / (1 + sqrt(2)⌋ = ⌊2.</description></item></channel></rss>

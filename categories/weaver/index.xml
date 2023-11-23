@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Weaver on lbbniu</title><link>/categories/weaver/</link><description>Recent content in Weaver on lbbniu</description><generator>Hugo -- gohugo.io</generator><language>zh</language><managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor><webMaster>lbbniu@gmail.com (lbbniu)</webMaster><copyright>&amp;copy; 2021 &lt;a href="https://blog.lbbniu.com/">lbbniu&lt;/a></copyright><lastBuildDate>Tue, 15 Feb 2022 15:20:00 +0800</lastBuildDate><atom:link href="/categories/weaver/index.xml" rel="self" type="application/rss+xml"/><item><title>如何实现 Service Weaver 部署器</title><link>/2022/02/15/deployers/</link><pubDate>Tue, 15 Feb 2022 15:20:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/2022/02/15/deployers/</guid><description>声明 作者能力有限，如感觉有翻译不准确的请移步原文。
+原文地址：https://serviceweaver.dev/blog/deployers.html 。
+Service Weaver 允许您以多种不同的方式部署应用程序。例如，您可以在单个进程 、跨多个进程 或云 中部署应用程序。毫不奇怪，部署 Service Weaver 应用程序的代码称为deployer。这篇博文解释了部署器是什么以及如何实施部署器。我们假设您熟悉如何编写 Service Weaver 应用程序。如果不是，我们建议您阅读分步教程 。
+概述 Service Weaver 应用程序由许多组件 组成。该应用程序被编译成单个应用程序二进制文件。部署者通过多次运行二进制文件来部署应用程序，通常是跨多台机器。二进制文件的每个实例都运行组件的一个子集。为了了解要运行哪些组件，二进制链接在一个称为 weavelet 的小型后台代理中，部署者使用envelope与之通信。如下图所示。
+在这篇博文中，我们提供了对weavelets、deployers和envelopes的高级概述。然后，我们通过完全从头开始实施多进程部署程序，深入了解它们的工作原理。
+Weavelets 要了解部署器，我们必须首先了解小波。Service Weaver 应用程序被编译成单个可执行二进制文件。链接到二进制文件中的 Service Weaver 库包括一个称为weavelet的小代理，它是在您调用 weaver.Init 时创建的。Weavelet 的主要职责是启动和管理一组组件。
+部署 Service Weaver 应用程序时，不只有一个 weavelet。如果有只有一个，Service Weaver 应用程序就不会非常分散。相反，部署人员会多次运行您的二进制文件——在不同机器上的不同进程中以启动多个 weavelet，这些 weavelet 协同工作以执行您的分布式应用程序。
+每个 weavelet 都承载一组可能不同的组件。因为组件是复制的，所以一个组件可能由多个weavelets托管。例如，考虑一个包含组件A、B和的应用程序C。下图显示了一个由三个weavelets组成的示例部署。weavelet 1 托管组件A和B；weavelet 2 承载组件B和 C，weavelet 3 承载组件C。
+您还会注意到每个小波都有一个唯一的网络地址。Weavelets 使用这些地址来执行远程方法调用。例如，假设图中 weavelet 1上的A组件想要调用组件C 上的方法。weavelet 1 将联系地址 2.2.2.2 上的 weavelet 2 或地址 3.3.3.3 上的 weavelet 3 以执行该方法。
+部署者 部署者通过启动和管理一组 weavelet 来分发 Service Weaver 应用程序。管理 weavelet 涉及与 (1) 组件、(2) 侦听器和 (3) 遥测相关的三个主要职责。</description></item></channel></rss>

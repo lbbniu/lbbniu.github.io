@@ -1,0 +1,1259 @@
+<!doctype html><html lang=zh dir=ltr><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>第四周 深度优先搜索、广度优先搜索、二叉堆、二叉搜索树 | 极客时间算法训练营2021版 | lbbniu</title>
+<meta name=generator content="Hugo Eureka 0.9.3"><link rel=stylesheet href=/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css><script defer src=/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js></script><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" as=style onload='this.onload=null,this.rel="stylesheet"'><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/github.min.css media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/php.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/java.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/go.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/python.min.js crossorigin></script><link rel=stylesheet href=/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css media=print onload='this.media="all",this.onload=null'><script defer type=text/javascript src=/js/fontawesome.min.35973bea57658ef0dd22ad59ea4642b6c8c67af62bed8659ac326d284ef285a6657cdbcf57d3b2910e7e992f2b20426e.js></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css integrity=sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js integrity=sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY crossorigin></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script><script defer src=https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js integrity=sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0 crossorigin></script><link rel=icon type=image/png sizes=32x32 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_32x32_fill_box_center_3.png><link rel=apple-touch-icon sizes=180x180 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_180x180_fill_box_center_3.png><meta name=description content="第 7 课 深度优先搜索、广度优先搜索，第8课 二叉堆、二叉搜索树"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"算法学习","item":"/study/"},{"@type":"ListItem","position":2,"name":"极客时间算法训练营2021版","item":"/study/2021algorithm/"},{"@type":"ListItem","position":3,"name":"第四周 深度优先搜索、广度优先搜索、二叉堆、二叉搜索树","item":"/study/2021algorithm/week04/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/study/2021algorithm/week04/"},"headline":"第四周 深度优先搜索、广度优先搜索、二叉堆、二叉搜索树 | 极客时间算法训练营2021版 | lbbniu","datePublished":"2021-12-06T08:00:00+08:00","dateModified":"2023-11-23T18:27:23+08:00","wordCount":4244,"publisher":{"@type":"Person","name":"lbbniu","logo":{"@type":"ImageObject","url":"/images/icon.gif"}},"description":"第 7 课 深度优先搜索、广度优先搜索，第8课 二叉堆、二叉搜索树"}</script><meta property="og:title" content="第四周 深度优先搜索、广度优先搜索、二叉堆、二叉搜索树 | 极客时间算法训练营2021版 | lbbniu"><meta property="og:type" content="article"><meta property="og:image" content="/images/icon.png"><meta property="og:url" content="/study/2021algorithm/week04/"><meta property="og:description" content="第 7 课 深度优先搜索、广度优先搜索，第8课 二叉堆、二叉搜索树"><meta property="og:locale" content="zh"><meta property="og:site_name" content="lbbniu"><meta property="article:published_time" content="2021-12-06T08:00:00+08:00"><meta property="article:modified_time" content="2023-11-23T18:27:23+08:00"><meta property="article:section" content="study"><body class="flex min-h-screen flex-col"><header class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"><div class="mx-auto w-full max-w-screen-xl"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=="Auto"||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName("html")[0].classList.add("dark")</script><nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0"><a href=/ class="me-6 text-primary-text text-xl font-bold">lbbniu</a>
+<button id=navbar-btn class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+<i class="fas fa-bars"></i></button><div id=target class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20"><div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0"><a href=/post/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">文章</a>
+<a href=/cloud-native/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">云原生</a>
+<a href=/study/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 selected-menu-item me-4">算法学习</a>
+<a href=/docs/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">Go学习训练营</a>
+<a href=/tags/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">标签</a></div><div class=flex><div class="relative pt-4 md:pt-0"><div class="cursor-pointer hover:text-eureka" id=lightDarkMode><i class="fas fa-adjust"></i></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id=is-open></div><div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40" id=lightDarkOptions><span class="px-4 py-1 hover:text-eureka" name=Light>浅色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Dark>深色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Auto>自动</span></div></div></div></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id=is-open-mobile></div></nav><script>let element=document.getElementById("lightDarkMode");storageColorScheme==null||storageColorScheme=="Auto"?document.addEventListener("DOMContentLoaded",()=>{window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",switchDarkMode)}):storageColorScheme=="Light"?(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","sun"),element.firstElementChild.classList.add("fa-sun")):storageColorScheme=="Dark"&&(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","moon"),element.firstElementChild.classList.add("fa-moon")),document.addEventListener("DOMContentLoaded",()=>{getcolorscheme(),switchBurger()})</script></div></header><main class="grow pt-16"><div class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8"><div class=lg:pt-12><div class="flex flex-col md:flex-row bg-secondary-bg rounded"><div class="md:w-1/4 lg:w-1/5 border-e"><div class="sticky top-16 pt-6"><div id=sidebar-title class="md:hidden mx-4 px-2 pt-4 pb-2 md:border-b text-tertiary-text md:text-primary-text"><span class=font-semibold>目录</span>
+<i class='fas fa-caret-right ms-1'></i></div><div id=sidebar-toc class="hidden md:block overflow-y-auto mx-6 md:mx-0 pe-6 pt-2 md:max-h-doc-sidebar bg-primary-bg md:bg-transparent"><div class="flex flex-wrap ms-4 -me-2 p-2 bg-secondary-bg md:bg-primary-bg rounded"><a class=hover:text-eureka href=/study/2021algorithm/>极客时间算法训练营2021版</a></div><ul class=ps-6><li class=py-2><div><a class=hover:text-eureka href=/study/2021algorithm/week01/>第一周 数组、链表、栈、队列</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/2021algorithm/week02/>第二周 哈希表、集合、映射、前缀和、差分、双指针扫描</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/2021algorithm/week03/>第三周 递归、分治、树与图</a></div></li><li class=py-2><div><a class="text-eureka hover:text-eureka" href=/study/2021algorithm/week04/>第四周 深度优先搜索、广度优先搜索、二叉堆、二叉搜索树</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/2021algorithm/week05/>第五周 二分、排序</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/2021algorithm/week06/>第六周 贪心、动态规划</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/2021algorithm/week07/>第七周 动态规划</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/2021algorithm/week08/>第八周 字典树、并查集，图论算法</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/2021algorithm/week09/>第九周 字符串处理、高级搜索</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/2021algorithm/week10/>第十周 平衡二叉树、跳跃表、树状数组与线段树、实战技巧、总结回顾</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/2021algorithm/final/>毕业刷新路径</a></div></li></ul></div></div></div><div class="w-full md:w-3/4 lg:w-4/5 pb-8 pt-2 md:pt-8"><div class=flex><div class="w-full lg:w-3/4 px-6"><article class=prose><h1 class=mb-4>第四周 深度优先搜索、广度优先搜索、二叉堆、二叉搜索树</h1><div class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"><div class="me-6 my-2"><i class="fas fa-calendar me-1"></i>
+<span>2021-12-06</span></div><div class="me-6 my-2"><i class="fas fa-clock me-1"></i>
+<span>20分钟阅读时长</span></div><div class="me-6 my-2"><i class="fas fa-folder me-1"></i>
+<a href=/categories/%E8%AE%AD%E7%BB%83%E8%90%A5/ class=hover:text-eureka>训练营</a></div></div><p>题目数：13</p><h2 id=本周作业>本周作业</h2><ul><li><a href=https://leetcode-cn.com/problems/surrounded-regions/ target=_blank rel=noopener>130.被围绕的区域</a>
+（Medium）半年内出题频次：</li></ul><table><thead><tr><th style=text-align:center>百度</th><th style=text-align:center>字节跳动</th><th style=text-align:center>华为</th><th style=text-align:center>Amazon</th><th style=text-align:center>Google</th></tr></thead><tbody><tr><td style=text-align:center>6</td><td style=text-align:center>2</td><td style=text-align:center>2</td><td style=text-align:center>4</td><td style=text-align:center>7</td></tr></tbody></table><pre><code class=language-go>// 公用方向定义
+var (
+    dx = [4]int{1, -1, 0, 0}
+    dy = [4]int{0, 0, 1, -1}
+)
+// 方法一：dfs 和 bfs 从上下，左右边界处理进行加速
+// dfs 深度优先遍历
+var n, m int
+func solve(board [][]byte)  {
+    if len(board) == 0 || len(board[0]) == 0 {
+        return
+    }
+    n, m = len(board), len(board[0])
+  	// 第一列和最后一列
+    for i := 0; i &lt; n; i++ {
+        dfs(board, i, 0)
+        dfs(board, i, m-1)
+    }
+   	// 第一行和最后一行
+    for i := 1; i &lt; m - 1; i++ {
+        dfs(board, 0, i)
+        dfs(board, n-1, i)
+    }
+    for i := 0; i &lt; n; i++ {
+        for j := 0; j &lt; m; j++ {
+            if board[i][j] == 'A' {
+                board[i][j] = 'O'
+            } else if board[i][j] == 'O' {
+                board[i][j] = 'X'
+            }
+        }
+    }
+}
+
+func dfs(board [][]byte, x, y int) {
+    if x &lt; 0 || x &gt;= n || y &lt; 0 || y &gt;= m || board[x][y] != 'O' {
+        return
+    }
+    board[x][y] = 'A'
+  	for i := 0; i &lt; 4; i++ {
+    		dfs(board, x + dx[i], y + dy[i])
+   	}
+}
+
+// bfs：广度优先遍历
+func solve(board [][]byte)  {
+    if len(board) == 0 || len(board[0]) == 0 {
+        return
+    }
+    n, m := len(board), len(board[0])
+    queue := [][]int{}
+  	// 第一列和最后一列
+    for i := 0; i &lt; n; i++ {
+        if board[i][0] == 'O' {
+            queue = append(queue, []int{i, 0})
+            board[i][0] = 'A'
+        }
+        if board[i][m-1] == 'O' {
+            queue = append(queue, []int{i, m - 1})
+            board[i][m-1] = 'A'
+        }
+    }
+   	// 第一行和最后一行
+    for i := 1; i &lt; m - 1; i++ {
+        if board[0][i] == 'O' {
+            queue = append(queue, []int{0, i})
+            board[0][i] = 'A'
+        }
+        if board[n-1][i] == 'O' {
+            queue = append(queue, []int{n - 1, i})
+            board[n-1][i] = 'A'
+        }
+    }
+    for len(queue) &gt; 0 {
+        cell := queue[0]
+        queue = queue[1:]
+        x, y := cell[0], cell[1]
+        for i := 0; i &lt; 4; i++ {
+            mx, my := x + dx[i], y + dy[i]
+            if mx &lt; 0 || my &lt; 0 || mx &gt;= n || my &gt;= m || board[mx][my] != 'O' {
+                continue
+            }
+            queue = append(queue, []int{mx, my})
+            board[mx][my] = 'A'
+        }
+    }
+    for i := 0; i &lt; n; i++ {
+        for j := 0; j &lt; m; j++ {
+            if board[i][j] == 'A' {
+                board[i][j] = 'O'
+            } else if board[i][j] == 'O' {
+                board[i][j] = 'X'
+            }
+        }
+    }
+}
+
+// 方法二：并差集，两次编译
+type Uf struct {
+	parent []int
+}
+
+func NewUf(n int) *Uf {
+	parent := make([]int, n)
+	for i := range parent {
+			parent[i] = i
+	}
+	return &amp;Uf{parent: parent}
+}
+
+func (u *Uf) find(p int) int {
+	parent := u.parent
+	for p != parent[p] {
+		parent[p] = parent[parent[p]]
+		p = parent[p]
+	}
+	return p
+}
+
+func (u *Uf) Union(p, q int) {
+	rootP, rootQ := u.find(p), u.find(q)
+	if rootP != rootQ {
+		u.parent[rootP] = rootQ
+	}
+}
+
+func (u *Uf) IsConnect(p, q int) bool {
+	return u.find(p) == u.find(q)
+}
+
+func solve(board [][]byte) {
+	m, n := len(board), len(board[0])
+	u := NewUf(m*n+1)
+	for i := 0; i &lt; m; i++ {
+		for j := 0; j &lt; n; j++ {
+			if (i == 0 || i == m-1 || j == 0 || j == n-1) &amp;&amp; board[i][j] == 'O' {
+				u.Union(i*n+j, m*n)
+			} else if board[i][j] == 'O' {
+				for k := 0; k &lt; 4; k++ {
+					x, y := i+dx[k], j+dy[k]
+					if x &gt;= 0 &amp;&amp; x &lt; m &amp;&amp; y &gt;= 0 &amp;&amp; y &lt; n &amp;&amp; board[x][y] == 'O' {
+						u.Union(i*n+j, x*n+y)
+					}
+				}
+			}
+		}
+	}
+	for i := 0; i &lt; m; i++ {
+		for j := 0; j &lt; n; j++ {
+			if !u.IsConnect(i*n+j, m*n) &amp;&amp; board[i][j] == 'O' {
+				board[i][j] = 'X'
+			}
+		}
+	}
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/design-twitter/ target=_blank rel=noopener>355.设计推特</a>
+（Medium）半年内出题频次：</li></ul><table><thead><tr><th style=text-align:center>微软</th><th style=text-align:center>Amazon</th></tr></thead><tbody><tr><td style=text-align:center>4</td><td style=text-align:center>6</td></tr></tbody></table><pre><code class=language-go>type Twitter struct {
+	globalId int
+	follower map[int][]int
+	checkFollowed map[string]bool
+	//这里twitter的value存globalId
+	twitter map[int][]int
+	findTwitter []int
+}
+
+/** Initialize your data structure here. */
+func Constructor() Twitter {
+	return Twitter{
+		globalId: 0,
+		follower: make(map[int][]int),
+		checkFollowed: make(map[string]bool),
+		twitter: make(map[int][]int),
+		findTwitter: make([]int,0),
+	}
+}
+
+/** Compose a new tweet. */
+func (this *Twitter) PostTweet(userId int, tweetId int)  {
+	this.twitter[userId]=append(this.twitter[userId],this.globalId)
+	this.findTwitter=append(this.findTwitter,tweetId)
+	this.globalId++
+}
+
+/** Retrieve the 10 most recent tweet ids in the user's news feed. Each item in the news feed must be posted by users who the user followed or by the user herself. Tweets must be ordered from most recent to least recent. */
+func (this *Twitter) GetNewsFeed(userId int) []int {
+	//可以维护一个大小为10的堆,但这里不这么写了(考虑到可能没有10个推特)
+	var globalId []int
+	cpy:=make([]int,len(this.follower[userId]))
+	copy(cpy,this.follower[userId])
+	key:=strconv.Itoa(userId)+&quot; &quot;+strconv.Itoa(userId)
+	//因为测试用例里有自己关注自己这种东西，所以加上这一句
+	if !this.checkFollowed[key]{
+		cpy=append(cpy,userId)
+	}
+	for _,v:=range cpy{
+		globalId=append(globalId,this.twitter[v]...)
+	}
+	sort.Ints(globalId)
+	var res []int
+	for i:=len(globalId)-1;i&gt;=0&amp;&amp;i&gt;=len(globalId)-10;i--{
+		res=append(res,this.findTwitter[globalId[i]])
+	}
+	return res
+}
+
+/** Follower follows a followee. If the operation is invalid, it should be a no-op. */
+func (this *Twitter) Follow(followerId int, followeeId int)  {
+	key:=strconv.Itoa(followerId)+&quot; &quot;+strconv.Itoa(followeeId)
+	if !this.checkFollowed[key]{
+		//关注关系更新
+		this.checkFollowed[key]=true
+		this.follower[followerId]=append(this.follower[followerId],followeeId)
+	}
+
+}
+
+/** Follower unfollows a followee. If the operation is invalid, it should be a no-op. */
+func (this *Twitter) Unfollow(followerId int, followeeId int)  {
+	key:=strconv.Itoa(followerId)+&quot; &quot;+strconv.Itoa(followeeId)
+	if this.checkFollowed[key]{
+		this.checkFollowed[key]=false
+		for i:=0;i&lt;len(this.follower[followerId]);i++{
+			if this.follower[followerId][i]==followeeId{
+				this.follower[followerId]=append(this.follower[followerId][:i],this.follower[followerId][i+1:]...)
+			}
+		}
+	}
+}
+
+/**
+ * Your Twitter object will be instantiated and called as such:
+ * obj := Constructor();
+ * obj.PostTweet(userId,tweetId);
+ * param_2 := obj.GetNewsFeed(userId);
+ * obj.Follow(followerId,followeeId);
+ * obj.Unfollow(followerId,followeeId);
+ */
+</code></pre><pre><code class=language-java>// 官方题解： 哈希表 + 链表
+class Twitter {
+    private class Node {
+        // 哈希表存储关注人的 Id
+        Set&lt;Integer&gt; followee;
+        // 用链表存储 tweetId
+        LinkedList&lt;Integer&gt; tweet;
+
+        Node() {
+            followee = new HashSet&lt;Integer&gt;();
+            tweet = new LinkedList&lt;Integer&gt;();
+        }
+    }
+
+    // getNewsFeed 检索的推文的上限以及 tweetId 的时间戳
+    private int recentMax, time;
+    // tweetId 对应发送的时间
+    private Map&lt;Integer, Integer&gt; tweetTime;
+    // 每个用户存储的信息
+    private Map&lt;Integer, Node&gt; user;
+
+    public Twitter() {
+        time = 0;
+        recentMax = 10;
+        tweetTime = new HashMap&lt;Integer, Integer&gt;();
+        user = new HashMap&lt;Integer, Node&gt;();
+    }
+
+    // 初始化
+    public void init(int userId) {
+        user.put(userId, new Node());
+    }
+
+    public void postTweet(int userId, int tweetId) {
+        if (!user.containsKey(userId)) {
+            init(userId);
+        }
+        // 达到限制，剔除链表末尾元素
+        if (user.get(userId).tweet.size() == recentMax) {
+            user.get(userId).tweet.remove(recentMax - 1);
+        }
+        user.get(userId).tweet.addFirst(tweetId);
+        tweetTime.put(tweetId, ++time);
+    }
+    
+    public List&lt;Integer&gt; getNewsFeed(int userId) {
+        LinkedList&lt;Integer&gt; ans = new LinkedList&lt;Integer&gt;();
+        for (int it : user.getOrDefault(userId, new Node()).tweet) {
+            ans.addLast(it);
+        }
+        for (int followeeId : user.getOrDefault(userId, new Node()).followee) {
+            if (followeeId == userId) { // 可能出现自己关注自己的情况
+                continue;
+            }
+            LinkedList&lt;Integer&gt; res = new LinkedList&lt;Integer&gt;();
+            int tweetSize = user.get(followeeId).tweet.size();
+            Iterator&lt;Integer&gt; it = user.get(followeeId).tweet.iterator();
+            int i = 0;
+            int j = 0;
+            int curr = -1;
+            // 线性归并
+            if (j &lt; tweetSize) {
+                curr = it.next();
+                while (i &lt; ans.size() &amp;&amp; j &lt; tweetSize) {
+                    if (tweetTime.get(curr) &gt; tweetTime.get(ans.get(i))) {
+                        res.addLast(curr);
+                        ++j;
+                        if (it.hasNext()) {
+                            curr = it.next();
+                        }
+                    } else {
+                        res.addLast(ans.get(i));
+                        ++i;
+                    }
+                    // 已经找到这两个链表合起来后最近的 recentMax 条推文
+                    if (res.size() == recentMax) {
+                        break;
+                    }
+                }
+            }
+            for (; i &lt; ans.size() &amp;&amp; res.size() &lt; recentMax; ++i) {
+                res.addLast(ans.get(i));
+            }
+            if (j &lt; tweetSize &amp;&amp; res.size() &lt; recentMax) {
+                res.addLast(curr);
+                for (; it.hasNext() &amp;&amp; res.size() &lt; recentMax;) {
+                    res.addLast(it.next());
+                }
+            }
+            ans = new LinkedList&lt;Integer&gt;(res);
+        }
+        return ans;
+    }
+    
+    public void follow(int followerId, int followeeId) {
+        if (!user.containsKey(followerId)) {
+            init(followerId);
+        }
+        if (!user.containsKey(followeeId)) {
+            init(followeeId);
+        }
+        user.get(followerId).followee.add(followeeId);
+    }
+    
+    public void unfollow(int followerId, int followeeId) {
+        user.getOrDefault(followerId, new Node()).followee.remove(followeeId);
+    }
+}
+
+// 方法二：哈希表 + 链表 + 优先队列
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.PriorityQueue;
+import java.util.Set;
+
+public class Twitter {
+
+    /**
+     * 用户 id 和推文（单链表）的对应关系
+     */
+    private Map&lt;Integer, Tweet&gt; twitter;
+
+    /**
+     * 用户 id 和他关注的用户列表的对应关系
+     */
+    private Map&lt;Integer, Set&lt;Integer&gt;&gt; followings;
+
+    /**
+     * 全局使用的时间戳字段，用户每发布一条推文之前 + 1
+     */
+    private static int timestamp = 0;
+
+    /**
+     * 合并 k 组推文使用的数据结构（可以在方法里创建使用），声明成全局变量非必需，视个人情况使用
+     */
+    private static PriorityQueue&lt;Tweet&gt; maxHeap;
+
+    /**
+     * Initialize your data structure here.
+     */
+    public Twitter() {
+        followings = new HashMap&lt;&gt;();
+        twitter = new HashMap&lt;&gt;();
+        maxHeap = new PriorityQueue&lt;&gt;((o1, o2) -&gt; -o1.timestamp + o2.timestamp);
+    }
+
+    /**
+     * Compose a new tweet.
+     */
+    public void postTweet(int userId, int tweetId) {
+        timestamp++;
+        if (twitter.containsKey(userId)) {
+            Tweet oldHead = twitter.get(userId);
+            Tweet newHead = new Tweet(tweetId, timestamp);
+            newHead.next = oldHead;
+            twitter.put(userId, newHead);
+        } else {
+            twitter.put(userId, new Tweet(tweetId, timestamp));
+        }
+    }
+
+    /**
+     * Retrieve the 10 most recent tweet ids in the user's news feed. Each item in the news feed must be posted by users who the user followed or by the user herself. Tweets must be ordered from most recent to least recent.
+     */
+    public List&lt;Integer&gt; getNewsFeed(int userId) {
+        // 由于是全局使用的，使用之前需要清空
+        maxHeap.clear();
+
+        // 如果自己发了推文也要算上
+        if (twitter.containsKey(userId)) {
+            maxHeap.offer(twitter.get(userId));
+        }
+
+        Set&lt;Integer&gt; followingList = followings.get(userId);
+        if (followingList != null &amp;&amp; followingList.size() &gt; 0) {
+            for (Integer followingId : followingList) {
+                Tweet tweet = twitter.get(followingId);
+                if (tweet != null) {
+                    maxHeap.offer(tweet);
+                }
+            }
+        }
+
+        List&lt;Integer&gt; res = new ArrayList&lt;&gt;(10);
+        int count = 0;
+        while (!maxHeap.isEmpty() &amp;&amp; count &lt; 10) {
+            Tweet head = maxHeap.poll();
+            res.add(head.id);
+
+            // 这里最好的操作应该是 replace，但是 Java 没有提供
+            if (head.next != null) {
+                maxHeap.offer(head.next);
+            }
+            count++;
+        }
+        return res;
+    }
+
+
+    /**
+     * Follower follows a followee. If the operation is invalid, it should be a no-op.
+     *
+     * @param followerId 发起关注者 id
+     * @param followeeId 被关注者 id
+     */
+    public void follow(int followerId, int followeeId) {
+        // 被关注人不能是自己
+        if (followeeId == followerId) {
+            return;
+        }
+
+        // 获取我自己的关注列表
+        Set&lt;Integer&gt; followingList = followings.get(followerId);
+        if (followingList == null) {
+            Set&lt;Integer&gt; init = new HashSet&lt;&gt;();
+            init.add(followeeId);
+            followings.put(followerId, init);
+        } else {
+            if (followingList.contains(followeeId)) {
+                return;
+            }
+            followingList.add(followeeId);
+        }
+    }
+
+
+    /**
+     * Follower unfollows a followee. If the operation is invalid, it should be a no-op.
+     *
+     * @param followerId 发起取消关注的人的 id
+     * @param followeeId 被取消关注的人的 id
+     */
+    public void unfollow(int followerId, int followeeId) {
+        if (followeeId == followerId) {
+            return;
+        }
+
+        // 获取我自己的关注列表
+        Set&lt;Integer&gt; followingList = followings.get(followerId);
+
+        if (followingList == null) {
+            return;
+        }
+        // 这里删除之前无需做判断，因为查找是否存在以后，就可以删除，反正删除之前都要查找
+        followingList.remove(followeeId);
+    }
+
+    /**
+     * 推文类，是一个单链表（结点视角）
+     */
+    private class Tweet {
+        /**
+         * 推文 id
+         */
+        private int id;
+
+        /**
+         * 发推文的时间戳
+         */
+        private int timestamp;
+        private Tweet next;
+
+        public Tweet(int id, int timestamp) {
+            this.id = id;
+            this.timestamp = timestamp;
+        }
+    }
+
+    public static void main(String[] args) {
+
+        Twitter twitter = new Twitter();
+        twitter.postTweet(1, 1);
+        List&lt;Integer&gt; res1 = twitter.getNewsFeed(1);
+        System.out.println(res1);
+
+        twitter.follow(2, 1);
+
+        List&lt;Integer&gt; res2 = twitter.getNewsFeed(2);
+        System.out.println(res2);
+
+        twitter.unfollow(2, 1);
+
+        List&lt;Integer&gt; res3 = twitter.getNewsFeed(2);
+        System.out.println(res3);
+    }
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/convert-bst-to-greater-tree/ target=_blank rel=noopener>538.把二叉搜索树转换为累加树</a>
+（Medium）半年内出题频次：</li></ul><table><thead><tr><th style=text-align:center>Facebook</th><th style=text-align:center>Amazon</th><th style=text-align:center>字节跳动</th></tr></thead><tbody><tr><td style=text-align:center>3</td><td style=text-align:center>3</td><td style=text-align:center>2</td></tr></tbody></table><pre><code class=language-go>/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+// 方法一：递归：右 中 左
+func convertBST(root *TreeNode) *TreeNode {
+    var revInorder func(*TreeNode)
+    var sum int
+    revInorder = func (root *TreeNode) {
+        if root == nil {
+            return
+        }
+        revInorder(root.Right)
+        sum += root.Val
+        root.Val = sum
+        revInorder(root.Left)
+    }
+    revInorder(root)
+    return root
+}
+
+// 方法二：Morris 遍历
+// 1、如果当前节点的右子节点为空，处理当前节点，并遍历当前节点的左子节点；
+// 2、如果当前节点的右子节点不为空，找到当前节点右子树的最左节点（该节点为当前节点中序遍历的前驱节点）；
+// 2.1、如果最左节点的左指针为空，将最左节点的左指针指向当前节点，遍历当前节点的右子节点；
+// 2.2、如果最左节点的左指针不为空，将最左节点的左指针重新置为空（恢复树的原状），处理当前节点，并将当前节点置为其左节点；
+// 3、重复步骤 1 和步骤 2，直到遍历结束。
+func convertBST(root *TreeNode) *TreeNode {
+    sum := 0
+    node := root
+    for node != nil {
+        if node.Right == nil {
+            // 右侧没有节点
+            sum += node.Val
+            node.Val = sum
+            node = node.Left
+        } else {
+            // 查找最左节点
+            cur := node.Right
+            for cur.Left != nil &amp;&amp; cur.Left != node {
+                cur = cur.Left
+            }
+            if cur.Left == nil {
+                cur.Left = node
+                node = node.Right
+            } else {
+                cur.Left = nil
+                sum += node.Val
+                node.Val = sum
+                node = node.Left
+            }
+        }
+    }
+    return root
+}
+</code></pre><h2 id=实战例题>实战例题</h2><blockquote><p>以下为课上实战例题</p></blockquote><h3 id=第-7-课-深度优先搜索广度优先搜索>第 7 课 深度优先搜索、广度优先搜索</h3><h4 id=dfsbfs>DFS、BFS</h4><ul><li><a href=https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/ target=_blank rel=noopener>17.电话号码的字母组合</a>
+（Medium）半年内出题频次：</li></ul><table><thead><tr><th style=text-align:center>Facebook</th><th style=text-align:center>eBay</th><th style=text-align:center>微软</th><th style=text-align:center>Amazon</th><th style=text-align:center>Google</th><th style=text-align:center>Morgan Stanley</th><th style=text-align:center>华为</th><th style=text-align:center>Cisco</th><th style=text-align:center>Tesla</th><th style=text-align:center>Apple</th></tr></thead><tbody><tr><td style=text-align:center>9</td><td style=text-align:center>5</td><td style=text-align:center>15</td><td style=text-align:center>27</td><td style=text-align:center>3</td><td style=text-align:center>3</td><td style=text-align:center>3</td><td style=text-align:center>3</td><td style=text-align:center>3</td><td style=text-align:center>4</td></tr></tbody></table><pre><code class=language-go>var phones = map[byte][]byte{
+    '2': []byte(&quot;abc&quot;),
+    '3': []byte(&quot;def&quot;),
+    '4': []byte(&quot;ghi&quot;),
+    '5': []byte(&quot;jkl&quot;),
+    '6': []byte(&quot;mno&quot;),
+    '7': []byte(&quot;pqrs&quot;),
+    '8': []byte(&quot;tuv&quot;),
+    '9': []byte(&quot;wxyz&quot;),
+}
+// dfs
+func letterCombinations(digits string) (ans []string) {
+    n := len(digits)
+    if n == 0 {
+        return ans
+    }
+    s := []byte{}
+    var dfs func(i int)
+    dfs = func(i int) {
+        if i == n {
+            ans = append(ans, string(s))
+            return
+        }
+        for _, c := range phones[digits[i]] {
+            s = append(s, c)
+            dfs(i + 1)
+            s = s[:i]
+        }
+    }
+    dfs(0)
+    return ans
+}
+// bfs 或 迭代
+func letterCombinations(digits string) []string {
+    ans := []string{}
+    if len(digits) == 0 {
+        return ans
+    }
+    ans = append(ans, &quot;&quot;)
+    for _, digit := range []byte(digits) {
+        for n := len(ans); n &gt; 0; n-- {
+            str := ans[0]
+            ans = ans[1:]
+            for _, char := range phones[digit] {
+                ans = append(ans, str + string(char))
+            }
+        }
+    }
+    return ans
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/n-queens/ target=_blank rel=noopener>51.N 皇后</a>
+（Hard）半年内出题频次：</li></ul><table><thead><tr><th style=text-align:center>Facebook</th><th style=text-align:center>字节跳动</th><th style=text-align:center>微软</th><th style=text-align:center>Google</th></tr></thead><tbody><tr><td style=text-align:center>9</td><td style=text-align:center>5</td><td style=text-align:center>3</td><td style=text-align:center>2</td></tr></tbody></table><pre><code class=language-go>// dfs
+func solveNQueens(n int) (ans [][]string) {
+    cols, pie, na := map[int]bool{}, map[int]bool{}, map[int]bool{} 
+    queen := []int{}
+    var dfs func(int)
+    dfs = func(row int) {
+        if row == n {
+            res := make([]string, n)
+            for i := 0; i &lt; n; i++ {
+                r := make([]byte, n)
+                for j := 0; j &lt; n; j++ {
+                    r[j] = '.'
+                    if j == queen[i] {
+                        r[j] = 'Q'
+                    }
+                }
+                res[i] = string(r)
+            }
+            ans = append(ans, res)
+            return
+        }
+        for col := 0; col &lt; n; col++ {
+            if cols[col] || pie[row+col] || na[row-col] {
+                continue
+            }
+            cols[col] = true
+            pie[row+col] = true
+            na[row-col] = true
+            queen = append(queen, col)
+            dfs(row+1)
+            queen = queen[:row]
+            cols[col] = false
+            pie[row+col] = false
+            na[row-col] = false
+        }
+    }
+    dfs(0)
+    return ans
+}
+// dfs+位运算 写法一
+func solveNQueens(n int) (ans [][]string) {
+    size := 1 &lt;&lt; n - 1
+    var dfs func(row, col, pie, na int, queens []int)
+    dfs = func(row, col, pie, na int, queens []int) {
+        if row == n {
+            res := make([]string, n)
+            for i := 0; i &lt; n; i++ {
+                r := make([]byte, n)
+                for j := 0; j &lt; n; j++ {
+                    r[j] = '.'
+                    if queens[i] &amp; (1 &lt;&lt; j) &gt; 0 {
+                        r[j] = 'Q'
+                    }
+                }
+                res[i] = string(r)
+            }
+            ans = append(ans, res)
+            return
+        }
+        bits := (^(col | pie | na)) &amp; size
+        for bits &gt; 0 {
+            p := bits &amp; -bits // 获取最后一位1
+            bits = bits &amp; (bits-1) // 移除最后一位1
+            queens = append(queens, p)
+            dfs(row + 1, col | p, (pie|p) &lt;&lt; 1, (na|p) &gt;&gt; 1, queens)
+            queens = queens[:row]
+        }
+    }
+    dfs(0, 0, 0, 0, []int{})
+    return ans
+}
+// dfs+位运算 写法二
+func solveNQueens(n int) (ans [][]string) {
+    size := 1 &lt;&lt; n - 1
+    var dfs func(row, col, pie, na int, queens []int)
+    dfs = func(row, col, pie, na int, queens []int) {
+        if row == n {
+            res := make([]string, n)
+            for i := 0; i &lt; n; i++ {
+                r := make([]byte, n)
+                for j := 0; j &lt; n; j++ {
+                    r[j] = '.'
+                    if queens[i] == j {
+                        r[j] = 'Q'
+                    }
+                }
+                res[i] = string(r)
+            }
+            ans = append(ans, res)
+            return
+        }
+        bit := (^(col | pie | na)) &amp; size
+        for bit &gt; 0 {
+            p := bit &amp; -bit // 获取最后一位1
+            bit = bit &amp; (bit-1) // 移除最后一位1
+            queens = append(queens, bits.OnesCount(uint(p-1)))
+            dfs(row + 1, col | p, (pie|p) &lt;&lt; 1, (na|p) &gt;&gt; 1, queens)
+            queens = queens[:row]
+        }
+    }
+    dfs(0, 0, 0, 0, []int{})
+    return ans
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/number-of-islands/ target=_blank rel=noopener>200.岛屿数量</a>
+（Medium）半年内出题频次：</li></ul><table><thead><tr><th style=text-align:center>Facebook</th><th style=text-align:center>字节跳动</th><th style=text-align:center>微软</th><th style=text-align:center>Amazon</th><th style=text-align:center>Google</th><th style=text-align:center>Bloomberg</th><th style=text-align:center>Apple</th><th style=text-align:center>LinkedIn</th><th style=text-align:center>腾讯</th><th style=text-align:center>DoorDash</th></tr></thead><tbody><tr><td style=text-align:center>17</td><td style=text-align:center>35</td><td style=text-align:center>45</td><td style=text-align:center>82</td><td style=text-align:center>17</td><td style=text-align:center>27</td><td style=text-align:center>17</td><td style=text-align:center>13</td><td style=text-align:center>4</td><td style=text-align:center>6</td></tr></tbody></table><pre><code class=language-go>// dfs
+var dist = [][]int{{-1, 0}, {0, 1}, {1, 0}, {0, -1}}
+func numIslands(grid [][]byte) (ans int) {
+    m, n := len(grid), len(grid[0])
+    var dfs func(i, j int)
+    dfs = func(i, j int) {
+        grid[i][j] = '0'
+        for _, d := range dist {
+            x, y := i + d[0], j + d[1]
+            if x &lt; 0 || x &gt;=m || y &lt; 0 || y &gt;= n || grid[x][y] != '1' {
+                continue
+            }
+            dfs(x, y)
+        }
+    }
+    for i := 0; i &lt; m; i++ {
+        for j := 0; j &lt; n; j++ {
+            if grid[i][j] == '1' {
+                dfs(i, j)
+                ans++
+            }
+        }
+    }
+    return ans
+}
+// bfs
+var dist = [][]int{{-1, 0}, {0, 1}, {1, 0}, {0, -1}}
+func numIslands(grid [][]byte) (ans int) {
+    m, n := len(grid), len(grid[0])
+    for i := 0; i &lt; m; i++ {
+        for j := 0; j &lt; n; j++ {
+            if grid[i][j] == '1' {
+                ans++
+                grid[i][j] = '0'
+                queue := [][2]int{{i, j}}
+                for len(queue) &gt; 0 {
+                    r, c := queue[0][0], queue[0][1]
+                    queue = queue[1:]
+                    for _, d := range dist {
+                        x, y := r + d[0], c + d[1]
+                        if x &lt; 0 || x &gt;=m || y &lt; 0 || y &gt;= n || grid[x][y] != '1' {
+                            continue
+                        }
+                        grid[x][y] = '0'
+                        queue = append(queue, [2]int{x, y})
+                    }
+                }
+            }
+        }
+    }
+    return ans
+}
+// 并查集
+var dist = [][]int{{-1, 0}, {0, 1}, {1, 0}, {0, -1}}
+func numIslands(grid [][]byte) int {
+    m, n := len(grid), len(grid[0])
+    uf := NewUnionFind(grid)
+    for i := 0; i &lt; m; i++ {
+        for j := 0; j &lt; n; j++ {
+            if grid[i][j] == '1' {
+                grid[i][j] = '0'
+                for _, d := range dist {
+                    x, y := i + d[0], j + d[1]
+                    if 0 &lt;= x &amp;&amp;  x &lt; m &amp;&amp; 0 &lt;= y &amp;&amp; y &lt; n &amp;&amp; grid[x][y] == '1' {
+                        uf.Union(x * n + y, i * n + j)
+                    }
+                }
+            }
+        }
+    }
+    return uf.Count()
+}
+
+type UnionFind struct {
+    parent []int
+    rank []int
+    count int
+}
+
+func NewUnionFind(grid [][]byte) *UnionFind {
+    m, n := len(grid), len(grid[0])
+    parent := make([]int, m * n)
+    count := 0
+    for i := 0; i &lt; m; i++ {
+        for j := 0; j &lt; n; j++ {
+            idx := i * n + j
+            if grid[i][j] == '1' {
+                parent[idx] = idx
+                count++
+            } else {
+                parent[idx] = -1
+            }
+        }
+    }
+    return &amp;UnionFind{parent, make([]int, m * n), count}
+}
+
+func (uf *UnionFind) Count() int {
+    return uf.count
+}
+
+func (uf *UnionFind) Find(p int) int {
+    // 迭代压缩
+    for p != uf.parent[p] {
+        uf.parent[p] = uf.parent[uf.parent[p]]
+        p = uf.parent[p]
+    }
+    return p
+}
+
+func (uf *UnionFind) Union(x, y int) {
+    rootX, rootY := uf.Find(x), uf.Find(y)
+    if rootX != rootY {
+        uf.count--
+        // 状态压缩
+        if uf.rank[rootX] &gt; uf.rank[rootY] {
+            uf.parent[rootY] = rootX
+            uf.rank[rootX]++
+        } else if  uf.rank[rootX] &lt; uf.rank[rootY] {
+            uf.parent[rootX] = rootY
+            uf.rank[rootY]++
+        } else {
+            uf.parent[rootY] = rootX
+            uf.rank[rootX]++
+        }
+    }
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/minimum-genetic-mutation/ target=_blank rel=noopener>433.最小基因变化</a>
+（Medium） 2 年内出过此题：</li></ul><table><thead><tr><th style=text-align:center>Facebook</th><th style=text-align:center>Twitter</th><th style=text-align:center>微软</th><th style=text-align:center>Amazon</th></tr></thead><tbody><tr><td style=text-align:center>Google</td><td style=text-align:center>百度</td><td style=text-align:center>Adobe</td><td style=text-align:center>Cisco</td></tr><tr><td style=text-align:center>Dropbox</td><td style=text-align:center>腾讯</td><td style=text-align:center>-</td><td style=text-align:center>-</td></tr></tbody></table><pre><code class=language-go>// bfs
+func minMutation(start string, end string, bank []string) (ans int) {
+    mp := map[string]bool{}
+    for _, b := range bank {
+        mp[b] = true
+    }
+    if !mp[end] || len(start) != len(end){
+        return -1
+    }
+    ws := []byte{'A', 'C', 'G', 'T'}
+    used := map[string]bool{}
+    queue := []string{start}
+    used[start] = true
+    n := len(start)
+    for len(queue) &gt; 0 {
+        for size := len(queue); size &gt; 0; size-- {
+            w := queue[0]
+            if w == end {
+                return ans
+            }
+            queue = queue[1:]
+            b := []byte(w)
+            for i := 0; i &lt; n; i++ {
+                o := b[i]
+                for _, c := range ws {
+                    b[i] = c
+                    if used[string(b)] {
+                        continue
+                    }
+                    if mp[string(b)] {
+                        queue = append(queue, string(b))
+                        used[string(b)] = true
+                    }
+                }
+                b[i] = o
+            }
+        }
+        ans++
+    }
+    return -1
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/longest-increasing-path-in-a-matrix/ target=_blank rel=noopener>329.矩阵中的最长递增路径</a>
+（Hard）半年内出题频次：</li></ul><table><thead><tr><th style=text-align:center>Facebook</th><th style=text-align:center>字节跳动</th><th style=text-align:center>DoorDash</th><th style=text-align:center>Amazon</th><th style=text-align:center>Google</th><th style=text-align:center>Bloomberg</th><th style=text-align:center>Apple</th><th style=text-align:center>猿辅导</th></tr></thead><tbody><tr><td style=text-align:center>12</td><td style=text-align:center>6</td><td style=text-align:center>3</td><td style=text-align:center>5</td><td style=text-align:center>13</td><td style=text-align:center>3</td><td style=text-align:center>3</td><td style=text-align:center>3</td></tr></tbody></table><pre><code class=language-go>// 拓扑排序
+var (
+    dirs = [][]int{[]int{-1, 0}, []int{1, 0}, []int{0, -1}, []int{0, 1}}
+    rows, columns int
+)
+
+func longestIncreasingPath(matrix [][]int) int {
+    if len(matrix) == 0 || len(matrix[0]) == 0 {
+        return 0
+    }
+    rows, columns = len(matrix), len(matrix[0])
+    outdegrees := make([][]int, rows)
+        
+    queue := [][]int{}
+    for i := 0; i &lt; rows; i++ {
+        outdegrees[i] = make([]int, columns)
+        for j := 0; j &lt; columns; j++ {
+            for _, dir := range dirs {
+                newRow, newColumn := i + dir[0], j + dir[1]
+                if newRow &gt;= 0 &amp;&amp; newRow &lt; rows &amp;&amp; newColumn &gt;= 0 &amp;&amp; newColumn &lt; columns &amp;&amp; matrix[newRow][newColumn] &gt; matrix[i][j] {
+                    outdegrees[i][j]++
+                }
+            }
+            if outdegrees[i][j] == 0 {
+                queue = append(queue, []int{i, j})
+            }
+        }
+    }
+
+    ans := 0
+    for len(queue) != 0 {
+        ans++
+        size := len(queue)
+        for i := 0; i &lt; size; i++ {
+            cell := queue[0]
+            queue = queue[1:]
+            row, column := cell[0], cell[1]
+            for _, dir := range dirs {
+                newRow, newColumn := row + dir[0], column + dir[1]
+                if newRow &gt;= 0 &amp;&amp; newRow &lt; rows &amp;&amp; newColumn &gt;= 0 &amp;&amp; newColumn &lt; columns &amp;&amp; matrix[newRow][newColumn] &lt; matrix[row][column] {
+                    outdegrees[newRow][newColumn]--
+                    if outdegrees[newRow][newColumn] == 0 {
+                        queue = append(queue, []int{newRow, newColumn})
+                    }
+                }
+            }
+        }
+    }
+    return ans
+}
+</code></pre><h3 id=第8课--二叉堆二叉搜索树>第8课 二叉堆、二叉搜索树</h3><h4 id=二叉堆>二叉堆</h4><ul><li><a href=https://leetcode-cn.com/problems/merge-k-sorted-lists/ target=_blank rel=noopener>23.合并 K 个升序链表</a>
+（Hard）半年内出题频次：</li></ul><table><thead><tr><th style=text-align:center>Facebook</th><th style=text-align:center>字节跳动</th><th style=text-align:center>微软</th><th style=text-align:center>Amazon</th><th style=text-align:center>Google</th><th style=text-align:center>Apple</th><th style=text-align:center>百度</th><th style=text-align:center>滴滴</th><th style=text-align:center>Bloomberg</th><th style=text-align:center>快手</th></tr></thead><tbody><tr><td style=text-align:center>22</td><td style=text-align:center>26</td><td style=text-align:center>16</td><td style=text-align:center>44</td><td style=text-align:center>5</td><td style=text-align:center>8</td><td style=text-align:center>2</td><td style=text-align:center>3</td><td style=text-align:center>4</td><td style=text-align:center>3</td></tr></tbody></table><pre><code class=language-go>/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+// 方法一：优先级队列，小顶堆 时间： O(kn × logk)
+func mergeKLists(lists []*ListNode) *ListNode {
+    hp := &amp;ListHeap{}
+    heap.Init(hp)
+    for _, list := range lists {
+        if list != nil {
+            heap.Push(hp, list)
+        }
+    }
+    dummy := &amp;ListNode{}
+    pre := dummy
+    for hp.Len() &gt; 0 {
+        v := heap.Pop(hp).(*ListNode)
+        pre.Next = v
+        pre = pre.Next
+        if v.Next != nil {
+            heap.Push(hp, v.Next)
+        }
+    }
+    return dummy.Next
+}
+
+type ListHeap []*ListNode
+
+func (hp ListHeap) Len() int {
+    return len(hp)
+}
+
+func (hp ListHeap) Less(i, j int) bool {
+    return hp[i].Val &lt; hp[j].Val
+}
+
+func (hp ListHeap) Swap(i, j int) {
+    hp[i], hp[j] = hp[j], hp[i]
+}
+
+func (hp *ListHeap) Push(v interface{}) {
+    *hp = append(*hp, v.(*ListNode))
+}
+
+func (hp *ListHeap) Pop() interface{} {
+    old := *hp
+    v := old[len(old)-1]
+    *hp = old[:len(old)-1]
+    // *hp, v = (*hp)[:hp.Len()-1], (*hp)[hp.Len()-1]
+    return v
+}
+// 方法二：分治两两合并 O(kn × logk) 空间：O(logk)
+// 方法三：顺序合并 O(k^2 × n)
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/sliding-window-maximum/ target=_blank rel=noopener>239.滑动窗口最大值</a>
+（Hard）半年内出题频次：</li></ul><table><thead><tr><th style=text-align:center>Facebook</th><th style=text-align:center>字节跳动</th><th style=text-align:center>微软</th><th style=text-align:center>Amazon</th><th style=text-align:center>Google</th><th style=text-align:center>Twitter</th><th style=text-align:center>高盛集团</th><th style=text-align:center>Bloomberg</th><th style=text-align:center>阿里巴巴</th></tr></thead><tbody><tr><td style=text-align:center>6</td><td style=text-align:center>7</td><td style=text-align:center>5</td><td style=text-align:center>28</td><td style=text-align:center>8</td><td style=text-align:center>2</td><td style=text-align:center>2</td><td style=text-align:center>2</td><td style=text-align:center>2</td></tr></tbody></table><pre><code class=language-go>// 方法一：大顶堆
+func maxSlidingWindow(nums []int, k int) (ans []int) {
+    h := &amp;MyHeap{}
+    heap.Init(h)
+    for i, num := range nums {
+        heap.Push(h, pair{i, num})
+        if i - k + 1 &gt;= 0 {
+            for (*h)[0].index &lt;= i - k {
+                heap.Pop(h)
+            }
+            ans = append(ans, (*h)[0].num)
+        }
+    }
+    return ans
+}
+
+type pair struct{
+    index, num int
+}
+
+type MyHeap []pair
+
+func (h MyHeap) Len() int {
+    return len(h)
+}
+
+func (h MyHeap) Less(i, j int) bool {
+    return h[i].num &gt; h[j].num
+}
+
+func (h MyHeap) Swap(i, j int) {
+    h[i], h[j] = h[j], h[i]
+}
+
+func (h *MyHeap) Push(x interface{}) {
+    *h = append(*h, x.(pair))
+}
+
+func (h *MyHeap) Pop() (v interface{}) {
+    v, *h = (*h)[h.Len()-1], (*h)[:h.Len()-1]
+    return v
+}
+// 方法二：双端队列
+// 方法三：分块 + 预处理（官方题解）
+</code></pre><h4 id=二叉搜索树>二叉搜索树</h4><ul><li><a href=https://leetcode-cn.com/problems/insert-into-a-binary-search-tree/ target=_blank rel=noopener>701.二叉搜索树中的插入操作</a>
+（Medium）半年内出题频次：</li></ul><table><thead><tr><th style=text-align:center>Amazon</th></tr></thead><tbody><tr><td style=text-align:center>3</td></tr></tbody></table><pre><code class=language-go>/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+// 方法一：dfs
+func insertIntoBST(root *TreeNode, val int) *TreeNode {
+    if root == nil {
+        return &amp;TreeNode{Val: val}
+    }
+    if val &lt; root.Val {
+        root.Left = insertIntoBST(root.Left, val)
+    } else {
+        root.Right = insertIntoBST(root.Right, val)
+    }
+    return root
+}
+// 方法二：迭代
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func insertIntoBST(root *TreeNode, val int) *TreeNode {
+    if root == nil {
+        return &amp;TreeNode{Val: val}
+    }
+    p := root
+    for p != nil {
+        if val &lt; p.Val {
+            if p.Left == nil {
+                p.Left = &amp;TreeNode{Val: val}
+                break
+            }
+            p = p.Left
+        } else {
+            if p.Right == nil {
+                p.Right = &amp;TreeNode{Val: val}
+                break
+            }
+            p = p.Right
+        }
+    }
+    return root
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/successor-lcci/ target=_blank rel=noopener>面试题 04.06. 后继者</a>
+（Medium）半年内出题频次：</li></ul><table><thead><tr><th style=text-align:center>字节跳动</th></tr></thead><tbody><tr><td style=text-align:center>2</td></tr></tbody></table><pre><code class=language-go>/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+// 方法一：迭代（对标训练营）
+func inorderSuccessor(root *TreeNode, p *TreeNode) (ans *TreeNode) {
+    for root != nil {
+        if root.Val == p.Val {
+            if root.Right != nil {
+                ans = root.Right
+                for ans.Left != nil {
+                    ans = ans.Left
+                }
+            }
+            return ans
+        } else if root.Val &gt; p.Val {
+            if ans == nil || ans.Val &gt; root.Val {
+                ans = root
+            }
+          	// if 判断可以取消写成：ans = root
+            root = root.Left
+        } else {
+            root = root.Right
+        }
+    }
+    return ans
+}
+// 写法二：
+// 最基础的解法，按照二叉搜索树的性质来找
+// 这个可能不是太好理解
+func inorderSuccessor(root *TreeNode, p *TreeNode) (ans *TreeNode) {
+    for root != nil {
+        if root.Val &gt; p.Val {
+            ans = root
+            root = root.Left
+        } else {
+            root = root.Right
+        }
+    }
+    return ans
+}
+// 写法三：
+func inorderSuccessor(root *TreeNode, p *TreeNode) *TreeNode {
+    // 第一种情况: p有右子树, 则寻找右子树的最左节点
+    // 第二种情况: p没有右子树, 则寻找在二叉搜索期间, 最后一次左转的那个父节点, 就是p的后继节点. 
+    var pre *TreeNode
+    for root != p {
+        if root.Val &lt; p.Val{
+            root = root.Right
+        } else {
+            pre = root 
+            root = root.Left
+        }
+    }
+
+    if root.Right == nil {
+        return pre 
+    }
+    root = root.Right
+    for root.Left != nil{
+        root = root.Left
+    }
+    return root 
+}
+
+// 方法四：递归
+// 参考：https://leetcode-cn.com/problems/successor-lcci/solution/zhong-xu-bian-li-de-xia-yi-ge-yuan-su-5da-jie-fa-h/
+func inorderSuccessor(root *TreeNode, p *TreeNode) *TreeNode {
+    if root == nil {
+        return nil
+    }
+    if p.Val &lt; root.Val {
+        if left := inorderSuccessor(root.Left, p); left != nil {
+            return left
+        }
+        return root
+    } else {
+        return inorderSuccessor(root.Right, p)
+    }
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/delete-node-in-a-bst/ target=_blank rel=noopener>450.删除二叉搜索树中的节点</a>
+（Medium）半年内出题频次：</li></ul><table><thead><tr><th style=text-align:center>字节跳动</th><th style=text-align:center>微软</th><th style=text-align:center>Amazon</th><th style=text-align:center>Bloomberg</th><th style=text-align:center>eBay</th><th style=text-align:center>LinkedIn</th></tr></thead><tbody><tr><td style=text-align:center>3</td><td style=text-align:center>4</td><td style=text-align:center>2</td><td style=text-align:center>3</td><td style=text-align:center>2</td><td style=text-align:center>2</td></tr></tbody></table><pre><code class=language-go>/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+// 方法一：递归（对标训练营）
+func deleteNode(root *TreeNode, key int) *TreeNode {
+    if root == nil {
+        return nil
+    }
+    if key == root.Val {
+        if root.Left == nil {
+            return root.Right
+        }
+        if root.Right == nil {
+            return root.Left
+        }
+      	// 右子树最小节点，也可以替换为左子树最大节点
+      	// https://leetcode-cn.com/submissions/detail/280417703/
+        next := root.Right
+        for next.Left != nil {
+            next = next.Left
+        }
+        root.Right = deleteNode(root.Right, next.Val)
+        root.Val = next.Val
+        return root
+    } else if key &lt; root.Val {
+        root.Left = deleteNode(root.Left, key)
+    } else {
+        root.Right = deleteNode(root.Right, key)
+    }
+    return root
+}
+</code></pre></article><div class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"><div><span class="text-primary-text block font-bold">上一页</span>
+<a href=/study/2021algorithm/week03/ class=block>第三周 递归、分治、树与图</a></div><div class="mt-4 md:mt-0 md:text-right"><span class="text-primary-text block font-bold">下一页</span>
+<a href=/study/2021algorithm/week05/ class=block>第五周 二分、排序</a></div></div></div><div class="hidden lg:block lg:w-1/4"><div class="bg-secondary-bg
+prose sticky top-16 z-10 hidden px-6 py-4 lg:block"><h3>本页内容</h3></div><div class="sticky-toc
+border-s
+hidden px-6 pb-6 lg:block"><nav id=TableOfContents><ul><li><a href=#本周作业>本周作业</a></li><li><a href=#实战例题>实战例题</a><ul><li><a href=#第-7-课-深度优先搜索广度优先搜索>第 7 课 深度优先搜索、广度优先搜索</a><ul><li><a href=#dfsbfs>DFS、BFS</a></li></ul></li><li><a href=#第8课--二叉堆二叉搜索树>第8课 二叉堆、二叉搜索树</a><ul><li><a href=#二叉堆>二叉堆</a></li><li><a href=#二叉搜索树>二叉搜索树</a></li></ul></li></ul></li></ul></nav></div><script>window.addEventListener("DOMContentLoaded",()=>{enableStickyToc()})</script></div></div></div></div></div><script>document.addEventListener("DOMContentLoaded",()=>{hljs.highlightAll(),changeSidebarHeight(),switchDocToc()})</script></div></div></main><footer class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b"><p class="text-sm text-tertiary-text">&copy; 2021 <a href=https://blog.lbbniu.com/>lbbniu</a>
+&#183; Powered by the <a href=https://github.com/wangchucheng/hugo-eureka class=hover:text-eureka>Eureka</a> theme for <a href=https://gohugo.io class=hover:text-eureka>Hugo</a></p></div></div></footer></body></html>

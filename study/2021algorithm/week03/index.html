@@ -1,0 +1,1183 @@
+<!doctype html><html lang=zh dir=ltr><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>第三周 递归、分治、树与图 | 极客时间算法训练营2021版 | lbbniu</title>
+<meta name=generator content="Hugo Eureka 0.9.3"><link rel=stylesheet href=/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css><script defer src=/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js></script><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" as=style onload='this.onload=null,this.rel="stylesheet"'><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/github.min.css media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/php.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/java.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/go.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/python.min.js crossorigin></script><link rel=stylesheet href=/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css media=print onload='this.media="all",this.onload=null'><script defer type=text/javascript src=/js/fontawesome.min.35973bea57658ef0dd22ad59ea4642b6c8c67af62bed8659ac326d284ef285a6657cdbcf57d3b2910e7e992f2b20426e.js></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css integrity=sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js integrity=sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY crossorigin></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script><script defer src=https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js integrity=sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0 crossorigin></script><link rel=icon type=image/png sizes=32x32 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_32x32_fill_box_center_3.png><link rel=apple-touch-icon sizes=180x180 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_180x180_fill_box_center_3.png><meta name=description content="第 5 课 递归、分治，第 6 课 树与图"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"算法学习","item":"/study/"},{"@type":"ListItem","position":2,"name":"极客时间算法训练营2021版","item":"/study/2021algorithm/"},{"@type":"ListItem","position":3,"name":"第三周 递归、分治、树与图","item":"/study/2021algorithm/week03/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/study/2021algorithm/week03/"},"headline":"第三周 递归、分治、树与图 | 极客时间算法训练营2021版 | lbbniu","datePublished":"2021-11-29T22:30:00+08:00","dateModified":"2023-11-23T18:27:23+08:00","wordCount":4147,"publisher":{"@type":"Person","name":"lbbniu","logo":{"@type":"ImageObject","url":"/images/icon.gif"}},"description":"第 5 课 递归、分治，第 6 课 树与图"}</script><meta property="og:title" content="第三周 递归、分治、树与图 | 极客时间算法训练营2021版 | lbbniu"><meta property="og:type" content="article"><meta property="og:image" content="/images/icon.png"><meta property="og:url" content="/study/2021algorithm/week03/"><meta property="og:description" content="第 5 课 递归、分治，第 6 课 树与图"><meta property="og:locale" content="zh"><meta property="og:site_name" content="lbbniu"><meta property="article:published_time" content="2021-11-29T22:30:00+08:00"><meta property="article:modified_time" content="2023-11-23T18:27:23+08:00"><meta property="article:section" content="study"><body class="flex min-h-screen flex-col"><header class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"><div class="mx-auto w-full max-w-screen-xl"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=="Auto"||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName("html")[0].classList.add("dark")</script><nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0"><a href=/ class="me-6 text-primary-text text-xl font-bold">lbbniu</a>
+<button id=navbar-btn class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+<i class="fas fa-bars"></i></button><div id=target class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20"><div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0"><a href=/post/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">文章</a>
+<a href=/cloud-native/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">云原生</a>
+<a href=/study/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 selected-menu-item me-4">算法学习</a>
+<a href=/docs/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">Go学习训练营</a>
+<a href=/tags/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">标签</a></div><div class=flex><div class="relative pt-4 md:pt-0"><div class="cursor-pointer hover:text-eureka" id=lightDarkMode><i class="fas fa-adjust"></i></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id=is-open></div><div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40" id=lightDarkOptions><span class="px-4 py-1 hover:text-eureka" name=Light>浅色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Dark>深色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Auto>自动</span></div></div></div></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id=is-open-mobile></div></nav><script>let element=document.getElementById("lightDarkMode");storageColorScheme==null||storageColorScheme=="Auto"?document.addEventListener("DOMContentLoaded",()=>{window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",switchDarkMode)}):storageColorScheme=="Light"?(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","sun"),element.firstElementChild.classList.add("fa-sun")):storageColorScheme=="Dark"&&(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","moon"),element.firstElementChild.classList.add("fa-moon")),document.addEventListener("DOMContentLoaded",()=>{getcolorscheme(),switchBurger()})</script></div></header><main class="grow pt-16"><div class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8"><div class=lg:pt-12><div class="flex flex-col md:flex-row bg-secondary-bg rounded"><div class="md:w-1/4 lg:w-1/5 border-e"><div class="sticky top-16 pt-6"><div id=sidebar-title class="md:hidden mx-4 px-2 pt-4 pb-2 md:border-b text-tertiary-text md:text-primary-text"><span class=font-semibold>目录</span>
+<i class='fas fa-caret-right ms-1'></i></div><div id=sidebar-toc class="hidden md:block overflow-y-auto mx-6 md:mx-0 pe-6 pt-2 md:max-h-doc-sidebar bg-primary-bg md:bg-transparent"><div class="flex flex-wrap ms-4 -me-2 p-2 bg-secondary-bg md:bg-primary-bg rounded"><a class=hover:text-eureka href=/study/2021algorithm/>极客时间算法训练营2021版</a></div><ul class=ps-6><li class=py-2><div><a class=hover:text-eureka href=/study/2021algorithm/week01/>第一周 数组、链表、栈、队列</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/2021algorithm/week02/>第二周 哈希表、集合、映射、前缀和、差分、双指针扫描</a></div></li><li class=py-2><div><a class="text-eureka hover:text-eureka" href=/study/2021algorithm/week03/>第三周 递归、分治、树与图</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/2021algorithm/week04/>第四周 深度优先搜索、广度优先搜索、二叉堆、二叉搜索树</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/2021algorithm/week05/>第五周 二分、排序</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/2021algorithm/week06/>第六周 贪心、动态规划</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/2021algorithm/week07/>第七周 动态规划</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/2021algorithm/week08/>第八周 字典树、并查集，图论算法</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/2021algorithm/week09/>第九周 字符串处理、高级搜索</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/2021algorithm/week10/>第十周 平衡二叉树、跳跃表、树状数组与线段树、实战技巧、总结回顾</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/2021algorithm/final/>毕业刷新路径</a></div></li></ul></div></div></div><div class="w-full md:w-3/4 lg:w-4/5 pb-8 pt-2 md:pt-8"><div class=flex><div class="w-full lg:w-3/4 px-6"><article class=prose><h1 class=mb-4>第三周 递归、分治、树与图</h1><div class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"><div class="me-6 my-2"><i class="fas fa-calendar me-1"></i>
+<span>2021-11-29</span></div><div class="me-6 my-2"><i class="fas fa-clock me-1"></i>
+<span>20分钟阅读时长</span></div><div class="me-6 my-2"><i class="fas fa-folder me-1"></i>
+<a href=/categories/%E8%AE%AD%E7%BB%83%E8%90%A5/ class=hover:text-eureka>训练营</a></div></div><p>题目数：23</p><h2 id=本周作业>本周作业</h2><ul><li><a href=https://leetcode-cn.com/problems/merge-k-sorted-lists/ target=_blank rel=noopener>23.合并K 个升序链表</a>
+（Hard） (要求：用分治实现，不要用堆) 半年内出题频次：</li></ul><table><thead><tr><th style=text-align:center>Facebook</th><th style=text-align:center>字节跳动</th><th style=text-align:center>微软</th><th style=text-align:center>Amazon</th><th style=text-align:center>Google</th><th style=text-align:center>Apple</th><th style=text-align:center>滴滴</th><th style=text-align:center>Bloomberg</th><th style=text-align:center>快手</th><th style=text-align:center>百度</th></tr></thead><tbody><tr><td style=text-align:center>22</td><td style=text-align:center>26</td><td style=text-align:center>16</td><td style=text-align:center>44</td><td style=text-align:center>5</td><td style=text-align:center>8</td><td style=text-align:center>3</td><td style=text-align:center>4</td><td style=text-align:center>3</td><td style=text-align:center>2</td></tr></tbody></table><pre><code class=language-go>/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+// 方法一：分治 渐进时间复杂度：O(kn×logk)，空间复杂度：O(logk)
+func mergeKLists(lists []*ListNode) *ListNode {
+    n := len(lists)
+    if n == 0 {
+        return nil
+    } else if n == 1 {
+        return lists[0]
+    } else if n == 2 {
+        return mergeTwoList(lists[0], lists[1])
+    }
+    mid := n &gt;&gt; 1
+    return mergeTwoList(mergeKLists(lists[:mid]), mergeKLists(lists[mid:]))
+}
+
+func mergeTwoList(l1, l2 *ListNode) *ListNode {
+    dummy := &amp;ListNode{}
+    pre := dummy
+    for l1 != nil &amp;&amp; l2 != nil {
+        if l1.Val &lt; l2.Val {
+            pre.Next, l1 = l1, l1.Next
+        } else {
+            pre.Next, l2 = l2, l2.Next
+        }
+        pre = pre.Next
+    }
+    if l1 != nil {
+        pre.Next = l1
+    } else {
+        pre.Next = l2
+    }
+    return dummy.Next
+}
+// 方法二：顺序合并 进时间复杂度为 O(k^2*n)
+
+// 方法三：使用优先队列合并 时间复杂度: O(kn×logk), 空间复杂度: O(k)
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/permutations-ii/ target=_blank rel=noopener>47.全排列 II </a>（Medium）半年内出题频次： 重点</li></ul><table><thead><tr><th style=text-align:center>字节跳动</th><th style=text-align:center>华为</th><th style=text-align:center>LinkedIn</th><th style=text-align:center>美团</th></tr></thead><tbody><tr><td style=text-align:center>12</td><td style=text-align:center>2</td><td style=text-align:center>2</td><td style=text-align:center>2</td></tr></tbody></table><pre><code class=language-go>// 递归、回溯
+func permuteUnique(nums []int) (res [][]int) {
+    sort.Ints(nums) // 排序
+    n := len(nums)
+    path := []int{}
+    // 变量名：visited 或 used, 存储状态：make([]bool, n) 或 map[int]bool{}
+    used := map[int]bool{}
+    var recur func(int) // dfs、backtrack
+    recur = func(level int) {
+        // 递归终止条件
+        if level == n {
+            // 加入结果集
+            res = append(res, append([]int(nil), path...))
+            return
+        }
+        for i := 0; i &lt; n; i++ {
+            // 寻找未使用元素
+            // 当前已经使用 或 保证从左往右逐个填入
+            if used[i] || i &gt; 0 &amp;&amp; nums[i] == nums[i-1] &amp;&amp; !used[i-1] {
+                continue
+            }
+            path = append(path, nums[i])
+            used[i] = true
+            recur(level + 1)
+            used[i] = false // 恢复
+            path = path[:len(path)-1]
+        }
+    }
+    recur(0)
+    return res
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/ target=_blank rel=noopener>106.从中序与后序遍历序列构造二叉树</a>
+（Medium）半年内出题频次： 重点</li></ul><table><thead><tr><th style=text-align:center>腾讯</th><th style=text-align:center>字节跳动</th><th style=text-align:center>微软</th><th style=text-align:center>Amazon</th><th style=text-align:center>Google</th><th style=text-align:center>Shopee</th></tr></thead><tbody><tr><td style=text-align:center>4</td><td style=text-align:center>6</td><td style=text-align:center>2</td><td style=text-align:center>2</td><td style=text-align:center>2</td><td style=text-align:center>2</td></tr></tbody></table><pre><code class=language-go>/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+// 方法一：递归
+func buildTree(inorder []int, postorder []int) *TreeNode {
+    idxMap := map[int]int{}
+    for i, v := range inorder {
+        idxMap[v] = i
+    }
+    var build func(int, int) *TreeNode
+    build = func(inorderLeft, inorderRight int) *TreeNode {
+        // 无剩余节点
+        if inorderLeft &gt; inorderRight {
+            return nil
+        }
+
+        // 后序遍历的末尾元素即为当前子树的根节点
+        val := postorder[len(postorder)-1]
+        postorder = postorder[:len(postorder)-1]
+        root := &amp;TreeNode{Val: val}
+
+        // 根据 val 在中序遍历的位置，将中序遍历划分成左右两颗子树
+        // 由于我们每次都从后序遍历的末尾取元素，所以要先遍历右子树再遍历左子树
+        inorderRootIndex := idxMap[val]
+        root.Right = build(inorderRootIndex+1, inorderRight)
+        root.Left = build(inorderLeft, inorderRootIndex-1)
+        return root
+    }
+    return build(0, len(inorder)-1)
+}
+// 方法二：迭代
+func buildTree(inorder []int, postorder []int) *TreeNode {
+    if len(postorder) == 0 {
+        return nil
+    }
+    root := &amp;TreeNode{Val: postorder[len(postorder)-1]}
+    stack := []*TreeNode{root}
+    inorderIndex := len(inorder) - 1
+    for i := len(postorder) - 2; i &gt;= 0; i-- {
+        postorderVal := postorder[i]
+        node := stack[len(stack)-1]
+        if node.Val != inorder[inorderIndex] {
+            node.Right = &amp;TreeNode{Val: postorderVal}
+            stack = append(stack, node.Right)
+        } else {
+            for len(stack) &gt; 0 &amp;&amp; stack[len(stack)-1].Val == inorder[inorderIndex] {
+                node = stack[len(stack)-1]
+                stack = stack[:len(stack)-1]
+                inorderIndex--
+            }
+            node.Left = &amp;TreeNode{Val: postorderVal}
+            stack = append(stack, node.Left)
+        }
+    }
+    return root
+}
+</code></pre><pre><code class=language-java>class Solution {
+
+    HashMap&lt;Integer,Integer&gt; memo = new HashMap&lt;&gt;();
+    int[] post;
+
+    public TreeNode buildTree(int[] inorder, int[] postorder) {
+        for(int i = 0;i &lt; inorder.length; i++) memo.put(inorder[i], i);
+        post = postorder;
+        TreeNode root = buildTree(0, inorder.length - 1, 0, post.length - 1);
+        return root;
+    }
+	//1.左子树-中序数组 is = is, ie = ri - 1
+	//2.左子树-后序数组 ps = ps, pe = ps + ri - is - 1 (pe计算过程解释，后续数组的起始位置加上左子树长	度-1 就是后后序数组结束位置了，左子树的长度 = 根节点索引-左子树)
+	//3.右子树-中序数组 is = ri + 1, ie = ie
+	//4.右子树-后序数组 ps = ps + ri - is, pe - 1
+    public TreeNode buildTree(int is, int ie, int ps, int pe) {
+        if(ie &lt; is || pe &lt; ps) return null;
+
+        int root = post[pe];
+        int ri = memo.get(root);
+
+        TreeNode node = new TreeNode(root);
+        node.left = buildTree(is, ri - 1, ps, ps + ri - is - 1);
+        node.right = buildTree(ri + 1, ie, ps + ri - is, pe - 1);
+        return node;
+    }
+}
+
+class Solution {
+    private Map&lt;Integer,Integer&gt; pos = new HashMap&lt;Integer,Integer&gt;();
+    public TreeNode buildTree(int[] inorder, int[] postorder) {
+        int n = inorder.length;
+        for(int i = 0; i &lt; n; i++)
+            pos.put(inorder[i], i);  //记录中序遍历的根节点位置
+        return dfs( inorder, postorder, 0, n - 1, 0, n - 1);   
+    }
+     public TreeNode dfs(int[] inorder, int[] postorder, int il, int ir,int pl, int pr)
+    {
+        if(pl &gt; pr ) return null;
+        int k = pos.get(postorder[pr]); //中序遍历根节点位置
+        TreeNode root = new TreeNode(postorder[pr]); //创建根节点
+        root.left  = dfs(inorder, postorder, il, k - 1, pl, pl + k - 1 - il);
+        root.right = dfs(inorder, postorder, k + 1, ir, pl + k - 1 - il + 1, pr - 1);
+        return root;     
+    }
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/course-schedule-ii/ target=_blank rel=noopener>210.课程表 II </a>（Medium）半年内出题频次：重点</li></ul><table><thead><tr><th style=text-align:center>Facebook</th><th style=text-align:center>字节跳动</th><th style=text-align:center>微软</th><th style=text-align:center>Amazon</th><th style=text-align:center>Google</th><th style=text-align:center>Apple</th><th style=text-align:center>DoorDash</th><th style=text-align:center>Bloomberg</th></tr></thead><tbody><tr><td style=text-align:center>9</td><td style=text-align:center>6</td><td style=text-align:center>14</td><td style=text-align:center>26</td><td style=text-align:center>9</td><td style=text-align:center>3</td><td style=text-align:center>11</td><td style=text-align:center>2</td></tr></tbody></table><pre><code class=language-go>// 深度优先遍历
+func findOrder(numCourses int, prerequisites [][]int) []int {
+    var (
+        edegs = make([][]int, numCourses)
+        visited = make([]int, numCourses)
+        result = []int{}
+        vaild = true
+        dfs func(u int)
+    )
+    dfs = func(u int) {
+        visited[u] = 1
+        for _, c := range edegs[u] {
+            if visited[c] == 0 {
+                dfs(c)
+                if !vaild {
+                    return
+                }
+            } else if visited[c] == 1 {
+                vaild = false
+                return
+            }
+        }
+        visited[u] = 2
+        result = append(result, u)
+    }
+    for _, info := range prerequisites {
+        edegs[info[1]] = append(edegs[info[1]], info[0])
+    }
+
+    for i := 0; i &lt; numCourses &amp;&amp; vaild; i++ {
+        if visited[i] == 0 {
+            dfs(i)
+        }
+    }
+    if !vaild {
+        return []int{}
+    }
+    for i := 0; i &lt; numCourses/2; i++ {
+        result[i], result[numCourses-i-1] = result[numCourses-i-1], result[i]
+    }
+    return result
+}
+
+// 广度优先遍历
+func findOrder(numCourses int, prerequisites [][]int) []int {
+    var (
+        edges = make([][]int, numCourses)
+        indeg = make([]int, numCourses)
+        result = []int{}
+    )
+    for _, pre := range prerequisites {
+        edges[pre[1]] = append(edges[pre[1]], pre[0])
+        indeg[pre[0]]++
+    }
+    q := []int{}
+    for i := 0; i &lt; numCourses; i++ {
+        if indeg[i] == 0 {
+            q = append(q, i)
+        }
+    }
+    for len(q) &gt; 0 {
+        course := q[0]
+        q = q[1:]
+        result = append(result, course)
+        for _, c := range edges[course] {
+            indeg[c]--
+            if indeg[c] == 0 {
+                q = append(q, c)
+            }
+        }
+    }
+    if len(result) == numCourses {
+        return result
+    }
+    return []int{}
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/redundant-connection-ii/ target=_blank rel=noopener>685.冗余连接 II </a>（Hard）半年内出题频次： 重点</li></ul><table><thead><tr><th style=text-align:center>华为</th></tr></thead><tbody><tr><td style=text-align:center>3</td></tr></tbody></table><pre><code class=language-go>func findRedundantDirectedConnection(edges [][]int) (redundantEdge []int) {
+    n := len(edges)
+    uf := newUnionFind(n + 1)
+    parent := make([]int, n+1) // parent[i] 表示 i 的父节点
+    for i := range parent {
+        parent[i] = i
+    }
+
+    var conflictEdge, cycleEdge []int
+    for _, edge := range edges {
+        from, to := edge[0], edge[1]
+        if parent[to] != to { // to 有两个父节点
+            conflictEdge = edge
+        } else {
+            parent[to] = from
+            if uf.find(from) == uf.find(to) { // from 和 to 已连接
+                cycleEdge = edge
+            } else {
+                uf.union(from, to)
+            }
+        }
+    }
+
+    // 若不存在一个节点有两个父节点的情况，则附加的边一定导致环路出现
+    if conflictEdge == nil {
+        return cycleEdge
+    }
+    // conflictEdge[1] 有两个父节点，其中之一与其构成附加的边
+    // 由于我们是按照 edges 的顺序连接的，若在访问到 conflictEdge 之前已经形成了环路，则附加的边在环上
+    // 否则附加的边就是 conflictEdge
+    if cycleEdge != nil {
+        return []int{parent[conflictEdge[1]], conflictEdge[1]}
+    }
+    return conflictEdge
+}
+
+type unionFind struct {
+    ancestor []int
+}
+
+func newUnionFind(n int) unionFind {
+    ancestor := make([]int, n)
+    for i := 0; i &lt; n; i++ {
+        ancestor[i] = i
+    }
+    return unionFind{ancestor}
+}
+
+func (uf unionFind) find(x int) int {
+    if uf.ancestor[x] != x {
+        uf.ancestor[x] = uf.find(uf.ancestor[x])
+    }
+    return uf.ancestor[x]
+}
+
+func (uf unionFind) union(from, to int) {
+    uf.ancestor[uf.find(from)] = uf.find(to)
+}
+</code></pre><h2 id=实战例题>实战例题</h2><blockquote><p>以下为课上实战例题</p></blockquote><h3 id=第-5-课--递归分治>第 5 课 递归、分治</h3><h4 id=递归>递归</h4><ul><li><a href=https://leetcode-cn.com/problems/subsets/ target=_blank rel=noopener>78.子集</a>
+（Medium）半年内出题频次：</li></ul><table><thead><tr><th style=text-align:center>Facebook</th><th style=text-align:center>字节跳动</th><th style=text-align:center>微软</th><th style=text-align:center>Amazon</th><th style=text-align:center>Google</th><th style=text-align:center>高盛集团</th><th style=text-align:center>美团</th><th style=text-align:center>Bloomberg</th><th style=text-align:center>eBay</th></tr></thead><tbody><tr><td style=text-align:center>13</td><td style=text-align:center>14</td><td style=text-align:center>3</td><td style=text-align:center>5</td><td style=text-align:center>5</td><td style=text-align:center>2</td><td style=text-align:center>2</td><td style=text-align:center>5</td><td style=text-align:center>2</td></tr></tbody></table><pre><code class=language-go>// 方法一：递归
+func subsets(nums []int) (res [][]int) {
+    n := len(nums)
+    path := []int{}
+    var dfs func(i int)
+    dfs = func(i int) {
+        if i == n {
+            res = append(res, append([]int(nil), path...))
+            return
+        }
+        // 不选
+        dfs(i+1)
+        // 选
+        path = append(path, nums[i])
+        dfs(i+1)
+        path = path[:len(path)-1]
+    }
+    dfs(0)
+    return res
+}
+
+// 迭代
+func subsets(nums []int) (res [][]int) {
+    n := len(nums)
+    for mask := 0; mask &lt; 1 &lt;&lt; n; mask++ {
+        set := []int{}
+        for i, v := range nums {
+            if mask &gt;&gt; i &amp; 1 &gt; 0 {
+                set = append(set, v)
+            }
+        }
+        res = append(res, set)
+    }
+    return res   
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/combinations/ target=_blank rel=noopener>77.组合</a>
+（Medium）半年内出题频次：</li></ul><table><thead><tr><th style=text-align:center>Facebook</th><th style=text-align:center>字节跳动</th><th style=text-align:center>Bloomberg</th><th style=text-align:center>Amazon</th><th style=text-align:center>Apple</th></tr></thead><tbody><tr><td style=text-align:center>4</td><td style=text-align:center>7</td><td style=text-align:center>2</td><td style=text-align:center>4</td><td style=text-align:center>2</td></tr></tbody></table><pre><code class=language-go>// 方法一：递归
+func combine(n int, k int) (res [][]int) {
+    path := []int{}
+    var dfs func(int)
+    dfs = func(i int) {
+        // 剪枝
+        // if len(path) + (n - level + 1) &lt; k {
+        if k - len(path) &gt; n - i + 1{
+            return
+        }
+         if len(path) == k {
+            res = append(res, append([]int(nil), path...))
+            return
+        }
+        dfs(i+1)
+        path = append(path, i)
+        dfs(i+1)
+        path = path[:len(path)-1]
+    }
+    dfs(1)
+    return res
+}
+
+// 方法二：
+func combine(n int, k int) (res [][]int) {
+    path := []int{}
+    var backtrack  func(int)
+    backtrack = func(index int) {
+        if len(path) == k {
+            res = append(res, append([]int(nil), path...))
+            return
+        }
+        for i := index; n - i + 1 &gt;= k - len(path); i++ {
+            path = append(path, i)
+            backtrack(i + 1)
+            path = path[:len(path)-1]
+        }
+    }
+    backtrack(1)
+    return res
+}
+
+// 方法三：迭代
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/permutations/ target=_blank rel=noopener>46.全排列</a>
+（Medium）半年内出题频次：</li></ul><table><thead><tr><th style=text-align:center>Facebook</th><th style=text-align:center>字节跳动</th><th style=text-align:center>微软</th><th style=text-align:center>Amazon</th><th style=text-align:center>华为</th><th style=text-align:center>Apple</th><th style=text-align:center>滴滴</th><th style=text-align:center>LinkedIn</th><th style=text-align:center>百度</th><th style=text-align:center>eBay</th></tr></thead><tbody><tr><td style=text-align:center>9</td><td style=text-align:center>37</td><td style=text-align:center>5</td><td style=text-align:center>9</td><td style=text-align:center>12</td><td style=text-align:center>6</td><td style=text-align:center>6</td><td style=text-align:center>6</td><td style=text-align:center>4</td><td style=text-align:center>5</td></tr></tbody></table><pre><code class=language-go>// 写法一：
+func permute(nums []int) (res [][]int) {
+    n := len(nums)
+    var backtrack func(int)
+    backtrack = func(level int) {
+        if level == n {
+            res = append(res, append([]int(nil), nums...))
+            return
+        }
+        for i := level; i &lt; n; i++ {
+            nums[level], nums[i] = nums[i], nums[level]
+            backtrack(level + 1)
+            nums[level], nums[i] = nums[i], nums[level]
+        }
+    }
+    backtrack(0)
+    return res
+}
+
+// 写法二：
+func permute(nums []int) (res [][]int) {
+    n := len(nums)
+    path := []int{}
+    used := map[int]struct{}{}
+    var backtrack func(int)
+    backtrack = func(level int) {
+        if level == n {
+            res = append(res, append([]int(nil), path...))
+            return
+        }
+        for i := 0; i &lt; n; i++ {
+            if _, ok := used[i]; !ok {
+                path = append(path, nums[i])
+                used[i] = struct{}{}
+                backtrack(level + 1)
+                delete(used, i)
+                path = path[:len(path)-1]
+            }
+        }
+    }
+    backtrack(0)
+    return res
+}
+</code></pre><h4 id=树>树</h4><ul><li><a href=https://leetcode-cn.com/problems/invert-binary-tree/description/ target=_blank rel=noopener>226.翻转二叉树</a>
+（Easy）半年内出题频次：</li></ul><table><thead><tr><th style=text-align:center>Facebook</th><th style=text-align:center>字节跳动</th><th style=text-align:center>微软</th><th style=text-align:center>Amazon</th><th style=text-align:center>Bloomberg</th><th style=text-align:center>高盛集团</th><th style=text-align:center>Google</th></tr></thead><tbody><tr><td style=text-align:center>5</td><td style=text-align:center>5</td><td style=text-align:center>3</td><td style=text-align:center>8</td><td style=text-align:center>3</td><td style=text-align:center>2</td><td style=text-align:center>7</td></tr></tbody></table><pre><code class=language-go>/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func invertTree(root *TreeNode) *TreeNode {
+    if root == nil {
+        return root
+    }
+    root.Left, root.Right = root.Right, root.Left
+    invertTree(root.Left)
+    invertTree(root.Right)
+    return root
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/validate-binary-search-tree/ target=_blank rel=noopener>98.验证二叉搜索树</a>
+（Medium）半年内出题频次：</li></ul><table><thead><tr><th style=text-align:center>Facebook</th><th style=text-align:center>字节跳动</th><th style=text-align:center>微软</th><th style=text-align:center>Amazon</th><th style=text-align:center>Bloomberg</th><th style=text-align:center>Apple</th><th style=text-align:center>Google</th></tr></thead><tbody><tr><td style=text-align:center>16</td><td style=text-align:center>16</td><td style=text-align:center>13</td><td style=text-align:center>19</td><td style=text-align:center>15</td><td style=text-align:center>3</td><td style=text-align:center>2</td></tr></tbody></table><pre><code class=language-go>/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+// 方法一：
+func isValidBST(root *TreeNode) bool {
+    return valid(root, math.MinInt32, math.MaxInt32)
+}
+
+func valid(root *TreeNode, min, max int) bool {
+    if root == nil {
+        return true
+    }
+    if root.Val &lt; min || root.Val &gt; max {
+        return false
+    }
+    return valid(root.Left, min, root.Val - 1) &amp;&amp; valid(root.Right, root.Val + 1, max)
+}
+
+// 方法二：中序遍历，记录前一个元素
+func isValidBST(root *TreeNode) bool {
+    pre := math.MinInt64 // 初始化
+    var inorderFunc func(root *TreeNode) bool
+    inorderFunc = func(root *TreeNode) bool {
+        if root == nil {
+            return true
+        }
+        if !inorderFunc(root.Left) {
+            return false
+        }
+        if pre &gt;= root.Val {
+            return false
+        }
+        pre = root.Val
+        return inorderFunc(root.Right)
+    }
+    return inorderFunc(root)
+}
+
+// 中序迭代
+func isValidBST(root *TreeNode) bool {
+    stack := []*TreeNode{}
+    inorder := math.MinInt64
+    for len(stack) &gt; 0 || root != nil {
+        for root != nil {
+            stack = append(stack, root)
+            root = root.Left
+        }
+        root = stack[len(stack)-1]
+        stack = stack[:len(stack)-1]
+        if root.Val &lt;= inorder {
+            return false
+        }
+        inorder = root.Val
+        root = root.Right
+    }
+    return true
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/ target=_blank rel=noopener>104.二叉树的最大深度</a>
+（Easy）半年内出题频次：</li></ul><table><thead><tr><th style=text-align:center>Facebook</th><th style=text-align:center>字节跳动</th><th style=text-align:center>微软</th><th style=text-align:center>Amazon</th><th style=text-align:center>Google</th><th style=text-align:center>Apple</th><th style=text-align:center>腾讯</th><th style=text-align:center>LinkedIn</th><th style=text-align:center>快手</th></tr></thead><tbody><tr><td style=text-align:center>4</td><td style=text-align:center>12</td><td style=text-align:center>4</td><td style=text-align:center>3</td><td style=text-align:center>3</td><td style=text-align:center>2</td><td style=text-align:center>2</td><td style=text-align:center>14</td><td style=text-align:center>2</td></tr></tbody></table><pre><code class=language-go>/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func maxDepth(root *TreeNode) int {
+    if root == nil {
+        return 0
+    }
+    return max(maxDepth(root.Left), maxDepth(root.Right)) + 1
+}
+
+func max(a, b int) int {
+    if a &gt; b {
+        return a
+    }
+    return b
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/ target=_blank rel=noopener>111.二叉树的最小深度</a>
+（Easy）半年内出题频次：</li></ul><table><thead><tr><th style=text-align:center>Facebook</th><th style=text-align:center>字节跳动</th><th style=text-align:center>Amazon</th></tr></thead><tbody><tr><td style=text-align:center>2</td><td style=text-align:center>2</td><td style=text-align:center>3</td></tr></tbody></table><pre><code class=language-go>/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+// 方法一： bfs 迭代, 还可以增加count数组结合q一起使用
+func minDepth(root *TreeNode) (min int) {
+    if root == nil {
+        return 0
+    }
+    q := []*TreeNode{root}
+    for len(q) &gt; 0 {
+         min++
+        for i := len(q); i &gt; 0; i-- {
+            node := q[0]
+            if node.Left == nil &amp;&amp; node.Right == nil {
+                return min
+            }
+            q = q[1:]
+            if node.Left != nil {
+                q = append(q, node.Left)
+            }
+            if node.Right != nil {
+                q = append(q, node.Right)
+            }
+        }
+    }
+    return min
+}
+
+// 方法二: 递归
+func minDepth(root *TreeNode) int {
+    if root == nil {
+        return 0
+    }
+    if root.Left == nil &amp;&amp; root.Right == nil {
+        return 1
+    }
+    leftDepth, rightDepth := minDepth(root.Left), minDepth(root.Right)
+    if leftDepth == 0 || rightDepth == 0 {
+        return leftDepth + rightDepth + 1
+    }
+    return min(leftDepth, rightDepth) + 1
+}
+func min(a, b int) int {
+    if a &lt; b {
+        return a
+    }
+    return b
+}
+</code></pre><h4 id=分治>分治</h4><ul><li><a href=https://leetcode-cn.com/problems/powx-n/ target=_blank rel=noopener>50.Pow(x, n) </a>（Medium）半年内出题频次：</li></ul><table><thead><tr><th style=text-align:center>Facebook</th><th style=text-align:center>Google</th><th style=text-align:center>微软</th><th style=text-align:center>Amazon</th><th style=text-align:center>eBay</th><th style=text-align:center>Apple</th><th style=text-align:center>阿里巴巴</th><th style=text-align:center>LinkedIn</th><th style=text-align:center>Bloomberg</th><th style=text-align:center>Cisco</th></tr></thead><tbody><tr><td style=text-align:center>22</td><td style=text-align:center>5</td><td style=text-align:center>6</td><td style=text-align:center>9</td><td style=text-align:center>3</td><td style=text-align:center>2</td><td style=text-align:center>2</td><td style=text-align:center>7</td><td style=text-align:center>2</td><td style=text-align:center>2</td></tr></tbody></table><pre><code class=language-go>func myPow(x float64, n int) float64 {
+    if n == 0 {
+        return 1
+    }
+    if n &lt; 0 {
+        n = -n
+        x = 1 / x
+    }
+    pow := myPow(x, n &gt;&gt; 1)
+    if n &amp; 1 == 1 {
+        return x * pow * pow
+    } else {
+        return pow * pow
+    }
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/generate-parentheses/ target=_blank rel=noopener>22.括号生成</a>
+（Medium）半年内出题频次：</li></ul><table><thead><tr><th style=text-align:center>Facebook</th><th style=text-align:center>Google</th><th style=text-align:center>微软</th><th style=text-align:center>Amazon</th><th style=text-align:center>字节跳动</th><th style=text-align:center>Apple</th><th style=text-align:center>腾讯</th><th style=text-align:center>华为</th><th style=text-align:center>英伟达</th><th style=text-align:center>Shopee</th></tr></thead><tbody><tr><td style=text-align:center>12</td><td style=text-align:center>3</td><td style=text-align:center>14</td><td style=text-align:center>12</td><td style=text-align:center>26</td><td style=text-align:center>4</td><td style=text-align:center>4</td><td style=text-align:center>3</td><td style=text-align:center>2</td><td style=text-align:center>2</td></tr></tbody></table><pre><code class=language-go>// 递归
+func generateParenthesis(n int) (ans []string) {
+    var generate func(l , r int, path string)
+    generate = func(l, r int, path string) {
+        if l == n &amp;&amp; r == n {
+            ans = append(ans, path)
+            return
+        }
+        if l &lt; n {
+            generate(l + 1, r, path + &quot;(&quot;)
+        }
+        if r &lt; l {
+            generate(l, r + 1, path + &quot;)&quot;)
+        }
+    }
+    generate(0, 0, &quot;&quot;)
+    return ans
+}
+</code></pre><pre><code class=language-c++>// 训练营：分治，重点理解
+class Solution {
+public:
+    vector&lt;string&gt; generateParenthesis(int n) {
+        if (n == 0) return {&quot;&quot;};
+        if (store.find(n) != store.end()) return store[n]; // 记忆化
+        vector&lt;string&gt; ans;
+        for (int k = 1; k &lt;= n; k++) { // 加法原理
+            vector&lt;string&gt; A = generateParenthesis(k - 1);
+            vector&lt;string&gt; B = generateParenthesis(n - k);
+            // S = (A)B
+            // 乘法原理
+            for (string&amp; a : A)
+                for (string&amp; b : B)
+                    ans.push_back(&quot;(&quot; + a + &quot;)&quot; + b);
+
+        }
+        store[n] = ans;
+        return ans;
+    }
+private:
+    unordered_map&lt;int, vector&lt;string&gt;&gt; store;
+};
+</code></pre><h3 id=第-6-课-树与图>第 6 课 树与图</h3><h4 id=树二叉树树的遍历>树、二叉树、树的遍历</h4><ul><li><a href=https://leetcode-cn.com/problems/binary-tree-inorder-traversal/ target=_blank rel=noopener>94.二叉树的中序遍历</a>
+（Easy）半年内出题频次：</li></ul><table><thead><tr><th style=text-align:center>Facebook</th><th style=text-align:center>字节跳动</th><th style=text-align:center>微软</th><th style=text-align:center>Amazon</th><th style=text-align:center>Google</th><th style=text-align:center>高盛集团</th><th style=text-align:center>Bloomberg</th></tr></thead><tbody><tr><td style=text-align:center>3</td><td style=text-align:center>4</td><td style=text-align:center>4</td><td style=text-align:center>2</td><td style=text-align:center>6</td><td style=text-align:center>2</td><td style=text-align:center>3</td></tr></tbody></table><pre><code class=language-go>/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+// 方法一：递归
+func inorderTraversal(root *TreeNode) (ans []int) {
+    var inorder func(root *TreeNode)
+    inorder = func(root *TreeNode) {
+        if root == nil {
+            return
+        }
+        inorder(root.Left)
+        ans = append(ans, root.Val)
+        inorder(root.Right)
+    }
+    inorder(root)
+    return ans
+}
+
+// 方法二：颜色标记法（属于迭代）
+
+// 方法三：迭代模拟栈
+
+// 方法四：Morris 中序遍历
+
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/n-ary-tree-preorder-traversal/description/ target=_blank rel=noopener>589.N 叉树的前序遍历</a>
+（Easy）半年内出题频次：</li></ul><table><thead><tr><th style=text-align:center>字节跳动</th></tr></thead><tbody><tr><td style=text-align:center>3</td></tr></tbody></table><pre><code class=language-go>/**
+ * Definition for a Node.
+ * type Node struct {
+ *     Val int
+ *     Children []*Node
+ * }
+ */
+// 方法一：递归
+func preorder(root *Node) []int {
+    ans := []int{}
+    var dfs func(root *Node)
+    dfs = func(root *Node) {
+        if root == nil {
+            return
+        }
+        ans = append(ans, root.Val)
+        for _, children := range root.Children {
+            dfs(children)
+        }
+        // 速度会更快
+        //n := len(root.Children)
+        //for i := 0; i &lt; n; i++ {
+        //    pre(root.Children[i])
+        //}
+    }
+    dfs(root)
+    return ans
+}
+
+// 方法二：迭代
+func preorder(root *Node) []int {
+    ans := []int{}
+    if root == nil {
+        return ans
+    }
+    stack := []*Node{root}
+    for len(stack) &gt; 0 {
+        node := stack[len(stack)-1]
+        stack = stack[:len(stack)-1]
+        ans = append(ans, node.Val)
+        for i := len(node.Children) - 1; i &gt;= 0; i-- {
+            stack = append(stack, node.Children[i])
+        }
+    }
+    return ans
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/n-ary-tree-level-order-traversal/ target=_blank rel=noopener>429.N 叉树的层序遍历</a>
+（Medium）半年内出题频次：</li></ul><table><thead><tr><th style=text-align:center>Amazon</th></tr></thead><tbody><tr><td style=text-align:center>2</td></tr></tbody></table><pre><code class=language-go>/**
+ * Definition for a Node.
+ * type Node struct {
+ *     Val int
+ *     Children []*Node
+ * }
+ */
+// 方法一：递归
+func levelOrder(root *Node) (res [][]int) {
+    var dfs func (*Node, int)
+    dfs = func(root *Node, level int) {
+        if root == nil {
+            return
+        }
+        if len(res) &lt; level + 1 {
+            res = append(res, []int{})
+        }
+        res[level] = append(res[level], root.Val)
+        for _, children := range root.Children {
+            dfs(children, level + 1)
+        }
+    }
+    dfs(root, 0)
+    return res
+}
+
+// 方法二：迭代
+func levelOrder(root *Node) (res [][]int) {
+    if root == nil {
+        return res
+    }
+    queue := []*Node{root}
+    for len(queue) &gt; 0 {
+        levels := []int{}
+        for n := len(queue); n &gt; 0; n-- {
+            node := queue[0]
+            queue = queue[1:]
+            levels = append(levels, node.Val)
+            for _, children := range node.Children {
+                queue = append(queue, children)
+            }
+        }
+        res = append(res, levels)
+    }
+    return res
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/ target=_blank rel=noopener>105.从前序与中序遍历序列构造二叉树</a>
+（Medium）半年内出题频次：</li></ul><table><thead><tr><th style=text-align:center>Facebook</th><th style=text-align:center>字节跳动</th><th style=text-align:center>微软</th><th style=text-align:center>Amazon</th><th style=text-align:center>Google</th><th style=text-align:center>百度</th><th style=text-align:center>华为</th><th style=text-align:center>Bloomberg</th><th style=text-align:center>腾讯</th><th style=text-align:center>滴滴</th></tr></thead><tbody><tr><td style=text-align:center>3</td><td style=text-align:center>24</td><td style=text-align:center>7</td><td style=text-align:center>10</td><td style=text-align:center>5</td><td style=text-align:center>2</td><td style=text-align:center>2</td><td style=text-align:center>3</td><td style=text-align:center>4</td><td style=text-align:center>2</td></tr></tbody></table><pre><code class=language-go>// 递归
+func buildTree(preorder []int, inorder []int) *TreeNode {
+    if len(preorder) == 0 {
+        return nil
+    }
+    root := &amp;TreeNode{Val: preorder[0]}
+    mid := 0; 
+    for root.Val != inorder[mid] {
+        mid++
+    }
+    root.Left = buildTree(preorder[1:len(inorder[:mid])+1], inorder[:mid])
+    root.Right = buildTree(preorder[len(inorder[:mid])+1:], inorder[mid+1:])
+    return root
+}
+// 递归优化
+func buildTree(preorder []int, inorder []int) *TreeNode {
+    if len(preorder) == 0 {
+        return nil
+    }
+    root := &amp;TreeNode{Val: preorder[0]}
+    mid := 0; 
+    for root.Val != inorder[mid] {
+        mid++
+    }
+    // 已下优化后版本
+    root.Left = buildTree(preorder[1:mid+1], inorder[:mid])
+    root.Right = buildTree(preorder[mid+1:], inorder[mid+1:])
+    return root
+}
+
+// 训练营：递归
+func buildTree(preorder []int, inorder []int) *TreeNode {
+    m, n := len(preorder), len(inorder)
+    var build func(int, int, int, int) *TreeNode
+    build = func(l1, r1, l2, r2 int) *TreeNode {
+        if l1 &gt; r1 {
+            return nil
+        }
+        root := &amp;TreeNode{Val: preorder[l1]}
+        // 可使用map进行优化
+        mid := l2
+        for inorder[mid] != root.Val {
+            mid++
+        }
+        root.Left = build(l1 + 1, l1 + (mid - l2), l2, mid - 1)
+        root.Right = build(l1 + (mid - l2) + 1, r1, mid + 1, r2)
+        return root
+    }
+    return build(0, m - 1, 0, n - 1)
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/ target=_blank rel=noopener>297.二叉树的序列化与反序列化</a>
+（Hard）半年内出题频次：</li></ul><table><thead><tr><th style=text-align:center>Facebook</th><th style=text-align:center>字节跳动</th><th style=text-align:center>微软</th><th style=text-align:center>Amazon</th><th style=text-align:center>Google</th><th style=text-align:center>Apple</th><th style=text-align:center>LinkeIn</th><th style=text-align:center>Bloomberg</th><th style=text-align:center>高盛集团</th></tr></thead><tbody><tr><td style=text-align:center>19</td><td style=text-align:center>11</td><td style=text-align:center>18</td><td style=text-align:center>13</td><td style=text-align:center>4</td><td style=text-align:center>2</td><td style=text-align:center>11</td><td style=text-align:center>2</td><td style=text-align:center>2</td></tr></tbody></table><pre><code class=language-go>/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+
+type Codec struct {
+    
+}
+
+func Constructor() Codec {
+    return Codec{}
+}
+
+// Serializes a tree to a single string.
+func (this *Codec) serialize(root *TreeNode) string {
+    sb := &amp;strings.Builder{}
+    var encode func(root *TreeNode)
+    encode = func(root *TreeNode) {
+        if root == nil {
+            sb.WriteString(&quot;null,&quot;)
+            return
+        }
+        //ans.WriteString(fmt.Sprintf(&quot;%d,&quot;, root.Val))
+        sb.WriteString(strconv.Itoa(root.Val))
+        sb.WriteByte(',')
+        encode(root.Left)
+        encode(root.Right)
+    }
+    encode(root)
+    return sb.String()
+}
+
+// Deserializes your encoded data to tree.
+func (this *Codec) deserialize(data string) *TreeNode {    
+    sp := strings.Split(data, &quot;,&quot;)
+    var decode func() *TreeNode
+    decode = func() *TreeNode {
+        val := sp[0]
+        sp = sp[1:]
+        if val == &quot;null&quot; {
+            return nil
+        }
+        v, _ := strconv.Atoi(val)
+        return &amp;TreeNode{v, decode(), decode()}
+    }
+    return decode()
+}
+
+/**
+ * Your Codec object will be instantiated and called as such:
+ * ser := Constructor();
+ * deser := Constructor();
+ * data := ser.serialize(root);
+ * ans := deser.deserialize(data);
+ */
+</code></pre><h4 id=树的直径最近公共祖先树的变形>树的直径、最近公共祖先、树的变形</h4><ul><li><a href=https://leetcode-cn.com/problems/tree-diameter/ target=_blank rel=noopener>树的直径</a>
+（Medium）（此题为 LeetCode 会员题选做）半年内出题频次：</li></ul><p>** vip题 **</p><table><thead><tr><th style=text-align:center>微软</th></tr></thead><tbody><tr><td style=text-align:center>2</td></tr></tbody></table><pre><code class=language-go>// edges = [[0, 1], [0, 2]]
+func treeDiameter(edges [][]int) int {
+  
+}
+</code></pre><pre><code class=language-c++>// 训练营
+class Solution {
+	public:
+  		int treeDiameter(vector&lt;vector&lt;int&gt;&gt; edges) {
+            n = 0;
+            for(vector&lt;int&gt;&amp; edge := edges) {
+                int x = edge[0];
+                int y = edge[1];
+                n = max(n, max(x, y));
+            }
+            n++;
+            for (int i = 0; i &lt; n; i++) to.push_back({});
+            // 出边数组
+            for(vector&lt;int&gt;&amp; edge := edges) {
+             	int x = edge[0];
+                int y = edge[1];
+                to[x].push_back(y);
+                to[y].push_back(x);
+            }
+            int p = findFarthest(0).first;
+            return findFarthest(p).second
+        }
+    private:
+    	vector&lt;vector&lt;int&gt;&gt; to;
+    	int n;
+    	// &lt;点， 距离&gt;
+    	pair&lt;int, int&gt; findFarthest(int start) {
+            vector&lt;int&gt; depth(n, -1);
+            queue&lt;int&gt; q;
+            q.push(start);
+            depth[start] = 0
+            while (!q.empty()) {
+                int x = q.front();
+                q.pop();
+                for (int y : to[x]) {
+                    if (depth[y] != -1) continue; // 走过了
+                    depth[y] = depth[x] + 1;
+                    q.push(y);
+                }
+            }
+            int ans = start;
+            for (int i = 0; i &lt; n; i++) {
+                if (depth[i] &gt; depth[ans]) ans = i;
+            }
+            return {ans, depth[ans+1]}
+        }
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/ target=_blank rel=noopener>236.二叉树的最近公共祖先</a>
+（Medium）半年内出题频次：</li></ul><table><thead><tr><th style=text-align:center>Facebook</th><th style=text-align:center>字节跳动</th><th style=text-align:center>微软</th><th style=text-align:center>Amazon</th><th style=text-align:center>Google</th><th style=text-align:center>腾讯</th><th style=text-align:center>Apple</th><th style=text-align:center>LinkedIn</th><th style=text-align:center>Riot Games</th></tr></thead><tbody><tr><td style=text-align:center>40</td><td style=text-align:center>20</td><td style=text-align:center>16</td><td style=text-align:center>16</td><td style=text-align:center>4</td><td style=text-align:center>3</td><td style=text-align:center>3</td><td style=text-align:center>3</td><td style=text-align:center>2</td></tr></tbody></table><pre><code class=language-go>/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+ func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
+     if root == nil || root == p || root == q {
+         return root
+     }
+     left := lowestCommonAncestor(root.Left, p, q)
+     right := lowestCommonAncestor(root.Right, p, q)
+     if left == nil {
+         return right
+     } else if right == nil {
+         return left
+     }
+     return root
+}
+</code></pre><pre><code class=language-c++>/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+// 训练营
+class Solution {
+public:
+    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+        this-&gt;p = p;
+        this-&gt;q = q;
+        dfs(root);
+        return ans;    
+    }
+private:
+    TreeNode* p;
+    TreeNode* q;
+    TreeNode* ans;
+    pair&lt;bool, bool&gt; dfs(TreeNode* root) {
+        if (root == nullptr) return {false, false};
+        pair&lt;bool, bool&gt; leftResult = dfs(root-&gt;left);
+        pair&lt;bool, bool&gt; rightResut = dfs(root-&gt;right);
+        pair&lt;bool, bool&gt; result;
+        result.first = leftResult.first || rightResut.first || root-&gt;val == p-&gt;val;
+        result.second = leftResult.second || rightResut.second || root-&gt;val == q-&gt;val;
+        if (result.first &amp;&amp; result.second &amp;&amp; ans == nullptr) ans = root;
+        return result;
+    }
+};
+</code></pre><h4 id=图图的遍历>图、图的遍历</h4><ul><li><a href=https://leetcode-cn.com/problems/redundant-connection/description/ target=_blank rel=noopener>684.冗余连接</a>
+（Medium）半年内出题频次：</li></ul><table><thead><tr><th style=text-align:center>Amazon</th></tr></thead><tbody><tr><td style=text-align:center>2</td></tr></tbody></table><pre><code class=language-go>// 写法一：
+func findRedundantConnection(edges [][]int) []int {
+    parent := make([]int, len(edges) + 1)
+    for i := range parent {
+        parent[i] = i
+    }
+    find := func (p int) int {
+        for parent[p] != p {
+            parent[p] = parent[parent[p]]
+            p = parent[p]
+        }
+        return p
+    }
+    union := func(x, y int) bool {
+        px, py := find(x), find(y)
+        if px == py  {
+            return false
+        }
+        parent[px] = py
+        return true
+    }
+    for _, edge := range edges {
+        if !union(edge[0], edge[1]) {
+            return edge
+        }
+    }
+    return nil
+}
+// 写法二：
+func findRedundantConnection(edges [][]int) []int {
+    parent := make([]int, len(edges) + 1)
+    for i := range parent {
+        parent[i] = i
+    }
+    var find func(int) int
+    find = func(x int) int {
+        if parent[x] != x {
+            parent[x] = find(parent[x])
+        }
+        return parent[x]
+    }
+    union := func(from, to int) bool {
+        x, y := find(from), find(to)
+        if x == y {
+            return false
+        }
+        parent[x] = y
+        return true
+    }
+    for _, edge := range edges {
+        if !union(edge[0], edge[1]) {
+            return edge
+        }
+    }
+    return nil
+}
+// 写法三：并查集独立抽象出去 https://leetcode-cn.com/submissions/detail/108890546/
+</code></pre><pre><code class=language-go>// 参考训练营 c++ 写法
+func findRedundantConnection(edges [][]int) []int {
+    n := 0
+    for _, edge := range edges {
+        n = max(n, max(edge[0], edge[1]))
+    }
+    var (
+        to = make([][]int, n + 1)
+        visited = make([]bool, n + 1)
+        hasCycle = false
+        dfs func(x, fa int)
+    )
+    dfs = func(x, fa int) {
+        visited[x] = true
+        for _, y := range to[x] {
+            if y == fa {
+                continue
+            }
+            if !visited[y] {
+                dfs(y, x)
+            } else {
+                hasCycle = true
+            }
+        }
+        visited[x] = false
+    }
+    for _, edge := range edges {
+        x, y := edge[0], edge[1]
+        to[x] = append(to[x], y)
+        to[y] = append(to[y], x)
+        hasCycle = false
+        dfs(x, 0)
+        if hasCycle {
+            return []int{x,y}
+        }
+    }
+    return nil
+}
+
+func max(a, b int) int {
+    if a &gt; b {
+        return a
+    }
+    return b
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/course-schedule/ target=_blank rel=noopener>207.课程表</a>
+（Medium）半年内出题频次：</li></ul><table><thead><tr><th style=text-align:center>Facebook</th><th style=text-align:center>字节跳动</th><th style=text-align:center>微软</th><th style=text-align:center>Amazon</th><th style=text-align:center>Google</th><th style=text-align:center>eBay</th><th style=text-align:center>DoorDash</th></tr></thead><tbody><tr><td style=text-align:center>9</td><td style=text-align:center>4</td><td style=text-align:center>13</td><td style=text-align:center>23</td><td style=text-align:center>6</td><td style=text-align:center>2</td><td style=text-align:center>2</td></tr></tbody></table><pre><code class=language-go>func canFinish(numCourses int, prerequisites [][]int) bool {
+    var (
+        edges = make([][]int, numCourses)
+        indeg = make([]int, numCourses)
+        result = []int{}
+    )
+    for _, info := range prerequisites {
+        edges[info[1]] = append(edges[info[1]], info[0])
+        indeg[info[0]]++
+    }
+    q := []int{}
+    for course, cnt := range indeg {
+        if cnt == 0 {
+            q = append(q, course)
+        }
+    }
+    for len(q) &gt; 0 {
+        x := q[0]
+        q = q[1:]
+        result = append(result, x)
+        for _, course := range edges[x] {
+            indeg[course]--
+            if indeg[course] == 0 {
+                q = append(q, course)
+            }
+        }
+    }
+    return len(result) == numCourses
+}
+
+// 写法二：
+func canFinish(numCourses int, prerequisites [][]int) bool {
+    var (
+        edges = make([][]int, numCourses)
+        indeg = make([]int, numCourses)
+        result []int
+    )
+
+    for _, info := range prerequisites {
+        edges[info[1]] = append(edges[info[1]], info[0])
+        indeg[info[0]]++
+    }
+
+    q := []int{}
+    for i := 0; i &lt; numCourses; i++ {
+        if indeg[i] == 0 {
+            q = append(q, i)
+        }
+    }
+
+    for len(q) &gt; 0 {
+        u := q[0]
+        q = q[1:]
+        result = append(result, u)
+        for _, v := range edges[u] {
+            indeg[v]--
+            if indeg[v] == 0 {
+                q = append(q, v)
+            }
+        }
+    }
+    return len(result) == numCourses
+}
+</code></pre></article><div class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"><div><span class="text-primary-text block font-bold">上一页</span>
+<a href=/study/2021algorithm/week02/ class=block>第二周 哈希表、集合、映射、前缀和、差分、双指针扫描</a></div><div class="mt-4 md:mt-0 md:text-right"><span class="text-primary-text block font-bold">下一页</span>
+<a href=/study/2021algorithm/week04/ class=block>第四周 深度优先搜索、广度优先搜索、二叉堆、二叉搜索树</a></div></div></div><div class="hidden lg:block lg:w-1/4"><div class="bg-secondary-bg
+prose sticky top-16 z-10 hidden px-6 py-4 lg:block"><h3>本页内容</h3></div><div class="sticky-toc
+border-s
+hidden px-6 pb-6 lg:block"><nav id=TableOfContents><ul><li><a href=#本周作业>本周作业</a></li><li><a href=#实战例题>实战例题</a><ul><li><a href=#第-5-课--递归分治>第 5 课 递归、分治</a><ul><li><a href=#递归>递归</a></li><li><a href=#树>树</a></li><li><a href=#分治>分治</a></li></ul></li><li><a href=#第-6-课-树与图>第 6 课 树与图</a><ul><li><a href=#树二叉树树的遍历>树、二叉树、树的遍历</a></li><li><a href=#树的直径最近公共祖先树的变形>树的直径、最近公共祖先、树的变形</a></li><li><a href=#图图的遍历>图、图的遍历</a></li></ul></li></ul></li></ul></nav></div><script>window.addEventListener("DOMContentLoaded",()=>{enableStickyToc()})</script></div></div></div></div></div><script>document.addEventListener("DOMContentLoaded",()=>{hljs.highlightAll(),changeSidebarHeight(),switchDocToc()})</script></div></div></main><footer class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b"><p class="text-sm text-tertiary-text">&copy; 2021 <a href=https://blog.lbbniu.com/>lbbniu</a>
+&#183; Powered by the <a href=https://github.com/wangchucheng/hugo-eureka class=hover:text-eureka>Eureka</a> theme for <a href=https://gohugo.io class=hover:text-eureka>Hugo</a></p></div></div></footer></body></html>

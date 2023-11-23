@@ -1,0 +1,703 @@
+<!doctype html><html lang=zh dir=ltr><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>第7周 字典树和并查集、高级搜索、红黑树和AVL树 | Go 算法练习 | lbbniu</title>
+<meta name=generator content="Hugo Eureka 0.9.3"><link rel=stylesheet href=/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css><script defer src=/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js></script><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" as=style onload='this.onload=null,this.rel="stylesheet"'><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/github.min.css media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/php.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/java.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/go.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/python.min.js crossorigin></script><link rel=stylesheet href=/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css media=print onload='this.media="all",this.onload=null'><script defer type=text/javascript src=/js/fontawesome.min.35973bea57658ef0dd22ad59ea4642b6c8c67af62bed8659ac326d284ef285a6657cdbcf57d3b2910e7e992f2b20426e.js></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css integrity=sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js integrity=sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY crossorigin></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script><script defer src=https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js integrity=sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0 crossorigin></script><link rel=icon type=image/png sizes=32x32 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_32x32_fill_box_center_3.png><link rel=apple-touch-icon sizes=180x180 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_180x180_fill_box_center_3.png><meta name=description content="第13课 | 字典树和并查集，第14课｜高级搜索，第15课 | 红黑树和AVL树"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"算法学习","item":"/study/"},{"@type":"ListItem","position":2,"name":"极客时间算法训练营2020版","item":"/study/algorithm/"},{"@type":"ListItem","position":3,"name":"Go 算法练习","item":"/study/algorithm/go/"},{"@type":"ListItem","position":4,"name":"第7周 字典树和并查集、高级搜索、红黑树和AVL树","item":"/study/algorithm/go/week07/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/study/algorithm/go/week07/"},"headline":"第7周 字典树和并查集、高级搜索、红黑树和AVL树 | Go 算法练习 | lbbniu","datePublished":"2021-12-20T22:42:54+08:00","dateModified":"2023-11-23T18:27:23+08:00","wordCount":2677,"publisher":{"@type":"Person","name":"lbbniu","logo":{"@type":"ImageObject","url":"/images/icon.gif"}},"description":"第13课 | 字典树和并查集，第14课｜高级搜索，第15课 | 红黑树和AVL树"}</script><meta property="og:title" content="第7周 字典树和并查集、高级搜索、红黑树和AVL树 | Go 算法练习 | lbbniu"><meta property="og:type" content="article"><meta property="og:image" content="/images/icon.png"><meta property="og:url" content="/study/algorithm/go/week07/"><meta property="og:description" content="第13课 | 字典树和并查集，第14课｜高级搜索，第15课 | 红黑树和AVL树"><meta property="og:locale" content="zh"><meta property="og:site_name" content="lbbniu"><meta property="article:published_time" content="2021-12-20T22:42:54+08:00"><meta property="article:modified_time" content="2023-11-23T18:27:23+08:00"><meta property="article:section" content="study"><body class="flex min-h-screen flex-col"><header class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"><div class="mx-auto w-full max-w-screen-xl"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=="Auto"||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName("html")[0].classList.add("dark")</script><nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0"><a href=/ class="me-6 text-primary-text text-xl font-bold">lbbniu</a>
+<button id=navbar-btn class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+<i class="fas fa-bars"></i></button><div id=target class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20"><div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0"><a href=/post/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">文章</a>
+<a href=/cloud-native/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">云原生</a>
+<a href=/study/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 selected-menu-item me-4">算法学习</a>
+<a href=/docs/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">Go学习训练营</a>
+<a href=/tags/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">标签</a></div><div class=flex><div class="relative pt-4 md:pt-0"><div class="cursor-pointer hover:text-eureka" id=lightDarkMode><i class="fas fa-adjust"></i></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id=is-open></div><div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40" id=lightDarkOptions><span class="px-4 py-1 hover:text-eureka" name=Light>浅色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Dark>深色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Auto>自动</span></div></div></div></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id=is-open-mobile></div></nav><script>let element=document.getElementById("lightDarkMode");storageColorScheme==null||storageColorScheme=="Auto"?document.addEventListener("DOMContentLoaded",()=>{window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",switchDarkMode)}):storageColorScheme=="Light"?(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","sun"),element.firstElementChild.classList.add("fa-sun")):storageColorScheme=="Dark"&&(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","moon"),element.firstElementChild.classList.add("fa-moon")),document.addEventListener("DOMContentLoaded",()=>{getcolorscheme(),switchBurger()})</script></div></header><main class="grow pt-16"><div class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8"><div class=lg:pt-12><div class="flex flex-col md:flex-row bg-secondary-bg rounded"><div class="md:w-1/4 lg:w-1/5 border-e"><div class="sticky top-16 pt-6"><div id=sidebar-title class="md:hidden mx-4 px-2 pt-4 pb-2 md:border-b text-tertiary-text md:text-primary-text"><span class=font-semibold>目录</span>
+<i class='fas fa-caret-right ms-1'></i></div><div id=sidebar-toc class="hidden md:block overflow-y-auto mx-6 md:mx-0 pe-6 pt-2 md:max-h-doc-sidebar bg-primary-bg md:bg-transparent"><div class="flex flex-wrap ms-4 -me-2 p-2 bg-secondary-bg md:bg-primary-bg rounded"><a class=hover:text-eureka href=/study/algorithm/go/>Go 算法练习</a></div><ul class=ps-6><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week00/>预习</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week01/>第1周 数组、链表、跳表</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week02/>第2周 栈、队列、哈希表</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week03/>第3周 树、递归、分治、回溯</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week04/>第4周 DFS、BFS、贪心、二分查找</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week05/>第5周 期中考试</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week06/>第6周 动态规划</a></div></li><li class=py-2><div><a class="text-eureka hover:text-eureka" href=/study/algorithm/go/week07/>第7周 字典树和并查集、高级搜索、红黑树和AVL树</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week08/>第8周 位运算、布隆过滤器和LRU缓存、排序算法</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week09/>第9周 高级动态规划、字符串算法</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week10/>第10周 期末串讲、期末考试、毕业刷题路线</a></div></li></ul></div></div></div><div class="w-full md:w-3/4 lg:w-4/5 pb-8 pt-2 md:pt-8"><div class=flex><div class="w-full lg:w-3/4 px-6"><article class=prose><h1 class=mb-4>第7周 字典树和并查集、高级搜索、红黑树和AVL树</h1><div class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"><div class="me-6 my-2"><i class="fas fa-calendar me-1"></i>
+<span>2021-12-20</span></div><div class="me-6 my-2"><i class="fas fa-clock me-1"></i>
+<span>13分钟阅读时长</span></div></div><p>题目数量：17</p><h2 id=第13课--字典树和并查集>第13课 | 字典树和并查集</h2><h3 id=1-trie树的基本实现和特性>1. Trie树的基本实现和特性</h3><h4 id=参考链接>参考链接</h4><ul><li><a href=https://leetcode-cn.com/problems/binary-tree-level-order-traversal/ target=_blank rel=noopener>二叉树的层次遍历</a></li></ul><pre><code class=language-go>/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+// bfs
+func levelOrder(root *TreeNode) (res [][]int) {
+    if root == nil {
+        return res
+    }
+    queue := []*TreeNode{root}
+    for len(queue) &gt; 0 {
+        curLevel := []int{}
+        for cnt := len(queue); cnt &gt; 0; cnt-- {
+            node := queue[0]
+            queue = queue[1:]
+            curLevel = append(curLevel, node.Val)
+            if node.Left != nil {
+                queue = append(queue, node.Left)
+            }
+            if node.Right != nil {
+                queue = append(queue, node.Right)
+            }
+        }
+        res = append(res, curLevel)
+    }
+    return res
+}
+// dfs
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/implement-trie-prefix-tree/ target=_blank rel=noopener>208. 实现 Trie (前缀树)</a></li></ul><pre><code class=language-go>type Trie struct {
+   child [26]*Trie
+   isEnd     bool
+}
+
+
+func Constructor() Trie {
+    return Trie{}
+}
+
+
+func (this *Trie) Insert(word string)  {
+    root := this
+    for _, w := range word {
+        if root.child[w - 'a'] == nil{
+            root.child[w - 'a'] = &amp;Trie{}
+        }
+        root = root.child[w - 'a'] 
+    }
+    root.isEnd = true
+}
+
+func (this *Trie) SearchPrefix(prefix string) *Trie {
+    root := this
+    for _, w := range prefix {
+        if root.child[w - 'a'] == nil {
+            return nil
+        }
+        root = root.child[w - 'a']
+    }
+    return root
+}
+
+func (this *Trie) Search(word string) bool {
+    node := this.SearchPrefix(word)
+    return node != nil &amp;&amp; node.isEnd
+}
+
+
+func (this *Trie) StartsWith(prefix string) bool {
+    return this.SearchPrefix(prefix) != nil
+}
+
+
+/**
+ * Your Trie object will be instantiated and called as such:
+ * obj := Constructor();
+ * obj.Insert(word);
+ * param_2 := obj.Search(word);
+ * param_3 := obj.StartsWith(prefix);
+ */
+</code></pre><ul><li><a href=https://shimo.im/docs/Pk6vPY3HJ9hKkh33 target=_blank rel=noopener>Tire 树代码模板</a>
+失效，看PHP</li></ul><h3 id=2-trie树实战题目解析单词搜索2>2. Trie树实战题目解析：单词搜索2</h3><h4 id=实战题目>实战题目</h4><ul><li><a href=https://leetcode-cn.com/problems/implement-trie-prefix-tree/ target=_blank rel=noopener>208. 实现 Trie (前缀树)</a></li></ul><pre><code class=language-go>// 上面重复
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/word-search-ii/ target=_blank rel=noopener>212. 单词搜索 II</a>
+重点练习</li></ul><pre><code class=language-go>var fx = [][]int{{1, 0}, {0, 1}, {-1, 0}, {0, -1}}
+func findWords(board [][]byte, words []string) (res []string) {
+    trie := &amp;Trie{}
+    for _, word := range words {
+        trie.Insert(word)
+    }
+    m, n := len(board), len(board[0])
+    var backtracking func (i, j int, root *Trie)
+    backtracking = func(i, j int, root *Trie) {
+        letter := board[i][j]
+        board[i][j] = '#'
+        node := root.child[letter - 'a']
+        if node.word != &quot;&quot; {
+            res = append(res, node.word)
+            node.word = &quot;&quot;
+        }
+        for _, f := range fx {
+            ni, nj := i + f[0], j + f[1]
+            if ni &lt; 0 || ni &gt;= m || nj &lt; 0 || nj &gt;= n || board[ni][nj] == '#'{
+                continue
+            }
+            if node.child[board[ni][nj] - 'a'] != nil {
+                backtracking(ni, nj, node)
+            }
+        }
+        board[i][j] = letter
+    }
+    for i := 0; i &lt; m; i++ {
+        for j := 0; j &lt; n; j++ {
+            if trie.StartsWith(string(board[i][j])) {
+                backtracking(i, j, trie)
+            }
+        }
+    }
+    return res
+}
+
+type Trie struct {
+   child [26]*Trie
+   word     string
+}
+
+
+func Constructor() Trie {
+    return Trie{}
+}
+
+
+func (this *Trie) Insert(word string)  {
+    root := this
+    for _, w := range word {
+        if root.child[w - 'a'] == nil{
+            root.child[w - 'a'] = &amp;Trie{}
+        }
+        root = root.child[w - 'a'] 
+    }
+    root.word = word
+}
+
+func (this *Trie) SearchPrefix(prefix string) *Trie {
+    root := this
+    for _, w := range prefix {
+        if root.child[w - 'a'] == nil {
+            return nil
+        }
+        root = root.child[w - 'a']
+    }
+    return root
+}
+
+func (this *Trie) Search(word string) bool {
+    node := this.SearchPrefix(word)
+    return node != nil &amp;&amp; node.word != &quot;&quot;
+}
+
+
+func (this *Trie) StartsWith(prefix string) bool {
+    return this.SearchPrefix(prefix) != nil
+}
+</code></pre><ul><li>分析单词搜索 II 用 Tire 树方式实现的时间复杂度，请同学们提交在第 7 周的学习总结中。</li></ul><h3 id=3-并查集的基本实现特性和实战题目解析>3. 并查集的基本实现、特性和实战题目解析</h3><h4 id=参考链接-1>参考链接</h4><ul><li><a href=https://leetcode-cn.com/problems/number-of-islands/ target=_blank rel=noopener>200.岛屿数量</a></li></ul><pre><code class=language-go>// dfs、bfs、并查集 见下面实战部分题解
+</code></pre><ul><li><a href=https://shimo.im/docs/ydPCH33xDhK9YwWR target=_blank rel=noopener>并查集代码模板</a>
+失效，看PHP</li></ul><pre><code class=language-go>type UF struct {
+    Parent []int
+    Count int
+}
+func NewUF(count int) *UF {
+    parent := make([]int, count)
+    for i := range parent {
+        parent[i] = i
+    }
+    return &amp;UF{
+        Parent: parent,
+        Count: count,
+    }
+}
+func (u *UF) Find(p int) int {
+    parent := u.Parent
+    for p != parent[p] {
+        // a &lt;- b &lt;- p 改 为 a &lt;- b , a &lt;- p // 路径压缩
+        parent[p] = parent[parent[p]]
+        p = parent[p]
+    }
+    return p
+}
+func (u *UF) Union(p, q int) {
+    rootP := u.Find(p)
+    rootQ := u.Find(q)
+    if rootP != rootQ {
+        u.Parent[rootP] = rootQ
+        u.Count--
+    }
+}
+</code></pre><h4 id=实战题目-1>实战题目</h4><ul><li><a href=https://leetcode-cn.com/problems/number-of-provinces/ target=_blank rel=noopener>547. 省份数量</a>
+<a href=https://leetcode-cn.com/problems/friend-circles/ target=_blank rel=noopener>原 朋友圈 题</a></li></ul><pre><code class=language-go>// 并查集
+type UF struct {
+    parent []int
+    count int
+}
+func NewUF(count int) *UF {
+    parent := make([]int, count)
+    for i := range parent {
+        parent[i] = i
+    }
+    return &amp;UF{
+        parent: parent,
+        count: count,
+    }
+}
+
+func (u *UF) find(p int) int {
+    parent := u.parent
+    for p != parent[p] {
+        parent[p] = parent[parent[p]]
+        p = parent[p]
+    }
+    return p
+}
+
+func (u *UF) union(p, q int) {
+    rootP := u.find(p)
+    rootQ := u.find(q)
+    if rootP != rootQ {
+        u.parent[rootP] = rootQ
+        u.count--
+    }
+}
+
+func findCircleNum(M [][]int) int {
+    m := len(M)
+    u := NewUF(m)
+    for i := 0; i &lt; m; i++ {
+        for j := 0; j &lt; m; j++ {
+            if M[i][j] == 1 &amp;&amp; i != j {
+                u.union(i, j)
+            }
+        }
+    }
+    return u.count
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/number-of-islands/ target=_blank rel=noopener>200. 岛屿数量</a></li></ul><pre><code class=language-go>// dfs
+// bfs
+// 并查集
+func numIslands(grid [][]byte) int {
+    m, n := len(grid), len(grid[0])
+    u := NewUF(grid)
+    dx := []int{1, 0, -1, 0}
+    dy := []int{0, 1, 0, -1}
+    for i := 0; i &lt; m; i++ {
+        for j := 0; j &lt; n; j++ {
+            if grid[i][j] == '1' {
+                grid[i][j] = '0'
+                for k := 0; k &lt; 4; k++ {
+                    x, y := i + dx[k], j + dy[k]
+                    if x &gt;= 0 &amp;&amp; x &lt; m &amp;&amp; y &gt;= 0 &amp;&amp; y &lt; n &amp;&amp; grid[x][y] == '1' {
+                        u.Union(i * n + j, x * n + y)
+                    }
+                }
+            }
+        }
+    }
+    return u.Count()
+}
+
+type UF struct {
+    parent []int
+    rank []int
+    count int
+}
+
+func NewUF(grid [][]byte) *UF {
+    m, n := len(grid), len(grid[0])
+    parent := make([]int, m * n)
+    count := 0
+    for i := 0; i &lt; m; i++ {
+        for j := 0; j &lt; n; j++ {
+            idx := i * n + j
+            if grid[i][j] == '1' {
+                count++
+                parent[idx] = idx
+            } else {
+                parent[idx] = -1
+            }
+        }
+    }
+    return &amp;UF{
+        parent: parent,
+        rank: make([]int, len(parent)),
+        count: count,
+    }
+}
+
+func (u *UF) Find(p int) int {
+    parent := u.parent
+    for p != parent[p] {
+        parent[p] = parent[parent[p]]
+        p = parent[p]
+    }
+    return p
+}
+
+func (u *UF) Union(x, y int) {
+    rootX, rootY := u.Find(x), u.Find(y)
+    if rootX != rootY {
+        if u.rank[rootX] &lt; u.rank[rootY] {
+            u.parent[rootX] = rootY
+        } else if u.rank[rootX] &gt; u.rank[rootY]  {
+            u.parent[rootY] = rootX
+        } else {
+            u.parent[rootY] = rootX
+            u.rank[rootX] += 1
+        }
+        u.count--
+    }
+}
+
+func (u *UF) Count() int {
+    return u.count
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/surrounded-regions/ target=_blank rel=noopener>130. 被围绕的区域</a></li></ul><pre><code class=language-go>type Uf struct {
+	parent []int
+}
+
+func NewUf(n int) *Uf {
+	parent := make([]int, n)
+	for i := range parent {
+		parent[i] = i
+	}
+	return &amp;Uf{parent: parent}
+}
+
+func (u *Uf) find(p int) int {
+	parent := u.parent
+	for p != parent[p] {
+		parent[p] = parent[parent[p]]
+		p = parent[p]
+	}
+	return p
+}
+
+func (u *Uf) Union(p, q int) {
+	rootP, rootQ := u.find(p), u.find(q)
+	if rootP != rootQ {
+		u.parent[rootP] = rootQ
+	}
+}
+
+func (u *Uf) IsConnect(p, q int) bool {
+	return u.find(p) == u.find(q)
+}
+
+func solve(board [][]byte) {
+	m, n := len(board), len(board[0])
+	u := NewUf(m*n + 2)
+	for i := 0; i &lt; m; i++ {
+		for j := 0; j &lt; n; j++ {
+			if (i == 0 || i == m-1 || j == 0 || j == n-1) &amp;&amp; board[i][j] == 'O' {
+				u.Union(i*n+j, m*n)
+			} else if board[i][j] == 'O' {
+				dx := []int{1, 0, -1, 0}
+				dy := []int{0, 1, 0, -1}
+				for k := 0; k &lt; 4; k++ {
+					x, y := i+dx[k], j+dy[k]
+					if board[x][y] == 'O' {
+						u.Union(i*n+j, x*n+y)
+					}
+				}
+			}
+		}
+	}
+	for i := 0; i &lt; m; i++ {
+		for j := 0; j &lt; n; j++ {
+			if !u.IsConnect(i*n+j, m*n) &amp;&amp; board[i][j] == 'O' {
+				board[i][j] = 'X'
+			}
+		}
+	}
+}
+</code></pre><h2 id=第14课高级搜索>第14课｜高级搜索</h2><h3 id=1-剪枝的实现和特性>1. 剪枝的实现和特性</h3><h4 id=参考链接-2>参考链接</h4><ul><li><a href=http://shimo.im/docs/ddgwCccJQKxkrcTq/ target=_blank rel=noopener>DFS 代码模板</a></li><li><a href=http://shimo.im/docs/P8TqKHGKt3ytkYYd/ target=_blank rel=noopener>BFS 代码模板</a></li><li><a href=https://nikcheerla.github.io/deeplearningschool/2018/01/01/AlphaZero-Explained/ target=_blank rel=noopener>AlphaZero Explained</a></li><li><a href=https://en.wikipedia.org/wiki/Game_complexity target=_blank rel=noopener>棋类复杂度</a></li></ul><h3 id=2-剪枝实战题目解析数独>2. 剪枝实战题目解析：数独</h3><h4 id=实战题目-2>实战题目</h4><ul><li><a href=https://leetcode-cn.com/problems/climbing-stairs/ target=_blank rel=noopener>70. 爬楼梯</a></li></ul><pre><code class=language-go>// 动态规划
+func climbStairs(n int) int {
+	i, j, k := 0, 1, 1
+	for m := 1; m &lt;=n; m++ {
+		k = i + j
+        i, j = j, k
+	}
+	return k
+}
+// dfs 记录中间值进行剪枝
+func climbStairs(n int) int {
+	mp := map[int]int{}
+	var climb func(i int) int
+	climb = func(i int) int {
+		if i &lt;= 2 {
+			return i
+		}
+		if _, ok := mp[i]; !ok {
+			mp[i] = climb(i-1) + climb(i-2)
+		}
+		return mp[i]
+	}
+	return climb(n)
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/generate-parentheses/ target=_blank rel=noopener>22. 括号生成</a></li></ul><pre><code class=language-go>// dfs
+func generateParenthesis(n int) (res []string) {
+	var generate func(l, r int, path string)
+	generate = func(l, r int, path string) {
+		if l == n &amp;&amp; r == n {
+			res = append(res, path)
+			return
+		}
+		if l &lt; n {
+			generate(l+1, r, path+&quot;(&quot;)
+		}
+		if r &lt; l {
+			generate(l, r+1, path+&quot;)&quot;)
+		}
+	}
+	generate(0, 0, &quot;&quot;)
+	return res
+}
+// bfs, 需要结构体记录，左右括号数量和当前括号字符串
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/n-queens/ target=_blank rel=noopener>51. N皇后</a></li></ul><pre><code class=language-go>func solveNQueens(n int) (res [][]string) {
+    size := 1 &lt;&lt; n - 1
+    var dfs func(int, int, int, int, []int)
+    dfs = func (row, cols, pie, na int, queens []int) {
+        if row == n {
+            ans := make([]string, n)
+            for i := 0; i &lt; n; i++ {
+                s := make([]byte, n)
+                for j := 0; j &lt; n; j++ {
+                    if queens[i] == j {
+                        s[j] = 'Q' 
+                    } else {
+                        s[j] = '.'
+                    }
+                }
+                ans[i] = string(s)
+            }
+            res = append(res, ans)
+            return
+        }
+        bit := size &amp; (^(cols | pie | na))
+        for bit &gt; 0 {
+            p := bit &amp; -bit // 获取最后一个位1
+            bit &amp;= bit - 1 // 移除最后一个1
+            queens = append(queens, bits.OnesCount(uint(p-1)))
+            dfs(row + 1, cols | p, (pie | p ) &lt;&lt; 1, (na | p) &gt;&gt; 1, queens)
+            queens = queens[:row]
+        }
+    }
+    dfs(0, 0, 0, 0, []int{})
+    return res
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/valid-sudoku/ target=_blank rel=noopener>36. 有效的数独</a></li></ul><pre><code class=language-go>// 自己写法
+func isValidSudoku(board [][]byte) bool {
+    if len(board) != 9 || len(board[0]) != 9 {
+        return false
+    }
+    blocks, rows, cols := [9]map[byte]bool{},  [9]map[byte]bool{},  [9]map[byte]bool{}
+    for i := 0; i &lt; 9; i++ {
+        blocks[i] = map[byte]bool{}
+        rows[i] =  map[byte]bool{}
+        cols[i] =  map[byte]bool{}
+    }
+    for i := 0; i &lt; 9; i++ {
+        for j := 0; j &lt; 9; j++ {
+            if board[i][j] != '.' {
+                n := board[i][j]
+                b := i / 3 * 3 + j / 3
+                if rows[i][n] || cols[j][n] || blocks[b][n] {
+                    return false
+                }
+                rows[i][n] = true
+                cols[j][n] = true
+                blocks[b][n] = true
+            }
+        }
+    }
+    return true
+}
+// 优化写法
+func isValidSudoku(board [][]byte) bool {
+    if len(board) != 9 || len(board[0]) != 9 {
+        return false
+    }
+    blocks, rows, cols := [9][9]int{},  [9][9]int{},  [9][9]int{}
+    for i := 0; i &lt; 9; i++ {
+        for j := 0; j &lt; 9; j++ {
+            if board[i][j] != '.' {
+                n := board[i][j] - '1'
+                b := i / 3 * 3 + j / 3
+                if rows[i][n] &gt; 0 || cols[j][n] &gt; 0|| blocks[b][n] &gt; 0 {
+                    return false
+                }
+                rows[i][n]++
+                cols[j][n]++
+                blocks[b][n]++
+            }
+        }
+    }
+    return true
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/sudoku-solver/ target=_blank rel=noopener>37. 解数独</a></li></ul><pre><code class=language-go>// 自己写法
+func solveSudoku(board [][]byte) {
+    blocks, rows, cols := [9]map[byte]bool{},  [9]map[byte]bool{},  [9]map[byte]bool{}
+    for i := 0; i &lt; 9; i++ {
+        blocks[i] =  map[byte]bool{}
+        rows[i] = map[byte]bool{}
+        cols[i] =  map[byte]bool{}
+    }
+    emptys := [][2]int{} // 需要填写的位置
+    for i := 0; i &lt; 9; i++ {
+        for j := 0; j &lt; 9; j++ {
+            n := board[i][j]
+            if n == '.' {
+                emptys = append(emptys, [2]int{i, j})
+            } else {
+                b := i / 3 * 3 + j / 3
+                rows[i][n] = true
+                cols[j][n] = true
+                blocks[b][n] = true
+            }
+        }
+    }
+    var backtrack func(int) bool
+    backtrack = func(idx int) bool {
+        if idx == len(emptys) {
+            return true
+        }
+        i, j := emptys[idx][0], emptys[idx][1]
+        b := i / 3 * 3 + j / 3
+        for num := byte('1'); num &lt;= '9'; num++ {
+            if rows[i][num] || cols[j][num] || blocks[b][num] {
+                continue
+            }
+            rows[i][num], cols[j][num], blocks[b][num] = true, true, true
+            board[i][j] = num
+            if backtrack(idx + 1) {
+                return true
+            }
+            rows[i][num], cols[j][num], blocks[b][num] = false, false, false
+        }
+        return false
+    }
+    backtrack(0)
+}
+// 高效写法
+func solveSudoku(board [][]byte) {
+    blocks, rows, cols := [9][9]int{},  [9][9]int{},  [9][9]int{}
+    emptys := [][2]int{} // 需要填写的位置
+    for i := 0; i &lt; 9; i++ {
+        for j := 0; j &lt; 9; j++ {
+            if board[i][j] == '.' {
+                emptys = append(emptys, [2]int{i, j})
+            } else {
+                b := i / 3 * 3 + j / 3
+                n := board[i][j] - '1'
+                rows[i][n]++
+                cols[j][n]++
+                blocks[b][n]++
+            }
+        }
+    }
+    var backtrack func(int) bool
+    backtrack = func(idx int) bool {
+        if idx == len(emptys) {
+            return true
+        }
+        i, j := emptys[idx][0], emptys[idx][1]
+        b := i / 3 * 3 + j / 3
+        for num := 0; num &lt; 9; num++ {
+            if rows[i][num] == 1 || cols[j][num] == 1 || blocks[b][num] == 1 {
+                continue
+            }
+            rows[i][num], cols[j][num], blocks[b][num] = 1, 1, 1
+            board[i][j] = byte(num + '1')
+            if backtrack(idx + 1) {
+                return true
+            }
+            rows[i][num], cols[j][num], blocks[b][num] = 0, 0, 0
+        }
+        return false
+    }
+    backtrack(0)
+}
+</code></pre><h3 id=3-双向bfs的实现特性和题解>3. 双向BFS的实现、特性和题解</h3><h4 id=实战题目-3>实战题目</h4><ul><li><a href=https://leetcode-cn.com/problems/word-ladder/ target=_blank rel=noopener>127. 单词接龙</a></li></ul><pre><code class=language-go>func ladderLength(beginWord string, endWord string, wordList []string) int {
+
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/minimum-genetic-mutation/ target=_blank rel=noopener>433. 最小基因变化</a></li></ul><pre><code class=language-go>// 一条基因序列由一个带有8个字符的字符串表示，其中每个字符都属于 &quot;A&quot;, &quot;C&quot;, &quot;G&quot;, &quot;T&quot;中的任意一个
+func minMutation(start string, end string, bank []string) int {
+
+}
+</code></pre><h4 id=课后作业>课后作业</h4><ul><li>总结双向 BFS 代码模版，请同学们提交在第 7 周学习总结中。</li></ul><h3 id=4-启发式搜索的实现特性和题解>4. 启发式搜索的实现、特性和题解</h3><h4 id=参考链接-3>参考链接</h4><ul><li><a href=https://shimo.im/docs/CXvjHyWhpQcxXjcw/ target=_blank rel=noopener>A* 代码模板</a></li><li><a href=https://dataaspirant.com/2015/04/11/five-most-popular-similarity-measures-implementation-in-python/ target=_blank rel=noopener>相似度测量方法</a></li><li><a href=https://leetcode.com/problems/shortest-path-in-binary-matrix/discuss/313347/A*-search-in-Python target=_blank rel=noopener>二进制矩阵中的最短路径的 A* 解法</a></li><li><a href=https://zxi.mytechroad.com/blog/searching/8-puzzles-bidirectional-astar-vs-bidirectional-bfs/ target=_blank rel=noopener>8 puzzles 解法比较</a></li></ul><h4 id=实战题目-4>实战题目</h4><ul><li><a href=https://leetcode-cn.com/problems/shortest-path-in-binary-matrix/ target=_blank rel=noopener>1091. 二进制矩阵中的最短路径</a></li></ul><pre><code class=language-go>// A* Search 启发式搜索
+type Node struct {
+    x, y, f int
+}
+func shortestPathBinaryMatrix(grid [][]int) (cnt int) {
+    
+}
+// bfs
+func shortestPathBinaryMatrix(grid [][]int) (cnt int) {
+    m, n := len(grid), len(grid[0])
+    if grid[0][0] == 1 || grid[m - 1][n - 1] == 1{
+        return -1
+    }
+    if m == 1 &amp;&amp; n == 1 {
+        return 1
+    }
+    dx := []int{0, 1, 0, -1, -1, 1, -1, 1}
+    dy := []int{1, 0, -1, 0, -1, 1 , 1, -1}
+    visited := make([][]bool, m)
+    for i := range visited {
+        visited[i] = make([]bool, n)
+    }
+    queue := [][2]int{{0, 0}}
+    visited[0][0] = true
+    for len(queue) &gt; 0 {
+        cnt++
+        for size := len(queue); size &gt; 0; size-- {
+            i, j := queue[0][0], queue[0][1]
+            queue = queue[1:]
+            for k := 0; k &lt; 8; k++ {
+                x, y := i + dx[k], j + dy[k]
+                if x &gt;= 0 &amp;&amp; x &lt; m &amp;&amp; y &gt;= 0 &amp;&amp; y &lt; n &amp;&amp; !visited[x][y] &amp;&amp; grid[x][y] != 1 {
+                    if x == m - 1 &amp;&amp; y == n - 1 {
+                        return cnt + 1
+                    }
+                    queue = append(queue, [2]int{x, y})
+                    visited[x][y] = true   
+                }
+            }
+        }
+    }
+    return -1
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/sliding-puzzle/ target=_blank rel=noopener>773. 滑动谜题</a></li></ul><pre><code class=language-go>func slidingPuzzle(board [][]int) int {
+
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/sudoku-solver/ target=_blank rel=noopener>37. 解数独</a></li></ul><pre><code class=language-go>// 方法二：位预算优化
+// 方法三：枚举优化
+// 方法一：高效写法
+func solveSudoku(board [][]byte) {
+    blocks, rows, cols := [9][9]int{},  [9][9]int{},  [9][9]int{}
+    emptys := [][2]int{} // 需要填写的位置
+    for i := 0; i &lt; 9; i++ {
+        for j := 0; j &lt; 9; j++ {
+            if board[i][j] == '.' {
+                emptys = append(emptys, [2]int{i, j})
+            } else {
+                b := i / 3 * 3 + j / 3
+                n := board[i][j] - '1'
+                rows[i][n]++
+                cols[j][n]++
+                blocks[b][n]++
+            }
+        }
+    }
+    var backtrack func(int) bool
+    backtrack = func(idx int) bool {
+        if idx == len(emptys) {
+            return true
+        }
+        i, j := emptys[idx][0], emptys[idx][1]
+        b := i / 3 * 3 + j / 3
+        for num := 0; num &lt; 9; num++ {
+            if rows[i][num] == 1 || cols[j][num] == 1 || blocks[b][num] == 1 {
+                continue
+            }
+            rows[i][num], cols[j][num], blocks[b][num] = 1, 1, 1
+            board[i][j] = byte(num + '1')
+            if backtrack(idx + 1) {
+                return true
+            }
+            rows[i][num], cols[j][num], blocks[b][num] = 0, 0, 0
+        }
+        return false
+    }
+    backtrack(0)
+}
+</code></pre><h2 id=第15课--红黑树和avl树>第15课 | 红黑树和AVL树</h2><h3 id=avl树和红黑树的实现和特性>AVL树和红黑树的实现和特性</h3><h4 id=参考链接-4>参考链接</h4><ul><li><a href=https://en.wikipedia.org/wiki/Self-balancing_binary_search_tree target=_blank rel=noopener>平衡树</a></li></ul><h2 id=本周作业及下周预习>本周作业及下周预习</h2><p>请同学们优先完成中等难度题目，每周的作业要求是提交 2 道作业题目，其他题目可根据自身情况选择练习。</p><h3 id=本周作业>本周作业</h3><h4 id=简单>简单</h4><ul><li><a href=https://leetcode-cn.com/problems/climbing-stairs/ target=_blank rel=noopener>70. 爬楼梯</a></li></ul><h4 id=中等>中等</h4><ul><li><a href=https://leetcode-cn.com/problems/implement-trie-prefix-tree/ target=_blank rel=noopener>208. 实现 Trie (前缀树)</a></li><li><a href=https://leetcode-cn.com/problems/friend-circles/ target=_blank rel=noopener>547. 朋友圈</a></li><li><a href=https://leetcode-cn.com/problems/number-of-islands/ target=_blank rel=noopener>200. 岛屿数量</a></li><li><a href=https://leetcode-cn.com/problems/surrounded-regions/ target=_blank rel=noopener>130. 被围绕的区域</a></li><li><a href=https://leetcode-cn.com/problems/valid-sudoku/ target=_blank rel=noopener>36. 有效的数独</a></li><li><a href=https://leetcode-cn.com/problems/generate-parentheses/ target=_blank rel=noopener>22. 括号生成</a></li><li><a href=https://leetcode-cn.com/problems/word-ladder/ target=_blank rel=noopener>127. 单词接龙</a></li><li><a href=https://leetcode-cn.com/problems/minimum-genetic-mutation/ target=_blank rel=noopener>433. 最小基因变化</a></li></ul><h4 id=困难>困难</h4><ul><li><a href=https://leetcode-cn.com/problems/word-search-ii/ target=_blank rel=noopener>212. 单词搜索 II</a></li><li><a href=https://leetcode-cn.com/problems/n-queens/ target=_blank rel=noopener>51. N皇后</a></li><li><a href=https://leetcode-cn.com/problems/sudoku-solver/ target=_blank rel=noopener>37. 解数独</a></li></ul><h3 id=下周预习>下周预习</h3><h4 id=预习知识点>预习知识点：</h4><ul><li><a href=https://time.geekbang.org/column/article/76827 target=_blank rel=noopener>位图：如何实现网页爬虫中的 URL 去重功能？</a></li><li><a href=https://time.geekbang.org/column/article/77142 target=_blank rel=noopener>概率统计：如何利用朴素贝叶斯算法过滤垃圾短信？</a></li><li><a href=https://time.geekbang.org/column/article/41802 target=_blank rel=noopener>排序（上）：为什么插入排序比冒泡排序更受欢迎？</a></li><li><a href=https://time.geekbang.org/column/article/41913 target=_blank rel=noopener>排序（下）：如何用快排思想在 O(n) 内查找第 K 大元素？</a></li><li><a href=https://time.geekbang.org/column/article/42038 target=_blank rel=noopener>线性排序：如何根据年龄给 100 万用户数据排序？</a></li><li><a href=https://time.geekbang.org/column/article/42359 target=_blank rel=noopener>排序优化：如何实现一个通用的、高性能的排序函数？</a></li><li><a href=https://time.geekbang.org/column/article/69913 target=_blank rel=noopener>堆和堆排序：为什么说堆排序没有快速排序快？</a></li><li><a href=https://time.geekbang.org/column/article/76207 target=_blank rel=noopener>拓扑排序：如何确定代码源文件的编译依赖关系？</a></li></ul><h4 id=预习题目>预习题目：</h4><ul><li><a href=https://leetcode-cn.com/problems/n-queens/description/ target=_blank rel=noopener>N 皇后</a></li><li><a href=https://leetcode-cn.com/problems/lru-cache/#/ target=_blank rel=noopener>LRU 缓存机制</a></li><li><a href=https://leetcode-cn.com/problems/valid-anagram/ target=_blank rel=noopener>有效的字母异位词</a></li></ul></article><div class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"><div><span class="text-primary-text block font-bold">上一页</span>
+<a href=/study/algorithm/go/week06/ class=block>第6周 动态规划</a></div><div class="mt-4 md:mt-0 md:text-right"><span class="text-primary-text block font-bold">下一页</span>
+<a href=/study/algorithm/go/week08/ class=block>第8周 位运算、布隆过滤器和LRU缓存、排序算法</a></div></div></div><div class="hidden lg:block lg:w-1/4"><div class="bg-secondary-bg
+prose sticky top-16 z-10 hidden px-6 py-4 lg:block"><h3>本页内容</h3></div><div class="sticky-toc
+border-s
+hidden px-6 pb-6 lg:block"><nav id=TableOfContents><ul><li><a href=#第13课--字典树和并查集>第13课 | 字典树和并查集</a><ul><li><a href=#1-trie树的基本实现和特性>1. Trie树的基本实现和特性</a><ul><li><a href=#参考链接>参考链接</a></li></ul></li><li><a href=#2-trie树实战题目解析单词搜索2>2. Trie树实战题目解析：单词搜索2</a><ul><li><a href=#实战题目>实战题目</a></li></ul></li><li><a href=#3-并查集的基本实现特性和实战题目解析>3. 并查集的基本实现、特性和实战题目解析</a><ul><li><a href=#参考链接-1>参考链接</a></li><li><a href=#实战题目-1>实战题目</a></li></ul></li></ul></li><li><a href=#第14课高级搜索>第14课｜高级搜索</a><ul><li><a href=#1-剪枝的实现和特性>1. 剪枝的实现和特性</a><ul><li><a href=#参考链接-2>参考链接</a></li></ul></li><li><a href=#2-剪枝实战题目解析数独>2. 剪枝实战题目解析：数独</a><ul><li><a href=#实战题目-2>实战题目</a></li></ul></li><li><a href=#3-双向bfs的实现特性和题解>3. 双向BFS的实现、特性和题解</a><ul><li><a href=#实战题目-3>实战题目</a></li><li><a href=#课后作业>课后作业</a></li></ul></li><li><a href=#4-启发式搜索的实现特性和题解>4. 启发式搜索的实现、特性和题解</a><ul><li><a href=#参考链接-3>参考链接</a></li><li><a href=#实战题目-4>实战题目</a></li></ul></li></ul></li><li><a href=#第15课--红黑树和avl树>第15课 | 红黑树和AVL树</a><ul><li><a href=#avl树和红黑树的实现和特性>AVL树和红黑树的实现和特性</a><ul><li><a href=#参考链接-4>参考链接</a></li></ul></li></ul></li><li><a href=#本周作业及下周预习>本周作业及下周预习</a><ul><li><a href=#本周作业>本周作业</a><ul><li><a href=#简单>简单</a></li><li><a href=#中等>中等</a></li><li><a href=#困难>困难</a></li></ul></li><li><a href=#下周预习>下周预习</a><ul><li><a href=#预习知识点>预习知识点：</a></li><li><a href=#预习题目>预习题目：</a></li></ul></li></ul></li></ul></nav></div><script>window.addEventListener("DOMContentLoaded",()=>{enableStickyToc()})</script></div></div></div></div></div><script>document.addEventListener("DOMContentLoaded",()=>{hljs.highlightAll(),changeSidebarHeight(),switchDocToc()})</script></div></div></main><footer class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b"><p class="text-sm text-tertiary-text">&copy; 2021 <a href=https://blog.lbbniu.com/>lbbniu</a>
+&#183; Powered by the <a href=https://github.com/wangchucheng/hugo-eureka class=hover:text-eureka>Eureka</a> theme for <a href=https://gohugo.io class=hover:text-eureka>Hugo</a></p></div></div></footer></body></html>

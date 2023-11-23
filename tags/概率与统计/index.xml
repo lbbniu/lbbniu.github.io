@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>概率与统计 on lbbniu</title><link>/tags/%E6%A6%82%E7%8E%87%E4%B8%8E%E7%BB%9F%E8%AE%A1/</link><description>Recent content in 概率与统计 on lbbniu</description><generator>Hugo -- gohugo.io</generator><language>zh</language><managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor><webMaster>lbbniu@gmail.com (lbbniu)</webMaster><copyright>&amp;copy; 2021 &lt;a href="https://blog.lbbniu.com/">lbbniu&lt;/a></copyright><lastBuildDate>Mon, 21 Nov 2022 00:01:00 +0800</lastBuildDate><atom:link href="/tags/%E6%A6%82%E7%8E%87%E4%B8%8E%E7%BB%9F%E8%AE%A1/index.xml" rel="self" type="application/rss+xml"/><item><title>剑指 Offer 60 n个骰子的点数</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/nge-tou-zi-de-dian-shu-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/nge-tou-zi-de-dian-shu-lcof/</guid><description>剑指 Offer 60 n个骰子的点数 把n个骰子扔在地上，所有骰子朝上一面的点数之和为s。输入n，打印出s的所有可能的值出现的概率。
+&amp;nbsp;
+你需要用一个浮点数数组返回答案，其中第 i 个元素代表这 n 个骰子所能掷出的点数集合中第 i 小的那个的概率。
+&amp;nbsp;
+示例 1:
+输入: 1 输出: [0.16667,0.16667,0.16667,0.16667,0.16667,0.16667] 示例&amp;nbsp;2:
+输入: 2 输出: [0.02778,0.05556,0.08333,0.11111,0.13889,0.16667,0.13889,0.11111,0.08333,0.05556,0.02778] &amp;nbsp;
+限制：
+1 &amp;lt;= n &amp;lt;= 11
+func dicesProbability(n int) []float64 { } LeetCode题库地址 https://leetcode.cn/problems/nge-tou-zi-de-dian-shu-lcof</description></item><item><title>【2022-11-21每日一题】808. 分汤[Medium]</title><link>/study/leetcode/soup-servings/</link><pubDate>Mon, 21 Nov 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/soup-servings/</guid><description>2022-11-21每日一题：808. 分汤 难度：Medium
+标签：数学 、 动态规划 、 概率与统计
+有&amp;nbsp;A&amp;nbsp;和&amp;nbsp;B 两种类型&amp;nbsp;的汤。一开始每种类型的汤有&amp;nbsp;n&amp;nbsp;毫升。有四种分配操作：
+提供 100ml 的 汤A 和 0ml 的 汤B 。 提供 75ml 的 汤A 和 25ml 的 汤B 。 提供 50ml 的 汤A 和 50ml 的 汤B 。 提供 25ml 的 汤A 和 75ml 的 汤B 。 当我们把汤分配给某人之后，汤就没有了。每个回合，我们将从四种概率同为 0.25 的操作中进行分配选择。如果汤的剩余量不足以完成某次操作，我们将尽可能分配。当两种类型的汤都分配完时，停止操作。
+注意&amp;nbsp;不存在先分配 100 ml 汤B 的操作。
+需要返回的值：&amp;nbsp;汤A&amp;nbsp;先分配完的概率 +&amp;nbsp;&amp;nbsp;汤A和汤B&amp;nbsp;同时分配完的概率 / 2。返回值在正确答案&amp;nbsp;10-5&amp;nbsp;的范围内将被认为是正确的。
+&amp;nbsp;
+示例 1:
+输入: n = 50 输出: 0.62500 解释:如果我们选择前两个操作，A 首先将变为空。 对于第三个操作，A 和 B 会同时变为空。 对于第四个操作，B 首先将变为空。 所以 A 变为空的总概率加上 A 和 B 同时变为空的概率的一半是 0.</description></item></channel></rss>

@@ -1,0 +1,1249 @@
+<!doctype html><html lang=zh dir=ltr><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>第4周 | PHP算法练习 | lbbniu</title>
+<meta name=generator content="Hugo Eureka 0.9.3"><link rel=stylesheet href=/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css><script defer src=/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js></script><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" as=style onload='this.onload=null,this.rel="stylesheet"'><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/github.min.css media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/php.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/java.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/go.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/python.min.js crossorigin></script><link rel=stylesheet href=/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css media=print onload='this.media="all",this.onload=null'><script defer type=text/javascript src=/js/fontawesome.min.35973bea57658ef0dd22ad59ea4642b6c8c67af62bed8659ac326d284ef285a6657cdbcf57d3b2910e7e992f2b20426e.js></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css integrity=sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js integrity=sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY crossorigin></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script><script defer src=https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js integrity=sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0 crossorigin></script><link rel=icon type=image/png sizes=32x32 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_32x32_fill_box_center_3.png><link rel=apple-touch-icon sizes=180x180 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_180x180_fill_box_center_3.png><meta name=description content="第4周 第9课 | 深度优先搜索和广度优先搜索 1. 深度优先搜索、广度优先搜索的实现和特性 参考链接 DFS 代码模板（递归写法、非递归写法） 递归写法
+visited = set() def dfs(node, visited): if node in visited: # terminator # already visited return visited.add(node) # process current node here. ... for next_node in node.children(): if next_node not in visited: dfs(next_node, visited) 非递归写法
+def DFS(self, tree): if tree.root is None: return [] visited, stack = [], [tree.root] while stack: node = stack.pop() visited.add(node) process (node) nodes = generate_related_nodes(node) stack.push(nodes) # other processing work ."><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"算法学习","item":"/study/"},{"@type":"ListItem","position":2,"name":"极客时间算法训练营2020版","item":"/study/algorithm/"},{"@type":"ListItem","position":3,"name":"PHP算法练习","item":"/study/algorithm/php/"},{"@type":"ListItem","position":4,"name":"第4周","item":"/study/algorithm/php/04%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E5%9B%9B%E5%91%A8/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/study/algorithm/php/04%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E5%9B%9B%E5%91%A8/"},"headline":"第4周 | PHP算法练习 | lbbniu","datePublished":"2021-11-20T17:18:16+08:00","dateModified":"2021-11-20T17:18:16+08:00","wordCount":4259,"publisher":{"@type":"Person","name":"lbbniu","logo":{"@type":"ImageObject","url":"/images/icon.gif"}},"description":"第4周 第9课 | 深度优先搜索和广度优先搜索 1. 深度优先搜索、广度优先搜索的实现和特性 参考链接 DFS 代码模板（递归写法、非递归写法） 递归写法\nvisited = set() def dfs(node, visited): if node in visited: # terminator # already visited return visited.add(node) # process current node here. ... for next_node in node.children(): if next_node not in visited: dfs(next_node, visited) 非递归写法\ndef DFS(self, tree): if tree.root is None: return [] visited, stack = [], [tree.root] while stack: node = stack.pop() visited.add(node) process (node) nodes = generate_related_nodes(node) stack.push(nodes) # other processing work ."}</script><meta property="og:title" content="第4周 | PHP算法练习 | lbbniu"><meta property="og:type" content="article"><meta property="og:image" content="/images/icon.png"><meta property="og:url" content="/study/algorithm/php/04%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E5%9B%9B%E5%91%A8/"><meta property="og:description" content="第4周 第9课 | 深度优先搜索和广度优先搜索 1. 深度优先搜索、广度优先搜索的实现和特性 参考链接 DFS 代码模板（递归写法、非递归写法） 递归写法
+visited = set() def dfs(node, visited): if node in visited: # terminator # already visited return visited.add(node) # process current node here. ... for next_node in node.children(): if next_node not in visited: dfs(next_node, visited) 非递归写法
+def DFS(self, tree): if tree.root is None: return [] visited, stack = [], [tree.root] while stack: node = stack.pop() visited.add(node) process (node) nodes = generate_related_nodes(node) stack.push(nodes) # other processing work ."><meta property="og:locale" content="zh"><meta property="og:site_name" content="lbbniu"><meta property="article:published_time" content="2021-11-20T17:18:16+08:00"><meta property="article:modified_time" content="2021-11-20T17:18:16+08:00"><meta property="article:section" content="study"><meta property="article:tag" content="算法"><meta property="article:tag" content="leetcode"><meta property="og:see_also" content="/study/leetcode/leetcode/"><meta property="og:see_also" content="/study/algorithm/go/week10/"><meta property="og:see_also" content="/study/algorithm/php/01%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%B8%80%E5%91%A8/"><meta property="og:see_also" content="/study/algorithm/go/week01/"><meta property="og:see_also" content="/study/algorithm/php/02%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%BA%8C%E5%91%A8/"><meta property="og:see_also" content="/study/algorithm/go/week02/"><body class="flex min-h-screen flex-col"><header class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"><div class="mx-auto w-full max-w-screen-xl"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=="Auto"||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName("html")[0].classList.add("dark")</script><nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0"><a href=/ class="me-6 text-primary-text text-xl font-bold">lbbniu</a>
+<button id=navbar-btn class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+<i class="fas fa-bars"></i></button><div id=target class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20"><div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0"><a href=/post/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">文章</a>
+<a href=/cloud-native/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">云原生</a>
+<a href=/study/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 selected-menu-item me-4">算法学习</a>
+<a href=/docs/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">Go学习训练营</a>
+<a href=/tags/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">标签</a></div><div class=flex><div class="relative pt-4 md:pt-0"><div class="cursor-pointer hover:text-eureka" id=lightDarkMode><i class="fas fa-adjust"></i></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id=is-open></div><div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40" id=lightDarkOptions><span class="px-4 py-1 hover:text-eureka" name=Light>浅色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Dark>深色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Auto>自动</span></div></div></div></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id=is-open-mobile></div></nav><script>let element=document.getElementById("lightDarkMode");storageColorScheme==null||storageColorScheme=="Auto"?document.addEventListener("DOMContentLoaded",()=>{window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",switchDarkMode)}):storageColorScheme=="Light"?(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","sun"),element.firstElementChild.classList.add("fa-sun")):storageColorScheme=="Dark"&&(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","moon"),element.firstElementChild.classList.add("fa-moon")),document.addEventListener("DOMContentLoaded",()=>{getcolorscheme(),switchBurger()})</script></div></header><main class="grow pt-16"><div class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8"><div class=lg:pt-12><div class="flex flex-col md:flex-row bg-secondary-bg rounded"><div class="md:w-1/4 lg:w-1/5 border-e"><div class="sticky top-16 pt-6"><div id=sidebar-title class="md:hidden mx-4 px-2 pt-4 pb-2 md:border-b text-tertiary-text md:text-primary-text"><span class=font-semibold>目录</span>
+<i class='fas fa-caret-right ms-1'></i></div><div id=sidebar-toc class="hidden md:block overflow-y-auto mx-6 md:mx-0 pe-6 pt-2 md:max-h-doc-sidebar bg-primary-bg md:bg-transparent"><div class="flex flex-wrap ms-4 -me-2 p-2 bg-secondary-bg md:bg-primary-bg rounded"><a class=hover:text-eureka href=/study/algorithm/php/>PHP算法练习</a></div><ul class=ps-6><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/php/00%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E9%A2%84%E4%B9%A0/>预习</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/php/01%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%B8%80%E5%91%A8/>第1周</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/php/02%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%BA%8C%E5%91%A8/>第2周</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/php/03%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%B8%89%E5%91%A8/>第3周</a></div></li><li class=py-2><div><a class="text-eureka hover:text-eureka" href=/study/algorithm/php/04%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E5%9B%9B%E5%91%A8/>第4周</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/php/04%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E5%9B%9B%E5%91%A8%E6%80%BB%E7%BB%93/>第4周总结</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/php/06%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E5%85%AD%E5%91%A8/>第6周</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/php/07%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%B8%83%E5%91%A8/>第7周</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/php/08%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E5%85%AB%E5%91%A8/>第8周</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/php/09%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%B9%9D%E5%91%A8/>第9周</a></div></li></ul></div></div></div><div class="w-full md:w-3/4 lg:w-4/5 pb-8 pt-2 md:pt-8"><div class=flex><div class="w-full lg:w-3/4 px-6"><article class=prose><h1 class=mb-4>第4周</h1><div class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"><div class="me-6 my-2"><i class="fas fa-calendar me-1"></i>
+<span>2021-11-20</span></div><div class="me-6 my-2"><i class="fas fa-clock me-1"></i>
+<span>20分钟阅读时长</span></div></div><h1 id=第4周-第9课--深度优先搜索和广度优先搜索>第4周 第9课 | 深度优先搜索和广度优先搜索</h1><h2 id=1-深度优先搜索广度优先搜索的实现和特性>1. 深度优先搜索、广度优先搜索的实现和特性</h2><h3 id=参考链接>参考链接</h3><h4 id=dfs-代码模板递归写法非递归写法httpshimoimdocsddgwcccjqkxkrctq><a href=http://shimo.im/docs/ddgwCccJQKxkrcTq target=_blank rel=noopener>DFS 代码模板（递归写法、非递归写法）</a></h4><p><strong>递归写法</strong></p><pre><code class=language-python>visited = set() 
+
+def dfs(node, visited):
+    if node in visited: # terminator
+    	# already visited 
+    	return 
+
+	visited.add(node) 
+
+	# process current node here. 
+	...
+	for next_node in node.children(): 
+		if next_node not in visited: 
+			dfs(next_node, visited)
+</code></pre><p><strong>非递归写法</strong></p><pre><code class=language-python>def DFS(self, tree): 
+
+	if tree.root is None: 
+		return [] 
+
+	visited, stack = [], [tree.root]
+
+	while stack: 
+		node = stack.pop() 
+		visited.add(node)
+
+		process (node) 
+		nodes = generate_related_nodes(node) 
+		stack.push(nodes) 
+
+	# other processing work 
+	...
+</code></pre><h4 id=bfs-代码模板httpshimoimdocsp8tqkhgkt3ytkyyd><a href=http://shimo.im/docs/P8TqKHGKt3ytkYYd target=_blank rel=noopener>BFS 代码模板</a></h4><pre><code class=language-python>def BFS(graph, start, end):
+    visited = set()
+	queue = [] 
+	queue.append([start]) 
+
+	while queue: 
+		node = queue.pop() 
+		visited.add(node)
+
+		process(node) 
+		nodes = generate_related_nodes(node) 
+		queue.push(nodes)
+
+	# other processing work 
+	...
+</code></pre><h2 id=2-实战题目解析二叉树的层次遍历等问题>2. 实战题目解析：二叉树的层次遍历等问题</h2><h3 id=实战题目>实战题目</h3><h4 id=102-二叉树的层序遍历httpsleetcode-cncomproblemsbinary-tree-level-order-traversal><a href=https://leetcode-cn.com/problems/binary-tree-level-order-traversal/ target=_blank rel=noopener>102. 二叉树的层序遍历</a></h4><pre><code class=language-php>/**
+ * Definition for a binary tree node.
+ * class TreeNode {
+ *     public $val = null;
+ *     public $left = null;
+ *     public $right = null;
+ *     function __construct($value) { $this-&gt;val = $value; }
+ * }
+ */
+class Solution {
+
+    /**
+     * 方法一：dfs 递归写法
+     * @param TreeNode $root
+     * @return Integer[][]
+     */
+    function levelOrder($root) {
+        if (!$root) return [];
+        $this-&gt;dfs($root, 0, $res);
+        return $res;
+    }
+    function dfs($root, $level, &amp;$res = []) {
+        if ($root) {
+            if(count($res) == $level) $res[$level] = [];
+            $res[$level][] = $root-&gt;val;
+            $this-&gt;dfs($root-&gt;left, $level + 1, $res);
+            $this-&gt;dfs($root-&gt;right, $level + 1, $res);
+        }
+    }
+    /**
+     * 方法二：bfs
+     * @param TreeNode $root
+     * @return Integer[][]
+     */
+    function levelOrder($root) {
+        if (!$root) return [];
+        $queue = [$root];
+        $res = [];
+        while ($queue) {
+            $size = count($queue);
+            $row = [];
+            while($size--) {
+                $root = array_shift($queue);
+                $row[] = $root-&gt;val;
+                if ($root-&gt;left) $queue[] = $root-&gt;left;
+                if ($root-&gt;right) $queue[] = $root-&gt;right;
+            }
+            $res[] = $row;
+        }
+        return $res;
+    }
+}
+</code></pre><h4 id=433-最小基因变化httpsleetcode-cncomproblemsminimum-genetic-mutation><a href=https://leetcode-cn.com/problems/minimum-genetic-mutation/ target=_blank rel=noopener>433. 最小基因变化</a></h4><pre><code class=language-php>class Solution {
+
+    /**
+     * @param String $start
+     * @param String $end
+     * @param String[] $bank
+     * @return Integer
+     */
+    function minMutation($start, $end, $bank) {
+        if ($start == $end) return 0;
+        $bank_hash = array_flip($bank);
+        $chars = ['A', 'C', 'G', 'T'];
+        $visited = [];
+        $queue = [$start];
+        $visited[$start] = true;
+        $level = 0;
+        while ($queue) {
+            $size = count($queue);
+            while ($size--) {
+                $curr = array_shift($queue);
+                if ($curr == $end) return $level;
+                for ($i = 0, $len = strlen($curr); $i &lt; $len; $i++) {
+                    $old = $curr[$i];
+                    foreach ($chars as $char) {
+                        $curr[$i] = $char;
+                        if (!$visited[$curr] &amp;&amp; isset($bank_hash[$curr])) {
+                            $queue[] = $curr;
+                            $visited[$curr] = true;
+                        }
+                    }
+                    $curr[$i] = $old;
+                }
+            }
+            $level++;
+        }
+        return -1;
+    }
+}
+</code></pre><h4 id=22-括号生成httpsleetcode-cncomproblemsgenerate-parentheses><a href=https://leetcode-cn.com/problems/generate-parentheses/ target=_blank rel=noopener>22. 括号生成</a></h4><pre><code class=language-php>class Node {
+    public $res;
+    public $left;
+    public $right;
+    function __construct($res, $left, $right){
+        $this-&gt;res = $res;
+        $this-&gt;left = $left;
+        $this-&gt;right = $right;
+    }
+}
+class Solution {
+
+    /**
+     * dfs
+     * @param Integer $n
+     * @return String[]
+     */
+    function generateParenthesis($n) {
+        $res = [];
+        $this-&gt;dfs($res, &quot;&quot;, 0, 0, $n);
+        return $res;
+    }
+
+    function dfs(&amp;$res, $curr, $left, $right, $n) {
+        if ($right == $n) {
+            $res[] = $curr;
+            return;
+        }
+        if ($left &lt; $n) $this-&gt;dfs($res, $curr.&quot;(&quot;, $left + 1, $right, $n);
+        if ($right &lt; $left) $this-&gt;dfs($res, $curr.&quot;)&quot;, $left, $right + 1, $n);
+    }
+    
+    /**
+     * bfs
+     * @param Integer $n
+     * @return String[]
+     */
+    function generateParenthesis($n) {
+        $res = [];
+        if ($n == 0) return $res;
+        $queue = [];
+        $queue[] = new Node(&quot;&quot;, $n, $n);
+ 		while ($queue) {
+            $node = array_shift($queue);
+            if ($node-&gt;left == 0 &amp;&amp; $node-&gt;right == 0) {
+                $res[] = $node-&gt;res;
+            }
+            if ($node-&gt;left &gt; 0) {
+                $queue[] = new Node($node-&gt;res . &quot;(&quot;, $node-&gt;left - 1, $node-&gt;right);
+            }
+            if ($node-&gt;left &lt; $node-&gt;right &amp;&amp; $node-&gt;right &gt; 0) {
+                $queue[] = new Node($node-&gt;res . &quot;)&quot;, $node-&gt;left, $node-&gt;right - 1);
+            }
+        }
+        return $res;
+    }
+    
+    /**
+     * 动态规划
+     * @param Integer $n
+     * @return String[]
+     */
+    function generateParenthesis($n) {
+        
+    }
+}
+</code></pre><pre><code class=language-python>class Solution(object):
+    def generateParenthesis(self, n):
+        &quot;&quot;&quot;
+        dp
+        :type n: int
+        :rtype: List[str]
+        &quot;&quot;&quot;
+        dp = [[] for i in range(n + 1)]
+        dp[0].append('')
+        for i in range(n + 1):
+            for j in range(i):
+                dp[i] += ['(' + x + ')' + y for x in dp[j] for y in dp[i - j - 1]]
+        return dp[n]
+</code></pre><h4 id=515-在每个树行中找最大值httpsleetcode-cncomproblemsfind-largest-value-in-each-tree-row><a href=https://leetcode-cn.com/problems/find-largest-value-in-each-tree-row/ target=_blank rel=noopener>515. 在每个树行中找最大值</a></h4><pre><code class=language-php>/**
+ * Definition for a binary tree node.
+ * class TreeNode {
+ *     public $val = null;
+ *     public $left = null;
+ *     public $right = null;
+ *     function __construct($value) { $this-&gt;val = $value; }
+ * }
+ */
+class Solution {
+
+    /**
+     * bfs
+     * @param TreeNode $root
+     * @return Integer[]
+     */
+    function largestValues($root) {
+        $res = [];
+        if (!$root) return $res;
+        $queue = [$root];
+        while ($queue) {
+            $size = count($queue);
+            $max = PHP_INT_MIN;
+            while ($size--) {
+                $node = array_shift($queue);
+                $max = max($max, $node-&gt;val);
+                if ($node-&gt;left) $queue[] = $node-&gt;left;
+                if ($node-&gt;right) $queue[] = $node-&gt;right; 
+            }
+            $res[] = $max;
+        }
+        return $res;
+    }
+    
+    /**
+     * dfs
+     * @param TreeNode $root
+     * @return Integer[]
+     */
+    function largestValues($root) {
+        $res = [];
+        $this-&gt;dfs($root, $level, $res);
+        return $res;
+    }
+    function dfs($root, $level, &amp;$res) {
+        if ($root) {
+            if(!isset($res[$level])) $res[$level] = $root-&gt;val;
+            $res[$level] = max($res[$level], $root-&gt;val);
+            $this-&gt;dfs($root-&gt;left, $level + 1, $res);
+            $this-&gt;dfs($root-&gt;right, $level + 1, $res);
+        }
+    }
+}
+</code></pre><h3 id=课后作业>课后作业</h3><h4 id=127-单词接龙httpsleetcode-cncomproblemsword-ladder><a href=https://leetcode-cn.com/problems/word-ladder/ target=_blank rel=noopener>127. 单词接龙</a></h4><pre><code class=language-php>class Solution {
+
+    /**
+     * 部分用例测试超时
+     * @param String $beginWord
+     * @param String $endWord
+     * @param String[] $wordList
+     * @return Integer
+     */
+    function ladderLength($start, $end, $bank) {
+        if ($start == $end) return 0;
+        $bank_hash = array_flip($bank);
+        $chars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 
+        'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+        $visited = [];
+        $queue = [$start];
+        $visited[$start] = true;
+        $level = 1;
+        while ($queue) {
+            $size = count($queue);
+            while ($size--) {
+                $curr = array_shift($queue);
+                if ($curr == $end) return $level;
+                for ($i = 0, $len = strlen($curr); $i &lt; $len; $i++) {
+                    $old = $curr[$i];
+                    foreach ($chars as $char) {
+                        $curr[$i] = $char;
+                        if (!$visited[$curr] &amp;&amp; isset($bank_hash[$curr])) {
+                            $queue[] = $curr;
+                            $visited[$curr] = true;
+                        }
+                    }
+                    $curr[$i] = $old;
+                }
+            }
+            $level++;
+        }
+        return 0;
+    }
+    
+    /**
+     * 双bfs
+     * @param String $beginWord
+     * @param String $endWord
+     * @param String[] $wordList
+     * @return Integer
+     */
+    function ladderLength($beginWord, $endWord, $wordList) {
+        $word_hash = array_flip($wordList);
+        if (!isset($word_hash[$endWord])) return 0;
+        $queue1 = [$beginWord];
+        $queue2 = [$endWord];
+        $visited[$beginWord] = true;
+        $n = strlen($beginWord);
+        $step = 0;
+        while ($queue1) {
+            $step++;
+            if (count($queue1) &gt; count($queue2)) [$queue1, $queue2] = [$queue2, $queue1];
+            $size = count($queue1);
+            while($size--) {
+                $word = array_shift($queue1);
+                for($i = 0; $i &lt; $n; $i++) {
+                    $old = $word[$i];
+                    for ($k = ord('a'); $k &lt;= ord('z'); $k++) {
+                        if ($old == chr($k)) continue;
+                        $word[$i] = chr($k);
+                        if (in_array($word, $queue2)) return $step + 1;
+                        if (!$visited[$word] &amp;&amp; isset($word_hash[$word])) {
+                            $queue1[] = $word;
+                            $visited[$word] = true;
+                        }
+                    }
+                    $word[$i] = $old;
+                }
+            }
+        } 
+        return 0;
+    }
+}
+</code></pre><pre><code class=language-cpp>bool connect(const std::string &amp;word1, const std::string &amp;word2) {
+    int cnt = 0;//记录不相同的字符个数
+    for (int i = 0; i &lt; word1.length(); i++) {
+        if (word1[i] != word2[i]) {
+            cnt++;
+        }
+    }
+    return cnt == 1;
+}
+//构建邻接表
+void construct_graph(std::string &amp;beginWord,
+                     std::vector&lt;std::string&gt; &amp;wordList,
+                     std::map&lt;std::string,std::vector&lt;std::string&gt;&gt; &amp;graph) {
+    wordList.push_back(beginWord);
+    for (int i = 0; i &lt; wordList.size(); i++) {
+        graph[wordList[i]] = std::vector&lt;std::string&gt;();
+    }
+    for (int i =0; i &lt; wordList.size(); i++) {
+        for (int j = i + 1; j &lt; wordList.size(); j++) {
+            //判断是否字符相差1
+            if (connect(wordList[i], wordList[j])) {
+                graph[wordList[i]].push_back(wordList[j]);
+                graph[wordList[j]].push_back(wordList[i]);
+            }
+        }
+    }
+}
+int bfs_graph(std::string &amp;beginWord,std::string &amp;endWord,
+              std::map&lt;std::string,std::vector&lt;std::string&gt;&gt; &amp;graph) {
+    std::queue&lt;std::pair&lt;std::string,int&gt;&gt; q;//搜索队列
+    std::set&lt;std::string&gt; visit;//记录访问过的单词
+    q.push(std::make_pair(beginWord, 1));
+    visit.insert(beginWord);
+    while (!q.empty()) {
+        //队列头部元素
+        std::string word = q.front().first;
+        int step = q.front().second;
+        q.pop();//弹出队头
+        if (word == endWord) {
+            return step;
+        }
+        const std::vector&lt;std::string&gt; &amp;neighbors = graph[word];
+        for (int i = 0; i &lt; neighbors.size(); i++) {
+            //判重并加入队列
+        	if (visit.find(neighbors[i]) == visit.end()) {
+                q.push(std::make_pair(neighbors[i], step + 1));
+                visit.insert(neighbors[i]);
+            }   
+        }
+    }
+    return 0;
+}
+class Solution {
+public:
+    int ladderLength(string beginWord, string endWord, vector&lt;string&gt;&amp; wordList) {
+		std::map&lt;std::string,std::vector&lt;std::string&gt;&gt; graph;
+        construct_graph(beginWord,wordList, graph);//构建邻接表
+        return bfs_graph(beginWord, endWord, graph);
+    }
+};
+
+//双bfs
+class Solution {
+public:
+    int ladderLength(string beginWord, string endWord, vector&lt;string&gt;&amp; wordList) {
+        unordered_set&lt;string&gt; wordSet{wordList.begin(), wordList.end()};
+        if(wordSet.find(endWord) == wordSet.end()) return 0;    
+        int step = 1;
+        unordered_set&lt;string&gt; beginSet{beginWord};
+        unordered_set&lt;string&gt; endSet{endWord};
+        while(!beginSet.empty()){
+            step++;
+            unordered_set&lt;string&gt; nextSet;
+            for(auto &amp; word : beginSet) {
+                wordSet.erase(word);
+            }
+            for(auto &amp; word: beginSet){
+                for(int i = 0; i &lt; word.size(); i++){
+                    string nextWord = word;
+                    for(char j = 'a'; j &lt;= 'z'; j++){
+                        nextWord[i] = j;
+                        if(endSet.find(nextWord) != endSet.end()) return step;
+                        if(wordSet.find(nextWord) != wordSet.end()){
+                            nextSet.insert(nextWord);
+                        }
+                    }
+                }
+            }
+            beginSet = nextSet;
+            if(beginSet.size() &gt; endSet.size()){
+                swap(beginSet, endSet);
+            }
+        }
+        return 0;
+    }
+};
+</code></pre><h4 id=126-单词接龙-iihttpsleetcode-cncomproblemsword-ladder-ii><a href=https://leetcode-cn.com/problems/word-ladder-ii/ target=_blank rel=noopener>126. 单词接龙 II</a></h4><pre><code class=language-php>class Solution {
+
+    /**
+     * @param String $beginWord
+     * @param String $endWord
+     * @param String[] $wordList
+     * @return String[][]
+     */
+    function findLadders($beginWord, $endWord, $wordList) {
+		$ans = $paths = [];
+        $wordList = array_flip($wordList);
+        $paths[] = [$beginWord];
+        $level = 0;
+        $min_level = pow(2, 31);
+        $visited = [];
+        while (!empty($paths)) {
+            $path = array_shift($paths);
+            if (count($path) &gt; $level) {
+                foreach ($visited as $w=&gt;$i) unset($wordList[$w]);
+                $visited = [];
+                if (count($path) &gt; $min_level) break;
+                $level = count($path);
+            }
+            $last = end($path);
+            for ($i = 0; $i &lt; strlen($last); $i++) {
+                $news = $last;
+                for ($k = ord('a'); $k &lt;= ord('z'); $k++) {
+                    $news[$i] = chr($k);
+                    if (isset($wordList[$news])) {
+                        $newpath = $path;
+                        $newpath[] = $news;
+                        $visited[$news] = true;
+                        if ($news == $endWord) {
+                            $min_level = $level;
+                            $ans[] = $newpath;
+                        } else {
+                            $paths[] = $newpath;
+                        }
+                    }
+                }
+            }
+        }
+        return $ans;
+    }
+}
+</code></pre><p>cpp写法</p><pre><code class=language-cpp>struct Qitem {
+    std::string node;
+    int parent_pos;
+    int step;
+    Qitem(std::string node, int parent_pos, int step)
+    : node(node), parent_pos(parent_pos), step(step){
+        
+    }
+};
+bool connect(const std::string &amp;word1, const std::string &amp;word2) {
+    int cnt = 0;//记录不相同的字符个数
+    for (int i = 0; i &lt; word1.length(); i++) {
+        if (word1[i] != word2[i]) {
+            cnt++;
+        }
+    }
+    return cnt == 1;
+}
+//构建邻接表
+void construct_graph(std::string &amp;beginWord,
+                     std::vector&lt;std::string&gt; &amp;wordList,
+                     std::map&lt;std::string,std::vector&lt;std::string&gt;&gt; &amp;graph) {
+   int has_begin_word = 0;
+    for (int i = 0; i &lt; wordList.size(); i++) {
+        if (wordList[i] == beginWord) {
+            has_begin_word = 1;
+        }
+        graph[wordList[i]] = std::vector&lt;std::string&gt;();
+    }
+    for (int i =0; i &lt; wordList.size(); i++) {
+        for (int j = i + 1; j &lt; wordList.size(); j++) {
+            //判断是否字符相差1
+            if (connect(wordList[i], wordList[j])) {
+                graph[wordList[i]].push_back(wordList[j]);
+                graph[wordList[j]].push_back(wordList[i]);
+            }
+        }
+        if (has_begin_word == 0 &amp;&amp; connect(beginWord, wordList[i])) {
+            graph[beginWord].push_back(wordList[i]);
+        }
+    }
+}
+void bfs_graph(std::string &amp;beginWord,std::string &amp;endWord,
+              std::map&lt;std::string,std::vector&lt;std::string&gt;&gt; &amp;graph,
+              std::vector&lt;Qitem&gt; &amp;q,//使用vector实现队列，保存所有信息
+              std::vector&lt;int&gt; &amp;end_word_pos) {
+    std::map&lt;std::string, int&gt; visit;//记录访问过的单词
+    int min_step = 0;//到达endWord最少步数
+    q.push_back(Qitem(beginWord.c_str(), -1, 1));//起始单词前驱是-1
+    int front = 0;
+    while (front != q.size()) {
+        //队列头部元素
+        std::string word = q[front].node;
+        int step = q[front].step;
+        //step &gt; min_step时，代表所有到终点的路径都搜素完成
+        if (min_step != 0 &amp;&amp; min_step &lt; step) break;
+        if (word == endWord) {
+            min_step = step;//当搜索到结果时，记录到达终点的最小步数
+			end_word_pos.push_back(front);
+        }
+        const std::vector&lt;std::string&gt; &amp;neighbors = graph[word];
+        for (int i = 0; i &lt; neighbors.size(); i++) {
+            //节点没有被访问或者另一条最短路径
+        	if (visit.find(neighbors[i]) == visit.end() || 
+               visit[neighbors[i]] == step + 1) {
+                q.push_back(Qitem(neighbors[i], front, step + 1));
+                visit[neighbors[i]] = step + 1;
+            }   
+        }
+        front++;
+    }
+}
+class Solution {
+public:
+    vector&lt;vector&lt;string&gt;&gt; findLadders(string beginWord, string endWord, vector&lt;string&gt;&amp; wordList) {
+		std::map&lt;std::string,std::vector&lt;std::string&gt;&gt; graph;
+        construct_graph(beginWord,wordList, graph);//构建邻接表
+        
+        std::vector&lt;Qitem&gt; q;//使用vector实现队列，保存所有信息
+        std::vector&lt;int&gt; end_word_pos;
+        bfs_graph(beginWord, endWord, graph, q, end_word_pos);
+        
+        std::vector&lt;std::vector&lt;std::string&gt;&gt; result;
+        for (int i = 0; i &lt; end_word_pos.size(); i++) {
+            int pos = end_word_pos[i];
+            std::vector&lt;std::string&gt; path;
+            while (pos != -1) {
+                path.push_back(q[pos].node);
+                pos = q[pos].parent_pos;
+            }
+            result.push_back(std::vector&lt;std::string&gt;());
+            for (int j = path.size() - 1; j &gt;= 0; j--) {
+                result[i].push_back(path[j]);
+            }
+        }
+        return result;
+    }
+};
+//双bfs
+class Solution {
+ public:
+  vector&lt;vector&lt;string&gt;&gt; findLadders(string beginWord, string endWord,
+                                     vector&lt;string&gt; wordList) {
+    if (beginWord == endWord) return {{beginWord}};
+    size_t wordLen = beginWord.size();
+    unordered_set&lt;string&gt; wordDict(wordList.begin(), wordList.end());
+    if (!wordDict.count(endWord)) return {};
+    unordered_map&lt;string, vector&lt;string&gt;&gt; childMap;
+    unordered_set&lt;string&gt; q1 = {beginWord};
+    unordered_set&lt;string&gt; q2 = {endWord};
+    bool found = false;
+    bool reverse = false;
+    while (!q1.empty() &amp;&amp; !q2.empty() &amp;&amp; !found) {
+      // remove cur level node from wordDict
+      if (q1.size() &gt; q2.size()) {
+        std::swap(q1, q2);
+        reverse = !reverse;
+      }
+      for (auto&amp; w : q1) wordDict.erase(w);
+      // expand cur level node generate childMap
+      unordered_set&lt;string&gt; qTmp;
+      for (const auto&amp; curWord : q1) {
+        string newWord = curWord;
+        for (size_t j = 0; j &lt; wordLen; ++j) {
+          char oldChar = curWord[j];
+          for (char c = 'a'; c &lt;= 'z'; ++c) {
+            if (c == oldChar) continue;
+            newWord[j] = c;
+            if (wordDict.count(newWord)) {
+              if (q2.count(newWord))
+                found = true;  // in this case no need to expand
+              else
+                qTmp.insert(newWord);
+              // update childMap
+              if (!reverse)
+                childMap[curWord].push_back(newWord);
+              else
+                childMap[newWord].push_back(curWord);
+            }
+          }
+          newWord[j] = oldChar;
+        }
+      }  // expand done
+      std::swap(q1, qTmp);
+    }
+    if (!found) return {};
+    vector&lt;string&gt; cur = {beginWord};
+    vector&lt;vector&lt;string&gt;&gt; res;
+    dfs(endWord, cur, res, childMap);
+    return res;
+  }
+
+  void dfs(const string&amp; endWord, vector&lt;string&gt;&amp; cur,
+           vector&lt;vector&lt;string&gt;&gt;&amp; res,
+           const unordered_map&lt;string, vector&lt;string&gt;&gt;&amp; childMap) {
+    if (cur.back() == endWord) {
+      res.push_back(cur);
+      return;
+    }
+    string&amp; curWord = cur.back();
+    auto iter = childMap.find(curWord);
+    if (iter == childMap.end()) {  // check if curWord has child
+      return;
+    }
+    for (const auto&amp; w : iter-&gt;second) {
+      cur.push_back(w);
+      dfs(endWord, cur, res, childMap);
+      cur.pop_back();
+    }
+  }
+};
+</code></pre><h4 id=200-岛屿数量httpsleetcode-cncomproblemsnumber-of-islands><a href=https://leetcode-cn.com/problems/number-of-islands/ target=_blank rel=noopener>200. 岛屿数量</a></h4><pre><code class=language-php>class Solution {
+
+    /**
+     * dfs
+     * @param String[][] $grid
+     * @return Integer
+     */
+    function numIslands($grid) {
+        $count = 0;
+        $n = count($grid);
+        if ($n == 0) return $count;
+        $m = count($grid[0]);
+        for ($i = 0; $i &lt; $n; $i++) {
+            for ($j = 0; $j &lt; $m; $j++) {
+                if ($grid[$i][$j] == '1') {
+                    $count++;
+                    $this-&gt;dfs($grid, $i, $j, $n, $m);
+                }
+            }
+        }
+        return $count;
+    }
+
+    function dfs(&amp;$grid, $i, $j, $n, $m) {
+        if ($i &lt; 0 || $j &lt; 0 || $i &gt;= $n || $j &gt;= $m || $grid[$i][$j] == '0') return;
+        $grid[$i][$j] = '0';
+        $this-&gt;dfs($grid, $i + 1, $j, $n, $m);
+        $this-&gt;dfs($grid, $i - 1, $j, $n, $m);
+        $this-&gt;dfs($grid, $i, $j + 1, $n, $m);
+        $this-&gt;dfs($grid, $i, $j - 1, $n, $m);
+    }
+}
+</code></pre><h4 id=529-扫雷游戏httpsleetcode-cncomproblemsminesweeper><a href=https://leetcode-cn.com/problems/minesweeper/ target=_blank rel=noopener>529. 扫雷游戏</a></h4><pre><code class=language-php>class Solution {
+
+    /**
+     * dfs
+     * @param String[][] $board
+     * @param Integer[] $click
+     * @return String[][]
+     */
+    function updateBoard($board, $click) {
+        $n = count($board);
+        $m = count($board[0]);
+        $this-&gt;dfs($board, $click, $n, $m);
+        return $board;
+    }
+    function dfs(&amp;$board, $click, $n, $m) {
+        [$row, $col] = $click;
+        //判断是不是地雷
+        if ($board[$row][$col] == 'M' || $board[$row][$col] == 'X') {
+            $board[$row][$col] = 'X';
+        } else {
+            //不是地雷， 计算周围是地雷的个数
+            $count = 0;
+            foreach([-1, 0, 1] as $i) {
+                foreach([-1, 0, 1] as $j) {
+                    if ($i == 0 &amp;&amp; $j == 0) continue;
+                    $r = $row + $i;
+                    $c = $col + $j;
+                    if ($r &lt; 0 || $c &lt; 0 || $r &gt;= $n || $c &gt;= $m) continue;
+                    if ($board[$r][$c] == 'M' || $board[$r][$c] == 'X') $count++;
+                }
+            }
+            //有地雷，标注地雷的个数
+            if ($count &gt; 0) {
+                $board[$row][$col] = (string)$count;
+            } else {
+                //没有地雷，标注为B
+                $board[$row][$col] = 'B';
+                foreach([-1, 0, 1] as $i) {
+                    foreach([-1, 0, 1] as $j) {
+                        if ($i == 0 &amp;&amp; $j == 0) continue;
+                        $r = $row + $i;
+                        $c = $col + $j;
+                        if ($r &lt; 0 || $c &lt; 0 || $r &gt;= $n || $c &gt;= $m) continue;
+                        if ($board[$r][$c] == 'E') $this-&gt;dfs($board, [$r, $c], $n, $m);
+                    }
+                }
+            }
+        }
+    }
+    
+    /**
+     * bfs
+     * @param String[][] $board
+     * @param Integer[] $click
+     * @return String[][]
+     */
+    function updateBoard($board, $click) {
+        $n = count($board);
+        $m = count($board[0]);
+        $queue = [$click];
+        while ($queue) {
+            [$row, $col] = array_shift($queue);
+            //地雷
+            if ($board[$row][$col] == 'M' || $board[$row][$col] == 'X') {
+                $board[$row][$col] = 'X';
+            } else {
+                //计算周围的地雷
+                $count = 0;
+                foreach([-1, 0, 1] as $i) {
+                    foreach([-1, 0, 1] as $j) {
+                        if ($i == 0 &amp;&amp; $j == 0) continue;
+                        $r = $row + $i;
+                        $c = $col + $j;
+                        if ($r &lt; 0 || $c &lt; 0 || $r &gt;= $n || $c &gt;= $m) continue;
+                        if ($board[$r][$c] == 'M' || $board[$r][$c] == 'X') $count++;
+                    }
+                }
+                //有地雷，标注地雷的个数
+                if ($count &gt; 0) {
+                    $board[$row][$col] = (string)$count;
+                } else {
+                    //没有地雷，标注为B
+                    $board[$row][$col] = 'B';
+                    foreach([-1, 0, 1] as $i) {
+                        foreach([-1, 0, 1] as $j) {
+                            if ($i == 0 &amp;&amp; $j == 0) continue;
+                            $r = $row + $i;
+                            $c = $col + $j;
+                            if ($r &lt; 0 || $c &lt; 0 || $r &gt;= $n || $c &gt;= $m) continue;
+                            if ($board[$r][$c] == 'E') {
+                                $queue[] = [$r, $c];
+                                $board[$r][$c] = 'B';
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return $board;
+    }
+}
+</code></pre><h1 id=第4周-第10课--贪心算法>第4周 第10课 | 贪心算法</h1><h2 id=贪心的实现特性及实战题目解>贪心的实现、特性及实战题目解</h2><h2 id=参考链接-1>参考链接</h2><h4 id=322-零钱兑换httpsleetcode-cncomproblemscoin-change><a href=https://leetcode-cn.com/problems/coin-change/ target=_blank rel=noopener>322. 零钱兑换</a></h4><pre><code class=language-cpp>class Solution {
+public:
+    int coinChange(vector&lt;int&gt;&amp; coins, int amount) {
+		std::vector&lt;int&gt; dp;
+        //初始化dp数组
+        for (int i = 0; i &lt;= amount; i++) {
+            dp.push_back(-1);
+        }
+        dp[0] = 0;//金额0最优解0
+        for (int i = 1; i &lt;= amount; i++) {
+            //循环各个面值，找到dp[i]最优解
+            for (int j = 0; j &lt; coins.size(); j++) {
+                if (coins[j] &lt;= i &amp;&amp; dp[i - coins[j]] != -1) {
+                    if (dp[i] == -1 || dp[i] &gt; dp[i - coins[j]] + 1) {
+                        //递推公式
+                        dp[i] = dp[i - coins[j]] + 1;
+                    }
+                }
+            }
+        }
+        return dp[amount];
+    }
+};
+</code></pre><pre><code class=language-php>class Solution {
+
+    /**
+     * 动态规划
+     * @param Integer[] $coins
+     * @param Integer $amount
+     * @return Integer
+     */
+    function coinChange($coins, $amount) {
+        $dp = array_fill(1, $amount, -1);
+        $dp[0] = 0;
+        for ($i = 1; $i &lt;= $amount; $i++) {
+            foreach ($coins as $coin) {
+                if ($coin &lt;= $i &amp;&amp; $dp[$i - $coin] != -1) {
+                    if ($dp[$i] == -1 || $dp[$i] &gt; $dp[$i - $coin] + 1) {
+                        $dp[$i] = $dp[$i - $coin] + 1;
+                    }
+                }
+            }
+        }
+        return $dp[$amount];
+    }
+}
+</code></pre><h4 id=动态规划定义httpszhwikipediaorgwiki动态规划><a href=https://zh.wikipedia.org/wiki/%e5%8a%a8%e6%80%81%e8%a7%84%e5%88%92 target=_blank rel=noopener>动态规划定义</a></h4><h2 id=课后作业-1>课后作业</h2><h4 id=860-柠檬水找零httpsleetcode-cncomproblemslemonade-change><a href=https://leetcode-cn.com/problems/lemonade-change/ target=_blank rel=noopener>860. 柠檬水找零</a></h4><pre><code class=language-python>def lemonadeChange(self, bills):
+        five = ten = 0
+        for i in bills:
+            if i == 5: five += 1
+            elif i == 10: five, ten = five - 1, ten + 1
+            elif ten &gt; 0: five, ten = five - 1, ten - 1
+            else: five -= 3
+            if five &lt; 0: return False
+        return True
+</code></pre><pre><code class=language-cpp>class Solution {
+
+    /**
+     * @param Integer[] $bills
+     * @return Boolean
+     */
+    function lemonadeChange($bills) {
+        $map = [5=&gt;0, 10=&gt;0, 20=&gt;0];
+        foreach ($bills as $bill) {
+            if ($bill &gt; 5) {
+                $sub = $bill - 5;
+                foreach ([10 , 5] as $b) {
+                    $count = intdiv($sub, $b);
+                    if ($map[$b] &gt;= $count) {
+                        $sub %= $b; 
+                        $map[$b] -= $count;
+                    }
+                }
+                if ($sub &gt; 0) return false; 
+            }
+            $map[$bill]++;
+        }
+        return true;
+    }
+}
+</code></pre><h4 id=122-买卖股票的最佳时机-iihttpsleetcode-cncomproblemsbest-time-to-buy-and-sell-stock-ii><a href=https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/ target=_blank rel=noopener>122. 买卖股票的最佳时机 II</a></h4><pre><code class=language-php>class Solution {
+
+    /**
+     * @param Integer[] $prices
+     * @return Integer
+     */
+    function maxProfit($prices) {
+        $price = 0;
+        for ($i = 1; $i &lt; count($prices); $i++) {
+            if ($prices[$i] &gt; $prices[$i - 1]) {
+                $price += $prices[$i] - $prices[$i - 1];
+            }
+        }
+        return $price;
+    }
+}
+</code></pre><h4 id=455-分发饼干httpsleetcode-cncomproblemsassign-cookies><a href=https://leetcode-cn.com/problems/assign-cookies/ target=_blank rel=noopener>455. 分发饼干</a></h4><pre><code class=language-php>class Solution {
+
+    /**
+     * 贪心算法
+     * @param Integer[] $g
+     * @param Integer[] $s
+     * @return Integer
+     */
+    function findContentChildren($g, $s) {
+        sort($g);
+        sort($s);
+        for ($i = 0, $j = 0; $i &lt; count($g) &amp;&amp; $j &lt; count($s); $j++) {
+            if ($g[$i] &lt;= $s[$j]) $i++;
+        }
+        return $i;
+    }
+}
+</code></pre><h4 id=874-模拟行走机器人httpsleetcode-cncomproblemswalking-robot-simulation><a href=https://leetcode-cn.com/problems/walking-robot-simulation/ target=_blank rel=noopener>874. 模拟行走机器人</a></h4><pre><code class=language-php>class Solution {
+
+    /**
+     * @param Integer[] $commands
+     * @param Integer[][] $obstacles
+     * @return Integer
+     */
+    function robotSim($commands, $obstacles) {
+        $dx = [0, 1, 0, -1];
+        $dy = [1, 0, -1, 0];
+        $x = $y = $di = 0;
+        $hash = [];
+        $ans = 0;
+        foreach ($obstacles as $obstacle) $hash[implode(',', $obstacle)] = true;
+        foreach ($commands as $command) {
+            if ($command == -2) {
+                $di = ($di + 3) % 4;
+            } else if ($command == -1) {
+                $di = ($di + 1) % 4;
+            } else {
+                for ($k = 0; $k &lt; $command; $k++) {
+                    $nx = $x + $dx[$di];
+                    $ny = $y + $dy[$di];
+                    if (!$hash[&quot;{$nx},{$ny}&quot;]) {
+                        $x = $nx;
+                        $y = $ny;
+                        $ans = max($ans, $x * $x + $y * $y);
+                    } 
+                }
+            }
+        }
+        return $ans;
+    }
+}
+</code></pre><h4 id=55-跳跃游戏httpsleetcode-cncomproblemsjump-game><a href=https://leetcode-cn.com/problems/jump-game/ target=_blank rel=noopener>55. 跳跃游戏</a></h4><pre><code class=language-php>class Solution {
+
+    /**
+     * 贪心
+     * @param Integer[] $nums
+     * @return Boolean
+     */
+    function canJump($nums) {
+ 		if (!$nums) return false;
+        $revCanJump = count($nums) - 1;
+        for ($i = $revCanJump; $i &gt;= 0; $i--) {
+            if ($i + $nums[$i] &gt;= $revCanJump) {
+                $revCanJump = $i;
+            }
+        }
+        return $revCanJump == 0;
+    }
+    
+    function canJump($nums) {
+        $max = 0;
+        for ($i = 0; $i &lt; count($nums); $i++) {
+            if ($max &lt; $i) return false;
+            $max = max($max, $nums[$i] + $i);
+        }
+        return true;
+    }
+}
+</code></pre><h4 id=45-跳跃游戏-iihttpsleetcode-cncomproblemsjump-game-ii><a href=https://leetcode-cn.com/problems/jump-game-ii/ target=_blank rel=noopener>45. 跳跃游戏 II</a></h4><pre><code class=language-php>class Solution {
+
+    /**
+     * @param Integer[] $nums
+     * @return Integer
+     */
+    function jump($nums) {
+        $len = count($nums);
+        if ($len &lt; 2) return 0;
+        //当前可达到的最远位置和可达到的最远位置
+        $current_max_index = $pre_max_index = $nums[0];
+        $jump_min = 1;//最少跳跃次数
+        for ($i = 1; $i &lt; $len; $i++) {
+            if ($i &gt; $current_max_index) {
+                $jump_min++;
+                $current_max_index = $pre_max_index;
+            }
+            if ($pre_max_index &lt; $nums[$i] + $i) {
+                $pre_max_index = $nums[$i] + $i;
+            }
+        }
+        return $jump_min;
+    }
+}
+</code></pre><h1 id=第4周-第11课--二分查找>第4周 第11课 | 二分查找</h1><h2 id=二分查找的实现特性及实战题目解析>二分查找的实现、特性及实战题目解析</h2><h2 id=参考链接-2>参考链接</h2><ul><li><a href=https://shimo.im/docs/hjQqRQkGgwd9g36J target=_blank rel=noopener>二分查找代码模板</a></li><li><a href=https://www.beyond3d.com/content/articles/8/ target=_blank rel=noopener>Fast InvSqrt() 扩展阅读</a></li></ul><h2 id=实战题目-1>实战题目</h2><h4 id=69-x-的平方根httpsleetcode-cncomproblemssqrtx><a href=https://leetcode-cn.com/problems/sqrtx/ target=_blank rel=noopener>69. x 的平方根</a></h4><pre><code class=language-php>class Solution {
+
+    /**
+     * 方法一：二分法1
+     * @param Integer $x
+     * @return Integer
+     */
+    function mySqrt($x) {
+        if ($x &lt; 2) return $x;
+        $left = 2;
+        $right = intdiv($x, 2);
+        while ($left &lt;= $right) {
+            $mid = $left + intdiv($right - $left, 2);
+            $num = $mid * $mid;
+            if ($num &gt; $x) $right = $mid - 1;
+            else if ($num &lt; $x) $left = $mid + 1;
+            else return $mid;
+        }
+        return $right;
+    }
+    /**
+     * 方法一：二分法2
+     * @param Integer $x
+     * @return Integer
+     */
+    function mySqrt($x) {
+       if ($x == 0) return 0;
+        $start = 1; $end = $x;
+        while ($start &lt; $end) { 
+            $mid = $start + intdiv($end - $start , 2);
+            if ($mid &lt;= intdiv($x, $mid) &amp;&amp; ($mid + 1) &gt; intdiv($x, $mid + 1))
+                return $mid; 
+            else if ($mid &gt; intdiv($x, $mid))
+                $end = $mid;
+            else
+                $start = $mid + 1;
+        }
+        return $start;
+    }
+    /**
+     * 方法二：牛顿迭代法1
+     * @param Integer $x
+     * @return Integer
+     */
+    function mySqrt($x) {
+        if ($x &lt; 2) return $x;
+        $curr = 1;
+        do {
+            $pre = $curr;
+            $curr = ($curr + $x/ $x) /2;
+        } while (abs($curr - $pre) &gt; 1e-6);
+        return (int) $curr;
+    }
+    /**
+     * 方法二：牛顿迭代法2
+     * @param Integer $x
+     * @return Integer
+     */
+    function mySqrt($x) {
+        if ($x == 0) return $x;
+        $curr = $x;
+      	while ($curr * $curr &gt; $x)
+            $curr = intdiv($curr + $x/$curr, 2);
+        return (int) $curr;
+    }
+}
+</code></pre><h4 id=367-有效的完全平方数httpsleetcode-cncomproblemsvalid-perfect-square><a href=https://leetcode-cn.com/problems/valid-perfect-square/ target=_blank rel=noopener>367. 有效的完全平方数</a></h4><pre><code class=language-php>class Solution {
+
+    /**
+     * 方法一：二分法
+     * @param Integer $num
+     * @return Boolean
+     */
+    function isPerfectSquare($num) {
+        if ($num &lt; 2) return true;
+        $left = 1;
+        $right = intdiv($num, 2);
+        while ($left &lt;= $right) {
+            $mid = $left + intdiv($right - $left, 2);
+            $n = $mid * $mid;
+            if ($n &gt; $num) $right = $mid - 1;
+            else if ($n &lt; $num) $left = $mid + 1;
+            else return true;
+        }
+        return false;
+    }
+     /**
+     * 方法二：牛顿迭代法1
+     * @param Integer $num
+     * @return Boolean
+     */
+    function isPerfectSquare($num) {
+        if ($num &lt; 2) return true;
+        $curr = intdiv($num, 2);
+        while ($curr * $curr &gt; $num) {
+            $curr = intdiv($curr + $num / $curr, 2);
+        }
+        return $curr * $curr == $num;
+    }
+    /**
+     * 方法二：牛顿迭代法1
+     * @param Integer $num
+     * @return Boolean
+     */
+    function isPerfectSquare($num) {
+        if ($num &lt; 2) return true;
+        $curr = $num &gt;&gt; 1;
+        while ($curr * $curr &gt; $num) {
+            $curr = ($curr + $num / $curr) &gt;&gt; 1;
+        }
+        return $curr * $curr == $num;
+    }
+}
+</code></pre><h2 id=课后作业-2>课后作业</h2><h4 id=33-搜索旋转排序数组httpsleetcode-cncomproblemssearch-in-rotated-sorted-array><a href=https://leetcode-cn.com/problems/search-in-rotated-sorted-array/ target=_blank rel=noopener>33. 搜索旋转排序数组</a></h4><p><a href=https://leetcode-cn.com/problems/search-in-rotated-sorted-array/solution/ji-jian-solution-by-lukelee/ target=_blank rel=noopener>牛逼位运算题解</a></p><pre><code class=language-php>class Solution {
+
+    /**
+     * @param Integer[] $nums
+     * @param Integer $target
+     * @return Integer
+     */
+    function search($nums, $target) {
+        $left = 0;
+        $right = count($nums) - 1;
+        while ($left &lt; $right) {
+            $mid = $left + intdiv($right - $left, 2);
+            //(nums[0] &gt; target) ^ (nums[0] &gt; nums[mid]) ^ (target &gt; nums[mid])
+            if (($nums[0] &gt; $target) ^ ($nums[0] &gt; $nums[$mid]) ^ ($target &gt; $nums[$mid])) {
+                $left = $mid + 1;
+            } else {
+                $right = $mid;
+            }
+        }
+        return $left == $right &amp;&amp; $nums[$left] == $target ? $left: -1;
+    }
+    
+    /**
+     * 二分法（比较好理解）
+     * @param Integer[] $nums
+     * @param Integer $target
+     * @return Integer
+     */
+    function search($nums, $target) {
+        $left = 0;
+        $right = count($nums) - 1;
+        while ($left &lt;= $right) {
+            $mid = $left + intdiv($right - $left, 2);
+            if ($nums[$mid] == $target) return $mid;
+            if ($nums[$left] &lt;= $nums[$mid]) {//前半部分有序
+                if ($nums[$left] &lt;= $target &amp;&amp; $target &lt; $nums[$mid]) {
+                    $right = $mid - 1;
+                } else {
+                    $left = $mid + 1;
+                }
+            } else {//后半部分有序
+                if ($nums[$mid] &lt; $target &amp;&amp; $target &lt;= $nums[$right]) {
+                    $left = $mid + 1;
+                } else {
+                    $right = $mid - 1;
+                }
+            }
+        }
+        return -1;
+    }
+}
+</code></pre><h4 id=74-搜索二维矩阵httpsleetcode-cncomproblemssearch-a-2d-matrix><a href=https://leetcode-cn.com/problems/search-a-2d-matrix/ target=_blank rel=noopener>74. 搜索二维矩阵</a></h4><pre><code class=language-php>class Solution {
+
+    /**
+     * 方法一：二分法
+     * @param Integer[][] $matrix
+     * @param Integer $target
+     * @return Boolean
+     */
+    function searchMatrix($matrix, $target) {
+        $n = count($matrix);
+        $m = count($matrix[0]);
+        $left = 0;
+        $right = $n * $m - 1;
+        while ($left &lt;= $right) {
+            //$mid = $left + floor(($right - $left) &gt;&gt; 2);
+            $mid = ($left + $right) &gt;&gt; 1;
+            $num = $matrix[intval($mid / $m)][$mid % $m];
+            if ($num &lt; $target) {
+                $left = $mid + 1;
+            } else if ($num &gt; $target){
+                $right = $mid - 1;
+            } else return true;
+        }
+        return false;
+    }
+}
+</code></pre><h4 id=153-寻找旋转排序数组中的最小值httpsleetcode-cncomproblemsfind-minimum-in-rotated-sorted-array><a href=https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/ target=_blank rel=noopener>153. 寻找旋转排序数组中的最小值</a></h4><p><a href=https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/solution/yi-wen-jie-jue-4-dao-sou-suo-xuan-zhuan-pai-xu-s-3/ target=_blank rel=noopener>参考题解</a></p><pre><code class=language-php>class Solution {
+
+    /**
+     * @param Integer[] $nums
+     * @return Integer
+     */
+    function findMin($nums) {
+        $left = 0;
+        $right = count($nums) - 1;
+        if ($nums[0] &lt; $nums[$right] || $left == $right) return $nums[0];
+        while ($left &lt; $right) {
+            $mid = $left + intdiv($right - $left, 2);
+            if ($nums[$mid] &gt; $nums[$mid + 1]) return $nums[$mid + 1];
+            if ($nums[$mid - 1] &gt; $nums[$mid]) return $nums[$mid];
+            if ($nums[0] &lt; $nums[$mid]) {
+                $left = $mid + 1;
+            } else {
+                $right = $mid - 1;
+            }
+        }
+    }
+}
+</code></pre><pre><code class=language-cpp>class Solution {
+public:
+    int findMin(vector&lt;int&gt;&amp; nums) {
+        int left = 0;
+         /* 左闭右闭区间，如果用右开区间则不方便判断右值 */ 
+        int right = nums.size() - 1;
+        /* 循环不变式，如果left == right，则循环结束 */
+        while (left &lt; right) {                      
+            /* 地板除，mid更靠近left */
+            int mid = left + (right - left) / 2;
+            /* 中值 &gt; 右值，最小值在右半边，收缩左边界 */ 
+            if (nums[mid] &gt; nums[right]) {
+                 /* 因为中值 &gt; 右值，中值肯定不是最小值，左边界可以跨过mid */ 
+                left = mid + 1;         
+                /* 明确中值 &lt; 右值，最小值在左半边，收缩右边界 */ 
+            } else if (nums[mid] &lt; nums[right]) {
+                 /* 因为中值 &lt; 右值，中值也可能是最小值，右边界只能取到mid处 */ 
+                right = mid;                       
+            }
+        }
+        /* 循环结束，left == right，最小值输出nums[left]或nums[right]均可 */
+        return nums[left];    
+    }
+};
+</code></pre><ul><li>使用二分查找，寻找一个半有序数组 [4, 5, 6, 7, 0, 1, 2] 中间无序的地方
+说明：同学们可以将自己的思路、代码写在第 4 周的学习总结中</li></ul><h2 id=本周作业及第6周预习>本周作业及第6周预习</h2><h3 id=简单>简单：</h3><h4 id=860-柠檬水找零httpsleetcode-cncomproblemslemonade-change-1><a href=https://leetcode-cn.com/problems/lemonade-change/ target=_blank rel=noopener>860. 柠檬水找零</a></h4><h4 id=122-买卖股票的最佳时机-iihttpsleetcode-cncomproblemsbest-time-to-buy-and-sell-stock-ii-1><a href=https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/ target=_blank rel=noopener>122. 买卖股票的最佳时机 II</a></h4><h4 id=455-分发饼干httpsleetcode-cncomproblemsassign-cookies-1><a href=https://leetcode-cn.com/problems/assign-cookies/ target=_blank rel=noopener>455. 分发饼干</a></h4><h4 id=874-模拟行走机器人httpsleetcode-cncomproblemswalking-robot-simulation-1><a href=https://leetcode-cn.com/problems/walking-robot-simulation/ target=_blank rel=noopener>874. 模拟行走机器人</a></h4><ul><li>使用二分查找，寻找一个半有序数组 [4, 5, 6, 7, 0, 1, 2] 中间无序的地方
+说明：同学们可以将自己的思路、代码写在第 3 周的学习总结中</li></ul><h3 id=中等>中等：</h3><h4 id=127-单词接龙httpsleetcode-cncomproblemsword-ladder-1><a href=https://leetcode-cn.com/problems/word-ladder/ target=_blank rel=noopener>127. 单词接龙</a></h4><h4 id=200-岛屿数量httpsleetcode-cncomproblemsnumber-of-islands-1><a href=https://leetcode-cn.com/problems/number-of-islands/ target=_blank rel=noopener>200. 岛屿数量</a></h4><h4 id=529-扫雷游戏httpsleetcode-cncomproblemsminesweeper-1><a href=https://leetcode-cn.com/problems/minesweeper/ target=_blank rel=noopener>529. 扫雷游戏</a></h4><h4 id=55-跳跃游戏httpsleetcode-cncomproblemsjump-game-1><a href=https://leetcode-cn.com/problems/jump-game/ target=_blank rel=noopener>55. 跳跃游戏</a></h4><h4 id=33-搜索旋转排序数组httpsleetcode-cncomproblemssearch-in-rotated-sorted-array-1><a href=https://leetcode-cn.com/problems/search-in-rotated-sorted-array/ target=_blank rel=noopener>33. 搜索旋转排序数组</a></h4><h4 id=74-搜索二维矩阵httpsleetcode-cncomproblemssearch-a-2d-matrix-1><a href=https://leetcode-cn.com/problems/search-a-2d-matrix/ target=_blank rel=noopener>74. 搜索二维矩阵</a></h4><h4 id=153-寻找旋转排序数组中的最小值httpsleetcode-cncomproblemsfind-minimum-in-rotated-sorted-array-1><a href=https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/ target=_blank rel=noopener>153. 寻找旋转排序数组中的最小值</a></h4><h3 id=困难>困难</h3><h4 id=126-单词接龙-iihttpsleetcode-cncomproblemsword-ladder-ii-1><a href=https://leetcode-cn.com/problems/word-ladder-ii/ target=_blank rel=noopener>126. 单词接龙 II</a></h4><h4 id=45-跳跃游戏-iihttpsleetcode-cncomproblemsjump-game-ii-1><a href=https://leetcode-cn.com/problems/jump-game-ii/ target=_blank rel=noopener>45. 跳跃游戏 II</a></h4><h3 id=第-6-周预习>第 6 周预习</h3><h4 id=预习知识点>预习知识点：</h4><ul><li><a href=https://en.wikipedia.org/wiki/Dynamic_programming target=_blank rel=noopener>动态规划定义</a></li><li><a href=https://time.geekbang.org/column/article/74788 target=_blank rel=noopener>初识动态规划：如何巧妙解决“双十一”购物时的凑单问题？</a></li><li><a href=https://time.geekbang.org/column/article/75702 target=_blank rel=noopener>动态规划理论：一篇文章带你彻底搞懂最优子结构、无后效性和重复子问题</a></li><li><a href=https://time.geekbang.org/column/article/75794 target=_blank rel=noopener>动态规划实战：如何实现搜索引擎中的拼写纠错功能？</a></li></ul><h4 id=预习题目>预习题目：</h4><ul><li><a href=https://leetcode-cn.com/problems/longest-common-subsequence/ target=_blank rel=noopener>最长公共子序列题目</a></li><li><a href=https://leetcode-cn.com/problems/triangle/description/ target=_blank rel=noopener>三角形最小路径和</a></li><li><a href=https://leetcode-cn.com/problems/maximum-subarray/ target=_blank rel=noopener>最大子序和</a></li><li><a href=https://leetcode-cn.com/problems/house-robber/ target=_blank rel=noopener>打家劫舍</a></li></ul></article><div class=my-4><a href=/tags/%E7%AE%97%E6%B3%95/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#算法</a>
+<a href=/tags/leetcode/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#leetcode</a></div><div class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"><div><span class="text-primary-text block font-bold">上一页</span>
+<a href=/study/algorithm/php/03%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E4%B8%89%E5%91%A8/ class=block>第3周</a></div><div class="mt-4 md:mt-0 md:text-right"><span class="text-primary-text block font-bold">下一页</span>
+<a href=/study/algorithm/php/04%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5-%E7%AC%AC%E5%9B%9B%E5%91%A8%E6%80%BB%E7%BB%93/ class=block>第4周总结</a></div></div></div></div></div></div></div><script>document.addEventListener("DOMContentLoaded",()=>{hljs.highlightAll(),changeSidebarHeight(),switchDocToc()})</script></div></div></main><footer class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b"><p class="text-sm text-tertiary-text">&copy; 2021 <a href=https://blog.lbbniu.com/>lbbniu</a>
+&#183; Powered by the <a href=https://github.com/wangchucheng/hugo-eureka class=hover:text-eureka>Eureka</a> theme for <a href=https://gohugo.io class=hover:text-eureka>Hugo</a></p></div></div></footer></body></html>

@@ -1,0 +1,1274 @@
+<!doctype html><html lang=zh dir=ltr><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>第3周 树、递归、分治、回溯 | Go 算法练习 | lbbniu</title>
+<meta name=generator content="Hugo Eureka 0.9.3"><link rel=stylesheet href=/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css><script defer src=/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js></script><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" as=style onload='this.onload=null,this.rel="stylesheet"'><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/github.min.css media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/php.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/java.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/go.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/python.min.js crossorigin></script><link rel=stylesheet href=/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css media=print onload='this.media="all",this.onload=null'><script defer type=text/javascript src=/js/fontawesome.min.35973bea57658ef0dd22ad59ea4642b6c8c67af62bed8659ac326d284ef285a6657cdbcf57d3b2910e7e992f2b20426e.js></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css integrity=sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js integrity=sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY crossorigin></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script><script defer src=https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js integrity=sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0 crossorigin></script><link rel=icon type=image/png sizes=32x32 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_32x32_fill_box_center_3.png><link rel=apple-touch-icon sizes=180x180 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_180x180_fill_box_center_3.png><meta name=description content="第6课 | 树、二叉树、二叉搜索树、堆和二叉堆、图，第7课 | 泛型递归、树的递归，第8课 | 分治、回溯"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"算法学习","item":"/study/"},{"@type":"ListItem","position":2,"name":"极客时间算法训练营2020版","item":"/study/algorithm/"},{"@type":"ListItem","position":3,"name":"Go 算法练习","item":"/study/algorithm/go/"},{"@type":"ListItem","position":4,"name":"第3周 树、递归、分治、回溯","item":"/study/algorithm/go/week03/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/study/algorithm/go/week03/"},"headline":"第3周 树、递归、分治、回溯 | Go 算法练习 | lbbniu","datePublished":"2021-12-02T09:39:29+08:00","dateModified":"2023-11-23T18:27:23+08:00","wordCount":4323,"publisher":{"@type":"Person","name":"lbbniu","logo":{"@type":"ImageObject","url":"/images/icon.gif"}},"description":"第6课 | 树、二叉树、二叉搜索树、堆和二叉堆、图，第7课 | 泛型递归、树的递归，第8课 | 分治、回溯"}</script><meta property="og:title" content="第3周 树、递归、分治、回溯 | Go 算法练习 | lbbniu"><meta property="og:type" content="article"><meta property="og:image" content="/images/icon.png"><meta property="og:url" content="/study/algorithm/go/week03/"><meta property="og:description" content="第6课 | 树、二叉树、二叉搜索树、堆和二叉堆、图，第7课 | 泛型递归、树的递归，第8课 | 分治、回溯"><meta property="og:locale" content="zh"><meta property="og:site_name" content="lbbniu"><meta property="article:published_time" content="2021-12-02T09:39:29+08:00"><meta property="article:modified_time" content="2023-11-23T18:27:23+08:00"><meta property="article:section" content="study"><body class="flex min-h-screen flex-col"><header class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"><div class="mx-auto w-full max-w-screen-xl"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=="Auto"||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName("html")[0].classList.add("dark")</script><nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0"><a href=/ class="me-6 text-primary-text text-xl font-bold">lbbniu</a>
+<button id=navbar-btn class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+<i class="fas fa-bars"></i></button><div id=target class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20"><div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0"><a href=/post/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">文章</a>
+<a href=/cloud-native/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">云原生</a>
+<a href=/study/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 selected-menu-item me-4">算法学习</a>
+<a href=/docs/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">Go学习训练营</a>
+<a href=/tags/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">标签</a></div><div class=flex><div class="relative pt-4 md:pt-0"><div class="cursor-pointer hover:text-eureka" id=lightDarkMode><i class="fas fa-adjust"></i></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id=is-open></div><div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40" id=lightDarkOptions><span class="px-4 py-1 hover:text-eureka" name=Light>浅色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Dark>深色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Auto>自动</span></div></div></div></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id=is-open-mobile></div></nav><script>let element=document.getElementById("lightDarkMode");storageColorScheme==null||storageColorScheme=="Auto"?document.addEventListener("DOMContentLoaded",()=>{window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",switchDarkMode)}):storageColorScheme=="Light"?(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","sun"),element.firstElementChild.classList.add("fa-sun")):storageColorScheme=="Dark"&&(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","moon"),element.firstElementChild.classList.add("fa-moon")),document.addEventListener("DOMContentLoaded",()=>{getcolorscheme(),switchBurger()})</script></div></header><main class="grow pt-16"><div class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8"><div class=lg:pt-12><div class="flex flex-col md:flex-row bg-secondary-bg rounded"><div class="md:w-1/4 lg:w-1/5 border-e"><div class="sticky top-16 pt-6"><div id=sidebar-title class="md:hidden mx-4 px-2 pt-4 pb-2 md:border-b text-tertiary-text md:text-primary-text"><span class=font-semibold>目录</span>
+<i class='fas fa-caret-right ms-1'></i></div><div id=sidebar-toc class="hidden md:block overflow-y-auto mx-6 md:mx-0 pe-6 pt-2 md:max-h-doc-sidebar bg-primary-bg md:bg-transparent"><div class="flex flex-wrap ms-4 -me-2 p-2 bg-secondary-bg md:bg-primary-bg rounded"><a class=hover:text-eureka href=/study/algorithm/go/>Go 算法练习</a></div><ul class=ps-6><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week00/>预习</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week01/>第1周 数组、链表、跳表</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week02/>第2周 栈、队列、哈希表</a></div></li><li class=py-2><div><a class="text-eureka hover:text-eureka" href=/study/algorithm/go/week03/>第3周 树、递归、分治、回溯</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week04/>第4周 DFS、BFS、贪心、二分查找</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week05/>第5周 期中考试</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week06/>第6周 动态规划</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week07/>第7周 字典树和并查集、高级搜索、红黑树和AVL树</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week08/>第8周 位运算、布隆过滤器和LRU缓存、排序算法</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week09/>第9周 高级动态规划、字符串算法</a></div></li><li class=py-2><div><a class=hover:text-eureka href=/study/algorithm/go/week10/>第10周 期末串讲、期末考试、毕业刷题路线</a></div></li></ul></div></div></div><div class="w-full md:w-3/4 lg:w-4/5 pb-8 pt-2 md:pt-8"><div class=flex><div class="w-full lg:w-3/4 px-6"><article class=prose><h1 class=mb-4>第3周 树、递归、分治、回溯</h1><div class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"><div class="me-6 my-2"><i class="fas fa-calendar me-1"></i>
+<span>2021-12-02</span></div><div class="me-6 my-2"><i class="fas fa-clock me-1"></i>
+<span>21分钟阅读时长</span></div></div><p>题目数量：29+</p><h2 id=第6课--树二叉树二叉搜索树>第6课 | 树、二叉树、二叉搜索树</h2><h3 id=1-树二叉树二叉搜索树的实现和特性>1. 树、二叉树、二叉搜索树的实现和特性</h3><h4 id=参考链接>参考链接</h4><ul><li><a href=https://visualgo.net/zh/bst target=_blank rel=noopener>二叉搜索树 Demo</a></li></ul><h4 id=思考题>思考题</h4><p>树的面试题解法一般都是递归，为什么？
+说明：同学们可以将自己的思考写在课程下方的留言区一起讨论，也可以写在第 2 周的学习总结中。</p><h3 id=2-实战题目解析二叉树的中序遍历>2. 实战题目解析：二叉树的中序遍历</h3><h4 id=参考链接-1>参考链接</h4><ul><li><a href=https://visualgo.net/zh/bst target=_blank rel=noopener>树的遍历 Demo</a></li></ul><h4 id=实战题目--课后作业>实战题目 / 课后作业</h4><ul><li><a href=https://leetcode-cn.com/problems/binary-tree-inorder-traversal/ target=_blank rel=noopener>94. 二叉树的中序遍历</a></li></ul><pre><code class=language-go>/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+// 递归
+func inorderTraversal1(root *TreeNode) []int {
+    var inorder func (root *TreeNode)
+    var res []int
+    inorder = func (root *TreeNode) {
+        if root == nil {
+            return
+        }
+        inorder(root.Left)
+        res = append(res, root.Val)
+        inorder(root.Right)
+    }
+    inorder(root)
+    return res
+}
+
+// 直接迭代
+func inorderTraversal2(root *TreeNode) (res []int) {
+    stack := []*TreeNode{}
+    for root != nil || len(stack) &gt; 0 {
+        for root != nil {
+            stack = append(stack, root)
+            root = root.Left
+        }
+        root = stack[len(stack)-1]
+        stack = stack[:len(stack) - 1]
+        res = append(res, root.Val)
+        root = root.Right
+    }
+    return res
+}
+
+type Node struct {
+    N *TreeNode
+    Color int
+}
+// 着色迭代遍历
+func inorderTraversal(root *TreeNode) (res []int) {
+    if root == nil {
+        return
+    }
+    stack := []*Node{&amp;Node{N:root, Color:0}}
+    for len(stack) &gt; 0 {
+        node := stack[len(stack) - 1]
+        stack = stack[:len(stack) - 1]
+        if node.Color == 1 {
+            res = append(res, node.N.Val)
+        } else {
+            if node.N.Right != nil {
+                stack = append(stack, &amp;Node{N:node.N.Right, Color: 0})
+            }
+            node.Color = 1
+            stack = append(stack, node)
+            if node.N.Left != nil {
+                stack = append(stack, &amp;Node{N:node.N.Left, Color: 0})
+            }
+        }
+    }
+    return res
+}
+
+// Morris 中序遍历
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/binary-tree-preorder-traversal/ target=_blank rel=noopener>144. 二叉树的前序遍历</a></li></ul><pre><code class=language-go>/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+// 递归
+func preorderTraversal1(root *TreeNode) (res []int) {
+    var preorder func (root *TreeNode)
+    preorder = func (root *TreeNode) {
+        if root == nil {
+            return
+        }
+        res = append(res, root.Val)
+        preorder(root.Left)
+        preorder(root.Right)
+    }
+    preorder(root)
+    return
+}
+
+// 迭代
+func preorderTraversal2(root *TreeNode) (res []int) {
+    if root == nil {
+        return
+    }
+    stack := []*TreeNode{root}
+    for len(stack) &gt; 0 {
+        root = stack[len(stack) - 1]
+        stack = stack[:len(stack) - 1]
+        res = append(res, root.Val)
+        if root.Right != nil {
+            stack = append(stack, root.Right)
+        }
+        if root.Left != nil {
+            stack = append(stack, root.Left)
+        }
+    }
+    return
+}
+
+type Node struct {
+    N *TreeNode
+    Color int
+}
+// 着色迭代遍历
+func preorderTraversal(root *TreeNode) (res []int) {
+    if root == nil {
+        return
+    }
+    stack := []*Node{&amp;Node{N:root, Color:0}}
+    for len(stack) &gt; 0 {
+        node := stack[len(stack) - 1]
+        stack = stack[:len(stack) - 1]
+        if node.Color == 1 {
+            res = append(res, node.N.Val)
+        } else {
+            if node.N.Right != nil {
+                stack = append(stack, &amp;Node{N:node.N.Right, Color: 0})
+            }
+            if node.N.Left != nil {
+                stack = append(stack, &amp;Node{N:node.N.Left, Color: 0})
+            }
+            node.Color = 1
+            stack = append(stack, node)
+        }
+    }
+    return res
+}
+
+// Morris 遍历
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/binary-tree-postorder-traversal/ target=_blank rel=noopener>145. 二叉树的后序遍历</a></li></ul><pre><code class=language-go>/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func postorderTraversal1(root *TreeNode) (res []int) {
+    var postorder func(root *TreeNode)
+    postorder = func(root *TreeNode) {
+        if root == nil {
+            return
+        }
+        postorder(root.Left)
+        postorder(root.Right)
+        res = append(res, root.Val)
+    }
+    postorder(root)
+    return
+}
+
+type Node struct {
+    N *TreeNode
+    Color int
+}
+// 着色迭代遍历
+func postorderTraversal2(root *TreeNode) (res []int) {
+    if root == nil {
+        return
+    }
+    stack := []*Node{&amp;Node{N:root, Color:0}}
+    for len(stack) &gt; 0 {
+        node := stack[len(stack) - 1]
+        stack = stack[:len(stack) - 1]
+        if node.Color == 1 {
+            res = append(res, node.N.Val)
+        } else {
+            node.Color = 1
+            stack = append(stack, node)
+            if node.N.Right != nil {
+                stack = append(stack, &amp;Node{N:node.N.Right, Color: 0})
+            }
+            if node.N.Left != nil {
+                stack = append(stack, &amp;Node{N:node.N.Left, Color: 0})
+            }
+        }
+    }
+    return res
+}
+
+// 迭代 需要仔细体会
+func postorderTraversal(root *TreeNode) (res []int) {
+    stack := []*TreeNode{}
+    var prev *TreeNode
+    for root != nil || len(stack) &gt; 0 {
+        for root != nil {
+            stack = append(stack, root)
+            root = root.Left
+        }
+        root = stack[len(stack)-1]
+        stack = stack[:len(stack)-1]
+        if root.Right == nil || root.Right == prev {
+            res = append(res, root.Val)
+            prev = root
+            root = nil
+        } else {
+            stack = append(stack, root)
+            root = root.Right
+        }
+    }
+    return res
+}
+
+// Morris 遍历
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/n-ary-tree-postorder-traversal/ target=_blank rel=noopener>590. N叉树的后序遍历</a></li></ul><pre><code class=language-go>/**
+ * Definition for a Node.
+ * type Node struct {
+ *     Val int
+ *     Children []*Node
+ * }
+ */
+
+func postorder1(root *Node) (res []int) {
+    var order func(root *Node)
+    order = func(root *Node) {
+        if root == nil {
+            return
+        }
+        for _, children := range root.Children {
+            order(children)
+        }
+        res = append(res, root.Val)
+    }
+    order(root)
+    return
+}
+
+// 性能更好
+func postorder2(root *Node) (res []int) {
+    var order func(root *Node)
+    order = func(root *Node) {
+        if root == nil {
+            return
+        }
+        n := len(root.Children)
+        for i := 0; i &lt; n; i++ {
+            order(root.Children[i])
+        }
+        res = append(res, root.Val)
+    }
+    order(root)
+    return
+}
+
+// 迭代
+func postorder(root *Node) (res []int) {
+    if root == nil {
+        return
+    }
+    stack := []*Node{root}
+    for len(stack) &gt; 0 {
+        root = stack[len(stack)-1]
+        stack = stack[:len(stack)-1]
+        res = append(res, root.Val)
+        for n, i := len(root.Children), 0; i &lt; n; i++ {
+            stack = append(stack, root.Children[i])
+        }
+    }
+    return reverse(res)
+}
+func reverse(s []int) []int {
+    for i, j := 0, len(s)-1; i &lt; j; i, j = i+1, j-1 {
+        s[i], s[j] = s[j], s[i]
+    }
+    return s
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/n-ary-tree-preorder-traversal/ target=_blank rel=noopener>589. N叉树的前序遍历</a></li></ul><pre><code class=language-go>/**
+ * Definition for a Node.
+ * type Node struct {
+ *     Val int
+ *     Children []*Node
+ * }
+ */
+
+func preorder1(root *Node) (res []int) {
+    var pre func(root *Node)
+    pre = func(root *Node) {
+        if root == nil {
+            return
+        }
+        res = append(res, root.Val)
+        for _, children := range root.Children {
+            pre(children)
+        }
+    }
+    pre(root)
+    return
+}
+
+// 性能更好
+func preorder2(root *Node) (res []int) {
+    var pre func(root *Node)
+    pre = func(root *Node) {
+        if root == nil {
+            return
+        }
+        res = append(res, root.Val)
+        n := len(root.Children)
+        for i := 0; i &lt; n; i++ {
+            pre(root.Children[i])
+        }
+    }
+    pre(root)
+    return
+}
+
+// 迭代
+func preorder(root *Node) (res []int) {
+    if root == nil {
+        return
+    }
+    stack := []*Node{root}
+    for len(stack) &gt; 0 {
+        root = stack[len(stack)-1]
+        stack = stack[:len(stack)-1]
+        res = append(res, root.Val)
+        for idx := len(root.Children) - 1; idx &gt;= 0; idx-- {
+            stack = append(stack, root.Children[idx])
+        }
+    }
+    return
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/n-ary-tree-level-order-traversal/ target=_blank rel=noopener>429. N叉树的层序遍历</a></li></ul><pre><code class=language-go>/**
+ * Definition for a Node.
+ * type Node struct {
+ *     Val int
+ *     Children []*Node
+ * }
+ */
+// bfs
+func levelOrder(root *Node) (res [][]int) {
+    if root == nil {
+        return
+    }
+    queue := []*Node{root}
+    for len(queue) &gt; 0 {
+        n := len(queue)
+        tmp := []*Node{}
+        level := []int{}
+        for i := 0; i &lt; n; i++ {
+            level = append(level, queue[i].Val)
+            for _, c := range queue[i].Children {
+                tmp = append(tmp, c)
+            }
+        }
+        res = append(res, level)
+        queue = tmp
+    }
+    return res
+}
+</code></pre><h2 id=第6课--堆和二叉堆图>第6课 | 堆和二叉堆、图</h2><h3 id=1-堆和二叉堆的实现和特性>1. 堆和二叉堆的实现和特性</h3><h4 id=参考链接-2>参考链接</h4><ul><li><a href=https://en.wikipedia.org/wiki/Heap_%28data_structure%29 target=_blank rel=noopener>维基百科：堆（Heap）</a></li><li>堆的实现代码：<a href=https://shimo.im/docs/GpwwDq66kC9RC3PX/ target=_blank rel=noopener> https://shimo.im/docs/GpwwDq66kC9RC3PX/</a></li></ul><h3 id=2-实战题目解析最小的k个数滑动窗口最大值等问题>2. 实战题目解析：最小的k个数、滑动窗口最大值等问题</h3><h4 id=实战例题>实战例题</h4><ul><li><a href=https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof/ target=_blank rel=noopener>面试题40. 最小的k个数</a></li></ul><pre><code class=language-go>// 快排思想
+// 参考：https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof/solution/3chong-jie-fa-miao-sha-topkkuai-pai-dui-er-cha-sou/
+func getLeastNumbers(arr []int, k int) []int {
+    if k == 0 || len(arr) == 0 {
+        return nil
+    }
+    return quickSort(arr, 0, len(arr) - 1, k - 1)
+    //return arr[:k]
+}
+
+func quickSort(arr []int, l, r, k int) []int {
+    idx := partition(arr, l, r)
+    if idx == k {
+        return arr[:k+1]
+    }
+    if idx &lt; k {
+        return quickSort(arr, idx + 1, r, k)
+    } else { // idx &gt; k
+        return quickSort(arr, l, idx - 1, k)
+    }
+}
+
+func partition(arr []int, l, r int) int {
+    mid := arr[l]
+    i, j := l + 1, r
+    for {
+        for i &lt;= j &amp;&amp; arr[i] &lt;= mid {
+            i++
+        }
+        for i &lt;= j &amp;&amp; arr[j] &gt;= mid {
+            j--
+        }
+        if i &gt;= j {
+            break
+        }
+        arr[i], arr[j] = arr[j], arr[i]
+    }
+    arr[l], arr[j] = arr[j], mid
+    return j
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/sliding-window-maximum/ target=_blank rel=noopener>239. 滑动窗口最大值</a></li></ul><pre><code class=language-go>// 双端队列
+func maxSlidingWindow(nums []int, k int) (res []int) {
+    dq := []int{}
+    for i := 0; i &lt; len(nums); i++ {
+        // 移除越界
+        if len(dq) &gt; 0 &amp;&amp; dq[0] &lt;= i - k {
+            dq = dq[1:]
+        }
+        // 移除比当前数小的
+        for len(dq) &gt; 0 &amp;&amp; nums[dq[len(dq)-1]] &lt; nums[i] {
+            dq = dq[:len(dq)-1]
+        }
+        dq = append(dq, i)
+        if i &gt;= k - 1 {
+            res = append(res, nums[dq[0]])
+        }
+    }
+    return res
+}
+// 大顶堆
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/top-k-frequent-elements/ target=_blank rel=noopener>347. 前 K 个高频元素</a></li></ul><pre><code class=language-go>type IHeap [][2]int
+
+func (h IHeap) Len() int           { return len(h) }
+func (h IHeap) Less(i, j int) bool { return h[i][1] &lt; h[j][1] }
+func (h IHeap) Swap(i, j int)      { h[i], h[j] = h[j], h[i] }
+
+func (h *IHeap) Push(x interface{}) {
+    *h = append(*h, x.([2]int))
+}
+
+func (h *IHeap) Pop() interface{} {
+    old := *h
+    n := len(old)
+    x := old[n-1]
+    *h = old[0 : n-1]
+    return x
+}
+
+func topKFrequent(nums []int, k int) []int {
+    
+}
+</code></pre><h4 id=课后作业>课后作业</h4><ul><li>HeapSort ：自学 <a href=https://www.geeksforgeeks.org/heap-sort/ target=_blank rel=noopener>https://www.geeksforgeeks.org/heap-sort/</a></li><li><a href=https://leetcode-cn.com/problems/chou-shu-lcof/ target=_blank rel=noopener>面试题49. 丑数</a>
+和 <a href=https://leetcode-cn.com/problems/ugly-number-ii/ target=_blank rel=noopener>264. 丑数 II</a></li></ul><pre><code class=language-go>// 方法一：动态规划 最优
+func nthUglyNumber(n int) int {
+    dp := make([]int, n + 1)
+    dp[1] = 1
+    p2, p3, p5 := 1, 1, 1
+    for i := 2; i &lt;= n; i++ {
+        x2, x3, x5 := dp[p2]*2, dp[p3]*3, dp[p5]*5
+        dp[i] = min(min(x2, x3), x5)
+        if dp[i] == x2 {
+            p2++
+        }
+        if dp[i] == x3 {
+            p3++
+        }
+        if dp[i] == x5 {
+            p5++
+        }
+    }
+    return dp[n]
+}
+func min(a, b int) int {
+    if a &lt; b {
+        return a
+    }
+    return b
+}
+// 方法二：小顶堆
+var factors = []int{2, 3, 5}
+func nthUglyNumber(n int) int {
+    h := &amp;hp{sort.IntSlice{1}}
+    seem := map[int]struct{}{1:{}}
+    for i := 2; i &lt;= n; i++ {
+        v := heap.Pop(h).(int)
+        if i == n {
+            return v
+        }
+        for _, p := range factors {
+            pv := p * v
+            if _, ok := seem[pv]; !ok {
+                heap.Push(h, pv)
+                seem[pv] = struct{}{}
+            }
+        }
+    }
+}
+
+type hp struct{sort.IntSlice }
+
+func (h *hp) Push(v interface{}) {
+    h.IntSlice = append(h.IntSlice, v.(int))
+}
+
+func (h *hp) Pop() interface{} {
+    a := h.IntSlice
+    v := a[len(a) - 1]
+    h.IntSlice = a[:len(a) - 1]
+    return v
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/top-k-frequent-elements/ target=_blank rel=noopener>347. 前 K 个高频元素</a></li></ul><pre><code class=language-go>type IHeap [][2]int
+func (h IHeap) Len() int { return len(h) }
+func (h IHeap) Less(i, j int) bool { return h[i][1] &lt; h[j][1] }
+func (h IHeap) Swap(i, j int) { h[i], h[j] = h[j], h[i] }
+
+func (h *IHeap) Push(v interface{}) {
+    *h = append(*h, v.([2]int))
+}
+
+func (h *IHeap) Pop() interface{} {
+    old := *h
+    v := old[len(old) - 1]
+    *h = old[:len(old) - 1]
+    return v
+}
+
+func topKFrequent(nums []int, k int) []int {
+    mp := map[int]int{}
+    for _, num := range nums {
+        mp[num]++
+    }
+    h := &amp;IHeap{}
+    heap.Init(h)
+    for key, value := range mp {
+        heap.Push(h, [2]int{key, value})
+        if h.Len() &gt; k {
+            heap.Pop(h)
+        }
+    }
+    res := make([]int, k)
+    for i := 0; i &lt; k; i++ {
+        res[k - i - 1] = heap.Pop(h).([2]int)[0]
+    }
+    return res
+}
+</code></pre><h3 id=3-图的实现和特性>3. 图的实现和特性</h3><h4 id=思考题-1>思考题</h4><ul><li>自己画一下有向有权图</li></ul><h4 id=参考链接-3>参考链接</h4><ul><li>连通图个数：<a href=https://leetcode-cn.com/problems/number-of-islands/ target=_blank rel=noopener>200. 岛屿数量</a>
+重点</li></ul><pre><code class=language-go>var fx = [][2]int{{0, 1}, {1, 0}, {-1, 0}, {0, -1}}
+// dfs
+func numIslands(grid [][]byte) (res int) {
+    n, m := len(grid), len(grid[0])
+    var dfs func (x, y int)
+    dfs = func (x, y int) {
+        grid[x][y] = 'x'
+        for _, d := range fx {
+            nx, ny := x + d[0], y + d[1]
+            if 0 &lt;= nx &amp;&amp; nx &lt; n &amp;&amp; 0 &lt;= ny &amp;&amp; ny &lt; m &amp;&amp; grid[nx][ny] ==  '1' {
+                dfs(nx, ny)
+            }
+        }
+    }
+    for i := 0; i &lt; n; i++ {
+        for j := 0; j &lt; m; j++ {
+            if grid[i][j] == '1' {
+                res++
+                dfs(i, j)
+            }
+        }
+    }
+    return res
+}
+// bfs
+// 并查集 待练习
+</code></pre><ul><li>拓扑排序（Topological Sorting）：<a href=https://zhuanlan.zhihu.com/p/34871092 target=_blank rel=noopener> https://zhuanlan.zhihu.com/p/34871092</a></li><li>最短路径（Shortest Path）：Dijkstra <a href="https://www.bilibili.com/video/av25829980?from=search&amp;seid=13391343514095937158" target=_blank rel=noopener>https://www.bilibili.com/video/av25829980?from=search&amp;seid=13391343514095937158</a></li><li>最小生成树（Minimum Spanning Tree）：<a href="https://www.bilibili.com/video/av84820276?from=search&amp;seid=17476598104352152051" target=_blank rel=noopener> https://www.bilibili.com/video/av84820276?from=search&amp;seid=17476598104352152051</a></li></ul><h2 id=第7课--泛型递归树的递归>第7课 | 泛型递归、树的递归</h2><h3 id=1-递归的实现特性以及思维要点>1. 递归的实现、特性以及思维要点</h3><h4 id=参考链接-4>参考链接</h4><ul><li><a href=http://shimo.im/docs/DjqqGCT3xqDYwPyY target=_blank rel=noopener>递归代码模板</a></li></ul><h3 id=2-实战题目解析爬楼梯括号生成等问题>2. 实战题目解析：爬楼梯、括号生成等问题</h3><h4 id=实战题目>实战题目</h4><ul><li><a href=https://leetcode-cn.com/problems/climbing-stairs/ target=_blank rel=noopener>70. 爬楼梯</a></li></ul><pre><code class=language-go>// 递归
+var mp = map[int]int{}
+func climbStairs(n int) int {
+    if n &lt;= 2 {
+        return n
+    }
+    if _, ok := mp[n]; !ok {
+        mp[n] = climbStairs(n - 1) + climbStairs(n - 2)
+    }
+    return mp[n]
+}
+// 动态规划
+func climbStairs(n int) int {
+    i, j, k := 0, 1, 0
+    for m := 1; m &lt;= n; m++ {
+        k = i + j
+        i, j = j, k
+    }
+    return k
+}
+func climbStairs(n int) int {
+    if n &lt;= 2 {
+        return n
+    }
+    dp := make([]int, n + 1)
+    dp[1], dp[2] = 1, 2
+    for i := 3; i &lt;= n; i++ {
+        dp[i] = dp[i - 1] + dp[i - 2]
+    }
+    return dp[n]
+}
+// 矩阵
+// 通项公式
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/generate-parentheses/ target=_blank rel=noopener>22. 括号生成</a></li></ul><pre><code class=language-go>// 递归
+func generateParenthesis(n int) (res []string) {
+    var helper func(l, r int, p string)
+    helper = func(l, r int, p string) {
+        if l == n &amp;&amp; r == n {
+            res = append(res, p)
+            return
+        }
+        if l &lt; n {
+            helper(l + 1, r, p + &quot;(&quot;)
+        }
+        if r &lt; l {
+            helper(l, r + 1, p + &quot;)&quot;)
+        }
+    }
+    helper(0, 0, &quot;&quot;)
+    return res
+}
+// 非递归：
+type node struct {
+    res string
+    left int
+    right int
+}
+func generateParenthesis(n int) []string {
+    ans := []string{}
+    queue := []node{}
+    queue = append(queue, newNode(&quot;&quot;, n, n))
+    for len(queue) &gt; 0 {
+        n :=  queue[0]
+        queue = queue[1:]
+        if n.left == 0 &amp;&amp; n.right == 0 {
+            ans = append(ans, n.res)
+        }
+        if n.left &gt; 0 {
+            queue = append(queue, newNode(n.res + &quot;(&quot;, n.left - 1, n.right))
+        }
+        if n.left &lt; n.right &amp;&amp; n.right &gt; 0 {
+            queue = append(queue, newNode(n.res + &quot;)&quot;, n.left, n.right - 1))
+        }
+    }
+
+    return ans
+}
+
+func newNode(res string, left, right int) node {
+    return node{
+        res: res,
+        left: left,
+        right: right,
+    }
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/invert-binary-tree/ target=_blank rel=noopener>226. 翻转二叉树</a></li></ul><pre><code class=language-go>/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+// 递归
+func invertTree(root *TreeNode) *TreeNode {
+    if root == nil {
+        return root
+    }
+    root.Left, root.Right = invertTree(root.Right), invertTree(root.Left)
+    return root
+}
+// 非递归：使用队列，迭代
+func invertTree(root *TreeNode) *TreeNode {
+    
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/validate-binary-search-tree/ target=_blank rel=noopener>98. 验证二叉搜索树</a></li></ul><pre><code class=language-go>// 递归
+func isValidBST(root *TreeNode) bool {
+    var isValid func(root *TreeNode, min, max int) bool
+    isValid = func(root *TreeNode, min, max int) bool {
+        if root == nil {
+            return true
+        }
+        if root.Val &lt;= min || root.Val &gt;= max {
+            return false
+        }
+        return isValid(root.Left, min, root.Val) &amp;&amp; isValid(root.Right, root.Val, max)
+    }
+    return isValid(root, math.MinInt64, math.MaxInt64)
+}
+// 递归中序遍历
+
+// 迭代中序遍历
+
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/ target=_blank rel=noopener>104. 二叉树的最大深度</a></li></ul><pre><code class=language-go>/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+// 递归， dfs
+func maxDepth(root *TreeNode) int {
+    if root == nil {
+        return 0
+    }
+    return max(maxDepth(root.Left), maxDepth(root.Right)) + 1
+}
+
+func max(a, b int) int {
+    if a &gt; b {
+        return a
+    }
+    return b
+}
+// bfs
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/ target=_blank rel=noopener>111. 二叉树的最小深度</a></li></ul><pre><code class=language-go>/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+// 递归（深度优先遍历）
+func minDepth(root *TreeNode) int {
+    if root == nil {
+        return 0
+    }
+    if root.Left == nil &amp;&amp; root.Right == nil {
+        return 1
+    }
+    ld, rd := minDepth(root.Left), minDepth(root.Right)
+    if ld == 0 || rd == 0 {
+        return ld + rd + 1
+    }
+    return min(ld, rd) + 1
+}
+func min(a, b int) int {
+    if a &lt; b {
+        return a
+    }
+    return b
+}
+// bfs, 广度优先遍历
+func minDepth(root *TreeNode) (res int) {
+    if root == nil {
+        return 0
+    }
+    queue := []*TreeNode{}
+    depth := []int{}
+    queue = append(queue, root)
+    depth = append(depth, 1)
+    for len(queue) &gt; 0 {
+        n := len(queue)
+        for i := 0; i &lt; n; i++ {
+         	root := queue[0]
+            level := depth[0]
+            queue = queue[1:]
+            depth = depth[1:]
+            if root.Left == nil &amp;&amp; root.Right == nil {
+                return level
+            }
+            if root.Left != nil {
+                queue = append(queue, root.Left)
+                depth = append(depth, level + 1)
+            }
+            if root.Right != nil {
+                queue = append(queue, root.Right)
+                depth = append(depth, level + 1)
+            }
+        } 
+    }
+    return res
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/ target=_blank rel=noopener>297. 二叉树的序列化与反序列化</a>
+重点</li></ul><pre><code class=language-go>/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+// 前序遍历
+type Codec struct {
+    
+}
+
+func Constructor() *Codec {
+    return &amp;Codec{}
+}
+
+// Serializes a tree to a single string.
+func (this *Codec) serialize(root *TreeNode) string {
+    sb := &amp;strings.Builder{}
+    var preorder func(root *TreeNode)
+    preorder = func (root *TreeNode) {
+        if root == nil {
+            sb.WriteString(&quot;null,&quot;)
+            return
+        }
+        sb.WriteString(strconv.Itoa(root.Val))
+        sb.WriteByte(',')
+        preorder(root.Left)
+        preorder(root.Right)
+    }
+    preorder(root)
+    return sb.String()
+}
+
+// Deserializes your encoded data to tree.
+func (this *Codec) deserialize(data string) *TreeNode {    
+    sp := strings.Split(data, &quot;,&quot;)
+    var decode func() *TreeNode
+    decode = func() *TreeNode {
+        val := sp[0]
+        sp = sp[1:]
+        if val == &quot;null&quot; {
+            return nil
+        }
+        v, _ := strconv.Atoi(val)
+        return &amp;TreeNode{v, decode(), decode()}
+    }
+    return decode()
+}
+
+
+/**
+ * Your Codec object will be instantiated and called as such:
+ * ser := Constructor();
+ * deser := Constructor();
+ * data := ser.serialize(root);
+ * ans := deser.deserialize(data);
+ */
+</code></pre><h4 id=每日一课>每日一课</h4><ul><li><a href=https://time.geekbang.org/dailylesson/detail/100028406 target=_blank rel=noopener>如何优雅地计算斐波那契数列</a></li></ul><h4 id=课后作业-1>课后作业</h4><ul><li><a href=https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/ target=_blank rel=noopener>236. 二叉树的最近公共祖先</a></li></ul><pre><code class=language-go>/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
+    if root == nil || p == root || q == root {
+        return root
+    }
+    left := lowestCommonAncestor(root.Left, p, q)
+    right := lowestCommonAncestor(root.Right, p, q)
+    if left == nil {
+        return right
+    } else if right == nil {
+        return left
+    }
+  	return root
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/ target=_blank rel=noopener>105. 从前序与中序遍历序列构造二叉树</a></li></ul><pre><code class=language-go>/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+// 递归
+func buildTree(preorder []int, inorder []int) *TreeNode {
+    if len(preorder) == 0 {
+        return nil
+    }
+    root := &amp;TreeNode{Val: preorder[0]}
+    i := 0
+    for ; i &lt; len(inorder); i++ {
+        if preorder[0] == inorder[i] {
+            break
+        }
+    }
+    root.Left = buildTree(preorder[1:len(inorder[:i])+1], inorder[0:i])
+    root.Right = buildTree(preorder[len(inorder[:i])+1:], inorder[i+1:])
+    return root
+}
+// 迭代
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/combinations/ target=_blank rel=noopener>77. 组合</a></li></ul><pre><code class=language-go>// 参考php中的写法
+func combine(n int, k int) (res [][]int) {
+    path := []int{}
+    var bracktrack func (int)
+    bracktrack = func(first int) {
+        if len(path) == k {
+            res = append(res, append([]int(nil), path...))
+            return
+        }
+        for i := first; n - i + 1 &gt;= k - len(path); i++ {
+            path = append(path, i)
+            bracktrack(i + 1)
+            path = path[:len(path) - 1]
+        }
+    }
+    bracktrack(1)
+    return res
+}
+// 官方： 递归实现组合型枚举
+
+// 官方：非递归（字典序法）实现组合型枚举
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/permutations/ target=_blank rel=noopener>46. 全排列</a></li></ul><pre><code class=language-go>
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/permutations-ii/ target=_blank rel=noopener>47. 全排列 II</a></li></ul><pre><code class=language-go>
+</code></pre><h2 id=第8课--分治回溯>第8课 | 分治、回溯</h2><h3 id=1-分治回溯的实现和特性>1. 分治、回溯的实现和特性</h3><h4 id=参考链接-5>参考链接</h4><ul><li><a href=https://shimo.im/docs/3xvghYh3JJPKwdvt target=_blank rel=noopener>分治代码模板</a></li><li><a href=https://leetcode-cn.com/problems/generate-parentheses/ target=_blank rel=noopener>括号生成问题</a></li></ul><pre><code class=language-go>
+</code></pre><h3 id=2-实战题目解析powxn子集>2. 实战题目解析：Pow(x,n)、子集</h3><h4 id=预习题目>预习题目</h4><ul><li><a href=https://leetcode-cn.com/problems/powx-n/ target=_blank rel=noopener>50. Pow(x, n)</a>
+中等</li></ul><pre><code class=language-go>func myPow(x float64, n int) float64 {
+    if n == 0 {
+        return 1
+    }
+    if n &lt; 0 {
+        n = -n
+        x = 1 / x
+    }
+    p := myPow(x, n &gt;&gt; 1)
+    if n &amp; 1 == 0 {
+        return p * p
+    } else {
+        return x * p * p
+    }
+}
+// 多种写法勤加练习
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/subsets/ target=_blank rel=noopener>78. 子集</a></li></ul><pre><code class=language-go>// 迭代
+
+// 递归
+</code></pre><h4 id=参考链接-6>参考链接</h4><ul><li><a href=http://www.matrix67.com/blog/archives/361 target=_blank rel=noopener>牛顿迭代法原理</a></li><li><a href=http://www.voidcn.com/article/p-eudisdmk-zm.html target=_blank rel=noopener>牛顿迭代法代码</a></li></ul><h3 id=3-实战题目解析电话号码的字母组合n皇后>3. 实战题目解析：电话号码的字母组合、N皇后</h3><h4 id=实战题目-1>实战题目</h4><ul><li><a href=https://leetcode-cn.com/problems/majority-element/ target=_blank rel=noopener>169. 多数元素</a>
+（简单、但是高频）</li></ul><pre><code class=language-go>// 分治
+// hash表
+// 排序
+// 随机
+// 官方方法五：Boyer-Moore 投票算法 重点
+func majorityElement(nums []int) (ans int) {
+    count := 0
+    for _, num := range nums {
+        if count == 0 {
+            ans = num
+        }
+        if ans == num {
+            count++
+        } else {
+            count--
+        }
+    }
+    return ans
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/ target=_blank rel=noopener>17. 电话号码的字母组合</a></li></ul><pre><code class=language-go>// dfs
+// 写法一：
+var mp = map[string]string{
+    &quot;2&quot;: &quot;abc&quot;,
+    &quot;3&quot;: &quot;edf&quot;,
+    &quot;4&quot;: &quot;ghi&quot;,
+    &quot;5&quot;: &quot;jkl&quot;,
+    &quot;6&quot;: &quot;mno&quot;,
+    &quot;7&quot;: &quot;pqrs&quot;,
+    &quot;8&quot;: &quot;tuv&quot;,
+    &quot;9&quot;: &quot;wxyz&quot;,
+}
+
+func letterCombinations(digits string) (res []string) {
+    if digits == &quot;&quot; {
+        return res
+    }
+    n := len(digits)
+    var dfs func(string, int)
+    dfs = func(path string, idx int){
+        if idx == n {
+            res = append(res, path)
+            return
+        }
+        letters := mp[string(digits[idx])]
+        for _, c := range letters {
+            dfs(path + string(c), idx + 1)
+        }
+    }
+    dfs(&quot;&quot;, 0)
+    return res
+}
+// 写法二：dfs
+var digitMap = map[byte][]byte{
+	'2': {'a', 'b', 'c'},
+	'3': {'d', 'e', 'f'},
+	'4': {'g', 'h', 'i'},
+	'5': {'j', 'k', 'l'},
+	'6': {'m', 'n', 'o'},
+	'7': {'p', 'q', 'r', 's'},
+	'8': {'t', 'u', 'v'},
+	'9': {'w', 'x', 'y', 'z'},
+}
+
+var buf []byte
+var ans []string
+
+func letterCombinations(digits string) []string {
+	buf = buf[:0]
+	ans = ans[:0]
+	if len(digits) == 0 {
+		return ans
+	}
+	dfs(digits, 0)
+	return ans
+}
+
+func dfs(digits string, n int) {
+	if n == len(digits) {
+		ans = append(ans, string(buf))
+		return
+	}
+	for _, v := range digitMap[digits[n]] {
+		buf = append(buf, v)
+		dfs(digits, n+1)
+		buf = buf[:len(buf)-1]
+	}
+	return
+}
+// bfs, 队列迭代
+func letterCombinations(digits string) (res []string) {
+    if len(digits) == 0 {
+        return res
+    }
+    res = append(res, &quot;&quot;)
+    for _, digit := range digits {
+        n := len(res)
+        for ; n &gt; 0; n-- {
+            m := res[0]
+            res = res[1:]
+            for _, d := range mp[string(digit)] {
+                res = append(res, m + string(d))
+            }
+        }
+    }
+    return res
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/n-queens/ target=_blank rel=noopener>51. N皇后</a></li></ul><pre><code class=language-go>// 普通dfs
+func solveNQueens(n int) (res [][]string) {
+    pie, na, col := map[int]bool{}, map[int]bool{}, map[int]bool{}
+    var dfs func(int, []int)
+    dfs = func (row int, queen []int) {
+        // 递归终止
+        if row == n {
+            ans := []string{}
+            for _, c := range queen {
+                r := make([]byte, 0, n)
+                for i := 0; i &lt; n; i++ {
+                    if i == c {
+                        r = append(r, 'Q')
+                    } else {
+                         r = append(r, '.')
+                    }
+                }
+                ans = append(ans, string(r))
+            }
+            res = append(res, ans)
+            return
+        }
+        for i := 0; i &lt; n; i++ {
+            if pie[i + row] || na[i - row] || col[i] {
+                continue
+            }
+            pie[i + row] = true
+            na[i - row] = true
+            col[i] = true
+            queen = append(queen, i)
+            dfs(row + 1, queen)
+            queen = queen[:len(queen) - 1]
+            col[i] = false
+            na[i - row] = false
+            pie[i + row] = false
+        }
+    }
+    dfs(0, []int{})
+    return 
+}
+// 官方：位运算 dfs
+var solutions [][]string
+
+func solveNQueens(n int) [][]string {
+    solutions = [][]string{}
+    queens := make([]int, n)
+    for i := 0; i &lt; n; i++ {
+        queens[i] = -1
+    }
+    solve(queens, n, 0, 0, 0, 0)
+    return solutions
+}
+
+func solve(queens []int, n, row, columns, diagonals1, diagonals2 int) {
+    if row == n {
+        board := generateBoard(queens, n)
+        solutions = append(solutions, board)
+        return
+    }
+    availablePositions := ((1 &lt;&lt; n) - 1) &amp; (^(columns | diagonals1 | diagonals2))
+    for availablePositions != 0 {
+        position := availablePositions &amp; (-availablePositions)
+        availablePositions = availablePositions &amp; (availablePositions - 1)
+        column := bits.OnesCount(uint(position - 1))
+        queens[row] = column
+        solve(queens, n, row + 1, columns | position, (diagonals1 | position) &gt;&gt; 1, (diagonals2 | position) &lt;&lt; 1)
+        queens[row] = -1
+    }
+}
+
+func generateBoard(queens []int, n int) []string {
+    board := []string{}
+    for i := 0; i &lt; n; i++ {
+        row := make([]byte, n)
+        for j := 0; j &lt; n; j++ {
+            row[j] = '.'
+        }
+        row[queens[i]] = 'Q'
+        board = append(board, string(row))
+    }
+    return board
+}
+// 自己写法一
+func solveNQueens(n int) (res [][]string) {
+    var dfs func(int, int, int, int, []int)
+    dfs = func (row, pie, na, col int, picks []int) {
+        // 递归终止
+        if row == n {
+            ans := []string{}
+            for _, c := range picks {
+                r := make([]byte, 0, n)
+                for i := 0; i &lt; n; i++ {
+                    if c &amp; (1 &lt;&lt; i) &gt; 0 {
+                        r = append(r, 'Q')
+                    } else {
+                        r = append(r, '.')
+                    }
+                }
+                ans = append(ans, string(r))
+            }
+            res = append(res, ans)
+            return
+        }
+        // 取所有可以放的位置
+        bits := (^(pie | na | col)) &amp; (1 &lt;&lt; n - 1) 
+        for bits &gt; 0 {
+            // 取可以放的位置
+            p := bits &amp; - bits
+            bits = bits &amp; (bits - 1) // 移除最后一个1位
+            picks[row] = p
+            dfs(row + 1, (pie | p) &lt;&lt; 1, (na | p) &gt;&gt; 1, col | p, picks)
+        }
+    }
+    dfs(0, 0, 0 , 0, make([]int, n))
+    return 
+}
+
+// 自己写法二
+var ress [][]string
+func solveNQueens(n int) [][]string {
+    ress = [][]string{}
+    dfs(n, 0, 0, 0, 0, make([]int, n))
+    return ress
+}
+
+func dfs(n, row, cols, pie, na int, picks []int) {
+    //处理结果
+    if n &lt;= row {
+        res := make([]string, n)
+        for index, col := range picks {
+            str := &quot;&quot;
+            for i := 0; i &lt; n; i++ {
+                if col &amp; (1 &lt;&lt; i) &gt; 0 {
+                    str += &quot;Q&quot;
+                } else {
+                    str += &quot;.&quot;
+                }
+            }
+            res[index] = str
+        }
+        ress = append(ress, res)
+        return
+    }
+    bits := (^(cols | pie | na)) &amp; ((1 &lt;&lt; n) - 1) //获取所有二进制1位
+    for bits &gt; 0 {
+        p := bits &amp; -bits
+        picks[row] = p;
+        dfs(n, row + 1, cols | p, (pie | p) &lt;&lt; 1, (na | p) &gt;&gt; 1, picks);
+        bits = bits &amp; (bits - 1);
+    }
+}
+</code></pre><h2 id=本周作业及下周预习>本周作业及下周预习</h2><h3 id=本周作业>本周作业</h3><h4 id=简单>简单</h4><ul><li><a href=https://leetcode-cn.com/problems/n-ary-tree-postorder-traversal/ target=_blank rel=noopener>590. N叉树的后序遍历</a></li></ul><pre><code class=language-go>/**
+ * Definition for a Node.
+ * type Node struct {
+ *     Val int
+ *     Children []*Node
+ * }
+ */
+
+func postorder(root *Node) []int {
+    
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/n-ary-tree-preorder-traversal/ target=_blank rel=noopener>589. N叉树的前序遍历</a></li></ul><pre><code class=language-go>/**
+ * Definition for a Node.
+ * type Node struct {
+ *     Val int
+ *     Children []*Node
+ * }
+ */
+
+func preorder(root *Node) []int {
+    
+}
+</code></pre><h4 id=中等>中等</h4><ul><li><a href=https://leetcode-cn.com/problems/binary-tree-preorder-traversal/ target=_blank rel=noopener>144. 二叉树的前序遍历</a></li></ul><pre><code class=language-go>/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func preorderTraversal(root *TreeNode) []int {
+
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/n-ary-tree-level-order-traversal/ target=_blank rel=noopener>429. N 叉树的层序遍历</a></li></ul><pre><code class=language-go>/**
+ * Definition for a Node.
+ * type Node struct {
+ *     Val int
+ *     Children []*Node
+ * }
+ */
+
+func levelOrder(root *Node) [][]int {
+    
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/ target=_blank rel=noopener>236. 二叉树的最近公共祖先</a></li></ul><pre><code class=language-go>/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
+  
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/ target=_blank rel=noopener>105. 从前序与中序遍历序列构造二叉树</a></li></ul><pre><code class=language-go>/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func buildTree(preorder []int, inorder []int) *TreeNode {
+
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/combinations/ target=_blank rel=noopener>77. 组合</a></li></ul><pre><code class=language-go>func combine(n int, k int) [][]int {
+
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/permutations/ target=_blank rel=noopener>46. 全排列</a></li></ul><pre><code class=language-go>func permute(nums []int) [][]int {
+
+}
+</code></pre><ul><li><a href=https://leetcode-cn.com/problems/permutations-ii/ target=_blank rel=noopener>47. 全排列 II</a></li></ul><pre><code class=language-go>func permuteUnique(nums []int) [][]int {
+
+}
+</code></pre><h3 id=下周预习>下周预习</h3><h4 id=预习知识点>预习知识点</h4><ul><li><a href=http://time.geekbang.org/column/article/70891 target=_blank rel=noopener>深度和广度优先搜索：如何找出社交网络中的三度好友关系？</a></li><li><a href=http://time.geekbang.org/column/article/73188 target=_blank rel=noopener>贪心算法：如何用贪心算法实现 Huffman 压缩编码？</a></li><li><a href=http://time.geekbang.org/column/article/42520 target=_blank rel=noopener>二分查找（上）：如何用最省内存的方式实现快速查找功能？</a></li><li><a href=http://time.geekbang.org/column/article/42733 target=_blank rel=noopener>二分查找（下）：如何快速定位 IP 对应的省份地址？</a></li></ul><h4 id=预习题目-1>预习题目</h4><ul><li><a href=http://leetcode-cn.com/problems/binary-tree-level-order-traversal/#/description target=_blank rel=noopener>二叉树的层次遍历</a></li><li><a href=http://leetcode-cn.com/problems/assign-cookies/description/ target=_blank rel=noopener>分发饼干</a></li><li><a href=http://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/description/ target=_blank rel=noopener>买卖股票的最佳时机 II</a></li><li><a href=http://leetcode-cn.com/problems/jump-game/ target=_blank rel=noopener>跳跃游戏</a></li><li><a href=http://leetcode-cn.com/problems/sqrtx/ target=_blank rel=noopener>x 的平方根</a></li><li><a href=http://leetcode-cn.com/problems/valid-perfect-square/ target=_blank rel=noopener>有效的完全平方数</a></li></ul></article><div class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"><div><span class="text-primary-text block font-bold">上一页</span>
+<a href=/study/algorithm/go/week02/ class=block>第2周 栈、队列、哈希表</a></div><div class="mt-4 md:mt-0 md:text-right"><span class="text-primary-text block font-bold">下一页</span>
+<a href=/study/algorithm/go/week04/ class=block>第4周 DFS、BFS、贪心、二分查找</a></div></div></div><div class="hidden lg:block lg:w-1/4"><div class="bg-secondary-bg
+prose sticky top-16 z-10 hidden px-6 py-4 lg:block"><h3>本页内容</h3></div><div class="sticky-toc
+border-s
+hidden px-6 pb-6 lg:block"><nav id=TableOfContents><ul><li><a href=#第6课--树二叉树二叉搜索树>第6课 | 树、二叉树、二叉搜索树</a><ul><li><a href=#1-树二叉树二叉搜索树的实现和特性>1. 树、二叉树、二叉搜索树的实现和特性</a><ul><li><a href=#参考链接>参考链接</a></li><li><a href=#思考题>思考题</a></li></ul></li><li><a href=#2-实战题目解析二叉树的中序遍历>2. 实战题目解析：二叉树的中序遍历</a><ul><li><a href=#参考链接-1>参考链接</a></li><li><a href=#实战题目--课后作业>实战题目 / 课后作业</a></li></ul></li></ul></li><li><a href=#第6课--堆和二叉堆图>第6课 | 堆和二叉堆、图</a><ul><li><a href=#1-堆和二叉堆的实现和特性>1. 堆和二叉堆的实现和特性</a><ul><li><a href=#参考链接-2>参考链接</a></li></ul></li><li><a href=#2-实战题目解析最小的k个数滑动窗口最大值等问题>2. 实战题目解析：最小的k个数、滑动窗口最大值等问题</a><ul><li><a href=#实战例题>实战例题</a></li><li><a href=#课后作业>课后作业</a></li></ul></li><li><a href=#3-图的实现和特性>3. 图的实现和特性</a><ul><li><a href=#思考题-1>思考题</a></li><li><a href=#参考链接-3>参考链接</a></li></ul></li></ul></li><li><a href=#第7课--泛型递归树的递归>第7课 | 泛型递归、树的递归</a><ul><li><a href=#1-递归的实现特性以及思维要点>1. 递归的实现、特性以及思维要点</a><ul><li><a href=#参考链接-4>参考链接</a></li></ul></li><li><a href=#2-实战题目解析爬楼梯括号生成等问题>2. 实战题目解析：爬楼梯、括号生成等问题</a><ul><li><a href=#实战题目>实战题目</a></li><li><a href=#每日一课>每日一课</a></li><li><a href=#课后作业-1>课后作业</a></li></ul></li></ul></li><li><a href=#第8课--分治回溯>第8课 | 分治、回溯</a><ul><li><a href=#1-分治回溯的实现和特性>1. 分治、回溯的实现和特性</a><ul><li><a href=#参考链接-5>参考链接</a></li></ul></li><li><a href=#2-实战题目解析powxn子集>2. 实战题目解析：Pow(x,n)、子集</a><ul><li><a href=#预习题目>预习题目</a></li><li><a href=#参考链接-6>参考链接</a></li></ul></li><li><a href=#3-实战题目解析电话号码的字母组合n皇后>3. 实战题目解析：电话号码的字母组合、N皇后</a><ul><li><a href=#实战题目-1>实战题目</a></li></ul></li></ul></li><li><a href=#本周作业及下周预习>本周作业及下周预习</a><ul><li><a href=#本周作业>本周作业</a><ul><li><a href=#简单>简单</a></li><li><a href=#中等>中等</a></li></ul></li><li><a href=#下周预习>下周预习</a><ul><li><a href=#预习知识点>预习知识点</a></li><li><a href=#预习题目-1>预习题目</a></li></ul></li></ul></li></ul></nav></div><script>window.addEventListener("DOMContentLoaded",()=>{enableStickyToc()})</script></div></div></div></div></div><script>document.addEventListener("DOMContentLoaded",()=>{hljs.highlightAll(),changeSidebarHeight(),switchDocToc()})</script></div></div></main><footer class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b"><p class="text-sm text-tertiary-text">&copy; 2021 <a href=https://blog.lbbniu.com/>lbbniu</a>
+&#183; Powered by the <a href=https://github.com/wangchucheng/hugo-eureka class=hover:text-eureka>Eureka</a> theme for <a href=https://gohugo.io class=hover:text-eureka>Hugo</a></p></div></div></footer></body></html>

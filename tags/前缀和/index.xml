@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>前缀和 on lbbniu</title><link>/tags/%E5%89%8D%E7%BC%80%E5%92%8C/</link><description>Recent content in 前缀和 on lbbniu</description><generator>Hugo -- gohugo.io</generator><language>zh</language><managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor><webMaster>lbbniu@gmail.com (lbbniu)</webMaster><copyright>&amp;copy; 2021 &lt;a href="https://blog.lbbniu.com/">lbbniu&lt;/a></copyright><lastBuildDate>Sat, 07 Jan 2023 00:01:00 +0800</lastBuildDate><atom:link href="/tags/%E5%89%8D%E7%BC%80%E5%92%8C/index.xml" rel="self" type="application/rss+xml"/><item><title>剑指 Offer II 008 和大于等于 target 的最短子数组</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/2vg8kg/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/2vg8kg/</guid><description>剑指 Offer II 008 和大于等于 target 的最短子数组 给定一个含有&amp;nbsp;n&amp;nbsp;个正整数的数组和一个正整数 target 。
+找出该数组中满足其和 &amp;ge; target 的长度最小的 连续子数组&amp;nbsp;[numsl, numsl+1, ..., numsr-1, numsr] ，并返回其长度。如果不存在符合条件的子数组，返回 0 。
+&amp;nbsp;
+示例 1：
+输入：target = 7, nums = [2,3,1,2,4,3] 输出：2 解释：子数组&amp;nbsp;[4,3]&amp;nbsp;是该条件下的长度最小的子数组。 示例 2：
+输入：target = 4, nums = [1,4,4] 输出：1 示例 3：
+输入：target = 11, nums = [1,1,1,1,1,1,1,1] 输出：0 &amp;nbsp;
+提示：
+1 &amp;lt;= target &amp;lt;= 109 1 &amp;lt;= nums.length &amp;lt;= 105 1 &amp;lt;= nums[i] &amp;lt;= 105 &amp;nbsp;
+进阶：
+如果你已经实现 O(n) 时间复杂度的解法, 请尝试设计一个 O(n log(n)) 时间复杂度的解法。 &amp;nbsp;</description></item><item><title>剑指 Offer II 010 和为 k 的子数组</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/qtmn0o/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/qtmn0o/</guid><description>剑指 Offer II 010 和为 k 的子数组 给定一个整数数组和一个整数&amp;nbsp;k ，请找到该数组中和为&amp;nbsp;k&amp;nbsp;的连续子数组的个数。
+&amp;nbsp;
+示例 1：
+输入:nums = [1,1,1], k = 2 输出: 2 解释: 此题 [1,1] 与 [1,1] 为两种不同的情况 示例 2：
+输入:nums = [1,2,3], k = 3 输出: 2 &amp;nbsp;
+提示:
+1 &amp;lt;= nums.length &amp;lt;= 2 * 104 -1000 &amp;lt;= nums[i] &amp;lt;= 1000 -107&amp;nbsp;&amp;lt;= k &amp;lt;= 107
+&amp;nbsp;
+注意：本题与主站 560&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/subarray-sum-equals-k/
+func subarraySum(nums []int, k int) int { } LeetCode题库地址 https://leetcode.cn/problems/QTMn0o</description></item><item><title>剑指 Offer II 011 0 和 1 个数相同的子数组</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/a1nyos/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/a1nyos/</guid><description>剑指 Offer II 011 0 和 1 个数相同的子数组 给定一个二进制数组 nums , 找到含有相同数量的 0 和 1 的最长连续子数组，并返回该子数组的长度。
+&amp;nbsp;
+示例 1：
+输入: nums = [0,1] 输出: 2 说明: [0, 1] 是具有相同数量 0 和 1 的最长连续子数组。 示例 2：
+输入: nums = [0,1,0] 输出: 2 说明: [0, 1] (或 [1, 0]) 是具有相同数量 0 和 1 的最长连续子数组。 &amp;nbsp;
+提示：
+1 &amp;lt;= nums.length &amp;lt;= 105 nums[i] 不是 0 就是 1 &amp;nbsp;
+注意：本题与主站 525&amp;nbsp;题相同：&amp;nbsp;https://leetcode-cn.com/problems/contiguous-array/
+func findMaxLength(nums []int) int { } LeetCode题库地址 https://leetcode.cn/problems/A1NYOS</description></item><item><title>剑指 Offer II 012 左右两边子数组的和相等</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/tvdfij/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/tvdfij/</guid><description>剑指 Offer II 012 左右两边子数组的和相等 给你一个整数数组&amp;nbsp;nums ，请计算数组的 中心下标 。
+数组 中心下标 是数组的一个下标，其左侧所有元素相加的和等于右侧所有元素相加的和。
+如果中心下标位于数组最左端，那么左侧数之和视为 0 ，因为在下标的左侧不存在元素。这一点对于中心下标位于数组最右端同样适用。
+如果数组有多个中心下标，应该返回 最靠近左边 的那一个。如果数组不存在中心下标，返回 -1 。
+&amp;nbsp;
+示例 1：
+输入：nums = [1,7,3,6,5,6] 输出：3 解释： 中心下标是 3 。 左侧数之和 sum = nums[0] + nums[1] + nums[2] = 1 + 7 + 3 = 11 ， 右侧数之和 sum = nums[4] + nums[5] = 5 + 6 = 11 ，二者相等。 示例 2：
+输入：nums = [1, 2, 3] 输出：-1 解释： 数组中不存在满足此条件的中心下标。 示例 3：
+输入：nums = [2, 1, -1] 输出：0 解释： 中心下标是 0 。 左侧数之和 sum = 0 ，（下标 0 左侧不存在元素）， 右侧数之和 sum = nums[1] + nums[2] = 1 + -1 = 0 。 &amp;nbsp;</description></item><item><title>剑指 Offer II 013 二维子矩阵的和</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/o4ndxx/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/o4ndxx/</guid><description>剑指 Offer II 013 二维子矩阵的和 给定一个二维矩阵 matrix，以下类型的多个请求：
+计算其子矩形范围内元素的总和，该子矩阵的左上角为 (row1,&amp;nbsp;col1) ，右下角为 (row2,&amp;nbsp;col2) 。 实现 NumMatrix 类：
+NumMatrix(int[][] matrix)&amp;nbsp;给定整数矩阵 matrix 进行初始化 int sumRegion(int row1, int col1, int row2, int col2)&amp;nbsp;返回左上角 (row1,&amp;nbsp;col1)&amp;nbsp;、右下角&amp;nbsp;(row2,&amp;nbsp;col2)&amp;nbsp;的子矩阵的元素总和。 &amp;nbsp;
+示例 1：
+输入: [&amp;quot;NumMatrix&amp;quot;,&amp;quot;sumRegion&amp;quot;,&amp;quot;sumRegion&amp;quot;,&amp;quot;sumRegion&amp;quot;] [[[[3,0,1,4,2],[5,6,3,2,1],[1,2,0,1,5],[4,1,0,1,7],[1,0,3,0,5]]],[2,1,4,3],[1,1,2,2],[1,2,2,4]] 输出: [null, 8, 11, 12] 解释: NumMatrix numMatrix = new NumMatrix([[3,0,1,4,2],[5,6,3,2,1],[1,2,0,1,5],[4,1,0,1,7],[1,0,3,0,5]]]); numMatrix.sumRegion(2, 1, 4, 3); // return 8 (红色矩形框的元素总和) numMatrix.sumRegion(1, 1, 2, 2); // return 11 (绿色矩形框的元素总和) numMatrix.sumRegion(1, 2, 2, 4); // return 12 (蓝色矩形框的元素总和) &amp;nbsp;
+提示：
+m == matrix.length n == matrix[i].</description></item><item><title>剑指 Offer II 071 按权重生成随机数</title><link>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/cuyjef/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E4%B8%93%E9%A1%B9%E7%AA%81%E7%A0%B4%E7%89%88/cuyjef/</guid><description>剑指 Offer II 071 按权重生成随机数 给定一个正整数数组&amp;nbsp;w ，其中&amp;nbsp;w[i]&amp;nbsp;代表下标 i&amp;nbsp;的权重（下标从 0 开始），请写一个函数&amp;nbsp;pickIndex&amp;nbsp;，它可以随机地获取下标 i，选取下标 i&amp;nbsp;的概率与&amp;nbsp;w[i]&amp;nbsp;成正比。
+例如，对于 w = [1, 3]，挑选下标 0 的概率为 1 / (1 + 3)&amp;nbsp;= 0.25 （即，25%），而选取下标 1 的概率为 3 / (1 + 3)&amp;nbsp;= 0.75（即，75%）。
+也就是说，选取下标 i 的概率为 w[i] / sum(w) 。
+&amp;nbsp;
+示例 1：
+输入： inputs = [&amp;quot;Solution&amp;quot;,&amp;quot;pickIndex&amp;quot;] inputs = [[[1]],[]] 输出： [null,0] 解释： Solution solution = new Solution([1]); solution.pickIndex(); // 返回 0，因为数组中只有一个元素，所以唯一的选择是返回下标 0。 示例 2：
+输入： inputs = [&amp;quot;Solution&amp;quot;,&amp;quot;pickIndex&amp;quot;,&amp;quot;pickIndex&amp;quot;,&amp;quot;pickIndex&amp;quot;,&amp;quot;pickIndex&amp;quot;,&amp;quot;pickIndex&amp;quot;] inputs = [[[1,3]],[],[],[],[],[]] 输出： [null,1,1,1,1,0] 解释： Solution solution = new Solution([1, 3]); solution.</description></item><item><title>剑指 Offer 66 构建乘积数组</title><link>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/gou-jian-cheng-ji-shu-zu-lcof/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E5%89%91%E6%8C%87offer%E7%AC%AC2%E7%89%88/gou-jian-cheng-ji-shu-zu-lcof/</guid><description>剑指 Offer 66 构建乘积数组 给定一个数组 A[0,1,…,n-1]，请构建一个数组 B[0,1,…,n-1]，其中 B[i] 的值是数组 A 中除了下标 i 以外的元素的积, 即 B[i]=A[0]×A[1]×…×A[i-1]×A[i+1]×…×A[n-1]。不能使用除法。
+示例:
+输入: [1,2,3,4,5] 输出: [120,60,40,30,24] 提示：
+所有元素乘积之和不会溢出 32 位整数 a.length &lt;= 100000 func constructArr(a []int) []int { } LeetCode题库地址 https://leetcode.cn/problems/gou-jian-cheng-ji-shu-zu-lcof</description></item><item><title>面试题 17.05 字母与数字</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/find-longest-subarray-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/find-longest-subarray-lcci/</guid><description>面试题 17.05 字母与数字 给定一个放有字母和数字的数组，找到最长的子数组，且包含的字母和数字的个数相同。
+返回该子数组，若存在多个最长子数组，返回左端点下标值最小的子数组。若不存在这样的数组，返回一个空数组。
+示例 1:
+输入: ["A","1","B","C","D","2","3","4","E","5","F","G","6","7","H","I","J","K","L","M"] 输出: ["A","1","B","C","D","2","3","4","E","5","F","G","6","7"] 示例 2:
+输入: ["A","A"] 输出: [] 提示：
+array.length &lt;= 100000 func findLongestSubarray(array []string) []string { } LeetCode题库地址 https://leetcode.cn/problems/find-longest-subarray-lcci</description></item><item><title>面试题 17.24 最大子矩阵</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/max-submatrix-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/max-submatrix-lcci/</guid><description>面试题 17.24 最大子矩阵 给定一个正整数、负整数和 0 组成的 N &amp;times; M&amp;nbsp;矩阵，编写代码找出元素总和最大的子矩阵。
+返回一个数组 [r1, c1, r2, c2]，其中 r1, c1 分别代表子矩阵左上角的行号和列号，r2, c2 分别代表右下角的行号和列号。若有多个满足条件的子矩阵，返回任意一个均可。
+注意：本题相对书上原题稍作改动
+示例：
+输入： [ &amp;nbsp; [-1,0], &amp;nbsp; [0,-1] ] 输出：[0,1,0,1] 解释：输入中标粗的元素即为输出所表示的矩阵 &amp;nbsp;
+说明：
+1 &amp;lt;= matrix.length, matrix[0].length &amp;lt;= 200 func getMaxMatrix(matrix [][]int) []int { } LeetCode题库地址 https://leetcode.cn/problems/max-submatrix-lcci</description></item><item><title>【2023-01-07每日一题】1658. 将 x 减到 0 的最小操作数[Medium]</title><link>/study/leetcode/minimum-operations-to-reduce-x-to-zero/</link><pubDate>Sat, 07 Jan 2023 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/minimum-operations-to-reduce-x-to-zero/</guid><description>2023-01-07每日一题：1658. 将 x 减到 0 的最小操作数 难度：Medium
+标签：数组 、 哈希表 、 二分查找 、 前缀和 、 滑动窗口
+给你一个整数数组 nums 和一个整数 x 。每一次操作时，你应当移除数组 nums 最左边或最右边的元素，然后从 x 中减去该元素的值。请注意，需要 修改 数组以供接下来的操作使用。
+如果可以将 x 恰好 减到 0 ，返回 最小操作数 ；否则，返回 -1 。
+示例 1：
+输入：nums = [1,1,4,2,3], x = 5 输出：2 解释：最佳解决方案是移除后两个元素，将 x 减到 0 。 示例 2：
+输入：nums = [5,6,7,8,9], x = 4 输出：-1 示例 3：
+输入：nums = [3,2,20,1,1,3], x = 10 输出：5 解释：最佳解决方案是移除后三个元素和前两个元素（总共 5 次操作），将 x 减到 0 。 提示：</description></item><item><title>【2022-12-18每日一题】1703. 得到连续 K 个 1 的最少相邻交换次数[Hard]</title><link>/study/leetcode/minimum-adjacent-swaps-for-k-consecutive-ones/</link><pubDate>Sun, 18 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/minimum-adjacent-swaps-for-k-consecutive-ones/</guid><description>2022-12-18每日一题：1703. 得到连续 K 个 1 的最少相邻交换次数 难度：Hard
+标签：贪心 、 数组 、 前缀和 、 滑动窗口
+给你一个整数数组 nums 和一个整数 k 。 nums 仅包含 0 和 1 。每一次移动，你可以选择 相邻 两个数字并将它们交换。
+请你返回使 nums 中包含 k 个 连续 1 的 最少 交换次数。
+示例 1：
+输入：nums = [1,0,0,1,0,1], k = 2 输出：1 解释：在第一次操作时，nums 可以变成 [1,0,0,0,1,1] 得到连续两个 1 。 示例 2：
+输入：nums = [1,0,0,0,0,0,1,1], k = 3 输出：5 解释：通过 5 次操作，最左边的 1 可以移到右边直到 nums 变为 [0,0,0,0,0,1,1,1] 。 示例 3：
+输入：nums = [1,1,0,1], k = 2 输出：0 解释：nums 已经有连续 2 个 1 了。 提示：</description></item><item><title>【2022-11-28每日一题】813. 最大平均值和的分组[Medium]</title><link>/study/leetcode/largest-sum-of-averages/</link><pubDate>Mon, 28 Nov 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/largest-sum-of-averages/</guid><description>2022-11-28每日一题：813. 最大平均值和的分组 难度：Medium
+标签：数组 、 动态规划 、 前缀和
+给定数组&amp;nbsp;nums&amp;nbsp;和一个整数&amp;nbsp;k&amp;nbsp;。我们将给定的数组&amp;nbsp;nums&amp;nbsp;分成 最多&amp;nbsp;k&amp;nbsp;个相邻的非空子数组 。&amp;nbsp;分数 由每个子数组内的平均值的总和构成。
+注意我们必须使用 nums 数组中的每一个数进行分组，并且分数不一定需要是整数。
+返回我们所能得到的最大 分数 是多少。答案误差在&amp;nbsp;10-6&amp;nbsp;内被视为是正确的。
+&amp;nbsp;
+示例 1:
+输入: nums = [9,1,2,3,9], k = 3 输出: 20.00000 解释: nums 的最优分组是[9], [1, 2, 3], [9]. 得到的分数是 9 + (1 + 2 + 3) / 3 + 9 = 20. 我们也可以把 nums 分成[9, 1], [2], [3, 9]. 这样的分组得到的分数为 5 + 2 + 6 = 13, 但不是最大值. 示例 2:
+输入: nums = [1,2,3,4,5,6,7], k = 4 输出: 20.</description></item><item><title>【2022-11-19每日一题】1732. 找到最高海拔[Easy]</title><link>/study/leetcode/find-the-highest-altitude/</link><pubDate>Sat, 19 Nov 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/find-the-highest-altitude/</guid><description>2022-11-19每日一题：1732. 找到最高海拔 难度：Easy
+标签：数组 、 前缀和
+有一个自行车手打算进行一场公路骑行，这条路线总共由 n + 1 个不同海拔的点组成。自行车手从海拔为 0 的点 0 开始骑行。
+给你一个长度为 n 的整数数组 gain ，其中 gain[i] 是点 i 和点 i + 1 的 净海拔高度差（0 &lt;= i &lt; n）。请你返回 最高点的海拔 。
+示例 1：
+输入：gain = [-5,1,5,0,-7] 输出：1 解释：海拔高度依次为 [0,-5,-4,1,1,-6] 。最高海拔为 1 。 示例 2：
+输入：gain = [-4,-3,-2,-1,4,3,2] 输出：0 解释：海拔高度依次为 [0,-4,-7,-9,-10,-6,-3,-1] 。最高海拔为 0 。 提示：
+n == gain.length 1 &lt;= n &lt;= 100 -100 &lt;= gain[i] &lt;= 100 方法一：一次遍历，前缀和（差分数组） golang func largestAltitude(gain []int) int { ans, sum := 0, 0 for _, v := range gain { sum += v // 前缀和 ans = max(ans, sum) // 维护最大值 } return ans } func max(a, b int) int { if a &amp;gt; b { return a } return b } // 省略max函数写法 func largestAltitude(gain []int) int { ans, sum := 0, 0 for _, v := range gain { sum += v // 前缀和 // 维护最大值 if ans &amp;lt; sum { ans = sum } } return ans } php class Solution { /** * @param Integer[] $gain * @return Integer */ function largestAltitude($gain) { $ans = $total = 0; foreach($gain as $g) { $total += $g; $ans = max($ans, $total); } return $ans; } } 复杂度分析 时间复杂度：O(n)。 空间复杂度：O(1)。 LeetCode题库地址 https://leetcode.</description></item><item><title>【2022-10-26每日一题】862. 和至少为 K 的最短子数组[Hard]</title><link>/study/leetcode/shortest-subarray-with-sum-at-least-k/</link><pubDate>Wed, 26 Oct 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/shortest-subarray-with-sum-at-least-k/</guid><description>2022-10-26每日一题：862. 和至少为 K 的最短子数组 难度：Hard
+标签：队列 、 数组 、 二分查找 、 前缀和 、 滑动窗口 、 单调队列 、 堆（优先队列）
+给你一个整数数组 nums 和一个整数 k ，找出 nums 中和至少为 k 的 最短非空子数组 ，并返回该子数组的长度。如果不存在这样的 子数组 ，返回 -1 。
+子数组 是数组中 连续 的一部分。
+&amp;nbsp;
+示例 1：
+输入：nums = [1], k = 1 输出：1 示例 2：
+输入：nums = [1,2], k = 4 输出：-1 示例 3：
+输入：nums = [2,-1,2], k = 3 输出：3 &amp;nbsp;
+提示：
+1 &amp;lt;= nums.length &amp;lt;= 105 -105 &amp;lt;= nums[i] &amp;lt;= 105 1 &amp;lt;= k &amp;lt;= 109 方法一：前缀和 + 单调双端队列 推荐题解 func shortestSubarray(nums []int, k int) int { n := len(nums) preSum := make([]int, n+1) for i, num := range nums { preSum[i+1] = preSum[i] + num // 计算前缀和 } ans := n + 1 q := []int{} for i, curSum := range preSum { for len(q) &amp;gt; 0 &amp;amp;&amp;amp; curSum - preSum[q[0]] &amp;gt;= k { ans = min(ans, i-q[0]) q = q[1:] // 上面计算后 q[0] 没有用了，直接移除 } for len(q) &amp;gt;0 &amp;amp;&amp;amp; preSum[q[len(q)-1]] &amp;gt;= curSum { q = q[:len(q)-1] // 移除队列中大约等于当前数的元素 } q = append(q, i) } if ans &amp;lt; n + 1 { return ans } return -1 } func min(a, b int) int { if a &amp;lt; b { return a } return b } 复杂度分析 LeetCode题库地址 https://leetcode.</description></item><item><title>【2022-08-09每日一题】1413. 逐步求和得到正数的最小值</title><link>/study/leetcode/minimum-value-to-get-positive-step-by-step-sum/</link><pubDate>Tue, 09 Aug 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/minimum-value-to-get-positive-step-by-step-sum/</guid><description>2022-08-09每日一题：1413. 逐步求和得到正数的最小值 难度：Easy 标签：数组 、 前缀和 给你一个整数数组 nums&amp;nbsp;。你可以选定任意的&amp;nbsp;正数 startValue 作为初始值。
+你需要从左到右遍历 nums&amp;nbsp;数组，并将 startValue 依次累加上&amp;nbsp;nums&amp;nbsp;数组中的值。
+请你在确保累加和始终大于等于 1 的前提下，选出一个最小的&amp;nbsp;正数&amp;nbsp;作为 startValue 。
+示例 1：
+输入：nums = [-3,2,-3,4,2] 输出：5 解释：如果你选择 startValue = 4，在第三次累加时，和小于 1 。 累加求和 startValue = 4 | startValue = 5 | nums (4 - 3) = 1 | (5 - 3) = 2 | -3 (1 + 2) = 3 | (2 + 2) = 4 | 2 (3 - 3) = 0 | (4 - 3) = 1 | -3 (0 + 4) = 4 | (1 + 4) = 5 | 4 (4 + 2) = 6 | (5 + 2) = 7 | 2 示例 2：</description></item></channel></rss>

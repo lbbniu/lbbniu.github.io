@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>状态压缩 on lbbniu</title><link>/tags/%E7%8A%B6%E6%80%81%E5%8E%8B%E7%BC%A9/</link><description>Recent content in 状态压缩 on lbbniu</description><generator>Hugo -- gohugo.io</generator><language>zh</language><managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor><webMaster>lbbniu@gmail.com (lbbniu)</webMaster><copyright>&amp;copy; 2021 &lt;a href="https://blog.lbbniu.com/">lbbniu&lt;/a></copyright><lastBuildDate>Thu, 22 Dec 2022 00:01:00 +0800</lastBuildDate><atom:link href="/tags/%E7%8A%B6%E6%80%81%E5%8E%8B%E7%BC%A9/index.xml" rel="self" type="application/rss+xml"/><item><title>【2022-12-22每日一题】1799. N 次操作后的最大分数和[Hard]</title><link>/study/leetcode/maximize-score-after-n-operations/</link><pubDate>Thu, 22 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/maximize-score-after-n-operations/</guid><description>2022-12-22每日一题：1799. N 次操作后的最大分数和 难度：Hard
+标签：位运算 、 数组 、 数学 、 动态规划 、 回溯 、 状态压缩 、 数论
+给你 nums ，它是一个大小为 2 * n 的正整数数组。你必须对这个数组执行 n 次操作。
+在第 i 次操作时（操作编号从 1 开始），你需要：
+选择两个元素 x 和 y 。 获得分数 i * gcd(x, y) 。 将 x 和 y 从 nums 中删除。 请你返回 n 次操作后你能获得的分数和最大为多少。
+函数 gcd(x, y) 是 x 和 y 的最大公约数。
+示例 1：
+输入：nums = [1,2] 输出：1 解释：最优操作是： (1 * gcd(1, 2)) = 1 示例 2：</description></item><item><title>【2022-11-14每日一题】805. 数组的均值分割[Hard]</title><link>/study/leetcode/split-array-with-same-average/</link><pubDate>Mon, 14 Nov 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/split-array-with-same-average/</guid><description>2022-11-14每日一题：805. 数组的均值分割 难度：Hard
+标签：位运算 、 数组 、 数学 、 动态规划 、 状态压缩
+给定你一个整数数组&amp;nbsp;nums
+我们要将&amp;nbsp;nums&amp;nbsp;数组中的每个元素移动到&amp;nbsp;A&amp;nbsp;数组 或者&amp;nbsp;B&amp;nbsp;数组中，使得&amp;nbsp;A&amp;nbsp;数组和&amp;nbsp;B&amp;nbsp;数组不为空，并且&amp;nbsp;average(A) == average(B)&amp;nbsp;。
+如果可以完成则返回true&amp;nbsp;， 否则返回 false&amp;nbsp;&amp;nbsp;。
+注意：对于数组&amp;nbsp;arr&amp;nbsp;, &amp;nbsp;average(arr)&amp;nbsp;是&amp;nbsp;arr&amp;nbsp;的所有元素除以&amp;nbsp;arr&amp;nbsp;长度的和。
+&amp;nbsp;
+示例 1:
+输入: nums = [1,2,3,4,5,6,7,8] 输出: true 解释: 我们可以将数组分割为 [1,4,5,8] 和 [2,3,6,7], 他们的平均值都是4.5。 示例 2:
+输入: nums = [3,1] 输出: false &amp;nbsp;
+提示:
+1 &amp;lt;= nums.length &amp;lt;= 30 0 &amp;lt;= nums[i] &amp;lt;= 104 方法一：折半查找 详细思路过程见官方题解，这里只做个人刷题记录，方便后续查询阅读
+题解一 题解二 func splitArraySameAverage(nums []int) bool { n := len(nums) if n == 1 { // 不符合A, B都有元素 return false } // 求和 sum := 0 for _, v := range nums { sum += v } // 预处理数组 for i, v := range nums { nums[i] = v * n - sum } m := n &amp;gt;&amp;gt; 1 // 相当于 n/2 left := map[int]bool{} // 左侧处理 for i := 1; i &amp;lt; 1&amp;lt;&amp;lt;m; i++ { total := 0 for j, v := range nums { if i&amp;gt;&amp;gt;j&amp;amp;1 &amp;gt; 0 { total += v } } if total == 0 { return true } left[total] = true } // 右半部分处理 rsum := 0 for _, v := range nums[m:] { rsum += v } for i := 1; i &amp;lt; 1&amp;lt;&amp;lt;(n-m); i++ { total := 0 for j, v := range nums[m:] { if i&amp;gt;&amp;gt;j&amp;amp;1 &amp;gt; 0 { total += v } } // rsum !</description></item><item><title>【2022-09-20每日一题】698. 划分为k个相等的子集</title><link>/study/leetcode/partition-to-k-equal-sum-subsets/</link><pubDate>Tue, 20 Sep 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/partition-to-k-equal-sum-subsets/</guid><description>2022-09-20每日一题：698. 划分为k个相等的子集 难度：Medium
+标签：位运算 、 记忆化搜索 、 数组 、 动态规划 、 回溯 、 状态压缩
+给定一个整数数组&amp;nbsp;&amp;nbsp;nums 和一个正整数 k，找出是否有可能把这个数组分成 k 个非空子集，其总和都相等。
+&amp;nbsp;
+示例 1：
+输入： nums = [4, 3, 2, 3, 5, 2, 1], k = 4 输出： True 说明： 有可能将其分成 4 个子集（5），（1,4），（2,3），（2,3）等于总和。 示例 2:
+输入: nums = [1,2,3,4], k = 3 输出: false &amp;nbsp;
+提示：
+1 &amp;lt;= k &amp;lt;= len(nums) &amp;lt;= 16 0 &amp;lt; nums[i] &amp;lt; 10000 每个元素的频率在 [1,4] 范围内 方法一：状态压缩 + 记忆化搜索 详细思路过程见官方题解，这里只做个人刷题记录，方便后续查询阅读
+思路与算法 func canPartitionKSubsets(nums []int, k int) bool { all := 0 for _, num := range nums { all += num } // 不能整除 if all%k &amp;gt; 0 { return false } sort.</description></item></channel></rss>

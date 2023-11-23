@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>字符串匹配 on lbbniu</title><link>/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/</link><description>Recent content in 字符串匹配 on lbbniu</description><generator>Hugo -- gohugo.io</generator><language>zh</language><managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor><webMaster>lbbniu@gmail.com (lbbniu)</webMaster><copyright>&amp;copy; 2021 &lt;a href="https://blog.lbbniu.com/">lbbniu&lt;/a></copyright><lastBuildDate>Sat, 17 Dec 2022 00:01:00 +0800</lastBuildDate><atom:link href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/index.xml" rel="self" type="application/rss+xml"/><item><title>面试题 01.09 字符串轮转</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/string-rotation-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/string-rotation-lcci/</guid><description>面试题 01.09 字符串轮转 字符串轮转。给定两个字符串s1和s2，请编写代码检查s2是否为s1旋转而成（比如，waterbottle是erbottlewat旋转后的字符串）。
+示例1:
+输入：s1 = &amp;quot;waterbottle&amp;quot;, s2 = &amp;quot;erbottlewat&amp;quot; 输出：True 示例2:
+输入：s1 = &amp;quot;aa&amp;quot;, s2 = &amp;quot;aba&amp;quot; 输出：False 提示：
+字符串长度在[0, 100000]范围内。 说明:
+你能只调用一次检查子串的方法吗？ func isFlipedString(s1 string, s2 string) bool { } LeetCode题库地址 https://leetcode.cn/problems/string-rotation-lcci</description></item><item><title>面试题 04.10 检查子树</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/check-subtree-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/check-subtree-lcci/</guid><description>面试题 04.10 检查子树 检查子树。你有两棵非常大的二叉树：T1，有几万个节点；T2，有几万个节点。设计一个算法，判断 T2 是否为 T1 的子树。
+如果 T1 有这么一个节点 n，其子树与 T2 一模一样，则 T2 为 T1 的子树，也就是说，从节点 n 处把树砍断，得到的树与 T2 完全相同。
+注意：此题相对书上原题略有改动。
+示例1:
+输入：t1 = [1, 2, 3], t2 = [2] 输出：true 示例2:
+输入：t1 = [1, null, 2, 4], t2 = [3, 2] 输出：false 提示：
+树的节点数目范围为[0, 20000]。 /** * Definition for a binary tree node. * type TreeNode struct { * Val int * Left *TreeNode * Right *TreeNode * } */ func checkSubTree(t1 *TreeNode, t2 *TreeNode) bool { } LeetCode题库地址 https://leetcode.</description></item><item><title>面试题 17.17 多次搜索</title><link>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/multi-search-lcci/</link><pubDate>Thu, 28 Jul 2022 22:00:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8%E7%AC%AC6%E7%89%88/multi-search-lcci/</guid><description>面试题 17.17 多次搜索 给定一个较长字符串big和一个包含较短字符串的数组smalls，设计一个方法，根据smalls中的每一个较短字符串，对big进行搜索。输出smalls中的字符串在big里出现的所有位置positions，其中positions[i]为smalls[i]出现的所有位置。
+示例：
+输入： big = &amp;quot;mississippi&amp;quot; smalls = [&amp;quot;is&amp;quot;,&amp;quot;ppi&amp;quot;,&amp;quot;hi&amp;quot;,&amp;quot;sis&amp;quot;,&amp;quot;i&amp;quot;,&amp;quot;ssippi&amp;quot;] 输出： [[1,4],[8],[],[3],[1,4,7,10],[5]] 提示：
+0 &amp;lt;= len(big) &amp;lt;= 1000 0 &amp;lt;= len(smalls[i]) &amp;lt;= 1000 smalls的总字符数不会超过 100000。 你可以认为smalls中没有重复字符串。 所有出现的字符均为英文小写字母。 func multiSearch(big string, smalls []string) [][]int { } LeetCode题库地址 https://leetcode.cn/problems/multi-search-lcci</description></item><item><title>【2022-12-17每日一题】1764. 通过连接另一个数组的子数组得到一个数组[Medium]</title><link>/study/leetcode/form-array-by-concatenating-subarrays-of-another-array/</link><pubDate>Sat, 17 Dec 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/form-array-by-concatenating-subarrays-of-another-array/</guid><description>2022-12-17每日一题：1764. 通过连接另一个数组的子数组得到一个数组 难度：Medium
+标签：贪心 、 数组 、 字符串匹配
+给你一个长度为 n 的二维整数数组 groups ，同时给你一个整数数组 nums 。
+你是否可以从 nums 中选出 n 个 不相交 的子数组，使得第 i 个子数组与 groups[i] （下标从 0 开始）完全相同，且如果 i > 0 ，那么第 (i-1) 个子数组在 nums 中出现的位置在第 i 个子数组前面。（也就是说，这些子数组在 nums 中出现的顺序需要与 groups 顺序相同）
+如果你可以找出这样的 n 个子数组，请你返回 true ，否则返回 false 。
+如果不存在下标为 k 的元素 nums[k] 属于不止一个子数组，就称这些子数组是 不相交 的。子数组指的是原数组中连续元素组成的一个序列。
+示例 1：
+输入：groups = [[1,-1,-1],[3,-2,0]], nums = [1,-1,0,1,-1,-1,3,-2,0] 输出：true 解释：你可以分别在 nums 中选出第 0 个子数组 [1,-1,0,1,-1,-1,3,-2,0] 和第 1 个子数组 [1,-1,0,1,-1,-1,3,-2,0] 。 这两个子数组是不相交的，因为它们没有任何共同的元素。 示例 2：</description></item><item><title>【2022-11-03每日一题】1668. 最大重复子字符串[Easy]</title><link>/study/leetcode/maximum-repeating-substring/</link><pubDate>Thu, 03 Nov 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/maximum-repeating-substring/</guid><description>2022-11-03每日一题：1668. 最大重复子字符串 难度：Easy
+标签：字符串 、 字符串匹配
+给你一个字符串 sequence ，如果字符串 word 连续重复 k 次形成的字符串是 sequence 的一个子字符串，那么单词 word 的 重复值为 k 。单词 word 的 最大重复值 是单词 word 在 sequence 中最大的重复值。如果 word 不是 sequence 的子串，那么重复值 k 为 0 。
+给你一个字符串 sequence 和 word ，请你返回 最大重复值 k 。
+示例 1：
+输入：sequence = "ababc", word = "ab" 输出：2 解释："abab" 是 "ababc" 的子字符串。 示例 2：
+输入：sequence = "ababc", word = "ba" 输出：1 解释："ba" 是 "ababc" 的子字符串，但 "baba" 不是 "ababc" 的子字符串。 示例 3：</description></item><item><title>【2022-09-29每日一题】面试题 01.09. 字符串轮转[Easy]</title><link>/study/leetcode/string-rotation-lcci/</link><pubDate>Thu, 29 Sep 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/string-rotation-lcci/</guid><description>2022-09-29每日一题：面试题 01.09. 字符串轮转 难度：Easy
+标签：字符串 、 字符串匹配
+字符串轮转。给定两个字符串s1和s2，请编写代码检查s2是否为s1旋转而成（比如，waterbottle是erbottlewat旋转后的字符串）。
+示例1:
+输入：s1 = &amp;quot;waterbottle&amp;quot;, s2 = &amp;quot;erbottlewat&amp;quot; 输出：True 示例2:
+输入：s1 = &amp;quot;aa&amp;quot;, s2 = &amp;quot;aba&amp;quot; 输出：False 提示：
+字符串长度在[0, 100000]范围内。 说明:
+你能只调用一次检查子串的方法吗？ 方法一：模拟 详细思路过程见官方题解，这里只做个人刷题记录，方便后续查询阅读
+func isFlipedString(s1 string, s2 string) bool { n := len(s1) if n != len(s2) { return false } if n == 0 { return true } next: for i := 0; i &amp;lt; n; i++ { for j := 0; j &amp;lt; n; j++ { if s1[(i+j)%n] !</description></item><item><title>【2022-08-21每日一题】1455. 检查单词是否为句中其他单词的前缀</title><link>/study/leetcode/check-if-a-word-occurs-as-a-prefix-of-any-word-in-a-sentence/</link><pubDate>Sun, 21 Aug 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/check-if-a-word-occurs-as-a-prefix-of-any-word-in-a-sentence/</guid><description>2022-08-21每日一题：1455. 检查单词是否为句中其他单词的前缀 难度：Easy 标签：字符串 、 字符串匹配 给你一个字符串 sentence 作为句子并指定检索词为 searchWord ，其中句子由若干用 单个空格 分隔的单词组成。请你检查检索词 searchWord 是否为句子 sentence 中任意单词的前缀。
+如果&amp;nbsp;searchWord 是某一个单词的前缀，则返回句子&amp;nbsp;sentence 中该单词所对应的下标（下标从 1 开始）。如果 searchWord 是多个单词的前缀，则返回匹配的第一个单词的下标（最小下标）。如果 searchWord 不是任何单词的前缀，则返回 -1 。
+字符串 s 的 前缀 是 s 的任何前导连续子字符串。
+&amp;nbsp;
+示例 1：
+输入：sentence = "i love eating burger", searchWord = "burg" 输出：4 解释："burg" 是 "burger" 的前缀，而 "burger" 是句子中第 4 个单词。 示例 2：
+输入：sentence = "this problem is an easy problem", searchWord = "pro" 输出：2 解释："pro" 是 "problem" 的前缀，而 "problem" 是句子中第 2 个也是第 6 个单词，但是应该返回最小下标 2 。 示例 3：</description></item><item><title>【2022-08-06每日一题】1408. 数组中的字符串匹配</title><link>/study/leetcode/string-matching-in-an-array/</link><pubDate>Sat, 06 Aug 2022 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/string-matching-in-an-array/</guid><description>2022-08-06每日一题：1408. 数组中的字符串匹配 给你一个字符串数组 words ，数组中的每个字符串都可以看作是一个单词。请你按 任意 顺序返回 words 中是其他单词的子字符串的所有单词。
+如果你可以删除 words[j]&amp;nbsp;最左侧和/或最右侧的若干字符得到 words[i] ，那么字符串 words[i] 就是 words[j] 的一个子字符串。
+&amp;nbsp;
+示例 1：
+输入：words = [&amp;quot;mass&amp;quot;,&amp;quot;as&amp;quot;,&amp;quot;hero&amp;quot;,&amp;quot;superhero&amp;quot;] 输出：[&amp;quot;as&amp;quot;,&amp;quot;hero&amp;quot;] 解释：&amp;quot;as&amp;quot; 是 &amp;quot;mass&amp;quot; 的子字符串，&amp;quot;hero&amp;quot; 是 &amp;quot;superhero&amp;quot; 的子字符串。 [&amp;quot;hero&amp;quot;,&amp;quot;as&amp;quot;] 也是有效的答案。 示例 2：
+输入：words = [&amp;quot;leetcode&amp;quot;,&amp;quot;et&amp;quot;,&amp;quot;code&amp;quot;] 输出：[&amp;quot;et&amp;quot;,&amp;quot;code&amp;quot;] 解释：&amp;quot;et&amp;quot; 和 &amp;quot;code&amp;quot; 都是 &amp;quot;leetcode&amp;quot; 的子字符串。 示例 3：
+输入：words = [&amp;quot;blue&amp;quot;,&amp;quot;green&amp;quot;,&amp;quot;bu&amp;quot;] 输出：[] &amp;nbsp;
+提示：
+1 &amp;lt;= words.length &amp;lt;= 100 1 &amp;lt;= words[i].length &amp;lt;= 30 words[i] 仅包含小写英文字母。 题目数据 保证 每个 words[i] 都是独一无二的。 方法一：穷举， 暴力双层循环 func stringMatching(words []string) []string { ans := []string{} for i, wordi := range words { for j, wordj := range words { if i !</description></item></channel></rss>

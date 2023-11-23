@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>欧拉回路 on lbbniu</title><link>/tags/%E6%AC%A7%E6%8B%89%E5%9B%9E%E8%B7%AF/</link><description>Recent content in 欧拉回路 on lbbniu</description><generator>Hugo -- gohugo.io</generator><language>zh</language><managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor><webMaster>lbbniu@gmail.com (lbbniu)</webMaster><copyright>&amp;copy; 2021 &lt;a href="https://blog.lbbniu.com/">lbbniu&lt;/a></copyright><lastBuildDate>Tue, 10 Jan 2023 00:01:00 +0800</lastBuildDate><atom:link href="/tags/%E6%AC%A7%E6%8B%89%E5%9B%9E%E8%B7%AF/index.xml" rel="self" type="application/rss+xml"/><item><title>【2023-01-10每日一题】753. 破解保险箱[Hard]</title><link>/study/leetcode/cracking-the-safe/</link><pubDate>Tue, 10 Jan 2023 00:01:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/study/leetcode/cracking-the-safe/</guid><description>2023-01-10每日一题：753. 破解保险箱 难度：Hard
+标签：深度优先搜索 、 图 、 欧拉回路
+有一个需要密码才能打开的保险箱。密码是&amp;nbsp;n 位数, 密码的每一位是&amp;nbsp;k&amp;nbsp;位序列&amp;nbsp;0, 1, ..., k-1&amp;nbsp;中的一个 。
+你可以随意输入密码，保险箱会自动记住最后&amp;nbsp;n&amp;nbsp;位输入，如果匹配，则能够打开保险箱。
+举个例子，假设密码是&amp;nbsp;&amp;quot;345&amp;quot;，你可以输入&amp;nbsp;&amp;quot;012345&amp;quot;&amp;nbsp;来打开它，只是你输入了 6&amp;nbsp;个字符.
+请返回一个能打开保险箱的最短字符串。
+&amp;nbsp;
+示例1:
+输入: n = 1, k = 2 输出: &amp;quot;01&amp;quot; 说明: &amp;quot;10&amp;quot;也可以打开保险箱。 &amp;nbsp;
+示例2:
+输入: n = 2, k = 2 输出: &amp;quot;00110&amp;quot; 说明: &amp;quot;01100&amp;quot;, &amp;quot;10011&amp;quot;, &amp;quot;11001&amp;quot; 也能打开保险箱。 &amp;nbsp;
+提示：
+n 的范围是&amp;nbsp;[1, 4]。 k 的范围是&amp;nbsp;[1, 10]。 k^n 最大可能为&amp;nbsp;4096。 &amp;nbsp;
+方法一： 详细思路过程见官方题解，这里只做个人刷题记录，方便后续查询阅读
+func crackSafe(n int, k int) string { } 复杂度分析 LeetCode题库地址 https://leetcode.cn/problems/cracking-the-safe</description></item></channel></rss>

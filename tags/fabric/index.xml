@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>fabric on lbbniu</title><link>/tags/fabric/</link><description>Recent content in fabric on lbbniu</description><generator>Hugo -- gohugo.io</generator><language>zh</language><managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor><webMaster>lbbniu@gmail.com (lbbniu)</webMaster><copyright>&amp;copy; 2021 &lt;a href="https://blog.lbbniu.com/">lbbniu&lt;/a></copyright><lastBuildDate>Sat, 20 Nov 2021 17:18:16 +0800</lastBuildDate><atom:link href="/tags/fabric/index.xml" rel="self" type="application/rss+xml"/><item><title>fabric一些简单用法总结</title><link>/2021/11/20/fabric%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/</link><pubDate>Sat, 20 Nov 2021 17:18:16 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/2021/11/20/fabric%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/</guid><description>1.支持中文
+#!/usr/bin/python env # -*- coding: utf-8 -*- 2.支持颜色
+from fabric.colors import * print(red(&amp;quot;红色&amp;quot;) + green(&amp;quot;绿色&amp;quot;，bold=False) + blue(&amp;quot;蓝色&amp;quot;,bold=True) + white(&amp;quot;白色&amp;quot;) + yellow(&amp;quot;黄色&amp;quot;) + cyan(&amp;quot;蓝绿色&amp;quot;) + magenta(&amp;quot;品红色&amp;quot;)) 3.设置主机组及账号密码
+主机密码不同时：
+env.hosts = ['tomcat@192.168.244.128','tomcat@192.168.244.129'] env.passwords = {'tomcat@192.168.244.128:22':'111111','tomcat@192.168.244.129:22':'111111'} 主机密码相同时:
+env.hosts=[ 'tomcat@192.168.244.128:22', 'tomcat@192.168.244.129:22', ] env.password = '1111' 使用ssh keyfile:
+env.key_filename = ['/opt/fab/server_key'] env.user = 'tomcat' env.password = '111111' env.port = '2862' 4.运行shell命令
+在本地运行命令:
+local('pwd') local('set -m ; /etc/init.d/tomcat restart') # 如果是脚本，要加set -m 支持后台执行并返回状态，否则会报错 在服务器上运行命令:
+run('uname -a') 5.切换目录执行
+with cd('/opt/tomcat') run('set -m ; .</description></item></channel></rss>
