@@ -1,0 +1,304 @@
+<!doctype html><html lang=zh dir=ltr><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>用Golang助力表妹轻松实现自动化办公！（完整代码附后） | lbbniu</title>
+<meta name=generator content="Hugo Eureka 0.9.3"><link rel=stylesheet href=/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css><script defer src=/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js></script><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" as=style onload='this.onload=null,this.rel="stylesheet"'><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/github.min.css media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/php.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/java.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/go.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/python.min.js crossorigin></script><link rel=stylesheet href=/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css media=print onload='this.media="all",this.onload=null'><script defer type=text/javascript src=/js/fontawesome.min.35973bea57658ef0dd22ad59ea4642b6c8c67af62bed8659ac326d284ef285a6657cdbcf57d3b2910e7e992f2b20426e.js></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css integrity=sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js integrity=sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY crossorigin></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script><script defer src=https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js integrity=sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0 crossorigin></script><link rel=icon type=image/png sizes=32x32 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_32x32_fill_box_center_3.png><link rel=apple-touch-icon sizes=180x180 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_180x180_fill_box_center_3.png><meta name=description content="用Golang助力表妹轻松实现自动化办公！（完整代码附后）"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"文章列表","item":"/post/"},{"@type":"ListItem","position":2,"name":"用Golang助力表妹轻松实现自动化办公！（完整代码附后）","item":"/2023/12/10/goalng-execl/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/2023/12/10/goalng-execl/"},"headline":"用Golang助力表妹轻松实现自动化办公！（完整代码附后） | lbbniu","datePublished":"2023-12-10T15:20:00+08:00","dateModified":"2023-12-10T15:20:00+08:00","wordCount":718,"author":{"@type":"Person","name":["lbbniu"]},"publisher":{"@type":"Person","name":"lbbniu","logo":{"@type":"ImageObject","url":"/images/icon.gif"}},"description":"用Golang助力表妹轻松实现自动化办公！（完整代码附后）"}</script><meta property="og:title" content="用Golang助力表妹轻松实现自动化办公！（完整代码附后） | lbbniu"><meta property="og:type" content="article"><meta property="og:image" content="/images/icon.png"><meta property="og:url" content="/2023/12/10/goalng-execl/"><meta property="og:description" content="用Golang助力表妹轻松实现自动化办公！（完整代码附后）"><meta property="og:locale" content="zh"><meta property="og:site_name" content="lbbniu"><meta property="article:published_time" content="2023-12-10T15:20:00+08:00"><meta property="article:modified_time" content="2023-12-10T15:20:00+08:00"><meta property="article:section" content="post"><meta property="article:tag" content="Golang"><body class="flex min-h-screen flex-col"><header class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"><div class="mx-auto w-full max-w-screen-xl"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=="Auto"||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName("html")[0].classList.add("dark")</script><nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0"><a href=/ class="me-6 text-primary-text text-xl font-bold">lbbniu</a>
+<button id=navbar-btn class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+<i class="fas fa-bars"></i></button><div id=target class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20"><div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0"><a href=/post/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">文章</a>
+<a href=/cloud-native/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">云原生</a>
+<a href=/study/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">算法学习</a>
+<a href=/docs/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">Go学习训练营</a>
+<a href=/tags/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">标签</a></div><div class=flex><div class="relative pt-4 md:pt-0"><div class="cursor-pointer hover:text-eureka" id=lightDarkMode><i class="fas fa-adjust"></i></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id=is-open></div><div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40" id=lightDarkOptions><span class="px-4 py-1 hover:text-eureka" name=Light>浅色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Dark>深色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Auto>自动</span></div></div></div></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id=is-open-mobile></div></nav><script>let element=document.getElementById("lightDarkMode");storageColorScheme==null||storageColorScheme=="Auto"?document.addEventListener("DOMContentLoaded",()=>{window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",switchDarkMode)}):storageColorScheme=="Light"?(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","sun"),element.firstElementChild.classList.add("fa-sun")):storageColorScheme=="Dark"&&(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","moon"),element.firstElementChild.classList.add("fa-moon")),document.addEventListener("DOMContentLoaded",()=>{getcolorscheme(),switchBurger()})</script></div></header><main class="grow pt-16"><div class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8"><div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12"><div class="bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"><article class=prose><h1 class=mb-4>用Golang助力表妹轻松实现自动化办公！（完整代码附后）</h1><div class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"><div class="me-6 my-2"><i class="fas fa-calendar me-1"></i>
+<span>2023-12-10</span></div><div class="me-6 my-2"><i class="fas fa-clock me-1"></i>
+<span>4分钟阅读时长</span></div><div class="me-6 my-2"><i class="fas fa-folder me-1"></i>
+<a href=/categories/golang/ class=hover:text-eureka>golang</a></div></div><p>Hello，大家好，我是lbbniu~</p><p>今天有一个有趣的编程需求要分享，这次的灵感来源于我可爱的表妹。简单来说，我们将利用Golang对Excel文件进行批量处理，达到高效自动化办公的目的。</p><h2 id=一具体需求>一、具体需求</h2><p>手上有一系列N个表格，每个表格都有相同的结构，看起来就像这样：</p><p><img src="https://mmbiz.qpic.cn/mmbiz_png/4J6KQdtCiaibs0wMfjSR8pibmiaDpLgP5b1T5VNr5ibIAEuOcGqZEW4lZOvRVFJ6CFrCZZ3BXpia3jExjLaQiaz64co9g/640?wx_fmt=png&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt=表结构></p><p>任务是将所有表中的数据汇总，按照每个人的得分和积分进行合计，然后按总积分排名。在总积分相同的情况下，名次也相同但不是连续的排序。如果总积分和名次都相同，再按总得分降序展示，但不改变排名。</p><p>结果如下图所示：</p><p><img src="https://mmbiz.qpic.cn/mmbiz_png/4J6KQdtCiaibs0wMfjSR8pibmiaDpLgP5b1TVNm08k73ic78DPWCybWUQXtS24Zywz6W1IDuI7zvCbTTFbXtCKQo69w/640?wx_fmt=png&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt=结果展示></p><h2 id=二golang开发>二、Golang开发</h2><p>首先，让我们引入需要的包：</p><pre><code class=language-go>package main
+
+import (
+	&quot;fmt&quot;
+	&quot;log&quot;
+	&quot;path/filepath&quot;
+	&quot;sort&quot;
+
+	&quot;github.com/tealeg/xlsx&quot;
+)
+</code></pre><p>接下来，获取所有Excel文件的路径：</p><pre><code class=language-go>func getExcelFiles() []string {
+	files, err := filepath.Glob(&quot;./样例数据/*.xlsx&quot;)
+	if err != nil {
+		log.Fatal(err)
+	}
+	return files
+}
+</code></pre><p>然后，将各表数据合并到主结构体：</p><pre><code class=language-go>// Record 结构体表示每个人的记录
+type Record struct {
+	Name    string
+	Monthly int
+	Points  int
+	Ranking int
+}
+
+func getCellValue(cell *xlsx.Cell) int {
+	value, err := cell.Int()
+	if err != nil {
+		log.Fatal(err)
+	}
+	return value
+}
+
+func mergeData(files []string) []Record {
+	var mergedData []Record
+
+	for _, file := range files {
+		// 读取Excel文件
+		xlFile, err := xlsx.OpenFile(file)
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		// 处理每个Sheet
+		for _, sheet := range xlFile.Sheets {
+			for _, row := range sheet.Rows[2:] {
+				record := Record{
+					Name:    row.Cells[0].String(),
+					Monthly: getCellValue(row.Cells[1]),
+					Points:  getCellValue(row.Cells[3]),
+				}
+				mergedData = append(mergedData, record)
+			}
+		}
+	}
+
+	return mergedData
+}
+</code></pre><p>接下来，计算总积分和总排名：</p><pre><code class=language-go>func calculateTotalAndRanking(data []Record) []Record {
+	totalMonthlys := make(map[string]int)
+	totalPoints := make(map[string]int)
+	uniqueNames := make(map[string]bool)
+	var mergedRecords []Record
+
+	for _, record := range data {
+		uniqueNames[record.Name] = true
+		totalMonthlys[record.Name] += record.Monthly
+		totalPoints[record.Name] += record.Points
+	}
+
+	sortedNames := make([]string, 0, len(uniqueNames))
+	for name := range uniqueNames {
+		sortedNames = append(sortedNames, name)
+	}
+
+	sort.Slice(sortedNames, func(i, j int) bool {
+		if totalPoints[sortedNames[i]] == totalPoints[sortedNames[j]] {
+			return sortedNames[i] &lt; sortedNames[j]
+		}
+		return totalPoints[sortedNames[i]] &gt; totalPoints[sortedNames[j]]
+	})
+
+	for _, record := range data {
+		if _, ok := uniqueNames[record.Name]; ok {
+			mergedRecord := Record{
+				Name:    record.Name,
+				Monthly: totalMonthlys[record.Name],
+				Points:  totalPoints[record.Name],
+			}
+			mergedRecords = append(mergedRecords, mergedRecord)
+			delete(uniqueNames, record.Name) // 避免重复计算相同姓名的记录
+		}
+	}
+
+	return mergedRecords
+}
+</code></pre><p>最后，按总积分和总得分排序，输出结果：</p><pre><code class=language-go>func sortAndOutputResults(data []Record) {
+	sort.Slice(data, func(i, j int) bool {
+		if data[i].Points == data[j].Points {
+			return data[i].Monthly &gt; data[j].Monthly
+		}
+		return data[i].Points &gt; data[j].Points
+	})
+
+	outputFile := &quot;总积分及排名.xlsx&quot;
+	xlFile := xlsx.NewFile()
+	sheet, err := xlFile.AddSheet(&quot;Sorted Results&quot;)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	row := sheet.AddRow()
+	row.AddCell().Value = &quot;姓名&quot;
+	row.AddCell().Value = &quot;总得分&quot;
+	row.AddCell().Value = &quot;总积分&quot;
+	row.AddCell().Value = &quot;总排名&quot;
+
+	ranking, points := 1, data[0].Points
+	for _, record := range data {
+		if points != record.Points {
+			ranking++
+		}
+		row := sheet.AddRow()
+		row.AddCell().Value = record.Name
+		row.AddCell().SetInt(record.Monthly)
+		row.AddCell().SetInt(record.Points)
+		row.AddCell().SetInt(ranking)
+	}
+
+	if err := xlFile.Save(outputFile); err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Printf(&quot;排序后的结果已保存到 %s\n&quot;, outputFile)
+}
+
+func main() {
+	excelFiles := getExcelFiles()
+	mergedData := mergeData(excelFiles)
+	calculateTotalAndRanking(mergedData)
+	sortAndOutputResults(mergedData)
+}
+</code></pre><p>完整代码：</p><pre><code class=language-go>package main
+
+import (
+	&quot;fmt&quot;
+	&quot;log&quot;
+	&quot;path/filepath&quot;
+	&quot;sort&quot;
+
+	&quot;github.com/tealeg/xlsx&quot;
+)
+
+// Record 结构体表示每个人的记录
+type Record struct {
+	Name    string
+	Monthly int
+	Points  int
+	Ranking int
+}
+
+func getCellValue(cell *xlsx.Cell) int {
+	value, err := cell.Int()
+	if err != nil {
+		log.Fatal(err)
+	}
+	return value
+}
+
+func getExcelFiles() []string {
+	files, err := filepath.Glob(&quot;./样例数据/*.xlsx&quot;)
+	if err != nil {
+		log.Fatal(err)
+	}
+	return files
+}
+
+func mergeData(files []string) []Record {
+	var mergedData []Record
+
+	for _, file := range files {
+		// 读取Excel文件
+		xlFile, err := xlsx.OpenFile(file)
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		// 处理每个Sheet
+		for _, sheet := range xlFile.Sheets {
+			for _, row := range sheet.Rows[2:] {
+				record := Record{
+					Name:    row.Cells[0].String(),
+					Monthly: getCellValue(row.Cells[1]),
+					Points:  getCellValue(row.Cells[3]),
+				}
+				mergedData = append(mergedData, record)
+			}
+		}
+	}
+
+	return mergedData
+}
+
+func calculateTotalAndRanking(data []Record) []Record {
+	totalMonthlys := make(map[string]int)
+	totalPoints := make(map[string]int)
+	uniqueNames := make(map[string]bool)
+	var mergedRecords []Record
+
+	for _, record := range data {
+		uniqueNames[record.Name] = true
+		totalMonthlys[record.Name] += record.Monthly
+		totalPoints[record.Name] += record.Points
+	}
+
+	sortedNames := make([]string, 0, len(uniqueNames))
+	for name := range uniqueNames {
+		sortedNames = append(sortedNames, name)
+	}
+
+	sort.Slice(sortedNames, func(i, j int) bool {
+		if totalPoints[sortedNames[i]] == totalPoints[sortedNames[j]] {
+			return sortedNames[i] &lt; sortedNames[j]
+		}
+		return totalPoints[sortedNames[i]] &gt; totalPoints[sortedNames[j]]
+	})
+
+	for _, record := range data {
+		if _, ok := uniqueNames[record.Name]; ok {
+			mergedRecord := Record{
+				Name:    record.Name,
+				Monthly: totalMonthlys[record.Name],
+				Points:  totalPoints[record.Name],
+			}
+			mergedRecords = append(mergedRecords, mergedRecord)
+			delete(uniqueNames, record.Name) // 避免重复计算相同姓名的记录
+		}
+	}
+
+	return mergedRecords
+}
+
+func sortAndOutputResults(data []Record) {
+	sort.Slice(data, func(i, j int) bool {
+		if data[i].Points == data[j].Points {
+			return data[i].Monthly &gt; data[j].Monthly
+		}
+		return data[i].Points &gt; data[j].Points
+	})
+
+	outputFile := &quot;总积分及排名.xlsx&quot;
+	xlFile := xlsx.NewFile()
+	sheet, err := xlFile.AddSheet(&quot;Sorted Results&quot;)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	row := sheet.AddRow()
+	row.AddCell().Value = &quot;姓名&quot;
+	row.AddCell().Value = &quot;总得分&quot;
+	row.AddCell().Value = &quot;总积分&quot;
+	row.AddCell().Value = &quot;总排名&quot;
+
+	ranking, points := 1, data[0].Points
+	for _, record := range data {
+		if points != record.Points {
+			ranking++
+		}
+		row := sheet.AddRow()
+		row.AddCell().Value = record.Name
+		row.AddCell().SetInt(record.Monthly)
+		row.AddCell().SetInt(record.Points)
+		row.AddCell().SetInt(ranking)
+	}
+
+	if err := xlFile.Save(outputFile); err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Printf(&quot;排序后的结果已保存到 %s\n&quot;, outputFile)
+}
+
+func main() {
+	excelFiles := getExcelFiles()
+	mergedData := mergeData(excelFiles)
+	mergedData = calculateTotalAndRanking(mergedData)
+	sortAndOutputResults(mergedData)
+}
+</code></pre><p>以上就是整个Golang实现的简要流程。虽然代码比较简洁，但相信这会为表妹省去不少时间，嘿嘿！</p><p>希望大家也能将Golang这个强大的语言用于工作和生活，提高工作效率，让生活更有趣。</p><p>关注我的公众号，后台回复“每天进步一点点”，即可获取完整代码和数据哦！</p><p>感谢阅读，我们下期见！</p><p>lbbniu 敬上</p><p>关注我，共同进步！</p></article><div class=my-4><a href=/tags/golang/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#golang</a></div><div class=py-2><div class="my-8 flex flex-col items-center md:flex-row"><a href=/authors/lbbniu/ class="md:me-4 text-primary-text h-24 w-24"><i class="fas fa-user-circle fa-6x"></i></a><div class="mt-4 w-full md:mt-0 md:w-auto"><a href=/authors/lbbniu/ class="mb-2 block border-b pb-1 text-lg font-bold"><h3>lbbniu</h3></a><span class="block pb-2"></span></div></div></div><div class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"><div></div><div class="mt-4 md:mt-0 md:text-right"><span class="text-primary-text block font-bold">下一页</span>
+<a href=/2023/10/24/qiqiuyun/ class=block>气球云key解密核心js代码</a></div></div></div><div class=col-span-2><div class="bg-primary-bg
+prose sticky top-16 z-10 hidden px-6 py-4 lg:block"><h3>本页内容</h3></div><div class="sticky-toc hidden px-6 pb-6 lg:block"><nav id=TableOfContents><ul><li><a href=#一具体需求>一、具体需求</a></li><li><a href=#二golang开发>二、Golang开发</a></li></ul></nav></div><script>window.addEventListener("DOMContentLoaded",()=>{enableStickyToc()})</script></div></div><script>document.addEventListener("DOMContentLoaded",()=>{hljs.highlightAll()})</script></div></div></main><footer class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b"><p class="text-sm text-tertiary-text">&copy; 2021 <a href=https://blog.lbbniu.com/>lbbniu</a>
+&#183; Powered by the <a href=https://github.com/wangchucheng/hugo-eureka class=hover:text-eureka>Eureka</a> theme for <a href=https://gohugo.io class=hover:text-eureka>Hugo</a></p></div></div></footer></body></html>

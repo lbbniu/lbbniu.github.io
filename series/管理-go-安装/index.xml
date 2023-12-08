@@ -3,6 +3,6 @@
 下载和安装 ——最简单的安装和运行方式。 从源代码安装 Go—— 如何检查源代码、在您自己的机器上构建它们并运行它们。 安装多个 Go 版本 您可以在同一台机器上安装多个 Go 版本。例如，您可能希望在多个 Go 版本上测试您的代码。有关可以通过这种方式安装的版本列表，请参阅下载页面 。
 **注意：**要使用此处描述的方法进行安装，您需要安装git 。
 要安装其他 Go 版本，请运行go install命令 ，指定要安装的版本的下载位置。以下示例说明了版本 1.10.7：
-# go version &amp;lt; 1.17 $ go get -u golang.org/dl/go1.10.7 # go version &amp;gt;= 1.17 $ go install golang.org/dl/go1.10.7@latest $ go1.10.7 download 要使用新下载的版本运行go命令，请将版本号附加到go命令中，如下所示：
+# go version &amp;lt; 1.17 $ go get -u golang.org/dl/go1.10.7 # go version &amp;gt;= 1.17 $ go install golang.org/dl/go1.10.7@latest $ go1.10.7 download	要使用新下载的版本运行go命令，请将版本号附加到go命令中，如下所示：
 $ go1.10.7 version go version go1.10.7 linux/amd64 当您安装了多个版本时，您可以发现每个版本的安装位置，查看版本的GOROOT值。例如，运行如下命令：
 $ go1.10.7 env GOROOT 要卸载下载的版本，只需删除其GOROOT环境变量和 goX.</description></item></channel></rss>
