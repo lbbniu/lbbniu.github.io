@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NilAway on lbbniu</title><link>/tags/nilaway/</link><description>Recent content in NilAway on lbbniu</description><generator>Hugo -- gohugo.io</generator><language>zh</language><managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor><webMaster>lbbniu@gmail.com (lbbniu)</webMaster><copyright>&amp;copy; 2021 &lt;a href="https://blog.lbbniu.com/">lbbniu&lt;/a></copyright><lastBuildDate>Tue, 15 Feb 2022 15:20:00 +0800</lastBuildDate><atom:link href="/tags/nilaway/index.xml" rel="self" type="application/rss+xml"/><item><title>Go Uber静态分析工具 NilAway 初体验</title><link>/2022/02/15/go-uber-nilaway/</link><pubDate>Tue, 15 Feb 2022 15:20:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/2022/02/15/go-uber-nilaway/</guid><description>大家好，我是lbbniu。
+今天给大家介绍以下 Uber 开源的静态分析工具 NilAway，下面开鲁。
+最近 Uber 开发和开源了一个挺不错的静态分析工具 NilAway：
+NilAway是一个静态分析工具，旨在通过在编译时而不是运行时捕获nil panic来帮助开发人员避免在生产中出现这种情况。NilAway类似于标准的nilness分析器，但它采用更复杂和强大的静态分析技术来跟踪包内和跨包的nil流，并报告错误，为用户提供更轻松的调试nilness流程。
+NilAway具有三个关键特性，使其脱颖而出：
+完全自动化：NilAway配备有推理引擎，因此除了标准的Go代码之外，它不需要从开发人员那里获取任何其他信息（例如注释）。 速度快：我们设计NilAway为快速且可扩展，适用于大型代码库。在我们的测量中，启用NilAway时构建时间开销不到5%。我们还在不断应用优化来进一步减少其占用空间。 实用性：它不能阻止代码中所有可能的nil panic，但它可以捕获我们在生产中观察到的大多数潜在nil panic，使NilAway在实用性和构建时间开销之间保持良好平衡。 安装 NilAway是使用标准的go/analysis框架实现的，因此易于与现有的分析驱动程序集成（例如golangci-lint、nogo或作为独立检查器运行）。下面是将NilAway作为独立检查器运行的说明。更多集成支持将很快添加。
+独立检查器 通过以下命令从源代码安装二进制文件：
+go install go.uber.org/nilaway/cmd/nilaway@latest 然后，通过以下命令运行linter：
+nilaway ./... 代码示例 案例一 让我们看一些示例，了解NilAway如何帮助防止nil panic。
+// Example 1: var p *P if someCondition { p = &amp;amp;P{} } print(p.f) // nilness reports NO error here, but NilAway does. 在这个示例中，局部变量p仅在someCondition为true时初始化。在字段访问p.f时，如果someCondition为false，则可能发生panic。NilAway能够捕获这个潜在的nil导致的panic并报告以下错误：
+go.uber.org/example.go:12:9: error: Potential nil panic detected. Observed nil flow from source to dereference point: -&amp;gt; go.uber.org/example.go:12:9: unassigned variable `p` accessed field `f` 如果我们使用nil检查（if p !</description></item></channel></rss>

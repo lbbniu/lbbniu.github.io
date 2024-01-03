@@ -2,4 +2,4 @@
 在该文件中，您可以将其自定义为：
 &amp;lt;a href=&amp;quot;{{ .Destination | safeURL }}&amp;quot;{{ with .Title}} title=&amp;quot;{{ . }}&amp;quot;{{ end }}{{ if strings.HasPrefix .Destination &amp;quot;http&amp;quot; }} target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener&amp;quot;{{ end }}&amp;gt;{{ .Text | safeHTML }}&amp;lt;/a&amp;gt; 以下是会发生的情况：
 - [link1](../something/ title=&amp;quot;title&amp;quot;) =&amp;gt; &amp;lt;a href=&amp;quot;../something/&amp;quot; title=&amp;quot;title&amp;quot;&amp;gt;link1&amp;lt;/a&amp;gt; - [link2](https://example.com) =&amp;gt; &amp;lt;a href=&amp;quot;https://example.com&amp;quot;&amp;gt;link2&amp;lt;/a&amp;gt; 它只会将其添加到带有“http”和“https”的 URL。
-渲染挂钩的文档可在此处获得：https://gohugo.io/templates/render-hooks/</description></item></channel></rss>
+渲染挂钩的文档可在此处获得：https://gohugo.io/templates/render-hooks/ 关注公众号获得更多精彩文章</description></item></channel></rss>
