@@ -1,8 +1,49 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tarsgo on lbbniu</title><link>/tags/tarsgo/</link><description>Recent content in tarsgo on lbbniu</description><generator>Hugo -- gohugo.io</generator><language>zh</language><managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor><webMaster>lbbniu@gmail.com (lbbniu)</webMaster><copyright>&amp;copy; 2021 &lt;a href="https://blog.lbbniu.com/">lbbniu&lt;/a></copyright><lastBuildDate>Sat, 06 Jan 2024 15:20:00 +0800</lastBuildDate><atom:link href="/tags/tarsgo/index.xml" rel="self" type="application/rss+xml"/><item><title>写给go开发者的Tars教程-拦截器</title><link>/2024/01/06/tarsgo-middleware/</link><pubDate>Sat, 06 Jan 2024 15:20:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/2024/01/06/tarsgo-middleware/</guid><description>本篇为【写给go开发者的Tars教程】系列第三篇
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tarsgo on lbbniu</title><link>/tags/tarsgo/</link><description>Recent content in tarsgo on lbbniu</description><generator>Hugo -- gohugo.io</generator><language>zh</language><managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor><webMaster>lbbniu@gmail.com (lbbniu)</webMaster><copyright>&amp;copy; 2021 &lt;a href="https://blog.lbbniu.com/">lbbniu&lt;/a></copyright><lastBuildDate>Sat, 13 Jan 2024 15:20:00 +0800</lastBuildDate><atom:link href="/tags/tarsgo/index.xml" rel="self" type="application/rss+xml"/><item><title>写给Go开发者的Tars教程-TarsGateway</title><link>/2024/01/13/tarsgo-tarsgateway/</link><pubDate>Sat, 13 Jan 2024 15:20:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/2024/01/13/tarsgo-tarsgateway/</guid><description>本篇为【写给go开发者的Tars教程】系列第八篇
+第一篇：Tars协议基础 第二篇：通信模式 第三篇：拦截器 第四篇：错误处理
+第五篇：context/status
+第六篇：超时控制
+第七篇：安全
+第八篇：用户认证
+本系列将持续更新，欢迎关注👏获取实时通知
+关注公众号获得更多精彩文章</description></item><item><title>写给Go开发者的Tars教程-服务发现与负载均衡</title><link>/2024/01/13/tarsgo-auth/</link><pubDate>Sat, 13 Jan 2024 15:20:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/2024/01/13/tarsgo-auth/</guid><description>本篇为【写给go开发者的Tars教程】系列第九篇
+第一篇：Tars协议基础 第二篇：通信模式 第三篇：拦截器 第四篇：错误处理
+第五篇：context/status
+第六篇：超时控制
+第七篇：安全
+第八篇：用户认证
+第九篇：服务发现与负载均衡
+本系列将持续更新，欢迎关注👏获取实时通知
+关注公众号获得更多精彩文章</description></item><item><title>写给Go开发者的Tars教程-用户认证</title><link>/2024/01/12/tarsgo-auth/</link><pubDate>Fri, 12 Jan 2024 15:20:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/2024/01/12/tarsgo-auth/</guid><description>本篇为【写给go开发者的Tars教程】系列第八篇
+第一篇：Tars协议基础 第二篇：通信模式 第三篇：拦截器 第四篇：错误处理
+第五篇：context/status
+第六篇：超时控制
+第七篇：安全
+第八篇：用户认证
+本系列将持续更新，欢迎关注👏获取实时通知
+关注公众号获得更多精彩文章</description></item><item><title>写给Go开发者的Tars教程-用户认证</title><link>/2024/01/11/tarsgo-auth/</link><pubDate>Thu, 11 Jan 2024 15:20:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/2024/01/11/tarsgo-auth/</guid><description>本篇为【写给go开发者的Tars教程】系列第七篇
+第一篇：Tars协议基础 第二篇：通信模式 第三篇：拦截器 第四篇：错误处理
+第五篇：context/status
+第六篇：超时控制
+第七篇：安全
+本系列将持续更新，欢迎关注👏获取实时通知
+关注公众号获得更多精彩文章</description></item><item><title>写给Go开发者的Tars教程-超时控制</title><link>/2024/01/10/tarsgo-context/</link><pubDate>Wed, 10 Jan 2024 15:20:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/2024/01/10/tarsgo-context/</guid><description>本篇为【写给go开发者的Tars教程】系列第六篇
+第一篇：Tars协议基础 第二篇：通信模式 第三篇：拦截器 第四篇：错误处理
+第五篇：context/status
+第六篇：超时控制
+本系列将持续更新，欢迎关注👏获取实时通知
+关注公众号获得更多精彩文章</description></item><item><title>写给Go开发者的Tars教程-context/status</title><link>/2024/01/09/tarsgo-context/</link><pubDate>Tue, 09 Jan 2024 15:20:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/2024/01/09/tarsgo-context/</guid><description>本篇为【写给go开发者的Tars教程】系列第五篇
+第一篇：Tars协议基础 第二篇：通信模式 第三篇：拦截器 第四篇：错误处理
+第五篇：context/status
+本系列将持续更新，欢迎关注👏获取实时通知
+关注公众号获得更多精彩文章</description></item><item><title>写给go开发者的Tars教程-错误处理</title><link>/2024/01/08/tarsgo-errors/</link><pubDate>Mon, 08 Jan 2024 15:20:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/2024/01/08/tarsgo-errors/</guid><description>本篇为【写给go开发者的Tars教程】系列第四篇
+第一篇：Tars协议基础 第二篇：通信模式 第三篇：拦截器 第四篇：错误处理
+本系列将持续更新，欢迎关注👏获取实时通知
+基本错误处理 首先回顾下tars文件和生成出来的client与server端的接口
+module order { struct Order { 1 require string id; 2 optional vector&amp;lt;string&amp;gt; items; 3 optional string description; 4 require float price; 5 optional string destination; }; interface OrderManagement { Order getOrder(string orderId); }; }; type OrderManagement struct { servant m.Servant } func (obj *OrderManagement) GetOrder(orderId string, opts ...map[string]string) (Order, error) { return obj.GetOrderWithContext(context.Background(), orderId, opts...) } func (obj *OrderManagement) GetOrderWithContext(tarsCtx context.Context, orderId string, opts ...map[string]string) (ret Order, err error) { // .</description></item><item><title>写给go开发者的Tars教程-拦截器</title><link>/2024/01/07/tarsgo-middleware/</link><pubDate>Sun, 07 Jan 2024 15:20:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/2024/01/07/tarsgo-middleware/</guid><description>本篇为【写给go开发者的Tars教程】系列第三篇
 第一篇：Tars协议基础 第二篇：通信模式 第三篇：拦截器
 TarsGo的拦截器和其他框架的拦截器（也称middleware）作用是一样的。利用拦截器我们可以在不侵入业务逻辑的前提下修改或者记录服务端或客户端的请求与响应，利用拦截器我们可以实现诸如日志记录、权限认证、限流、链路追踪等诸多功能。拦截器可以分别应用在服务端和客户端，所以TarsGo总共为我们提供了多种拦截器，下面我们进行一一介绍。
 服务端拦截器（过滤器） 处理前后拦截器（过滤器） 拦截器定义如下：
 // Dispatch server side Dispatch type Dispatch func(context.Context, interface{}, *requestf.RequestPacket, *requestf.ResponsePacket, bool) error // ServerFilter is used for add Filter for server dispatcher ,for implementing plugins like opentracing. type ServerFilter func(ctx context.Context, d Dispatch, f interface{}, req *requestf.RequestPacket, resp *requestf.ResponsePacket, withContext bool) (err error) 注册服务端拦截器的方法如下：
 func RegisterServerFilter(f ServerFilter) // 注册服务端拦截器，只能注册一个 func RegisterPreServerFilter(f ServerFilter) // 注册服务端处理前拦截器，可多个 func RegisterPostServerFilter(f ServerFilter) // 注册服务端处理后拦截器，可多个 不推荐上面三种注册方法来注册拦截件，将在1.5版本后彻底废弃移除，推荐使用下面介绍的中间件实现对应的逻辑。
 示例：
-// 注册服务端过滤器 tars.RegisterServerFilter(func(ctx context.Context, d tars.</description></item><item><title>写给Go开发者的Tars教程-Context</title><link>/2022/02/15/tarsgo-context/</link><pubDate>Tue, 15 Feb 2022 15:20:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/2022/02/15/tarsgo-context/</guid><description>关注公众号获得更多精彩文章</description></item></channel></rss>
+// 注册服务端过滤器 tars.RegisterServerFilter(func(ctx context.Context, d tars.</description></item></channel></rss>

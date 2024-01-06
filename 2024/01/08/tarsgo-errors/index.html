@@ -1,0 +1,203 @@
+<!doctype html><html lang=zh dir=ltr><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>写给go开发者的Tars教程-错误处理 | lbbniu</title>
+<meta name=generator content="Hugo Eureka 0.9.3"><link rel=stylesheet href=/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css><script defer src=/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js></script><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" as=style onload='this.onload=null,this.rel="stylesheet"'><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/github.min.css media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/php.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/java.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/go.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/python.min.js crossorigin></script><link rel=stylesheet href=/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css media=print onload='this.media="all",this.onload=null'><script defer type=text/javascript src=/js/fontawesome.min.35973bea57658ef0dd22ad59ea4642b6c8c67af62bed8659ac326d284ef285a6657cdbcf57d3b2910e7e992f2b20426e.js></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css integrity=sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js integrity=sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY crossorigin></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script><script defer src=https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js integrity=sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0 crossorigin></script><link rel=icon type=image/png sizes=32x32 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_32x32_fill_box_center_3.png><link rel=apple-touch-icon sizes=180x180 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_180x180_fill_box_center_3.png><meta name=description content="写给go开发者的Tars教程-错误处理"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"文章列表","item":"/post/"},{"@type":"ListItem","position":2,"name":"写给go开发者的Tars教程-错误处理","item":"/2024/01/08/tarsgo-errors/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/2024/01/08/tarsgo-errors/"},"headline":"写给go开发者的Tars教程-错误处理 | lbbniu","datePublished":"2024-01-08T15:20:00+08:00","dateModified":"2024-01-08T15:20:00+08:00","wordCount":667,"author":{"@type":"Person","name":["lbbniu"]},"publisher":{"@type":"Person","name":"lbbniu","logo":{"@type":"ImageObject","url":"/images/icon.gif"}},"description":"写给go开发者的Tars教程-错误处理"}</script><meta property="og:title" content="写给go开发者的Tars教程-错误处理 | lbbniu"><meta property="og:type" content="article"><meta property="og:image" content="/images/icon.png"><meta property="og:url" content="/2024/01/08/tarsgo-errors/"><meta property="og:description" content="写给go开发者的Tars教程-错误处理"><meta property="og:locale" content="zh"><meta property="og:site_name" content="lbbniu"><meta property="article:published_time" content="2024-01-08T15:20:00+08:00"><meta property="article:modified_time" content="2024-01-08T15:20:00+08:00"><meta property="article:section" content="post"><meta property="article:tag" content="go"><meta property="article:tag" content="tarsgo"><meta property="og:see_also" content="/2024/01/07/tarsgo-middleware/"><meta property="og:see_also" content="/2024/01/04/phpbrew/"><meta property="og:see_also" content="/2022/07/28/connection-reset-by-peer/"><meta property="og:see_also" content="/docs/go%E9%AB%98%E7%BA%A7%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%AE%9E%E6%88%98%E8%90%A5/21%E7%AC%AC%E5%8D%81%E5%85%AB%E8%AF%BE-%E4%BB%A5go-micro%E4%B8%BA%E4%BE%8B%E8%AE%B2%E8%AE%B2%E6%8A%BD%E8%B1%A1%E4%BA%8C%E6%9C%9F/"><meta property="og:see_also" content="/docs/go%E9%AB%98%E7%BA%A7%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%AE%9E%E6%88%98%E8%90%A5/07%E7%AC%AC%E4%B8%83%E8%AF%BE%E7%A4%BE%E5%8C%BA%E4%BC%98%E7%A7%80%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6%E5%AF%B9%E6%AF%94/"><meta property="og:see_also" content="/docs/go%E9%AB%98%E7%BA%A7%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%AE%9E%E6%88%98%E8%90%A5/09%E7%AC%AC%E4%B9%9D%E8%AF%BE%E6%A1%86%E6%9E%B6%E4%B9%8B%E4%B8%8A%E7%9A%84%E4%B8%9A%E5%8A%A1%E5%88%86%E5%B1%82/"><body class="flex min-h-screen flex-col"><header class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"><div class="mx-auto w-full max-w-screen-xl"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=="Auto"||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName("html")[0].classList.add("dark")</script><nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0"><a href=/ class="me-6 text-primary-text text-xl font-bold">lbbniu</a>
+<button id=navbar-btn class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+<i class="fas fa-bars"></i></button><div id=target class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20"><div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0"><a href=/post/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">文章</a>
+<a href=/cloud-native/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">云原生</a>
+<a href=/study/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">算法学习</a>
+<a href=/docs/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">Go学习训练营</a>
+<a href=/tags/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">标签</a></div><div class=flex><div class="relative pt-4 md:pt-0"><div class="cursor-pointer hover:text-eureka" id=lightDarkMode><i class="fas fa-adjust"></i></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id=is-open></div><div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40" id=lightDarkOptions><span class="px-4 py-1 hover:text-eureka" name=Light>浅色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Dark>深色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Auto>自动</span></div></div></div></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id=is-open-mobile></div></nav><script>let element=document.getElementById("lightDarkMode");storageColorScheme==null||storageColorScheme=="Auto"?document.addEventListener("DOMContentLoaded",()=>{window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",switchDarkMode)}):storageColorScheme=="Light"?(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","sun"),element.firstElementChild.classList.add("fa-sun")):storageColorScheme=="Dark"&&(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","moon"),element.firstElementChild.classList.add("fa-moon")),document.addEventListener("DOMContentLoaded",()=>{getcolorscheme(),switchBurger()})</script></div></header><main class="grow pt-16"><div class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8"><div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12"><div class="bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"><article class=prose><h1 class=mb-4>写给go开发者的Tars教程-错误处理</h1><div class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"><div class="me-6 my-2"><i class="fas fa-calendar me-1"></i>
+<span>2024-01-08</span></div><div class="me-6 my-2"><i class="fas fa-clock me-1"></i>
+<span>4分钟阅读时长</span></div><div class="me-6 my-2"><i class="fas fa-folder me-1"></i>
+<a href=/categories/tarsgo/ class=hover:text-eureka>TarsGo</a></div></div><p>本篇为【写给go开发者的Tars教程】系列第四篇</p><p>第一篇：<a href=https://mp.weixin.qq.com/s/aWFni2iiTvv7yXHtyf6d0Q target=_blank rel=noopener>Tars协议基础</a></p><p>第二篇：<a href=https://mp.weixin.qq.com/s/gdapjoj8JJbhrN2v8r96CA target=_blank rel=noopener>通信模式</a></p><p>第三篇：<a href=https://mp.weixin.qq.com/s/7sAAOvFE3U83tlG_aZFKnA target=_blank rel=noopener>拦截器</a></p><p>第四篇：错误处理</p><p>本系列将持续更新，欢迎关注👏获取实时通知</p><h2 id=基本错误处理><strong>基本错误处理</strong></h2><p>首先回顾下tars文件和生成出来的client与server端的接口</p><pre><code class=language-apl>module order {
+    struct Order {
+        1 require string id;
+        2 optional vector&lt;string&gt; items;
+        3 optional string description;
+        4 require float price;
+        5 optional string destination;
+    };
+    
+    interface OrderManagement {
+        Order getOrder(string orderId);
+    };
+};
+</code></pre><pre><code class=language-go>type OrderManagement struct {
+	servant m.Servant
+}
+
+func (obj *OrderManagement) GetOrder(orderId string, opts ...map[string]string) (Order, error) {
+	return obj.GetOrderWithContext(context.Background(), orderId, opts...)
+}
+
+func (obj *OrderManagement) GetOrderWithContext(tarsCtx context.Context, orderId string, opts ...map[string]string) (ret Order, err error) {
+	// ......
+	return ret, nil
+}
+
+func (obj *OrderManagement) GetOrderOneWayWithContext(tarsCtx context.Context, orderId string, opts ...map[string]string) (ret Order, err error) {
+	// ......
+	return ret, nil
+}
+</code></pre><pre><code class=language-go>type OrderManagementServant interface {
+	GetOrder(orderId string) (ret Order, err error)
+}
+type OrderManagementServantWithContext interface {
+	GetOrder(tarsCtx context.Context, orderId string) (ret Order, err error)
+}
+</code></pre><p>可以看到，虽然我们没有在tars文件中的接口定义设置<code>error</code>返回值，但生成出来的go代码是包含<code>error</code>返回值。</p><p>这非常符合Go语言的使用习惯：通常情况下我们定义多个<code>error</code>变量，并且在函数内返回，调用方可以使用<code>errors.Is()</code>或者<code>errors.As()</code>对函数的<code>error</code>进行判断</p><pre><code class=language-go>var (
+	ParamsErr = errors.New(&quot;params err&quot;)
+	BizErr    = errors.New(&quot;biz err&quot;)
+)
+
+func Invoke(i bool) error {
+	if i {
+		return ParamsErr
+	} else {
+		return BizErr
+	}
+}
+
+func TestError(t *testing.T) {
+	err := Invoke(true)
+	if err != nil {
+		switch {
+		case errors.Is(err, ParamsErr):
+			log.Println(&quot;params error&quot;)
+		case errors.Is(err, BizErr):
+			log.Println(&quot;biz error&quot;)
+		}
+	}
+}
+</code></pre><p>🌿 <strong>但，在RPC场景下，我们还能进行error的值判断么？</strong></p><pre><code class=language-go>// errors/errors.go
+var ParamsErr = errors.New(&quot;params err&quot;)
+</code></pre><pre><code class=language-go>// internal/servant/order.go
+func (o *OrderCtx) GetOrder(tarsCtx context.Context, orderId string) (ret order.Order, err error) {
+	return ret, errors.ParamsErr
+}
+</code></pre><pre><code class=language-go>// errors/errors_test.go
+func TestRPCErrors(t *testing.T) {
+	comm := tars.GetCommunicator()
+	client := new(order.OrderManagement)
+	obj := &quot;Test.OrderServer.OrderObj@tcp -h 127.0.0.1 -p 8080 -t 60000&quot;
+	comm.StringToProxy(obj, client)
+
+	retrievedOrder, err := client.GetOrderWithContext(context.Background(), &quot;1&quot;)
+	if err != nil &amp;&amp; errors.Is(err, ParamsErr) {
+		// 不会走到这里，因为err和ParamsErr不相等
+		t.Fatal(err)
+	}
+	t.Logf(&quot;order: %+v&quot;, retrievedOrder)
+}
+</code></pre><p>很明显，<code>server</code>和<code>client</code>并不在同一个进程甚至都不在同一个台机器上，所以<code>errors.Is()</code>或者<code>errors.As()</code>是没有办法做这样判断的</p><h2 id=业务错误码>业务错误码</h2><p>那么如何做？在http的服务中，我们会使用错误码的方式来区分不同错误，通过判断<code>errno</code>来区分不同错误</p><pre><code class=language-json>{
+    &quot;errno&quot;: 0,
+    &quot;msg&quot;: &quot;ok&quot;,
+    &quot;data&quot;: {}
+}
+
+{
+    &quot;errno&quot;: 1000,
+    &quot;msg&quot;: &quot;params error&quot;,
+    &quot;data&quot;: {}
+}
+</code></pre><p>类似的，我们调整下我们tars定义：在返回值里携带错误信息</p><pre><code class=language-apl>module order {
+    struct Order {
+        1 require string id;
+        2 optional vector&lt;string&gt; items;
+        3 optional string description;
+        4 require float price;
+        5 optional string destination;
+    };
+    enum BizErrno {
+        Ok = 0,
+        ParamsErr = 1,
+        BizErr = 2,
+    };
+    struct GetOrderResp {
+        1 require BizErrno errno;
+        2 optional string msg;
+        3 optional Order data;
+    };
+    interface OrderManagement {
+        GetOrderResp getOrder(string orderId);
+    };
+};
+</code></pre><p>于是在服务端实现的时候，我们可以返回对应数据或者错误状态码</p><pre><code class=language-go>func (o *OrderCtx) GetOrder(tarsCtx context.Context, orderId string) (ret order.GetOrderResp, err error) {
+	ord, exists := orders[orderId]
+	if exists {
+		return order.GetOrderResp{
+			Errno: order.BizErrno_Ok,
+			Msg:   &quot;OK&quot;,
+			Data:  ord,
+		}, nil
+	}
+
+	return order.GetOrderResp{
+		Errno: order.BizErrno_ParamsErr,
+		Msg:   &quot;Order does not exist&quot;,
+	}, nil
+}
+</code></pre><p>在客户端可以判断返回值的错误码来区分错误，这是我们在常规RPC的常见做法</p><pre><code class=language-go>// Get Order
+resp, err := client.GetOrderWithContext(context.Background(), &quot;1&quot;)
+if err != nil {
+    t.Fatal(err)
+}
+if resp.Errno != order.BizErrno_Ok {
+    t.Fatal(resp.Msg)
+}
+t.Logf(&quot;GetOrder Response -&gt; : %+v&quot;, resp.Data)
+</code></pre><p>🌿 <strong>但，这么做有什么问题么？</strong></p><p>很明显，对于clinet侧来说，本身就可能遇到网络失败等错误，所以返回值<code>(ret order.GetOrderResp, err error)</code>包含<code>error</code>并不会非常突兀</p><p>但再看一眼server侧的实现，我们把错误枚举放在<code>GetOrderResp</code>中，此时返回的另一个<code>error</code>就变得非常尴尬了，该继续返回一个<code>error</code>呢，还是直接都返回<code>nil</code>呢？两者的功能极度重合</p><p>那有什么办法既能利用上<code>error</code>这个返回值，又能让<code>client</code>端枚举出不同错误么？一个非常直观的想法：让<code>error</code>里记录枚举值就可以了！</p><p>但我们都知道Go里的<code>error</code>是只有一个<code>string</code>的，可以携带的信息相当有限，如何传递足够多的信息呢？<code>TarsGo</code>官方提供了<code>github.com/TarsCloud/TarsGo/tars.Error</code>的解决方案</p><h2 id=使用-tarserror处理错误><strong>使用 <code>tars.Error</code>处理错误</strong></h2><p><code>TarsGo</code> 提供了<code>github.com/TarsCloud/TarsGo/tars.Error</code>来表示错误，这个结构包含了 <code>Code</code> 和 <code>Message</code> 两个字段</p><p>🌲 <code>code</code>是类似于<code>http status code</code>的一系列错误类型的枚举，所有语言 sdk 都会内置这个枚举列表</p><p>虽然总共预定义了16个<code>code</code>，但<code>TarsGo</code>框架并没有使用这些code，框架底层定义了自己的错误码。</p><table><thead><tr><th style=text-align:left>Code</th><th style=text-align:left>Number</th><th style=text-align:left>Description</th></tr></thead><tbody><tr><td style=text-align:left>OK</td><td style=text-align:left>0</td><td style=text-align:left>成功</td></tr><tr><td style=text-align:left>CANCELLED</td><td style=text-align:left>1</td><td style=text-align:left>调用取消</td></tr><tr><td style=text-align:left>UNKNOWN</td><td style=text-align:left>2</td><td style=text-align:left>未知错误</td></tr><tr><td style=text-align:left>&mldr;</td><td style=text-align:left>&mldr;</td><td style=text-align:left>&mldr;</td></tr></tbody></table><p>🌲 <code>message</code>就是服务端需要告知客户端的一些错误详情信息</p><pre><code class=language-go>func TestTarsError(t *testing.T) {
+	ok := tars.Errorf(basef.TARSSERVERSUCCESS, &quot;ok&quot;)
+	fmt.Println(ok)
+
+	serverNoFuncErr := tars.Errorf(basef.TARSSERVERNOFUNCERR, &quot;服务器端没有该函数&quot;)
+	fmt.Println(serverNoFuncErr)
+}
+</code></pre><h3 id=tarserror-和语言-error-的互转><code>tars.Error</code> 和语言 <code>Error</code> 的互转</h3><p>上文提到无论是<code>server</code>和<code>client</code>返回的都是<code>error</code>，<code>TarsGo</code>框架提供的<code>tars.Error</code>已经实现了<code>error</code>接口。</p><p>所以在服务端可以利用<code>tars.Error</code>并返回</p><pre><code class=language-go>func (o *OrderCtx) GetOrder(tarsCtx context.Context, orderId string) (ret order.Order, err error) {
+	ord, exists := orders[orderId]
+	if exists {
+		return ord, nil
+	}
+
+	return ret, tars.Errorf(http.StatusNotFound, &quot;Order does not exist: %v&quot;, orderId)
+}
+</code></pre><p>到客户端这里我们再利用<code>errors.As(err, &amp;tarsErr)</code>把<code>error</code>转回<code>tars.Error</code></p><pre><code class=language-go>// Get Order
+ord, err := client.GetOrderWithContext(context.Background(), &quot;2&quot;)
+if err != nil {
+    var tarsErr = new(tars.Error)
+    if ok := errors.As(err, &amp;tarsErr); ok &amp;&amp; tarsErr.Code == http.StatusNotFound {
+        t.Logf(&quot;code: %d, msg: %s&quot;, tarsErr.Code, tarsErr.Message)
+    } else {
+        t.Fatal(err)
+    }
+    return
+}
+t.Logf(&quot;GetOrder Response -&gt; : %+v&quot;, ord)
+</code></pre><h2 id=tars框架层错误码>Tars框架层错误码</h2><pre><code class=language-apl>module basef
+{
+    ////////////////////////////////////////////////////////////////
+    // TARS定义的返回码
+    const int TARSSERVERSUCCESS       = 0;       //服务器端处理成功
+    const int TARSSERVERDECODEERR     = -1;      //服务器端解码异常
+    const int TARSSERVERENCODEERR     = -2;      //服务器端编码异常
+    const int TARSSERVERNOFUNCERR     = -3;      //服务器端没有该函数
+    const int TARSSERVERNOSERVANTERR  = -4;      //服务器端没有该Servant对象
+    const int TARSSERVERRESETGRID     = -5;      //服务器端灰度状态不一致
+    const int TARSSERVERQUEUETIMEOUT  = -6;      //服务器队列超过限制
+    const int TARSASYNCCALLTIMEOUT    = -7;      //异步调用超时
+    const int TARSINVOKETIMEOUT       = -7;      //调用超时
+    const int TARSPROXYCONNECTERR     = -8;      //proxy链接异常
+    const int TARSSERVEROVERLOAD      = -9;      //服务器端超负载,超过队列长度
+    const int TARSADAPTERNULL         = -10;     //客户端选路为空，服务不存在或者所有服务down掉了
+    const int TARSINVOKEBYINVALIDESET = -11;     //客户端按set规则调用非法
+    const int TARSCLIENTDECODEERR     = -12;     //客户端解码异常
+    const int TARSSENDREQUESTERR      = -13;     //发送出错
+    const int TARSSERVERUNKNOWNERR    = -99;     //服务器端位置异常
+};
+</code></pre><p>排除框架层的错误码，我们可以定义无数的业务层错误码，结合<code>tars.Error</code>进行合理的业务错误处理。</p><h2 id=总结><strong>总结</strong></h2><p>我们先介绍了TarsGo最基本的错误处理方式：返回<code>error</code>。</p><p>之后我们又介绍了一种能够携带更多错误信息的方式：<code>tars.Error</code>，它包含<code>Code</code>、<code>Message</code>等信息，通过<code>tars.Error</code>实现了<code>error</code>接口可以直接用来传输错误。</p><h2 id=关注公众号获得更多精彩文章>关注公众号获得更多精彩文章</h2><p><img src=https://typora.lbbniu.com/typora/qrcode_for_gh_4ab47aa64a20_258.jpg alt=公众号：程序员大兵></p></article><div class=my-4><a href=/tags/go/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#go</a>
+<a href=/tags/tarsgo/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#tarsgo</a></div><div class=py-2><div class="my-8 flex flex-col items-center md:flex-row"><a href=/authors/lbbniu/ class="md:me-4 text-primary-text h-24 w-24"><i class="fas fa-user-circle fa-6x"></i></a><div class="mt-4 w-full md:mt-0 md:w-auto"><a href=/authors/lbbniu/ class="mb-2 block border-b pb-1 text-lg font-bold"><h3>lbbniu</h3></a><span class="block pb-2"></span></div></div></div><div class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"><div><span class="text-primary-text block font-bold">上一页</span>
+<a href=/2024/01/09/tarsgo-context/ class=block>写给Go开发者的Tars教程-context/status</a></div><div class="mt-4 md:mt-0 md:text-right"><span class="text-primary-text block font-bold">下一页</span>
+<a href=/2024/01/07/tarsgo-middleware/ class=block>写给go开发者的Tars教程-拦截器</a></div></div></div><div class=col-span-2><div class="bg-primary-bg
+prose sticky top-16 z-10 hidden px-6 py-4 lg:block"><h3>本页内容</h3></div><div class="sticky-toc hidden px-6 pb-6 lg:block"><nav id=TableOfContents><ul><li><a href=#基本错误处理><strong>基本错误处理</strong></a></li><li><a href=#业务错误码>业务错误码</a></li><li><a href=#使用-tarserror处理错误><strong>使用 <code>tars.Error</code>处理错误</strong></a><ul><li><a href=#tarserror-和语言-error-的互转><code>tars.Error</code> 和语言 <code>Error</code> 的互转</a></li></ul></li><li><a href=#tars框架层错误码>Tars框架层错误码</a></li><li><a href=#总结><strong>总结</strong></a></li><li><a href=#关注公众号获得更多精彩文章>关注公众号获得更多精彩文章</a></li></ul></nav></div><script>window.addEventListener("DOMContentLoaded",()=>{enableStickyToc()})</script></div><div class="bg-secondary-bg prose col-span-2 rounded p-6 lg:col-span-6"><h3>相关</h3><a href=/2024/01/07/tarsgo-middleware/ class=no-underline>写给go开发者的Tars教程-拦截器</a><br><a href=/2024/01/04/phpbrew/ class=no-underline>一篇文章精通php多版本管理工具：phpbrew</a><br><a href=/2022/07/28/connection-reset-by-peer/ class=no-underline>处理 Go 中的 'connection reset by peer' 错误</a><br><a href=/docs/go%E9%AB%98%E7%BA%A7%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%AE%9E%E6%88%98%E8%90%A5/21%E7%AC%AC%E5%8D%81%E5%85%AB%E8%AF%BE-%E4%BB%A5go-micro%E4%B8%BA%E4%BE%8B%E8%AE%B2%E8%AE%B2%E6%8A%BD%E8%B1%A1%E4%BA%8C%E6%9C%9F/ class=no-underline>第十八课 以go-micro为例讲讲抽象【二期内容】</a><br><a href=/docs/go%E9%AB%98%E7%BA%A7%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%AE%9E%E6%88%98%E8%90%A5/07%E7%AC%AC%E4%B8%83%E8%AF%BE%E7%A4%BE%E5%8C%BA%E4%BC%98%E7%A7%80%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6%E5%AF%B9%E6%AF%94/ class=no-underline>第七课 社区优秀开源框架对比</a><br><a href=/docs/go%E9%AB%98%E7%BA%A7%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%AE%9E%E6%88%98%E8%90%A5/09%E7%AC%AC%E4%B9%9D%E8%AF%BE%E6%A1%86%E6%9E%B6%E4%B9%8B%E4%B8%8A%E7%9A%84%E4%B8%9A%E5%8A%A1%E5%88%86%E5%B1%82/ class=no-underline>第九课 框架之上的业务分层</a><br></div></div><script>document.addEventListener("DOMContentLoaded",()=>{hljs.highlightAll()})</script></div></div></main><footer class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b"><p class="text-sm text-tertiary-text">&copy; 2021 <a href=https://blog.lbbniu.com/>lbbniu</a>
+&#183; Powered by the <a href=https://github.com/wangchucheng/hugo-eureka class=hover:text-eureka>Eureka</a> theme for <a href=https://gohugo.io class=hover:text-eureka>Hugo</a></p></div></div></footer></body></html>

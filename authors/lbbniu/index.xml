@@ -1,4 +1,45 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>lbbniu</title><link>/authors/lbbniu/</link><description>Recent content on lbbniu</description><generator>Hugo -- gohugo.io</generator><language>zh</language><managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor><webMaster>lbbniu@gmail.com (lbbniu)</webMaster><copyright>&amp;copy; 2021 &lt;a href="https://blog.lbbniu.com/">lbbniu&lt;/a></copyright><lastBuildDate>Sat, 06 Jan 2024 15:20:00 +0800</lastBuildDate><atom:link href="/authors/lbbniu/index.xml" rel="self" type="application/rss+xml"/><item><title>写给go开发者的Tars教程-拦截器</title><link>/2024/01/06/tarsgo-middleware/</link><pubDate>Sat, 06 Jan 2024 15:20:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/2024/01/06/tarsgo-middleware/</guid><description>本篇为【写给go开发者的Tars教程】系列第三篇
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>lbbniu</title><link>/authors/lbbniu/</link><description>Recent content on lbbniu</description><generator>Hugo -- gohugo.io</generator><language>zh</language><managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor><webMaster>lbbniu@gmail.com (lbbniu)</webMaster><copyright>&amp;copy; 2021 &lt;a href="https://blog.lbbniu.com/">lbbniu&lt;/a></copyright><lastBuildDate>Sat, 13 Jan 2024 15:20:00 +0800</lastBuildDate><atom:link href="/authors/lbbniu/index.xml" rel="self" type="application/rss+xml"/><item><title>写给Go开发者的Tars教程-TarsGateway</title><link>/2024/01/13/tarsgo-tarsgateway/</link><pubDate>Sat, 13 Jan 2024 15:20:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/2024/01/13/tarsgo-tarsgateway/</guid><description>本篇为【写给go开发者的Tars教程】系列第八篇
+第一篇：Tars协议基础 第二篇：通信模式 第三篇：拦截器 第四篇：错误处理
+第五篇：context/status
+第六篇：超时控制
+第七篇：安全
+第八篇：用户认证
+本系列将持续更新，欢迎关注👏获取实时通知
+关注公众号获得更多精彩文章</description></item><item><title>写给Go开发者的Tars教程-服务发现与负载均衡</title><link>/2024/01/13/tarsgo-auth/</link><pubDate>Sat, 13 Jan 2024 15:20:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/2024/01/13/tarsgo-auth/</guid><description>本篇为【写给go开发者的Tars教程】系列第九篇
+第一篇：Tars协议基础 第二篇：通信模式 第三篇：拦截器 第四篇：错误处理
+第五篇：context/status
+第六篇：超时控制
+第七篇：安全
+第八篇：用户认证
+第九篇：服务发现与负载均衡
+本系列将持续更新，欢迎关注👏获取实时通知
+关注公众号获得更多精彩文章</description></item><item><title>写给Go开发者的Tars教程-用户认证</title><link>/2024/01/12/tarsgo-auth/</link><pubDate>Fri, 12 Jan 2024 15:20:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/2024/01/12/tarsgo-auth/</guid><description>本篇为【写给go开发者的Tars教程】系列第八篇
+第一篇：Tars协议基础 第二篇：通信模式 第三篇：拦截器 第四篇：错误处理
+第五篇：context/status
+第六篇：超时控制
+第七篇：安全
+第八篇：用户认证
+本系列将持续更新，欢迎关注👏获取实时通知
+关注公众号获得更多精彩文章</description></item><item><title>写给Go开发者的Tars教程-用户认证</title><link>/2024/01/11/tarsgo-auth/</link><pubDate>Thu, 11 Jan 2024 15:20:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/2024/01/11/tarsgo-auth/</guid><description>本篇为【写给go开发者的Tars教程】系列第七篇
+第一篇：Tars协议基础 第二篇：通信模式 第三篇：拦截器 第四篇：错误处理
+第五篇：context/status
+第六篇：超时控制
+第七篇：安全
+本系列将持续更新，欢迎关注👏获取实时通知
+关注公众号获得更多精彩文章</description></item><item><title>写给Go开发者的Tars教程-超时控制</title><link>/2024/01/10/tarsgo-context/</link><pubDate>Wed, 10 Jan 2024 15:20:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/2024/01/10/tarsgo-context/</guid><description>本篇为【写给go开发者的Tars教程】系列第六篇
+第一篇：Tars协议基础 第二篇：通信模式 第三篇：拦截器 第四篇：错误处理
+第五篇：context/status
+第六篇：超时控制
+本系列将持续更新，欢迎关注👏获取实时通知
+关注公众号获得更多精彩文章</description></item><item><title>写给Go开发者的Tars教程-context/status</title><link>/2024/01/09/tarsgo-context/</link><pubDate>Tue, 09 Jan 2024 15:20:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/2024/01/09/tarsgo-context/</guid><description>本篇为【写给go开发者的Tars教程】系列第五篇
+第一篇：Tars协议基础 第二篇：通信模式 第三篇：拦截器 第四篇：错误处理
+第五篇：context/status
+本系列将持续更新，欢迎关注👏获取实时通知
+关注公众号获得更多精彩文章</description></item><item><title>写给go开发者的Tars教程-错误处理</title><link>/2024/01/08/tarsgo-errors/</link><pubDate>Mon, 08 Jan 2024 15:20:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/2024/01/08/tarsgo-errors/</guid><description>本篇为【写给go开发者的Tars教程】系列第四篇
+第一篇：Tars协议基础 第二篇：通信模式 第三篇：拦截器 第四篇：错误处理
+本系列将持续更新，欢迎关注👏获取实时通知
+基本错误处理 首先回顾下tars文件和生成出来的client与server端的接口
+module order { struct Order { 1 require string id; 2 optional vector&amp;lt;string&amp;gt; items; 3 optional string description; 4 require float price; 5 optional string destination; }; interface OrderManagement { Order getOrder(string orderId); }; }; type OrderManagement struct { servant m.Servant } func (obj *OrderManagement) GetOrder(orderId string, opts ...map[string]string) (Order, error) { return obj.GetOrderWithContext(context.Background(), orderId, opts...) } func (obj *OrderManagement) GetOrderWithContext(tarsCtx context.Context, orderId string, opts ...map[string]string) (ret Order, err error) { // .</description></item><item><title>写给go开发者的Tars教程-拦截器</title><link>/2024/01/07/tarsgo-middleware/</link><pubDate>Sun, 07 Jan 2024 15:20:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/2024/01/07/tarsgo-middleware/</guid><description>本篇为【写给go开发者的Tars教程】系列第三篇
 第一篇：Tars协议基础 第二篇：通信模式 第三篇：拦截器
 TarsGo的拦截器和其他框架的拦截器（也称middleware）作用是一样的。利用拦截器我们可以在不侵入业务逻辑的前提下修改或者记录服务端或客户端的请求与响应，利用拦截器我们可以实现诸如日志记录、权限认证、限流、链路追踪等诸多功能。拦截器可以分别应用在服务端和客户端，所以TarsGo总共为我们提供了多种拦截器，下面我们进行一一介绍。
 服务端拦截器（过滤器） 处理前后拦截器（过滤器） 拦截器定义如下：
@@ -87,7 +128,7 @@ Weavelets 要了解部署器，我们必须首先了解小波。Service Weaver �
 部署 Service Weaver 应用程序时，不只有一个 weavelet。如果有只有一个，Service Weaver 应用程序就不会非常分散。相反，部署人员会多次运行您的二进制文件——在不同机器上的不同进程中以启动多个 weavelet，这些 weavelet 协同工作以执行您的分布式应用程序。
 每个 weavelet 都承载一组可能不同的组件。因为组件是复制的，所以一个组件可能由多个weavelets托管。例如，考虑一个包含组件A、B和的应用程序C。下图显示了一个由三个weavelets组成的示例部署。weavelet 1 托管组件A和B；weavelet 2 承载组件B和 C，weavelet 3 承载组件C。
 您还会注意到每个小波都有一个唯一的网络地址。Weavelets 使用这些地址来执行远程方法调用。例如，假设图中 weavelet 1上的A组件想要调用组件C 上的方法。weavelet 1 将联系地址 2.2.2.2 上的 weavelet 2 或地址 3.3.3.3 上的 weavelet 3 以执行该方法。
-部署者 部署者通过启动和管理一组 weavelet 来分发 Service Weaver 应用程序。管理 weavelet 涉及与 (1) 组件、(2) 侦听器和 (3) 遥测相关的三个主要职责。</description></item><item><title>写给Go开发者的Tars教程-Context</title><link>/2022/02/15/tarsgo-context/</link><pubDate>Tue, 15 Feb 2022 15:20:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/2022/02/15/tarsgo-context/</guid><description>关注公众号获得更多精彩文章</description></item><item><title>第一课Go程序怎么跑起来的</title><link>/docs/go%E9%AB%98%E7%BA%A7%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%AE%9E%E6%88%98%E8%90%A5/01%E7%AC%AC%E4%B8%80%E8%AF%BEgo%E7%A8%8B%E5%BA%8F%E6%80%8E%E4%B9%88%E8%B7%91%E8%B5%B7%E6%9D%A5%E7%9A%84/</link><pubDate>Tue, 23 Nov 2021 13:20:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/docs/go%E9%AB%98%E7%BA%A7%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%AE%9E%E6%88%98%E8%90%A5/01%E7%AC%AC%E4%B8%80%E8%AF%BEgo%E7%A8%8B%E5%BA%8F%E6%80%8E%E4%B9%88%E8%B7%91%E8%B5%B7%E6%9D%A5%E7%9A%84/</guid><description>怎么学习？ https://xargin.com/how-to-learn 找程序入口 gdb info files readelf -h cutter[可视化工具] dlv 理解可执⾏⽂件 本节课涉及的⼯具都准备在Dockerfile⾥了，⼤家可以⾃⾏实验
+部署者 部署者通过启动和管理一组 weavelet 来分发 Service Weaver 应用程序。管理 weavelet 涉及与 (1) 组件、(2) 侦听器和 (3) 遥测相关的三个主要职责。</description></item><item><title>第一课Go程序怎么跑起来的</title><link>/docs/go%E9%AB%98%E7%BA%A7%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%AE%9E%E6%88%98%E8%90%A5/01%E7%AC%AC%E4%B8%80%E8%AF%BEgo%E7%A8%8B%E5%BA%8F%E6%80%8E%E4%B9%88%E8%B7%91%E8%B5%B7%E6%9D%A5%E7%9A%84/</link><pubDate>Tue, 23 Nov 2021 13:20:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/docs/go%E9%AB%98%E7%BA%A7%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%AE%9E%E6%88%98%E8%90%A5/01%E7%AC%AC%E4%B8%80%E8%AF%BEgo%E7%A8%8B%E5%BA%8F%E6%80%8E%E4%B9%88%E8%B7%91%E8%B5%B7%E6%9D%A5%E7%9A%84/</guid><description>怎么学习？ https://xargin.com/how-to-learn 找程序入口 gdb info files readelf -h cutter[可视化工具] dlv 理解可执⾏⽂件 本节课涉及的⼯具都准备在Dockerfile⾥了，⼤家可以⾃⾏实验
 2200000000 FROM centos RUN yum install golang -y \ &amp;amp;&amp;amp; yum install dlv -y \ &amp;amp;&amp;amp; yum install binutils -y \ &amp;amp;&amp;amp; yum install vim -y \ &amp;amp;&amp;amp; yum install gdb -y 编译方法 # 编译方法 docker build -t test . docker run -it --rm test bash Linux的可执⾏⽂件ELF(Executable and Linkable Format)为例，ELF由⼏部分构成：
 ELF header Section header Sections 参考连接 https://github.com/corkaami/pics Go进程的启动与初始化 游戏：人力资源机器
 环境变量：GOMAXPROCS
