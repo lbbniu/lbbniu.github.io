@@ -1,0 +1,106 @@
+<!doctype html><html lang=zh dir=ltr><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>写给go开发者的Tars教程-拦截器 | lbbniu</title>
+<meta name=generator content="Hugo Eureka 0.9.3"><link rel=stylesheet href=/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css><script defer src=/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js></script><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" as=style onload='this.onload=null,this.rel="stylesheet"'><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/github.min.css media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/php.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/java.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/go.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/python.min.js crossorigin></script><link rel=stylesheet href=/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css media=print onload='this.media="all",this.onload=null'><script defer type=text/javascript src=/js/fontawesome.min.35973bea57658ef0dd22ad59ea4642b6c8c67af62bed8659ac326d284ef285a6657cdbcf57d3b2910e7e992f2b20426e.js></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css integrity=sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js integrity=sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY crossorigin></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script><script defer src=https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js integrity=sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0 crossorigin></script><link rel=icon type=image/png sizes=32x32 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_32x32_fill_box_center_3.png><link rel=apple-touch-icon sizes=180x180 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_180x180_fill_box_center_3.png><meta name=description content="写给go开发者的Tars教程-拦截器"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"文章列表","item":"/post/"},{"@type":"ListItem","position":2,"name":"写给go开发者的Tars教程-拦截器","item":"/2024/01/06/tarsgo-middleware/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/2024/01/06/tarsgo-middleware/"},"headline":"写给go开发者的Tars教程-拦截器 | lbbniu","datePublished":"2024-01-06T15:20:00+08:00","dateModified":"2024-01-06T15:20:00+08:00","wordCount":506,"author":{"@type":"Person","name":["lbbniu"]},"publisher":{"@type":"Person","name":"lbbniu","logo":{"@type":"ImageObject","url":"/images/icon.gif"}},"description":"写给go开发者的Tars教程-拦截器"}</script><meta property="og:title" content="写给go开发者的Tars教程-拦截器 | lbbniu"><meta property="og:type" content="article"><meta property="og:image" content="/images/icon.png"><meta property="og:url" content="/2024/01/06/tarsgo-middleware/"><meta property="og:description" content="写给go开发者的Tars教程-拦截器"><meta property="og:locale" content="zh"><meta property="og:site_name" content="lbbniu"><meta property="article:published_time" content="2024-01-06T15:20:00+08:00"><meta property="article:modified_time" content="2024-01-06T15:20:00+08:00"><meta property="article:section" content="post"><meta property="article:tag" content="go"><meta property="article:tag" content="tarsgo"><meta property="og:see_also" content="/2022/02/15/tarsgo-context/"><meta property="og:see_also" content="/2024/01/04/phpbrew/"><meta property="og:see_also" content="/2022/07/28/connection-reset-by-peer/"><meta property="og:see_also" content="/docs/go%E9%AB%98%E7%BA%A7%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%AE%9E%E6%88%98%E8%90%A5/21%E7%AC%AC%E5%8D%81%E5%85%AB%E8%AF%BE-%E4%BB%A5go-micro%E4%B8%BA%E4%BE%8B%E8%AE%B2%E8%AE%B2%E6%8A%BD%E8%B1%A1%E4%BA%8C%E6%9C%9F/"><meta property="og:see_also" content="/docs/go%E9%AB%98%E7%BA%A7%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%AE%9E%E6%88%98%E8%90%A5/07%E7%AC%AC%E4%B8%83%E8%AF%BE%E7%A4%BE%E5%8C%BA%E4%BC%98%E7%A7%80%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6%E5%AF%B9%E6%AF%94/"><meta property="og:see_also" content="/docs/go%E9%AB%98%E7%BA%A7%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%AE%9E%E6%88%98%E8%90%A5/09%E7%AC%AC%E4%B9%9D%E8%AF%BE%E6%A1%86%E6%9E%B6%E4%B9%8B%E4%B8%8A%E7%9A%84%E4%B8%9A%E5%8A%A1%E5%88%86%E5%B1%82/"><body class="flex min-h-screen flex-col"><header class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"><div class="mx-auto w-full max-w-screen-xl"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=="Auto"||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName("html")[0].classList.add("dark")</script><nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0"><a href=/ class="me-6 text-primary-text text-xl font-bold">lbbniu</a>
+<button id=navbar-btn class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+<i class="fas fa-bars"></i></button><div id=target class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20"><div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0"><a href=/post/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">文章</a>
+<a href=/cloud-native/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">云原生</a>
+<a href=/study/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">算法学习</a>
+<a href=/docs/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">Go学习训练营</a>
+<a href=/tags/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">标签</a></div><div class=flex><div class="relative pt-4 md:pt-0"><div class="cursor-pointer hover:text-eureka" id=lightDarkMode><i class="fas fa-adjust"></i></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id=is-open></div><div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40" id=lightDarkOptions><span class="px-4 py-1 hover:text-eureka" name=Light>浅色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Dark>深色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Auto>自动</span></div></div></div></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id=is-open-mobile></div></nav><script>let element=document.getElementById("lightDarkMode");storageColorScheme==null||storageColorScheme=="Auto"?document.addEventListener("DOMContentLoaded",()=>{window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",switchDarkMode)}):storageColorScheme=="Light"?(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","sun"),element.firstElementChild.classList.add("fa-sun")):storageColorScheme=="Dark"&&(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","moon"),element.firstElementChild.classList.add("fa-moon")),document.addEventListener("DOMContentLoaded",()=>{getcolorscheme(),switchBurger()})</script></div></header><main class="grow pt-16"><div class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8"><div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12"><div class="bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"><article class=prose><h1 class=mb-4>写给go开发者的Tars教程-拦截器</h1><div class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"><div class="me-6 my-2"><i class="fas fa-calendar me-1"></i>
+<span>2024-01-06</span></div><div class="me-6 my-2"><i class="fas fa-clock me-1"></i>
+<span>3分钟阅读时长</span></div><div class="me-6 my-2"><i class="fas fa-folder me-1"></i>
+<a href=/categories/tarsgo/ class=hover:text-eureka>tarsgo</a></div></div><p>本篇为【写给go开发者的Tars教程】系列第三篇</p><p>第一篇：<a href=https://mp.weixin.qq.com/s/aWFni2iiTvv7yXHtyf6d0Q target=_blank rel=noopener>Tars协议基础</a></p><p>第二篇：<a href=https://mp.weixin.qq.com/s/gdapjoj8JJbhrN2v8r96CA target=_blank rel=noopener>通信模式</a></p><p>第三篇：拦截器</p><p><code>TarsGo</code>的<strong>拦截器</strong>和其他框架的拦截器（也称middleware）作用是一样的。利用拦截器我们可以在不侵入业务逻辑的前提下修改或者记录服务端或客户端的请求与响应，利用拦截器我们可以实现诸如日志记录、权限认证、限流、链路追踪等诸多功能。拦截器可以分别应用在服务端和客户端，所以TarsGo总共为我们提供了多种拦截器，下面我们进行一一介绍。</p><h2 id=服务端拦截器过滤器><strong>服务端拦截器（过滤器）</strong></h2><h3 id=处理前后拦截器过滤器>处理前后拦截器（过滤器）</h3><p>拦截器定义如下：</p><pre><code class=language-go>// Dispatch server side Dispatch
+type Dispatch func(context.Context, interface{}, *requestf.RequestPacket, *requestf.ResponsePacket, bool) error
+
+// ServerFilter is used for add Filter for server dispatcher ,for implementing plugins like opentracing.
+type ServerFilter func(ctx context.Context, d Dispatch, f interface{},
+	req *requestf.RequestPacket, resp *requestf.ResponsePacket, withContext bool) (err error)
+</code></pre><p>注册服务端拦截器的方法如下：</p><pre><code class=language-go>func RegisterServerFilter(f ServerFilter) // 注册服务端拦截器，只能注册一个
+func RegisterPreServerFilter(f ServerFilter) // 注册服务端处理前拦截器，可多个
+func RegisterPostServerFilter(f ServerFilter) // 注册服务端处理后拦截器，可多个
+</code></pre><blockquote><p>不推荐上面三种注册方法来注册拦截件，将在1.5版本后彻底废弃移除，推荐使用下面介绍的中间件实现对应的逻辑。</p></blockquote><p>示例：</p><pre><code class=language-go>// 注册服务端过滤器
+tars.RegisterServerFilter(func(ctx context.Context, d tars.Dispatch, f interface{}, req *requestf.RequestPacket, resp *requestf.ResponsePacket, withContext bool) (err error) {
+    // TODO: 增加服务端处理前业务逻辑
+    // 这里可以增加：日志记录、权限认证、限流、链路追踪等
+    s := time.Now()
+    err = d(ctx, f, req, resp, withContext)
+    // TODO: 增加服务端处理后业务逻辑
+    log.Printf(&quot;ServantName: %s, FuncName: %s, req: %v, resp: %v, latency: %s\n&quot;,
+               req.SServantName, req.SFuncName, req, resp, time.Now().Sub(s))
+    return err
+})
+
+tars.RegisterPreServerFilter(func(ctx context.Context, d tars.Dispatch, f interface{}, req *requestf.RequestPacket, resp *requestf.ResponsePacket, withContext bool) (err error) {
+    // TODO: 增加服务端处理前业务逻辑
+    return err // 此处返回err，服务端会继续处理，只会记录对应的错误日志
+})
+
+tars.RegisterPostServerFilter(func(ctx context.Context, d tars.Dispatch, f interface{}, req *requestf.RequestPacket, resp *requestf.ResponsePacket, withContext bool) (err error) {
+    // TODO: 增加服务端处理前业务逻辑
+    return err // 此处返回err，服务端会继续处理，只会记录对应的错误日志
+})
+</code></pre><h3 id=中间件过滤器>中间件（过滤器）</h3><p>中间件定义如下：</p><pre><code class=language-go>// ServerFilterMiddleware is used for add multiple filter middlewares for dispatcher, for using multiple filter such as breaker, rate limit and trace.
+type ServerFilterMiddleware func(next ServerFilter) ServerFilter
+</code></pre><p>注册服务端中间件的方法如下：</p><pre><code class=language-go>func UseServerFilterMiddleware(sfm ...ServerFilterMiddleware) // 注册服务端中间件，可多个
+</code></pre><p>示例：</p><pre><code class=language-go>tars.UseServerFilterMiddleware(func(next tars.ServerFilter) tars.ServerFilter {
+    return func(ctx context.Context, d tars.Dispatch, f interface{}, req *requestf.RequestPacket, resp *requestf.ResponsePacket, withContext bool) (err error) {
+        // TODO: 增加服务端处理前业务逻辑
+        // 这里可以增加：日志记录、权限认证、限流、链路追踪等
+        s := time.Now()
+        err = next(ctx, d, f, req, resp, withContext)
+        // TODO: 增加服务端处理后业务逻辑
+        log.Printf(&quot;ServantName: %s, FuncName: %s, latency: %s\n&quot;,
+                   req.SServantName, req.SFuncName, time.Now().Sub(s))
+        return err
+    }
+})
+</code></pre><p>上面集中方法注册的拦截件或中间件会有优先级问题，其中一个生效后其他方法注册的拦截器将不会执行。优先级顺序如下：</p><ol><li>RegisterServerFilter</li><li>UseServerFilterMiddleware</li><li>RegisterPreServerFilter/RegisterPostServerFilter</li></ol><p>存在优先级顺序的真相如下：</p><p><img src=https://typora.lbbniu.com/typora/image-20240106170154133.png alt=image-20240106170154133></p><h2 id=客户端拦截器过滤器><strong>客户端拦截器（过滤器）</strong></h2><h3 id=请求前后拦截器过滤器>请求前后拦截器（过滤器）</h3><p>拦截器定义如下：</p><pre><code class=language-go>// Invoke is used for Invoke tars server service
+type Invoke func(ctx context.Context, msg *Message, timeout time.Duration) (err error)
+
+// ClientFilter is used for filter request &amp; response for client, for implementing plugins like opentracing
+type ClientFilter func(ctx context.Context, msg *Message, invoke Invoke, timeout time.Duration) (err error)
+</code></pre><p>注册客户端拦截器的方法如下：</p><pre><code class=language-go>func RegisterClientFilter(f ClientFilter) // 注册客户端拦截器，只能注册一个
+func RegisterPreClientFilter(f ClientFilter) // 注册请求前拦截器，可多个
+func RegisterPostClientFilter(f ClientFilter) // 注册请求后拦截器，可多个
+</code></pre><blockquote><p>不推荐上面三种注册方法来注册拦截件，将在1.5版本后彻底废弃移除，推荐使用下面介绍的中间件实现对应的逻辑。</p></blockquote><p>示例：</p><pre><code class=language-go>tars.RegisterClientFilter(func(ctx context.Context, msg *tars.Message, invoke tars.Invoke, timeout time.Duration) (err error) {
+    // TODO: 增加请求前业务逻辑
+    // 这里可以增加：日志记录、权限认证、限流、链路追踪等
+    s := time.Now()
+    err = invoke(ctx, msg, timeout)
+    // TODO: 增加请求后业务逻辑
+    log.Printf(&quot;ServantName: %s, FuncName: %s, req: %v, resp: %v, latency: %s\n&quot;,
+               msg.Req.SServantName, msg.Req.SFuncName, msg.Req, msg.Resp, time.Now().Sub(s))
+    return err
+})
+
+tars.RegisterPreClientFilter(func(ctx context.Context, msg *tars.Message, invoke tars.Invoke, timeout time.Duration) (err error) {
+    // TODO: 增加请求前业务逻辑
+    return err // 此处返回err，客户端会继续处理，只会记录对应的错误日志
+})
+
+tars.RegisterPreClientFilter(func(ctx context.Context, msg *tars.Message, invoke tars.Invoke, timeout time.Duration) (err error) {
+    // TODO: 增加请求后业务逻辑
+    return err // 此处返回err，客户端会继续处理，只会记录对应的错误日志
+})
+</code></pre><h3 id=中间件过滤器-1>中间件（过滤器）</h3><p>中间件定义如下：</p><pre><code class=language-go>// ClientFilterMiddleware is used for add multiple filter middleware for client, for using multiple filter such as breaker, rate limit and trace.
+type ClientFilterMiddleware func(next ClientFilter) ClientFilter
+</code></pre><p>注册客户端中间件的方法如下：</p><pre><code class=language-go>func UseClientFilterMiddleware(cfm ...ClientFilterMiddleware) // 注册客户端中间件，可多个
+</code></pre><p>示例：</p><pre><code class=language-go>tars.UseClientFilterMiddleware(func(next tars.ClientFilter) tars.ClientFilter {
+    return func(ctx context.Context, msg *tars.Message, invoke tars.Invoke, timeout time.Duration) (err error) {
+        // TODO: 增加请求前业务逻辑
+        // 这里可以增加：日志记录、权限认证、限流、链路追踪等
+        s := time.Now()
+        err = next(ctx, msg, invoke, timeout)
+        // TODO: 增加请求后业务逻辑
+        log.Printf(&quot;ServantName: %s, FuncName: %s, latency: %s\n&quot;,
+                   msg.Req.SServantName, msg.Req.SFuncName, time.Now().Sub(s))
+        return err
+    }
+})
+</code></pre><p>上面集中方法注册的拦截件或中间件会有优先级问题，其中一个生效后其他方法注册的拦截器将不会执行。优先级顺序如下：</p><ol><li>RegisterClientFilter</li><li>UseClientFilterMiddleware</li><li>RegisterPreClientFilter/RegisterPostClientFilter</li></ol><p>存在优先级顺序的真相如下：</p><p><img src=https://typora.lbbniu.com/typora/image-20240106165734587.png alt=image-20240106165734587></p><h2 id=总结>总结</h2><p>相信经过上面的讲解，读者已对<code>TarsGo</code>的拦截器（过滤器、中间件）的使用和实现原理有深入的了解，对今后的开发可以事半功倍，在合适的地方使用中间件实现相应的业务逻辑。</p><h2 id=示例代码><strong>示例代码</strong></h2><p><a href=https://github.com/lbbniu/TarsGo-tutorial/blob/interceptors/client/main.go target=_blank rel=noopener>https://github.com/lbbniu/TarsGo-tutorial/blob/interceptors/client/main.go</a></p><p><a href=https://github.com/lbbniu/TarsGo-tutorial/blob/interceptors/main.go target=_blank rel=noopener>https://github.com/lbbniu/TarsGo-tutorial/blob/interceptors/main.go</a></p><h2 id=关注公众号获得更多精彩文章>关注公众号获得更多精彩文章</h2><p><img src=https://typora.lbbniu.com/typora/qrcode_for_gh_4ab47aa64a20_258.jpg alt=公众号：程序员大兵></p></article><div class=my-4><a href=/tags/go/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#go</a>
+<a href=/tags/tarsgo/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#tarsgo</a></div><div class=py-2><div class="my-8 flex flex-col items-center md:flex-row"><a href=/authors/lbbniu/ class="md:me-4 text-primary-text h-24 w-24"><i class="fas fa-user-circle fa-6x"></i></a><div class="mt-4 w-full md:mt-0 md:w-auto"><a href=/authors/lbbniu/ class="mb-2 block border-b pb-1 text-lg font-bold"><h3>lbbniu</h3></a><span class="block pb-2"></span></div></div></div><div class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"><div><span class="text-primary-text block font-bold">上一页</span>
+<a href=/2024/01/15/uri-addr/ class=block>模板-标题</a></div><div class="mt-4 md:mt-0 md:text-right"><span class="text-primary-text block font-bold">下一页</span>
+<a href=/2024/01/04/phpbrew/ class=block>一篇文章精通php多版本管理工具：phpbrew</a></div></div></div><div class=col-span-2><div class="bg-primary-bg
+prose sticky top-16 z-10 hidden px-6 py-4 lg:block"><h3>本页内容</h3></div><div class="sticky-toc hidden px-6 pb-6 lg:block"><nav id=TableOfContents><ul><li><a href=#服务端拦截器过滤器><strong>服务端拦截器（过滤器）</strong></a><ul><li><a href=#处理前后拦截器过滤器>处理前后拦截器（过滤器）</a></li><li><a href=#中间件过滤器>中间件（过滤器）</a></li></ul></li><li><a href=#客户端拦截器过滤器><strong>客户端拦截器（过滤器）</strong></a><ul><li><a href=#请求前后拦截器过滤器>请求前后拦截器（过滤器）</a></li><li><a href=#中间件过滤器-1>中间件（过滤器）</a></li></ul></li><li><a href=#总结>总结</a></li><li><a href=#示例代码><strong>示例代码</strong></a></li><li><a href=#关注公众号获得更多精彩文章>关注公众号获得更多精彩文章</a></li></ul></nav></div><script>window.addEventListener("DOMContentLoaded",()=>{enableStickyToc()})</script></div><div class="bg-secondary-bg prose col-span-2 rounded p-6 lg:col-span-6"><h3>相关</h3><a href=/2022/02/15/tarsgo-context/ class=no-underline>写给Go开发者的Tars教程-Context</a><br><a href=/2024/01/04/phpbrew/ class=no-underline>一篇文章精通php多版本管理工具：phpbrew</a><br><a href=/2022/07/28/connection-reset-by-peer/ class=no-underline>处理 Go 中的 'connection reset by peer' 错误</a><br><a href=/docs/go%E9%AB%98%E7%BA%A7%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%AE%9E%E6%88%98%E8%90%A5/21%E7%AC%AC%E5%8D%81%E5%85%AB%E8%AF%BE-%E4%BB%A5go-micro%E4%B8%BA%E4%BE%8B%E8%AE%B2%E8%AE%B2%E6%8A%BD%E8%B1%A1%E4%BA%8C%E6%9C%9F/ class=no-underline>第十八课 以go-micro为例讲讲抽象【二期内容】</a><br><a href=/docs/go%E9%AB%98%E7%BA%A7%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%AE%9E%E6%88%98%E8%90%A5/07%E7%AC%AC%E4%B8%83%E8%AF%BE%E7%A4%BE%E5%8C%BA%E4%BC%98%E7%A7%80%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6%E5%AF%B9%E6%AF%94/ class=no-underline>第七课 社区优秀开源框架对比</a><br><a href=/docs/go%E9%AB%98%E7%BA%A7%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%AE%9E%E6%88%98%E8%90%A5/09%E7%AC%AC%E4%B9%9D%E8%AF%BE%E6%A1%86%E6%9E%B6%E4%B9%8B%E4%B8%8A%E7%9A%84%E4%B8%9A%E5%8A%A1%E5%88%86%E5%B1%82/ class=no-underline>第九课 框架之上的业务分层</a><br></div></div><script>document.addEventListener("DOMContentLoaded",()=>{hljs.highlightAll()})</script></div></div></main><footer class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b"><p class="text-sm text-tertiary-text">&copy; 2021 <a href=https://blog.lbbniu.com/>lbbniu</a>
+&#183; Powered by the <a href=https://github.com/wangchucheng/hugo-eureka class=hover:text-eureka>Eureka</a> theme for <a href=https://gohugo.io class=hover:text-eureka>Hugo</a></p></div></div></footer></body></html>
