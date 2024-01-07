@@ -1,41 +1,41 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>go on lbbniu</title><link>/tags/go/</link><description>Recent content in go on lbbniu</description><generator>Hugo -- gohugo.io</generator><language>zh</language><managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor><webMaster>lbbniu@gmail.com (lbbniu)</webMaster><copyright>&amp;copy; 2021 &lt;a href="https://blog.lbbniu.com/">lbbniu&lt;/a></copyright><lastBuildDate>Sat, 13 Jan 2024 15:20:00 +0800</lastBuildDate><atom:link href="/tags/go/index.xml" rel="self" type="application/rss+xml"/><item><title>写给Go开发者的Tars教程-TarsGateway</title><link>/2024/01/13/tarsgo-tarsgateway/</link><pubDate>Sat, 13 Jan 2024 15:20:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/2024/01/13/tarsgo-tarsgateway/</guid><description>本篇为【写给go开发者的Tars教程】系列第八篇
-第一篇：Tars协议基础 第二篇：通信模式 第三篇：拦截器 第四篇：错误处理
-第五篇：context/status
+第一篇：Tars协议基础 第二篇：通信模式 第三篇：拦截器 第四篇：错误处理 第五篇：context/status
 第六篇：超时控制
 第七篇：安全
 第八篇：用户认证
+第九篇：服务发现与负载均衡
+第十篇：TarsGateway
 本系列将持续更新，欢迎关注👏获取实时通知
 关注公众号获得更多精彩文章</description></item><item><title>写给Go开发者的Tars教程-服务发现与负载均衡</title><link>/2024/01/13/tarsgo-auth/</link><pubDate>Sat, 13 Jan 2024 15:20:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/2024/01/13/tarsgo-auth/</guid><description>本篇为【写给go开发者的Tars教程】系列第九篇
-第一篇：Tars协议基础 第二篇：通信模式 第三篇：拦截器 第四篇：错误处理
-第五篇：context/status
+第一篇：Tars协议基础 第二篇：通信模式 第三篇：拦截器 第四篇：错误处理 第五篇：context/status
 第六篇：超时控制
 第七篇：安全
 第八篇：用户认证
 第九篇：服务发现与负载均衡
 本系列将持续更新，欢迎关注👏获取实时通知
 关注公众号获得更多精彩文章</description></item><item><title>写给Go开发者的Tars教程-用户认证</title><link>/2024/01/12/tarsgo-auth/</link><pubDate>Fri, 12 Jan 2024 15:20:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/2024/01/12/tarsgo-auth/</guid><description>本篇为【写给go开发者的Tars教程】系列第八篇
-第一篇：Tars协议基础 第二篇：通信模式 第三篇：拦截器 第四篇：错误处理
-第五篇：context/status
+第一篇：Tars协议基础 第二篇：通信模式 第三篇：拦截器 第四篇：错误处理 第五篇：context/status
 第六篇：超时控制
 第七篇：安全
 第八篇：用户认证
 本系列将持续更新，欢迎关注👏获取实时通知
 关注公众号获得更多精彩文章</description></item><item><title>写给Go开发者的Tars教程-用户认证</title><link>/2024/01/11/tarsgo-auth/</link><pubDate>Thu, 11 Jan 2024 15:20:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/2024/01/11/tarsgo-auth/</guid><description>本篇为【写给go开发者的Tars教程】系列第七篇
-第一篇：Tars协议基础 第二篇：通信模式 第三篇：拦截器 第四篇：错误处理
-第五篇：context/status
+第一篇：Tars协议基础 第二篇：通信模式 第三篇：拦截器 第四篇：错误处理 第五篇：context/status
 第六篇：超时控制
 第七篇：安全
 本系列将持续更新，欢迎关注👏获取实时通知
 关注公众号获得更多精彩文章</description></item><item><title>写给Go开发者的Tars教程-超时控制</title><link>/2024/01/10/tarsgo-context/</link><pubDate>Wed, 10 Jan 2024 15:20:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/2024/01/10/tarsgo-context/</guid><description>本篇为【写给go开发者的Tars教程】系列第六篇
-第一篇：Tars协议基础 第二篇：通信模式 第三篇：拦截器 第四篇：错误处理
-第五篇：context/status
+第一篇：Tars协议基础 第二篇：通信模式 第三篇：拦截器 第四篇：错误处理 第五篇：context/status
 第六篇：超时控制
 本系列将持续更新，欢迎关注👏获取实时通知
 关注公众号获得更多精彩文章</description></item><item><title>写给Go开发者的Tars教程-context/status</title><link>/2024/01/09/tarsgo-context/</link><pubDate>Tue, 09 Jan 2024 15:20:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/2024/01/09/tarsgo-context/</guid><description>本篇为【写给go开发者的Tars教程】系列第五篇
-第一篇：Tars协议基础 第二篇：通信模式 第三篇：拦截器 第四篇：错误处理
-第五篇：context/status
+第一篇：Tars协议基础 第二篇：通信模式 第三篇：拦截器 第四篇：错误处理 第五篇：context/status
 本系列将持续更新，欢迎关注👏获取实时通知
-关注公众号获得更多精彩文章</description></item><item><title>写给go开发者的Tars教程-错误处理</title><link>/2024/01/08/tarsgo-errors/</link><pubDate>Mon, 08 Jan 2024 15:20:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/2024/01/08/tarsgo-errors/</guid><description>本篇为【写给go开发者的Tars教程】系列第四篇
+导语
+和在普通HTTP请求中一样，TarsGo提供了在每一次RPC中携带上下文的结构：context和status。在Go语言中，它与context.Context紧密结合，帮助我们实现服务端与客户端之间互相传递信息。其中status主要用于框架底层传递一些框架特性相关的数据。
+什么是 context？ TarsGo 的 context和status的简单理解，就是 HTTP Header 中的 key-value 对
+context和status 都是以 key-value 的形式存储数据的，其中 key 和 value都是 string 类型。 context和status 使得 client 和 server 能够为对方提供关于本次调用的一些信息，就像一次HTTP请求的Request Header和Response Header一样 HTTP Header 的生命周期是一次 HTTP 请求，那么 context和status 的生命周期就是一次 RPC 调用 context和status 创建 🌲 直接使用make即可： context := make(map[string]string) status := make(map[string]string) 🌲 直接使用map初始化方式： context := map[string]string{&amp;quot;key1&amp;quot;:&amp;quot;value1&amp;quot;,&amp;quot;key2&amp;quot;:&amp;quot;value2&amp;quot;} status := map[string]string{&amp;quot;key1&amp;quot;:&amp;quot;value1&amp;quot;,&amp;quot;key2&amp;quot;:&amp;quot;value2&amp;quot;} context和status 发送和接受 让我们再次回顾下tars文件和生成出来的client与server端的接口
+module order { struct Order { 1 require string id; 2 optional vector&amp;lt;string&amp;gt; items; 3 optional string description; 4 require float price; 5 optional string destination; }; interface OrderManagement { Order getOrder(string orderId); }; }; type OrderManagement struct { servant m.</description></item><item><title>写给go开发者的Tars教程-错误处理</title><link>/2024/01/08/tarsgo-errors/</link><pubDate>Mon, 08 Jan 2024 15:20:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/2024/01/08/tarsgo-errors/</guid><description>本篇为【写给go开发者的Tars教程】系列第四篇
 第一篇：Tars协议基础 第二篇：通信模式 第三篇：拦截器 第四篇：错误处理
 本系列将持续更新，欢迎关注👏获取实时通知
 基本错误处理 首先回顾下tars文件和生成出来的client与server端的接口
