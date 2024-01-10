@@ -1,0 +1,118 @@
+<!doctype html><html lang=zh dir=ltr><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>写给Go开发者的Tars教程-超时控制 | lbbniu</title>
+<meta name=generator content="Hugo Eureka 0.9.3"><link rel=stylesheet href=/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css><script defer src=/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js></script><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" as=style onload='this.onload=null,this.rel="stylesheet"'><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/github.min.css media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/php.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/java.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/go.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/python.min.js crossorigin></script><link rel=stylesheet href=/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css media=print onload='this.media="all",this.onload=null'><script defer type=text/javascript src=/js/fontawesome.min.35973bea57658ef0dd22ad59ea4642b6c8c67af62bed8659ac326d284ef285a6657cdbcf57d3b2910e7e992f2b20426e.js></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css integrity=sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js integrity=sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY crossorigin></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script><script defer src=https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js integrity=sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0 crossorigin></script><link rel=icon type=image/png sizes=32x32 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_32x32_fill_box_center_3.png><link rel=apple-touch-icon sizes=180x180 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_180x180_fill_box_center_3.png><meta name=description content="写给Go开发者的Tars教程-超时控制"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"文章列表","item":"/post/"},{"@type":"ListItem","position":2,"name":"写给Go开发者的Tars教程-超时控制","item":"/2024/01/10/tarsgo-context/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/2024/01/10/tarsgo-context/"},"headline":"写给Go开发者的Tars教程-超时控制 | lbbniu","datePublished":"2024-01-10T15:20:00+08:00","dateModified":"2024-01-10T15:20:00+08:00","wordCount":279,"author":{"@type":"Person","name":["lbbniu"]},"publisher":{"@type":"Person","name":"lbbniu","logo":{"@type":"ImageObject","url":"/images/icon.gif"}},"description":"写给Go开发者的Tars教程-超时控制"}</script><meta property="og:title" content="写给Go开发者的Tars教程-超时控制 | lbbniu"><meta property="og:type" content="article"><meta property="og:image" content="/images/icon.png"><meta property="og:url" content="/2024/01/10/tarsgo-context/"><meta property="og:description" content="写给Go开发者的Tars教程-超时控制"><meta property="og:locale" content="zh"><meta property="og:site_name" content="lbbniu"><meta property="article:published_time" content="2024-01-10T15:20:00+08:00"><meta property="article:modified_time" content="2024-01-10T15:20:00+08:00"><meta property="article:section" content="post"><meta property="article:tag" content="go"><meta property="article:tag" content="tarsgo"><meta property="og:see_also" content="/2024/01/09/tarsgo-context/"><meta property="og:see_also" content="/2024/01/08/tarsgo-errors/"><meta property="og:see_also" content="/2024/01/07/tarsgo-middleware/"><meta property="og:see_also" content="/2024/01/04/phpbrew/"><meta property="og:see_also" content="/2022/07/28/connection-reset-by-peer/"><meta property="og:see_also" content="/docs/go%E9%AB%98%E7%BA%A7%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%AE%9E%E6%88%98%E8%90%A5/21%E7%AC%AC%E5%8D%81%E5%85%AB%E8%AF%BE-%E4%BB%A5go-micro%E4%B8%BA%E4%BE%8B%E8%AE%B2%E8%AE%B2%E6%8A%BD%E8%B1%A1%E4%BA%8C%E6%9C%9F/"><body class="flex min-h-screen flex-col"><header class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"><div class="mx-auto w-full max-w-screen-xl"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=="Auto"||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName("html")[0].classList.add("dark")</script><nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0"><a href=/ class="me-6 text-primary-text text-xl font-bold">lbbniu</a>
+<button id=navbar-btn class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+<i class="fas fa-bars"></i></button><div id=target class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20"><div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0"><a href=/post/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">文章</a>
+<a href=/cloud-native/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">云原生</a>
+<a href=/study/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">算法学习</a>
+<a href=/docs/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">Go学习训练营</a>
+<a href=/tags/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">标签</a></div><div class=flex><div class="relative pt-4 md:pt-0"><div class="cursor-pointer hover:text-eureka" id=lightDarkMode><i class="fas fa-adjust"></i></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id=is-open></div><div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40" id=lightDarkOptions><span class="px-4 py-1 hover:text-eureka" name=Light>浅色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Dark>深色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Auto>自动</span></div></div></div></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id=is-open-mobile></div></nav><script>let element=document.getElementById("lightDarkMode");storageColorScheme==null||storageColorScheme=="Auto"?document.addEventListener("DOMContentLoaded",()=>{window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",switchDarkMode)}):storageColorScheme=="Light"?(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","sun"),element.firstElementChild.classList.add("fa-sun")):storageColorScheme=="Dark"&&(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","moon"),element.firstElementChild.classList.add("fa-moon")),document.addEventListener("DOMContentLoaded",()=>{getcolorscheme(),switchBurger()})</script></div></header><main class="grow pt-16"><div class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8"><div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12"><div class="bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"><article class=prose><h1 class=mb-4>写给Go开发者的Tars教程-超时控制</h1><div class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"><div class="me-6 my-2"><i class="fas fa-calendar me-1"></i>
+<span>2024-01-10</span></div><div class="me-6 my-2"><i class="fas fa-clock me-1"></i>
+<span>2分钟阅读时长</span></div><div class="me-6 my-2"><i class="fas fa-folder me-1"></i>
+<a href=/categories/tarsgo/ class=hover:text-eureka>TarsGo</a></div></div><p>本篇为【写给go开发者的Tars教程】系列第六篇</p><p>第一篇：<a href=https://mp.weixin.qq.com/s/aWFni2iiTvv7yXHtyf6d0Q target=_blank rel=noopener>Tars协议基础</a></p><p>第二篇：<a href=https://mp.weixin.qq.com/s/gdapjoj8JJbhrN2v8r96CA target=_blank rel=noopener>通信模式</a></p><p>第三篇：<a href=https://mp.weixin.qq.com/s/7sAAOvFE3U83tlG_aZFKnA target=_blank rel=noopener>拦截器</a></p><p>第四篇：<a href=https://mp.weixin.qq.com/s/A8HB7VDOmyEuBM-3RLoF9A target=_blank rel=noopener>错误处理</a></p><p>第五篇：<a href=https://mp.weixin.qq.com/s/NMnwQtC0soHZqdJnxF1pDQ target=_blank rel=noopener>context/status</a></p><p><strong>第六篇：超时控制</strong></p><p>本系列将持续更新，欢迎关注👏获取实时通知</p><hr><blockquote><p><strong>导言</strong></p><p>一个合理的超时时间是非常必要的，它能提高用户体验，提高服务器的整体性能，是服务治理的常见手段之一</p></blockquote><h2 id=为什么要设置超时><strong>为什么要设置超时</strong></h2><p><strong>用户体验</strong>：很多RPC都是由用户侧发起，如果请求不设置超时时间或者超时时间不合理，会导致用户一直处于白屏或者请求中的状态，影响用户的体验</p><p><strong>资源利用</strong>：一个RPC会占用两端（服务端与客户端）端口、cpu、内存等一系列的资源，不合理的超时时间会导致RPC占用的资源迟迟不能被释放，因而影响服务器稳定性</p><p>综上，一个合理的超时时间是非常必要的。在一些要求更高的服务中，我们还需要针对DNS解析、连接建立，读、写等设置更精细的超时时间。除了设置静态的超时时间，根据当前系统状态、服务链路等设置自适应的动态超时时间也是服务治理中一个常见的方案。</p><h2 id=客户端的超时><strong>客户端的超时</strong></h2><h3 id=连接超时>连接超时</h3><p>还记得我们怎么在客户端创建的么？</p><pre><code class=language-go>comm := tars.GetCommunicator()
+client := new(order.OrderManagement)
+obj := &quot;Test.OrderServer.OrderObj@tcp -h 127.0.0.1 -p 8080 -t 60000&quot;
+comm.StringToProxy(obj, client)
+
+// order, err := client.GetOrderWithContext(ctx, &quot;1&quot;)
+// if err != nil {
+//    panic(err)
+// }
+</code></pre><p>如果目标地址<code>tcp -h 127.0.0.1 -p 8080 -t 60000</code>无法建立连接，<code>comm.StringToProxy</code>会出现错误或<code>panic</code>么？这里直接放结论：不会的，TarsGo只有在发生RPC调用时才会创建连接，并不会阻塞在这里，如果RPC调用时连接没有创建成功会在RPC调用中报错。</p><p>如果我们想控制连接创建时的超时时间该怎么做呢？</p><p>可以修改Tars服务的启动配置文件对应的配置项来完成，目前也只能通过配置文件进配置。默认链接超时时间为<code>3000</code>毫秒，如下所示配置值为毫秒时间戳。</p><pre><code class=language-xml>&lt;tars&gt;
+    &lt;application&gt;
+        &lt;client&gt;
+            # 默认值为3000毫秒
+            clientdialtimeout=3000
+        &lt;/client&gt;
+    &lt;/application&gt;
+&lt;/tars&gt;
+</code></pre><h3 id=服务调用的超时>服务调用的超时</h3><p>和上面连接超时的配置类似。也可以通过配置文件进行配置。如下所示：</p><pre><code class=language-xml>&lt;tars&gt;
+    &lt;application&gt;
+        &lt;client&gt;
+            # 默认值为3000毫秒
+            async-invoke-timeout=3000
+        &lt;/client&gt;
+    &lt;/application&gt;
+&lt;/tars&gt;
+</code></pre><p>同时<code>XXXWithContext</code>服务调用的第一个参数均是<code>context.Context</code></p><p>所以也可以使用<code>context.Context</code>来控制服务调用的超时时间，目前的使用<code>context.Context</code>控制超时的方法并不遵循go语言的推荐做法，如下所示：</p><pre><code class=language-go>ctx := current.ContextWithClientCurrent(context.Background())
+current.SetClientTimeout(ctx, 10000)
+order, err := client.GetOrderWithContext(ctx, &quot;1&quot;)
+if err != nil {
+    panic(err)
+}
+</code></pre><p>上面的只对当前本次调用生效。另外客户端实例也提供了修改调用超时时间的方法，如下所示：</p><pre><code class=language-go>client.TarsSetTimeout(10000)
+</code></pre><p>上面方法对当前客户端的所有调用都生效，优先级低于通过<code>context.Context</code>传递的超时时间。</p><h3 id=其他超时选项>其他超时选项</h3><p>另外客户端还提供了读写超时控制的相应配置选项，如下所示</p><pre><code class=language-xml>&lt;tars&gt;
+    &lt;application&gt;
+        &lt;client&gt;
+            # 读超时，默认值为100毫秒
+            clientreadtimeout=100
+            # 写超时，默认值为3000毫秒
+            clientwritetimeout=3000
+            # 连接空闲时间，默认值为60000毫秒
+            clientidletimeout=60000
+        &lt;/client&gt;
+    &lt;/application&gt;
+&lt;/tars&gt;
+</code></pre><h3 id=拦截器中的超时>拦截器中的超时</h3><p>拦截器函数签名中<code>timeout time.Duration</code>，我们也可以在拦截器中修改超时时间。如下所示：</p><pre><code class=language-go>func orderClientFilter(next tars.ClientFilter) tars.ClientFilter {
+	return func(ctx context.Context, msg *tars.Message, invoke tars.Invoke, timeout time.Duration) (err error) {
+        timeout = 100*time.Second
+		// Invoking the remote method
+		err = next(ctx, msg, invoke, timeout)
+		return err
+	}
+}
+</code></pre><h2 id=服务端的超时><strong>服务端的超时</strong></h2><h3 id=连接超时-1>连接超时</h3><p>服务端也可以控制连接创建的超时时间，如果没有在设定的时间内建立连接，服务端就会主动断连，避免浪费服务端的端口、内存等资源</p><pre><code class=language-xml>&lt;tars&gt;
+    &lt;application&gt;
+        &lt;server&gt;
+            # 默认值为500毫秒
+            accepttimeout=500
+        &lt;/server&gt;
+    &lt;/application&gt;
+&lt;/tars&gt;
+</code></pre><h3 id=服务实现中的超时>服务实现中的超时</h3><p>服务实现函数的第一个参数也是<code>context.Context</code>，所以我们可以在一些耗时操作前对<code>context.Context</code>进行判断：如果已经超时了，就没必要继续往下执行了。此时客户端也会收到上文提到过的超时<code>error</code>。</p><blockquote><p>截止目前所有tag版本中通过<code>context.Context</code>来控制超时存在问题，接下来会在下一个版本中优化此问题，优化PR：<a href=https://github.com/TarsCloud/TarsGo/pull/504 target=_blank rel=noopener>perf: optimize server-side handling of timeout control</a>
+，此PR合并后就可以通过当前描述的方式通过<code>context.Context</code>来控制处理超时。</p></blockquote><pre><code class=language-go>// GetOrder 超时控制示例
+func (o *OrderCtx) GetOrder(tarsCtx context.Context, orderId string) (ret order.Order, err error) {
+	select {
+	case &lt;-tarsCtx.Done():
+		return ret, tars.Errorf(http.StatusRequestTimeout, &quot;Client cancelled, abandoning.&quot;)
+	default:
+	}
+
+	ord, exists := orders[orderId]
+	if exists {
+		return ord, nil
+	}
+
+	return ord, tars.Errorf(http.StatusNotFound, &quot;Order does not exist. : &quot;, orderId)
+}
+</code></pre><p>很多库都支持类似的操作，我们要做的就是把<code>context.Context</code>透传下去，当<code>context.Context</code>超时时就会提前结束操作了</p><pre><code class=language-go>db, err := gorm.Open()
+if err != nil {
+    panic(&quot;failed to connect database&quot;)
+}
+
+db.WithContext(ctx).Save(&amp;users)
+</code></pre><h3 id=配置文件中的其他超时参数>配置文件中的其他超时参数</h3><p>在服务端的配置段还有一些其他超时配置参数如下所示：</p><pre><code class=language-xml>&lt;tars&gt;
+    &lt;application&gt;
+        &lt;server&gt;
+            # 读超时，默认值不超时
+            readtimeout=0
+            # 写超时，默认值不超时
+            writetimeout=0
+            # 处理超时，默认值不超时
+            handletimeout=0
+            # 连接空调超时，默认值60000毫秒
+            idletimeout=60000
+            # tarsnode keepalive超时，默认值10000
+            zombietimeout=10000
+            # 优雅退出超时，默认值60000毫秒
+            gracedowntimeout=60000
+        &lt;/server&gt;
+    &lt;/application&gt;
+&lt;/tars&gt;
+</code></pre><h2 id=超时传递><strong>超时传递</strong></h2><p>一个正常的请求会涉及到多个服务的调用。从源头开始一个服务端不仅为上游服务提供服务，也作为下游的客户端</p><img src=https://typora.lbbniu.com/typora/image-20240108232126522.png alt=image-20240108232126522 style=zoom:50%><p>如上的链路，如果当请求到达某一服务时，对于服务A来说已经超时了，那么就没有必要继续把请求传递下去了。这样可以最大限度的避免后续服务的资源浪费，提高系统的整体性能。</p><p>目前<code>TarsGo</code>还没有实现了这一特性，我们将计划在未来版本实现此超时传递功能。欢迎关注公众号订阅此功能的上线的通知。</p><h2 id=总结><strong>总结</strong></h2><p>TarsGo提供了众多超时控制参数，以及超时控制方法，我们可以精细化的控制TarsGo中服务端、客户端两端的建连，调用，以及在拦截器中的超时时间。</p><hr><p>👇 欢迎关注👇</p><h2 id=关注公众号获得更多精彩文章>关注公众号获得更多精彩文章</h2><p><img src=https://typora.lbbniu.com/typora/qrcode_for_gh_4ab47aa64a20_258.jpg alt=公众号：程序员大兵></p></article><div class=my-4><a href=/tags/go/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#go</a>
+<a href=/tags/tarsgo/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#tarsgo</a></div><div class=py-2><div class="my-8 flex flex-col items-center md:flex-row"><a href=/authors/lbbniu/ class="md:me-4 text-primary-text h-24 w-24"><i class="fas fa-user-circle fa-6x"></i></a><div class="mt-4 w-full md:mt-0 md:w-auto"><a href=/authors/lbbniu/ class="mb-2 block border-b pb-1 text-lg font-bold"><h3>lbbniu</h3></a><span class="block pb-2"></span></div></div></div><div class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"><div><span class="text-primary-text block font-bold">上一页</span>
+<a href=/2024/01/15/uri-addr/ class=block>模板-标题</a></div><div class="mt-4 md:mt-0 md:text-right"><span class="text-primary-text block font-bold">下一页</span>
+<a href=/2024/01/09/tarsgo-context/ class=block>写给Go开发者的Tars教程-context/status</a></div></div></div><div class=col-span-2><div class="bg-primary-bg
+prose sticky top-16 z-10 hidden px-6 py-4 lg:block"><h3>本页内容</h3></div><div class="sticky-toc hidden px-6 pb-6 lg:block"><nav id=TableOfContents><ul><li><a href=#为什么要设置超时><strong>为什么要设置超时</strong></a></li><li><a href=#客户端的超时><strong>客户端的超时</strong></a><ul><li><a href=#连接超时>连接超时</a></li><li><a href=#服务调用的超时>服务调用的超时</a></li><li><a href=#其他超时选项>其他超时选项</a></li><li><a href=#拦截器中的超时>拦截器中的超时</a></li></ul></li><li><a href=#服务端的超时><strong>服务端的超时</strong></a><ul><li><a href=#连接超时-1>连接超时</a></li><li><a href=#服务实现中的超时>服务实现中的超时</a></li><li><a href=#配置文件中的其他超时参数>配置文件中的其他超时参数</a></li></ul></li><li><a href=#超时传递><strong>超时传递</strong></a></li><li><a href=#总结><strong>总结</strong></a></li><li><a href=#关注公众号获得更多精彩文章>关注公众号获得更多精彩文章</a></li></ul></nav></div><script>window.addEventListener("DOMContentLoaded",()=>{enableStickyToc()})</script></div><div class="bg-secondary-bg prose col-span-2 rounded p-6 lg:col-span-6"><h3>相关</h3><a href=/2024/01/09/tarsgo-context/ class=no-underline>写给Go开发者的Tars教程-context/status</a><br><a href=/2024/01/08/tarsgo-errors/ class=no-underline>写给go开发者的Tars教程-错误处理</a><br><a href=/2024/01/07/tarsgo-middleware/ class=no-underline>写给go开发者的Tars教程-拦截器</a><br><a href=/2024/01/04/phpbrew/ class=no-underline>一篇文章精通php多版本管理工具：phpbrew</a><br><a href=/2022/07/28/connection-reset-by-peer/ class=no-underline>处理 Go 中的 'connection reset by peer' 错误</a><br><a href=/docs/go%E9%AB%98%E7%BA%A7%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%AE%9E%E6%88%98%E8%90%A5/21%E7%AC%AC%E5%8D%81%E5%85%AB%E8%AF%BE-%E4%BB%A5go-micro%E4%B8%BA%E4%BE%8B%E8%AE%B2%E8%AE%B2%E6%8A%BD%E8%B1%A1%E4%BA%8C%E6%9C%9F/ class=no-underline>第十八课 以go-micro为例讲讲抽象【二期内容】</a><br></div></div><script>document.addEventListener("DOMContentLoaded",()=>{hljs.highlightAll()})</script></div></div></main><footer class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b"><p class="text-sm text-tertiary-text">&copy; 2021 <a href=https://blog.lbbniu.com/>lbbniu</a>
+&#183; Powered by the <a href=https://github.com/wangchucheng/hugo-eureka class=hover:text-eureka>Eureka</a> theme for <a href=https://gohugo.io class=hover:text-eureka>Hugo</a></p></div></div></footer></body></html>
