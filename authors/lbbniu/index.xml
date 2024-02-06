@@ -1,11 +1,35 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>lbbniu</title><link>/authors/lbbniu/</link><description>Recent content on lbbniu</description><generator>Hugo -- gohugo.io</generator><language>zh</language><managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor><webMaster>lbbniu@gmail.com (lbbniu)</webMaster><copyright>&amp;copy; 2021 &lt;a href="https://blog.lbbniu.com/">lbbniu&lt;/a></copyright><lastBuildDate>Sun, 14 Jan 2024 15:20:00 +0800</lastBuildDate><atom:link href="/authors/lbbniu/index.xml" rel="self" type="application/rss+xml"/><item><title>写给Go开发者的Tars教程-支持超时传递</title><link>/2024/01/14/tarsgo-timeout-delivery/</link><pubDate>Sun, 14 Jan 2024 15:20:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/2024/01/14/tarsgo-timeout-delivery/</guid><description>本篇为【写给go开发者的Tars教程】系列第六篇
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>lbbniu</title><link>/authors/lbbniu/</link><description>Recent content on lbbniu</description><generator>Hugo -- gohugo.io</generator><language>zh</language><managingEditor>lbbniu@gmail.com (lbbniu)</managingEditor><webMaster>lbbniu@gmail.com (lbbniu)</webMaster><copyright>&amp;copy; 2021 &lt;a href="https://blog.lbbniu.com/">lbbniu&lt;/a></copyright><lastBuildDate>Tue, 06 Feb 2024 23:43:47 +0800</lastBuildDate><atom:link href="/authors/lbbniu/index.xml" rel="self" type="application/rss+xml"/><item><title>写给Go开发者的Tars教程-支持超时传递</title><link>/2024/01/14/tarsgo-timeout-delivery/</link><pubDate>Sun, 14 Jan 2024 15:20:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/2024/01/14/tarsgo-timeout-delivery/</guid><description>本篇为【写给go开发者的Tars教程】系列第六篇
 第一篇：Tars协议基础 第二篇：通信模式 第三篇：拦截器 第四篇：错误处理 第五篇：context/status 第六篇：超时控制 第六篇：续集支持超时传递
 本系列将持续更新，欢迎关注👏获取实时通知
 接上篇超时控制中提到TarsGo并不支持超时传递，下面我们将对TarsGo进行改造使其支持超时传递能力。
 回顾 超时传递 当一个正常的请求会涉及到多个服务的调用时，从源头开始一个服务端不仅为上游服务提供服务，也作为下游的客户端
 如上的链路，如果当请求到达某一服务时，对于服务A来说已经超时了，那么就没有必要继续把请求传递下去了。这样可以最大限度的避免后续服务的资源浪费，提高系统的整体性能。
 下面将为TarsGo实现了这一特性，需要对TarsGo框架的客户端和服务端分别进行改造，改造完成后我们业务层要做的就是不断的把context.Context传下去，如下代码所示：
-// 服务A func main(){ ctx, cancel = context.WithTimeout(context.Background(), 3*time.Second) defer cancel() client.ServiceB(ctx) } // 服务B func ServiceB(ctx context.Context){ client.ServiceC(ctx) } // 服务C func ServiceC(ctx context.Context){ client.ServiceD(ctx) } // 服务D func ServiceD(ctx context.Context){ done := make(chan int, 1) go func() { // 业务逻辑 done &amp;lt;- 1 // 处理完成 }() select { case &amp;lt;-ctx.Done(): // 处理超时 case &amp;lt;- done: // 处理完成 } } 在每一次的context.</description></item><item><title>写给Go开发者的Tars教程-超时控制</title><link>/2024/01/10/tarsgo-timeout/</link><pubDate>Wed, 10 Jan 2024 15:20:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/2024/01/10/tarsgo-timeout/</guid><description>本篇为【写给go开发者的Tars教程】系列第六篇
+// 服务A func main(){ ctx, cancel = context.WithTimeout(context.Background(), 3*time.Second) defer cancel() client.ServiceB(ctx) } // 服务B func ServiceB(ctx context.Context){ client.ServiceC(ctx) } // 服务C func ServiceC(ctx context.Context){ client.ServiceD(ctx) } // 服务D func ServiceD(ctx context.Context){ done := make(chan int, 1) go func() { // 业务逻辑 done &amp;lt;- 1 // 处理完成 }() select { case &amp;lt;-ctx.Done(): // 处理超时 case &amp;lt;- done: // 处理完成 } } 在每一次的context.</description></item><item><title>写给Go开发者的Tars教程-安全</title><link>/2024/01/11/tarsgo-auth/</link><pubDate>Thu, 11 Jan 2024 15:20:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/2024/01/11/tarsgo-auth/</guid><description>本篇为【写给go开发者的Tars教程】系列第七篇
+第一篇：Tars协议基础 第二篇：通信模式 第三篇：拦截器 第四篇：错误处理 第五篇：context/status 第六篇：超时控制 第七篇：安全 👈
+本系列将持续更新，欢迎关注 👏 获取实时通知
+使用 TLS 安全传输数据 什么是 SSL/TLS SSL 包含记录层（Record Layer）和传输层[1]，记录层协议确定传输层数据的封装格式。传输层安全协议使用X.509[2]认证，之后利用非对称加密演算来对通信方做身份认证，之后交换对称密匙作为会话密匙（Session key[3]）。这个会谈密匙是用来将通信两方交换的资料做加密，保证两个应用间通信的保密性和可靠性，使客户与服务器应用之间的通信不被攻击者窃听。
+&amp;mdash; 维基百科
+SSL（Secure Sockets Layer）/TLS（Transport Layer Security）是网络通信中用于实现安全传输的协议。它们提供了加密、身份验证和数据完整性的功能，以确保在客户端和服务器之间传输的数据是安全的。
+加密数据： SSL/TLS使用加密算法对数据进行加密，防止在传输过程中被窃取或篡改，确保数据的机密性。
+身份验证：
+单向认证： 仅服务器需要验证其身份，客户端验证服务器的证书，确保连接的合法性。 双向认证： 除了服务器验证客户端，客户端还提供证书供服务器验证，增加了对双方身份的确认。 数据完整性： 使用哈希函数等机制确保数据在传输过程中未被篡改，维护数据的完整性。
+SSL/TLS广泛用于加密网页浏览、电子邮件传输和其他网络应用，通过提供安全通信，防止中间人攻击和保护用户隐私。选择单向或双向认证取决于具体需求，平衡了安全性和复杂性的考虑。
+单向认证 单向认证是SSL/TLS协议中的一种身份验证方式，主要涉及服务器向客户端证明其身份的过程。在单向认证中，只有服务器需要提供数字证书，而客户端不需要提供自己的证书。以下是单向认证的详细讲解：
+服务器提供数字证书： 服务器在通信开始前，需要向客户端提供一个数字证书。数字证书通常由受信任的证书颁发机构（CA）签发，证明服务器的身份。证书包含了服务器的公钥以及与之相关的私钥，以确保客户端能够验证其合法性。
+客户端验证服务器证书： 客户端在接收到服务器的数字证书后，使用事先保存的CA公钥来验证证书的签名。如果验证成功，客户端可以确认服务器的身份是合法的，并且可以信任该服务器。
+建立安全通信： 一旦服务器的身份得到确认，客户端和服务器之间的通信就可以开始。SSL/TLS协议使用服务器的公钥对数据进行加密，确保在传输过程中数据的机密性。同时，使用数字签名和哈希函数来保证数据的完整性。
+完成握手过程： 整个单向认证过程完成后，SSL/TLS握手阶段结束，安全通信通道建立起来，双方可以安全地进行数据传输。
+总的来说，单向认证确保了客户端与合法服务器的安全通信，适用于大多数互联网应用场景。
+✨ 证书组成 在生产环境通常是生成一个 CA 根证书，然后使用 CA 根证书去签名多个服务端的证书。这种方式可以一次管理多个证书，也比较贴近真实情况，当然也可以用来做证书过期、更新等试验，缺点是操作起来略微麻烦一点。
+rootCA.key：ca 机构的私钥，用来给服务端签发证书
+rootCA.crt：ca 的证书，用来给客户端验证服务端证书
+server.key：RSA 的私钥，用来进行数字签名
+server.crt：由 ca 签发的服务端证书
+单向认证-根证书模式
+服务端全局配置：
+我们只需要添加SSL/TLS相关配置，程序代码无需任何改动
+&amp;lt;tars&amp;gt; &amp;lt;application&amp;gt; &amp;lt;server&amp;gt; # ... # 服务器public证书 cert=ssl/server.</description></item><item><title>写给Go开发者的Tars教程-超时控制</title><link>/2024/01/10/tarsgo-timeout/</link><pubDate>Wed, 10 Jan 2024 15:20:00 +0800</pubDate><author>lbbniu@gmail.com (lbbniu)</author><guid>/2024/01/10/tarsgo-timeout/</guid><description>本篇为【写给go开发者的Tars教程】系列第六篇
 第一篇：Tars协议基础 第二篇：通信模式 第三篇：拦截器 第四篇：错误处理 第五篇：context/status 第六篇：超时控制
 本系列将持续更新，欢迎关注👏获取实时通知
 导言

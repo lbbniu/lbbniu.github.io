@@ -1,0 +1,157 @@
+<!doctype html><html lang=zh dir=ltr><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>写给Go开发者的Tars教程-安全 | lbbniu</title>
+<meta name=generator content="Hugo Eureka 0.9.3"><link rel=stylesheet href=/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css><script defer src=/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js></script><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" as=style onload='this.onload=null,this.rel="stylesheet"'><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/github.min.css media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/php.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/java.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/go.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/python.min.js crossorigin></script><link rel=stylesheet href=/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css media=print onload='this.media="all",this.onload=null'><script defer type=text/javascript src=/js/fontawesome.min.35973bea57658ef0dd22ad59ea4642b6c8c67af62bed8659ac326d284ef285a6657cdbcf57d3b2910e7e992f2b20426e.js></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css integrity=sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js integrity=sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY crossorigin></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script><script defer src=https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js integrity=sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0 crossorigin></script><link rel=icon type=image/png sizes=32x32 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_32x32_fill_box_center_3.png><link rel=apple-touch-icon sizes=180x180 href=/images/icon_hu46eef4dc61dcf438cf488ad55e1d2c12_638750_180x180_fill_box_center_3.png><meta name=description content="写给Go开发者的Tars教程-安全"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"文章列表","item":"/post/"},{"@type":"ListItem","position":2,"name":"写给Go开发者的Tars教程-安全","item":"/2024/01/11/tarsgo-auth/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/2024/01/11/tarsgo-auth/"},"headline":"写给Go开发者的Tars教程-安全 | lbbniu","datePublished":"2024-01-11T15:20:00+08:00","dateModified":"2024-01-11T15:20:00+08:00","wordCount":419,"author":{"@type":"Person","name":["lbbniu"]},"publisher":{"@type":"Person","name":"lbbniu","logo":{"@type":"ImageObject","url":"/images/icon.gif"}},"description":"写给Go开发者的Tars教程-安全"}</script><meta property="og:title" content="写给Go开发者的Tars教程-安全 | lbbniu"><meta property="og:type" content="article"><meta property="og:image" content="/images/icon.png"><meta property="og:url" content="/2024/01/11/tarsgo-auth/"><meta property="og:description" content="写给Go开发者的Tars教程-安全"><meta property="og:locale" content="zh"><meta property="og:site_name" content="lbbniu"><meta property="article:published_time" content="2024-01-11T15:20:00+08:00"><meta property="article:modified_time" content="2024-01-11T15:20:00+08:00"><meta property="article:section" content="post"><meta property="article:tag" content="go"><meta property="article:tag" content="tarsgo"><meta property="og:see_also" content="/2024/01/10/tarsgo-timeout/"><meta property="og:see_also" content="/2024/01/09/tarsgo-context/"><meta property="og:see_also" content="/2024/01/08/tarsgo-errors/"><meta property="og:see_also" content="/2024/01/07/tarsgo-middleware/"><meta property="og:see_also" content="/2024/01/04/phpbrew/"><meta property="og:see_also" content="/2022/07/28/connection-reset-by-peer/"><body class="flex min-h-screen flex-col"><header class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"><div class="mx-auto w-full max-w-screen-xl"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=="Auto"||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName("html")[0].classList.add("dark")</script><nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0"><a href=/ class="me-6 text-primary-text text-xl font-bold">lbbniu</a>
+<button id=navbar-btn class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+<i class="fas fa-bars"></i></button><div id=target class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20"><div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0"><a href=/post/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">文章</a>
+<a href=/cloud-native/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">云原生</a>
+<a href=/study/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">算法学习</a>
+<a href=/docs/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">Go学习训练营</a>
+<a href=/tags/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">标签</a></div><div class=flex><div class="relative pt-4 md:pt-0"><div class="cursor-pointer hover:text-eureka" id=lightDarkMode><i class="fas fa-adjust"></i></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id=is-open></div><div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40" id=lightDarkOptions><span class="px-4 py-1 hover:text-eureka" name=Light>浅色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Dark>深色</span>
+<span class="px-4 py-1 hover:text-eureka" name=Auto>自动</span></div></div></div></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id=is-open-mobile></div></nav><script>let element=document.getElementById("lightDarkMode");storageColorScheme==null||storageColorScheme=="Auto"?document.addEventListener("DOMContentLoaded",()=>{window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",switchDarkMode)}):storageColorScheme=="Light"?(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","sun"),element.firstElementChild.classList.add("fa-sun")):storageColorScheme=="Dark"&&(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","moon"),element.firstElementChild.classList.add("fa-moon")),document.addEventListener("DOMContentLoaded",()=>{getcolorscheme(),switchBurger()})</script></div></header><main class="grow pt-16"><div class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8"><div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12"><div class="bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"><article class=prose><h1 class=mb-4>写给Go开发者的Tars教程-安全</h1><div class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"><div class="me-6 my-2"><i class="fas fa-calendar me-1"></i>
+<span>2024-01-11</span></div><div class="me-6 my-2"><i class="fas fa-clock me-1"></i>
+<span>2分钟阅读时长</span></div><div class="me-6 my-2"><i class="fas fa-folder me-1"></i>
+<a href=/categories/tarsgo/ class=hover:text-eureka>TarsGo</a></div></div><p>本篇为【写给go开发者的Tars教程】系列第七篇</p><p>第一篇：<a href=https://mp.weixin.qq.com/s/aWFni2iiTvv7yXHtyf6d0Q target=_blank rel=noopener>Tars协议基础</a></p><p>第二篇：<a href=https://mp.weixin.qq.com/s/gdapjoj8JJbhrN2v8r96CA target=_blank rel=noopener>通信模式</a></p><p>第三篇：<a href=https://mp.weixin.qq.com/s/7sAAOvFE3U83tlG_aZFKnA target=_blank rel=noopener>拦截器</a></p><p>第四篇：<a href=https://mp.weixin.qq.com/s/A8HB7VDOmyEuBM-3RLoF9A target=_blank rel=noopener>错误处理</a></p><p>第五篇：<a href=https://mp.weixin.qq.com/s/NMnwQtC0soHZqdJnxF1pDQ target=_blank rel=noopener>context/status</a></p><p>第六篇：<a href=https://mp.weixin.qq.com/s/4xfd77SxC1MadQRTxJ3wjA target=_blank rel=noopener>超时控制</a></p><p><strong>第七篇：安全</strong> 👈</p><p>本系列将持续更新，欢迎关注 👏 获取实时通知</p><hr><h2 id=使用-tls-安全传输数据><strong>使用 TLS 安全传输数据</strong></h2><h3 id=什么是-ssltls>什么是 SSL/TLS</h3><blockquote><p>SSL 包含记录层（Record Layer）和<strong>传输层</strong>[1]，记录层协议确定传输层数据的封装格式。传输层安全协议使用<strong>X.509</strong>[2]认证，之后利用非对称加密演算来对通信方做身份认证，之后交换对称密匙作为会话密匙（<strong>Session key</strong>[3]）。这个会谈密匙是用来将通信两方交换的资料做加密，保证两个应用间通信的保密性和可靠性，使客户与服务器应用之间的通信不被攻击者窃听。</p><p>&mdash; 维基百科</p></blockquote><p>SSL（Secure Sockets Layer）/TLS（Transport Layer Security）是网络通信中用于实现安全传输的协议。它们提供了加密、身份验证和数据完整性的功能，以确保在客户端和服务器之间传输的数据是安全的。</p><ul><li><p><strong>加密数据：</strong> SSL/TLS使用加密算法对数据进行加密，防止在传输过程中被窃取或篡改，确保数据的机密性。</p></li><li><p><strong>身份验证：</strong></p><ul><li><strong>单向认证：</strong> 仅服务器需要验证其身份，客户端验证服务器的证书，确保连接的合法性。</li><li><strong>双向认证：</strong> 除了服务器验证客户端，客户端还提供证书供服务器验证，增加了对双方身份的确认。</li></ul></li><li><p><strong>数据完整性：</strong> 使用哈希函数等机制确保数据在传输过程中未被篡改，维护数据的完整性。</p></li></ul><p>SSL/TLS广泛用于加密网页浏览、电子邮件传输和其他网络应用，通过提供安全通信，防止中间人攻击和保护用户隐私。选择单向或双向认证取决于具体需求，平衡了安全性和复杂性的考虑。</p><h3 id=单向认证>单向认证</h3><p>单向认证是SSL/TLS协议中的一种身份验证方式，主要涉及服务器向客户端证明其身份的过程。在单向认证中，只有服务器需要提供数字证书，而客户端不需要提供自己的证书。以下是单向认证的详细讲解：</p><ol><li><p><strong>服务器提供数字证书：</strong> 服务器在通信开始前，需要向客户端提供一个数字证书。数字证书通常由受信任的证书颁发机构（CA）签发，证明服务器的身份。证书包含了服务器的公钥以及与之相关的私钥，以确保客户端能够验证其合法性。</p></li><li><p><strong>客户端验证服务器证书：</strong> 客户端在接收到服务器的数字证书后，使用事先保存的CA公钥来验证证书的签名。如果验证成功，客户端可以确认服务器的身份是合法的，并且可以信任该服务器。</p></li><li><p><strong>建立安全通信：</strong> 一旦服务器的身份得到确认，客户端和服务器之间的通信就可以开始。SSL/TLS协议使用服务器的公钥对数据进行加密，确保在传输过程中数据的机密性。同时，使用数字签名和哈希函数来保证数据的完整性。</p></li><li><p><strong>完成握手过程：</strong> 整个单向认证过程完成后，SSL/TLS握手阶段结束，安全通信通道建立起来，双方可以安全地进行数据传输。</p></li></ol><p>总的来说，单向认证确保了客户端与合法服务器的安全通信，适用于大多数互联网应用场景。</p><h4 id=-证书组成>✨ 证书组成</h4><p>在生产环境通常是生成一个 CA 根证书，然后使用 CA 根证书去签名多个服务端的证书。这种方式可以一次管理多个证书，也比较贴近真实情况，当然也可以用来做证书过期、更新等试验，缺点是操作起来略微麻烦一点。</p><p><code>rootCA.key</code>：ca 机构的私钥，用来给服务端签发证书</p><p><code>rootCA.crt</code>：ca 的证书，用来给客户端验证服务端证书</p><p><code>server.key</code>：RSA 的私钥，用来进行数字签名</p><p><code>server.crt</code>：由 ca 签发的服务端证书</p><p><img src=https://typora.lbbniu.com/typora/image-20240108235414462.png alt=图片></p><p>单向认证-根证书模式</p><p><strong>服务端全局配置：</strong></p><p>我们只需要添加<code>SSL/TLS</code>相关配置，程序代码无需任何改动</p><pre><code class=language-xml>&lt;tars&gt;
+    &lt;application&gt;
+        &lt;server&gt;
+            # ...
+            # 服务器public证书
+            cert=ssl/server.crt
+            # 服务器private证书
+            key=ssl/server.key
+            &lt;Test.OrderServer.OrderObjAdapter&gt;
+                # ......
+                # 只需要把tcp 改为 ssl
+                endpoint=ssl -h 127.0.0.1 -p 8080 -t 60000
+                # ......
+            &lt;/Test.OrderServer.OrderObjAdapter&gt;
+        &lt;/server&gt;
+    &lt;/application&gt;
+&lt;/tars&gt;
+</code></pre><p><strong>客户端全局配置：</strong></p><ol><li>对于客户端同样我们只需要添加<code>SSL/TLS</code>的<code>ca</code>配置</li></ol><pre><code class=language-xml>&lt;tars&gt;
+    &lt;application&gt;
+        &lt;client&gt;
+            # ca证书
+            ca=ssl/rootCA.crt
+        &lt;/client&gt;
+    &lt;/application&gt;
+&lt;/tars&gt;
+</code></pre><ol start=2><li>连接协议改为<code>ssl</code>如下代码</li></ol><pre><code class=language-go>func main() {
+	comm := tars.GetCommunicator()
+	client := new(order.OrderManagement)
+    // Test.OrderServer.OrderObj@ 后的 tcp 改为了 ssl
+	obj := &quot;Test.OrderServer.OrderObj@ssl -h 127.0.0.1 -p 8080 -t 60000&quot;
+	comm.StringToProxy(obj, client)
+	// ......
+}
+</code></pre><p><strong>证书认证脚本：</strong></p><p>此<code>shell</code>脚本一次性生成了ca/server/client相关私钥和证书，方便测试使用</p><pre><code class=language-bash>#!/bin/bash
+
+set -ex
+mkdir -p ssl
+cd ssl
+# ca
+openssl genrsa -out rootCA.key 2048
+openssl req -x509 -new -nodes -key rootCA.key -days 1024 -out rootCA.crt \
+  -subj &quot;/C=CN/ST=BeiJing/L=BJ/O=Tars/OU=TarsGo/CN=TarsCa/emailAddress=lbbniu@gmail.com&quot;
+
+# server
+openssl genrsa -out server.key 2048
+openssl req -new -key server.key -out server.csr \
+  -subj &quot;/C=CN/ST=BeiJing/L=BJ/O=Tars/OU=TarsGo/CN=server/emailAddress=lbbniu@gmail.com&quot;\
+  -addext &quot;subjectAltName=IP:127.0.0.1&quot;
+#openssl req -text -in server.csr -noout -verify
+openssl x509 -req -in server.csr -CA rootCA.crt -CAkey rootCA.key -CAcreateserial -out server.crt -days 500 \
+  -extfile &lt;(printf &quot;subjectAltName=IP:127.0.0.1&quot;)
+#openssl x509 -in server.crt -noout -text
+
+# client
+openssl genrsa -out client.key 2048
+openssl req -new -key client.key -out client.csr \
+  -subj &quot;/C=CN/ST=BeiJing/L=BJ/O=Tars/OU=TarsGo/CN=client/emailAddress=lbbniu@gmail.com&quot;
+#openssl req -text -in client.csr -noout -verify
+openssl x509 -req -in client.csr -CA rootCA.crt -CAkey rootCA.key -CAcreateserial -out client.crt -days 500
+cd -
+</code></pre><p><strong>运行代码：</strong></p><pre><code class=language-bash># 终端1
+go run client/main.go --config=config/config.conf
+# 终端2
+go run main.go --config=config/config.conf
+</code></pre><h3 id=双向认证mtls>双向认证（mTLS）</h3><p>双向认证是SSL/TLS协议中的身份验证方式，要求服务器验证客户端证书和客户端验证服务器证书，以确保通信双方的合法身份。下面进行介绍<code>TarsGo</code>中的应用</p><h4 id=证书组成>证书组成</h4><p><code>rootCA.key</code>：ca 机构的私钥，用来给服务端签发证书</p><p><code>rootCA.crt</code>：ca 的证书，用来给客户端验证服务端证书</p><p><code>server.key</code>：服务端 RSA 的私钥，用来进行数字签名</p><p><code>server.crt</code>：由 ca 签发的服务端证书</p><p><code>client.key</code>: 客户端 RSA 私钥，用来进行数字签名</p><p><code>client.crt</code>: 由 ca 签发的客户端证书</p><p><img src=https://typora.lbbniu.com/typora/image-20240115224454191.png alt=image-20240115224454191></p><p><strong>服务端配置如下：</strong></p><pre><code class=language-xml>&lt;tars&gt;
+    &lt;application&gt;
+        &lt;server&gt;
+            # ......
+            # ca公有证书，不验证客户端可以不填写
+            ca=ssl/rootCA.crt
+            # 是否验证客户端
+            verifyclient=1
+            # 服务器public证书
+            cert=ssl/server.crt
+            # 服务器private证书
+            key=ssl/server.key
+            &lt;Test.OrderServer.OrderObjAdapter&gt;
+                # ......
+                endpoint=ssl -h 127.0.0.1 -p 8080 -t 60000
+                # ......
+            &lt;/Test.OrderServer.OrderObjAdapter&gt;
+        &lt;/server&gt;
+    &lt;/application&gt;
+&lt;/tars&gt;
+</code></pre><p><strong>客户端配置如下：</strong></p><pre><code class=language-xml>&lt;tars&gt;
+    &lt;application&gt;
+        &lt;client&gt;
+            # ca证书
+            ca=ssl/rootCA.crt
+            # 客户端public证书
+            cert=ssl/client.crt
+            # 客户端私钥
+            key=ssl/client.key
+        &lt;/client&gt;
+    &lt;/application&gt;
+&lt;/tars&gt;
+</code></pre><p>** 运行代码同上 **</p><h3 id=进阶>进阶</h3><p><code>TarsGo</code>同样支持对不不同的<code>Servant</code>配置不同的证书，下面给出<code>ssl</code>完整配置共小伙伴们参考</p><pre><code class=language-xml>&lt;tars&gt;
+    &lt;application&gt;
+        &lt;client&gt;
+            # ca证书
+            ca=ssl/rootCA.crt
+            # 客户端public证书
+            cert=ssl/client.crt
+            # 客户端私钥
+            key=ssl/client.key
+            &lt;Test.OrderServer.OrderObj&gt;
+                ca=ssl/rootCA.crt
+                # 客户端public证书
+                cert=ssl/client.crt
+                # 客户端私钥
+                key=ssl/client.key
+            &lt;/Test.OrderServer.OrderObj&gt;
+        &lt;/client&gt;
+        &lt;server&gt;
+            # ......
+            # ca公有证书，不验证客户端可以不填写
+            ca=ssl/rootCA.crt
+            # 是否验证客户端
+            verifyclient=1
+            # 服务器public证书
+            cert=ssl/server.crt
+            # 服务器private证书
+            key=ssl/server.key
+            &lt;Test.OrderServer.OrderObjAdapter&gt;
+                allow
+                endpoint=ssl -h 127.0.0.1 -p 8080 -t 60000
+                # ......
+                # ca公有证书，不验证客户端可以不填写
+                ca=ssl/rootCA.crt
+                # 是否验证客户端
+                verifyclient=0
+                # 服务器public证书
+                cert=ssl/server.crt
+                # 服务器private证书
+                key=ssl/server.key
+            &lt;/Test.OrderServer.OrderObjAdapter&gt;
+        &lt;/server&gt;
+    &lt;/application&gt;
+&lt;/tars&gt;
+</code></pre><h2 id=总结>总结</h2><p>经过上面对<code>TarsGo</code>中怎么开启<code>SSL/TLS</code>的相关介绍，详细小伙们已经可以启动开启此功能是自己的服务更安全了。</p><hr><p>👇 欢迎关注👇</p><h2 id=关注公众号获得更多精彩文章>关注公众号获得更多精彩文章</h2><p><img src=https://typora.lbbniu.com/typora/qrcode_for_gh_4ab47aa64a20_258.jpg alt=公众号：程序员大兵></p></article><div class=my-4><a href=/tags/go/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#go</a>
+<a href=/tags/tarsgo/ class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#tarsgo</a></div><div class=py-2><div class="my-8 flex flex-col items-center md:flex-row"><a href=/authors/lbbniu/ class="md:me-4 text-primary-text h-24 w-24"><i class="fas fa-user-circle fa-6x"></i></a><div class="mt-4 w-full md:mt-0 md:w-auto"><a href=/authors/lbbniu/ class="mb-2 block border-b pb-1 text-lg font-bold"><h3>lbbniu</h3></a><span class="block pb-2"></span></div></div></div><div class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"><div><span class="text-primary-text block font-bold">上一页</span>
+<a href=/2024/01/14/tarsgo-timeout-delivery/ class=block>写给Go开发者的Tars教程-支持超时传递</a></div><div class="mt-4 md:mt-0 md:text-right"><span class="text-primary-text block font-bold">下一页</span>
+<a href=/2024/01/10/tarsgo-timeout/ class=block>写给Go开发者的Tars教程-超时控制</a></div></div></div><div class=col-span-2><div class="bg-primary-bg
+prose sticky top-16 z-10 hidden px-6 py-4 lg:block"><h3>本页内容</h3></div><div class="sticky-toc hidden px-6 pb-6 lg:block"><nav id=TableOfContents><ul><li><a href=#使用-tls-安全传输数据><strong>使用 TLS 安全传输数据</strong></a><ul><li><a href=#什么是-ssltls>什么是 SSL/TLS</a></li><li><a href=#单向认证>单向认证</a><ul><li><a href=#-证书组成>✨ 证书组成</a></li></ul></li><li><a href=#双向认证mtls>双向认证（mTLS）</a><ul><li><a href=#证书组成>证书组成</a></li></ul></li><li><a href=#进阶>进阶</a></li></ul></li><li><a href=#总结>总结</a></li><li><a href=#关注公众号获得更多精彩文章>关注公众号获得更多精彩文章</a></li></ul></nav></div><script>window.addEventListener("DOMContentLoaded",()=>{enableStickyToc()})</script></div><div class="bg-secondary-bg prose col-span-2 rounded p-6 lg:col-span-6"><h3>相关</h3><a href=/2024/01/10/tarsgo-timeout/ class=no-underline>写给Go开发者的Tars教程-超时控制</a><br><a href=/2024/01/09/tarsgo-context/ class=no-underline>写给Go开发者的Tars教程-context/status</a><br><a href=/2024/01/08/tarsgo-errors/ class=no-underline>写给go开发者的Tars教程-错误处理</a><br><a href=/2024/01/07/tarsgo-middleware/ class=no-underline>写给go开发者的Tars教程-拦截器</a><br><a href=/2024/01/04/phpbrew/ class=no-underline>一篇文章精通php多版本管理工具：phpbrew</a><br><a href=/2022/07/28/connection-reset-by-peer/ class=no-underline>处理 Go 中的 'connection reset by peer' 错误</a><br></div></div><script>document.addEventListener("DOMContentLoaded",()=>{hljs.highlightAll()})</script></div></div></main><footer class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b"><p class="text-sm text-tertiary-text">&copy; 2021 <a href=https://blog.lbbniu.com/>lbbniu</a>
+&#183; Powered by the <a href=https://github.com/wangchucheng/hugo-eureka class=hover:text-eureka>Eureka</a> theme for <a href=https://gohugo.io class=hover:text-eureka>Hugo</a></p></div></div></footer></body></html>
